@@ -7,7 +7,22 @@
     margin-top: 0;
     padding:0;
 }
+.language{
+    float:left;
+}
+.search{
+    float:right;
+}
 
+.dropdowncust{
+    color:#000;
+}
+.dropdowncust:focus{
+    color:#000;
+}
+.dropdowncust:hover{
+    color:#000;
+}
 
 /* Links */
 a,
