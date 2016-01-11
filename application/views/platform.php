@@ -16,12 +16,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
             <div class="subtitle">
-                   bochupingtai                                 
+                播出平台       
             </div>
             <div class="newborder">
                 vedio
             </div>
-             <div >
+             <div class="plat-subtitle">
                 image
             </div>
             

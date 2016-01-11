@@ -115,6 +115,7 @@ body {
 body {
     color: #000000;
     text-align: center;
+    font-family:Microsoft YaHei;
    
 }
 
@@ -395,5 +396,15 @@ body {
   width:auto;
   height:300px;
   
+  }
+  
+  
+    /*
+ * paltform
+ */
+  .plat-subtitle{
+  width:auto;
+  height:30px;
+  background-color:#C8C8C8;
   }
  
