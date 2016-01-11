@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: TT
+ * Date: 2016/1/11
+ * Time: 8:23
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="zh-CN">
@@ -9,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-<!--    <link rel="icon" href="../../favicon.ico">-->
+    <!--    <link rel="icon" href="../../favicon.ico">-->
 
     <title>Cover Template for Bootstrap</title>
 
@@ -22,31 +28,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div class="site-wrapper">
-    <div class="site-wrapper-inner">
         <div class="cover-container">
-            <div class="masthead clearfix newborder">
+            <div class="clearfix newborder">
                 <div class="inner">
                     <h3 class="masthead-brand">Cover</h3>
                     <nav>
                         <ul class="nav masthead-nav">
-                            <li><a href="#">{home}</a></li>
-                            <li><a href="#">{about}</a></li>
-                            <li><a href="#">{jz}</a></li>
-                            <li><a href="#">{wdsj}</a></li>
-                            <li><a href="#">{gjyyj}</a></li>
-                            <li><a href="#">{jrht}</a></li>
+                            <li><a href="/home" class="{homenav}">{home}</a></li>
+                            <li><a href="/about" class="{aboutnav}">{about}</a></li>
+                            <li><a href="/ul" class="{ulnav}">{ul}</a></li>
+                            <li><a href="/awoe" class="{awoenav}">{awoe}</a></li>
+                            <li><a href="/music" class="{musicnav}">{music}</a></li>
+                            <li><a href="/join" class="{joinnav}">{join}</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="newborder">
-                a
-            </div>
-            <div class="newborder">
-                b
-            </div>
         </div>
-    </div>
 </div>
 
 <!-- Bootstrap core JavaScript
