@@ -2,9 +2,23 @@
  * Globals
  */
 #class1content {
-    background-color: #bbbbbb;
+    background-color: #dddddd;
     overflow:hidden;
     display:none;
+}
+.searchcontent{
+    display:inline-block;
+    width:200px;
+}
+.iconcust{
+    float:right;
+}
+.searchcontentdiv{
+    display:inline-block;
+    width:150px;
+    border:1px solid #aaaaaa;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 .dropdownmenucust{
     border: #bbbbbb;
