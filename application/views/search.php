@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div id="class1content" style="display:none;" class="cover-container">
     <div class="searchdetailarea" id="searchdetailarea">
-        {seniorsearch}<input type="text" placeholder="{inputtip}" name="searchcontent"><a href="#" class="searchdetail" role="button" onclick="">{commit}</a>
-        <a href="#" class="dropdowncust" role="button" onclick=""><i class="glyphicon glyphicon-search"></i> {reset}</a>
+        {seniorsearch}<input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent"><a href="#" class="searchdetail" id="searchcommit" role="button" onclick="">{commit}</a>
+        <a href="#" class="dropdowncust" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-search"></i> {reset}</a>
     </div>
     <div class="searchdetailarea">
         <a href="#" class="searchdetail" role="button" onclick="$use('class2content')"><i class="glyphicon glyphicon-search"></i> {brandname}</a>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="class3content" style="display:none;" class="searchcontentarea">
         {search_type}
         <span class="searchcontent">
-                <input type="checkbox" id="{oid}" value="{content}"/><span>{content}</span>
+                <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span>{content}</span>
         </span>
         {/search_type}
     </div>
@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="class4content" style="display:none;" class="searchcontentarea">
         {search_keyword}
         <span class="searchcontent">
-                <input type="checkbox" id="{oid}" value="{content}"/><span>{content}</span>
+                <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span>{content}</span>
         </span>
         {/search_keyword}
     </div>
@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="class5content" style="display:none;" class="searchcontentarea">
         {search_location}
         <span class="searchcontent">
-                <input type="checkbox" id="{oid}" value="{content}"/><span>{content}</span>
+                <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span>{content}</span>
         </span>
         {/search_location}
     </div>
@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="class6content" style="display:none;" class="searchcontentarea">
         {search_time}
         <span class="searchcontent">
-                <input type="checkbox" id="{oid}" value="{content}"/><span>{content}</span>
+                <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span>{content}</span>
         </span>
         {/search_time}
     </div>
