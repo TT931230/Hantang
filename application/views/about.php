@@ -25,21 +25,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="dashline">
                 vedio
-            </div>           
+            </div>
+                       
              <div class="dashline">
-                word
+                <p style="color: #CD0000;font-size: 20px">shanghai</p>
+                <p style="color:#8C8C8C;font-size:10px">bbbbbbbbbbbbbbbbbb</p>
+                <p style="color:#8C8C8C;font-size:10px">bbbbbbbbbbbbbbbbbb</p>
             </div>
              <div class="dashline">
-                word
+                <p style="color: #CD0000;font-size: 20px">shanghai</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size:10px">bbbbbbbbbbbbbbbbbb</p>
             </div>
              <div class="dashline">
-                word
+                <p style="color: #CD0000;font-size: 20px">shanghai</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size:10px;margin-top:-12px">bbbbbbbbbbbbbbbbbb</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size:10px;margin-top:-12px">bbbbbbbbbbbbbbbbbb</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
             </div>
              <div class="dashline">
-                word
+                <p style="color: #CD0000;font-size: 20px">shanghai</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                <p style="color: #8C8C8C;font-size:10px;margin-top:-12px">bbbbbbbbbbbbbbbbbb</p>
+                <p style="color: #8C8C8C;font-size: 20px">aaaaaaaa</p>
+                
             </div>
              <div class="dashline">
-                word
+                 <p style="color: #CD0000;font-size: 20px">shanghai</p>
+                 <p style="color:#8C8C8C;font-size:10px">bbbbbbbbbbbbbbbbbb</p>
+                 <p style="color:#8C8C8C;font-size:10px">bbbbbbbbbbbbbbbbbb</p>
             </div>
         </div>
         

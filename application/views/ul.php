@@ -60,6 +60,33 @@ $(function () {
                 </div>
                
             </div>
+            <div class="newborder">
+               <table class="table">
+               
+               
+               <tr>
+               <td id="td1">1</td>
+               <td id="td1">2</td>
+               <td id="td1">3</td>
+               <td id="td1">4</td>
+               </tr>
+               <tr>
+               <td id="td">1</td>
+               <td id="td">2</td>
+               <td id="td">3</td>
+               <td id="td">4</td>
+               </tr>
+               
+               
+               
+               </table>
+            <div class="dashline">
+                 xiangguanshiping
+            </div>
+            <div class="dashline">
+                vedio
+            </div>
+            </div>
             </div>
     </div>
 </div>

@@ -115,6 +115,7 @@ body {
 body {
     color: #000000;
     text-align: center;
+   
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -269,18 +270,22 @@ body {
     padding:175px;
  }
  
+
+ 
+ 
+ 
  /*
  * ul
  */
  .wrapper {
   padding: 0px;
-  width:750px;
+  width:770px;
  
   }
   #left{
   float:left;
   }
-  #left img{ width:386px; height:320px
+  #left img{ width:395px; height:328px
   }
   #right{
   margin-left:34%;
@@ -350,5 +355,45 @@ body {
   .callbacks_nav {
     top: 100%;
     }
+  }
+  
+  .table{
+  width:100%;
+  }
+  #td1{
+  background-color: #C4C4C4;
+  border: 1px solid #FFF;
+  height: 50px;
+  }
+  #td{
+ 
+  border: 1px solid #C4C4C4;
+  }
+  
+   /*
+ * music
+ */
+ .wrapper1{
+ padding: 0px;
+  width:auto;
+ }
+  #td2{
+  width:auto;
+  background-color: #C4C4C4;
+  border: 1px solid #FFF;
+  height: 50px;
+  }
+   #td3{
+  width:auto;
+  
+  border: 1px solid #FFF;
+  height: 50px;
+  }
+  
+  
+  .music_more{
+  width:auto;
+  height:300px;
+  
   }
  
