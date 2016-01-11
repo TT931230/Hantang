@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
             <div class="subtitle">
-                   hezuohuoban                                 
+                   合作伙伴                                 
             </div>
             <div class="partnerimg">
                image

@@ -22,8 +22,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 vedio
             </div>
              <div class="plat-subtitle">
-                image
+                <img src="bootstrap/images/jz.jpg"></img>
             </div>
+            <div>1</div>
+               <div class="plat-subtitle">
+                <img src="bootstrap/images/wd.png"></img>
+            </div>
+            <div>2</div>
             
         </div>
         
