@@ -1,4 +1,9 @@
 <?php
+$lang['search']='搜索';
+$lang['language']='语言选择';
+$lang['introduce']='公司简介';
+$lang['platform']='播出平台';
+$lang['partner']='合作伙伴';
 $lang['home']='首页';
 $lang['about']='关于汉唐';
 $lang['ul']='《极致》';

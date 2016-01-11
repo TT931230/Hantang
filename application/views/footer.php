@@ -7,10 +7,22 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="cover-container">
-    <div class="clearfix newborder">
+    <div class="clearfix">
         <div class="inner">
-            <div class="newborder">
+            <div class="footerleftdiv">
                 foot
+            </div>
+            <div class="footerleftdiv">
+                foot
+            </div>
+            <div class="footerleftdiv">
+                foot
+            </div>
+            <div class="footerleftdiv">
+                foot
+            </div>
+            <div class="footerrightdiv">
+                sth else
             </div>
         </div>
     </div>

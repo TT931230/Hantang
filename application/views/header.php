@@ -34,7 +34,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <nav>
                 <ul class="nav masthead-nav">
                     <li><a href="/home" class="{homenav}">{home}</a></li>
-                    <li><a href="/about" class="{aboutnav}">{about}</a></li>
+                    <li>
+                        <a href="#" class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
+                        <ul class="dropdown-menu dropdownmenucust">
+                            <li><a href="#">{introduce}</a></li>
+                            <li><a href="#">{platform}</a></li>
+                            <li><a href="#">{partner}</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/ul" class="{ulnav}">{ul}</a></li>
                     <li><a href="/awoe" class="{awoenav}">{awoe}</a></li>
                     <li><a href="/music" class="{musicnav}">{music}</a></li>

@@ -1,6 +1,23 @@
 /*
  * Globals
  */
+.dropdownmenucust{
+    border: #bbbbbb;
+    border-radius: 0px;
+    background-color: #bbbbbb;
+}
+.footerrightdiv{
+    display:inline;
+    float:right;
+    width: 300px;
+}
+.footerleftdiv{
+    display:inline;
+    float:left;
+    width:150px;
+    border-right: 1px solid #bbbbbb;
+}
+
 .newborder{
     border: 1px solid #bbbbbb;
     margin-bottom: 0;
@@ -8,19 +25,31 @@
     padding:0;
 }
 .language{
+    padding:0px;
+    margin-left: 15px;
+    margin-top:-7px;
     float:left;
 }
 .search{
+    margin-right:15px;
+    margin-top: -7px;
+    float:right;
+}
+.searcharea{
+    margin-top: -7px;
     float:right;
 }
 
 .dropdowncust{
+    text-decoration: none;
     color:#000;
 }
 .dropdowncust:focus{
+    text-decoration: none;
     color:#000;
 }
 .dropdowncust:hover{
+    text-decoration: none;
     color:#000;
 }
 
@@ -74,7 +103,7 @@ body {
 
 /* Padding for spacing */
 .inner {
-    padding: 30px;
+    padding: 15px;
 }
 
 
