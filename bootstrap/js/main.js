@@ -39,3 +39,28 @@ function $use(elementid){
         $D2(elementid);
     }
 }
+
+function $addcontent(oid){
+    var div=$('searchdetailarea');
+    var checkbox=$(oid);
+    var div2 = document.createElement("span");
+    div2.id =oid+checkbox.value;
+    div2.className = 'searchcontentdiv';
+    div2.innerHTML=checkbox.value+"<span class='glyphicon glyphicon-remove iconcust'/>";
+    div.appendChild(div2);
+}
+function $removecontent(oid){
+    var div=$('searchdetailarea');
+    var checkbox=$(oid);
+    var div2 =$(oid+checkbox.value);
+    div.removeChild(div2);
+}
+
+function $searchcontent(oid){
+    var checkbox=$(oid);
+    if(checkbox.checked){
+        $addcontent(oid);
+    }else{
+        $removecontent(oid);
+    }
+}
