@@ -17,3 +17,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 
+<div class="cover-container">
+    <div class="clearfix newborder">
+        <div class="inner">
+            <div class="subtitle">
+                   gongsijianjie                                 
+            </div>
+            <div class="dashline">
+                vedio
+            </div>           
+             <div class="dashline">
+                word
+            </div>
+             <div class="dashline">
+                word
+            </div>
+             <div class="dashline">
+                word
+            </div>
+             <div class="dashline">
+                word
+            </div>
+             <div class="dashline">
+                word
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
