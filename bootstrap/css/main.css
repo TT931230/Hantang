@@ -1,6 +1,11 @@
 /*
  * Globals
  */
+#class1content {
+    background-color: #bbbbbb;
+    overflow:hidden;
+    display:none;
+}
 .dropdownmenucust{
     border: #bbbbbb;
     border-radius: 0px;
@@ -52,7 +57,34 @@
     text-decoration: none;
     color:#000;
 }
+.searchdetail{
+    text-decoration: none;
+    color:#000;
+}
+.searchdetail:focus{
+    text-decoration: none;
+    color:#000;
+}
+.searchdetail:hover{
+    text-decoration: none;
+    color:#000;
+}
+.searchdetailarea{
+    text-align:left;
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-bottom: 2px dotted #777;
+}
+.searchcontentarea{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align:left;
 
+}
 /* Links */
 a,
 a:focus,

@@ -58,5 +58,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/bootstrap/jquery/jquery-1.12.0.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrap/js/main.js"></script>
 </body>
 </html>
