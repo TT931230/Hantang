@@ -27,25 +27,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 
-<div class="site-wrapper">
-        <div class="cover-container">
-            <div class="clearfix newborder">
-                <div class="inner">
-                    <h3 class="masthead-brand">Cover</h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li><a href="/home" class="{homenav}">{home}</a></li>
-                            <li><a href="/about" class="{aboutnav}">{about}</a></li>
-                            <li><a href="/ul" class="{ulnav}">{ul}</a></li>
-                            <li><a href="/awoe" class="{awoenav}">{awoe}</a></li>
-                            <li><a href="/music" class="{musicnav}">{music}</a></li>
-                            <li><a href="/join" class="{joinnav}">{join}</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+<div class="cover-container">
+    <div class="clearfix newborder">
+        <div class="inner">
+            <h3 class="masthead-brand">Cover</h3>
+            <nav>
+                <ul class="nav masthead-nav">
+                    <li><a href="/home" class="{homenav}">{home}</a></li>
+                    <li><a href="/about" class="{aboutnav}">{about}</a></li>
+                    <li><a href="/ul" class="{ulnav}">{ul}</a></li>
+                    <li><a href="/awoe" class="{awoenav}">{awoe}</a></li>
+                    <li><a href="/music" class="{musicnav}">{music}</a></li>
+                    <li><a href="/join" class="{joinnav}">{join}</a></li>
+                </ul>
+            </nav>
         </div>
+    </div>
 </div>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

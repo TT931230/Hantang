@@ -7,13 +7,11 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="site-wrapper">
-    <div class="cover-container">
-        <div class="clearfix newborder">
-            <div class="inner">
-                <div class="newborder">
-                    hhh
-                </div>
+<div class="cover-container">
+    <div class="clearfix newborder">
+        <div class="inner">
+            <div class="newborder">
+                hhh
             </div>
         </div>
     </div>
