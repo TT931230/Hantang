@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: TT
+ * Date: 2016/1/12
+ * Time: 14:33
+ */
 $lang['commit']='commit';
 $lang['inputtip']='Please input the keyword';
 $lang['seniorsearch']='高级搜索';
@@ -7,8 +13,8 @@ $lang['language']='Language';
 $lang['introduce']='公司简介';
 $lang['platform']='播出平台';
 $lang['partner']='合作伙伴';
-$lang['home']='首页';
-$lang['about']='关于汉唐';
+$lang['home']='Page d’accueil';
+$lang['about']='À propos de nous';
 $lang['ul']='《极致》';
 $lang['awoe']='《问鼎世界》';
 $lang['music']='国际音乐节';

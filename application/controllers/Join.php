@@ -8,9 +8,15 @@
 class Join extends CI_Controller
 {
     function index(){
+        $this->load->library('session');
         $this->load->library('parser');
-        $this->lang->load('test','zn');
+        if($this->session->language){
+            $this->lang->load('test',$this->session->language);
+        }else{
+            $this->lang->load('test','zn');
+        }
         $data = array(
+            'url' => '/join',
             'home' => $this->lang->line('home'),
             'about' => $this->lang->line('about'),
             'ul' => $this->lang->line('ul'),
@@ -77,6 +83,11 @@ class Join extends CI_Controller
         $this->parser->parse('search',$data);
         $this->parser->parse('join',$data);
         $this->parser->parse('footer',$data);
+    }
+    function Changelanguage($language){
+        $this->load->library('session');
+        $this->session->set_userdata('language',$language);
+        $this->index();
     }
 
 }
