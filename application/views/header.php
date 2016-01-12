@@ -37,9 +37,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li>
                         <a href="#" class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
                         <ul class="dropdown-menu dropdownmenucust">
-                            <li><a href="#">{introduce}</a></li>
-                            <li><a href="#">{platform}</a></li>
-                            <li><a href="#">{partner}</a></li>
+                            <li><a href="/about">{introduce}</a></li>
+                            <li><a href="/platform">{platform}</a></li>
+                            <li><a href="/partner">{partner}</a></li>
                         </ul>
                     </li>
                     <li><a href="/ul" class="{ulnav}">{ul}</a></li>
