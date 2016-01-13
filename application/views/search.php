@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="#" class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</a>
             <ul class="dropdown-menu dropdownmenucust">
                 <li><a href="{url}/changelanguage/zn">中文</a></li>
-                <li><a href="{url}/changelanguage/english">English</a></li>
+                <li><a href="{url}/changelanguage/en">English</a></li>
                 <li><a href="{url}/changelanguage/fr">Français</a></li>
             </ul>
         </div>
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="class1content" style="display:none;" class="cover-container">
     <div class="searchdetailarea" id="searchdetailarea">
         {seniorsearch}<input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent"><a href="#" class="searchdetail" id="searchcommit" role="button" onclick="">{commit}</a>
-        <a href="#" class="dropdowncust" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-search"></i> {reset}</a>
+        <a href="#" class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> {reset}</a>
     </div>
     <div class="searchdetailarea">
         <a href="#" class="searchdetail" role="button" onclick="$use('class2content')"><i class="glyphicon glyphicon-search"></i> {brandname}</a>

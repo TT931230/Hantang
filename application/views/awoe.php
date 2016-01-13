@@ -13,13 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="cover-container">
     <div class="clearfix newborder">
-        <div class="inner">
-            <div class="newborder">
-                hhh
-            </div>
-            
-        </div>
-        
             <div class="inner">
             <div class="newborder">
                
