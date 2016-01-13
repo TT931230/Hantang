@@ -157,5 +157,8 @@ class Join extends CI_Controller
         $this->session->set_userdata('language',$language);
         $this->index();
     }
+    function getJobInfo(){
+        echo($_POST['jobname']);
+    }
 
 }

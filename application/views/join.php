@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <source src="video/test.webm" type="video/webm" />
                     </video>
                 </div>
-                <div class="dashline ">
+                <div>
                     <nav>
                         <ul class="nav masthead-nav navcust">
                         {department}
@@ -29,20 +29,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <a href="#" class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{departmentname}</a>
                                 <ul class="dropdown-menu dropdownmenucust dropdowndepart">
                                     {job}
-                                        <li><a href="/join/detail/{jobname}">{jobname}</a></li>
+                                        <li><a href="#" onclick="$departmentajax('{jobname}')">{jobname}</a></li>
                                     {/job}
                                 </ul>
                             </li>
                         {/department}
                         </ul>
-                        </nav>
+                    </nav>
                 </div>
                 <div class="dashline">
-                    <div class="music_more">
-                        <span>
-                        </span>
-                        <span>
-                        </span>
+                    <div class="departmentdetailarea" id="departmentdetailarea">
+
                     </div>
                 </div>
             </div>

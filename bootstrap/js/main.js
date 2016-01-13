@@ -79,3 +79,22 @@ function $reset(){
         }
     }
 }
+
+function $departmentajax(jobname){
+    $.ajax({
+        type:"post",
+        data: "jobname=" + jobname,
+        url:"Join/getJobInfo",
+        success: function(result)
+        {
+            $("#departmentdetailarea").html(result);
+
+        },
+
+        error: function()
+        {
+            $("#departmentdetailarea").html('error');
+            alert("ajax error");
+        }
+    });
+}
