@@ -56,10 +56,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                
                </table>
             <div class="dashline">
-                 xiangguanshiping
+            <div class="videoslug">
+            相关视频
+            </div>
+                
             </div>
             <div class="dashline">
-                vedio
+                video
             </div>
             </div>
             </div>

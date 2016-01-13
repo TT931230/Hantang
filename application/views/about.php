@@ -14,7 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   公司简介                              
             </div>
             <div class="dashline">
-                vedio
+                <video controls="controls" autoplay=true>
+                        <source src="video/test.mp4" type="video/mp4" />
+                        <source src="video/test.ogv" type="video/ogg" />
+                        <source src="video/test.webm" type="video/webm" />
+                    </video>
             </div>
                        
              <div class="dashline">
