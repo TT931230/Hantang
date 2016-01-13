@@ -15,6 +15,73 @@ class Join extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+        $department = array(
+            array('departmentname' => '编辑部','job'=>array(
+                array('jobname'=>'编辑'),
+                array('jobname'=>'编辑2')
+            )
+            ),
+            array('departmentname' => '客户部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '翻译部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '数据库','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '后期剪辑部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '音乐部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '创意部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '动画特效部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '人事部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '管理部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '网络技术部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '雨嘉科技','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            ),
+            array('departmentname' => '新媒体事业部','job'=>array(
+                array('jobname'=>'客服1'),
+                array('jobname'=>'客服2')
+            )
+            )
+        );
         $data = array(
             'url' => '/join',
             'home' => $this->lang->line('home'),
@@ -37,6 +104,7 @@ class Join extends CI_Controller
             'inputtip' => $this->lang->line('inputtip'),
             'commit' => $this->lang->line('commit'),
             'reset' =>  $this->lang->line('reset'),
+            'department' => $department,
             'search_brandname' => array(
                 array('oid' => '100001', 'content' => '品牌1'),
                 array('oid' => '100002', 'content' => '品牌2'),

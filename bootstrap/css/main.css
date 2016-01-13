@@ -11,6 +11,24 @@
     border-radius: 0px;
     background-color: #bbbbbb;
 }
+.dropdownmenucust li{
+    width:100%!important;
+}
+.dropdowndepart{
+    width:100%;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+.navcust{
+    width:100%;
+    float:left !important;
+}
+.navcust li{
+    width:20%;
+    margin-left:0px!important;
+    margin-right:0px!important;
+ }
 .footerrightdiv{
     display:inline;
     float:right;
@@ -406,10 +424,24 @@ body {
    /*
  * music
  */
- .wrapper1{
+ .imagearea{
  padding: 0px;
   width:auto;
  }
+.imagearea img{
+    padding: 0px;
+    width:100%;
+    height:100%
+}
+.videoarea{
+    padding: 0px;
+    width:auto;
+}
+.videoarea video{
+    padding: 0px;
+    width:100%;
+    height:100%
+}
   #td2{
   width:auto;
   background-color: #C4C4C4;
