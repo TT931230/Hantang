@@ -116,6 +116,7 @@ body {
     color: #000000;
     text-align: center;
     font-family:Microsoft YaHei;
+    margin:50px;
    
 }
 
@@ -282,22 +283,35 @@ body {
  */
  .wrapper {
   padding: 0px;
-  width:770px;
+  width:auto;
+  height:400px;
+  
  
   }
   #left{
+  margin:0px;
   float:left;
+  width:30%;
+  height:400px;
+  
   }
-  #left img{ width:395px; height:328px
+ #left img{
+ margin-top:40px;  
+ height:200px;
+ width:auto;
+
   }
   #right{
-  margin-left:34%;
+  margin-left:30%;
+  width:auto;
+  
   }
+ 
   /* Callback example */
 
 
 .callbacks_container {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   position: relative;
   float: right;
   width: 100%;
@@ -323,8 +337,8 @@ body {
   display: block;
   position: relative;
   z-index: 1;
-  height: auto;
-  width:100%;
+  height: 400px;
+  width:auto;
   border: 0;
   }
 
@@ -360,6 +374,54 @@ body {
     }
   }
   
+  
+  
+   /*
+ * music
+ */
+
+ .musicwrapper{
+ padding:0px; 
+ height:500px;
+ margin: 0;
+ }
+  /* Callback example */
+ .music_callbacks_container {
+  margin-bottom: 0px;
+  position: relative;
+  float: right;
+  width: 100%;
+  height:500px;
+  }
+ 
+ .musiccallbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.musiccallbacks li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+ 
+ .musiccallbacks img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 500px;
+  width: 100%;
+  border: 0;
+  }
+ 
+  
+  
+  
   .table{
   width:100%;
   }
@@ -372,14 +434,6 @@ body {
  
   border: 1px solid #C4C4C4;
   }
-  
-   /*
- * music
- */
- .wrapper1{
- padding: 0px;
-  width:auto;
- }
   #td2{
   width:auto;
   background-color: #C4C4C4;
@@ -412,4 +466,25 @@ body {
   .plat-subtitle img{
   height:80px;
   }
+  
+      /*
+ * home
+ */
+ .homeborder{
+ padding:0px;
+ 
+ height:400px;
+ margin:20px 0;
+
+ }
+ 
+ .homewrapper1{
+  height:500px;
+  width:auto;
+ }
+ .homewrapper2{
+
+  width:auto;
+  height:400px;
+ }
  

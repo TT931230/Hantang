@@ -8,28 +8,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <script type="text/javascript" src="bootstrap/jquery/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/jquery/carousel.js"></script>
 <script type="text/javascript" src="bootstrap/js/responsiveslides.min.js"></script>
-<script type="text/javascript">
-// You can also use "$(window).load(function() {"
-$(function () {
 
-  // Slideshow 4
-  $("#slider4").responsiveSlides({
-	auto: false,
-	pager: false,
-	nav: true,
-	speed: 500,
-	namespace: "callbacks",
-	before: function () {
-	  $('.events').append("<li>before event fired.</li>");
-	},
-	after: function () {
-	  $('.events').append("<li>after event fired.</li>");
-	}
-  });
-
-});
-</script>
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
@@ -42,11 +23,11 @@ $(function () {
             <div class="inner">
             <div class="newborder">
                
-                <div id="left"><img src="bootstrap/images/test.png" hight="100px"></img></div>
+                <div id="left" style="background-color:#0F366A"><img src="bootstrap/images/wd.png" ></img></div>
                 <div id="right">
                <div class="wrapper">
 	                <div class="callbacks_container">
-		                <ul class="rslides" id="slider4">
+		                <ul class="rslides" id="carousel">
 			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
 			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
 			               <li><img src="bootstrap/images/3.jpg" alt=""></li>

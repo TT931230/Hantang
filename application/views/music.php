@@ -8,43 +8,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <script type="text/javascript" src="bootstrap/jquery/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/jquery/carousel.js"></script>
 <script type="text/javascript" src="bootstrap/js/responsiveslides.min.js"></script>
 
-<script type="text/javascript">
-// You can also use "$(window).load(function() {"
-$(function () {
 
-  // Slideshow 4
-  $("#slider4").responsiveSlides({
-	auto: false,
-	pager: false,
-	nav: true,
-	speed: 500,
-	namespace: "callbacks",
-	before: function () {
-	  $('.events').append("<li>before event fired.</li>");
-	},
-	after: function () {
-	  $('.events').append("<li>after event fired.</li>");
-	}
-  });
-
-});
-</script>
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="newborder">
-                hhh
-            </div>
+           
             
             <div class="newborder">
                
                 
               
-               <div class="wrapper1">
-	                <div class="callbacks_container">
-		                <ul class="rslides" id="slider4">
+               <div class="musicwrapper">
+	                <div class="music_callbacks_container">
+		                <ul class="rslides" id="carousel">
 			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
 			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
 			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
@@ -59,7 +38,7 @@ $(function () {
                
                <td id="td2">3</td>
                <td id="td3">4</td>
-               </td>
+               
                </tr>          
                </table>
             </div>
