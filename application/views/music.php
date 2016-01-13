@@ -21,8 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                
                 
               
-               <div class="musicwrapper">
-	                <div class="music_callbacks_container">
+               <div class="wrapper">
+	                <div class="callbacks_container">
 		                <ul class="rslides" id="carousel">
 			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
 			               <li><img src="bootstrap/images/2.jpg" alt=""></li>

@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <h3 class="masthead-brand">Cover</h3>
+            <h3 class="masthead-brand"><img src="bootstrap/images/logo.png"/></h3>
             <nav>
                 <ul class="nav masthead-nav">
                     <li><a href="/home" class="{homenav}">{home}</a></li>

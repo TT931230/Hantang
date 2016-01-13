@@ -11,24 +11,6 @@
     border-radius: 0px;
     background-color: #bbbbbb;
 }
-.dropdownmenucust li{
-    width:100%!important;
-}
-.dropdowndepart{
-    width:100%;
-    margin-top:0px;
-    margin-left:0px;
-    margin-right:0px;
-}
-.navcust{
-    width:100%;
-    float:left !important;
-}
-.navcust li{
-    width:20%;
-    margin-left:0px!important;
-    margin-right:0px!important;
- }
 .footerrightdiv{
     display:inline;
     float:right;
@@ -60,6 +42,7 @@
 }
 .searcharea{
     margin-top: -7px;
+    margin-right:20px;
     float:right;
 }
 
@@ -101,37 +84,7 @@
     margin-top: 10px;
     margin-bottom: 5px;
     text-align:left;
-}
-.resetsearch{
-    color:#ddd;
-    margin-left:10px;
-    text-decoration: none;
-}
-.resetsearch:focus{
-    color:#ddd;
-    margin-left:10px;
-    text-decoration: none;
-}
-.resetsearch:hover{
-    color:#ddd;
-    margin-left:10px;
-    text-decoration: none;
-}
-.searchcontent{
-    display:inline-block;
-    width:150px;
-}
-.searchcontentdiv{
-    display:inline-block;
-    width:150px;
-    color:#ddd;
-    border:1px solid #ddd;
-    margin-left: 10px;
-    margin-right:10px;
-}
-.iconcust{
-    float:right;
-    color:#ddd;
+
 }
 /* Links */
 a,
@@ -164,7 +117,7 @@ body {
     color: #000000;
     text-align: center;
     font-family:Microsoft YaHei;
-    margin:50px;
+    margin:20px;
    
 }
 
@@ -182,11 +135,13 @@ body {
 .cover-container {
     margin-right: auto;
     margin-left: auto;
+    
 }
 
 /* Padding for spacing */
 .inner {
-    padding: 15px;
+    padding-top:10px;
+    padding-bottom: 15px;
 }
 
 
@@ -196,6 +151,8 @@ body {
 .masthead-brand {
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left:35px;
+    text-align: center;
 }
 
 .masthead-nav > li {
@@ -205,18 +162,21 @@ body {
     margin-left: 20px;
 }
 .masthead-nav > li > a {
-    padding-right: 0;
+	padding-top:35px;
+    padding-right: 30px;
     padding-left: 0;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 10px;
+    font-weight: 500;
     color: #fff; /* IE8 proofing */
     color: rgba(0,0,0,1);
-    border-bottom: 5px solid transparent;
+    border-bottom: 4px solid transparent;
 }
 .masthead-nav > li > a.active {
     background-color: transparent;
     border-bottom-color: #a9a9a9;
     border-bottom-color: rgba(200,200,200,1);
+   
+    
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
@@ -250,7 +210,7 @@ body {
 }
 .cover .btn-lg {
     padding: 10px 20px;
-    font-weight: bold;
+    font-weight: 200;
 }
 
 
@@ -329,29 +289,47 @@ body {
  /*
  * ul
  */
+
  .wrapper {
   padding: 0px;
-  width:auto;
+  width:100%;
   height:400px;
+
   
  
   }
   #left{
-  margin:0px;
+  margin:0;
   float:left;
   width:30%;
   height:400px;
   
+  
   }
  #left img{
- margin-top:40px;  
+ margin-top:100px;  
  height:200px;
+ width:auto;
+
+  }
+ 
+  #left-music{
+  margin:0;
+  float:left;
+  width:30%;
+  height:400px;
+  
+  
+  }
+ #left-music img{
+ margin-top:120px;  
+ height:120px;
  width:auto;
 
   }
   #right{
   margin-left:30%;
-  width:auto;
+  width:70%;
   
   }
  
@@ -429,9 +407,10 @@ body {
  */
 
  .musicwrapper{
- padding:0px; 
+padding:0px;
+ 
  height:500px;
- margin: 0;
+ margin:20px 0;
  }
   /* Callback example */
  .music_callbacks_container {
@@ -439,7 +418,6 @@ body {
   position: relative;
   float: right;
   width: 100%;
-  height:500px;
   }
  
  .musiccallbacks {
@@ -463,10 +441,39 @@ body {
   position: relative;
   z-index: 1;
   height: 500px;
-  width: 100%;
+  width:auto;
   border: 0;
   }
- 
+  .musiccallbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 60%;
+  left: 0;
+  opacity: 0.3;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("themes.gif") no-repeat left top;
+  margin-top: -45px;
+  }
+
+.musiccallbacks_nav:active {
+  opacity: 1.0;
+  }
+
+.musiccallbacks_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+  }
+@media screen and (max-width:600px) {
+  .muscallbacks_nav {
+    top: 100%;
+    }
+  }
   
   
   
@@ -482,20 +489,6 @@ body {
  
   border: 1px solid #C4C4C4;
   }
- padding: 0px;
-  width:auto;
- }
-.imagearea img{
-    padding: 0px;
-    width:100%;
-    height:100%
-}
-.videoarea{
-.videoarea video{
-    padding: 0px;
-    width:100%;
-    height:100%
-}
   #td2{
   width:auto;
   background-color: #C4C4C4;
@@ -534,7 +527,7 @@ body {
  */
  .homeborder{
  padding:0px;
- 
+ width:100%;
  height:400px;
  margin:20px 0;
 

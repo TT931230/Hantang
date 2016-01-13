@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="inner">
             <div class="newborder">
                
-                <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.jpg" ></img></div>
+                <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.png" ></img></div>
                 <div id="right">
                <div class="wrapper">
 	                <div class="callbacks_container">
@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	               </div>
 	           </div>
                 </div>
+                
                
             </div>
             <div class="newborder">

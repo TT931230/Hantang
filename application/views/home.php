@@ -21,8 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      
             <div class="inner">
             
-                      
-               <div class="musicwrapper">
+                <div class="homeborder">      
+               <div class="homewrapper1">
 	                <div class="callbacks_container">
 		                <ul class="rslides" id="carousel1">
 			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
@@ -30,12 +30,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
 		               </ul>
 	               </div>
-	           </div>	                           
+	           </div></div>	                           
             
             
           
                 <div class="homeborder">
-                 <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.jpg" ></img></div>
+                 <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.png" ></img></div>
                 <div id="right">
                <div class="homewrapper2">
 	                <div class="callbacks_container">
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             
             <div class="homeborder">              
-                  <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.jpg" ></img></div>
+                  <div id="left-music" style="background-color:#c8c8c8"><img src="bootstrap/images/music.png" ></img></div>
                 <div id="right">
                <div class="homewrapper2">
 	                <div class="callbacks_container">
