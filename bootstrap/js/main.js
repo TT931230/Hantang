@@ -50,7 +50,7 @@ function $removesingle(id){
 function $addcontent(oid){
     var div=$a('searchdetailarea');
     var checkbox=$a(oid);
-    div.innerHTML +="<div id='"+oid+"___"+checkbox.value+"' class='searchcontentdiv' onclick='$removesingle(\""+oid+"___"+checkbox.value+"\")'>"+checkbox.value+"<span class='glyphicon glyphicon-remove iconcust'></span></div>";
+    div.innerHTML +="<span id='"+oid+"___"+checkbox.value+"' class='searchcontentdiv' onclick='$removesingle(\""+oid+"___"+checkbox.value+"\")'>"+checkbox.value+"<span class='glyphicon glyphicon-remove iconcust'></span></span>";
 }
 function $removecontent(oid){
     var div=$a('searchdetailarea');

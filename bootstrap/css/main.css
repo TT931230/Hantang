@@ -83,7 +83,37 @@
     margin-top: 10px;
     margin-bottom: 5px;
     text-align:left;
-
+}
+.resetsearch{
+    color:#ddd;
+    margin-left:10px;
+    text-decoration: none;
+}
+.resetsearch:focus{
+    color:#ddd;
+    margin-left:10px;
+    text-decoration: none;
+}
+.resetsearch:hover{
+    color:#ddd;
+    margin-left:10px;
+    text-decoration: none;
+}
+.searchcontent{
+    display:inline-block;
+    width:150px;
+}
+.searchcontentdiv{
+    display:inline-block;
+    width:150px;
+    color:#ddd;
+    border:1px solid #ddd;
+    margin-left: 10px;
+    margin-right:10px;
+}
+.iconcust{
+    float:right;
+    color:#ddd;
 }
 /* Links */
 a,
