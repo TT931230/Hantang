@@ -15,12 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="dashline">
                 <video controls="controls" autoplay=true>
-                        <source src="video/test.mp4" type="video/mp4" />
-                        <source src="video/test.ogv" type="video/ogg" />
-                        <source src="video/test.webm" type="video/webm" />
-                    </video>
+                    {video}
+                    <source src="{source_location}" type="{type}" />
+                    {/video}
+                </video>
             </div>
-                       
              <div class="dashline">
                 <p style="color: #CD0000;font-size: 18px;font-weight:550;margin-top:40px">上海汉唐文化发展有限公司简介</p>
                 <p style="color: #636363;font-size:10px;margin-top:30px">上海汉唐文化发展有限公司成立于2003年，是一家拥有360°跨媒体平台的媒体企业，</p>

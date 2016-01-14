@@ -17,9 +17,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <div class="homewrapper1">
 	                <div class="callbacks_container">
 		                <ul class="rslides" id="carousel1">
-			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
+                            {imagearea1}
+                            <li><img src={source_location} alt=""></li>
+                            {/imagearea1}
 		               </ul>
 	               </div>
 	           </div>

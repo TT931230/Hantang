@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="inner newborder">
         <div class="radio-inline language">
-            <a href="#" class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</a>
+            <a href="#" class="dropdown dropdowncust aaaa" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</a>
             <ul class="dropdown-menu dropdownmenucust">
                 <li><a href="{url}/changelanguage/zn">中文</a></li>
                 <li><a href="{url}/changelanguage/en">English</a></li>

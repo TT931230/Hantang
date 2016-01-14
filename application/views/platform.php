@@ -10,16 +10,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="newborder">
             <video controls="controls" autoplay=true>
-                <source src="video/test.mp4" type="video/mp4" />
-                <source src="video/test.ogv" type="video/ogg" />
-                <source src="video/test.webm" type="video/webm" />
+                {imagearea1}
+                <li><img src={source_location} alt=""></li>
+                {/imagearea1}
             </video>
         </div>
         <div class="plat-subtitle platform-sub">
-            <img src="bootstrap/images/jz.png">
+            {imagearea2}
+            <img src={source_location} alt="">
+            {/imagearea2}
         </div>
         <div class="plat-subtitle platform-sub">
-            <img src="bootstrap/images/wd.png">
+            {imagearea3}
+            <img src={source_location} alt="">
+            {/imagearea3}
         </div>
         </div>
     </div>

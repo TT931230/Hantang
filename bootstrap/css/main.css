@@ -25,6 +25,9 @@
     width:25%;
     float:left;
 }
+.aaaa:hover{
+    border-bottom:5px solid #bbb;
+}
 .diftype{
     width:25%;
     float:left;
