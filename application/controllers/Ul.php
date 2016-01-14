@@ -26,6 +26,14 @@ class Ul extends CI_Controller
 
         $this->db->where('status','1');
         $this->db->where('first_level','ul');
+        $this->db->where('second_level','imagearea11');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea11 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','ul');
         $this->db->where('second_level','yeardetails');
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
@@ -119,6 +127,7 @@ class Ul extends CI_Controller
             'typetype' => '品类',
             'activetype' => '活动类型',
             'imagearea1'=>$imagearea1,
+            'imagearea11'=>$imagearea11,
             'yeardetails'=>$yeardetails,
             'locationdetails'=>$locationdetails,
             'typedetails'=>$typedetails,

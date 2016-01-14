@@ -16,7 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="inner">
             <div class="newborder">
                 <div id="left" style="background-color:#0F366A">
-                    <img src="bootstrap/images/wd.png" >
+                    {imagearea11}
+                    <img src={source_location} alt="">
+                    {/imagearea11}
                 </div>
                     <div id="right">
                         <div class="wrapper">

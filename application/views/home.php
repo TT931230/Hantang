@@ -31,7 +31,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="homeborder">
 				<div id="left" style="background-color:#541B2A">
-					<img src="bootstrap/images/jz.png" >
+					{imagearea11}
+						<img src={source_location} alt="">
+					{/imagearea11}
 				</div>
 				<div id="right">
 					<div class="homewrapper2">
@@ -47,7 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="homeborder">
 				<div id="left" style="background-color:#0F366A">
-					<img src="bootstrap/images/wd.png" >
+					{imagearea12}
+					<img src={source_location} alt="">
+					{/imagearea12}
 				</div>
 				<div id="right">
 					<div class="homewrapper2">
@@ -63,7 +67,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="homeborder">
 				<div id="left-music" style="background-color:#c8c8c8">
-					<img src="bootstrap/images/music.png" >
+					{imagearea13}
+					<img src={source_location} alt="">
+					{/imagearea13}
 				</div>
 				<div id="right">
 					<div class="homewrapper2">

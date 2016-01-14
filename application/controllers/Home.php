@@ -49,6 +49,30 @@ class Home extends CI_Controller
         $query = $this->db->get();
         $imagearea4 = $query->result_array();
 
+        $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea11');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea11 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea12');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea12 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea13');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea13 = $query->result_array();
+
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/home',
@@ -111,6 +135,9 @@ class Home extends CI_Controller
             'imagearea2'=>$imagearea2,
             'imagearea3'=>$imagearea3,
             'imagearea4'=>$imagearea4,
+            'imagearea11'=>$imagearea11,
+            'imagearea12'=>$imagearea12,
+            'imagearea13'=>$imagearea13,
             'homenav' => 'active',
             'aboutnav' =>  '',
             'ulnav' => '',
