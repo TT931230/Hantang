@@ -16,80 +16,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  
 <div class="cover-container">
-    <div class="clearfix newborder">
-     
-            <div class="inner">
-            
-                <div class="homeborder1">      
-               <div class="homewrapper1">
-	                <div class="callbacks_container">
-		                <ul class="rslides" id="carousel1">
-			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
-		               </ul>
-	               </div>
-	           </div>
-	           </div>	                           
-            
-            
-          
-                <div class="homeborder">
-                 <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.png" ></img></div>
-                <div id="right">
-               <div class="homewrapper2">
-	                <div class="callbacks_container">
-		                <ul class="rslides" id="carousel2">
-			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
-		               </ul>
-	               </div>
-	           </div>
-                </div>         
-            </div>
-           
-        
-            
-             <div class="homeborder">  
-                <div id="left" style="background-color:#0F366A"><img src="bootstrap/images/wd.png" ></img></div>
-                <div id="right">
-               <div class="homewrapper2">
-	                <div class="callbacks_container">
-		                <ul class="rslides" id="carousel3">
-			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
-		               </ul>
-	               </div>
-	           </div>
-                </div>
-            </div>
-           
-           
-              
-            
-            
-            <div class="homeborder">              
-                  <div id="left-music" style="background-color:#c8c8c8"><img src="bootstrap/images/music.png" ></img></div>
-                <div id="right">
-               <div class="homewrapper2">
-	                <div class="callbacks_container">
-		                <ul class="rslides" id="carousel4">
-			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
-		               </ul>
-	               </div>
-	           </div>
-                </div>
-               
-            </div>   
-            
-                  
-               
-            </div>
-         
-          
-            </div>
-   </div>
+	<div class="clearfix newborder">
+		<div class="inner">
+			<div class="homeborder1">
+				<div class="homewrapper1">
+					<div class="callbacks_container">
+						<ul class="rslides" id="carousel1">
+						{imagearea1}
+							<li><img src={source_location} alt=""></li>
+						{/imagearea1}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="homeborder">
+				<div id="left" style="background-color:#541B2A">
+					<img src="bootstrap/images/jz.png" >
+				</div>
+				<div id="right">
+					<div class="homewrapper2">
+						<div class="callbacks_container">
+							<ul class="rslides" id="carousel2">
+								{imagearea2}
+								<li><img src={source_location} alt=""></li>
+								{/imagearea2}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="homeborder">
+				<div id="left" style="background-color:#0F366A">
+					<img src="bootstrap/images/wd.png" >
+				</div>
+				<div id="right">
+					<div class="homewrapper2">
+						<div class="callbacks_container">
+							<ul class="rslides" id="carousel3">
+								{imagearea3}
+								<li><img src={source_location} alt=""></li>
+								{/imagearea3}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="homeborder">
+				<div id="left-music" style="background-color:#c8c8c8">
+					<img src="bootstrap/images/music.png" >
+				</div>
+				<div id="right">
+					<div class="homewrapper2">
+						<div class="callbacks_container">
+							<ul class="rslides" id="carousel4">
+								{imagearea4}
+								<li><img src={source_location} alt=""></li>
+								{/imagearea4}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

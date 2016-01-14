@@ -24,6 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Custom styles for this template -->
     <link href="/bootstrap/css/main.css" rel="stylesheet">
     <link href="/bootstrap/css/main2.css" rel="stylesheet">
+    <LINK href="/bootstrap/css/yi_base.css" type=text/css rel=stylesheet>
+    <LINK href="/bootstrap/css/yi_index.css" type=text/css rel=stylesheet>
     
     
 </head>

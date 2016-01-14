@@ -72,6 +72,42 @@ class Ul extends CI_Controller
                 array('oid' => '100024', 'content' => '时间4'),
                 array('oid' => '100025', 'content' => '时间5')
             ),
+            'yeartype' => '年份',
+            'locationtype' => '国家/地区',
+            'typetype' => '品类',
+            'activetype' => '活动类型',
+            'yeardetails' => array(
+                array('yeardetail'=>'2009'),
+                array('yeardetail'=>'2010'),
+                array('yeardetail'=>'2011'),
+                array('yeardetail'=>'2012'),
+                array('yeardetail'=>'2013'),
+                array('yeardetail'=>'2014')
+            ),
+            'locationdetails' => array(
+                array('locationdetail'=>'中国大陆'),
+                array('locationdetail'=>'港澳台'),
+                array('locationdetail'=>'法国'),
+                array('locationdetail'=>'瑞士'),
+                array('locationdetail'=>'德国'),
+                array('locationdetail'=>'英国')
+            ),
+            'typedetails' => array(
+                array('typedetail'=>'钟表'),
+                array('typedetail'=>'珠宝'),
+                array('typedetail'=>'时尚'),
+                array('typedetail'=>'音乐'),
+                array('typedetail'=>'艺术'),
+                array('typedetail'=>'电影')
+            ),
+            'activedetails' => array(
+                array('activedetail'=>'展览'),
+                array('activedetail'=>'开店'),
+                array('activedetail'=>'走秀'),
+                array('activedetail'=>'演出'),
+                array('activedetail'=>'赛事'),
+                array('activedetail'=>'其他')
+            ),
             'homenav' => '',
             'aboutnav' =>  '',
             'ulnav' => 'active',

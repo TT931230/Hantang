@@ -17,54 +17,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="cover-container">
     <div class="clearfix newborder">
-            <div class="inner">
+        <div class="inner">
             <div class="newborder">
-               
-                <div id="left" style="background-color:#541B2A"><img src="bootstrap/images/jz.png" ></img></div>
-                <div id="right">
-               <div class="wrapper">
-	                <div class="callbacks_container">
-		                <ul class="rslides" id="carousel">
-			               <li><img src="bootstrap/images/1.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/2.jpg" alt=""></li>
-			               <li><img src="bootstrap/images/3.jpg" alt=""></li>
-		               </ul>
-	               </div>
-	           </div>
+                <div id="left" style="background-color:#541B2A">
+                    <img src="bootstrap/images/jz.png" >
                 </div>
-                
-               
-            </div>
-            <div class="newborder">
-               <table class="table">
-               
-               
-               <tr>
-               <td id="td1">1</td>
-               <td id="td1">2</td>
-               <td id="td1">3</td>
-               <td id="td1">4</td>
-               </tr>
-               <tr>
-               <td id="td">1</td>
-               <td id="td">2</td>
-               <td id="td">3</td>
-               <td id="td">4</td>
-               </tr>
-               
-               
-               
-               </table>
-            <div class="dashline">
-            <div class="videoslug">
-            相关视频
-            </div>
-                
-            </div>
-            <div class="dashline">
+                <div id="right">
+                    <div class="wrapper">
+                        <div class="callbacks_container">
+                            <ul class="rslides" id="carousel">
+                            <li><img src="bootstrap/images/1.jpg" alt=""></li>
+                            <li><img src="bootstrap/images/2.jpg" alt=""></li>
+                            <li><img src="bootstrap/images/3.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="newborder">
+                    <div>
+                        <div class="diftype">
+                            <div>{yeartype}</div>
+                            <div>
+                                {yeardetails}
+                                    <span>{yeardetail}</span>
+                                {/yeardetails}
+                            </div>
+                        </div>
+                        <div class="diftype">
+                            <div>{locationtype}</div>
+                            <div>
+                                {locationdetails}
+                                <span>{locationdetail}</span>
+                                {/locationdetails}
+                            </div>
+                        </div>
+                        <div class="diftype">
+                            <div>{typetype}</div>
+                            <div>
+                                {typedetails}
+                                <span>{typedetail}</span>
+                                {/typedetails}
+                            </div>
+                        </div>
+                        <div class="diftype">
+                            <div>{activetype}</div>
+                            <div>
+                                {activedetails}
+                                <span>{activedetail}</span>
+                                {/activedetails}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashline">
+                    <div class="videoslug">
+                    相关视频
+                    </div>
+                </div>
+                <div class="dashline">
                 video
+                </div>
             </div>
-            </div>
-            </div>
+        </div>
     </div>
 </div>

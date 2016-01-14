@@ -1,6 +1,13 @@
 /*
  * Globals
  */
+.diftype{
+    width:25%;
+    float:left;
+}
+.platform-sub{
+    width:100%;
+}
 .dropdownmenucust{
     border: #bbbbbb;
     border-radius: 0px;

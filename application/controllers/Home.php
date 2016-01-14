@@ -16,6 +16,12 @@ class Home extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+        $this->db->where('status','1');
+        $this->db->where('source_type','2');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $images = $query->result_array();
         $data = array(
             'url' => '/home',
             'home' => $this->lang->line('home'),
