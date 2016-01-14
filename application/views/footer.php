@@ -10,16 +10,16 @@
     <div class="clearfix">
         <div class="inner">
             <div class="footerleftdiv">
-                foot
+                <div>{about}</div>
             </div>
             <div class="footerleftdiv">
-                foot
+                <div>{ul}</div>
             </div>
             <div class="footerleftdiv">
-                foot
+                <div>{music}</div>
             </div>
             <div class="footerleftdiv">
-                foot
+                <div>{dogandhorse}</div>
             </div>
             <div class="footerrightdiv">
                 sth else

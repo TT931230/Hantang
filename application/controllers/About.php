@@ -17,6 +17,7 @@ class About extends CI_Controller
             $this->lang->load('test','zn');
         }
         $data = array(
+            'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/about',
             'home' => $this->lang->line('home'),
             'about' => $this->lang->line('about'),

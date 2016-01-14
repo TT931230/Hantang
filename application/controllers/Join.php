@@ -90,6 +90,7 @@ class Join extends CI_Controller
             )
         );
         $data = array(
+            'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/join',
             'home' => $this->lang->line('home'),
             'about' => $this->lang->line('about'),

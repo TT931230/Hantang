@@ -16,6 +16,7 @@ class Music extends CI_Controller
             $this->lang->load('test','zn');
         }
         $data = array(
+            'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/music',
             'home' => $this->lang->line('home'),
             'about' => $this->lang->line('about'),
@@ -71,6 +72,20 @@ class Music extends CI_Controller
                 array('oid' => '100023', 'content' => '时间3'),
                 array('oid' => '100024', 'content' => '时间4'),
                 array('oid' => '100025', 'content' => '时间5')
+            ),
+            'seasontype' => '演出季',
+            'displaytype' => '演出形式',
+            'seasondetails' => array(
+                array('seasondetail' => '2013-2014'),
+                array('seasondetail' => '2014-2015'),
+                array('seasondetail' => '2015-2016')
+            ),
+            'displaydetails' => array(
+                array('displaydetail' => '合奏'),
+                array('displaydetail' => '独奏'),
+                array('displaydetail' => '室内乐'),
+                array('displaydetail' => '交响乐'),
+                array('displaydetail' => '其他')
             ),
             'homenav' => '',
             'aboutnav' =>  '',

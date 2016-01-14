@@ -19,3 +19,4 @@ $lang['location']='地点';
 $lang['keyword']='关键字';
 $lang['time']='时间';
 $lang['reset']='重新筛选';
+$lang['dogandhorse']='声色犬马';

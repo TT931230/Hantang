@@ -23,6 +23,7 @@ class Home extends CI_Controller
         $query = $this->db->get();
         $images = $query->result_array();
         $data = array(
+            'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/home',
             'home' => $this->lang->line('home'),
             'about' => $this->lang->line('about'),
