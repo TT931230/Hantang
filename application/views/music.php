@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="musictypetitle">{seasontype}</div>
                             <div class="musictypedetails">
                                 {seasondetails}
-                                <span class="musictypedetail">{seasondetail}</span>
+                                <span class="musictypedetail">{source_location}</span>
                                 {/seasondetails}
                             </div>
                         </div>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="musictypetitle">{displaytype}</div>
                             <div class="musictypedetails">
                                 {displaydetails}
-                                <span class="musictypedetail">{displaydetail}</span>
+                                <span class="musictypedetail">{source_location}</span>
                                 {/displaydetails}
                             </div>
                         </div>

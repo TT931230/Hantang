@@ -16,11 +16,39 @@ class Home extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+
         $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea1');
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
         $query = $this->db->get();
-        $images = $query->result_array();
+        $imagearea1 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea2');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea2 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea3');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea3 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','home');
+        $this->db->where('second_level','imagearea4');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea4 = $query->result_array();
+
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/home',
@@ -79,6 +107,10 @@ class Home extends CI_Controller
                 array('oid' => '100024', 'content' => '时间4'),
                 array('oid' => '100025', 'content' => '时间5')
             ),
+            'imagearea1'=>$imagearea1,
+            'imagearea2'=>$imagearea2,
+            'imagearea3'=>$imagearea3,
+            'imagearea4'=>$imagearea4,
             'homenav' => 'active',
             'aboutnav' =>  '',
             'ulnav' => '',

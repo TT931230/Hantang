@@ -16,6 +16,12 @@ class About extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+        $this->db->where('status','1');
+        $this->db->where('first_level','about');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $video = $query->result_array();
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/about',
@@ -39,6 +45,7 @@ class About extends CI_Controller
             'inputtip' => $this->lang->line('inputtip'),
             'commit' => $this->lang->line('commit'),
             'reset' =>  $this->lang->line('reset'),
+            'video'=>$video,
             'search_brandname' => array(
                 array('oid' => '100001', 'content' => '品牌1'),
                 array('oid' => '100002', 'content' => '品牌2'),
@@ -74,6 +81,7 @@ class About extends CI_Controller
                 array('oid' => '100024', 'content' => '时间4'),
                 array('oid' => '100025', 'content' => '时间5')
             ),
+            'video' => $video,
             'homenav' => '',
             'aboutnav' =>  'active',
             'ulnav' => '',

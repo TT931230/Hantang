@@ -15,6 +15,47 @@ class Ul extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','ul');
+        $this->db->where('second_level','imagearea1');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea1 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','ul');
+        $this->db->where('second_level','yeardetails');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $yeardetails = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','ul');
+        $this->db->where('second_level','locationdetails');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $locationdetails = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','ul');
+        $this->db->where('second_level','typedetails');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $typedetails = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','ul');
+        $this->db->where('second_level','activedetails');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $activedetails = $query->result_array();
+
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/ul',
@@ -77,38 +118,11 @@ class Ul extends CI_Controller
             'locationtype' => '国家/地区',
             'typetype' => '品类',
             'activetype' => '活动类型',
-            'yeardetails' => array(
-                array('yeardetail'=>'2009'),
-                array('yeardetail'=>'2010'),
-                array('yeardetail'=>'2011'),
-                array('yeardetail'=>'2012'),
-                array('yeardetail'=>'2013'),
-                array('yeardetail'=>'2014')
-            ),
-            'locationdetails' => array(
-                array('locationdetail'=>'中国大陆'),
-                array('locationdetail'=>'港澳台'),
-                array('locationdetail'=>'法国'),
-                array('locationdetail'=>'瑞士'),
-                array('locationdetail'=>'德国'),
-                array('locationdetail'=>'英国')
-            ),
-            'typedetails' => array(
-                array('typedetail'=>'钟表'),
-                array('typedetail'=>'珠宝'),
-                array('typedetail'=>'时尚'),
-                array('typedetail'=>'音乐'),
-                array('typedetail'=>'艺术'),
-                array('typedetail'=>'电影')
-            ),
-            'activedetails' => array(
-                array('activedetail'=>'展览'),
-                array('activedetail'=>'开店'),
-                array('activedetail'=>'走秀'),
-                array('activedetail'=>'演出'),
-                array('activedetail'=>'赛事'),
-                array('activedetail'=>'其他')
-            ),
+            'imagearea1'=>$imagearea1,
+            'yeardetails'=>$yeardetails,
+            'locationdetails'=>$locationdetails,
+            'typedetails'=>$typedetails,
+            'activedetails'=>$activedetails,
             'homenav' => '',
             'aboutnav' =>  '',
             'ulnav' => 'active',

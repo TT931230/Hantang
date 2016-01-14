@@ -16,6 +16,31 @@ class Platform extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','platform');
+        $this->db->where('second_level','imagearea1');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea1 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','platform');
+        $this->db->where('second_level','imagearea2');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea2 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','platform');
+        $this->db->where('second_level','imagearea3');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea3 = $query->result_array();
+
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/platform',
@@ -39,6 +64,9 @@ class Platform extends CI_Controller
             'inputtip' => $this->lang->line('inputtip'),
             'commit' => $this->lang->line('commit'),
             'reset' =>  $this->lang->line('reset'),
+            'imagearea1'=>$imagearea1,
+            'imagearea2'=>$imagearea2,
+            'imagearea3'=>$imagearea3,
             'search_brandname' => array(
                 array('oid' => '100001', 'content' => '品牌1'),
                 array('oid' => '100002', 'content' => '品牌2'),

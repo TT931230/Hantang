@@ -15,6 +15,31 @@ class Music extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','music');
+        $this->db->where('second_level','imagearea1');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea1 = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','music');
+        $this->db->where('second_level','seasondetails');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $seasondetails = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','music');
+        $this->db->where('second_level','displaydetails');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $displaydetails = $query->result_array();
+
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/music',
@@ -75,18 +100,9 @@ class Music extends CI_Controller
             ),
             'seasontype' => '演出季',
             'displaytype' => '演出形式',
-            'seasondetails' => array(
-                array('seasondetail' => '2013-2014'),
-                array('seasondetail' => '2014-2015'),
-                array('seasondetail' => '2015-2016')
-            ),
-            'displaydetails' => array(
-                array('displaydetail' => '合奏'),
-                array('displaydetail' => '独奏'),
-                array('displaydetail' => '室内乐'),
-                array('displaydetail' => '交响乐'),
-                array('displaydetail' => '其他')
-            ),
+            'imagearea1'=>$imagearea1,
+            'seasondetails'=>$seasondetails,
+            'displaydetails'=>$displaydetails,
             'homenav' => '',
             'aboutnav' =>  '',
             'ulnav' => '',

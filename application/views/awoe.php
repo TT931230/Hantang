@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div>{yeartype}</div>
                             <div>
                                 {yeardetails}
-                                <span>{yeardetail}</span>
+                                <span>{source_location}</span>
                                 {/yeardetails}
                             </div>
                         </div>
@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div>{locationtype}</div>
                             <div>
                                 {locationdetails}
-                                <span>{locationdetail}</span>
+                                <span>{source_location}</span>
                                 {/locationdetails}
                             </div>
                         </div>
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div>{typetype}</div>
                             <div>
                                 {typedetails}
-                                <span>{typedetail}</span>
+                                <span>{source_location}</span>
                                 {/typedetails}
                             </div>
                         </div>
@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div>{activetype}</div>
                             <div>
                                 {activedetails}
-                                <span>{activedetail}</span>
+                                <span>{source_location}</span>
                                 {/activedetails}
                             </div>
                         </div>

@@ -16,6 +16,15 @@ class Partner extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','partner');
+        $this->db->where('second_level','imagearea1');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $imagearea1 = $query->result_array();
+
         $data = array(
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/partner',

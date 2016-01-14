@@ -16,6 +16,7 @@ class Join extends CI_Controller
             $this->lang->load('test','zn');
         }
         $this->db->where('status','1');
+        $this->db->where('first_level','join');
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
         $query = $this->db->get();
