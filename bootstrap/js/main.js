@@ -87,8 +87,60 @@ function $departmentajax(jobname){
         url:"Join/getJobInfo",
         success: function(result)
         {
-            $("#departmentdetailarea").html(result);
+            var submitbutton='<div><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">提交申请</button></div>';
+            var modal =
+            '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+                '<div class="modal-dialog">'+
+                    '<div class="modal-content">'+
+                        '<div class="modal-header">'+
+                            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+                            '<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题 </h4>'+
+                        '</div>'+
+                        '<div class="modal-body">'+
+                            '<div>发送电子邮件</div>'+
+                            '<div>如有疑问或需要帮助，请填写下面表格</div>'+
+                            '<div>填写信息</div>'+
+                            '<div><textarea id="remarkinfo"></textarea></div>'+
+                            '<div>称呼（非必须）</div>'+
+                            '<div><input type="text" name="call" id="call"></div>'+
+                            '<div>姓名<div>'+
+                            '<div><input type="text" name="name" id="name"></div>'+
+                            '<div>联系电话（非必须）</div>'+
+                            '<div><input type="text" name="phoneno" id="phoneno"></div>'+
+                            '<div>您的电子邮件地址</div>'+
+                            '<div><input type="email" name="email" id="email"></div>'+
+                        '</div>'+
+                        '<div class="modal-footer">'+
+                            '<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>'+
+                            '<button type="button" class="btn btn-primary" onclick="$ask4job(\''+jobname+'\')">发送</button>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+            $("#departmentdetailarea").html(result+submitbutton+modal);
 
+        },
+
+        error: function()
+        {
+            $("#departmentdetailarea").html('error');
+            alert("ajax error");
+        }
+    });
+}
+
+function $ask4job(jobname){
+    var remark=$('#remarkinfo').val();
+    var call=$('#call').val();
+    var name=$('#name').val();
+    var phoneno=$('#phoneno').val();
+    var email=$('#email').val();
+    $.ajax({
+        type:"post",
+        data: "jobname=" + jobname + '&remark='+remark+'&call='+call+'&name='+name+'&phoneno='+phoneno+'&email='+email,
+        url:"Join/ask4job",
+        success: function(result)
+        {
+           alert(result);
         },
 
         error: function()

@@ -15,6 +15,13 @@ class Join extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+        $this->db->where('status','1');
+        $this->db->where('source_type','1');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $video = $query->result_array();
+
         $department = array(
             array('departmentname' => '编辑部','job'=>array(
                 array('jobname'=>'编辑'),
@@ -145,7 +152,8 @@ class Join extends CI_Controller
             'ulnav' => '',
             'awoenav' => '',
             'musicnav' => '',
-            'joinnav' => 'active'
+            'joinnav' => 'active',
+            'video' => $video
         );
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
@@ -158,7 +166,34 @@ class Join extends CI_Controller
         $this->index();
     }
     function getJobInfo(){
+        $this->db->where('status','1');
+        $this->db->where('jobname',$_POST['jobname']);
+        $this->db->from('jobinfo');
+        $query = $this->db->get();
+        $jobinfo = $query->result_array();
+        $jobname=$jobinfo[0]['jobname'];
+        $todo=$jobinfo[0]['todo'];
+        $need=$jobinfo[0]['need'];
+        echo('<div>');
+        echo($jobname);
+        echo('</div>');
+        echo('<div>工作职责:</div>');
+        echo('<div>');
+        echo($todo);
+        echo('</div>');
+        echo('<div>岗位要求:</div>');
+        echo('<div>');
+        echo($need);
+        echo('</div>');
+    }
+    function ask4job(){
         echo($_POST['jobname']);
+        echo($_POST['remark']);
+        echo($_POST['call']);
+        echo($_POST['name']);
+        echo($_POST['phoneno']);
+        echo($_POST['email']);
+
     }
 
 }

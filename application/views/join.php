@@ -14,12 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    加入汉唐                                 
             </div>
             <div class="newborder">
-                
                 <div class="videoarea">
                     <video controls="controls" autoplay=true>
-                        <source src="video/test.mp4" type="video/mp4" />
-                        <source src="video/test.ogv" type="video/ogg" />
-                        <source src="video/test.webm" type="video/webm" />
+                        {video}
+                        <source src="{source_location}" type="{type}" />
+                        {/video}
                     </video>
                 </div>               
                 </div>
@@ -42,7 +41,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="dashline">
                     <div class="departmentdetailarea" id="departmentdetailarea">
-                     text
                     </div>
                 </div>
             </div>
