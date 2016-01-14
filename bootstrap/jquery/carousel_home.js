@@ -6,7 +6,7 @@ $(function () {
 	pager: false,
 	nav: true,
 	speed: 500,
-	namespace: "callbacks",
+	namespace: "music-callbacks",
 	before: function () {
 	  $('.events').append("<li>before event fired.</li>");
 	},

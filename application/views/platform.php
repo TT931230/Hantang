@@ -9,10 +9,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 播出平台
             </div>
             <div class="newborder">
-                vedio
+                <video controls="controls" autoplay=true>
+                        <source src="video/test.mp4" type="video/mp4" />
+                        <source src="video/test.ogv" type="video/ogg" />
+                        <source src="video/test.webm" type="video/webm" />
+                    </video>
             </div>
              <div class="plat-subtitle">
-                <img src="bootstrap/images/jz.jpg"></img>
+                <img src="bootstrap/images/jz.png"></img>
             </div>
             <div>1</div>
                <div class="plat-subtitle">

@@ -23,6 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/bootstrap/css/main.css" rel="stylesheet">
+    <link href="/bootstrap/css/main2.css" rel="stylesheet">
+    
+    
 </head>
 
 <body>
@@ -51,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </div>
-
+<HR style="width:1200px">
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
