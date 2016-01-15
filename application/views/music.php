@@ -27,6 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
+                </div>
                 <div class="newborder">
                     <div>
                         <div class="musictype">
@@ -55,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </span>
                     </div>
                 </div>
-            </div>
+           
         </div>
     </div>
 </div>

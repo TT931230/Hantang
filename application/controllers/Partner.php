@@ -91,6 +91,7 @@ class Partner extends CI_Controller
                 array('oid' => '100024', 'content' => '时间4'),
                 array('oid' => '100025', 'content' => '时间5')
             ),
+        	'imagearea1'=>$imagearea1,        		
             'homenav' => '',
             'aboutnav' =>  'active',
             'ulnav' => '',

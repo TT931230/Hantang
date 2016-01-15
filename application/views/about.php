@@ -14,11 +14,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   公司简介                              
             </div>
             <div class="dashline">
-                <video controls="controls" autoplay=true>
-                    {video}
-                    <source src="{source_location}" type="{type}" />
-                    {/video}
-                </video>
+                <div class="videoarea">
+                    <video controls="controls" autoplay=true>
+                        {video}
+                        <source src="{source_location}" type="{type}" />
+                        {/video}
+                    </video>
+                </div>
             </div>
              <div class="dashline">
                 <p style="color: #CD0000;font-size: 18px;font-weight:550;margin-top:40px">上海汉唐文化发展有限公司简介</p>

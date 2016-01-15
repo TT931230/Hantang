@@ -9,13 +9,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="subtitle">
             播出平台
         </div>
-        <div class="newborder">
-            <video controls="controls" autoplay=true>
-                {imagearea1}
-                <li><img src='{source_location}' alt=""></li>
-                {/imagearea1}
-            </video>
-        </div>
+        <div class="videoarea">
+                    <video controls="controls" autoplay=true>
+                        {video}
+                        <source src="{source_location}" type="{type}" />
+                        {/video}
+                    </video>
+                </div>     
         <div>
             
         </div>
