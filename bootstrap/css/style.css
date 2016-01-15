@@ -1,0 +1,142 @@
+@charset "utf-8";
+html{background:#fff;}
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+/*  HTML5  */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+fieldset, img { border:none; }
+img{vertical-align:middle;}
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+ul, li { list-style:none; }
+input{ padding:0px; font-family: "微软雅黑";}
+input::-moz-focus-inner { border:none; padding:0; }
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+input[type="text"], input[type="password"], textarea { outline-style:none; -webkit-appearance:none; }
+textarea { resize:none; }
+table { border-collapse:collapse; }
+body {color:#333; font-size:12px; font-family:"微软雅黑", "Microsoft Yahei", tahoma,arial,"Hiragino Sans GB";  background:#fff; }
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { zoom:1; }
+.clearit { clear:both; height:0; font-size:0; overflow:hidden;}
+a {color:#333333;text-decoration:none;}
+a:hover{color:#F67919; text-decoration:none;}
+.hidden{visibility:hidden;}
+.fl{ float:left;}.fr{float:right;}
+.form-select select{border:1px solid #ccc;border-radius:2px;padding:5px 3px;margin-right:11px; width:130px; height:28px; line-height:28px;_vertical-align: bottom; _margin-top:3px;}
+.form-select .mr0{ margin-right:0;}
+
+.Cootion{ width:100%; background-color:#f5f5f5; padding:50px 0px;} 
+.m_map{ width:989px; height:724px; margin:30px auto; position:relative;  background:url(../images/diru.png) no-repeat 0 0 ;}
+.tait{ font-size:36px; font-weight:bold; color:#666666; text-align:center;  left:100px;}
+.tait span{ color:#ff6d3b;}
+.tait2{font-size:36px; font-weight:bold; color:#666666; text-align:center; padding:50px 0px;}
+.mp{ position:absolute; cursor:pointer; background:url(../images/fi1.png) no-repeat 4px 34px; width:120px; height:63px; -webkit-transition:all .2s ease-out; -moz-transition: all .2s ease-out; -ms-transition:all .2s ease-out; -o-transition:all .2s ease-out; transition:all .2s ease-out;}
+.mp:hover{ background:url(../images/fi2.png) no-repeat 4px 34px; -webkit-transition:all .2s ease-out; -moz-transition: all .2s ease-out; -ms-transition:all .2s ease-out; -o-transition:all .2s ease-out; transition:all .2s ease-out;}
+.hover_tu{background:url(../images/fi2.png) no-repeat 4px 34px;}
+.mp .mito{ position:absolute; left:0px; bottom:0px; font-size:12px; color:#666666;}
+.mp .find_mi1{ left:-12px; width:55px;}
+.mp .find_mi2{ left:-5px; width:55px;}
+.mpb{ position:absolute; cursor:pointer; background:url(../images/fi1b.png) no-repeat 4px 34px; width:180px; height:63px; -webkit-transition:all .2s ease-out; -moz-transition: all .2s ease-out; -ms-transition:all .2s ease-out; -o-transition:all .2s ease-out; transition:all .2s ease-out;}
+.mpb:hover{ background:url(../images/fi2b.png) no-repeat 4px 34px; -webkit-transition:all .2s ease-out; -moz-transition: all .2s ease-out; -ms-transition:all .2s ease-out; -o-transition:all .2s ease-out; transition:all .2s ease-out;}
+.hover_tu{background:url(../images/fi2b.png) no-repeat 4px 34px;}
+.mpb .mito{ position:absolute; left:0px; bottom:0px; font-size:12px; color:#666666;}
+.mpb .find_mi1{ left:-12px; width:55px;}
+.mpb .find_mi2{ left:-5px; width:55px;}
+.feng{ position:absolute; display:none; width:347px; height:85px; left:-230px; top:-78px; background:url(../images/vf1.png) no-repeat 0 top; z-index:10;}
+.feng .sang{ position:absolute; left:235px; bottom:0px; background:url(../images/vf2.png) no-repeat 0 0; width:14px; height:8px;}
+.feng .tree{ height:62px; width:330px; margin:9px; }
+.feng .tree .boou{ width:86px; height:62px; float:left;}
+.feng .tree .du_size{ float:right; height:62px; width:230px;} 
+.feng .tree .du_size p{ font-size:12px; color:#FFF; line-height:20px;}
+.mp1{left:400px; top:350px; } /*西宁*/
+.mp2{left:702px; top:413px; } /*蚌埠*/
+.mp3{left:446px; top:474px; } /*成都*/
+.mp4{left:524px; top:474px; } /*重庆*/
+.mp7{left:428px; top:585px; } /*昆明*/
+.mp8{left:548px; top:407px; } /*西安*/
+.mp9{left:625px; top:398px; } /*郑州*/
+.mp10{left:612px; top:325px; } /*太原*/
+.mp11{left:643px; top:454px; } /*武汉*/
+.mp12{left:611px; top:503px; } /*长沙*/
+.mp13{left:668px; top:516px; } /*南昌*/
+.mp14{left:742px; top:488px; } /*杭州*/
+.mp15{left:710px; top:570px; } /*厦门*/
+.mp16{left:648px; top:585px; } /*广州*/
+.mp17{left:660px; top:604px; } /*深圳*/
+.mp18{left:692px; top:443px; } /*合肥*/
+.mp19{left:727px; top:428px; } /*南京*/
+.mp20{left:761px; top:450px; } /*上海*/
+.mp21{left:694px; top:345px; } /*济南*/
+.mp22{left:750px; top:345px; } /*青岛*/
+.mp23{left:681px; top:266px; } /*北京*/
+.mp24{left:711px; top:266px; } /*唐山*/
+.mp28{left:628px; top:595px; } /*佛山*/
+.mp29{left:746px; top:441px; } /*常州*/
+.mp32{left:624px; top:626px; } /*珠海*/
+.mp35{left:745px; top:428px; } /*镇江*/
+.mp36{left:735px; top:400px; } /*扬州*/
+.mp40{left:654px; top:306px; } /*石家庄*/
+.mp42{left:728px; top:323px; } /*烟台*/
+.mp51{left:733px; top:541px; } /*福州*/
+.mp52{left:723px; top:551px; } /*泉州*/
+.mp55{left:650px; top:360px; } /*新乡*/
+.mp63{left:582px; top:256px; } /*呼和浩特*/
+.mp64{left:795px; top:275px; } /*鞍山*/
+.mp65{left:775px; top:290px; } /*大连*/
+.mp66{left:765px; top:330px; } /*威海*/
+.mp67{left:678px; top:296px; } /*保定*/
+.mp68{left:568px; top:377px; } /*延安*/
+.mp69{left:695px; top:463px; } /*马鞍山*/
+.mp70{left:710px; top:470px; } /*芜湖*/
+.mp30{left:801px; top:450px; } /*栏目*/
+.mp31{left:574px; top:656px; } /*海口*/
+.mp71{left:650px; top:418px; } /*阜阳*/
+.mp26{left:825px; top:187px; } /*长春*/
+.mp27{left:864px; top:103px; } /*哈尔滨*/
+.mp25{left:790px; top:256px; } /*沈阳*/
+.mpb1{left:400px; top:350px; } /*西宁*/
+.mpb2{left:702px; top:413px; } /*蚌埠*/
+.mpb3{left:446px; top:474px; } /*成都*/
+.mpb4{left:524px; top:474px; } /*重庆*/
+.mpb7{left:428px; top:585px; } /*昆明*/
+.mpb8{left:548px; top:407px; } /*西安*/
+.mpb9{left:625px; top:398px; } /*郑州*/
+.mpb10{left:612px; top:325px; } /*太原*/
+.mpb11{left:643px; top:454px; } /*武汉*/
+.mpb12{left:611px; top:503px; } /*长沙*/
+.mpb13{left:668px; top:516px; } /*南昌*/
+.mpb14{left:742px; top:488px; } /*杭州*/
+.mpb15{left:710px; top:570px; } /*厦门*/
+.mpb16{left:648px; top:585px; } /*广州*/
+.mpb17{left:660px; top:604px; } /*深圳*/
+.mpb18{left:692px; top:443px; } /*合肥*/
+.mpb19{left:727px; top:428px; } /*南京*/
+.mpb20{left:761px; top:450px; } /*上海*/
+.mpb21{left:694px; top:345px; } /*济南*/
+.mpb22{left:750px; top:345px; } /*青岛*/
+.mpb23{left:681px; top:266px; } /*北京*/
+.mpb24{left:711px; top:266px; } /*唐山*/
+.mpb28{left:628px; top:595px; } /*佛山*/
+.mpb29{left:746px; top:441px; } /*常州*/
+.mpb32{left:624px; top:626px; } /*珠海*/
+.mpb35{left:745px; top:428px; } /*镇江*/
+.mpb36{left:735px; top:400px; } /*扬州*/
+.mpb40{left:654px; top:306px; } /*石家庄*/
+.mpb42{left:728px; top:323px; } /*烟台*/
+.mpb51{left:733px; top:541px; } /*福州*/
+.mpb52{left:723px; top:551px; } /*泉州*/
+.mpb55{left:650px; top:360px; } /*新乡*/
+.mpb63{left:582px; top:256px; } /*呼和浩特*/
+.mpb64{left:795px; top:275px; } /*鞍山*/
+.mpb65{left:775px; top:290px; } /*大连*/
+.mpb66{left:765px; top:330px; } /*威海*/
+.mpb67{left:678px; top:296px; } /*保定*/
+.mpb68{left:568px; top:377px; } /*延安*/
+.mpb69{left:695px; top:463px; } /*马鞍山*/
+.mpb70{left:710px; top:470px; } /*芜湖*/
+.mpb30{left:861px; top:450px; } /*栏目*/
+.mpb31{left:574px; top:656px; } /*海口*/
+.mpb71{left:650px; top:418px; } /*阜阳*/
+.mpb26{left:825px; top:187px; } /*长春*/
+.mpb27{left:864px; top:103px; } /*哈尔滨*/
+.mpb25{left:790px; top:256px; } /*沈阳*/
