@@ -4,6 +4,9 @@
 .footerstyle{
     height:300px;
 }
+.searchresults{
+    background-color: #fff;
+}
 .musictype{
     width:50%;
     float:left;
@@ -24,9 +27,6 @@
 .musictypedetail{
     width:25%;
     float:left;
-}
-.aaaa:hover{
-    border-bottom:5px solid #bbb;
 }
 .diftype{
     width:25%;
@@ -146,6 +146,16 @@
 .dropdowncust:hover{
     text-decoration: none;
     color:#000;
+}
+.dropdowncustspan{
+    width:100%;
+    padding-left:10px;
+}
+.dropdowncustspan:focus{
+    background-color:#fff;
+}
+.dropdowncustspan:hover{
+    background-color:#fff;
 }
 .searchdetail{
     text-decoration: none;

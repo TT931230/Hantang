@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="newborder">
                 <div id="left" style="background-color:#541B2A">
                     {imagearea11}
-                    <img src={source_location} alt="">
+                    <img src='{source_location}' alt="">
                     {/imagearea11}
                 </div>
                 <div id="right">
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="callbacks_container">
                             <ul class="rslides" id="carousel">
                                 {imagearea1}
-                                <li><img src={source_location} alt=""></li>
+                                <li><img src='{source_location}' alt=""></li>
                                 {/imagearea1}
                             </ul>
                         </div>

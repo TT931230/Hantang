@@ -11,18 +11,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="newborder">
             <video controls="controls" autoplay=true>
                 {imagearea1}
-                <li><img src={source_location} alt=""></li>
+                <li><img src='{source_location}' alt=""></li>
                 {/imagearea1}
             </video>
         </div>
         <div class="plat-subtitle platform-sub">
             {imagearea2}
-            <img src={source_location} alt="">
+            <img src='{source_location}' alt="">
             {/imagearea2}
         </div>
         <div class="plat-subtitle platform-sub">
             {imagearea3}
-            <img src={source_location} alt="">
+            <img src='{source_location}' alt="">
             {/imagearea3}
         </div>
         </div>

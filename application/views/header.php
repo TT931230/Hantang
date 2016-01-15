@@ -24,10 +24,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Custom styles for this template -->
     <link href="/bootstrap/css/main.css" rel="stylesheet">
     <link href="/bootstrap/css/main2.css" rel="stylesheet">
-    <LINK href="/bootstrap/css/yi_base.css" type=text/css rel=stylesheet>
-    <LINK href="/bootstrap/css/yi_index.css" type=text/css rel=stylesheet>
-    
-    
 </head>
 
 <body>
@@ -35,7 +31,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <h3 class="masthead-brand"><img src={source_location} alt=""></h3>
+            <h3 class="masthead-brand">
+                <img src='{source_location}' alt="">
+            </h3>
             <nav>
                 <ul class="nav masthead-nav">
                     <li><a href="/home" class="{homenav}">{home}</a></li>

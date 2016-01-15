@@ -71,7 +71,7 @@ function $searchcontent(oid){
 function $reset(){
     var div=$a('searchdetailarea');
     var divlist = div.childNodes;
-    for(var i=divlist.length-1;i>0;i--){
+    for(var i=divlist.length-1;i>=0;i--){
         if(divlist[i].id!='searchreset'&&divlist[i].id!='searchcommit'&&divlist[i].id!='searchinput'&&divlist[i].id)
         {
             $a(divlist[i].id.split('___')[0]).checked=false;
@@ -149,4 +149,41 @@ function $ask4job(jobname){
             alert("ajax error");
         }
     });
+}
+
+function $searchresult(){
+    if($("#searchinput").val()){
+        var div=$a('searchdetailarea');
+        var divlist = div.childNodes;
+        var tags = '';
+        for(var i=divlist.length-1;i>=0;i--){
+            if(divlist[i].id!='searchreset'&&divlist[i].id!='searchcommit'&&divlist[i].id!='searchinput'&&divlist[i].id)
+            {
+                tags+=divlist[i].id.split('__')[0];
+                if(i>0){
+                    tags+='|||';
+                }
+            }
+        }
+        console.log(tags);
+        var reg = /([^\s])\s+([^\s\b])/g;
+        var searchinput = $("#searchinput").val();
+        searchinput = searchinput.replace(reg, "$1|||$2");
+        console.log(searchinput);
+        $.ajax({
+            type:"post",
+            data: "tags=" + tags + '&searchinput='+searchinput,
+            url:"Search/globalSearch",
+            success: function(result)
+            {
+                $("#searchresults").html(result);
+            },
+            error: function()
+            {
+                alert("ajax error");
+            }
+        });
+    }else{
+        alert('请输入搜索内容');
+    }
 }
