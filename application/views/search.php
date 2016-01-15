@@ -25,12 +25,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div id="class1content" style="display:none;" class="cover-container showsearcharea">
         <div class="searchdetailarea">
-            {seniorsearch}<input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent"><span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">{commit}</span>
+            {seniorsearch}&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent"><span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">&nbsp;&nbsp;&nbsp;&nbsp;{commit}</span>
             <span class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> {reset}</span>
         </div>
         <div id="searchdetailarea"></div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class2content')"><i class="glyphicon glyphicon-search"></i> {brandname}</span>
+            <span class="searchdetail" role="button" onclick="$use('class2content')"><i class=""></i> {brandname}</span>
         </div>
         <div id="class2content" style="display:none;" class="searchcontentarea">
             {search_brandname}
@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_brandname}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class3content')"><i class="glyphicon glyphicon-search"></i> {type}</span>
+            <span class="searchdetail" role="button" onclick="$use('class3content')"><i class=""></i> {type}</span>
         </div>
         <div id="class3content" style="display:none;" class="searchcontentarea">
             {search_type}
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_type}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class4content')"><i class="glyphicon glyphicon-search"></i> {keyword}</span>
+            <span class="searchdetail" role="button" onclick="$use('class4content')"><i class=""></i> {keyword}</span>
         </div>
         <div id="class4content" style="display:none;" class="searchcontentarea">
             {search_keyword}
@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_keyword}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class5content')"><i class="glyphicon glyphicon-search"></i> {location}</span>
+            <span class="searchdetail" role="button" onclick="$use('class5content')"><i class=""></i> {location}</span>
         </div>
         <div id="class5content" style="display:none;" class="searchcontentarea">
             {search_location}
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_location}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class6content')"><i class="glyphicon glyphicon-search"></i> {time}</span>
+            <span class="searchdetail" role="button" onclick="$use('class6content')"><i class=""></i> {time}</span>
         </div>
         <div id="class6content" style="display:none;" class="searchcontentarea">
             {search_time}
@@ -82,6 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="searchresults" class="searchresults">
         </div>
     </div>
+    
 </div>
 <div id="bg" class="searchbg"></div>
 
