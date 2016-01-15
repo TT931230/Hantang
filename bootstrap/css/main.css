@@ -30,13 +30,14 @@
 #bg{
     display: none;
     position: absolute;
-    top: 0;
+    margin-left:75px;
+    top: 420px;
     left: 0;
-    background-color: black;
+    background-color: #000000;
     z-index:1001;
-    -moz-opacity: 0.7;
-    opacity:.70;
-    filter: alpha(opacity=70);}
+    -moz-opacity: 0.4;
+    opacity:.40;
+    filter: alpha(opacity=40);}
 .showsearcharea{
     position:relative;
     z-index:1002!important;
@@ -131,7 +132,7 @@
     display:inline-block;
     width:150px;
     color:#ddd;
-    border:1px solid #ddd;
+    border:1px solid #e4e4e4;
     margin-left: 10px;
     margin-right:10px;
 }
@@ -204,7 +205,7 @@
 }
 .searchdetail{
     text-decoration: none;
-    color:#000;
+    color:#808080;
 }
 .searchdetail:focus{
     text-decoration: none;
@@ -220,7 +221,7 @@
     margin-right:20px;
     margin-bottom: 5px;
     margin-top: 10px;
-    border-bottom: 2px dotted #777;
+    border-bottom: 2px dotted #e4e4e4;
 }
 .searchcontentarea{
     margin-left:20px;
@@ -420,6 +421,7 @@ body {
     }
     .searchbg{
         width:1200px;
+        
     }
 }
 
