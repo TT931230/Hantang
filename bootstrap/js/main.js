@@ -32,39 +32,58 @@ function $D2(elementid){
     iIntervalId=setInterval(dmove,2);
 }
 function $use(elementid){
-    var d=$a(elementid);
-    if(d.style.display=='none'){
-        $D(elementid);
+    if(elementid=='class1content'){
+        var d=$a(elementid);
+        if(d.style.display=='none'){
+            document.getElementById("bg").style.display ="block";
+            $D(elementid);
+            $("#bg").css("height",document.body.scrollHeight);
+        }else{
+            document.getElementById("bg").style.display ='none';
+            $D2(elementid);
+            $("#bg").css("height",document.body.scrollHeight);
+        }
     }else{
-        $D2(elementid);
+        var d=$a(elementid);
+        if(d.style.display=='none'){
+            $D(elementid);
+            $("#bg").css("height",document.body.scrollHeight);
+        }else{
+            $D2(elementid);
+            $("#bg").css("height",document.body.scrollHeight);
+        }
     }
 }
 function $removesingle(id){
     var div=$a('searchdetailarea');
     var div2=$a(id);
-    console.log(div2);
     $a(div2.id.split('___')[0]).checked=false;
     div.removeChild(div2);
+    $("#bg").css("height",document.body.scrollHeight);
 }
 
 function $addcontent(oid){
     var div=$a('searchdetailarea');
     var checkbox=$a(oid);
     div.innerHTML +="<span id='"+oid+"___"+checkbox.value+"' class='searchcontentdiv' onclick='$removesingle(\""+oid+"___"+checkbox.value+"\")'>"+checkbox.value+"<span class='glyphicon glyphicon-remove iconcust'></span></span>";
+    $("#bg").css("height",document.body.scrollHeight);
 }
 function $removecontent(oid){
     var div=$a('searchdetailarea');
     var checkbox=$a(oid);
     var div2 =$a(oid+'___'+checkbox.value);
     div.removeChild(div2);
+    $("#bg").css("height",document.body.scrollHeight);
 }
 
 function $searchcontent(oid){
     var checkbox=$a(oid);
     if(checkbox.checked){
         $addcontent(oid);
+        $("#bg").css("height",document.body.scrollHeight);
     }else{
         $removecontent(oid);
+        $("#bg").css("height",document.body.scrollHeight);
     }
 }
 
@@ -76,8 +95,10 @@ function $reset(){
         {
             $a(divlist[i].id.split('___')[0]).checked=false;
             div.removeChild(divlist[i]);
+            $("#bg").css("height",document.body.scrollHeight);
         }
     }
+    $("#bg").css("height",document.body.scrollHeight);
 }
 
 function $departmentajax(jobname){
@@ -177,13 +198,16 @@ function $searchresult(){
             success: function(result)
             {
                 $("#searchresults").html(result);
+                $("#bg").css("height",document.body.scrollHeight);
             },
             error: function()
             {
                 alert("ajax error");
+                $("#bg").css("height",document.body.scrollHeight);
             }
         });
     }else{
         alert('请输入搜索内容');
+        $("#bg").css("height",document.body.scrollHeight);
     }
 }

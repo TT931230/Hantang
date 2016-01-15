@@ -9,6 +9,66 @@ class Search extends CI_Controller
 {
     function globalSearch(){
         $tags = explode('|||',$_POST['tags']);
-        var_dump($tags);
+        $searchinput = explode('|||',$_POST['searchinput']);
+        $where="";
+        if(!empty($searchinput)) {
+            $where="(";
+            $i=0;
+            $arr_n=count($searchinput)-1;
+            foreach ($searchinput as $searchword) {
+                if ($arr_n==$i) {
+                    $where .= "a.source_name='".$searchword."')";
+                } else {
+                    $where .= "a.source_name='".$searchword."' OR ";
+                }
+                $i++;
+            }
+        }
+        if($tags[0]){
+            if(!empty($searchinput)) {
+                $where .=" AND (";
+                $i=0;
+                $arr_n=count($tags)-1;
+                foreach($tags as $tag){
+                    if ($arr_n==$i) {
+                        $where .= "c.id='".$tag."')";
+                    } else {
+                        $where .= "c.id='".$tag."' OR ";
+                    }
+                    $i++;
+                }
+            }else{
+                $i=0;
+                $arr_n=count($tags)-1;
+                foreach($tags as $tag){
+                    if ($arr_n==$i) {
+                        $where .= "c.id='".$tag."')";
+                    } else {
+                        $where .= "c.id='".$tag."' OR ";
+                    }
+                    $i++;
+                }
+            }
+        }
+        $this->db->from('source as a');
+        $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
+        $this->db->join('keyword as c', 'b.keyword_id = c.id');
+        $this->db->where($where);
+        $this->db->where('a.status','1');
+        $this->db->where('a.type','videoimg');
+        $query=$this->db->get();
+        $results=$query->result_array();
+        $resultareas ="";
+        foreach($results as $result){
+            $resultareas.="<div class='searchresult'>";
+            $resultareas.="<div class='searchresulta'>";
+            $resultareas.="</div>";
+            $resultareas.="<div class='searchresultb'>";
+            $resultareas.="</div>";
+            $resultareas.="<div class='searchresultc'>";
+            $resultareas.="</div>";
+            $resultareas.="</div>";
+        }
+        echo($resultareas);
     }
 }
