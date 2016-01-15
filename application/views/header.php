@@ -32,7 +32,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
             <h3 class="masthead-brand">
+                {logoimage}
                 <img src='{source_location}' alt="">
+                {/logoimage}
             </h3>
             <nav>
                 <ul class="nav masthead-nav">

@@ -16,13 +16,23 @@ class About extends CI_Controller
         }else{
             $this->lang->load('test','zn');
         }
+
         $this->db->where('status','1');
         $this->db->where('first_level','about');
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
         $query = $this->db->get();
         $video = $query->result_array();
+
+        $this->db->where('status','1');
+        $this->db->where('first_level','logoimage');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $logoimage = $query->result_array();
+
         $data = array(
+            'logoimage'=>$logoimage,
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/about',
             'home' => $this->lang->line('home'),

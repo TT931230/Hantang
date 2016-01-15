@@ -65,8 +65,15 @@ class Awoe extends CI_Controller
         $query = $this->db->get();
         $activedetails = $query->result_array();
 
+        $this->db->where('status','1');
+        $this->db->where('first_level','logoimage');
+        $this->db->from('source');
+        $this->db->order_by("sequence"," desc");
+        $query = $this->db->get();
+        $logoimage = $query->result_array();
 
         $data = array(
+            'logoimage'=>$logoimage,
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'url' => '/awoe',
             'home' => $this->lang->line('home'),
