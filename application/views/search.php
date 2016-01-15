@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class2content" style="display:none;" class="searchcontentarea">
             {search_brandname}
             <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span>{content}</span>
+                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span>{content}</span>                   
             </span>
             {/search_brandname}
         </div>
