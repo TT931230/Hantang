@@ -28,6 +28,7 @@
     height: 280px;
 }
 #bg{
+	
     display: none;
     position: absolute;
     margin-left:75px;
@@ -88,15 +89,23 @@
     border: #bbbbbb;
     border-radius: 0px;
     background-color: #bbbbbb;
+    position:absolute ;
+    z-index:1004;
+
+   
 }
 .dropdownmenucust li{
     width:100%!important;
+     
+    
 }
 .dropdowndepart{
     width:100%;
     margin-top:0px;
     margin-left:0px;
     margin-right:0px;
+    
+   
 }
 .navcust{
     width:100%;
@@ -357,6 +366,7 @@ body {
     color: #fff; /* IE8 proofing */
     color: rgba(0,0,0,1);
     border-bottom: 4px solid transparent;
+    
 }
 .masthead-nav > li > a.active {
     background-color: transparent;
