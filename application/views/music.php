@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 </div>
                 <div class="newborder">
-                    <div>
+                    <div >
                         <div class="musictype">
                             <div class="musictypetitle">{seasontype}</div>
                             <div class="musictypedetails">

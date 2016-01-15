@@ -74,16 +74,23 @@
     background-color: #fff;
 }
 .musictype{
+	margin-top:30px;
+	margin-bottom:30px;
     width:50%;
     float:left;
     height:60px;
+   
 }
 .musictypetitle{
-    width:40%;
-    background-color: #bbb;
-    height:60px;
-    text-align: center;
-    float:left;
+	height:50px;
+	
+    width:30%;
+    background-color: #e7e7e7;
+    text-align:center;
+  
+   
+    font-size:15px;
+    color:#808080;
 }
 .musictypedetails{
     width:60%;
@@ -112,6 +119,7 @@
 }
 .dropdownmenucust li{
     width:100%!important;
+    background-color: #e4e4e4;
      
     
 }
@@ -120,6 +128,7 @@
     margin-top:0px;
     margin-left:0px;
     margin-right:0px;
+    background-color: #e4e4e4;
     
    
 }
@@ -212,12 +221,13 @@
 }
 
 .dropdowncust{
+	
     text-decoration: none;
-    color:#000;
+    color:#808080;
 }
 .dropdowncust:focus{
     text-decoration: none;
-    color:#000;
+    color:#808080;
 }
 .dropdowncust:hover{
     text-decoration: none;
@@ -228,7 +238,7 @@
     padding-left:10px;
 }
 .dropdowncustspan:focus{
-    background-color:#fff;
+    background-color:#808080;
 }
 .dropdowncustspan:hover{
     background-color:#fff;
@@ -379,15 +389,15 @@ body {
     padding-left: 0;
     font-size: 10px;
     font-weight: 500;
-    color: #fff; /* IE8 proofing */
-    color: rgba(0,0,0,1);
+    color: #808080; /* IE8 proofing */
+   
     border-bottom: 4px solid transparent;
     
 }
 .masthead-nav > li > a.active {
     background-color: transparent;
     border-bottom-color: #a9a9a9;
-    border-bottom-color: rgba(200,200,200,1);
+   
    
     
 }
@@ -395,13 +405,14 @@ body {
 .masthead-nav > li > a:focus {
     background-color: transparent;
     border-bottom-color: #a9a9a9;
-    border-bottom-color: rgba(200,200,200,1);
+    
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
     color: #fff;
     border-bottom-color: #fff;
+    background-color:#e4e4e4;
 }
 
 @media (min-width: 768px) {
