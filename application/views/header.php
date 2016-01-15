@@ -29,13 +29,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div class="cover-container">
+<div class="brand_logo">
     <div class="clearfix newborder">
+    
         <div class="inner">
+      
             <h3 class="masthead-brand">
                 {logoimage}
                 <img src='{source_location}' alt="">
                 {/logoimage}
             </h3>
+            
             <nav>
                 <ul class="nav masthead-nav">
                     <li><a href="/home" class="{homenav}">{home}</a></li>
@@ -53,10 +57,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a href="/join" class="{joinnav}">{join}</a></li>
                 </ul>
             </nav>
+            </div>
         </div>
     </div>
+    
 </div>
-<HR style="width:1200px">
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

@@ -3,7 +3,7 @@
  */
 .searchresult{
     margin-bottom: 20px;
-    border-top:1px dotted #bbb;
+    border-top:1px dotted #808080;
     height: 280px;
 }
 .searchresulta{
@@ -31,7 +31,7 @@
     display: none;
     position: absolute;
     margin-left:75px;
-    top: 420px;
+    top:560px;
     left: 0;
     background-color: #000000;
     z-index:1001;
@@ -41,10 +41,13 @@
 .showsearcharea{
     position:relative;
     z-index:1002!important;
+    background-color: #fff;
+    
+    
 }
 .showsearcharea1{
     height: 30px !important;
-    padding-top:0px!important;
+    padding-top:5px!important;
     padding-bottom: 0px!important;
     background-color: #fff}
 .footerstyle{
@@ -105,34 +108,36 @@
     margin-right:0px!important;
 }
 #class1content {
-    background-color: #bbbbbb;
+    background-color: #e4e4e4;
     overflow:hidden;
     display:none;
 }
 .resetsearch{
-    color:#ddd;
+    color:#808080;
     margin-left:10px;
     text-decoration: none;
 }
 .resetsearch:focus{
-    color:#ddd;
+    color:#808080;
     margin-left:10px;
     text-decoration: none;
 }
 .resetsearch:hover{
-    color:#ddd;
+    color:#808080;
     margin-left:10px;
     text-decoration: none;
 }
 .searchcontent{
     display:inline-block;
     width:150px;
+    color:#808080;
+   
 }
 .searchcontentdiv{
     display:inline-block;
     width:150px;
-    color:#ddd;
-    border:1px solid #e4e4e4;
+    color:#808080;
+    border:1px solid #808080;
     margin-left: 10px;
     margin-right:10px;
 }
@@ -206,6 +211,8 @@
 .searchdetail{
     text-decoration: none;
     color:#808080;
+  
+    
 }
 .searchdetail:focus{
     text-decoration: none;
@@ -219,9 +226,13 @@
     text-align:left;
     margin-left:20px;
     margin-right:20px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    border-bottom: 2px dotted #e4e4e4;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    border-bottom: 2px dotted #9e9e9e;
+    background-color:#e4e4e4;
+    color:#808080;
+    height:40px;
+    
 }
 .searchcontentarea{
     margin-left:20px;
@@ -229,7 +240,8 @@
     margin-top: 10px;
     margin-bottom: 5px;
     text-align:left;
-
+    
+    
 }
 .imagearea{
     padding: 0px;
@@ -298,6 +310,8 @@ body {
 .cover-container {
     margin-right: auto;
     margin-left: auto;
+  
+    
     
 }
 
@@ -311,21 +325,31 @@ body {
 /*
  * Header
  */
+ .brand_logo{
+ border-bottom:1px solid #c0c0c0;
+ }
 .masthead-brand {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left:35px;
     text-align: center;
+    height:90px;
+    
+    
 }
 
 .masthead-nav > li {
     display: inline-block;
+    
+    
 }
 .masthead-nav > li + li {
     margin-left: 20px;
 }
 .masthead-nav > li > a {
-	padding-top:35px;
+
+	height:90px;
+    margin-top:40px;
     padding-right: 30px;
     padding-left: 0;
     font-size: 10px;
