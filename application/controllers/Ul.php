@@ -229,7 +229,7 @@ class Ul extends CI_Controller
                 array('oid' => '100023', 'content' => '时间3'),
                 array('oid' => '100024', 'content' => '时间4'),
                 array('oid' => '100025', 'content' => '时间5')
-            ),
+            ),        
             'homenav' => '',
             'aboutnav' =>  '',
             'ulnav' => 'active',

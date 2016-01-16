@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="subtitle">
+            <div class="ulinner-subtitle">
                 {imagearea1}
                     <img src="{source_location}">
                 {/imagearea1}
