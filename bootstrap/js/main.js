@@ -113,12 +113,9 @@ function $departmentajax(jobname){
             '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
                 '<div class="modal-dialog">'+
                     '<div class="modal-content">'+
-                        '<div class="modal-header">'+
-                            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'+
-                            '<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题 </h4>'+
-                        '</div>'+
                         '<div class="modal-body">'+
                             '<div>发送电子邮件</div>'+
+                            '<hr/>'+
                             '<div>如有疑问或需要帮助，请填写下面表格</div>'+
                             '<div>填写信息</div>'+
                             '<div><textarea id="remarkinfo"></textarea></div>'+

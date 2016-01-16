@@ -71,9 +71,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  <div class="videoslug">
                     相关视频
                     </div>
-                <div class="dashline">
-                    vedio
+            <div class="dashline">
+                <div class="relatedvideoarea" id="relatedvideoarea">
+                    <!--                    {imagearea2}-->
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <!--                    {/imagearea2}-->
                 </div>
+            </div>
             </div>
         </div>
     </div>
