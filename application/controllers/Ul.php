@@ -241,6 +241,6 @@ class Ul extends CI_Controller
         $this->parser->parse('search',$data);
         $this->parser->parse('ulinner',$data);
         $this->parser->parse('footer',$data);
-        echo($videoname);
+//        echo($videoname);
     }
 }

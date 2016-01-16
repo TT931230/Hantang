@@ -39,22 +39,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <img src='{source_location}' alt="">
                 {/logoimage}
             </h3>
-            
             <nav>
                 <ul class="nav masthead-nav">
-                    <li><a href="/home" class="{homenav}">{home}</a></li>
+                    <li><a href="/home" class="{homenav} navtags">{home}</a></li>
                     <li>
-                        <a href="#" class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
+                        <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
                         <ul class="dropdown-menu dropdownmenucust">
                             <li><a href="/about">{introduce}</a></li>
                             <li><a href="/platform">{platform}</a></li>
                             <li><a href="/partner">{partner}</a></li>
                         </ul>
                     </li>
-                    <li><a href="/ul" class="{ulnav}">{ul}</a></li>
-                    <li><a href="/awoe" class="{awoenav}">{awoe}</a></li>
-                    <li><a href="/music" class="{musicnav}">{music}</a></li>
-                    <li><a href="/join" class="{joinnav}">{join}</a></li>
+                    <li><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
+                    <li><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
+                    <li><a href="/music" class="{musicnav} navtags">{music}</a></li>
+                    <li><a href="/join" class="{joinnav} navtags">{join}</a></li>
                 </ul>
             </nav>
             </div>
