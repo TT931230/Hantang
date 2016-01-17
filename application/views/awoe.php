@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
+        
             <div class="newborder">
                 <div id="left" style="background-color:#0F366A">
                     {imagearea11}
@@ -32,6 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
+                
                 <div class="newborder">
                     <div>
                         <div class="diftype">
@@ -68,6 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
+                
                  <div class="videoslug">
                     相关视频
                     </div>
@@ -93,7 +96,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!--                    {/imagearea2}-->
                 </div>
             </div>
+            
+            
             </div>
         </div>
     </div>
-</div>

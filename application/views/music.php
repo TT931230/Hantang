@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
+        
             <div class="newborder">
                 <div class="homeborder1">
                     <div class="homewrapper1">
@@ -28,8 +29,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 </div>
-                <div class="newborder">
-                    <div >
+                
+                
+               
+                   <div class="musicsearch">
                         <div class="musictype">
                             <div class="musictypetitle">{seasontype}</div>
                             <div class="musictypedetails">
@@ -37,7 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="musictypedetail">{source_location}</span>
                                 {/seasondetails}
                             </div>
-                        </div>
+                            </div>
+                    
                         <div class="musictype">
                             <div class="musictypetitle">{displaytype}</div>
                             <div class="musictypedetails">
@@ -45,17 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="musictypedetail">{source_location}</span>
                                 {/displaydetails}
                             </div>
-                        </div>
+                        </div>                                               
                     </div>
-                </div>
+                    
+                    
                 <div class="dashline">
-                    <div class="music_more">
-                        <span>
-                        </span>
-                        <span>
-                        </span>
-                    </div>
                 </div>
+                
            
         </div>
     </div>

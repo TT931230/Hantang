@@ -17,6 +17,7 @@
     margin-right: 1%;
     margin-top:5px;
     margin-bottom:5px;
+
 }
 .relatedvideos{
     height:300px;
@@ -88,27 +89,24 @@
     background-color: #fff;
 }
 .musictype{
-	margin-top:30px;
-	margin-bottom:30px;
+
+	margin-bottom:10px;
     width:50%;
     float:left;
-    height:60px;
+    height:auto;
    
 }
 .musictypetitle{
-	height:50px;
-	
-    width:30%;
-    background-color: #e7e7e7;
-    text-align:center;
-  
-   
-    font-size:15px;
-    color:#808080;
+	width:35%;
+    float:left;    
+    background-color: #e4e4e4;
+    height:55px;
+    padding:15px;
+    border:1px solid #fff;
 }
 .musictypedetails{
     width:60%;
-    height:60px;
+    height:55px;
     float:left;
 }
 .musictypedetail{
@@ -118,6 +116,12 @@
 .diftype{
     width:25%;
     float:left;
+    margin-top:20px;
+    background-color: #e4e4e4;
+    height:55px;
+    padding:15px;
+    border:1px solid #fff;
+   
 }
 .platform-sub{
     width:100%;

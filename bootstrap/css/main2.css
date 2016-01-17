@@ -12,8 +12,17 @@
     
  }
  .dashline{
-    border-bottom:1px dashed #C4C4C4;
+    border-bottom:2px dotted #C4C4C4;   
+    margin-top:30px;
+    height:auto;
  }
+ .shortdashline{
+    border-bottom:2px dotted #C4C4C4 ;
+    width:500px;
+    margin:auto;    
+     
+ }
+
  .partnerimg{
     background-color: #EAEAEA;
     border-bottom:1px dashed #C4C4C4;
@@ -143,13 +152,19 @@
 .videoslug {
 	font-size:10px;
 	text-align:left;
+	margin-bottom:15px;
+	
 }
   
    /*
  * music
  */
   /* Callback example */
-
+.musicsearch{
+	margin-top:30px;
+	height:55px;
+	margin-bottom:10px;
+}
 
 
 .music-callbacks {
@@ -236,14 +251,7 @@
   border: 1px solid #FFF;
   height: 50px;
   }
-  
-  
-  .music_more{
-  width:auto;
-  height:300px;
-  
-  }
-  
+ 
   
     /*
  * paltform
