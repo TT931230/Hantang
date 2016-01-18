@@ -1,6 +1,10 @@
 /*
  * Globals
  */
+.headernavul{
+    padding-left:30px;
+    padding-right:30px;
+}
 .jobinfoinput{
     text-align: left;
     font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";

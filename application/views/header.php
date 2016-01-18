@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 {/logoimage}
             </h3>
             <nav>
-                <ul class="nav masthead-nav">
+                <ul class="nav masthead-nav headernavul">
                     <li><a href="/home" class="{homenav} navtags">{home}</a></li>
                     <li>
                         <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
