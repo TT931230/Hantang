@@ -118,7 +118,7 @@ function $departmentajax(jobname){
                             '<hr/>'+
                             '<div class="jobinfotext">如有疑问或需要帮助，请填写下面表格</div>'+
                             '<div class="jobinfotext">填写信息</div>'+
-                            '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 500px;height: 100px;max-width: 200px;max-height: 100px;" resize="none"></textarea></div>'+
+                            '<div class="jobinfoinput"><textarea id="remarkinfo" resize="none"></textarea></div>'+
                             '<div class="jobinfotext">称呼（非必须）</div>'+
                             '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 200px;"></div>'+
                             '<div class="jobinfotext">姓名</div>'+

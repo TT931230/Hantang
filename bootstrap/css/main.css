@@ -21,9 +21,13 @@
     margin-bottom: 30px;
 }
 .jobcommitbtn{
-    width: 100px;
-    height: 50px;
-    font-size: larger;
+    width: 90px;
+    height: 30px;
+    font-size:larger;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
     background-color: red;
     border-bottom-left-radius:0px;
     border-bottom-right-radius:0px;
