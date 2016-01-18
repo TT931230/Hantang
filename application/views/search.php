@@ -13,9 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="radio-inline language">
                 <span class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</span>
                 <ul class="dropdown-menu dropdownmenucust">
-                    <li class="dropdowncustspan"><span href="{url}/changelanguage/zn">中文</span></li>
-                    <li class="dropdowncustspan"><span href="{url}/changelanguage/en">English</span></li>
-                    <li class="dropdowncustspan"><span href="{url}/changelanguage/fr">Français</span></li>
+                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
+                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
+                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>
                 </ul>
             </div>
             <div class="searcharea">

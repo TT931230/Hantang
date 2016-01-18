@@ -51,8 +51,8 @@ class Search extends CI_Controller
             }
         }
         $this->db->from('source as a');
-        $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
-        $this->db->join('keyword as c', 'b.keyword_id = c.id');
+ //       $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
+ //       $this->db->join('keyword as c', 'b.keyword_id = c.id');
         $this->db->where($where);
         $this->db->where('a.status','1');
         $this->db->where('a.type','videoimg');

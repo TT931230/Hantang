@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
-	<buildpathentry kind="src" path="language/zn"/>
-	<buildpathentry kind="src" path="views"/>
-	<buildpathentry kind="src" path="config"/>
-	<buildpathentry kind="src" path="controllers"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/HT_CORE"/>
-	<buildpathentry kind="src" path="language/english"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path=""/>
 </buildpath>
