@@ -32,10 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
-                </div>
+             </div>
                 
                 <div class="newborder">
-                    <div>
+                    <div class="ulsearch">
                         <div class="diftype">
                             <div>{yeartype}</div>
                             <div>
