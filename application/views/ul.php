@@ -63,21 +63,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="diftype">
-                            <div>{activetype}</div>
-                            <div>
-                                {activedetails}
-                                <span>{activedetail}</span>
-                                {/activedetails}
-                            </div>
-                        </div>
-                        </div>
-                  
-              
-             
+	                            <div>{activetype}</div>
+	                            <div>
+	                                {activedetails}
+	                                <span>{activedetail}</span>
+	                                {/activedetails}
+	                            </div>
+	                        </div>
+	                        </div>
+	                  
+	              
+	             
                     <div class="videoslug">相关视频
                     </div>
               
                 <div class="dashline">
+               
                     <div class="relatedvideoarea" id="relatedvideoarea">
                         <!--                    {imagearea2}-->
                         <div class="relatedvideos">
@@ -99,6 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!--                    {/imagearea2}-->
                     </div>
                 </div>
+             
                 
             </div>
         </div>
