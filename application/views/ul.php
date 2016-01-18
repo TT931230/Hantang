@@ -35,72 +35,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-             </div>
-               
-                 <div class="ulsearch">
-                        <div class="diftype">
-                            <div >{yeartype}</div>
-                            <div>
-                                {yeardetails}
-                                    <span>{yeardetail}</span>
-                                {/yeardetails}
-                            </div>
+            </div>
+            <div class="ulsearch">
+                <div class="diftype">
+                    <div >{yeartype}</div>
+                        <div>
+                            {yeardetails}
+                            <span>{yeardetail}</span>
+                            {/yeardetails}
                         </div>
-                        <div class="diftype">
-                            <div>{locationtype}</div>
-                            <div>
-                                {locationdetails}
-                                <span>{locationdetail}</span>
-                                {/locationdetails}
-                            </div>
-                        </div>
-                        <div class="diftype">
-                            <div>{typetype}</div>
-                            <div>
-                                {typedetails}
-                                <span>{typedetail}</span>
-                                {/typedetails}
-                            </div>
-                        </div>
-                        <div class="diftype">
-                            <div>{activetype}</div>
-                            <div>
-                                {activedetails}
-                                <span>{activedetail}</span>
-                                {/activedetails}
-                            </div>
-                        </div>
-                        </div>
-                  
-              
-             
-                    <div class="videoslug">相关视频
                     </div>
-              
-                <div class="dashline">
-                    <div class="relatedvideoarea" id="relatedvideoarea">
-                        <!--                    {imagearea2}-->
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
+                    <div class="diftype">
+                        <div>{locationtype}</div>
+                        <div>
+                            {locationdetails}
+                            <span>{locationdetail}</span>
+                            {/locationdetails}
                         </div>
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
+                    </div>
+                    <div class="diftype">
+                        <div>{typetype}</div>
+                        <div>
+                            {typedetails}
+                            <span>{typedetail}</span>
+                            {/typedetails}
                         </div>
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
+                    </div>
+                    <div class="diftype">
+                        <div>{activetype}</div>
+                        <div>
+                        {activedetails}
+                        <span>{activedetail}</span>
+                        {/activedetails}
                         </div>
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
-                        </div>
-                        <!--                    {/imagearea2}-->
                     </div>
                 </div>
-                
+            </div>
+            <div class="videoslug">
+                相关视频
+            </div>
+            <div class="dashline">
+                <div class="relatedvideoarea" id="relatedvideoarea">
+                    <!--                    {imagearea2}-->
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <div class="relatedvideos">
+                        <a href="{link_url}"><img src="{source_location}"></a>
+                        <span>{source_name}</span>
+                    </div>
+                    <!--                    {/imagearea2}-->
+                </div>
             </div>
         </div>
     </div>
+</div>
 
