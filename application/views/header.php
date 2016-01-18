@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Custom styles for this template -->
     <link href="/bootstrap/css/main.css" rel="stylesheet">
     <link href="/bootstrap/css/main2.css" rel="stylesheet">
+    <link href="/bootstrap/css/main3.css" rel="stylesheet">
 </head>
 
 <body>
