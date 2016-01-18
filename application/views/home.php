@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{/imagearea11}
 				</div>
 				<div id="right">
-					<div class="homewrapper2">
+					<div class="homewrapper2 homeimagearea2bg">
 						<div class="callbacks_container homeimagearea2">
 							<ul class="rslides" id="carousel2">
 								{imagearea2}
@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{/imagearea12}
 				</div>
 				<div id="right">
-					<div class="homewrapper2">
+					<div class="homewrapper2 homeimagearea3bg">
 						<div class="callbacks_container homeimagearea3">
 							<ul class="rslides" id="carousel3">
 								{imagearea3}
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{/imagearea13}
 				</div>
 				<div id="right">
-					<div class="homewrapper2">
+					<div class="homewrapper2 homeimagearea4bg">
 						<div class="callbacks_container homeimagearea4">
 							<ul class="rslides" id="carousel4">
 								{imagearea4}

@@ -47,7 +47,7 @@
     opacity: .40;
     filter: alpha(opacity=40);
 }
-#left:hover{
-    opacity:0.8;
-    background-color: rgb(168, 60, 72);
-}
+/*#left:hover{*/
+    /*opacity:0.8;*/
+    /*background-color: rgb(168, 60, 72);*/
+/*}*/
