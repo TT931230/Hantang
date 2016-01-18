@@ -1,6 +1,22 @@
 /*
  * Globals
  */
+.homeimagearea1:hover{
+    opacity:0.8;
+    background-color: rgb(168, 60, 72);
+}
+.homeimagearea2:hover{
+    opacity:0.8;
+    background-color: #541B2A;
+}
+.homeimagearea3:hover{
+    opacity:0.8;
+    background-color: #0F366A;
+}
+.homeimagearea4:hover{
+    opacity:0.8;
+    background-color: #c8c8c8;
+}
 .navtags{
     text-align: center;
 }
