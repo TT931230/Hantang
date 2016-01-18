@@ -208,3 +208,20 @@ function $searchresult(){
         $("#bg").css("height",document.body.scrollHeight);
     }
 }
+
+function $changelanguage($url,$language){
+    console.log($url);
+    $.ajax({
+        type:"post",
+        data: "language=" + $language,
+        url:$url+"/changelanguage",
+        success: function(result)
+        {
+            location.reload(true);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
