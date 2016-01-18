@@ -36,8 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
              </div>
-                <div class="newborder">
-                    <div>
+               
+                 <div class="ulsearch">
                         <div class="diftype">
                             <div >{yeartype}</div>
                             <div>
@@ -70,11 +70,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 {/activedetails}
                             </div>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                  
+              
              
-                    <div class="videoslug">
-                    相关视频
+                    <div class="videoslug">相关视频
                     </div>
               
                 <div class="dashline">
@@ -99,6 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!--                    {/imagearea2}-->
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
