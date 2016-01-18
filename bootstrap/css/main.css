@@ -59,7 +59,7 @@
 	
     display: none;
     position: absolute;
-    margin-left:75px;
+    /*margin-left:75px;*/
     top:580px;
     left: 0;
     background-color: #000000;

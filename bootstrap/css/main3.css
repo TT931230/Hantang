@@ -37,10 +37,10 @@
 #bg {
     display: none;
     position: absolute;
-    margin-left: 3%;
-    margin-right: %;
+    /*margin-left: 3%;*/
+    /*margin-right: %;*/
     left: 0;
-    width: 94%;
+    width: 100%;
     background-color: #000000;
     z-index: 1001;
     -moz-opacity: 0.4;
