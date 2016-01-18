@@ -66,7 +66,6 @@ class Join extends CI_Controller
         echo('<div class="jobname">');
         echo($jobname);
         echo('</div>');
-        echo('<hr>');
         echo('</hr>');
         echo('<div class="gzzz">工作职责:</div>');
         echo('<div class="departcontent">');
