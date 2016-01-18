@@ -63,15 +63,17 @@ class Join extends CI_Controller
         $jobname=$jobinfo[0]['jobname'];
         $todo=$jobinfo[0]['todo'];
         $need=$jobinfo[0]['need'];
-        echo('<div>');
+        echo('<div class="jobname">');
         echo($jobname);
         echo('</div>');
-        echo('<div>工作职责:</div>');
-        echo('<div>');
+        echo('<hr>');
+        echo('</hr>');
+        echo('<div class="gzzz">工作职责:</div>');
+        echo('<div class="departcontent">');
         echo($todo);
         echo('</div>');
-        echo('<div>岗位要求:</div>');
-        echo('<div>');
+        echo('<div class="gzzz">岗位要求:</div>');
+        echo('<div  class="departcontent">');
         echo($need);
         echo('</div>');
     }

@@ -1,6 +1,61 @@
 /*
  * Globals
  */
+.jobinfoinput{
+    text-align: left;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.jobinfotext{
+    text-align: left;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.jobcommit{
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 30px;
+}
+.jobcommitbtn{
+    width: 100px;
+    height: 50px;
+    font-size: larger;
+    background-color: red;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+
+}
+.jobname{
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: large;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+}
+
+.gzzz{
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: larger;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+}
+
+.departcontent{
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+}
+
 .homeimagearea2bg{
     background-color: #541B2A;
  }
@@ -163,18 +218,35 @@
 .dropdownmenucust li{
     width:100%!important;
     background-color: #e4e4e4;
-     
-    
 }
 .dropdowndepart{
-    width:100%;
-    margin-top:0px;
-    margin-left:0px;
-    margin-right:0px;
-    background-color: #e4e4e4;
-    
-   
+    top:95%;
+    left:25%;
+    padding:0;
+    text-align: center;
+    border-bottom: 0px solid #761c19;
 }
+.dropdowndepart>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #FFF;
+    white-space: nowrap;
+    border-top: 1px solid #fff;
+}
+.dropdowndepart>li>a:hover{
+    background-color: #636363;
+    left:-15%;
+    width:130%;
+    height:60%;
+    color:#fff;
+    font-size:12pt;
+    position:relative;
+
+}
+
 .navcust{
     width:100%;
     float:left !important;
