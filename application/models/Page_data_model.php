@@ -80,9 +80,15 @@ class Page_data_model extends CI_Model{
 
     public function query_sources($source_info){
         $this->db->where('status',$source_info['status']);
-        $this->db->where('first_level',$source_info['first_level']);
-        $this->db->where('second_level',$source_info['second_level']);
-        $this->db->where('third_level',$source_info['third_level']);
+        if($source_info['first_level']){
+            $this->db->where('first_level',$source_info['first_level']);
+        }
+        if($source_info['second_level']){
+            $this->db->where('second_level',$source_info['second_level']);
+        }
+        if($source_info['third_level']){
+            $this->db->where('third_level',$source_info['third_level']);
+        }
         $this->db->where('type',$source_info['type']);
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
