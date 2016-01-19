@@ -18,11 +18,11 @@
      background-color: #636363;
      left:-15%;
      width:130%;
-     height:60%;
+     line-height:30px;
+     vertical-align:middle;
      color:#fff;
      font-size:12pt;
      position:relative;
-
  }
 .dropdownmenucust li{
     background-color: #C9C9C9;
@@ -79,3 +79,28 @@ input[type=checkbox], input[type=radio] {
 /*input[type="checkbox"]:checked {
     background-color:red;
 }*/
+#choseLan{
+    padding: 0px 0;
+    margin: 0px 0 0;
+    min-width: 60px;
+}
+.dropdowncustspan {
+    text-align: center;
+    color: #FFF;
+    float: left;
+    line-height: 21px;
+    text-decoration: none;
+    padding: 0 0px;
+    z-index: 1024;
+    border-top: 1px solid #fff;
+}
+
+ #choseLan>li:hover{
+     background-color: #636363;
+     left:-30%;
+     width:150%;
+     line-height:30px;
+     vertical-align:middle;
+     font-size:13pt;
+     position:relative;
+ }
