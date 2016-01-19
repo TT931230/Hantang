@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="subtitle">
                    加入汉唐                                 
             </div>
-            <div class="newborder">
+           
                 <div class="videoarea">
                     <video controls="controls" autoplay=true>
                         {video}
@@ -21,8 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         {/video}
                     </video>
                 </div>               
-                </div>
-                <div class="dashline">
+                
+       
                 <div class="joininfo">
                     <nav>
                         <ul class="nav join-masthead-nav navcust">
@@ -34,11 +34,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <li><a onclick="$departmentajax('{jobname}')">{jobname}</a></li>
                                     {/job}
                                 </ul>
-                            </li>
+                            </li> 
+                     
                         {/department}
                         </ul>
-                    </nav></div>
-                </div>
+                    </nav>
+                 </div>
+      
                 <div class="dashline">
                     <div class="departmentdetailarea" id="departmentdetailarea">
                     </div>

@@ -13,10 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    合作伙伴                                 
             </div>
             <div class="newborder">
-               <div class="homeborder1">
-                    <div class="homewrapper1">
+               <div class="ptn-border">
+                    <div class="ptn-wrapper">
                         <div class="callbacks_container">
-                            <ul class="rslides" id="carousel1">
+                            <ul class="rslides" id="carousel5">
                                 {imagearea1}
                                 <li><img src='{source_location}' alt=""></li>
                                 {/imagearea1}
