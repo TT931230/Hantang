@@ -115,22 +115,22 @@ function $departmentajax(jobname){
                     '<div class="modal-content">'+
                         '<div class="modal-body">'+
                             '<div class="sendmailtext">发送电子邮件</div>'+
-                            '<hr/>'+
+                   //         '<hr/>'+
                             '<div class="jobinfotext">如有疑问或需要帮助，请填写下面表格</div>'+
                             '<div class="jobinfotext">填写信息</div>'+
-                            '<div class="jobinfoinput"><textarea id="remarkinfo" resize="none"></textarea></div>'+
+                            '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 530px;resize:none; height:100px;" ></textarea></div>'+
                             '<div class="jobinfotext">称呼（非必须）</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 200px;"></div>'+
+                            '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 530px;height:40px"></div>'+
                             '<div class="jobinfotext">姓名</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 200px;"></div>'+
+                            '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 530px;height:40px"></div>'+
                             '<div class="jobinfotext">联系电话（非必须）</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="phoneno" id="phoneno"  style=" width: 200px;"></div>'+
+                            '<div class="jobinfoinput"><input type="text" name="phoneno" id="phoneno"  style=" width: 530px;height:40px"></div>'+
                             '<div class="jobinfotext">您的电子邮件地址</div>'+
-                            '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width: 200px;"></div>'+
+                            '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width: 530px;height:40px"></div>'+
                         '</div>'+
-                        '<div class="modal-footer">'+
-                            '<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>'+
-                            '<button type="button" class="btn btn-primary" onclick="$ask4job(\''+jobname+'\')">发送</button>'+
+                        '<div class="modal-footer">'+'<div class="sendbtn">'+
+                            '<button type="button" class="btn btn-primary sendcommitbtn"onclick="$ask4job(\''+jobname+'\')">发送</button>'+
+                            '<button type="button" class="btn btn-default sendcanclebtn" data-dismiss="modal">关闭</button>'+'</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>'

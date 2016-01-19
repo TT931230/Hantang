@@ -75,10 +75,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	              
 	             
             </div>
+            <div class="dashline">
             <div class="videoslug">
                 相关视频
             </div>
-           
+            </div>
                 <div class="dashline">
                
                     <div class="relatedvideoarea" id="relatedvideoarea">

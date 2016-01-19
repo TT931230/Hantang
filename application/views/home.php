@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="homeborder">
-				<div id="left-music" style="background-color:#c8c8c8">
+				<div id="left-music" style="background-color:#EAEAEA">
 					{imagearea13}
 					<img src='{source_location}' alt="">
 					{/imagearea13}
