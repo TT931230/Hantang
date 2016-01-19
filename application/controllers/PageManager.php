@@ -7,7 +7,8 @@
  */
 class PageManager extends CI_Controller
 {
-    function homeimage(){
-        return $this->load->view('homeimage');
+    function redirectpage(){
+        $pagename=$_POST['pagename'];
+        return $this->load->view($pagename);
     }
 }

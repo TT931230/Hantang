@@ -119,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
                 <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#khgl">客户管理 <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="gsjj" class="collapse">
+                    <ul id="khgl" class="collapse">
                         <li>
                             <a href="javascript:;" onclick="$changetags('customerinformation')">客户信息</a>
                         </li>

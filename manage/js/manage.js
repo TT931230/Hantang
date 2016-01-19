@@ -1,11 +1,12 @@
-function $changetags(tagname){
+function $changetags(pagename){
 
 
 
 
     $.ajax({
         type:"post",
-        url:"pagemanager/"+tagname,
+        data: "pagename=" + pagename,
+        url:"pagemanager/redirectpage",
         success: function(result)
         {
             $("#page-wrapper").html(result);
