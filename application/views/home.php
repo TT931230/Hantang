@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="homeborder">
-				<div id="left" style="background-color:#541B2A">
+				<div id="left" style="background-color:#A73D49">
 					{imagearea11}
 						<img src='{source_location}' alt="">
 					{/imagearea11}
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="homeborder">
-				<div id="left" style="background-color:#0F366A">
+				<div id="left" style="background-color:#3D5C9A">
 					{imagearea12}
 					<img src='{source_location}' alt="">
 					{/imagearea12}

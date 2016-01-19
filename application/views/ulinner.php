@@ -34,13 +34,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <div class="ulinnerb">
+                <div id="share">
                     <div class="bdsharebuttonbox">
-                        <a href="#" class="bds_more" data-cmd="more"></a>
+                    
                         <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
                         <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
                         <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
                         <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
                     </div>
+               </div>
+               <div id="sharetext">分享给好友</div>
                 </div>
             </div>
                         {/video}
