@@ -23,7 +23,7 @@ class Join extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='join';
-        $source_info['type']='img';
+        $source_info['type']='video/mp4';
         $video = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
