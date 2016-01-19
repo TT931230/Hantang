@@ -160,7 +160,7 @@
     background-color: #c0c0c0;
     margin-right:40px;
     margin-bottom:40px;
-    border
+    border:0;
 }
 .ulinnerb{
 	padding-left:20px;
@@ -276,7 +276,7 @@
    
 }
 .dropdownmenucust li{
-    width:100%!important;
+    width:100%;
     background-color: #e4e4e4;
 }
 .dropdowndepart{
