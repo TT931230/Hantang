@@ -33,16 +33,19 @@ function $D2(elementid){
 }
 function $use(elementid,jumpId,searchAToZ){
     if(elementid=='class1content'){
+        var layWidth = $("#area1").width();
         $("#searchBrandName").css('height','40px');
         var d=$a(elementid);
         if(d.style.display=='none'){
             document.getElementById("bg").style.display ="block";
             $D(elementid);
             $("#bg").css("height",document.body.scrollHeight);
+            $("#bg").css("width",layWidth);
         }else{
             document.getElementById("bg").style.display ='none';
             $D2(elementid);
             $("#bg").css("height",document.body.scrollHeight);
+            $("#bg").css("width",layWidth);
         }
     }else{
         var d=$a(elementid);
