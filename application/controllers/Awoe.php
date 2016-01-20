@@ -46,9 +46,9 @@ class Awoe extends CI_Controller
         $keyword_info['second_level']='locationdetails';
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$keyword_info_base;
-        $source_info['first_level']='awoe';
-        $source_info['second_level']='typedetails';
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
+        $keyword_info['second_level']='typedetails';
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
