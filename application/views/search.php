@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </ul>
             </div>
             <div class="searcharea">
-                <span class="dropdowncust" role="button" onclick="$use('class1content')"><i class="glyphicon glyphicon-search"></i> {search}</span>
+                <span class="dropdowncust" role="button" onclick="$use('class1content','')"><i class="glyphicon glyphicon-search"></i> {search}</span>
             </div>
         </div>
     </div>
@@ -27,15 +27,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="searchdetailarea">
             <span id="searchMsg">{seniorsearch}&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent">
+            <span id="searchTool" class="glyphicon glyphicon-search"></span>
             <span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">&nbsp;&nbsp;&nbsp;&nbsp;{commit}</span>
             <span class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
+
             <div id="searchdetailarea"></div>
         </div>
 
-        <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class2content')"><i class=""></i> {brandname}
-                <span class="glyphicon glyphicon-chevron-right"></span>
+        <div class="searchdetailarea" id="searchBrandName">
+               <span class="searchdetail" role="button" onclick="$use('class2content','righToDown1','searchAToZ')"><i class=""></i> {brandname}
+                    <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
+            <div style="padding: 10px 0px;display: none;" id="searchAToZ">
+                <span style="float:left;font-size: 15px;">A</span>
+                <span class="" style="float:left;margin-left: 30px;font-size: 15px;">B</span>
+                <span style="float:left;margin-left: 30px;font-size: 15px;">C</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">D</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">E</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">F</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">G</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">H</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">I</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">J</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">K</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">L</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">M</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">N</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">O</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">P</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">Q</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">R</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">S</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">T</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">U</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">V</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">W</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">X</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">Y</span>
+                <span style="float:left;font-size: 15px;margin-left: 30px;">Z</span>
+            </div>
         </div>
         <div id="class2content" style="display:none;" class="searchcontentarea">
             {search_brandname}

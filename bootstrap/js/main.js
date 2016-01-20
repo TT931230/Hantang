@@ -31,8 +31,9 @@ function $D2(elementid){
     }
     iIntervalId=setInterval(dmove,2);
 }
-function $use(elementid){
-    if(elementid=='class1content'){
+function $use(elementid,jumpId,searchAToZ){
+    if(elementid=='class1content' && jumpId== ''){
+        $("#searchBrandName").css('height','40px');
         var d=$a(elementid);
         if(d.style.display=='none'){
             document.getElementById("bg").style.display ="block";
@@ -48,9 +49,20 @@ function $use(elementid){
         if(d.style.display=='none'){
             $D(elementid);
             $("#bg").css("height",document.body.scrollHeight);
+            $("#"+jumpId).removeClass('glyphicon glyphicon-chevron-right');
+            $("#"+jumpId).addClass('glyphicon glyphicon-chevron-down');
+            if(searchAToZ == ''){
+            }else{
+                $("#"+searchAToZ).css("display",'block');
+                $("#searchBrandName").css('height','60px');
+            }
         }else{
             $D2(elementid);
             $("#bg").css("height",document.body.scrollHeight);
+            $("#"+jumpId).removeClass('glyphicon glyphicon-chevron-down');
+            $("#"+jumpId).addClass('glyphicon glyphicon-chevron-right');
+            $("#"+searchAToZ).css("display",'none');
+            $("#searchBrandName").css('height','40px');
         }
     }
 }
