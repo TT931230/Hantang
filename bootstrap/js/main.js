@@ -132,7 +132,7 @@ function $departmentajax(id){
                             '<div class="jobinfotext">如有疑问或需要帮助，请填写下面表格</div>'+
                             '<div class="jobinfotext">填写信息</div>'+
                             '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 530px;resize:none; height:100px;" ></textarea></div>'+
-                            '<div class="jobinfotext">称呼（非必须）</div>'+
+                            '<div class="jobinfotext" style="margin-top:35px;">称呼（非必须）</div>'+
                             '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 530px;height:40px"></div>'+
                             '<div class="jobinfotext">姓名</div>'+
                             '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 530px;height:40px"></div>'+
@@ -143,7 +143,7 @@ function $departmentajax(id){
                         '</div>'+
                         '<div class="modal-footer">'+'<div class="sendbtn">'+
                             '<button type="button" class="btn btn-primary sendcommitbtn"onclick="$ask4job(\''+id+'\')">发送</button>'+
-                            '<button type="button" class="btn btn-default sendcanclebtn" data-dismiss="modal">关闭</button>'+'</div>'+
+                            '<button type="button" class="btn btn-default sendcanclebtn" data-dismiss="modal" style="border:0;">关闭</button>'+'</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>'

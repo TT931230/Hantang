@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </video>
                 </div>               
                 
-       
+       <div class="dashline">
                 <div class="joininfo">
                     <nav>
                         <ul class="nav join-masthead-nav navcust">
@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </nav>
                  </div>
-      
+      </div>
                 <div class="dashline">
                     <div class="departmentdetailarea" id="departmentdetailarea">
                     </div>

@@ -5,16 +5,25 @@
     padding-left:30px;
     padding-right:30px;
 }
+.modal-content{
+	padding-top:20px;
+	padding-bottom:20px;
+	border-radius:0;
+}
+.modal-footer{
+	border:0;
+}
 .sendmailtext{
 	text-align: left;
     font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    padding-left: 3%;
-    padding-right: 3%;
-    font-size:18px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size:16px;
     margin-top:15px;
-    padding-bottom:15px;
+    padding-bottom:8px;
+    margin-bottom:12px;
     color:#5a5a5a;
-    border-bottom:1px solid #c0c0c0;
+   border-bottom:1px solid #c8c8c8;
 	
 }
 .sendcommitbtn{
@@ -22,10 +31,10 @@
 	font-size:8px;
 	padding:5px;
     height:30px;
-    width:70px;
+    width:50px;
     background-color: #b70000;   
     border-radius:0;
-    border-color:#b70000; 
+    border:0; 
  
 	
 }
@@ -34,15 +43,17 @@
 	font-size:8px;
 	padding:5px;
     height:30px;
-    width:70px;
-    background-color: #b70000;   
+    width:50px;
+    background-color: #fff;   
     border-radius:0;
-    border-color:#b70000; 
+    border:0; 
 	
 }
 .sendbtn{
-	    padding-left: 3%;
+	padding-left: 3%;
     padding-right: 3%;
+    margin-top:10px;
+    border:0;
 }
 .jobinfoinput{
     text-align: left;
@@ -59,7 +70,7 @@
     padding-left: 3%;
     padding-right: 3%;
     font-size:10px;
-    margin-top:20px;
+    margin-top:15px;
     color:#5a5a5a;
 }
 .jobcommit{ 
@@ -78,7 +89,7 @@
     width:70px;
     background-color: #b70000;   
     border-radius:0;
-    border-color:#b70000; 
+    border:0; 
 }
 .jobname{
     text-align: left;
@@ -109,6 +120,8 @@
     font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
     color:#808080;
     font-size: 10px;
+    background-color:#fff;
+    border:0;
 }
 
 .homeimagearea2bg{
@@ -159,8 +172,8 @@
     display: inline-block;
     background-color: #c0c0c0;
     margin-right:40px;
-    margin-bottom:40px;
-    border:0;
+    margin-bottom:40px;   
+    border-right:1px solid #000000;
 }
 .ulinnerb{
 	padding-left:20px;
@@ -600,13 +613,22 @@ body {
     
 	
 }
-
+#ulli >a.active{
+	 background-color: transparent;
+    border-bottom-color: #A73D49;
+}
 
 #awoeli > a:hover,a:focus{
 	background-color: transparent;
     border-bottom-color: #3D5C9A;
     
 	
+}
+
+
+#awoeli >a.active{
+	 background-color: transparent;
+    border-bottom-color: #3D5C9A;
 }
 @media (min-width: 768px) {
     .masthead-brand {
