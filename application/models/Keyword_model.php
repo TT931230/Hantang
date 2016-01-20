@@ -21,31 +21,27 @@ class Keyword_model extends CI_Model
     {
         parent::__construct();
     }
-    public function queryKeyword(){
-        $this->db->where('status',$_POST['status']);
-        if($_POST['source_name']){
-            $this->db->where('source_name',$_POST['source_name']);
+    public function queryKeyword($querycontent){
+        if($querycontent['first_level']){
+            $this->db->where('first_level',$querycontent['first_level']);
         }
-        if($_POST['first_level']){
-            $this->db->where('first_level',$_POST['first_level']);
+        if($querycontent['second_level']){
+            $this->db->where('second_level',$querycontent['second_level']);
         }
-        if($_POST['second_level']){
-            $this->db->where('second_level',$_POST['second_level']);
+        if($querycontent['third_level']){
+            $this->db->where('third_level',$querycontent['third_level']);
         }
-        if($_POST['third_level']){
-            $this->db->where('third_level',$_POST['third_level']);
+        if($querycontent['type']){
+            $this->db->where('type',$querycontent['type']);
         }
-        $this->db->where('type',$_POST['type']);
-        $this->db->from('source');
-        $this->db->order_by("sequence"," desc");
+        $this->db->from('keyword');
+        $this->db->order_by("keyword"," desc");
         $query = $this->db->get();
         return $query->result_array();
     }
-    public function insertKeyword(){
-        $this->source_location    = $_POST['source_location'];
-        $this->status    = $_POST['status'];
-        $this->source_name    = $_POST['source_name'];
-        $this->link_url    = $_POST['link_url'];
+    public function insertKeyword($insertcontent){
+        $this->source_location    = $insertcontent['keyword'];
+        $this->status    = $insertcontent['type'];
         $this->sequence    = $_POST['sequence'];
         $this->type    = $_POST['type'];
         $this->updater    = $_POST['updater'];
@@ -55,13 +51,12 @@ class Keyword_model extends CI_Model
         $this->third_level    = $_POST['third_level'];
         $this->create_time = time();
         $this->update_time = time();
-        $this->db->insert('source', $this);
+        $this->db->insert('keyword', $this);
     }
-    public function updateKeyword(){
-        $this->status    = $_POST['status'];
+    public function updateKeyword($updatecontent){
         $this->sequence    = $_POST['sequence'];
         $this->updater    = $_POST['updater'];
         $this->update_time = time();
-        $this->db->update('source', $this, array('id' => $_POST['id']));
+        $this->db->update('keyword', $this, array('id' => $_POST['id']));
     }
 }

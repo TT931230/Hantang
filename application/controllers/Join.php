@@ -31,8 +31,11 @@ class Join extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
-        $department =  $this->page_data_model->get_department();
-
+        $d_status=array(
+            'd_status'=>'1',
+            'j_status'=>'1'
+        );
+        $department = $this->page_data_model->query_departments($d_status);
         $tag_data = $this->page_data_model->query_tags($source_info);
 
         $tmp_data = array(
@@ -56,7 +59,7 @@ class Join extends CI_Controller
     }
     function getJobInfo(){
         $this->db->where('status','1');
-        $this->db->where('jobname',$_POST['jobname']);
+        $this->db->where('id',$_POST['job_id']);
         $this->db->from('jobinfo');
         $query = $this->db->get();
         $jobinfo = $query->result_array();
@@ -68,16 +71,16 @@ class Join extends CI_Controller
         echo('</div>');
         echo('</hr>');
         echo('<div class="gzzz">工作职责:</div>');
-        echo('<div class="departcontent">');
+        echo('<pre class="departcontent">');
         echo($todo);
-        echo('</div>');
+        echo('</pre>');
         echo('<div class="gzzz">岗位要求:</div>');
-        echo('<div  class="departcontent">');
+        echo('<pre  class="departcontent">');
         echo($need);
-        echo('</div>');
+        echo('</pre>');
     }
     function ask4job(){
-        echo($_POST['jobname']);
+        echo($_POST['job_id']);
         echo($_POST['remark']);
         echo($_POST['call']);
         echo($_POST['name']);
