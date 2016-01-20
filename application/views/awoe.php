@@ -34,42 +34,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
              </div>
                 
-                <div class="newborder">
-                    <div class="ulsearch">
+         <div class="ulsearch">
                         <div class="diftype">
-                            <div>{yeartype}</div>
-                            <div>
+                            <div class="ultypes">{yeartype}</div>
+                            <div class="uldetails">
                                 {yeardetails}
-                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')" >
+                                <span class="musictypedetail" >{keyword}</span>
+                                </a>
                                 {/yeardetails}
                             </div>
                         </div>
                         <div class="diftype">
-                            <div>{locationtype}</div>
-                            <div>
+                            <div class="ultypes">{locationtype}</div>
+                            <div class="uldetails">
                                 {locationdetails}
-                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
+                                <span class="musictypedetail" >{keyword}</span>
+                                </a>
                                 {/locationdetails}
                             </div>
                         </div>
                         <div class="diftype">
-                            <div>{typetype}</div>
-                            <div>
+                            <div class="ultypes">{typetype}</div>
+                            <div class="uldetails">
                                 {typedetails}
-                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">                              
+                                <span class="musictypedetail" >{keyword}</span>
+                                </a>
                                 {/typedetails}
                             </div>
                         </div>
                         <div class="diftype">
-                            <div>{activetype}</div>
-                            <div>
-                                {activedetails}
-                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
-                                {/activedetails}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	                            <div class="ultypes">{activetype}</div>
+	                            <div class="uldetails">
+	                                {activedetails}
+	                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">   
+                                    <span class="musictypedetail" >{keyword}</span>
+                                    </a>
+	                                {/activedetails}
+	                            </div>
+	                        </div>
+	                        </div>
                 <div class="dashline">
                  <div class="videoslug">
                     相关视频

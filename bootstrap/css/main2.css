@@ -164,12 +164,22 @@
 }
 
 .ulsearch{
-	margin-bottom: 0;
+	
     margin-top: 0;
     padding:0;
-    height:80px;
+   
 }
-
+.ultypes{
+height:50px;
+background-color:#e0e0e0;
+text-align:center;
+padding-top:15px;
+}
+.uldetails{
+margin-top:20px;
+height:50px;
+border-right:1px solid #c0c0c0;
+}
   
    /*
  * music

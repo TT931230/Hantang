@@ -261,18 +261,21 @@
     width:60%;
     height:55px;
     float:left;
+    
 }
 .musictypedetail{
     width:25%;
     float:left;
+    color:#000;
+    margin-bottom:10px;
 }
 .diftype{
     width:25%;
     float:left;
     margin-top:20px;
-    background-color: #e4e4e4;
-    height:55px;
-    padding:15px;
+    
+    height:140px;
+    margin-bottom:40px;
     border:1px solid #fff;
     color:#808080;
 }
