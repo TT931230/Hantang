@@ -32,7 +32,7 @@ function $D2(elementid){
     iIntervalId=setInterval(dmove,2);
 }
 function $use(elementid,jumpId,searchAToZ){
-    if(elementid=='class1content' && jumpId== ''){
+    if(elementid=='class1content'){
         $("#searchBrandName").css('height','40px');
         var d=$a(elementid);
         if(d.style.display=='none'){
@@ -47,11 +47,12 @@ function $use(elementid,jumpId,searchAToZ){
     }else{
         var d=$a(elementid);
         if(d.style.display=='none'){
+
             $D(elementid);
             $("#bg").css("height",document.body.scrollHeight);
             $("#"+jumpId).removeClass('glyphicon glyphicon-chevron-right');
             $("#"+jumpId).addClass('glyphicon glyphicon-chevron-down');
-            if(searchAToZ == ''){
+            if(searchAToZ == undefined){
             }else{
                 $("#"+searchAToZ).css("display",'block');
                 $("#searchBrandName").css('height','60px');
@@ -147,9 +148,7 @@ function $departmentajax(jobname){
                     '</div>'+
                 '</div>'
             $("#departmentdetailarea").html(result+submitbutton+modal);
-
         },
-
         error: function()
         {
             $("#departmentdetailarea").html('error');

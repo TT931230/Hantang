@@ -39,32 +39,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
             <div style="padding: 10px 0px;display: none;" id="searchAToZ">
-                <span style="float:left;font-size: 15px;">A</span>
-                <span class="" style="float:left;margin-left: 30px;font-size: 15px;">B</span>
-                <span style="float:left;margin-left: 30px;font-size: 15px;">C</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">D</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">E</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">F</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">G</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">H</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">I</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">J</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">K</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">L</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">M</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">N</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">O</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">P</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">Q</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">R</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">S</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">T</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">U</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">V</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">W</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">X</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">Y</span>
-                <span style="float:left;font-size: 15px;margin-left: 30px;">Z</span>
+                <span role="button"><i style="float:left;font-size: 15px;font-style: normal">A</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">B</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">C</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">D</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">E</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">F</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">G</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">H</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">I</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">J</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">K</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">L</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">M</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">N</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">O</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">P</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">Q</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">R</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">S</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">T</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">U</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">V</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">W</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">X</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">Y</i></span>
+                <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">Z</i></span>
             </div>
         </div>
         <div id="class2content" style="display:none;" class="searchcontentarea">
@@ -75,8 +75,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_brandname}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class3content')"><i class=""></i> {type}
-            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}
+            <span id="righToDown2" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>
         <div id="class3content" style="display:none;" class="searchcontentarea">
@@ -87,8 +87,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_type}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class4content')"><i class=""></i> {keyword}
-            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="searchdetail" role="button" onclick="$use('class4content','righToDown3')"><i class=""></i> {keyword}
+            <span id="righToDown3" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>
         <div id="class4content" style="display:none;" class="searchcontentarea">
@@ -99,8 +99,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_keyword}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class5content')"><i class=""></i> {location}
-            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4')"><i class=""></i> {location}
+            <span id="righToDown4" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>
         <div id="class5content" style="display:none;" class="searchcontentarea">
@@ -111,14 +111,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_location}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class6content')"><i class=""></i> {time}
-            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="searchdetail" role="button" onclick="$use('class6content','righToDown5')"><i class=""></i> {time}
+            <span id="righToDown5" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>
         <div id="class6content" style="display:none;" class="searchcontentarea">
             {search_time}
             <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
+                    <input typFe="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
             </span>
             {/search_time}
         </div>
