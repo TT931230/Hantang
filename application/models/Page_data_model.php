@@ -160,74 +160,26 @@ class Page_data_model extends CI_Model{
         return $data;
     }
 
-    public function get_department(){
-        $department = array(
-            array('departmentname' => '编辑部','job'=>array(
-                array('jobname'=>'编辑'),
-                array('jobname'=>'编辑2')
-            )
-            ),
-            array('departmentname' => '客户部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '翻译部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '数据库','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '后期剪辑部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '音乐部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '创意部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '动画特效部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '人事部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '管理部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '网络技术部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '雨嘉科技','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            ),
-            array('departmentname' => '新媒体事业部','job'=>array(
-                array('jobname'=>'客服1'),
-                array('jobname'=>'客服2')
-            )
-            )
-        );
-        return $department;
+    public function query_keywords($keyword_info){
+        $this->db->from('keyword');
+        $this->db->where('status',$keyword_info['status']);
+        if($keyword_info['first_level']){
+            $this->db->where('first_level',$keyword_info['first_level']);
+        }
+        if($keyword_info['second_level']){
+            $this->db->where('second_level',$keyword_info['second_level']);
+        }
+        if($keyword_info['third_level']){
+            $this->db->where('third_level',$keyword_info['third_level']);
+        }
+        $this->db->order_by("sequence","asc");
+        $query = $this->db->get();
+        $keywords=$query->result_array();
+        $return_array=array();
+        for($i=0;$i<count($keywords);$i++){
+            $temp_array=$keywords[$i];
+            array_push($return_array,$temp_array);
+        }
+        return $return_array;
     }
 }

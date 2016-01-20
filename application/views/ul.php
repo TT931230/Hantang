@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div >{yeartype}</div>
                             <div>
                                 {yeardetails}
-                                    <span>{yeardetail}</span>
+                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
                                 {/yeardetails}
                             </div>
                         </div>
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div>{locationtype}</div>
                             <div>
                                 {locationdetails}
-                                <span>{locationdetail}</span>
+                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
                                 {/locationdetails}
                             </div>
                         </div>
@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div>{typetype}</div>
                             <div>
                                 {typedetails}
-                                <span>{typedetail}</span>
+                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
                                 {/typedetails}
                             </div>
                         </div>
@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                            <div>{activetype}</div>
 	                            <div>
 	                                {activedetails}
-	                                <span>{activedetail}</span>
+                                    <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
 	                                {/activedetails}
 	                            </div>
 	                        </div>
