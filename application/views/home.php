@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="inner">
 			<div class="homeborder1">
 				<div class="homewrapper1">
-					<div id="area1" class="callbacks_container homeimagearea1">
+					<div id="area1" class="musiccallbacks_container homeimagearea1">
 						<ul class="rslides" id="carousel1">
 						{imagearea1}
 							<li><img src='{source_location}' alt=""></li>
