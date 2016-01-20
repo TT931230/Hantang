@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-20 18:38:40
+Date: 2016-01-20 21:18:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -107,7 +107,7 @@ CREATE TABLE `keyword` (
   `first_level` varchar(100) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `keyword` varchar(50) NOT NULL,
-  `type` varchar(100) NOT NULL,
+  `status` int(10) NOT NULL,
   `creator` varchar(30) NOT NULL,
   `create_time` date NOT NULL,
   `sequence` int(11) DEFAULT NULL,
@@ -116,11 +116,19 @@ CREATE TABLE `keyword` (
   `third_level` varchar(100) DEFAULT NULL,
   `second_level` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword
 -- ----------------------------
+INSERT INTO `keyword` VALUES ('music', '1', '2013-2014', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'seasondetails');
+INSERT INTO `keyword` VALUES ('music', '2', '2014-2015', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'seasondetails');
+INSERT INTO `keyword` VALUES ('music', '3', '2015-2016', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'seasondetails');
+INSERT INTO `keyword` VALUES ('music', '4', '合唱', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'displaydetails');
+INSERT INTO `keyword` VALUES ('music', '5', '独奏', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'displaydetails');
+INSERT INTO `keyword` VALUES ('music', '6', '室内乐', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'displaydetails');
+INSERT INTO `keyword` VALUES ('music', '7', '交响乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'displaydetails');
+INSERT INTO `keyword` VALUES ('music', '8', '其他', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'displaydetails');
 
 -- ----------------------------
 -- Table structure for `keyword_source_relation`
