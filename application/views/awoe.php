@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="uldetails">
                                 {locationdetails}
                                 <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
-                                <span class="musictypedetail" >{keyword}</span>
+                                <span class="musictypedetail2" >{keyword}</span>
                                 </a>
                                 {/locationdetails}
                             </div>

@@ -269,15 +269,22 @@
     color:#000;
     margin-bottom:10px;
 }
+.musictypedetail2{
+   margin-left:23px;
+   margin-right:9px;
+    float:left;
+    color:#000;
+    margin-bottom:10px;
+}
 .diftype{
     width:25%;
     float:left;
     margin-top:20px;
-    
     height:140px;
     margin-bottom:40px;
     border:1px solid #fff;
     color:#808080;
+    
 }
 .platform-sub{
     width:100%;
