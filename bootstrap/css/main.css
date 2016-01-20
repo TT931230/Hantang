@@ -312,7 +312,8 @@
 }
 .dropdowndepart{
     top:95%;
-    left:25%;
+    left:5%;
+    width:90%;
     padding:0;
     text-align: center;
     border-bottom: 0px solid #761c19;
