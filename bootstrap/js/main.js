@@ -239,3 +239,19 @@ function $changelanguage($url,$language){
         }
     });
 }
+
+function $searchrelatedvideo($keyword_id){
+    $.ajax({
+        type:"post",
+        data: "keyword_id=" + $keyword_id,
+        url:"Search/searchrelatedvideo",
+        success: function(result)
+        {
+            $('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
