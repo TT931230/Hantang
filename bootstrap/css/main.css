@@ -133,6 +133,10 @@
 .homeimagearea4bg{
     background-color: #c8c8c8;
 }
+.homeimagearea1:hover{
+    opacity:0.4;
+    background-color: rgb(168, 60, 72);
+}
 .homeimagearea2:hover{
     opacity:0.4;
     background-color: #541B2A;
@@ -163,13 +167,25 @@
 }
 .relatedvideos{
 	float:left;
-    height:200px;
-    width:30%;
+	height:220px;
+    width:33%;
+    margin-bottom:55px;
     display: inline-block;
-    background-color: #c0c0c0;
-    margin-right:40px;
-    margin-bottom:40px;   
-    border-right:1px solid #000000;
+    background-color: #ffffff;
+    border-right:1px solid #d6d6d6;
+}
+.relatedvideos img{
+	margin-left:20px;
+    float:left;
+    height:200px;
+    width:350px;  
+}
+.relavideostitle{
+	width:350px;
+	height:50px;
+	font-size:15px;
+	padding-top:220px;
+	color:#808080;
 }
 .ulinnerb{
 	padding-left:20px;

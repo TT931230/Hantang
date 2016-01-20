@@ -86,7 +86,7 @@ class Search extends CI_Controller
         for($i=0;$i<count($results);$i++){
             $return.='<div class="relatedvideos">';
             $return.='<a href="'.$results[$i]['link_url'].'"><img src="'.$results[$i]['source_location'].'"></a>';
-            $return.='<div>';
+            $return.='<div class="relavideostitle">';
             $return.=$results[$i]['source_name'];
             $return.='</div>';
             $return.='</div>';
