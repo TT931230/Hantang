@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>后台管理</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="manage/css/bootstrap.min.css" rel="stylesheet">
@@ -82,13 +82,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="javascript:;" data-toggle="collapse" data-target="#hzal">合作案例 <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="hzal" class="collapse">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#tpgl">图片管理<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="tpgl" class="collapse">
                         <li>
-                            <a href="javascript:;" onclick="$changetags('caseedit')">案例编辑</a>
+                            <a href="javascript:;" onclick="$changetags('caseedit')">图片编辑</a>
                         </li>
                         <li>
-                            <a href="javascript:;" onclick="$changetags('caselist')">案例列表</a>
+                            <a href="javascript:;" onclick="$changetags('caselist')">图片列表</a>
                         </li>
                     </ul>
                 </li>
@@ -103,34 +103,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                     </ul>
                 </li>
-                <li class="active">
-                    <a href="javascript:;" data-toggle="collapse" data-target="#ztdt">专题动态 <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="ztdt" class="collapse">
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('activitylist')">动态列表</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('activity')">专题活动</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('thematiclist')">专题列表</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="active">
-                    <a href="javascript:;" data-toggle="collapse" data-target="#khgl">客户管理 <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="khgl" class="collapse">
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('customerinformation')">客户信息</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('examineedit')">审片编辑</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('examinelist')">审片列表</a>
-                        </li>
-                    </ul>
-                </li>
+<!--                <li class="active">-->
+<!--                    <a href="javascript:;" data-toggle="collapse" data-target="#ztdt">专题动态 <i class="fa fa-fw fa-caret-down"></i></a>-->
+<!--                    <ul id="ztdt" class="collapse">-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('activitylist')">动态列表</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('activity')">专题活动</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('thematiclist')">专题列表</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="active">-->
+<!--                    <a href="javascript:;" data-toggle="collapse" data-target="#khgl">客户管理 <i class="fa fa-fw fa-caret-down"></i></a>-->
+<!--                    <ul id="khgl" class="collapse">-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('customerinformation')">客户信息</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('examineedit')">审片编辑</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('examinelist')">审片列表</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
                 <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#bqgl">标签管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="bqgl" class="collapse">
@@ -184,17 +184,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                     </ul>
                 </li>
-                <li class="active">
-                    <a href="javascript:;" data-toggle="collapse" data-target="#mtgl">媒体管理<i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="mtgl" class="collapse">
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('mediasearch')">媒体查询</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('functionset')">功能设置</a>
-                        </li>
-                    </ul>
-                </li>
+<!--                <li class="active">-->
+<!--                    <a href="javascript:;" data-toggle="collapse" data-target="#mtgl">媒体管理<i class="fa fa-fw fa-caret-down"></i></a>-->
+<!--                    <ul id="mtgl" class="collapse">-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('mediasearch')">媒体查询</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" onclick="$changetags('functionset')">功能设置</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
                 <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#shgl">审核管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="shgl" class="collapse">

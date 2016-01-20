@@ -6,7 +6,7 @@
  * Time: 15:16
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="container">
+<div>
     <div class="row"><label class="col-lg-2">音乐年管理</label></div>
     <div class="row"><label class="col-lg-2">标题</label><input class="col-lg-2" type="text"></div>
     <div class="row"><label class="col-lg-2">表演者</label><input class="col-lg-2" type="text"></div>

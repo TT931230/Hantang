@@ -7,10 +7,30 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="container">
-    <div class="row"><label>网页内容管理</label></div>
-    <div class="row"><label>所属页面</label><input type="text"><label>所属模块</label><input type="text"><label>内容序列</label><input type="text"></div>
-    <div class="row"><label>内容标题</label><input type="text"><label>内容链接</label><input type="text"><label>内容图片</label><input type="text"></div>
-    <div class="row"><label>内容描述</label><input type="textarea"></div>
-    <div class="row"><button type="reset" class="btn btn-default">保存</button></div>
+<div>
+    <div class="row">
+        <label class="col-lg-2">网页内容管理</label></div>
+    <div class="row">
+        <label class="col-lg-2">所属页面</label>
+        <input class="col-lg-2" type="text">
+        <label class="col-lg-2">所属模块</label>
+        <input class="col-lg-2" type="text">
+        <label class="col-lg-2">内容序列</label>
+        <input class="col-lg-2" type="text">
+    </div>
+    <div class="row">
+        <label class="col-lg-2">内容标题</label>
+        <input class="col-lg-2" type="text">
+        <label class="col-lg-2">内容链接</label>
+        <input class="col-lg-2" type="text">
+        <label class="col-lg-2">内容图片</label>
+        <input class="col-lg-2" type="text">
+    </div>
+    <div class="row">
+        <label class="col-lg-2">内容描述</label>
+        <input type="textarea">
+    </div>
+    <div class="row">
+        <button type="reset" class="btn btn-default">保存</button>
+    </div>
 </div>
