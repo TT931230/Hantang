@@ -101,10 +101,10 @@ function $reset(){
     $("#bg").css("height",document.body.scrollHeight);
 }
 
-function $departmentajax(jobname){
+function $departmentajax(id){
     $.ajax({
         type:"post",
-        data: "jobname=" + jobname,
+        data: "job_id=" + id,
         url:"Join/getJobInfo",
         success: function(result)
         {
@@ -129,7 +129,7 @@ function $departmentajax(jobname){
                             '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width: 530px;height:40px"></div>'+
                         '</div>'+
                         '<div class="modal-footer">'+'<div class="sendbtn">'+
-                            '<button type="button" class="btn btn-primary sendcommitbtn"onclick="$ask4job(\''+jobname+'\')">发送</button>'+
+                            '<button type="button" class="btn btn-primary sendcommitbtn"onclick="$ask4job(\''+id+'\')">发送</button>'+
                             '<button type="button" class="btn btn-default sendcanclebtn" data-dismiss="modal">关闭</button>'+'</div>'+
                         '</div>'+
                     '</div>'+
@@ -146,7 +146,7 @@ function $departmentajax(jobname){
     });
 }
 
-function $ask4job(jobname){
+function $ask4job(id){
     var remark=$('#remarkinfo').val();
     var call=$('#call').val();
     var name=$('#name').val();
@@ -154,7 +154,7 @@ function $ask4job(jobname){
     var email=$('#email').val();
     $.ajax({
         type:"post",
-        data: "jobname=" + jobname + '&remark='+remark+'&call='+call+'&name='+name+'&phoneno='+phoneno+'&email='+email,
+        data: "job_id=" + id + '&remark='+remark+'&call='+call+'&name='+name+'&phoneno='+phoneno+'&email='+email,
         url:"Join/ask4job",
         success: function(result)
         {

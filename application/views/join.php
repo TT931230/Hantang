@@ -28,10 +28,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <ul class="nav join-masthead-nav navcust">
                         {department}
                             <li>
-                                <a class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{departmentname}</a>
+                                <a class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{department}</a>
                                 <ul class="dropdown-menu dropdownmenucust dropdowndepart">
                                     {job}
-                                        <li><a onclick="$departmentajax('{jobname}')">{jobname}</a></li>
+                                        <li><a onclick="$departmentajax('{id}')">{jobname}</a></li>
                                     {/job}
                                 </ul>
                             </li> 

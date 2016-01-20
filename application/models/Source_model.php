@@ -24,47 +24,47 @@ class Source_model extends CI_Model
     {
         parent::__construct();
     }
-    public function querySource(){
-        $this->db->where('status',$_POST['status']);
+    public function querySource($querycontent){
+        $this->db->where('status',$querycontent['status']);
         if($_POST['source_name']){
-            $this->db->where('source_name',$_POST['source_name']);
+            $this->db->where('source_name',$querycontent['source_name']);
         }
         if($_POST['first_level']){
-            $this->db->where('first_level',$_POST['first_level']);
+            $this->db->where('first_level',$querycontent['first_level']);
         }
         if($_POST['second_level']){
-            $this->db->where('second_level',$_POST['second_level']);
+            $this->db->where('second_level',$querycontent['second_level']);
         }
         if($_POST['third_level']){
-            $this->db->where('third_level',$_POST['third_level']);
+            $this->db->where('third_level',$querycontent['third_level']);
         }
-        $this->db->where('type',$_POST['type']);
+        $this->db->where('type',$querycontent['type']);
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
         $query = $this->db->get();
         return $query->result_array();
     }
-    public function insertSource(){
-        $this->source_location    = $_POST['source_location'];
-        $this->status    = $_POST['status'];
-        $this->source_name    = $_POST['source_name'];
-        $this->link_url    = $_POST['link_url'];
-        $this->sequence    = $_POST['sequence'];
-        $this->type    = $_POST['type'];
-        $this->updater    = $_POST['updater'];
-        $this->creator    = $_POST['creator'];
-        $this->first_level    = $_POST['first_level'];
-        $this->second_level    = $_POST['second_level'];
-        $this->third_level    = $_POST['third_level'];
+    public function insertSource($insertcontent){
+        $this->source_location    = $insertcontent['source_location'];
+        $this->status    = $insertcontent['status'];
+        $this->source_name    = $insertcontent['source_name'];
+        $this->link_url    = $insertcontent['link_url'];
+        $this->sequence    = $insertcontent['sequence'];
+        $this->type    = $insertcontent['type'];
+        $this->updater    = $insertcontent['updater'];
+        $this->creator    = $insertcontent['creator'];
+        $this->first_level    = $insertcontent['first_level'];
+        $this->second_level    = $insertcontent['second_level'];
+        $this->third_level    = $insertcontent['third_level'];
         $this->create_time = time();
         $this->update_time = time();
         $this->db->insert('source', $this);
     }
-    public function updateSource(){
-        $this->status    = $_POST['status'];
-        $this->sequence    = $_POST['sequence'];
-        $this->updater    = $_POST['updater'];
+    public function updateSource($updatecontent){
+        $this->status    = $updatecontent['status'];
+        $this->sequence    = $updatecontent['sequence'];
+        $this->updater    = $updatecontent['updater'];
         $this->update_time = time();
-        $this->db->update('source', $this, array('id' => $_POST['id']));
+        $this->db->update('source', $this, array('id' => $updatecontent['id']));
     }
 }
