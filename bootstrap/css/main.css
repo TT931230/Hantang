@@ -281,9 +281,9 @@
 .musictypedetail2{
    margin-left:23px;
    margin-right:7px;
-   
+    display:inline-block;
     color:#000;
-   margin-bottom:50px;
+   margin-bottom:10px;
    
 }
 .diftype{
