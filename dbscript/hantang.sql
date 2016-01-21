@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-20 23:33:31
+Date: 2016-01-21 13:57:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -115,82 +115,83 @@ CREATE TABLE `keyword` (
   `update_time` date NOT NULL,
   `third_level` varchar(100) DEFAULT NULL,
   `second_level` varchar(100) DEFAULT NULL,
+  `keyword_remark` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword
 -- ----------------------------
-INSERT INTO `keyword` VALUES ('music', '1', '2013-2014', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'seasondetails');
-INSERT INTO `keyword` VALUES ('music', '2', '2014-2015', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'seasondetails');
-INSERT INTO `keyword` VALUES ('music', '3', '2015-2016', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'seasondetails');
-INSERT INTO `keyword` VALUES ('music', '4', '合唱', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'displaydetails');
-INSERT INTO `keyword` VALUES ('music', '5', '独奏', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'displaydetails');
-INSERT INTO `keyword` VALUES ('music', '6', '室内乐', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'displaydetails');
-INSERT INTO `keyword` VALUES ('music', '7', '交响乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'displaydetails');
-INSERT INTO `keyword` VALUES ('music', '8', '其他', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'displaydetails');
-INSERT INTO `keyword` VALUES ('ul', '9', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '10', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '11', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '12', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '13', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '14', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '15', '2015', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '16', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('ul', '17', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '18', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '19', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '20', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '21', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '22', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '23', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '24', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '25', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('ul', '26', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '27', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '28', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '29', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '30', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '31', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '32', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '33', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('ul', '34', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('ul', '35', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('ul', '36', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('ul', '37', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('ul', '38', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('ul', '39', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('awoe', '40', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '41', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '42', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '43', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '44', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '45', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '46', '2015', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '47', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'yeardetails');
-INSERT INTO `keyword` VALUES ('awoe', '48', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '49', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '50', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '51', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '52', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '53', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '54', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '55', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '56', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', null, 'locationdetails');
-INSERT INTO `keyword` VALUES ('awoe', '57', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '58', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '59', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '60', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '61', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '62', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '63', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '64', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'typedetails');
-INSERT INTO `keyword` VALUES ('awoe', '65', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('awoe', '66', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('awoe', '67', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('awoe', '68', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('awoe', '69', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails');
-INSERT INTO `keyword` VALUES ('awoe', '70', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails');
+INSERT INTO `keyword` VALUES ('music', '1', '2013-2014', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'seasondetails', null);
+INSERT INTO `keyword` VALUES ('music', '2', '2014-2015', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'seasondetails', null);
+INSERT INTO `keyword` VALUES ('music', '3', '2015-2016', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'seasondetails', null);
+INSERT INTO `keyword` VALUES ('music', '4', '合唱', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '5', '独奏', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '6', '室内乐', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '7', '交响乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '8', '其他', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('ul', '9', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '10', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '11', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '12', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '13', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '14', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '15', '2015', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '16', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '17', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '18', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '19', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '20', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '21', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '22', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '23', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '24', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '25', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '26', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '27', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '28', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '29', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '30', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '31', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '32', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '33', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '34', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '35', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '36', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '37', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '38', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '39', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '40', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '41', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '42', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '43', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '44', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '45', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '46', '2015', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '47', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '48', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '49', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '50', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '51', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '52', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '53', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '54', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '55', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '56', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '57', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '58', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '59', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '60', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '61', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '62', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '63', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '64', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '65', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '66', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '67', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '68', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '69', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('awoe', '70', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails', null);
 
 -- ----------------------------
 -- Table structure for `keyword_source_relation`
@@ -216,16 +217,30 @@ INSERT INTO `keyword_source_relation` VALUES ('100202', '32', '3');
 INSERT INTO `keyword_source_relation` VALUES ('100203', '32', '4');
 
 -- ----------------------------
+-- Table structure for `menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL,
+  `menu` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of menu
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `privilege`
 -- ----------------------------
 DROP TABLE IF EXISTS `privilege`;
 CREATE TABLE `privilege` (
-  `privilege` int(3) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
+  `privilege` varchar(100) NOT NULL,
+  `menu_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`)
+  KEY `menu_id` (`menu_id`),
+  CONSTRAINT `menu_id` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -309,4 +324,21 @@ CREATE TABLE `user_info` (
 
 -- ----------------------------
 -- Records of user_info
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `user_privilege`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_privilege`;
+CREATE TABLE `user_privilege` (
+  `user_id` int(11) NOT NULL,
+  `privilege_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`,`privilege_id`),
+  KEY `privilege_id` (`privilege_id`),
+  CONSTRAINT `privilege_id` FOREIGN KEY (`privilege_id`) REFERENCES `privilege` (`id`),
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_privilege
 -- ----------------------------
