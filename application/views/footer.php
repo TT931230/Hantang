@@ -11,7 +11,8 @@
         <div class="inner">
             <div class="footerleftdiv">
                 <div>{about}</div>
-                <div style="margin-top: 30px;margin-right:70px;text-align:right;color: #777;"><div style="margin-top: 7px;">微信</div><div style="margin-top: 7px;">微博</div><div style="margin-top: 7px;">优酷</div><div style="margin-top: 7px;">简书</div></div>
+                <div style="margin-top: 30px;margin-right:70px;text-align:right;color: #777;">
+                    <div style="margin-top: 7px;">微信</div><div style="margin-top: 7px;">微博</div><div style="margin-top: 7px;">优酷</div><div style="margin-top: 7px;">简书</div></div>
             </div>
             <div class="footerleftdiv">
                 <div>{ul}</div>
