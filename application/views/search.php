@@ -7,6 +7,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<div class="cover-container">
 <div class="searchallarea">
     <div class="cover-container showsearcharea">
         <div class="inner newborder showsearcharea1">
@@ -38,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <span class="searchdetail" role="button" onclick="$use('class2content','righToDown1','searchAToZ')"><i class=""></i> {brandname}
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
-            <div style="padding: 10px 0px;display: none;" id="searchAToZ">
+            <div class="searchAZ" id="searchAToZ">
                 <span role="button"><i style="float:left;font-size: 15px;font-style: normal">A</i></span>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">B</i></span>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">C</i></span>
@@ -128,13 +129,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         height: 30px;margin-bottom: 10px;
                  background-color: #E8E8E8;">
                 <span style="float:left;margin-top: 10px;margin-left: 15px;">收索结果</span>
-                <span class="glyphicon glyphicon-chevron-up"  onclick="$hideSearchItem('class1content')"
-                      style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
-                <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
+                <span style="cursor: pointer;" onclick="$hideSearchItem('class1content')">
+                      <span  class="glyphicon glyphicon-chevron-up"
+                            style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
+                      <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
+                </span>
+
             </div>
         </div>
     </div>
     
 </div>
 <div id="bg" class="searchbg"></div>
+</div>
 
