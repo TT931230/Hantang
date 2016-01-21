@@ -68,7 +68,7 @@ input[type=checkbox], input[type=radio] {
    -webkit-appearance: none;
    background: #fff;
    width: 13px;
-   border: 1px solid black;
+   border: 1px solid gray;
    margin: 0;
    height: 13px;
    vertical-align: middle;
