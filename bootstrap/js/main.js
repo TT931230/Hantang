@@ -70,6 +70,11 @@ function $use(elementid,jumpId,searchAToZ){
         }
     }
 }
+function $hideSearchItem(elementid){
+    document.getElementById("bg").style.display ='none';
+    $D2(elementid);
+    $("#bg").css("height",document.body.scrollHeight);
+}
 function $removesingle(id){
     var div=$a('searchdetailarea');
     var div2=$a(id);
