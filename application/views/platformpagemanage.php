@@ -25,7 +25,7 @@
         <label class="col-lg-2">是否隐藏</label>
     </div>
     <div class="row">
-        <button onclick="$saveArea('homeareaa')">保存</button>
+        <button onclick="$saveArea('platformareaa')">保存</button>
     </div>
 </div>
 <hr>
@@ -48,7 +48,7 @@
         <label class="col-lg-2">是否隐藏</label>
     </div>
     <div class="row">
-        <button onclick="$saveArea('homeareab')">保存</button>
+        <button onclick="$saveArea('platformareab')">保存</button>
     </div>
 </div>
 <hr>
@@ -71,6 +71,6 @@
         <label class="col-lg-2">是否隐藏</label>
     </div>
     <div class="row">
-        <button onclick="$saveArea('homeareac')">保存</button>
+        <button onclick="$saveArea('platformareac')">保存</button>
     </div>
 </div>
