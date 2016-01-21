@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="">
 
     <title>后台管理</title>
-
+    <link href="manage/css/multi.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="manage/css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,6 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 
 </head>
 
@@ -103,34 +105,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                     </ul>
                 </li>
-<!--                <li class="active">-->
-<!--                    <a href="javascript:;" data-toggle="collapse" data-target="#ztdt">专题动态 <i class="fa fa-fw fa-caret-down"></i></a>-->
-<!--                    <ul id="ztdt" class="collapse">-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('activitylist')">动态列表</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('activity')">专题活动</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('thematiclist')">专题列表</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="active">-->
-<!--                    <a href="javascript:;" data-toggle="collapse" data-target="#khgl">客户管理 <i class="fa fa-fw fa-caret-down"></i></a>-->
-<!--                    <ul id="khgl" class="collapse">-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('customerinformation')">客户信息</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('examineedit')">审片编辑</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('examinelist')">审片列表</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
                 <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#bqgl">标签管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="bqgl" class="collapse">
@@ -147,15 +121,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <ul id="xtgl" class="collapse">
                         <li>
                             <a href="javascript:;" onclick="$changetags('admininformation')">管理员信息</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('menumanage')">菜单管理</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('paramedit')">配置参数</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('columnset')">栏目设置</a>
                         </li>
                         <li>
                             <a href="javascript:;" onclick="$changetags('authoritymanage')">权限管理</a>
@@ -184,17 +149,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                     </ul>
                 </li>
-<!--                <li class="active">-->
-<!--                    <a href="javascript:;" data-toggle="collapse" data-target="#mtgl">媒体管理<i class="fa fa-fw fa-caret-down"></i></a>-->
-<!--                    <ul id="mtgl" class="collapse">-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('mediasearch')">媒体查询</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="javascript:;" onclick="$changetags('functionset')">功能设置</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
                 <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#shgl">审核管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="shgl" class="collapse">
@@ -228,6 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Morris Charts JavaScript -->
 <script src="manage/js/plugins/morris/raphael.min.js"></script>
 <script src="manage/js/manage.js"></script>
+<script src="manage/js/multi.js"></script>
 <script src="manage/js/plugins/morris/morris.min.js"></script>
 <script src="manage/js/plugins/morris/morris-data.js"></script>
 </body>

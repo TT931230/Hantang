@@ -130,7 +130,6 @@ input[type=checkbox], input[type=radio] {
  }
  .dropdowndepart{
     min-width: 60px;
-    left: 35%;
  }
  #searchTool{
     float: left;

@@ -20,6 +20,9 @@ class Ul extends CI_Controller
         $source_info_base=array(
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>'','type'=>'',
         );
+        $keyword_info_base=array(
+            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>''
+        );
 
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
@@ -33,29 +36,25 @@ class Ul extends CI_Controller
         $source_info['type']='img';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='yeardetails';
-        $source_info['type']='img';
-        $yeardetails = $this->page_data_model->query_sources($source_info);
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['second_level']='yeardetails';
+        $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='locationdetails';
-        $source_info['type']='img';
-        $locationdetails =$this->page_data_model->query_sources($source_info);
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['second_level']='locationdetails';
+        $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='typedetails';
-        $source_info['type']='img';
-        $typedetails =$this->page_data_model->query_sources($source_info);
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['second_level']='typedetails';
+        $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='activedetails';
-        $source_info['type']='img';
-        $activedetails =$this->page_data_model->query_sources($source_info);
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['second_level']='activedetails';
+        $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';

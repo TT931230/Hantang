@@ -19,6 +19,9 @@ class Music extends CI_Controller
         $source_info_base=array(
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>'','type'=>'',
         );
+        $keyword_info_base=array(
+            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>''
+        );
 
         $source_info=$source_info_base;
         $source_info['first_level']='music';
@@ -26,17 +29,15 @@ class Music extends CI_Controller
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='music';
-        $source_info['second_level']='seasondetails';
-        $source_info['type']='img';
-        $seasondetails = $this->page_data_model->query_sources($source_info);
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='music';
+        $keyword_info['second_level']='seasondetails';
+        $seasondetails = $this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='music';
-        $source_info['second_level']='displaydetails';
-        $source_info['type']='img';
-        $displaydetails = $this->page_data_model->query_sources($source_info);
+        $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='music';
+        $keyword_info['second_level']='displaydetails';
+        $displaydetails = $this->page_data_model->query_keywords($keyword_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';

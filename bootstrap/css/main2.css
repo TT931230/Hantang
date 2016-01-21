@@ -133,7 +133,7 @@
   text-decoration: none;
   height: 61px;
   width: 38px;
-  background: transparent url("themes.gif") no-repeat left top;
+  background: transparent url("themes2.gif") no-repeat left top;
   margin-top: -45px;
   }
 
@@ -157,24 +157,49 @@
 	text-align:left;
     margin-bottom: 0;
     margin-top: 0;
-    padding:0;
-    height:50px;
-    padding-top:20px;
-	
+    padding-bottom:20px;
+	border-bottom:2px dotted #C4C4C4;  
 }
 
 .ulsearch{
-	margin-bottom: 0;
+	
     margin-top: 0;
     padding:0;
-    height:80px;
+   
 }
+.ultypes{
+height:50px;
+background-color:#e0e0e0;
+text-align:center;
+padding-top:15px;
+}
+.uldetails{
+
+margin-top:20px;
+height:50px;
+border-right:1px solid #c0c0c0;
+color:#808080;
+}
+
+
+
+
+
 
   
    /*
  * music
  */
   /* Callback example */
+ .musiccallbacks_container {
+  margin-bottom: 0px;
+  position: relative;
+  float: right;
+  width: 100%;
+  }
+  .musiccallbacks_container > a:hover {
+background: transparent url("color.gif") no-repeat left top;
+  }
 .musicsearch{
 	margin-top:30px;
 	height:55px;
@@ -220,12 +245,12 @@
   text-decoration: none;
   height: 61px;
   width: 38px;
-  background: transparent url("themes.gif") no-repeat left top;
+  background: transparent url("white.gif") no-repeat left top;
   margin-top: -45px;
   }
 
 .music-callbacks_nav:active {
-  opacity: 1.0;
+  background: transparent url("color.gif") no-repeat left top;
   }
 
 .music-callbacks_nav.next {
@@ -238,7 +263,7 @@
     top: 100%;
     }
   }
-  
+
  
   
   
@@ -317,7 +342,7 @@
 
 .joininfo{
 margin-top:20px;
-height:300px;
+height:150px;
 margin-left:0px;
 
 }
@@ -325,10 +350,10 @@ margin-left:0px;
  .join-masthead-nav > li {
     display: inline-block;
     float:left;
-    width:25%;
-    height:40px;
-    margin-top:10px;
-    margin-bottom:10px;
+    width:14%;      
+    text-align:center;
+    margin-bottom:30px;
+   margin-left:10px;
     
   
 }
@@ -337,18 +362,19 @@ margin-left:0px;
  
 }
 .join-masthead-nav > li > a {
-	height:30px;	
+	
     font-size: 14px;
-    font-weight: 500;
-    color: #808080; /* IE8 proofing */ 
+    font-weight: 600;
+    color: #777777; /* IE8 proofing */ 
     text-align:center;  
     overflow:hidden;
-    border-right:1px solid #808080;
-    
+      border-right:1px solid #c0c0c0;
+  
+
 }
 .join-masthead-nav > li > a.active {
     background-color: transparent;
-    border-bottom-color: #e4e4e4;
+    border-bottom-color: #c0c0c0;
    
    
 }
@@ -378,6 +404,7 @@ margin-left:0px;
 .join-dropdowncust{
     text-decoration: none;
     color:#808080;
+    padding:0;
  
 }
 .join-dropdowncust:focus{
@@ -491,3 +518,4 @@ margin-left:0px;
   background-position: right top;
   right: 0;
   }
+ 

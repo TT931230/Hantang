@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="callbacks_container">
                             <ul class="rslides" id="carousel">
                                 {imagearea1}
-                                <li><img src='{source_location}' alt=""></li>
+                                <li><a href="{link_url}"><img src="{source_location}"></a></li>
                                 {/imagearea1}
                             </ul>
                         </div>
@@ -39,34 +39,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                
                  <div class="ulsearch">
                         <div class="diftype">
-                            <div >{yeartype}</div>
-                            <div>
+                            <div class="ultypes">{yeartype}</div>
+                            <div class="uldetails">
                                 {yeardetails}
-                                    <span>{yeardetail}</span>
+                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')" >
+                                <span class="musictypedetail" >{keyword}</span>
+                                </a>
                                 {/yeardetails}
                             </div>
                         </div>
                         <div class="diftype">
-                            <div>{locationtype}</div>
-                            <div>
+                            <div class="ultypes">{locationtype}</div>
+                            <div class="uldetails">
                                 {locationdetails}
-                                <span>{locationdetail}</span>
+                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
+                                <span class="musictypedetail2" >{keyword}</span>
+                                </a>
                                 {/locationdetails}
                             </div>
                         </div>
                         <div class="diftype">
-                            <div>{typetype}</div>
-                            <div>
+                            <div class="ultypes">{typetype}</div>
+                            <div class="uldetails">
                                 {typedetails}
-                                <span>{typedetail}</span>
+                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">                              
+                                <span class="musictypedetail" >{keyword}</span>
+                                </a>
                                 {/typedetails}
                             </div>
                         </div>
                         <div class="diftype">
-	                            <div>{activetype}</div>
-	                            <div>
+	                            <div class="ultypes">{activetype}</div>
+	                            <div class="uldetails">
 	                                {activedetails}
-	                                <span>{activedetail}</span>
+	                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">   
+                                    <span class="musictypedetail" >{keyword}</span>
+                                    </a>
 	                                {/activedetails}
 	                            </div>
 	                        </div>
@@ -75,11 +83,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	              
 	             
             </div>
-            <div class="dashline">
+           
             <div class="videoslug">
                 相关视频
             </div>
-            </div>
+            
                 <div class="dashline">
                
                     <div class="relatedvideoarea" id="relatedvideoarea">

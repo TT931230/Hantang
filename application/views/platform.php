@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="plat-subtitle platform-sub">
             {imagearea2}
-            <img src='{source_location}' alt="">
+            <a href="{link_url}"><img src="{source_location}"></a>
             {/imagearea2}
         </div>
         <div>
@@ -1302,16 +1302,6 @@ jQuery(document).ready(function($) {
         <div class="mito">海口</div>
     </div>
 </div>
-<!--<script type="text/javascript">
-jQuery(document).ready(function($) {
-   $(".mp").mouseover(function(){
-        $(this).find(".feng").show();   
-    }).mouseout(function(){
-        $(this).find(".feng").hide();
-
-    }); 
-});
-</script>-->
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 

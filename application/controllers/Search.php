@@ -71,4 +71,27 @@ class Search extends CI_Controller
         }
         echo($resultareas);
     }
+
+    function searchrelatedvideo(){
+        $keyword_id=$_POST['keyword_id'];
+        $this->db->from('source as a');
+        $this->db->join('keyword_source_relation as b','b.source_id=a.id','inner');
+        $this->db->join('keyword as c','b.keyword_id=c.id','inner');
+        $this->db->where('a.status','1');
+        $this->db->where('c.id',$keyword_id);
+        $this->db->where('a.type','videoimg');
+        $query=$this->db->get();
+        $results=$query->result_array();
+        $return="";
+        for($i=0;$i<count($results);$i++){
+            $return.='<div class="relatedvideos">';
+            $return.='<a href="'.$results[$i]['link_url'].'"><img src="'.$results[$i]['source_location'].'"></a>';
+            $return.='<div class="relavideostitle">';
+            $return.=$results[$i]['source_name'];
+            $return.='</div>';
+            $return.='</div>';
+        }
+        echo($return);
+        return $return;
+    }
 }
