@@ -14,12 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <input class="col-lg-2" type="text" id="source_name">
     </div>
     <div class="row">
-        <label class="col-lg-2">所属栏目</label>
-        <select  class="col-lg-2" id="menu">
-        {menu}
-            <option value="{id}">{menu}</option>
-        {/menu}
-        </select>
         <label class="col-lg-2">排序</label>
         <input class="col-lg-2" type="number" id="sequence">
     </div>

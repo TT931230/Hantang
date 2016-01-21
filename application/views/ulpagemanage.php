@@ -7,32 +7,28 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div>
-    <div class="row"><label class="col-lg-2">图片管理</label></div>
+    <div class="row"><label class="col-lg-2">极致A区域管理</label></div>
     <div class="row">
-        <label class="col-lg-2">图片标题</label>
-        <input class="col-lg-2" type="text" id="source_name">
+        <label class="col-lg-2">区域名称</label>
+        <input class="col-lg-2" type="text" id="area_name_a">
     </div>
     <div class="row">
-        <label class="col-lg-2">所属栏目</label>
-        <select  class="col-lg-2" id="menu">
-            {menu}
-            <option value="{id}">{menu}</option>
-            {/menu}
+        <label class="col-lg-2">播放图片</label>
+        <select  class="col-lg-2 multiselect" multiple="multiple" id="source_name_a">
+            {img}
+            <option value="{id}">{source_name}</option>
+            {/img}
         </select>
-        <label class="col-lg-2">排序</label>
-        <input class="col-lg-2" type="number" id="sequence">
     </div>
     <div class="row">
-        <label class="col-lg-2">Url</label>
-        <input class="col-lg-2" type="text" id="url">
-        <label class="col-lg-2">图片地址</label>
-        <input class="col-lg-2" type="text" id="source_location">
+        <input type="checkbox" id="is_hide_a">
+        <label class="col-lg-2">是否隐藏</label>
     </div>
     <div class="row">
-        <label class="col-lg-2">图片描述</label>
-        <input type="textarea" style="width: 450px;height: 100px;" id="source_remark">
+        <input type="checkbox" id="is_auto_a">
+        <label class="col-lg-2">是否自动轮播</label>
     </div>
     <div class="row">
-        <button onclick="$saveImage()">保存</button>
+        <button onclick="$saveArea('ulareaa')">保存</button>
     </div>
 </div>

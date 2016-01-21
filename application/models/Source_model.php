@@ -56,8 +56,9 @@ class Source_model extends CI_Model
         $this->first_level    = $insertcontent['first_level'];
         $this->second_level    = $insertcontent['second_level'];
         $this->third_level    = $insertcontent['third_level'];
-        $this->create_time = time();
-        $this->update_time = time();
+        $this->source_remark  = $insertcontent['source_remark'];
+        $this->create_time = date("y-m-d",time());
+        $this->update_time = date("y-m-d",time());
         $this->db->insert('source', $this);
     }
     public function updateSource($updatecontent){

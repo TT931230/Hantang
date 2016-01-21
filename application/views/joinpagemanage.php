@@ -7,32 +7,24 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div>
-    <div class="row"><label class="col-lg-2">图片管理</label></div>
+    <div class="row"><label class="col-lg-2">加入汉唐A区域管理</label></div>
     <div class="row">
-        <label class="col-lg-2">图片标题</label>
-        <input class="col-lg-2" type="text" id="source_name">
+        <label class="col-lg-2">区域名称</label>
+        <input class="col-lg-2" type="text" id="area_name_a">
     </div>
     <div class="row">
-        <label class="col-lg-2">所属栏目</label>
-        <select  class="col-lg-2" id="menu">
-            {menu}
-            <option value="{id}">{menu}</option>
-            {/menu}
+        <label class="col-lg-2">播放视频</label>
+        <select  class="col-lg-2 multiselect" multiple="multiple" id="source_name_a">
+            {video}
+            <option value="{id}">{source_name}</option>
+            {/video}
         </select>
-        <label class="col-lg-2">排序</label>
-        <input class="col-lg-2" type="number" id="sequence">
     </div>
     <div class="row">
-        <label class="col-lg-2">Url</label>
-        <input class="col-lg-2" type="text" id="url">
-        <label class="col-lg-2">图片地址</label>
-        <input class="col-lg-2" type="text" id="source_location">
+        <input type="checkbox" id="is_hide_a">
+        <label class="col-lg-2">是否隐藏</label>
     </div>
     <div class="row">
-        <label class="col-lg-2">图片描述</label>
-        <input type="textarea" style="width: 450px;height: 100px;" id="source_remark">
-    </div>
-    <div class="row">
-        <button onclick="$saveImage()">保存</button>
+        <button onclick="$saveArea('joinareaa')">保存</button>
     </div>
 </div>

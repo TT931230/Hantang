@@ -18,12 +18,24 @@ function $changetags(pagename){
 }
 
 function $saveImage(){
-    menu=$('#menu')[0].value;
     sequence=$('#sequence')[0].value;
     url=$('#url')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
-    console.log(menu+sequence+url+source_location+source_name);
+    source_remark=$('#source_remark')[0].value;
+    $.ajax({
+        type:"post",
+        data: "sequence=" + sequence+"&url="+url+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark,
+        url:"PageManager/saveImage",
+        success: function(result)
+        {
+            $('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
 }
 
 function $queryImage(){
@@ -32,15 +44,26 @@ function $queryImage(){
     console.log(menu+source_name);
 }
 function $saveVideo(){
-    menu=$('#menu')[0].value;
     sequence=$('#sequence')[0].value;
     url=$('#url')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
-    videoimg
-    keyword
-    source_remark
-    console.log(menu+sequence+url+source_location+source_name);
+    videoimg=$('#videoimg')[0].value;
+    keyword=$('#keyword')[0].value;
+    source_remark=$('#source_remark')[0].value;
+    $.ajax({
+        type:"post",
+        data: "sequence=" + sequence+"&url="+url+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword,
+        url:"PageManager/saveImage",
+        success: function(result)
+        {
+            $('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
 }
 function $queryVideo(){
     menu=$('#menu')[0].value;
