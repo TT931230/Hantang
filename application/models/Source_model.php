@@ -97,7 +97,7 @@ class Source_model extends CI_Model
             'third_level'=>$insertedid
         );
         $this->db->update('source', $this, array('id' => $insertvideo['videoimg']));
-        for($i=0;$i<size($insertvideo['keyword'])-1;$i++){
+        for($i=0;$i<count($insertvideo['keyword'])-1;$i++){
             $insertrelation=array(
                 'keyword_id'=>$insertvideo['keyword'][$i],
                 'source_id'=>$insertedid
