@@ -45,16 +45,18 @@ function $queryImage(){
 }
 function $saveVideo(){
     sequence=$('#sequence')[0].value;
-    url=$('#url')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
     videoimg=$('#videoimg')[0].value;
-    keyword=$('#keyword')[0].value;
+    keyword='';
+    $("#keyword option:selected").each(function(){
+        keyword+=$(this)[0].value+'|||';
+    });
     source_remark=$('#source_remark')[0].value;
     $.ajax({
         type:"post",
-        data: "sequence=" + sequence+"&url="+url+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword,
-        url:"PageManager/saveImage",
+        data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword,
+        url:"PageManager/saveVideo",
         success: function(result)
         {
             $('#relatedvideoarea').html(result);

@@ -68,4 +68,37 @@ class Source_model extends CI_Model
         $this->update_time = time();
         $this->db->update('source', $this, array('id' => $updatecontent['id']));
     }
+    public function insertvideoSource($insertvideo){
+        $this->source_location    = $insertvideo['source_location'];
+        $this->status    = $insertvideo['status'];
+        $this->source_name    = $insertvideo['source_name'];
+        $this->link_url    = $insertvideo['link_url'];
+        $this->sequence    = $insertvideo['sequence'];
+        $this->type    = $insertvideo['type'];
+        $this->link_url    = $insertvideo['link_url'];
+        $this->updater    = $insertvideo['updater'];
+        $this->creator    = $insertvideo['creator'];
+        $this->first_level    = $insertvideo['first_level'];
+        $this->second_level    = $insertvideo['second_level'];
+        $this->third_level    = $insertvideo['third_level'];
+        $this->source_remark  = $insertvideo['source_remark'];
+        $this->create_time = date("y-m-d",time());
+        $this->update_time = date("y-m-d",time());
+        $this->db->insert('source', $this);
+        $insertedid=$this->db->insert_id();
+        $updatearray=array(
+            'type'=>'videoimg',
+            'updater'=>$insertvideo['updater'],
+            'update_time'=>date("y-m-d",time()),
+            'third_level'=>$insertedid
+        );
+        $this->db->update('source', $this, array('id' => $insertvideo['videoimg']));
+        for($i=0;$i<size($insertvideo['keyword'])-1;$i++){
+            $insertrelation=array(
+                'keyword_id'=>$insertvideo['keyword'][$i],
+                'source_id'=>$insertedid
+            );
+            $this->db->insert('keyword_source_relation', $insertrelation);
+        }
+    }
 }
