@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-21 13:57:54
+Date: 2016-01-21 21:23:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -267,7 +267,7 @@ CREATE TABLE `source` (
   `second_level` varchar(100) DEFAULT NULL,
   `third_level` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100204 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100207 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of source
@@ -341,4 +341,25 @@ CREATE TABLE `user_privilege` (
 
 -- ----------------------------
 -- Records of user_privilege
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `webmodel`
+-- ----------------------------
+DROP TABLE IF EXISTS `webmodel`;
+CREATE TABLE `webmodel` (
+  `is_auto` varchar(10) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `areaname` varchar(200) NOT NULL,
+  `first_level` varchar(200) DEFAULT NULL,
+  `second_level` varchar(200) DEFAULT NULL,
+  `thirdlevel` varchar(200) DEFAULT NULL,
+  `status` varchar(30) NOT NULL,
+  `remark` varchar(2000) DEFAULT NULL,
+  `is_hide` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of webmodel
 -- ----------------------------

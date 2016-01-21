@@ -9,7 +9,44 @@ class PageManager extends CI_Controller
 {
     function redirectpage(){
         $pagename=$_POST['pagename'];
-        return $this->load->view($pagename);
+        $this->load->library('parser');
+        $this->load->model('source_model');
+        $this->load->model('keyword_model');
+
+        $imgsource=$this->source_model->querySource(
+            array(
+                'status'=>null,
+                'source_name'=>null,
+                'first_level'=>null,
+                'second_level'=>null,
+                'third_level'=>null,
+                'type'=>'img'
+            )
+        );
+        $keyword=$this->keyword_model->queryKeyword(
+            array(
+                'first_level'=>null,
+                'second_level'=>null,
+                'third_level'=>null,
+                'type'=>null
+            )
+        );
+        $videosource=$this->source_model->querySource(
+            array(
+                'status'=>null,
+                'source_name'=>null,
+                'first_level'=>null,
+                'second_level'=>null,
+                'third_level'=>null,
+                'type'=>'video/mp4'
+            )
+        );
+        $data=array(
+            'img'=>$imgsource,
+            'keyword'=>$keyword,
+            'video'=>$videosource
+        );
+        return $this->parser->parse($pagename,$data);
     }
 
     function saveImage(){
