@@ -66,7 +66,15 @@ function $use(elementid,jumpId,searchAToZ){
             $("#"+jumpId).removeClass('glyphicon glyphicon-chevron-down');
             $("#"+jumpId).addClass('glyphicon glyphicon-chevron-right');
             $("#"+searchAToZ).css("display",'none');
-            $("#searchBrandName").css('height','40px');
+            if(elementid != 'class2content'){
+                if($a("class2content").style.display== 'block'){
+                    $("#searchBrandName").css('height','60px');
+                }else{
+                    $("#searchBrandName").css('height','40px');
+                }
+            }else{
+                $("#searchBrandName").css('height','40px');
+            }
         }
     }
 }
