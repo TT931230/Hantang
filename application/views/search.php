@@ -118,11 +118,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class6content" style="display:none;" class="searchcontentarea">
             {search_time}
             <span class="searchcontent">
-                    <input typFe="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
+                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
             </span>
             {/search_time}
         </div>
         <div id="searchresults" class="searchresults">
+            <div style="margin-top: 10px;
+                        width: 100%;
+                        height: 30px;margin-bottom: 10px;
+                 background-color: #E8E8E8;">
+                <span style="float:left;margin-top: 10px;margin-left: 15px;">收索结果</span>
+                <span class="glyphicon glyphicon-chevron-up"  onclick="$hideSearchItem('class1content')"
+                      style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
+                <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
+            </div>
         </div>
     </div>
     
