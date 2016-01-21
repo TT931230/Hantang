@@ -37,8 +37,6 @@
 #bg {
     display: none;
     position: absolute;
-    margin-left: 3.5%;
-    left: 0;
     background-color: #000000;
     z-index: 1001;
     -moz-opacity: 0.4;

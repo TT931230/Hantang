@@ -215,19 +215,7 @@
     background-color: #9acfea;
     height: 280px;
 }
-#bg{
-	
-    display: none;
-    position: absolute;
-    /*margin-left:75px;*/
-    /*top:580px;*/
-    left: 0;
-    background-color: #000000;
-    z-index:1001;
-    -moz-opacity: 0.4;
-    opacity:.40;
-    filter: alpha(opacity=40);
-}
+
 .showsearcharea{
     position:relative;
     z-index:1002!important;

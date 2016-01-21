@@ -7,6 +7,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<div class="cover-container">
 <div class="searchallarea">
     <div class="cover-container showsearcharea">
         <div class="inner newborder showsearcharea1">
@@ -38,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <span class="searchdetail" role="button" onclick="$use('class2content','righToDown1','searchAToZ')"><i class=""></i> {brandname}
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
-            <div style="padding: 10px 0px;display: none;" id="searchAToZ">
+            <div class="searchAZ" id="searchAToZ">
                 <span role="button"><i style="float:left;font-size: 15px;font-style: normal">A</i></span>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">B</i></span>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">C</i></span>
@@ -137,4 +138,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 </div>
 <div id="bg" class="searchbg"></div>
+</div>
 
