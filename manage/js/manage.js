@@ -57,3 +57,19 @@ function $saveLogo(){
     keyword_remark
     source_name
 }
+function $saveMusic(){
+    source_name
+    keyword
+    keyword_season
+    keyword_time
+    sequence
+    menu
+    source_remark
+    keyword_remark
+}
+function $queryMusic(){
+    source_name
+}
+function $saveArea(areatype){
+
+}

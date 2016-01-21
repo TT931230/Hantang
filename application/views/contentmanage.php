@@ -76,10 +76,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a href="javascript:;" data-toggle="collapse" data-target="#wznrgl">网站内容管理 <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="wznrgl" class="collapse">
                         <li>
-                            <a href="javascript:;" onclick="$changetags('pagemodel')">网页模板</a>
+                            <a href="javascript:;" onclick="$changetags('homepagemanage')">首页管理</a>
                         </li>
                         <li>
-                            <a href="javascript:;" onclick="$changetags('pagecontent')">网站内容编辑</a>
+                            <a href="javascript:;" onclick="$changetags('aboutpagemanage')">关于汉唐管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('platformpagemanage')">播出平台管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('partnerpagemanage')">合作伙伴管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('ulpagemanage')">极致管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('awoepagemanage')">问鼎世界管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('musicpagemanage')">音乐年管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('joinpagemanage')">加入汉唐管理</a>
                         </li>
                     </ul>
                 </li>
