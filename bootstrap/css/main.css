@@ -231,7 +231,7 @@
     padding-bottom: 0px!important;
     background-color: #fff}
 .footerstyle{
-    height:300px;
+    height:200px;
 }
 .searchresults{
     background-color: #fff;
@@ -389,9 +389,9 @@
     margin-bottom: 20px;
     margin-top: 20px;
     float:left;
-    width:15%;
+    width:10%;
     border-right: 1px solid #bbbbbb;
-    height:300px;
+    height:230px;
 }
 
 .newborder{
