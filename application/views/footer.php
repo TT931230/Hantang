@@ -110,7 +110,7 @@
             <div >
                 <div>
                     <div>
-                        <div id="weixin2" style="width: 250px; height: 300px; position: fixed; z-index: 100; top: 50%; left: 44%; display: block; background: white;">
+                        <div id="weixin2" style="width: 250px; height: 300px; position: fixed; z-index: 100; top: 25%; left: 40%; display: block; background: white;">
                             <div style="height: 30px">
                                 <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="bootstrap\images\close.png" style="float: right; padding-top: 13px; padding-right: 13px"></a>
                             </div>
