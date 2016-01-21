@@ -174,13 +174,20 @@ text-align:center;
 padding-top:15px;
 }
 .uldetails{
-
-margin-top:20px;
+margin-top:25px;
+height:50px;
+border-right:1px solid #c0c0c0;
+color:#808080;
+padding-left:35px;
+padding-right:35px;
+text-align:center;
+}
+.uldetails2{
+margin-top:25px;
 height:50px;
 border-right:1px solid #c0c0c0;
 color:#808080;
 }
-
 
 
 
@@ -199,6 +206,11 @@ color:#808080;
   }
   .musiccallbacks_container > a:hover {
 background: transparent url("color.gif") no-repeat left top;
+  }
+  .music-callbacks_nav.next:hover{
+  left: auto;
+  background-position: right top;
+  right: 0;
   }
 .musicsearch{
 	margin-top:30px;
