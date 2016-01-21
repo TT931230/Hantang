@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
             <h3 class="masthead-brand">
                 {logoimage}
-                <img src='{source_location}' alt="">
+                <a href="{link_url}"><img src="{source_location}"></a>
                 {/logoimage}
             </h3>
             <nav>
