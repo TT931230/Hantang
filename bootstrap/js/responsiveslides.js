@@ -267,13 +267,13 @@
             var progressBan = $("<div class='progress'></div>");
             homewrapper1.append(progressBan);
             
-            var midSpace = 2;
+            var midSpace = 3.5;
 
             for(var j = 0; j < length; j ++){
               var oneProgress = $("<div class='oneProgress'></div>");
               oneProgressWidth = progressBan.width()/length - 5;
               oneProgress.width(oneProgressWidth);
-              oneProgress.css("margin-left", midSpace);
+              oneProgress.css("left", midSpace*(j+1)+j*oneProgressWidth);
 
               var progressIng = $("<div class='progressIng' id='progress_"+j+"''></div>");
               progressIngs.push(progressIng);
