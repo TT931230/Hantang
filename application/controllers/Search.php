@@ -91,7 +91,24 @@ class Search extends CI_Controller
             $return.='</div>';
             $return.='</div>';
         }
-        echo($return);
-        return $return;
+        echo $return;
+//        return $return;
+    }
+    function searchbrandname(){
+        $brandtype=$_POST['brandtype'];
+        $this->db->where('first_level','brandname');
+        $this->db->where('second_level',$brandtype);
+        $this->db->from('keyword');
+        $this->db->order_by('sequence','asc');
+        $query=$this->db->get();
+        $results=$query->result_array();
+        $return="";
+        for($i=0;$i<count($results);$i++){
+            $return.='<span class="searchcontent">';
+            $return.='<input type="checkbox" id="'.$results[$i]['id'].'" value="'.$results[$i]['keyword'].'" onclick="$searchcontent('.$results[$i]['id'].')"/><span class="searchItem">'.$results[$i]['keyword'].'</span>';
+            $return.='</span>';
+        }
+        echo $return;
+//        return $return;
     }
 }
