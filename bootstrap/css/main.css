@@ -616,8 +616,8 @@ body {
 #ulli > a:hover,a:focus{
 	background-color: transparent;
     border-bottom-color: #A73D49;
-    
-	
+
+
 }
 #ulli >a.active{
     background-color: transparent;
@@ -630,32 +630,36 @@ body {
 }
 
 #awoeli >a.active{
-background-color: transparent;
-border-bottom-color: #3D5C9A;
+    background-color: transparent;
+    border-bottom-color: #3D5C9A;
 }
+#music > a:hover,a:focus{
+    border-bottom: none;
+}
+#music:hover{
+    width: 124px;
+    height: 133px;
+    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
 
-/*#music > a:hover,a:focus{
-    background-color: transparent;
-    border-bottom-color: green;
 }
-#music >a.active{
-    background-color: transparent;
-    border-bottom-color: green;
+/*#music >a.active{
+
+    border-bottom-image: url('../images/musicline.jpg');
 }*/
 
 @media (min-width: 768px) {
-    .masthead-brand {
-        float: left;
-    }
-    .masthead-nav {
-        float: right;
-    }
+.masthead-brand {
+    float: left;
+}
+.masthead-nav {
+    float: right;
+}
 }
 
 
 /*
- * Cover
- */
+* Cover
+*/
 
 .cover {
     padding: 0 20px;
@@ -710,8 +714,8 @@ border-bottom-color: #3D5C9A;
     }
     .searchbg{
         width:1200px;
-
     }
+
 }
 
 /* music */

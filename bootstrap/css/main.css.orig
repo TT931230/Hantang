@@ -626,12 +626,10 @@ body {
 
 #awoeli > a:hover,a:focus{
 	background-color: transparent;
-<<<<<<< HEAD
-    border-bottom-color: #3D5C9A;
-}
-=======
     border-bottom-color: #3D5C9A;   	
 }
+<<<<<<< HEAD
+=======
 
 >>>>>>> 0bda67174cbd21b28f5eee9a93223ef2fe837923
 #awoeli >a.active{
