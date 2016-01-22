@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="subtitle">
+            <div class="aboutsubtitle">
                   公司简介                              
             </div>
             <div class="dashline">

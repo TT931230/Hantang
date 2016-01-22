@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="subtitle">
+            <div class="aboutsubtitle">
                    合作伙伴                                 
             </div>
             <div class="newborder">

@@ -10,7 +10,7 @@
     <div class="clearfix">
         <div class="inner">
             <div class="footerleftdiv">
-                <div class="footertype">{about}</div>
+                <div class="footertype"><img src="" alt=""></div>
                     <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
@@ -25,79 +25,75 @@
                     </div>
             </div>
             <div class="footerleftdiv">
-                <div class="footertype">{ul}</div>
+                <div class="footertype"><img src="" alt=""></div>
                    <div class="footerdetials">
                        <div class="footerdetail">
                            <a href="javascript:;">
                         <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal"><img src="bootstrap\images\wxin.png" alt=""></span>
                       
                             </a>微信</div>
-                   </div>
+                  </div>
             </div>
-            <div class="footerleftdiv2">
-                <div class="footertype2">{music}</div>
-                    <div class="footerdetials2">
+            <div class="footerleftdiv">
+                <div class="footertype"><img src="" alt=""></div>
+                    <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
-                         <span class="footerlogos2">
+                         <span class="footerlogos">
                             
                                  <img  data-toggle="modal" data-target="#weixinModal" src="bootstrap\images\wxin.png" alt="">
                             
                             </span></a>微信</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
                                   <img src="bootstrap\images\weibo.png" alt="">
                           
                             </a>微博</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://site.douban.com/221186/" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://site.douban.com/221186/" target="_blank" style="text-decoration: none;">
                             
                                  <img src="bootstrap\images\douban.png" alt="">
                            
                             </a>豆瓣小站</div>
                     </div>
             </div>
-            <div class="footerleftdiv3">           
-                <div class="footertype3">
-                <span class="footerdh">
-                <img src="bootstrap\images\dhlogo.png">
-                </span>{dogandhorse}
-                </div>
-                    <div class="footerdetials3">
+            <div class="footerleftdiv">           
+                <div class="footertype"><img src="" alt=""></div>
+                    <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
-                         <span class="footerlogos2" class="footerlogos" data-toggle="modal" data-target="#weixinModal">
+                         <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal">
                           
                                 <img src="bootstrap\images\wxin.png" alt="">
                            
                             </span></a>微信</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
                                 <img src="bootstrap\images\weibo.png" alt="">
                             
                             </a>微博</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
                            
                                  <img src="bootstrap\images\youku.png" alt="">
                         
                             </a>优酷</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://v.qq.com/vplus/hedonist" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://v.qq.com/vplus/hedonist" target="_blank" style="text-decoration: none;">
                           
                                  <img src="bootstrap\images\tengxun.png" alt="">
                             
                             </a>腾讯视频</div>
                         <div class="footerdetail">
-                         <a  class="footerlogos2"href="http://www.jianshu.com/users/e447b96581bd/latest_articles" target="_blank" style="text-decoration: none;">
+                         <a  class="footerlogos"href="http://www.jianshu.com/users/e447b96581bd/latest_articles" target="_blank" style="text-decoration: none;">
                            
                                  <img src="bootstrap\images\jianshu.png" alt="">
                            
                             </a>简书</div>
                         <div class="footerdetail">
-                         <a  class="footerlogos2"href="http://yuedu.163.com/news_reader/#/~/source?id=81ed83ba67fb49d78bc1b43c25d882ff_1&amp;cid=ab11d60e6ea049b8b61981ec3188" target="_blank" style="text-decoration: none;">
+                         <a  class="footerlogos"href="http://yuedu.163.com/news_reader/#/~/source?id=81ed83ba67fb49d78bc1b43c25d882ff_1&amp;cid=ab11d60e6ea049b8b61981ec3188" target="_blank" style="text-decoration: none;">
                             
                                  <img src="bootstrap\images\wangyi.png" alt="">
                            
