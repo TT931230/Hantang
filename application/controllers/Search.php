@@ -111,4 +111,21 @@ class Search extends CI_Controller
         echo $return;
 //        return $return;
     }
+    function searchcountry(){
+        $countryid=$_POST['countryid'];
+        $this->db->where('first_level','citys');
+        $this->db->where('second_level',$countryid);
+        $this->db->from('keyword');
+        $this->db->order_by('sequence','asc');
+        $query=$this->db->get();
+        $results=$query->result_array();
+        $return="";
+        for($i=0;$i<count($results);$i++){
+            $return.='<span class="searchcontent">';
+            $return.='<input type="checkbox" id="'.$results[$i]['id'].'" value="'.$results[$i]['keyword'].'" onclick="$searchcontent('.$results[$i]['id'].')"/><span class="searchItem">'.$results[$i]['keyword'].'</span>';
+            $return.='</span>';
+        }
+        echo $return;
+
+    }
 }

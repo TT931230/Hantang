@@ -40,6 +40,10 @@ function $use(elementid,jumpId,searchAToZ){
             document.getElementById("bg").style.display ="block";
             $D(elementid);
             $searchbrandname('A');
+            var country=$a('searchCountry');
+            var countrylist = country.childNodes;
+            console.log(countrylist[1].id);
+            $searchcity(countrylist[1].id);
             $("#bg").css("height",document.body.scrollHeight);
             $("#bg").css("width",layWidth);
         }else{
@@ -280,6 +284,30 @@ function $searchbrandname($brandtype){
         success: function(result)
         {
             $('#class2content').html(result);
+            var div=$a('searchdetailarea');
+            var divlist = div.childNodes;
+            for(var i=divlist.length-1;i>=0;i--){
+                if(divlist[i].id!='searchreset'&&divlist[i].id!='searchcommit'&&divlist[i].id!='searchinput'&&divlist[i].id)
+                {
+                    $('#'+divlist[i].id.split('___')[0]).attr("checked",'true');
+                }
+            }
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+
+function $searchcity($countryid){
+    $.ajax({
+        type:"post",
+        data: "countryid=" + $countryid,
+        url:"Search/searchcountry",
+        success: function(result)
+        {
+            $('#class5content').html(result);
             var div=$a('searchdetailarea');
             var divlist = div.childNodes;
             for(var i=divlist.length-1;i>=0;i--){
