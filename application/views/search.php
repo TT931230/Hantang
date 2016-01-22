@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
             <div class="searchAZ" id="searchAToZ">
-                <span role="button"><i style="float:left;font-size: 15px;font-style: normal">A</i></span>
+                <a href="javascript:;" onclick="$searchbrandname('A')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">A</i></span></a>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">B</i></span>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">C</i></span>
                 <span role="button"><i style="float:left;margin-left: 31px;font-size: 15px;font-style: normal">D</i></span>

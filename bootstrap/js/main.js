@@ -268,3 +268,19 @@ function $searchrelatedvideo($keyword_id){
         }
     });
 }
+
+function $searchbrandname($brandtype){
+    $.ajax({
+        type:"post",
+        data: "brandtype=" + $brandtype,
+        url:"Search/searchbrandname",
+        success: function(result)
+        {
+            $('#class2content').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
