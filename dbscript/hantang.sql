@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-22 14:53:34
+Date: 2016-01-22 16:26:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -176,7 +176,7 @@ CREATE TABLE `keyword_source_relation` (
   KEY `source_id` (`source_id`),
   CONSTRAINT `keyword_id` FOREIGN KEY (`keyword_id`) REFERENCES `keyword` (`id`),
   CONSTRAINT `source_id` FOREIGN KEY (`source_id`) REFERENCES `source` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword_source_relation
@@ -185,6 +185,7 @@ INSERT INTO `keyword_source_relation` VALUES ('100200', '32', '1');
 INSERT INTO `keyword_source_relation` VALUES ('100201', '32', '2');
 INSERT INTO `keyword_source_relation` VALUES ('100202', '32', '3');
 INSERT INTO `keyword_source_relation` VALUES ('100203', '32', '4');
+INSERT INTO `keyword_source_relation` VALUES ('100998', '32', '99');
 
 -- ----------------------------
 -- Table structure for `menu`
@@ -238,7 +239,7 @@ CREATE TABLE `source` (
   `source_remark` varchar(2000) DEFAULT NULL,
   `third_level` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100204 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=101000 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of source
@@ -274,11 +275,13 @@ INSERT INTO `source` VALUES ('100027', 'bootstrap/images/homecarousel02.png', '1
 INSERT INTO `source` VALUES ('100028', 'bootstrap/images/homecarousel03.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
 INSERT INTO `source` VALUES ('100029', 'bootstrap/images/logo.png', '1', 'logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'logoimage', '', null, null);
 INSERT INTO `source` VALUES ('100030', 'bootstrap/images/partner1.png', '1', 'partner2', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'img', 'ADMIN', 'partner', 'imagearea1', null, null);
-INSERT INTO `source` VALUES ('100099', 'video/joinvideo.mp4', '1', 'joinvideo', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'join', null, null, null);
+INSERT INTO `source` VALUES ('100099', 'video/joinvideo.mp4', '1', 'joinvideo', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'join', null, null, 'zn');
 INSERT INTO `source` VALUES ('100200', 'bootstrap/images/partner1.png', '1', 'testvideoimg', null, null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
 INSERT INTO `source` VALUES ('100201', 'bootstrap/images/homecarousel03.png', '1', 'testvideo2', '/ul', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
 INSERT INTO `source` VALUES ('100202', 'bootstrap/images/wd.png', '1', 'testvideo3', '/awoe/awoeinner/test', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
 INSERT INTO `source` VALUES ('100203', 'bootstrap/images/homecarousel02.png', '1', 'T4', '/home', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100998', 'bootstrap/images/homecarousel02.png', '1', '试试图片', '/ul/ulinner/100999', null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'shishitupian描述', 'zn');
+INSERT INTO `source` VALUES ('100999', 'video/joinvideo.mp4', '1', '试试', null, null, '2016-01-22', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'ul', null, 'shishi', 'zn');
 
 -- ----------------------------
 -- Table structure for `user_info`
