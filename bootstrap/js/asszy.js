@@ -51,7 +51,22 @@ $(document).ready(function(){
     $("#mask .closePop").click(function(){
         $("#mask").css("display","none");
     });
+    $("#searchAToZ a").click(function(){
+        var lis = document.getElementById("searchAToZ").getElementsByTagName("a");
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.border = "none";
+        }
+        $(this).css( "border-bottom","3px solid #333");
+    });
 
+    $("#searchCountry a").click(function(){
+        var lis = document.getElementById("searchCountry").getElementsByTagName("a");
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.border = "none";
+
+        }
+        $(this).css( "border-bottom","3px solid #333");
+    });
 });
 
 
