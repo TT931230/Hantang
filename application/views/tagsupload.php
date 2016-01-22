@@ -7,12 +7,8 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div>
-    <div class="row"><label class="col-lg-2">标签上传</label></div>
-    <div class="row"><label class="col-lg-2">极致和问鼎标签上传</label><input class="col-lg-2" type="text"></div>
-    <div class="row"><button type="submit" class="btn btn-default">上传</button><button type="submit" class="btn btn-default">下载案例</button></div>
-</div>
-<div>
-    <div class="row"><label class="col-lg-2">标签翻译</label></div>
-    <div class="row"><label class="col-lg-2">上传</label><input class="col-lg-2" type="text"></div>
-    <div class="row"><button type="submit" class="btn btn-default">上传翻译</button><button type="submit" class="btn btn-default">未翻译标签导出</button></div>
+    <form id="addform" action="PageManager/inserttags" method="post" enctype="multipart/form-data">
+        <p>请选择要导入的CSV文件：<br/><input type="file" name="file">
+            <input type="submit" class="btn" value="导入CSV">
+    </form>
 </div>

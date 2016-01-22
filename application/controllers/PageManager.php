@@ -28,7 +28,7 @@ class PageManager extends CI_Controller
                 'first_level'=>null,
                 'second_level'=>null,
                 'third_level'=>null,
-                'type'=>null
+                'status'=>'1'
             )
         );
         $videosource=$this->source_model->querySource(
@@ -81,6 +81,7 @@ class PageManager extends CI_Controller
         $videoimg=$_POST['videoimg'];
         $keyword=$_POST['keyword'];
         $keywordarray = explode('|||',$keyword);
+        $third_level=$_POST['third_level'];
         $insertvideo=array(
             'videoimg'=>$videoimg,
             'keyword'=>$keyword,
@@ -94,12 +95,40 @@ class PageManager extends CI_Controller
             'creator'=>'ADMIN',
             'first_level'=>null,
             'second_level'=>null,
-            'third_level'=>null,
+            'third_level'=>$third_level,
             'link_url'=>null,
             'videoimgid'=>$videoimg,
             'keywordid'=>$keywordarray
         );
         $this->load->model('source_model');
         $this->source_model->insertvideoSource($insertvideo);
+    }
+    function inserttags(){
+        $this->load->model('keyword_model');
+        $filename = $_FILES['file']['tmp_name'];
+        if (empty ($filename)) {
+            echo '请选择要导入的CSV文件！';
+            exit;
+        }
+        $handle = fopen($filename, 'r');
+        while ($data = fgetcsv($handle)) { //每次读取CSV里面的一行内容
+//print_r($data); //此为一个数组，要获得每一个数据，访问数组下标即可
+            $goods_list[] = $data;
+        }
+//print_r($goods_list);
+        for($i=1;$i<count($goods_list);$i++){
+            $insertcontent=array(
+                'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                'sequence'=>$goods_list[$i][1],
+                'first_level'=>$goods_list[$i][2],
+                'second_level'=>$goods_list[$i][3],
+                'third_level'=>$goods_list[$i][4],
+                'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][5]),
+                'creator'=>'ADMIN',
+                'updater'=>'ADMIN',
+                'status'=>'1',
+            );
+            $this->keyword_model->insertKeyword($insertcontent);
+        }
     }
 }
