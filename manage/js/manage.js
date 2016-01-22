@@ -53,9 +53,10 @@ function $saveVideo(){
         keyword+=$(this)[0].value+'|||';
     });
     source_remark=$('#source_remark')[0].value;
+    third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword,
+        data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level,
         url:"PageManager/saveVideo",
         success: function(result)
         {

@@ -73,6 +73,7 @@ class Source_model extends CI_Model
         $this->db->update('source', $this, array('id' => $updatecontent['id']));
     }
     public function insertvideoSource($insertvideo){
+        date_default_timezone_set("UTC");
         $this->source_location    = $insertvideo['source_location'];
         $this->status    = $insertvideo['status'];
         $this->source_name    = $insertvideo['source_name'];
@@ -96,7 +97,7 @@ class Source_model extends CI_Model
             'update_time'=>date("y-m-d",time()),
             'third_level'=>$insertedid
         );
-        $this->db->update('source', $this, array('id' => $insertvideo['videoimg']));
+        $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));
         for($i=0;$i<count($insertvideo['keyword'])-1;$i++){
             $insertrelation=array(
                 'keyword_id'=>$insertvideo['keyword'][$i],
