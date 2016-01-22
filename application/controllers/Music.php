@@ -14,6 +14,7 @@ class Music extends CI_Controller
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/music');
         }else{
+            $this->session->set_userdata('language','zn');
             $page_data=$this->page_data_model->get_page_data('zn','/music');
         }
         $source_info_base=array(
@@ -47,6 +48,7 @@ class Music extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='music';
         $source_info['type']='videoimg';
+        $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
 
         $tag_data = $this->page_data_model->query_tags();
@@ -83,6 +85,7 @@ class Music extends CI_Controller
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/music');
         }else{
+            $this->session->set_userdata('language','zn');
             $page_data=$this->page_data_model->get_page_data('zn','/music');
         }
         $source_info_base=array(
@@ -114,6 +117,7 @@ class Music extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='music';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='videoimg';
         $relatedvideo = $this->page_data_model->query_sources($source_info);
 
