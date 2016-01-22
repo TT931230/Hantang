@@ -730,6 +730,7 @@ border-bottom-color: #3D5C9A;
 
 @media (min-width: 768px) {
     /* Pull out the header and footer */
+
     .masthead {
         position: fixed;
         top: 0;
@@ -748,6 +749,9 @@ border-bottom-color: #3D5C9A;
     .cover-container {
         width: 100%; /* Must be percentage or pixels for horizontal alignment */
     }
+    .footer_flow{
+        width: 100%;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -759,6 +763,9 @@ border-bottom-color: #3D5C9A;
     .searchbg{
         width:1200px;
 
+    }
+    .footer_flow{
+        width:1200px;
     }
 }
 

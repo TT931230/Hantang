@@ -60,15 +60,15 @@ class Search extends CI_Controller
         $results=$query->result_array();
         $resultareas ="";
         for($i=0;$i<count($results);$i++){
-            $resultareas.="<div class='searchresult'>";
-            $resultareas.="<div class='searchresulta'>";
+            $resultareas.="<div class='result_container'>";
+            $resultareas.="<div class='result_img'>";
             $resultareas.="<a href='".$results[$i]['link_url']."'><img src='".$results[$i]['source_location']."'></a>";
             $resultareas.="</div>";
-            $resultareas.="<div class='searchresultb'>";
-            $resultareas.="<div>".$results[$i]['source_name']."</div>";
-            $resultareas.="<div>".$results[$i]['source_remark']."</div>";
+            $resultareas.="<div class='result_content'>";
+            $resultareas.="<div class='content_title'>".$results[$i]['source_name']."</div>";
+            $resultareas.="<div class='content_remark'>".$results[$i]['source_remark']."</div>";
             $resultareas.="</div>";
-            $resultareas.="<div class='searchresultc'>";
+            $resultareas.="<div class='result_tag'>";
             switch($results[$i]['first_level']){
                 case 'ul':
                     $resultareas.="<div>极致</div>";
