@@ -118,6 +118,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </span>
             {/search_time}
         </div>
+
         <div id="searchresults" class="searchresults">
             <div style="margin-top: 10px;
                         width: 100%;
@@ -129,7 +130,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
                       <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
                 </span>
-
             </div>
         </div>
     </div>
