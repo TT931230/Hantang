@@ -29,8 +29,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li>
                                 <a class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{department}</a>
                                 <ul class="dropdown-menu dropdownmenucust dropdowndepart">
+                                <span class="dropdown-triangle"></span>
                                     {job}
                                         <li><a onclick="$departmentajax('{id}')">{jobname}</a></li>
+                                        <li class="dropdown-list-line"><span></span></li>
+
                                     {/job}
                                 </ul>
                             </li>
