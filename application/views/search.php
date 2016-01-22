@@ -95,16 +95,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_keyword}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4')"><i class=""></i> {location}
+            <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4','searchCountry')"><i class=""></i> {location}
             <span id="righToDown4" class="glyphicon glyphicon-chevron-right"></span>
             </span>
+            <div class="searchAZ" id="searchCountry">
+                {search_location}
+                <a href="javascript:;" onclick="$searchcity('{id}')" id="'{id}'"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">{keyword}</i></span></a>
+                {/search_location}
+            </div>
         </div>
         <div id="class5content" style="display:none;" class="searchcontentarea">
-            {search_location}
-            <span class="searchcontent">
-                    <input type="checkbox" id="{id}" value="{keyword}" onclick="$searchcontent('{id}')"/><span class="searchItem">{keyword}</span>
-            </span>
-            {/search_location}
         </div>
         <div class="searchdetailarea">
             <span class="searchdetail" role="button" onclick="$use('class6content','righToDown5')"><i class=""></i> {time}
