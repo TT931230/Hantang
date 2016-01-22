@@ -70,7 +70,7 @@ class PageManager extends CI_Controller
             'third_level'=>null,
         );
         $this->load->model('source_model');
-        echo($insertcontent);
+        var_dump($insertcontent);
         return $this->source_model->insertSource($insertcontent);
     }
     function saveVideo(){

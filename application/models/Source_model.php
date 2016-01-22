@@ -49,6 +49,7 @@ class Source_model extends CI_Model
         return $query->result_array();
     }
     public function insertSource($insertcontent){
+    	date_default_timezone_set("UTC");
         $this->source_location    = $insertcontent['source_location'];
         $this->status    = $insertcontent['status'];
         $this->source_name    = $insertcontent['source_name'];
@@ -98,11 +99,13 @@ class Source_model extends CI_Model
             'third_level'=>$insertedid
         );
         $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));
+        echo count($insertvideo['keyword']);
         for($i=0;$i<count($insertvideo['keyword'])-1;$i++){
             $insertrelation=array(
                 'keyword_id'=>$insertvideo['keyword'][$i],
-                'source_id'=>$insertedid
+                'source_id'=>$insertedid               
             );
+            var_dump($insertrelation);         
             $this->db->insert('keyword_source_relation', $insertrelation);
         }
     }

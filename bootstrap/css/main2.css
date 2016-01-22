@@ -1,16 +1,7 @@
 /*
  * About
  */
- .subtitle{
-    background-color: #C4C4C4;
-    border: 1px ;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding:35px;
-    font-size:20px;
-    color:#555555;
-    
- }
+
  .dashline{
     border-bottom:2px dotted #C4C4C4;   
    
@@ -124,15 +115,15 @@
 .callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 60%;
-  left: 0;
+  top: 53%;
+  left: 0px;
   opacity: 0.3;
   z-index: 3;
   text-indent: -9999px;
   overflow: hidden;
   text-decoration: none;
-  height: 61px;
-  width: 38px;
+  height: 60px;
+  width: 30px;
   background: transparent url("themes2.gif") no-repeat left top;
   margin-top: -45px;
   }
@@ -178,11 +169,13 @@ margin-top:25px;
 height:50px;
 border-right:1px solid #c0c0c0;
 color:#808080;
-padding-left:25px;
-padding-right:25px;
+padding-left:30px;
+padding-right:30px;
 text-align:center;
 }
 .uldetails2{
+padding-left:15px;
+padding-right:15px;
 margin-top:25px;
 height:50px;
 border-right:1px solid #c0c0c0;
@@ -248,8 +241,8 @@ background: transparent url("color.gif") no-repeat left top;
 .music-callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 60%;
-  left: 0;
+  top: 53%;
+  left: 10px;
   opacity: 0.3;
   z-index: 3;
   text-indent: -9999px;
@@ -268,7 +261,7 @@ background: transparent url("color.gif") no-repeat left top;
 .music-callbacks_nav.next {
   left: auto;
   background-position: right top;
-  right: 0;
+  right: 10px;;
   }
 @media screen and (max-width:600px) {
   .music-callbacks_nav {
@@ -459,7 +452,7 @@ margin-left:0px;
 
 
 .ulinner-subtitle{
-    background-color:#541B2A;
+    background-color:#A73D49;
     border: 1px ;
     margin-bottom: 0;
     margin-top: 0;

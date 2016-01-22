@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-21 21:23:52
+Date: 2016-01-22 16:26:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -117,7 +117,7 @@ CREATE TABLE `keyword` (
   `second_level` varchar(100) DEFAULT NULL,
   `keyword_remark` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword
@@ -161,37 +161,7 @@ INSERT INTO `keyword` VALUES ('ul', '36', '走秀', '1', 'ADMIN', '2016-01-20', 
 INSERT INTO `keyword` VALUES ('ul', '37', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails', null);
 INSERT INTO `keyword` VALUES ('ul', '38', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails', null);
 INSERT INTO `keyword` VALUES ('ul', '39', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '40', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '41', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '42', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '43', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '44', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '45', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '46', '2015', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '47', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '48', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '49', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '50', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '51', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '52', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '53', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '54', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '55', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '56', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '57', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '58', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '59', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '60', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '61', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '62', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '63', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '64', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'typedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '65', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'activedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '66', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'activedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '67', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'activedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '68', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '69', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails', null);
-INSERT INTO `keyword` VALUES ('awoe', '70', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('brandname', '71', 'Abrand', '1', 'ADMIN', '2016-01-22', '1', 'ADMIN', '2016-01-22', 'zn', 'A', null);
 
 -- ----------------------------
 -- Table structure for `keyword_source_relation`
@@ -206,7 +176,7 @@ CREATE TABLE `keyword_source_relation` (
   KEY `source_id` (`source_id`),
   CONSTRAINT `keyword_id` FOREIGN KEY (`keyword_id`) REFERENCES `keyword` (`id`),
   CONSTRAINT `source_id` FOREIGN KEY (`source_id`) REFERENCES `source` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword_source_relation
@@ -215,6 +185,7 @@ INSERT INTO `keyword_source_relation` VALUES ('100200', '32', '1');
 INSERT INTO `keyword_source_relation` VALUES ('100201', '32', '2');
 INSERT INTO `keyword_source_relation` VALUES ('100202', '32', '3');
 INSERT INTO `keyword_source_relation` VALUES ('100203', '32', '4');
+INSERT INTO `keyword_source_relation` VALUES ('100998', '32', '99');
 
 -- ----------------------------
 -- Table structure for `menu`
@@ -265,49 +236,52 @@ CREATE TABLE `source` (
   `creator` varchar(30) NOT NULL,
   `first_level` varchar(100) DEFAULT NULL,
   `second_level` varchar(100) DEFAULT NULL,
+  `source_remark` varchar(2000) DEFAULT NULL,
   `third_level` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100207 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=101000 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of source
 -- ----------------------------
-INSERT INTO `source` VALUES ('100000', 'bootstrap/images/homecarousel01.png', '1', 'homecarousel01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100001', 'bootstrap/images/partner1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100002', 'bootstrap/images/homecarousel01.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100003', 'bootstrap/images/home-jz.png', '1', 'homecarousel02-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea11', null);
-INSERT INTO `source` VALUES ('100004', 'bootstrap/images/wd.png', '1', 'homecarousel03-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea12', null);
-INSERT INTO `source` VALUES ('100005', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null);
-INSERT INTO `source` VALUES ('100006', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null);
-INSERT INTO `source` VALUES ('100007', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null);
-INSERT INTO `source` VALUES ('100008', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null);
-INSERT INTO `source` VALUES ('100009', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null);
-INSERT INTO `source` VALUES ('100010', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null);
-INSERT INTO `source` VALUES ('100011', 'bootstrap/images/music.png', '1', 'homecarousel04-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea13', null);
-INSERT INTO `source` VALUES ('100012', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null);
-INSERT INTO `source` VALUES ('100013', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null);
-INSERT INTO `source` VALUES ('100014', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null);
-INSERT INTO `source` VALUES ('100015', 'bootstrap/images/platform1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea2', null);
-INSERT INTO `source` VALUES ('100016', 'bootstrap/images/platform2.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea3', null);
-INSERT INTO `source` VALUES ('100017', 'bootstrap/images/partner1.png', '1', 'partner1', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'partner', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100018', 'bootstrap/images/homecarousel02.png', '1', 'ul01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100019', 'bootstrap/images/homecarousel03.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100020', 'bootstrap/images/homecarousel04.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100021', 'bootstrap/images/homecarousel03.png', '1', 'awoe01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100022', 'bootstrap/images/homecarousel04.png', '1', 'awoe02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100023', 'bootstrap/images/homecarousel02.png', '1', 'awoe03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100024', 'bootstrap/images/jz.png', '1', 'ul-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea11', null);
-INSERT INTO `source` VALUES ('100025', 'bootstrap/images/wd.png', '1', 'awoe-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea11', null);
-INSERT INTO `source` VALUES ('100026', 'bootstrap/images/homecarousel04.png', '1', 'music01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100027', 'bootstrap/images/homecarousel02.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100028', 'bootstrap/images/homecarousel03.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100029', 'bootstrap/images/logo.png', '1', 'logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'logoimage', '', null);
-INSERT INTO `source` VALUES ('100030', 'bootstrap/images/partner1.png', '1', 'partner2', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'img', 'ADMIN', 'partner', 'imagearea1', null);
-INSERT INTO `source` VALUES ('100099', 'video/joinvideo.mp4', '1', 'joinvideo', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'join', null, null);
-INSERT INTO `source` VALUES ('100200', 'bootstrap/images/partner1.png', '1', 'testvideoimg', null, null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null);
-INSERT INTO `source` VALUES ('100201', 'bootstrap/images/homecarousel03.png', '1', 'testvideo2', '/ul', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null);
-INSERT INTO `source` VALUES ('100202', 'bootstrap/images/wd.png', '1', 'testvideo3', '/awoe/awoeinner/test', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null);
-INSERT INTO `source` VALUES ('100203', 'bootstrap/images/homecarousel02.png', '1', 'T4', '/home', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null);
+INSERT INTO `source` VALUES ('100000', 'bootstrap/images/homecarousel01.png', '1', 'homecarousel01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100001', 'bootstrap/images/partner1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100002', 'bootstrap/images/homecarousel01.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100003', 'bootstrap/images/home-jz.png', '1', 'homecarousel02-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea11', null, null);
+INSERT INTO `source` VALUES ('100004', 'bootstrap/images/wd.png', '1', 'homecarousel03-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea12', null, null);
+INSERT INTO `source` VALUES ('100005', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100006', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100007', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, null);
+INSERT INTO `source` VALUES ('100008', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100009', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100010', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, null);
+INSERT INTO `source` VALUES ('100011', 'bootstrap/images/music.png', '1', 'homecarousel04-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea13', null, null);
+INSERT INTO `source` VALUES ('100012', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100013', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100014', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, null);
+INSERT INTO `source` VALUES ('100015', 'bootstrap/images/platform1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100016', 'bootstrap/images/platform2.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100017', 'bootstrap/images/partner1.png', '1', 'partner1', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'partner', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100018', 'bootstrap/images/homecarousel02.png', '1', 'ul01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100019', 'bootstrap/images/homecarousel03.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100020', 'bootstrap/images/homecarousel04.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100021', 'bootstrap/images/homecarousel03.png', '1', 'awoe01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100022', 'bootstrap/images/homecarousel04.png', '1', 'awoe02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100023', 'bootstrap/images/homecarousel02.png', '1', 'awoe03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100024', 'bootstrap/images/jz.png', '1', 'ul-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea11', null, null);
+INSERT INTO `source` VALUES ('100025', 'bootstrap/images/wd.png', '1', 'awoe-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea11', null, null);
+INSERT INTO `source` VALUES ('100026', 'bootstrap/images/homecarousel04.png', '1', 'music01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100027', 'bootstrap/images/homecarousel02.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100028', 'bootstrap/images/homecarousel03.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100029', 'bootstrap/images/logo.png', '1', 'logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'logoimage', '', null, null);
+INSERT INTO `source` VALUES ('100030', 'bootstrap/images/partner1.png', '1', 'partner2', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'img', 'ADMIN', 'partner', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100099', 'video/joinvideo.mp4', '1', 'joinvideo', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'join', null, null, 'zn');
+INSERT INTO `source` VALUES ('100200', 'bootstrap/images/partner1.png', '1', 'testvideoimg', null, null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100201', 'bootstrap/images/homecarousel03.png', '1', 'testvideo2', '/ul', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100202', 'bootstrap/images/wd.png', '1', 'testvideo3', '/awoe/awoeinner/test', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100203', 'bootstrap/images/homecarousel02.png', '1', 'T4', '/home', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100998', 'bootstrap/images/homecarousel02.png', '1', '试试图片', '/ul/ulinner/100999', null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'shishitupian描述', 'zn');
+INSERT INTO `source` VALUES ('100999', 'video/joinvideo.mp4', '1', '试试', null, null, '2016-01-22', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'ul', null, 'shishi', 'zn');
 
 -- ----------------------------
 -- Table structure for `user_info`

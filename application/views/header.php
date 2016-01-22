@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/main.css" rel="stylesheet">
     <link href="/bootstrap/css/main2.css" rel="stylesheet">
     <link href="/bootstrap/css/main3.css" rel="stylesheet">
-    
+    <link href="/bootstrap/css/main4.css" rel="stylesheet">
 </head>
 
 <body>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="/bootstrap/jquery/jquery-1.12.0.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/bootstrap/js/main.js"></script>
-
+<script src="/bootstrap/js/asszy.js"></script>
 
 </body>
 </html>
