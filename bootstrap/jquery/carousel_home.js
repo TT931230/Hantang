@@ -2,7 +2,7 @@ $(function () {
 
   // Slideshow 4
   $("#carousel1").responsiveSlides({
-	auto: false,
+	auto: true,
 	pager: false,
 	nav: true,
 	speed: 500,
@@ -12,7 +12,8 @@ $(function () {
 	},
 	after: function () {
 	  $('.events').append("<li>after event fired.</li>");
-	}
+	},
+	fuck: true
   });
   $("#carousel5").responsiveSlides({
 		auto: false,

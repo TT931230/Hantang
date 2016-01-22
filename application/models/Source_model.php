@@ -25,20 +25,24 @@ class Source_model extends CI_Model
         parent::__construct();
     }
     public function querySource($querycontent){
-        $this->db->where('status',$querycontent['status']);
-        if($_POST['source_name']){
+        if($querycontent['status']){
+            $this->db->where('status',$querycontent['status']);
+        }
+        if($querycontent['source_name']){
             $this->db->where('source_name',$querycontent['source_name']);
         }
-        if($_POST['first_level']){
+        if($querycontent['first_level']){
             $this->db->where('first_level',$querycontent['first_level']);
         }
-        if($_POST['second_level']){
+        if($querycontent['second_level']){
             $this->db->where('second_level',$querycontent['second_level']);
         }
-        if($_POST['third_level']){
+        if($querycontent['third_level']){
             $this->db->where('third_level',$querycontent['third_level']);
         }
-        $this->db->where('type',$querycontent['type']);
+        if($querycontent['type']){
+            $this->db->where('type',$querycontent['type']);
+        }
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");
         $query = $this->db->get();
@@ -67,5 +71,39 @@ class Source_model extends CI_Model
         $this->updater    = $updatecontent['updater'];
         $this->update_time = time();
         $this->db->update('source', $this, array('id' => $updatecontent['id']));
+    }
+    public function insertvideoSource($insertvideo){
+        date_default_timezone_set("UTC");
+        $this->source_location    = $insertvideo['source_location'];
+        $this->status    = $insertvideo['status'];
+        $this->source_name    = $insertvideo['source_name'];
+        $this->link_url    = $insertvideo['link_url'];
+        $this->sequence    = $insertvideo['sequence'];
+        $this->type    = $insertvideo['type'];
+        $this->link_url    = $insertvideo['link_url'];
+        $this->updater    = $insertvideo['updater'];
+        $this->creator    = $insertvideo['creator'];
+        $this->first_level    = $insertvideo['first_level'];
+        $this->second_level    = $insertvideo['second_level'];
+        $this->third_level    = $insertvideo['third_level'];
+        $this->source_remark  = $insertvideo['source_remark'];
+        $this->create_time = date("y-m-d",time());
+        $this->update_time = date("y-m-d",time());
+        $this->db->insert('source', $this);
+        $insertedid=$this->db->insert_id();
+        $updatearray=array(
+            'type'=>'videoimg',
+            'updater'=>$insertvideo['updater'],
+            'update_time'=>date("y-m-d",time()),
+            'third_level'=>$insertedid
+        );
+        $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));
+        for($i=0;$i<count($insertvideo['keyword'])-1;$i++){
+            $insertrelation=array(
+                'keyword_id'=>$insertvideo['keyword'][$i],
+                'source_id'=>$insertedid
+            );
+            $this->db->insert('keyword_source_relation', $insertrelation);
+        }
     }
 }

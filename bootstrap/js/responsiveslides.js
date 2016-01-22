@@ -28,7 +28,8 @@
       "manualControls": "",     // Selector: Declare custom pager navigation
       "namespace": "rslides",   // String: change the default namespace used
       "before": $.noop,         // Function: Before callback
-      "after": $.noop           // Function: After callback
+      "after": $.noop,           // Function: After callback
+      "fuck": false             // Boolean: Progress will show only auto & fuck
     }, options);
 
     return this.each(function () {
@@ -44,6 +45,7 @@
         startCycle,
         restartCycle,
         rotate,
+        progressTimer,
         $tabs,
 
         // Helpers
@@ -53,6 +55,7 @@
         fadeTime = parseFloat(settings.speed),
         waitTime = parseFloat(settings.timeout),
         maxw = parseFloat(settings.maxwidth),
+        progressIngs = $([]),
 
         // Namespacing
         namespace = settings.namespace,
@@ -242,12 +245,62 @@
               }
 
               slideTo(idx);
+              progress(idx);
             }, waitTime);
           };
 
+          //仅仅针对homewrapper1写的进度条，不通用
+          //waitTime太长将导致进度条时间短于waitTime
+          var progress = function(idx){
+            if(idx === undefined){
+              initProgress();
+              onProgress(0);
+            }
+            else {
+              onProgress(idx);
+            }
+          };
+          var initProgress = function(){
+            var homewrapper1 = $(".homewrapper1");
+            homewrapper1.css("position", "relative");
+            
+            var progressBan = $("<div class='progress'></div>");
+            homewrapper1.append(progressBan);
+            
+            var midSpace = 2;
+
+            for(var j = 0; j < length; j ++){
+              var oneProgress = $("<div class='oneProgress'></div>");
+              oneProgressWidth = progressBan.width()/length - 5;
+              oneProgress.width(oneProgressWidth);
+              oneProgress.css("margin-left", midSpace);
+
+              var progressIng = $("<div class='progressIng' id='progress_"+j+"''></div>");
+              progressIngs.push(progressIng);
+
+              oneProgress.append(progressIng);
+              progressBan.append(oneProgress);
+            }
+          };
+          var onProgress = function(idx){
+            clearInterval(progressTimer);
+            progressIngs.each(function(){
+              this.width(0);
+            })
+            var fixedWidth = Math.ceil($(".oneProgress").width()*100/(waitTime*10));
+            progressTimer = setInterval(function(){
+              var tmpWidth = $("#progress_"+idx).width();
+              $("#progress_"+idx).width(tmpWidth + fixedWidth);
+            }, 10);
+          };
           // Init cycle
           startCycle();
+          progress();
+
+
         }
+        
+
 
         // Restarting cycle
         restartCycle = function () {
@@ -290,6 +343,7 @@
 
             // Do the animation
             slideTo(idx);
+            progress(idx);
           })
             .eq(0)
             .closest("li")
@@ -348,6 +402,9 @@
 
             // Go to slide
             slideTo($(this)[0] === $prev[0] ? prevIdx : nextIdx);
+            if(settings.fuck && settings.auto){
+              progress($(this)[0] === $prev[0] ? prevIdx : nextIdx);
+            }
             if (settings.pager || settings.manualControls) {
               selectTab($(this)[0] === $prev[0] ? prevIdx : nextIdx);
             }
@@ -366,8 +423,10 @@
             });
           }
         }
-
       }
+
+
+      
 
       // Max-width fallback
       if (typeof document.body.style.maxWidth === "undefined" && options.maxwidth) {
@@ -385,6 +444,9 @@
         });
       }
 
+      
+
+      
     });
 
   };

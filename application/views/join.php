@@ -7,6 +7,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<body onload="$departmentajax('{first_id}')">
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
@@ -46,3 +47,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </div>
+</body>

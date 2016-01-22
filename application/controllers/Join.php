@@ -37,8 +37,8 @@ class Join extends CI_Controller
         );
         $department = $this->page_data_model->query_departments($d_status);
         $tag_data = $this->page_data_model->query_tags($source_info);
-
         $tmp_data = array(
+            'first_id'=>$department[0]['job'][0]['id'],
             'logoimage'=>$logoimage,
             'department' => $department,
             'video' => $video

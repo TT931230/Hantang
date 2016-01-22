@@ -33,20 +33,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                
                    <div class="musicsearch">
-                        <div class="musictype">
-                            <div class="musictypetitle">{seasontype}</div>
-                            <div class="musictypedetails">
+                        <div class="musictype3">
+                            <div class="musictypetitle3">{seasontype}</div>
+                            <div class="musictypedetails3">
                                 {seasondetails}
-                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                                <span class="musictypedetail3" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
                                 {/seasondetails}
                             </div>
                             </div>
                     
-                        <div class="musictype">
-                            <div class="musictypetitle">{displaytype}</div>
-                            <div class="musictypedetails">
+                        <div class="musictype3">
+                            <div class="musictypetitle3">{displaytype}</div>
+                            <div class="musictypedetails3">
                                 {displaydetails}
-                                <span class="musictypedetail" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                                <span class="musictypedetail4" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
                                 {/displaydetails}
                             </div>
                         </div>                                               
