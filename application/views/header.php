@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </li>
                     <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
                     <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
-                    <li id="music"><a href="/music" class="{musicnav} navtags">{music}</a></li>
+                    <li id="musicli"><a href="/music" class="{musicnav} navtags">{music}</a></li>
                     <li><a href="/join" class="{joinnav} navtags">{join}</a></li>
                 </ul>
             </nav>

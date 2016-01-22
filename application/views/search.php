@@ -118,16 +118,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </span>
             {/search_time}
         </div>
-        <div style="">
+        <div style="background: #fff;
+                    border-bottom: 1px solid #c4c4c4 ">
             <div style="margin-top: 10px;
                         width: 100%;
-                        height: 30px;margin-bottom: 10px;
-                 background-color: #E8E8E8;">
+                        height: 30px;margin-bottom: 10px;">
                 <span style="float:left;margin-top: 10px;margin-left: 15px;">收索结果</span>
                 <span style="cursor: pointer;" onclick="$hideSearchItem('class1content')">
                       <span  class="glyphicon glyphicon-chevron-up"
                              style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
-                      <span style="float:right;margin-top: 10px;" >隐藏收索�/span>
+                      <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
                 </span>
             </div>
         </div>
@@ -139,14 +139,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div id="bg" class="searchbg"></div>
 </div>
+<a href="javascript:void(0)">
+    <img id="top_str" alt="" src="http://www.acmedynasty.com/cn/images/top_str.png"/>
+    <img id="to_top" alt="" src="http://static.acmedynasty.com/images/top.png"/>  </a>
+<a href="javascript:void(0)">
+    <img id="info_str" alt="" src="http://static.acmedynasty.com/cn/images/bottom_str.png"/>
+    <img id="show_info" alt="" src="http://static.acmedynasty.com/images/bottom.png"/>  </a>
+<div id="footer_flow" class="footer_flow">
 
-<div id="flow">
-    <a href="javascript:void(0)">
-        <img id="top_str" alt="" src="http://www.acmedynasty.com/cn/images/top_str.png"/>
-        <img id="to_top" alt="" src="http://static.acmedynasty.com/images/top.png"/>  </a>
-    <a href="javascript:void(0)">
-        <img id="info_str" alt="" src="http://static.acmedynasty.com/cn/images/bottom_str.png"/>
-        <img id="show_info" alt="" src="http://static.acmedynasty.com/images/bottom.png"/>  </a>
     <div id="mask">
         <div class="closePop"></div>
         <div class="popContent">

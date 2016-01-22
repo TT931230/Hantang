@@ -2,6 +2,11 @@
  * Created by Administrator on 2016/1/21 0021.
  */
 function getfooter(){
+    var footer_flow=document.getElementById("footer_flow");
+    var sHeight=document.documentElement.scrollHeight;
+    var sWidth=document.documentElement.scrollWidth;
+    footer_flow.style.height=sHeight+"px";
+    footer_flow.style.width=sWidth+"px";
     console.log("get footer");
     $.ajax({
         type:"post",
@@ -15,7 +20,7 @@ function getfooter(){
             alert("ajax error");
         }
     });
-    $("#mask").css("display","block");
+    $(".footer_flow").css("display","block");
 }
 
 
@@ -49,7 +54,8 @@ $(document).ready(function(){
     });
 
     $("#mask .closePop").click(function(){
-        $("#mask").css("display","none");
+
+        $(".footer_flow").css("display","none");
     });
     $("#searchAToZ a").click(function(){
         var lis = document.getElementById("searchAToZ").getElementsByTagName("a");
