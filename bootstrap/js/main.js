@@ -39,6 +39,7 @@ function $use(elementid,jumpId,searchAToZ){
         if(d.style.display=='none'){
             document.getElementById("bg").style.display ="block";
             $D(elementid);
+            $searchbrandname('A');
             $("#bg").css("height",document.body.scrollHeight);
             $("#bg").css("width",layWidth);
         }else{
@@ -277,6 +278,14 @@ function $searchbrandname($brandtype){
         success: function(result)
         {
             $('#class2content').html(result);
+            var div=$a('searchdetailarea');
+            var divlist = div.childNodes;
+            for(var i=divlist.length-1;i>=0;i--){
+                if(divlist[i].id!='searchreset'&&divlist[i].id!='searchcommit'&&divlist[i].id!='searchinput'&&divlist[i].id)
+                {
+                    $('#'+divlist[i].id.split('___')[0]).attr("checked",'true');
+                }
+            }
         },
         error: function()
         {
