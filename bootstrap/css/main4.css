@@ -36,9 +36,9 @@
     z-index: 1000
 }
 #flow #mask{
-    background: #dedede;
-    opacity:0.9;
-    filter:alpha(opacity=75);
+    background: #ffffff;
+    opacity:1;
+    filter:alpha(opacity=100);
     position:fixed;
     bottom:0;
     left:30px;
@@ -161,7 +161,22 @@
     font-size: 12px;
     color: #000;
 }
+#searchAToZ a{
+    color:#333333;
+    float:left;
+    margin-left: 20px;
 
+}
+.searchdetailarea{
+    height:50px;
+}
+#searchCountry a{
+    padding: 2px 5px 2px 5px;
+    color: #383838;
+    float:left;
+    font-style: normal;
+
+}
 
 
 
