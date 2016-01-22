@@ -257,8 +257,8 @@
     text-align:center;
 }
 .musictypedetail2{
-   margin-left:20px;
-   margin-right:0px;
+   margin-left:10px;
+   margin-right:10px;
     display:inline-block;
     color:#000;
    margin-bottom:10px;
@@ -623,6 +623,16 @@ body {
 background-color: transparent;
 border-bottom-color: #3D5C9A;
 }
+
+/*#music > a:hover,a:focus{
+    background-color: transparent;
+    border-bottom-color: green;
+}
+#music >a.active{
+    background-color: transparent;
+    border-bottom-color: green;
+}*/
+
 @media (min-width: 768px) {
     .masthead-brand {
         float: left;

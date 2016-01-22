@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-21 21:23:52
+Date: 2016-01-22 12:56:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -117,7 +117,7 @@ CREATE TABLE `keyword` (
   `second_level` varchar(100) DEFAULT NULL,
   `keyword_remark` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword
@@ -192,6 +192,11 @@ INSERT INTO `keyword` VALUES ('awoe', '67', '走秀', '1', 'ADMIN', '2016-01-20'
 INSERT INTO `keyword` VALUES ('awoe', '68', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails', null);
 INSERT INTO `keyword` VALUES ('awoe', '69', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails', null);
 INSERT INTO `keyword` VALUES ('awoe', '70', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('brandname', '71', 'Abrand', '1', 'ADMIN', '2016-01-22', '1', 'ADMIN', '2016-01-22', 'zn', 'A', null);
+INSERT INTO `keyword` VALUES ('ul', '91', '试试看', '1', 'ADMIN', '2016-01-22', '1', 'ADMIN', '2016-01-22', 'zn', 'locationdetails', '');
+INSERT INTO `keyword` VALUES ('ul', '92', '试试等等', '1', 'ADMIN', '2016-01-22', '2', 'ADMIN', '2016-01-22', 'zn', 'locationdetails', '');
+INSERT INTO `keyword` VALUES ('ul', '93', '试试看', '1', 'ADMIN', '2016-01-22', '1', 'ADMIN', '2016-01-22', 'zn', 'locationdetails', '');
+INSERT INTO `keyword` VALUES ('ul', '94', '试试等等', '1', 'ADMIN', '2016-01-22', '2', 'ADMIN', '2016-01-22', 'zn', 'locationdetails', '');
 
 -- ----------------------------
 -- Table structure for `keyword_source_relation`
@@ -267,7 +272,7 @@ CREATE TABLE `source` (
   `second_level` varchar(100) DEFAULT NULL,
   `third_level` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100207 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100204 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of source

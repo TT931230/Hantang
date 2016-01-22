@@ -33,7 +33,7 @@ class Partner extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
-        $tag_data = $this->page_data_model->query_tags($source_info);
+        $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
             'logoimage'=>$logoimage,

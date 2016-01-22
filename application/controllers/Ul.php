@@ -37,22 +37,18 @@ class Ul extends CI_Controller
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='yeardetails';
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='locationdetails';
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='typedetails';
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
@@ -61,7 +57,7 @@ class Ul extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
-        $tag_data = $this->page_data_model->query_tags($source_info);
+        $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
             'logoimage'=>$logoimage,
