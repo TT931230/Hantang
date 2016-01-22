@@ -572,11 +572,12 @@ body {
     
 }
 .masthead-nav > li + li {
-    margin-left: 20px;
+   margin-left:-10px;
 }
 .masthead-nav > li > a {
 
 	height:90px;
+	width:120px;
     margin-top:40px;
     font-size: 10px;
     font-weight: 500;
@@ -585,6 +586,7 @@ body {
     
 }
 .masthead-nav > li > a.active {
+
     background-color: transparent;
     border-bottom-color: #a9a9a9;
     border-bottom: 4px solid #a9a9a9;
@@ -592,46 +594,68 @@ body {
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
+
     background-color: transparent;  
     border-bottom: 4px solid #a9a9a9;
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
+
     color: #fff;  
     border-bottom: 4px solid #a9a9a9;
 }
 
 
 #ulli > a:hover,a:focus{
-	background-color: transparent;
+
+	background-color: #fff;
     border-bottom-color: #A73D49;
 
 
 }
 #ulli >a.active{
+	
     background-color: transparent;
     border-bottom-color: #A73D49;
 }
 
 #awoeli > a:hover,a:focus{
+
 	background-color: transparent;
     border-bottom-color: #3D5C9A;   	
 }
 
 #awoeli >a.active{
+	
     background-color: transparent;
     border-bottom-color: #3D5C9A;
 }
-#music > a:hover,a:focus{
-    border-bottom: none;
+#musicli> a:hover{
+	margin-top:-3px;
+	height:93px;
+    width:120px;
+    
+    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
+    
 }
-#music:hover{
-    width: 124px;
+#musicli > a.active{
+	margin-top:2px;
+    width: 120px;
+    height: 92px;
+    border-bottom: none;
+    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
+    
+}
+
+/*
+#musicli:hover{
+    width: 120px;
     height: 133px;
     border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
-
+    
 }
+*/
 /*#music >a.active{
 
     border-bottom-image: url('../images/musicline.jpg');
