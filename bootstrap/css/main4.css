@@ -1,0 +1,168 @@
+#flow{
+}
+#flow #info_str{
+    filter:alpha(opacity=90);
+    opacity:0.9;
+    right: 7%;
+    top:88.5%;
+    position: fixed;
+    z-index: 1000;
+    display:none
+}
+#flow #show_info{
+    filter:alpha(opacity=90);
+    opacity:0.9;
+    right: 5%;
+    top:88%;
+    position:
+    fixed;z-index: 1000
+}
+
+#flow #top_str{
+    filter:alpha(opacity=90);
+    opacity:0.9;
+    right: 7%;
+    bottom:13.5%;
+    position: fixed;
+    z-index: 1000;
+    display:none
+}
+#flow #to_top{
+    filter:alpha(opacity=90);
+    opacity:0.9;
+    right: 5%;
+    bottom:13%;
+    position: fixed;
+    z-index: 1000
+}
+#flow #mask{
+    background: #dedede;
+    opacity:0.9;
+    filter:alpha(opacity=75);
+    position:fixed;
+    bottom:0;
+    left:30px;
+    right:30px;
+    width:auto;
+    height:280px;
+    padding-right:20px;
+    z-index: 900;
+    display: none;
+}
+#flow #mask .closePop{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    background: url(../images/close.png) no-repeat;
+    right: 10px;
+    top:10px;
+    z-index: 950;
+}
+#flow #mask .popContent{
+    position:fixed;
+    z-index: 950;
+}
+
+#share a.bds_weixin:hover{
+    background:url(../../bootstrap/images/wechat.png)no-repeat;
+    background-size:25px 25px;
+}
+#share a.bds_tsina:hover{
+    background:url(../../bootstrap/images/sina.png)no-repeat;
+    background-size:25px 25px;
+}
+#share a.bds_qzone:hover{
+    background:url(../../bootstrap/images/qzone.png)no-repeat;
+    background-size:25px 25px;
+}
+#share a.bds_sqq:hover{
+    background:url(../../bootstrap/images/q_q.png)no-repeat;
+    background-size:25px 25px;
+}
+
+
+
+.subtitle{
+    width: 100%;    /* 也可以固定宽度 */
+    height: 150px;
+    background-color: #C4C4C4;
+    border: 1px ;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding:35px;
+    font-size:20px;
+    color:#555555;
+
+}
+.subtitle .ulinnerb #share .bdsharebuttonbox{
+    margin-left:auto;
+}
+.subtitle .ulinnera {
+    width:60%;
+
+    font-size: 15px;
+    overflow: hidden;
+
+    white-space:normal;
+    word-break:break-all;
+    float: left;
+    padding:10px 25px 10px 10px;
+    display: inline-block;
+    height: 100%;
+}
+.subtitle .ulinnerc {
+    width:20%;
+    font-size: 10px;
+    display: inline-block;
+    border-left:1px solid #808080;
+    padding:10px 25px 10px 10px;
+    border-right:1px solid #aaa;
+    height: 100%;
+}
+.subtitle .ulinnerb {
+    width:20%;
+    font-size: 10px;
+    overflow: hidden;
+    text-align:center;
+    white-space:normal;
+    word-break:break-all; ;
+    padding-left:10px;
+    float:right;
+    display: inline-block;
+}
+.subtitle .ulinnerc .part1{
+    float: left;
+    width: 33%;
+}
+.subtitle .ulinnerc .part1 #collection:hover{
+    background:url(../../bootstrap/images/dload_c.png)no-repeat;
+
+}
+.subtitle .ulinnerc .part2{
+    float: left;
+    width: 50%;
+}
+
+.subtitle .ulinnerc .part2 #dload:hover{
+    background:url(../../bootstrap/images/dload_c.png)no-repeat;
+
+}
+.subtitle .ulinnerc .part3{
+    float: left;
+    width: 50%;
+}
+.subtitle .ulinnerc .part3 #phone:hover{
+    background:url(../../bootstrap/images/dload_c.png)no-repeat;
+
+}
+.subtitle .ulinnerc .ul_des{
+    margin-top: 15px;
+    font-size: 12px;
+    color: #000;
+}
+
+
+
+
+

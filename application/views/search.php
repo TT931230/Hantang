@@ -143,3 +143,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="bg" class="searchbg"></div>
 </div>
 
+<div id="flow">
+    <a href="javascript:void(0)">
+        <img id="top_str" alt="" src="http://www.acmedynasty.com/cn/images/top_str.png"/>
+        <img id="to_top" alt="" src="http://static.acmedynasty.com/images/top.png"/>  </a>
+    <a href="javascript:void(0)">
+        <img id="info_str" alt="" src="http://static.acmedynasty.com/cn/images/bottom_str.png"/>
+        <img id="show_info" alt="" src="http://static.acmedynasty.com/images/bottom.png"/>  </a>
+    <div id="mask">
+        <div class="closePop"></div>
+        <div class="popContent">
+        </div>
+    </div>
+</div>
