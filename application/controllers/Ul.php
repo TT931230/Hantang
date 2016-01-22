@@ -15,6 +15,7 @@ class Ul extends CI_Controller
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/ul');
         }else{
+            $this->session->set_userdata('language','zn');
             $page_data=$this->page_data_model->get_page_data('zn','/ul');
         }
         $source_info_base=array(
@@ -57,9 +58,17 @@ class Ul extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
+        $source_info=$source_info_base;
+        $source_info['first_level']='ul';
+        $source_info['type']='videoimg';
+        $source_info['third_level']=$this->session->language;
+        $relatedvideo = $this->page_data_model->query_sources($source_info);
+
+
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
+            'relatedvideo'=>$relatedvideo,
             'logoimage'=>$logoimage,
             'imagearea1'=>$imagearea1,
             'imagearea11'=>$imagearea11,
@@ -90,6 +99,7 @@ class Ul extends CI_Controller
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/ul');
         }else{
+            $this->session->set_userdata('language','zn');
             $page_data=$this->page_data_model->get_page_data('zn','/ul');
         }
         $source_info_base=array(
@@ -100,10 +110,9 @@ class Ul extends CI_Controller
         );
 
         $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='imagearea1';
+        $source_info['first_level']='ullogo';
         $source_info['type']='img';
-        $imagearea1 = $this->page_data_model->query_sources($source_info);
+        $ullogo = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
@@ -132,11 +141,25 @@ class Ul extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
+        $source_info=$source_info_base;
+        $source_info['first_level']='ul';
+        $source_info['third_level']=$this->session->language;
+        $source_info['type']='videoimg';
+        $relatedvideo = $this->page_data_model->query_sources($source_info);
+
+        $this->db->where('status','1');
+        $this->db->where('id',$videoid);
+        $this->db->from('source');
+        $videoquery = $this->db->get();
+        $video = $videoquery->result_array();
+
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
+            'video'=>$video,
+            'relatedvideo'=>$relatedvideo,
             'logoimage'=>$logoimage,
-            'imagearea1'=>$imagearea1,
+            'ullogo'=>$ullogo,
             'imagearea11'=>$imagearea11,
             'yeardetails'=>$yeardetails,
             'locationdetails'=>$locationdetails,
@@ -151,6 +174,5 @@ class Ul extends CI_Controller
         $this->parser->parse('search',$data);
         $this->parser->parse('ulinner',$data);
         $this->parser->parse('footer',$data);
-//        echo($videoname);
     }
 }

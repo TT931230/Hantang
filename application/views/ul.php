@@ -35,85 +35,75 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-             </div>
-               
-                 <div class="ulsearch">
-                        <div class="diftype">
-                            <div class="ultypes">{yeartype}</div>
-                            <div class="uldetails">
-                                {yeardetails}
-                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')" >
-                                <span class="musictypedetail" >{keyword}</span>
-                                </a>
-                                {/yeardetails}
-                            </div>
-                        </div>
-                        <div class="diftype">
-                            <div class="ultypes">{locationtype}</div>
-                            <div class="uldetails2">
-                                {locationdetails}
-                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
-                                <span class="musictypedetail2" >{keyword}</span>
-                                </a>
-                                {/locationdetails}
-                            </div>
-                        </div>
-                        <div class="diftype">
-                            <div class="ultypes">{typetype}</div>
-                            <div class="uldetails">
-                                {typedetails}
-                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">                              
-                                <span class="musictypedetail" >{keyword}</span>
-                                </a>
-                                {/typedetails}
-                            </div>
-                        </div>
-                        <div class="diftype">
-	                            <div class="ultypes">{activetype}</div>
-	                            <div class="uldetails">
-	                                {activedetails}
-	                                <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">   
-                                    <span class="musictypedetail" >{keyword}</span>
-                                    </a>
-	                                {/activedetails}
-	                            </div>
-	                        </div>
-	                        </div>
-	                  
-	              
-	             
             </div>
-           
-            <div class="videoslug">
-                相关视频
-            </div>
-            
-                <div class="dashline">
-               
-                    <div class="relatedvideoarea" id="relatedvideoarea">
-                        <!--                    {imagearea2}-->
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
-                        </div>
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
-                        </div>
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
-                        </div>
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
-                        </div>
-                        <!--                    {/imagearea2}-->
+
+            <div class="ulsearch">
+                <div class="diftype">
+                    <div class="ultypes">{yeartype}</div>
+                    <div class="uldetails">
+                        {yeardetails}
+                        <a href="javascript:;" onclick="$searchrelatedvideo('{id}')" >
+                            <span class="musictypedetail" >{keyword}</span>
+                        </a>
+                        {/yeardetails}
                     </div>
                 </div>
-             
-                
+                <div class="diftype">
+                    <div class="ultypes">{locationtype}</div>
+                    <div class="uldetails2">
+                        {locationdetails}
+                        <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
+                            <span class="musictypedetail2" >{keyword}</span>
+                        </a>
+                        {/locationdetails}
+                    </div>
+                </div>
+                <div class="diftype">
+                    <div class="ultypes">{typetype}</div>
+                    <div class="uldetails">
+                        {typedetails}
+                        <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
+                            <span class="musictypedetail" >{keyword}</span>
+                        </a>
+                        {/typedetails}
+                    </div>
+                </div>
+                <div class="diftype">
+                    <div class="ultypes">{activetype}</div>
+                    <div class="uldetails">
+                        {activedetails}
+                        <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
+                            <span class="musictypedetail" >{keyword}</span>
+                        </a>
+                        {/activedetails}
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="videoslug">
+            相关视频
+        </div>
+
+        <div class="dashline">
+
+            <div class="relatedvideoarea" id="relatedvideoarea">
+                {relatedvideo}
+                <div class="relatedvideos">
+                    <a href='{link_url}'><img src='{source_location}'></a>
+                    <div class="relavideostitle">
+                        {source_name}
+                    </div>
+                </div>
+                {/relatedvideo}
             </div>
         </div>
+
+
     </div>
+</div>
+</div>
 

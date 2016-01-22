@@ -15,7 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-        
             <div class="newborder">
                 <div class="homeborder1">
                     <div class="homewrapper1">
@@ -28,35 +27,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-                </div>
-                
-                
-               
-                   <div class="musicsearch">
-                        <div class="musictype3">
-                            <div class="musictypetitle3">{seasontype}</div>
-                            <div class="musictypedetails3">
-                                {seasondetails}
-                                <span class="musictypedetail3" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
-                                {/seasondetails}
-                            </div>
-                            </div>
-                    
-                        <div class="musictype3">
-                            <div class="musictypetitle3">{displaytype}</div>
-                            <div class="musictypedetails3">
-                                {displaydetails}
-                                <span class="musictypedetail4" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
-                                {/displaydetails}
-                            </div>
-                        </div>                                               
+            </div>
+            <div class="musicsearch">
+                <div class="musictype3">
+                    <div class="musictypetitle3">{seasontype}</div>
+                    <div class="musictypedetails3">
+                        {seasondetails}
+                        <span class="musictypedetail3" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                        {/seasondetails}
                     </div>
-                    
-                    
-                <div class="dashline">
                 </div>
-                
-           
+
+                <div class="musictype3">
+                    <div class="musictypetitle3">{displaytype}</div>
+                    <div class="musictypedetails3">
+                        {displaydetails}
+                        <span class="musictypedetail4" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
+                        {/displaydetails}
+                    </div>
+                </div>
+            </div>
+            <div class="dashline">
+                <div class="videoslug">
+                    相关视频
+                </div>
+
+                <div class="dashline">
+
+                    <div class="relatedvideoarea" id="relatedvideoarea">
+                        {relatedvideo}
+                        <div class="relatedvideos">
+                            <a href='{link_url}'><img src='{source_location}'></a>
+                            <div class="relavideostitle">
+                                {source_name}
+                            </div>
+                        </div>
+                        {/relatedvideo}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
