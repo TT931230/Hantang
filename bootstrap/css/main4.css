@@ -167,6 +167,10 @@
     margin-left: 20px;
 
 }
+#searchAToZ a:hover{
+    text-decoration: underline;
+
+}
 .searchdetailarea{
     height:50px;
 }
@@ -175,6 +179,10 @@
     color: #383838;
     float:left;
     font-style: normal;
+
+}
+#searchCountry a:hover{
+   text-decoration: underline;
 
 }
 
