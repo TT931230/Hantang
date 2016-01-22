@@ -123,7 +123,9 @@ function $reset(){
     for(var i=divlist.length-1;i>=0;i--){
         if(divlist[i].id!='searchreset'&&divlist[i].id!='searchcommit'&&divlist[i].id!='searchinput'&&divlist[i].id)
         {
-            $a(divlist[i].id.split('___')[0]).checked=false;
+            if($a(divlist[i].id.split('___')[0])){
+                $a(divlist[i].id.split('___')[0]).checked=false;
+            }
             div.removeChild(divlist[i]);
             $("#bg").css("height",document.body.scrollHeight);
         }
