@@ -69,11 +69,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
         <div id="class2content" style="display:none;" class="searchcontentarea">
-            {search_brandname}
-            <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
-            </span>
-            {/search_brandname}
         </div>
         <div class="searchdetailarea">
             <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}
@@ -83,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class3content" style="display:none;" class="searchcontentarea">
             {search_type}
             <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
+                    <input type="checkbox" id="{id}" value="{keyword}" onclick="$searchcontent('{id}')"/><span class="searchItem">{keyword}</span>
             </span>
             {/search_type}
         </div>
@@ -95,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class4content" style="display:none;" class="searchcontentarea">
             {search_keyword}
             <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
+                    <input type="checkbox" id="{id}" value="{keyword}" onclick="$searchcontent('{id}')"/><span class="searchItem">{keyword}</span>
             </span>
             {/search_keyword}
         </div>
@@ -107,7 +102,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class5content" style="display:none;" class="searchcontentarea">
             {search_location}
             <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
+                    <input type="checkbox" id="{id}" value="{keyword}" onclick="$searchcontent('{id}')"/><span class="searchItem">{keyword}</span>
             </span>
             {/search_location}
         </div>
@@ -119,7 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class6content" style="display:none;" class="searchcontentarea">
             {search_time}
             <span class="searchcontent">
-                    <input type="checkbox" id="{oid}" value="{content}" onclick="$searchcontent({oid})"/><span class="searchItem">{content}</span>
+                    <input type="checkbox" id="{id}" value="{keyword}" onclick="$searchcontent('{id}')"/><span class="searchItem">{keyword}</span>
             </span>
             {/search_time}
         </div>
