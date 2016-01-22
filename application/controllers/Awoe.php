@@ -57,9 +57,15 @@ class Awoe extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
+        $source_info=$source_info_base;
+        $source_info['first_level']='awoe';
+        $source_info['type']='videoimg';
+        $relatedvideo = $this->page_data_model->query_sources($source_info);
+
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
+            'relatedvideo'=>$relatedvideo,
             'logoimage'=>$logoimage,
             'imagearea1'=>$imagearea1,
             'imagearea11'=>$imagearea11,
@@ -100,34 +106,29 @@ class Awoe extends CI_Controller
         );
 
         $source_info=$source_info_base;
-        $source_info['first_level']='awoeinner';
-        $source_info['second_level']='imagearea1';
+        $source_info['first_level']='awoelogo';
         $source_info['type']='img';
-        $imagearea1 = $this->page_data_model->query_sources($source_info);
+        $awoelogo = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
-        $source_info['first_level']='awoeinner';
+        $source_info['first_level']='awoe';
         $source_info['second_level']='imagearea11';
         $source_info['type']='img';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='awoeinner';
         $keyword_info['second_level']='yeardetails';
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='awoeinner';
         $keyword_info['second_level']='locationdetails';
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='awoeinner';
         $keyword_info['second_level']='typedetails';
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='awoeinner';
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
@@ -136,11 +137,24 @@ class Awoe extends CI_Controller
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
-        $tag_data = $this->page_data_model->query_tags($source_info);
+        $source_info=$source_info_base;
+        $source_info['first_level']='awoe';
+        $source_info['type']='videoimg';
+        $relatedvideo = $this->page_data_model->query_sources($source_info);
+
+        $this->db->where('status','1');
+        $this->db->where('id',$videoname);
+        $this->db->from('source');
+        $videoquery = $this->db->get();
+        $video = $videoquery->result_array();
+
+        $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
+            'video'=>$video,
+            'relatedvideo'=>$relatedvideo,
             'logoimage'=>$logoimage,
-            'imagearea1'=>$imagearea1,
+            'awoelogo'=>$awoelogo,
             'imagearea11'=>$imagearea11,
             'yeardetails'=>$yeardetails,
             'locationdetails'=>$locationdetails,

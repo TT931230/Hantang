@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
             <div class="ulinner-subtitle">
-                {imagearea1}
+                {ullogo}
                     <img src="{source_location}">
-                {/imagearea1}
+                {/ullogo}
             </div>
             <div class="newborder">
                 <div class="videoarea">
@@ -27,15 +27,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="subtitle">
                 <div class="ulinnera">
                     <div>
-                        <p>于心有愧</p>
+                        <p>{source_name}</p>
                     </div>
                     <div>
-                        <p>如果我听歌可眼红，何以对你好片不懂；自细做过多少美梦，慈悲的伟论，连乞丐喊穷心也痛；
-                        竟怕放怀拥抱你，让你露欢容；追悔没用，转眼发现，你失踪...</p>
+                        <p>{source_remark}</p>
                     </div>
                 </div>
                 <div class="ulinnerc">
-
+                        {/video}
                     <div class="part2">
                         <div>
                             <img id="dload" alt="" src="../../bootstrap/images/dload.png"/><br/>
@@ -63,31 +62,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
 
-            <div class="dashline">
-                <div>
-
-                </div>
+            <div class="videoslug">
+                相关视频
             </div>
+
             <div class="dashline">
+
                 <div class="relatedvideoarea" id="relatedvideoarea">
-<!--                    {imagearea2}-->
-                        <div class="relatedvideos">
-                            <a href="{link_url}"><img src="{source_location}"></a>
-                            <span>{source_name}</span>
+                    {relatedvideo}
+                    <div class="relatedvideos">
+                        <a href='{link_url}'><img src='{source_location}'></a>
+                        <div class="relavideostitle">
+                            {source_name}
                         </div>
-                    <div class="relatedvideos">
-                        <a href="{link_url}"><img src="{source_location}"></a>
-                        <span>{source_name}</span>
                     </div>
-                    <div class="relatedvideos">
-                        <a href="{link_url}"><img src="{source_location}"></a>
-                        <span>{source_name}</span>
-                    </div>
-                    <div class="relatedvideos">
-                        <a href="{link_url}"><img src="{source_location}"></a>
-                        <span>{source_name}</span>
-                    </div>
-<!--                    {/imagearea2}-->
+                    {/relatedvideo}
                 </div>
             </div>
         </div>

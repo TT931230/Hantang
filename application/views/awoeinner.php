@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
             <div class="subtitle">
-                {imagearea1}
+                {awoelogo}
                 <img src="{source_location}">
-                {/imagearea1}
+                {/awoelogo}
             </div>
             <div class="newborder">
                 <div class="videoarea">
@@ -47,19 +47,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             {/video}
-            <div class="dashline">
-                <div>
-                    {relatedvideos}
-                </div>
+            <div class="videoslug">
+                相关视频
             </div>
+
             <div class="dashline">
+
                 <div class="relatedvideoarea" id="relatedvideoarea">
-                    {imagearea2}
+                    {relatedvideo}
                     <div class="relatedvideos">
-                        <a href="{link_url}"><img src="{source_location}"></a>
-                        <span>{source_name}</span>
+                        <a href='{link_url}'><img src='{source_location}'></a>
+                        <div class="relavideostitle">
+                            {source_name}
+                        </div>
                     </div>
-                    {/imagearea2}
+                    {/relatedvideo}
                 </div>
             </div>
         </div>
