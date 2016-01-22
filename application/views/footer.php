@@ -13,9 +13,10 @@
                 <div class="footertype">{about}</div>
                     <div class="footerdetials">
                         <div class="footerdetail">
+                            <a href="javascript:;">
                             <span class="footerlogos" data-toggle="modal" data-target="#weixinModal">
                                  <img src="bootstrap\images\wxin.png" alt="">
-                            </span>微信
+                            </span></a>微信
                          </div>
                         <div class="footerdetail">
                          <a class="footerlogos"  href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
@@ -26,21 +27,23 @@
             <div class="footerleftdiv">
                 <div class="footertype">{ul}</div>
                    <div class="footerdetials">
-                       <div class="footerdetail">           
+                       <div class="footerdetail">
+                           <a href="javascript:;">
                         <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal"><img src="bootstrap\images\wxin.png" alt=""></span>
                       
-                            微信</div>
+                            </a>微信</div>
                    </div>
             </div>
             <div class="footerleftdiv2">
                 <div class="footertype2">{music}</div>
                     <div class="footerdetials2">
                         <div class="footerdetail">
+                            <a href="javascript:;">
                          <span class="footerlogos2">
                             
                                  <img  data-toggle="modal" data-target="#weixinModal" src="bootstrap\images\wxin.png" alt="">
                             
-                            </span>微信</div>
+                            </span></a>微信</div>
                         <div class="footerdetail">
                          <a class="footerlogos2" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
@@ -63,11 +66,12 @@
                 </div>
                     <div class="footerdetials3">
                         <div class="footerdetail">
+                            <a href="javascript:;">
                          <span class="footerlogos2" class="footerlogos" data-toggle="modal" data-target="#weixinModal">
                           
                                 <img src="bootstrap\images\wxin.png" alt="">
                            
-                            </span>微信</div>
+                            </span></a>微信</div>
                         <div class="footerdetail">
                          <a class="footerlogos2" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
