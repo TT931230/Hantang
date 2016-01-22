@@ -130,5 +130,7 @@ class PageManager extends CI_Controller
             );
             $this->keyword_model->insertKeyword($insertcontent);
         }
+        echo "<script>alert('导入成功！')</script>";
+        echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/contentm'>";
     }
 }
