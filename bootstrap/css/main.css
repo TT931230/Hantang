@@ -148,7 +148,12 @@
 .navtags{
     text-align: center;
 }
+.ulinnera{
+    width:60%;
+    display: inline-block;
+    border-right:1px solid #bbb;
 
+}
 .relatedvideoarea{
 	width:100%;
     display: inline-block;     
@@ -178,7 +183,12 @@
 	padding-top:220px;
 	color:#808080;
 }
-
+.ulinnerb{
+	padding-left:20px;
+	float:right;
+    border-left:1px solid #808080;
+    display: inline-block;
+}
 .searchresult{
     margin-bottom: 20px;
     border-top:1px dotted #808080;
@@ -257,8 +267,8 @@
     text-align:center;
 }
 .musictypedetail2{
-   margin-left:10px;
-   margin-right:10px;
+   margin-left:20px;
+   margin-right:0px;
     display:inline-block;
     color:#000;
    margin-bottom:10px;
@@ -298,6 +308,24 @@
     text-align: center;
     border-bottom: 0px solid #761c19;
 }
+.dropdown-list-line {
+    height: 1px;
+    padding: 0 40%;
+}
+.dropdown-list-line span {
+    display: block;
+    height: inherit;
+    background: #fff;
+}
+.dropdown-triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    margin-left: -4px;
+}
 .dropdowndepart>li>a {
     display: block;
     padding: 3px 20px;
@@ -306,16 +334,18 @@
     line-height: 1.42857143;
     color: #FFF;
     white-space: nowrap;
-    border-top: 1px solid #fff;
+    /*border-top: 1px solid #fff;*/
 }
 .dropdowndepart>li>a:hover{
-    background-color: #636363;
+/*    background-color: #636363;
     left:-15%;
     width:130%;
     height:60%;
-    color:#fff;
     font-size:12pt;
-    position:relative;
+    position:relative;*/
+    background-color: #C9C9C9;
+    color:#000;
+    cursor: pointer;
 
 }
 
@@ -611,8 +641,8 @@ body {
 
 	background-color: #fff;
     border-bottom-color: #A73D49;
-
-
+    
+	
 }
 #ulli >a.active{
 	
@@ -628,8 +658,8 @@ body {
 
 #awoeli >a.active{
 	
-    background-color: transparent;
-    border-bottom-color: #3D5C9A;
+background-color: transparent;
+border-bottom-color: #3D5C9A;
 }
 #musicli> a:hover{
 	margin-top:-3px;
@@ -662,18 +692,18 @@ body {
 }*/
 
 @media (min-width: 768px) {
-.masthead-brand {
-    float: left;
-}
-.masthead-nav {
-    float: right;
-}
+    .masthead-brand {
+        float: left;
+    }
+    .masthead-nav {
+        float: right;
+    }
 }
 
 
 /*
-* Cover
-*/
+ * Cover
+ */
 
 .cover {
     padding: 0 20px;
@@ -728,8 +758,8 @@ body {
     }
     .searchbg{
         width:1200px;
-    }
 
+    }
 }
 
 /* music */
