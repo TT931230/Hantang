@@ -40,7 +40,7 @@
     </div>
     <div class="row">
         <label class="col-lg-2">语言类型</label>
-        <select  class="col-lg-2 multiselect" multiple="multiple" id="third_level">
+        <select  class="col-lg-2" id="third_level">
             <option value="zn">中文</option>
             <option value="en">英文</option>
             <option value="fr">法文</option>

@@ -17,9 +17,9 @@ class Search extends CI_Controller
             $arr_n=count($searchinput)-1;
             foreach ($searchinput as $searchword) {
                 if ($arr_n==$i) {
-                    $where .= "a.source_name='".$searchword."')";
+                    $where .= "a.source_name like '%".$searchword."%')";
                 } else {
-                    $where .= "a.source_name='".$searchword."' OR ";
+                    $where .= "a.source_name like '%".$searchword."%' OR ";
                 }
                 $i++;
             }
@@ -51,21 +51,35 @@ class Search extends CI_Controller
             }
         }
         $this->db->from('source as a');
- //       $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
- //       $this->db->join('keyword as c', 'b.keyword_id = c.id');
+        $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
+        $this->db->join('keyword as c', 'b.keyword_id = c.id');
         $this->db->where($where);
         $this->db->where('a.status','1');
         $this->db->where('a.type','videoimg');
         $query=$this->db->get();
         $results=$query->result_array();
         $resultareas ="";
-        foreach($results as $result){
+        for($i=0;$i<count($results);$i++){
             $resultareas.="<div class='searchresult'>";
             $resultareas.="<div class='searchresulta'>";
+            $resultareas.="<img src='".$results[$i]['source_location']."'>";
             $resultareas.="</div>";
             $resultareas.="<div class='searchresultb'>";
+            $resultareas.="<div>".$results[$i]['source_name']."</div>";
+            $resultareas.="<div>".$results[$i]['source_remark']."</div>";
             $resultareas.="</div>";
             $resultareas.="<div class='searchresultc'>";
+            switch($results[$i]['first_level']){
+                case 'ul':
+                    $resultareas.="<div>极致</div>";
+                    break;
+                case 'awoe':
+                    $resultareas.="<div>问鼎世界</div>";
+                    break;
+                case 'music':
+                    $resultareas.="<div>汉唐文化音乐年</div>";
+                    break;
+            }
             $resultareas.="</div>";
             $resultareas.="</div>";
         }
