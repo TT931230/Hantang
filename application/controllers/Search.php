@@ -62,7 +62,7 @@ class Search extends CI_Controller
         for($i=0;$i<count($results);$i++){
             $resultareas.="<div class='searchresult'>";
             $resultareas.="<div class='searchresulta'>";
-            $resultareas.="<img src='".$results[$i]['source_location']."'>";
+            $resultareas.="<a href='".$results[$i]['link_url']."'><img src='".$results[$i]['source_location']."'></a>";
             $resultareas.="</div>";
             $resultareas.="<div class='searchresultb'>";
             $resultareas.="<div>".$results[$i]['source_name']."</div>";

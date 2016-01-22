@@ -127,9 +127,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span style="cursor: pointer;" onclick="$hideSearchItem('class1content')">
                       <span  class="glyphicon glyphicon-chevron-up"
                              style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
-                      <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
+                      <span style="float:right;margin-top: 10px;" >隐藏收索�/span>
                 </span>
-
             </div>
         </div>
         <div id="searchresults" class="searchresults">
