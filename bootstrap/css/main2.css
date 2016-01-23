@@ -599,3 +599,34 @@ margin-left:0px;
 	height:auto;
 	margin-bottom:20px;
 }
+
+
+/*   awoeinner   */
+.awoeinner-subtitle{
+    background-color:#00376f;
+    margin-bottom: -1px;
+    margin-top: 0;
+    padding:15px;
+    font-size:20px;
+    color:#555555;
+    height:50px;
+    
+ }
+ .awoeinner-subtitle img{
+ float:left;
+ margin-top:-25px;
+ height:70px;
+ width:auto;
+ }
+ 
+ /* musicinner */
+.musicinner-subtitle div{
+    background:url(bootstrap/images/musicinner.png);
+    
+ }
+ .musicinner-subtitle img{
+ float:left;
+ margin-top:-25px;
+ height:70px;
+ width:auto;
+ } 

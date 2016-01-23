@@ -10,12 +10,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="subtitle">
+            <div class="awoeinner-subtitle">
                 {awoelogo}
                 <img src="{source_location}">
                 {/awoelogo}
             </div>
-            <div class="newborder">
+           
                 <div class="videoarea">
                     <video controls="controls" autoplay=true>
                         {video}
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     </video>
                 </div>
-            </div>
+         
             <div class="subtitle">
                 <div class="ulinnera">
                     <div>
