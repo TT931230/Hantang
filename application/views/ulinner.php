@@ -27,23 +27,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="subtitle">
                 <div class="ulinnera">
                     <div>
-                        <p>{source_name}</p>
+                        <p>title</p>
                     </div>
                     <div>
-                        <p>{source_remark}</p>
+                        <p>content</p>
                     </div>
                 </div>
                 <div class="ulinnerc">
-                        {/video}
+
                     <div class="part2">
                         <div>
-                            <img id="dload" alt="" src="../../bootstrap/images/dload.png"/><br/>
+                            <a href="{source_url}" download="{source_name}">
+                                <img id="dload" alt="" src="../../bootstrap/images/dload.png"/>
+                            </a>
+
                         </div>
                         <div class="ul_des">下载</div>
                     </div>
                     <div class="part3">
                         <div>
-                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/><br/>
+                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/>
+
                         </div>
                         <div class="ul_des">手机</div>
                     </div>

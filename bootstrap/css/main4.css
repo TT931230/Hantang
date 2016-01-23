@@ -101,9 +101,9 @@
 .subtitle{
     width: 100%;    /* 也可以固定宽度 */
     height: 200px;
-    background-color: #d6d6d6;
+    background-color: #fff;
     margin-top:-45px;
-    margin-bottom: 0x;
+    margin-bottom: 0;
     padding:35px;
     font-size:20px;
     color:#808080;
