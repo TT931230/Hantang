@@ -82,11 +82,11 @@ class Page_data_model extends CI_Model{
             }
         }
         $this->db->from('source');
-        $this->db->where('first_level','footer');
+        $this->db->where('first_level','platform');
         $this->db->where('second_level','ulmap');
         $ulmap=$this->db->get()->result_array();
         $this->db->from('source');
-        $this->db->where('first_level','footer');
+        $this->db->where('first_level','platform');
         $this->db->where('second_level','awoemap');
         $awoemap=$this->db->get()->result_array();
 
@@ -95,8 +95,8 @@ class Page_data_model extends CI_Model{
         $languages=$this->db->get()->result_array();
         $data = array(
             'partnerimgs'=>$partner,
-            'awoemap'=>$awoemap['source_location'],
-            'ulmap'=>$ulmap['source_location'],
+            'awoemap'=>$awoemap[0]['source_location'],
+            'ulmap'=>$ulmap[0]['source_location'],
             'wangyi'=>$wangyi,
             'jianshu'=>$jianshu,
             'tengxun'=>$tengxun,
