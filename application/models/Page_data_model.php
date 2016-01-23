@@ -13,7 +13,84 @@ class Page_data_model extends CI_Model{
 
     public function get_page_data($languageType,$url){
         $this->lang->load('test',$languageType);
+        $this->db->from('source');
+        $this->db->where('first_level','footer');
+        $returnquery=$this->db->get()->result_array();
+        $weixin="";
+        $weibo="";
+        $youku="";
+        $wangyi="";
+        $tengxun="";
+        $jianshu="";
+        $douban="";
+        $footerlogo1="";
+        $footerlogo2="";
+        $footerlogo3="";
+        $footerlogo4="";
+        $guanzhu="";
+        $erwei="";
+        $guanbi="";
+        for($i=0;$i<count($returnquery);$i++){
+            switch ($returnquery[$i]['second_level']){
+                case 'weixin':
+                    $weixin=$returnquery[$i]['source_location'];
+                    break;
+                case 'weibo':
+                    $weibo=$returnquery[$i]['source_location'];
+                    break;
+                case 'youku':
+                    $youku=$returnquery[$i]['source_location'];
+                    break;
+                case 'douban':
+                    $douban=$returnquery[$i]['source_location'];
+                    break;
+                case 'tengxun':
+                    $tengxun=$returnquery[$i]['source_location'];
+                    break;
+                case 'jianshu':
+                    $jianshu=$returnquery[$i]['source_location'];
+                    break;
+                case 'wangyi':
+                    $wangyi=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo1':
+                    $footerlogo1=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo2':
+                    $footerlogo2=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo3':
+                    $footerlogo3=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo4':
+                    $footerlogo4=$returnquery[$i]['source_location'];
+                    break;
+                case 'guanzhu':
+                    $guanzhu=$returnquery[$i]['source_location'];
+                    break;
+                case 'erwei':
+                    $erwei=$returnquery[$i]['source_location'];
+                    break;
+                case 'guanbi':
+                    $guanbi=$returnquery[$i]['source_location'];
+                    break;
+            }
+        }
         $data = array(
+            'wangyi'=>$wangyi,
+            'jianshu'=>$jianshu,
+            'tengxun'=>$tengxun,
+            'douban'=>$douban,
+            'youku'=>$youku,
+            'weibo'=>$weibo,
+            'weixin'=>$weixin,
+            'footerlogo1'=>$footerlogo1,
+            'footerlogo2'=>$footerlogo2,
+            'footerlogo3'=>$footerlogo3,
+            'footerlogo4'=>$footerlogo4,
+            'guanzhu'=>$guanzhu,
+            'erwei'=>$erwei,
+            'guanbi'=>$guanbi,
             'url' => $url,
             'dogandhorse' => $this->lang->line('dogandhorse'),
             'home' => $this->lang->line('home'),
