@@ -323,7 +323,7 @@ function $searchcity($countryid){
 function $partnerrelatedvideo($logoid){
     $.ajax({
         type:"post",
-        data: "keyword_id=" + $keyword_id,
+        data: "keyword_id=" + $logoid,
         url:"Search/searchrelatedvideo",
         success: function(result)
         {
