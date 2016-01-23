@@ -42,7 +42,6 @@ function $use(elementid,jumpId,searchAToZ){
             $searchbrandname('A');
             var country=$a('searchCountry');
             var countrylist = country.childNodes;
-            console.log(countrylist[1].id);
             $searchcity(countrylist[1].id);
             $("#bg").css("height",document.body.scrollHeight);
             $("#bg").css("width",layWidth);
@@ -217,11 +216,10 @@ function $searchresult(){
                 }
             }
         }
-        console.log(tags);
-        var reg = /([^\s])\s+([^\s\b])/g;
+        //var reg = /([^\s])\s+([^\s\b])/g;
         var searchinput = $("#searchinput").val();
-        searchinput = searchinput.replace(reg, "$1|||$2");
-        console.log(searchinput);
+        searchinput = searchinput.replace(/(^\s*)|(\s*$)/g, "");
+        searchinput = searchinput.replace(/\s+/g, '|||');
         $.ajax({
             type:"post",
             data: "tags=" + tags + '&searchinput='+searchinput,
@@ -244,7 +242,6 @@ function $searchresult(){
 }
 
 function $changelanguage($url,$language){
-    console.log($url);
     $.ajax({
         type:"post",
         data: "language=" + $language,
@@ -316,6 +313,21 @@ function $searchcity($countryid){
                     $('#'+divlist[i].id.split('___')[0]).attr("checked",'true');
                 }
             }
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $partnerrelatedvideo($logoid){
+    $.ajax({
+        type:"post",
+        data: "keyword_id=" + $keyword_id,
+        url:"Search/searchrelatedvideo",
+        success: function(result)
+        {
+            $('#showarea').html(result);
         },
         error: function()
         {

@@ -9,10 +9,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="subtitle">
+            <div class="aboutsubtitle">
                    合作伙伴                                 
             </div>
-            <div class="newborder">
+            <div class="newborder" style="display: {partnerdisarea1}">
                <div class="ptn-border">
                     <div class="ptn-wrapper">
                         <div class="callbacks_container">
@@ -25,8 +25,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <div class="dashline">
-               logos
+            <div class="dashline" id="showarea" style="display: {partnerdisarea2}">
+               {partnerimgs}
+                <div>
+                    <a href="javascript:;" onclick="$partnerrelatedvideo('{second_level}')"><img src="{source_location}"></a>
+                </div>
+                {/partnerimgs}
             </div>
         </div>
         

@@ -3,7 +3,7 @@
  */
 .headernavul{
     padding-left:30px;
-    padding-right:30px;
+    /*padding-right:30px;*/
 }
 .modal-content{
 	padding-top:20px;
@@ -410,7 +410,7 @@
     margin-bottom: 20px;
     margin-top: 20px;
     float:left;
-    width:10%;
+    width:14%;
     border-right: 1px solid #bbbbbb;
     height:230px;
 }
@@ -603,7 +603,7 @@ body {
     
 }
 .masthead-nav > li + li {
-   margin-left:-10px;
+   margin-left:-15px;
 }
 .masthead-nav > li > a {
 
@@ -620,21 +620,21 @@ body {
 
     background-color: transparent;
     border-bottom-color: #a9a9a9;
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
     
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
 
     background-color: transparent;  
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
 
     color: #fff;  
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
 }
 
 
@@ -642,8 +642,6 @@ body {
 
 	background-color: #fff;
     border-bottom-color: #A73D49;
-    
-	
 }
 #ulli >a.active{
 	

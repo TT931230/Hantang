@@ -10,96 +10,92 @@
     <div class="clearfix">
         <div class="inner">
             <div class="footerleftdiv">
-                <div class="footertype">{about}</div>
+                <div class="footertype"><img src="{footerlogo1}" alt=""></div>
                     <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
                             <span class="footerlogos" data-toggle="modal" data-target="#weixinModal">
-                                 <img src="bootstrap\images\wxin.png" alt="">
+                                 <img src="{weixin}" alt="">
                             </span></a>微信
                          </div>
                         <div class="footerdetail">
                          <a class="footerlogos"  href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
-                                  <img src="bootstrap\images\youku.png" alt="">
+                                  <img src="{youku}" alt="">
                         </a>优酷</div>
                     </div>
             </div>
             <div class="footerleftdiv">
-                <div class="footertype">{ul}</div>
+                <div class="footertype"><img src="{footerlogo2}" alt=""></div>
                    <div class="footerdetials">
                        <div class="footerdetail">
                            <a href="javascript:;">
-                        <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal"><img src="bootstrap\images\wxin.png" alt=""></span>
+                        <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal"><img src="{weixin}" alt=""></span>
                       
                             </a>微信</div>
-                   </div>
+                  </div>
             </div>
-            <div class="footerleftdiv2">
-                <div class="footertype2">{music}</div>
-                    <div class="footerdetials2">
+            <div class="footerleftdiv">
+                <div class="footertype"><img src="{footerlogo3}" alt=""></div>
+                    <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
-                         <span class="footerlogos2">
+                         <span class="footerlogos">
                             
-                                 <img  data-toggle="modal" data-target="#weixinModal" src="bootstrap\images\wxin.png" alt="">
+                                 <img  data-toggle="modal" data-target="#weixinModal" src="{weixin}" alt="">
                             
                             </span></a>微信</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
-                                  <img src="bootstrap\images\weibo.png" alt="">
+                                  <img src="{weibo}" alt="">
                           
                             </a>微博</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://site.douban.com/221186/" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://site.douban.com/221186/" target="_blank" style="text-decoration: none;">
                             
-                                 <img src="bootstrap\images\douban.png" alt="">
+                                 <img src="{douban}" alt="">
                            
                             </a>豆瓣小站</div>
                     </div>
             </div>
-            <div class="footerleftdiv3">           
-                <div class="footertype3">
-                <span class="footerdh">
-                <img src="bootstrap\images\dhlogo.png">
-                </span>{dogandhorse}
-                </div>
-                    <div class="footerdetials3">
+            <div class="footerleftdiv">           
+                <div class="footertype"><img src="{footerlogo4}" alt=""></div>
+                    <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
-                         <span class="footerlogos2" class="footerlogos" data-toggle="modal" data-target="#weixinModal">
+                         <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal">
                           
-                                <img src="bootstrap\images\wxin.png" alt="">
+                                <img src="{weixin}" alt="">
                            
                             </span></a>微信</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
-                                <img src="bootstrap\images\weibo.png" alt="">
+                                <img src="{weibo}" alt="">
                             
                             </a>微博</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
                            
-                                 <img src="bootstrap\images\youku.png" alt="">
+                                 <img src="{youku}" alt="">
                         
                             </a>优酷</div>
                         <div class="footerdetail">
-                         <a class="footerlogos2" href="http://v.qq.com/vplus/hedonist" target="_blank" style="text-decoration: none;">
+                         <a class="footerlogos" href="http://v.qq.com/vplus/hedonist" target="_blank" style="text-decoration: none;">
                           
-                                 <img src="bootstrap\images\tengxun.png" alt="">
+                                 <img src="{tengxun}" alt="">
                             
                             </a>腾讯视频</div>
                         <div class="footerdetail">
-                         <a  class="footerlogos2"href="http://www.jianshu.com/users/e447b96581bd/latest_articles" target="_blank" style="text-decoration: none;">
+                         <a  class="footerlogos"href="http://www.jianshu.com/users/e447b96581bd/latest_articles" target="_blank" style="text-decoration: none;">
                            
-                                 <img src="bootstrap\images\jianshu.png" alt="">
+                                 <img src="{jianshu}" alt="">
                            
                             </a>简书</div>
                         <div class="footerdetail">
-                         <a  class="footerlogos2"href="http://yuedu.163.com/news_reader/#/~/source?id=81ed83ba67fb49d78bc1b43c25d882ff_1&amp;cid=ab11d60e6ea049b8b61981ec3188" target="_blank" style="text-decoration: none;">
+                         <a  class="footerlogos"href="http://yuedu.163.com/news_reader/#/~/source?id=81ed83ba67fb49d78bc1b43c25d882ff_1&amp;cid=ab11d60e6ea049b8b61981ec3188" target="_blank" style="text-decoration: none;">
                             
-                                 <img src="bootstrap\images\wangyi.png" alt="">
+                                 <img src="{wangyi}" alt="">
                            
                             </a>网易云阅读</div>
                     </div>
@@ -116,12 +112,12 @@
                     <div>
                         <div id="weixin2" style="width: 250px; height: 300px; position: fixed; z-index: 100; top: 25%; left: 40%; display: block; background: white;">
                             <div style="height: 30px">
-                                <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="bootstrap\images\close.png" style="float: right; padding-top: 13px; padding-right: 13px"></a>
+                                <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="{guanbi}" style="float: right; padding-top: 13px; padding-right: 13px"></a>
                             </div>
                             <div>
-                                <img alt="" src="bootstrap\images\guanzhu.png">
+                                <img alt="" src="{guanzhu}">
                                 <div style="width: 200px; height: 1px; background-color: #CCC; margin-top: 15px;margin-left: 25px;"></div>
-                                <img id="erwei" alt="" style="margin-top: 20px; width: 200px; height: 200px;" src="bootstrap\images\jz_erwei.png">
+                                <img id="erwei" alt="" style="margin-top: 20px; width: 200px; height: 200px;" src="{erwei}">
                             </div>
                         </div>
                     </div>

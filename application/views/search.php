@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="cover-container showsearcharea">
         <div class="inner newborder showsearcharea1">
             <div class="radio-inline language">
-                <span class="dropdown dropdowncust" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</span>
+                <span class="dropdown dropdowncust" style="margin-left: 10px;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</span>
                 <ul class="dropdown-menu dropdownmenucust" id="choseLan">
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span style="cursor: pointer;" onclick="$hideSearchItem('class1content')">
                       <span  class="glyphicon glyphicon-chevron-up"
                              style="float:right;margin-left: 10px;margin-right: 15px;margin-top: 10px;"></span>
-                      <span style="float:right;margin-top: 10px;" >隐藏收索栏</span>
+                      <span style="float:right;margin-top: 10px;" >隐藏收索�/span>
                 </span>
             </div>
         </div>

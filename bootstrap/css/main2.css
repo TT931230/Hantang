@@ -1,7 +1,7 @@
 /*
  * About
  */
- .subtitle{
+ .aboutsubtitle{
     background-color: #C4C4C4;
     border: 1px ;
     margin-bottom: 0;
@@ -124,7 +124,7 @@
 .callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 60%;
+  top: 53%;
   left: 0;
   opacity: 0.3;
   z-index: 3;
@@ -210,7 +210,7 @@ background: transparent url("color.gif") no-repeat left top;
   .music-callbacks_nav.next:hover{
   left: auto;
   background-position: right top;
-  right: 0;
+  right: 15px;
   }
 .musicsearch{
 	margin-top:30px;
@@ -248,15 +248,15 @@ background: transparent url("color.gif") no-repeat left top;
 .music-callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 60%;
-  left: 0;
+  top: 51%;
+  left:15px;
   opacity: 0.3;
   z-index: 3;
   text-indent: -9999px;
   overflow: hidden;
   text-decoration: none;
   height: 61px;
-  width: 38px;
+  width: 30px;
   background: transparent url("white.gif") no-repeat left top;
   margin-top: -45px;
   }
@@ -268,8 +268,9 @@ background: transparent url("color.gif") no-repeat left top;
 .music-callbacks_nav.next {
   left: auto;
   background-position: right top;
-  right: 0;
+  right: 15px;
   }
+
 @media screen and (max-width:600px) {
   .music-callbacks_nav {
     top: 100%;
@@ -560,11 +561,13 @@ margin-left:0px;
  * footer
  */
  .footertype{
- font-size:10px;
- font-weight:600;
- color:#808080;
  margin-left:40px;
- text-align:left;
+ height:auto;
+ }
+ .footertype img{
+ width:55px;
+ height:auto;
+ margin-right:20px;
  
  }
  .footerdetials{
@@ -577,28 +580,7 @@ margin-left:0px;
  color:#808080;
  margin-top:8px;
  }
- .footerleftdiv2{
-    display:inline;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    float:left;
-    width:15%;
-    border-right: 1px solid #bbbbbb;
-    height:230px;
-}
- .footerdetials2{
- margin-top:20px;
- margin-left:50px;
- text-align:left;
- }
-  .footertype2{
- font-size:10px;
- font-weight:600;
- color:#808080;
- margin-left:50px;
- text-align:left;
- 
- }
+
  .footerlogos{
  margin-right:5px;
  }
@@ -606,44 +588,9 @@ margin-left:0px;
  width:18px;
  height:auto;
  }
- .footerlogos2{
-  margin-right:5px;
- }
-  .footerlogos2 img{
- width:18px;
- height:auto;
- }
- .footertype3{
- font-size:10px;
- font-weight:600;
- color:#808080;
- margin-left:0px;
- text-align:left;
  
- }
-.footerdetials3{ 
- margin-left:95px;
- text-align:left;
- }
- .footerdh{
- margin-left:30px;
- margin-right:10px;
- }
- .footerdh img{
-  width:50px;
- height:auto;
- margin-top:5px;
- margin-bottom:-20px;
- }
- .footerleftdiv3{
-    display:inline;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    float:left;
-    width:18%;
-    border-right: 1px solid #bbbbbb;
-    height:230px;
-}
-.searchbg{
-	width:100%;
+.plat-map img{
+	width:1200px;
+	height:auto;
+	margin-bottom:20px;
 }

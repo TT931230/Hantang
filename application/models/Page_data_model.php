@@ -13,35 +13,105 @@ class Page_data_model extends CI_Model{
 
     public function get_page_data($languageType,$url){
         $this->lang->load('test',$languageType);
+        $this->db->from('source');
+        $this->db->where('first_level','footer');
+        $returnquery=$this->db->get()->result_array();
+        $weixin="";
+        $weibo="";
+        $youku="";
+        $wangyi="";
+        $tengxun="";
+        $jianshu="";
+        $douban="";
+        $footerlogo1="";
+        $footerlogo2="";
+        $footerlogo3="";
+        $footerlogo4="";
+        $guanzhu="";
+        $erwei="";
+        $guanbi="";
+        $this->db->from('source');
+        $this->db->where('type','partnerimg');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $partner=$this->db->get()->result_array();
+        for($i=0;$i<count($returnquery);$i++){
+            switch ($returnquery[$i]['second_level']){
+                case 'weixin':
+                    $weixin=$returnquery[$i]['source_location'];
+                    break;
+                case 'weibo':
+                    $weibo=$returnquery[$i]['source_location'];
+                    break;
+                case 'youku':
+                    $youku=$returnquery[$i]['source_location'];
+                    break;
+                case 'douban':
+                    $douban=$returnquery[$i]['source_location'];
+                    break;
+                case 'tengxun':
+                    $tengxun=$returnquery[$i]['source_location'];
+                    break;
+                case 'jianshu':
+                    $jianshu=$returnquery[$i]['source_location'];
+                    break;
+                case 'wangyi':
+                    $wangyi=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo1':
+                    $footerlogo1=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo2':
+                    $footerlogo2=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo3':
+                    $footerlogo3=$returnquery[$i]['source_location'];
+                    break;
+                case 'footerlogo4':
+                    $footerlogo4=$returnquery[$i]['source_location'];
+                    break;
+                case 'guanzhu':
+                    $guanzhu=$returnquery[$i]['source_location'];
+                    break;
+                case 'erwei':
+                    $erwei=$returnquery[$i]['source_location'];
+                    break;
+                case 'guanbi':
+                    $guanbi=$returnquery[$i]['source_location'];
+                    break;
+            }
+        }
+        $this->db->from('source');
+        $this->db->where('first_level','footer');
+        $this->db->where('second_level','ulmap');
+        $ulmap=$this->db->get()->result_array();
+        $this->db->from('source');
+        $this->db->where('first_level','footer');
+        $this->db->where('second_level','awoemap');
+        $awoemap=$this->db->get()->result_array();
+
+        $this->db->from('language');
+        $this->db->where('lang',$languageType);
+        $languages=$this->db->get()->result_array();
         $data = array(
+            'partnerimgs'=>$partner,
+            'awoemap'=>$awoemap['source_location'],
+            'ulmap'=>$ulmap['source_location'],
+            'wangyi'=>$wangyi,
+            'jianshu'=>$jianshu,
+            'tengxun'=>$tengxun,
+            'douban'=>$douban,
+            'youku'=>$youku,
+            'weibo'=>$weibo,
+            'weixin'=>$weixin,
+            'footerlogo1'=>$footerlogo1,
+            'footerlogo2'=>$footerlogo2,
+            'footerlogo3'=>$footerlogo3,
+            'footerlogo4'=>$footerlogo4,
+            'guanzhu'=>$guanzhu,
+            'erwei'=>$erwei,
+            'guanbi'=>$guanbi,
             'url' => $url,
-            'dogandhorse' => $this->lang->line('dogandhorse'),
-            'home' => $this->lang->line('home'),
-            'about' => $this->lang->line('about'),
-            'ul' => $this->lang->line('ul'),
-            'awoe' => $this->lang->line('awoe'),
-            'music' => $this->lang->line('music'),
-            'join' => $this->lang->line('join'),
-            'language' => $this->lang->line('language'),
-            'search' => $this->lang->line('search'),
-            'platform' => $this->lang->line('platform'),
-            'partner' => $this->lang->line('partner'),
-            'introduce' => $this->lang->line('introduce'),
-            'brandname' => $this->lang->line('brandname'),
-            'type' => $this->lang->line('type'),
-            'location' => $this->lang->line('location'),
-            'time' => $this->lang->line('time'),
-            'keyword' => $this->lang->line('keyword'),
-            'seniorsearch' => $this->lang->line('seniorsearch'),
-            'inputtip' => $this->lang->line('inputtip'),
-            'commit' => $this->lang->line('commit'),
-            'reset' =>  $this->lang->line('reset'),
-            'seasontype' => $this->lang->line('displayseason'),
-            'displaytype' => $this->lang->line('displaytype'),
-            'yeartype' => $this->lang->line('yeartype'),
-            'locationtype' =>$this->lang->line('locationtype'),
-            'typetype' => $this->lang->line('typetype'),
-            'activetype' => $this->lang->line('activetype'),
             'homenav' => '',
             'aboutnav' =>  '',
             'ulnav' => '',
@@ -49,6 +119,27 @@ class Page_data_model extends CI_Model{
             'musicnav' => '',
             'joinnav' => ''
         );
+        for($i=0;$i<count($languages);$i++){
+            $temp_array=array(
+                $languages[$i]['tag']=>$languages[$i]['value']
+            );
+            $data=array_merge($data,$temp_array);
+        }
+        $this->db->from('webmodel');
+        $areadis=$this->db->get()->result_array();
+        for($i=0;$i<count($areadis);$i++){
+            $tmpname=$areadis[$i]['first_level'];
+            $autotmp=$areadis[$i]['first_level'];
+            $tmpname.='dis';
+            $autotmp.='auto';
+            $tmpname.=$areadis[$i]['areaname'];
+            $autotmp.=$areadis[$i]['areaname'];
+                $temp_array=array(
+                    $tmpname=>$areadis[$i]['is_hide'],
+                    $autotmp=>$areadis[$i]['is_auto']
+                );
+            $data=array_merge($data,$temp_array);
+        }
         switch($url){
             case '/ul':
                 $data['ulnav']='active';
