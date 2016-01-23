@@ -100,10 +100,10 @@
 
 .subtitle{
     width: 100%;    /* 也可以固定宽度 */
-    height: 200px;
+    height: 180px;
     background-color: #d6d6d6;
     margin-top:-45px;
-    margin-bottom: 0x;
+    margin-bottom:30px;
     padding:35px;
     font-size:20px;
     color:#808080;
@@ -113,37 +113,52 @@
     margin-left:auto;
 }
 .subtitle .ulinnera {
+	height: 120px;
     width:60%;
-    font-size: 15px;
+    font-size: 10px;
     overflow: hidden;
     white-space:normal;
     word-break:break-all;
     float: left;
     padding:0px 25px 10px 10px;
     display: inline-block;
-    border-right:1px solid #808080;
+    border-right:1px solid #a0a0a0;
+    color:#626262;
+}
+.innertexttitle{
+	font-size:15px;
+	text-align:left;
+	margin-bottom:15px;
+}
+.innertext{
+	font-size:10px;
+	text-align:left;
 }
 .subtitle .ulinnerc {
+	height: 80px;
     width:20%;
     font-size: 10px;
     display: inline-block;
-    border-right:1px solid #808080;
-    padding:10px 25px 10px 10px;
+    border-right:1px solid #a0a0a0;
+    margin-top:20px;
+    margin-bottom:20px;
 }
 .subtitle .ulinnerb {
+	height: 80px;
     width:20%;
     font-size: 10px;
     overflow: hidden;
     text-align:center;
     white-space:normal;
     word-break:break-all; ;
-    padding-left:10px;
     float:right;
     display: inline-block;
+    padding-top:20px;
+    padding-left:45px;
 }
 .subtitle .ulinnerc .part1{
     float: left;
-    width: 33%;
+    width: 50%;
 }
 .subtitle .ulinnerc .part1 #collection:hover{
     background:url(../../bootstrap/images/dload_c.png)no-repeat;
@@ -169,7 +184,7 @@
 .subtitle .ulinnerc .ul_des{
     margin-top: 15px;
     font-size: 12px;
-    color: #000;
+    color:#626262;
 }
 #searchAToZ a{
     height:30px;

@@ -26,11 +26,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <div class="subtitle">
                 <div class="ulinnera">
-                    <div>
-                        <p>{source_name}</p>
+                    <div class="innertexttitle">
+                        {source_name}
                     </div>
-                    <div>
-                        <p>{source_remark}</p>
+                    <div class="innertext">
+                        {source_remark}
                     </div>
                 </div>
                 <div class="ulinnerc">
