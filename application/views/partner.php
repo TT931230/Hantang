@@ -26,11 +26,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="dashline" id="showarea">
-               {partner}
+               {partnerimgs}
                 <div>
                     <a href="javascript:;" onclick="$partnerrelatedvideo('{second_level}')"><img src="{source_location}"></a>
                 </div>
-                {/partner}
+                {/partnerimgs}
             </div>
         </div>
         

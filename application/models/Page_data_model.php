@@ -30,6 +30,11 @@ class Page_data_model extends CI_Model{
         $guanzhu="";
         $erwei="";
         $guanbi="";
+        $this->db->from('source');
+        $this->db->where('type','partnerimg');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $partner=$this->db->get()->result_array();
         for($i=0;$i<count($returnquery);$i++){
             switch ($returnquery[$i]['second_level']){
                 case 'weixin':
@@ -85,6 +90,7 @@ class Page_data_model extends CI_Model{
         $this->db->where('second_level','awoemap');
         $awoemap=$this->db->get()->result_array();
         $data = array(
+            'partnerimgs'=>$partner,
             'awoemap'=>$awoemap['source_location'],
             'ulmap'=>$ulmap['source_location'],
             'wangyi'=>$wangyi,
