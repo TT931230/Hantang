@@ -459,15 +459,19 @@ margin-left:0px;
 
 .ulinner-subtitle{
     background-color:#541B2A;
-    border: 1px ;
-    margin-bottom: 0;
+    margin-bottom: -1px;
     margin-top: 0;
     padding:15px;
     font-size:20px;
     color:#555555;
+    height:50px;
     
  }
  .ulinner-subtitle img{
+ float:left;
+ margin-top:-10px;
+ height:40px;
+ width:auto;
  }
 
 #share a{width:30px;height:30px;padding:0;margin:6px;}
