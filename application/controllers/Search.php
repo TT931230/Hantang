@@ -50,9 +50,12 @@ class Search extends CI_Controller
                 }
             }
         }
+
         $this->db->from('source as a');
-        $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
-        $this->db->join('keyword as c', 'b.keyword_id = c.id');
+        if($tags[0]) {
+            $this->db->join('keyword_source_relation as b', 'a.id = b.source_id');
+            $this->db->join('keyword as c', 'b.keyword_id = c.id');
+        }
         $this->db->where($where);
         $this->db->where('a.status','1');
         $this->db->where('a.type','videoimg');
@@ -127,7 +130,6 @@ class Search extends CI_Controller
     }
     function searchcountry(){
         $countryid=$_POST['countryid'];
-        $this->db->where('first_level','citys');
         $this->db->where('second_level',$countryid);
         $this->db->from('keyword');
         $this->db->order_by('sequence','asc');
