@@ -11,40 +11,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-        <div class="aboutsubtitle">
-                   加入汉唐                                 
+            <div class="aboutsubtitle" style="display: {joindisarea1}">
+                加入汉唐
             </div>
-                <div class="videoarea">
-                    <video controls="controls" autoplay=true>
-                        {video}
-                        <source src="{source_location}" type="{type}" />
-                        {/video}
-                    </video>
-                </div>
-       <div class="dashline">
+            <div class="videoarea">
+                <video controls="controls" autoplay=true>
+                    {video}
+                    <source src="{source_location}" type="{type}" />
+                    {/video}
+                </video>
+            </div>
+            <div class="dashline" style="display: {joindisarea2}">
                 <div class="joininfo">
                     <nav>
                         <ul class="nav join-masthead-nav navcust">
-                        {department}
+                            {department}
                             <li>
                                 <a class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{department}</a>
                                 <ul class="dropdown-menu dropdownmenucust dropdowndepart">
-                                <span class="dropdown-triangle"></span>
+                                    <span class="dropdown-triangle"></span>
                                     {job}
-                                        <li><a onclick="$departmentajax('{id}')">{jobname}</a></li>
-                                        <li class="dropdown-list-line"><span></span></li>
+                                    <li><a onclick="$departmentajax('{id}')">{jobname}</a></li>
+                                    <li class="dropdown-list-line"><span></span></li>
 
                                     {/job}
                                 </ul>
                             </li>
-                        {/department}
+                            {/department}
                         </ul>
                     </nav>
-                 </div>
-      </div>
-                <div class="dashline">
-                    <div class="departmentdetailarea" id="departmentdetailarea">
-                    </div>
+                </div>
+            </div>
+            <div class="dashline">
+                <div class="departmentdetailarea" id="departmentdetailarea">
                 </div>
             </div>
         </div>

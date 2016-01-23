@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="newborder">
+            <div class="newborder" style="display: {uldisarea1}">
                 <div id="left" style="background-color:#A73D49">
                     {imagearea11}
                     <img src='{source_location}' alt="">
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
 
-            <div class="ulsearch">
+            <div class="ulsearch" style="display: {uldisarea2}">
                 <div class="diftype">
                     <div class="ultypes">{yeartype}</div>
                     <div class="uldetails">
@@ -79,26 +79,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
-        <div class="videoslug">
-            相关视频
-        </div>
+        <div style="display: {uldisarea3}">
+            <div class="videoslug">
+                相关视频
+            </div>
 
-        <div class="dashline">
+            <div class="dashline">
 
-            <div class="relatedvideoarea" id="relatedvideoarea">
-                {relatedvideo}
-                <div class="relatedvideos">
-                    <a href='{link_url}'><img src='{source_location}'></a>
-                    <div class="relavideostitle">
-                        {source_name}
+                <div class="relatedvideoarea" id="relatedvideoarea">
+                    {relatedvideo}
+                    <div class="relatedvideos">
+                        <a href='{link_url}'><img src='{source_location}'></a>
+                        <div class="relavideostitle">
+                            {source_name}
+                        </div>
                     </div>
+                    {/relatedvideo}
                 </div>
-                {/relatedvideo}
             </div>
         </div>
 

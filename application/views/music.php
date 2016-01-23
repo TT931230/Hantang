@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="newborder">
+            <div class="newborder" style="display: {musicdisarea1}">
                 <div class="homeborder1">
                     <div class="homewrapper1">
                         <div class="callbacks_container">
@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <div class="musicsearch">
+            <div class="musicsearch" style="display: {musicdisarea2}">
                 <div class="musictype3">
                     <div class="musictypetitle3">{seasontype}</div>
                     <div class="musictypedetails3">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <div class="dashline">
+            <div class="dashline" style="display: {musicdisarea3}">
                 <div class="videoslug">
                     相关视频
                 </div>

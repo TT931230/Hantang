@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
 
-            <div class="newborder">
+            <div class="newborder" style="display: {awoedisarea1}">
                 <div id="left" style="background-color:#3D5C9A">
                     {imagearea11}
                     <img src='{source_location}' alt="">
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
 
-            <div class="ulsearch">
+            <div class="ulsearch" style="display: {awoedisarea2}">
                 <div class="diftype">
                     <div class="ultypes">{yeartype}</div>
                     <div class="uldetails">
@@ -76,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <div class="dashline">
+            <div class="dashline" style="display: {awoedisarea3}">
                 <div class="videoslug">
                     相关视频
                 </div>
