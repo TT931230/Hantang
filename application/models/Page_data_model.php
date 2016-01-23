@@ -89,6 +89,10 @@ class Page_data_model extends CI_Model{
         $this->db->where('first_level','footer');
         $this->db->where('second_level','awoemap');
         $awoemap=$this->db->get()->result_array();
+
+        $this->db->from('language');
+        $this->db->where('lang',$languageType);
+        $languages=$this->db->get()->result_array();
         $data = array(
             'partnerimgs'=>$partner,
             'awoemap'=>$awoemap['source_location'],
@@ -108,33 +112,6 @@ class Page_data_model extends CI_Model{
             'erwei'=>$erwei,
             'guanbi'=>$guanbi,
             'url' => $url,
-            'dogandhorse' => $this->lang->line('dogandhorse'),
-            'home' => $this->lang->line('home'),
-            'about' => $this->lang->line('about'),
-            'ul' => $this->lang->line('ul'),
-            'awoe' => $this->lang->line('awoe'),
-            'music' => $this->lang->line('music'),
-            'join' => $this->lang->line('join'),
-            'language' => $this->lang->line('language'),
-            'search' => $this->lang->line('search'),
-            'platform' => $this->lang->line('platform'),
-            'partner' => $this->lang->line('partner'),
-            'introduce' => $this->lang->line('introduce'),
-            'brandname' => $this->lang->line('brandname'),
-            'type' => $this->lang->line('type'),
-            'location' => $this->lang->line('location'),
-            'time' => $this->lang->line('time'),
-            'keyword' => $this->lang->line('keyword'),
-            'seniorsearch' => $this->lang->line('seniorsearch'),
-            'inputtip' => $this->lang->line('inputtip'),
-            'commit' => $this->lang->line('commit'),
-            'reset' =>  $this->lang->line('reset'),
-            'seasontype' => $this->lang->line('displayseason'),
-            'displaytype' => $this->lang->line('displaytype'),
-            'yeartype' => $this->lang->line('yeartype'),
-            'locationtype' =>$this->lang->line('locationtype'),
-            'typetype' => $this->lang->line('typetype'),
-            'activetype' => $this->lang->line('activetype'),
             'homenav' => '',
             'aboutnav' =>  '',
             'ulnav' => '',
@@ -142,6 +119,12 @@ class Page_data_model extends CI_Model{
             'musicnav' => '',
             'joinnav' => ''
         );
+        for($i=0;$i<count($languages);$i++){
+            $temp_array=array(
+                $languages[$i]['tag']=>$languages[$i]['value']
+            );
+            $data=array_merge($data,$temp_array);
+        }
         $this->db->from('webmodel');
         $areadis=$this->db->get()->result_array();
         for($i=0;$i<count($areadis);$i++){
