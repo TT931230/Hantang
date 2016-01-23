@@ -215,23 +215,28 @@ class Page_data_model extends CI_Model{
     }
 
     public function query_tags(){
+        $this->load->library('session');
         $this->db->from('keyword');
         $this->db->where('second_level','typedetails');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_type=$query->result_array();
         $this->db->from('keyword');
         $this->db->where('second_level','keyword');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_keyword=$query->result_array();
         $this->db->from('keyword');
         $this->db->where('second_level','yeardetails');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_time=$query->result_array();
         $this->db->from('keyword');
         $this->db->where('second_level','locationdetails');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_country=$query->result_array();
