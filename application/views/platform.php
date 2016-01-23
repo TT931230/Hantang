@@ -22,15 +22,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="{link_url}"><img src="{source_location}"></a>
             {/imagearea2}
         </div>
-              
-      
-        
+        <div class="plat-map">
+        <img src="bootstrap\images\jzmap.png">
+        </div>         
         <div class="plat-subtitle platform-sub">
             {imagearea3}
             <img src='{source_location}' alt="">
             {/imagearea3}
         </div>  
-
+        <div class="plat-map">
+        <img src="bootstrap\images\wdmap.png">
+        </div> 
 
         
         </div> 

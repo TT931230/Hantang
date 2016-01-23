@@ -43,7 +43,7 @@
     opacity: .40;
     filter: alpha(opacity=40);
     margin-top:10px;
-    min-width: 1000px; 
+   
  
 }
 /*#left:hover{*/
@@ -156,4 +156,10 @@ input[type="checkbox"]:checked {
      #bg{
        
      }
+ }
+ .footertype img {
+     width: 155px;
+     height: 60px;
+     /* margin-right: 20px; */
+     margin-left: -35%;
  }
