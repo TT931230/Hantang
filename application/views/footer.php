@@ -10,7 +10,7 @@
     <div class="clearfix">
         <div class="inner">
             <div class="footerleftdiv">
-                <div class="footertype"><img src="" alt=""></div>
+                <div class="footertype"><img src="bootstrap/images/logo1.png" alt=""></div>
                     <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
@@ -25,7 +25,7 @@
                     </div>
             </div>
             <div class="footerleftdiv">
-                <div class="footertype"><img src="" alt=""></div>
+                <div class="footertype"><img src="bootstrap/images/logo2.png" alt=""></div>
                    <div class="footerdetials">
                        <div class="footerdetail">
                            <a href="javascript:;">
@@ -35,7 +35,7 @@
                   </div>
             </div>
             <div class="footerleftdiv">
-                <div class="footertype"><img src="" alt=""></div>
+                <div class="footertype"><img src="bootstrap/images/logo3.png" alt=""></div>
                     <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
@@ -59,7 +59,7 @@
                     </div>
             </div>
             <div class="footerleftdiv">           
-                <div class="footertype"><img src="" alt=""></div>
+                <div class="footertype"><img src="bootstrap/images/logo4.png" alt=""></div>
                     <div class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
