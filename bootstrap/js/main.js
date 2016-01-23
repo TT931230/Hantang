@@ -320,3 +320,18 @@ function $searchcity($countryid){
         }
     });
 }
+function $partnerrelatedvideo($logoid){
+    $.ajax({
+        type:"post",
+        data: "keyword_id=" + $keyword_id,
+        url:"Search/searchrelatedvideo",
+        success: function(result)
+        {
+            $('#showarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}

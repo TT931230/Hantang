@@ -14,11 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="bootstrap/js/responsiveslides.js"></script>
 
 
- 
+
 <div class="cover-container">
 	<div class="clearfix newborder">
 		<div class="inner">
-			<div class="homeborder1">
+			<div class="homeborder1" style="display: {homedisarea1}">
 				<div class="homewrapper1">
 					<div id="area1" class="musiccallbacks_container homeimagearea1">
 						<ul class="rslides" id="carousel1">
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-			<div class="homeborder">
+			<div class="homeborder"  style="display: {homedisarea2}">
 				<div id="left" style="background-color:#A73D49">
 					{imagearea11}
 						<img src='{source_location}' alt="">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-			<div class="homeborder">
+			<div class="homeborder"  style="display: {homedisarea3}">
 				<div id="left" style="background-color:#3D5C9A">
 					{imagearea12}
 					<img src='{source_location}' alt="">
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-			<div class="homeborder">
+			<div class="homeborder"  style="display: {homedisarea4}">
 				<div id="left-music" style="background-color:#EAEAEA">
 					{imagearea13}
 					<img src='{source_location}' alt="">

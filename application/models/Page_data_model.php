@@ -76,7 +76,17 @@ class Page_data_model extends CI_Model{
                     break;
             }
         }
+        $this->db->from('source');
+        $this->db->where('first_level','footer');
+        $this->db->where('second_level','ulmap');
+        $ulmap=$this->db->get()->result_array();
+        $this->db->from('source');
+        $this->db->where('first_level','footer');
+        $this->db->where('second_level','awoemap');
+        $awoemap=$this->db->get()->result_array();
         $data = array(
+            'awoemap'=>$awoemap['source_location'],
+            'ulmap'=>$ulmap['source_location'],
             'wangyi'=>$wangyi,
             'jianshu'=>$jianshu,
             'tengxun'=>$tengxun,
@@ -126,6 +136,21 @@ class Page_data_model extends CI_Model{
             'musicnav' => '',
             'joinnav' => ''
         );
+        $this->db->from('webmodel');
+        $areadis=$this->db->get()->result_array();
+        for($i=0;$i<count($areadis);$i++){
+            $tmpname=$areadis[$i]['first_level'];
+            $autotmp=$areadis[$i]['first_level'];
+            $tmpname.='dis';
+            $autotmp.='auto';
+            $tmpname.=$areadis[$i]['areaname'];
+            $autotmp.=$areadis[$i]['areaname'];
+                $temp_array=array(
+                    $tmpname=>$areadis[$i]['is_hide'],
+                    $autotmp=>$areadis[$i]['is_auto']
+                );
+            $data=array_merge($data,$temp_array);
+        }
         switch($url){
             case '/ul':
                 $data['ulnav']='active';
