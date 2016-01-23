@@ -556,7 +556,10 @@ margin-left:0px;
   background-position: right top;
   right: 0;
   }
- 
+ .brandlogo{
+ width:25%;
+ float:left;
+ }
  .searchAZ{
  padding: 10px 0px;
  display: none;

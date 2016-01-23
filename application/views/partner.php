@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="dashline" id="showarea" style="display: {partnerdisarea2}">
                {partnerimgs}
-                <div>
+                <div class="brandlogo">
                     <a href="javascript:;" onclick="$partnerrelatedvideo('{second_level}')"><img src="{source_location}"></a>
                 </div>
                 {/partnerimgs}
