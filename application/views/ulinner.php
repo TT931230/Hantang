@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <img src="{source_location}">
                 {/ullogo}
             </div>
-            <div class="newborder">
+           
                 <div class="videoarea">
                     <video controls="controls" autoplay=true>
                         {video}
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     </video>
                 </div>
-            </div>
+            
             <div class="subtitle">
                 <div class="ulinnera">
                     <div>

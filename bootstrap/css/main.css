@@ -148,12 +148,7 @@
 .navtags{
     text-align: center;
 }
-.ulinnera{
-    width:60%;
-    display: inline-block;
-    border-right:1px solid #bbb;
 
-}
 .relatedvideoarea{
 	width:100%;
     display: inline-block;     
@@ -183,12 +178,7 @@
 	padding-top:220px;
 	color:#808080;
 }
-.ulinnerb{
-	padding-left:20px;
-	float:right;
-    border-left:1px solid #808080;
-    display: inline-block;
-}
+
 .searchresult{
     margin-bottom: 20px;
     border-top:1px dotted #808080;
@@ -505,9 +495,9 @@
     height:100%
 }
 .videoarea{
-    margin: 0px;
+    margin-bottom: 20px;
     width:100%;
-    height:720px;
+    height:700px;
 
 }
 .videoarea video{
