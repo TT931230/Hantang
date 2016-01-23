@@ -15,6 +15,7 @@ class Page_data_model extends CI_Model{
         $this->lang->load('test',$languageType);
         $this->db->from('source');
         $this->db->where('first_level','footer');
+        $this->db->where('third_level',$languageType);
         $returnquery=$this->db->get()->result_array();
         $weixin="";
         $weibo="";
@@ -33,6 +34,7 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('type','partnerimg');
         $this->db->where('status','1');
+        $this->db->where('third_level',$languageType);
         $this->db->order_by('sequence','asc');
         $partner=$this->db->get()->result_array();
         for($i=0;$i<count($returnquery);$i++){
@@ -84,10 +86,12 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('first_level','platform');
         $this->db->where('second_level','ulmap');
+        $this->db->where('third_level',$languageType);
         $ulmap=$this->db->get()->result_array();
         $this->db->from('source');
         $this->db->where('first_level','platform');
         $this->db->where('second_level','awoemap');
+        $this->db->where('third_level',$languageType);
         $awoemap=$this->db->get()->result_array();
 
         $this->db->from('language');
@@ -211,23 +215,28 @@ class Page_data_model extends CI_Model{
     }
 
     public function query_tags(){
+        $this->load->library('session');
         $this->db->from('keyword');
         $this->db->where('second_level','typedetails');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_type=$query->result_array();
         $this->db->from('keyword');
         $this->db->where('second_level','keyword');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_keyword=$query->result_array();
         $this->db->from('keyword');
         $this->db->where('second_level','yeardetails');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_time=$query->result_array();
         $this->db->from('keyword');
         $this->db->where('second_level','locationdetails');
+        $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_country=$query->result_array();

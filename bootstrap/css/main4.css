@@ -101,7 +101,7 @@
 .subtitle{
     width: 100%;    /* 也可以固定宽度 */
     height: 180px;
-    background-color: #d6d6d6;
+    background-color: #fff;
     margin-top:-45px;
     margin-bottom:30px;
     padding:35px;
@@ -142,6 +142,8 @@
     border-right:1px solid #a0a0a0;
     margin-top:20px;
     margin-bottom:20px;
+    border-right:1px solid #808080;
+    padding:10px 25px 10px 10px;
 }
 .subtitle .ulinnerb {
 	height: 80px;
