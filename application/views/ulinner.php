@@ -34,24 +34,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <div class="ulinnerc">
-                        {/video}
+
+
                     <div class="part2">
                         <div>
-                            <img id="dload" alt="" src="../../bootstrap/images/dload.png"/><br/>
+                            <a href="{source_url}" download="{source_name}">
+
+                                <img id="dload" alt="" src="../../bootstrap/images/dload.png"/>
+                            </a>
+
                         </div>
                         <div class="ul_des">下载</div>
                     </div>
                     <div class="part3">
                         <div>
-                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/><br/>
+                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/>
+
                         </div>
                         <div class="ul_des">手机</div>
                     </div>
                 </div>
+                {/video}
                 <div class="ulinnerb">
                     <div id="share">
                         <div class="bdsharebuttonbox">
-
                             <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
                             <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
                             <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
