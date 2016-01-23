@@ -100,14 +100,13 @@
 
 .subtitle{
     width: 100%;    /* 也可以固定宽度 */
-    height: 150px;
-    background-color: #C4C4C4;
-    border: 1px ;
-    margin-bottom: 0;
-    margin-top: 0;
+    height: 200px;
+    background-color: #d6d6d6;
+    margin-top:-45px;
+    margin-bottom: 0x;
     padding:35px;
     font-size:20px;
-    color:#555555;
+    color:#808080;
 
 }
 .subtitle .ulinnerb #share .bdsharebuttonbox{
@@ -115,25 +114,21 @@
 }
 .subtitle .ulinnera {
     width:60%;
-
     font-size: 15px;
     overflow: hidden;
-
     white-space:normal;
     word-break:break-all;
     float: left;
-    padding:10px 25px 10px 10px;
+    padding:0px 25px 10px 10px;
     display: inline-block;
-    height: 100%;
+    border-right:1px solid #808080;
 }
 .subtitle .ulinnerc {
     width:20%;
     font-size: 10px;
     display: inline-block;
-    border-left:1px solid #808080;
+    border-right:1px solid #808080;
     padding:10px 25px 10px 10px;
-    border-right:1px solid #aaa;
-    height: 100%;
 }
 .subtitle .ulinnerb {
     width:20%;
