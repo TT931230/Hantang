@@ -16,6 +16,7 @@ class About extends CI_Controller
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/about');
         }else{
+            $this->session->set_userdata('language','zn');
             $page_data=$this->page_data_model->get_page_data('zn','/about');
         }
         $source_info_base=array(
@@ -25,11 +26,13 @@ class About extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='about';
         $source_info['type']='video';
+        $source_info['third_level']=$this->session->language;
         $video = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
+        $source_info['third_level']=$this->session->language;
         $logoimage = $this->page_data_model->query_sources($source_info);
 
         $tag_data = $this->page_data_model->query_tags();
