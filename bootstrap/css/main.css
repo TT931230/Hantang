@@ -3,7 +3,7 @@
  */
 .headernavul{
     padding-left:30px;
-    padding-right:30px;
+    /*padding-right:30px;*/
 }
 .modal-content{
 	padding-top:20px;
@@ -602,7 +602,7 @@ body {
     
 }
 .masthead-nav > li + li {
-   margin-left:-10px;
+   margin-left:-15px;
 }
 .masthead-nav > li > a {
 
@@ -641,8 +641,6 @@ body {
 
 	background-color: #fff;
     border-bottom-color: #A73D49;
-    
-	
 }
 #ulli >a.active{
 	
