@@ -8,6 +8,7 @@ function getfooter(){
     footer_flow.style.height=sHeight+"px";
     footer_flow.style.width=sWidth+"px";
     console.log("get footer");
+
     $.ajax({
         type:"post",
         url:"Home/getfooter",
@@ -20,6 +21,7 @@ function getfooter(){
             alert("ajax error");
         }
     });
+
     $(".footer_flow").css("display","block");
 }
 
@@ -62,7 +64,7 @@ $(document).ready(function(){
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.border = "none";
         }
-        $(this).css( "border-bottom","3px solid #333");
+        $(this).css( "border-bottom","3px solid #808080");
     });
 
     $("#searchCountry a").click(function(){
@@ -71,7 +73,7 @@ $(document).ready(function(){
             lis[i].style.border = "none";
 
         }
-        $(this).css( "border-bottom","3px solid #333");
+        $(this).css( "border-bottom","3px solid #808080");
     });
 });
 

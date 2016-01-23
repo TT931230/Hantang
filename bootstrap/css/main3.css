@@ -145,7 +145,7 @@ input[type="checkbox"]:checked {
     left: -17px;
  }
  #searchBrandName{
-    height:40px;
+    height:60px;
  }
  @media screen and (max-width: 1000px) and (min-width:800px){
     #bg{

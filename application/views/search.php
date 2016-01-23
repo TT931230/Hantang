@@ -19,8 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>
                 </ul>
             </div>
-            <div class="searcharea">
-                <span class="dropdowncust" role="button" onclick="$use('class1content','')"><i class="glyphicon glyphicon-search"></i> {search}</span>
+            <div class="searcharea" style="margin-right: 0">
+                <span class="dropdowncust" role="button" onclick="$use('class1content','')">
+                    <i class="glyphicon glyphicon-search"></i> {search}
+                </span>
             </div>
         </div>
     </div>
@@ -35,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div id="searchdetailarea"></div>
         </div>
 
-        <div class="searchdetailarea" id="searchBrandName">
+        <div class="searchdetailarea">
                <span class="searchdetail" role="button" onclick="$use('class2content','righToDown1','searchAToZ')"><i class=""></i> {brandname}
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
@@ -68,9 +70,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="javascript:;" onclick="$searchbrandname('Z')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">Z</i></span></a>
             </div>
         </div>
-        <div id="class2content" style="display:none;" class="searchcontentarea">
+        <div id="class2content" style="display:none;margin-top: 5px" class="searchcontentarea">
         </div>
-        <div class="searchdetailarea">
+        <div class="searchdetailarea" style="margin-top: 10px">
             <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}
             <span id="righToDown2" class="glyphicon glyphicon-chevron-right"></span>
             </span>
