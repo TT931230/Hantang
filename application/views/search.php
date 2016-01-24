@@ -33,8 +33,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span id="searchTool" class="glyphicon glyphicon-search"></span>
             <span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">&nbsp;&nbsp;&nbsp;&nbsp;{commit}</span>
             <span class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
-
+ 
             <div id="searchdetailarea"></div>
+    
         </div>
 
         <div class="searchdetailarea">
