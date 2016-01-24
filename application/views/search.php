@@ -43,37 +43,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
             <div class="searchAZ" id="searchAToZ">
-                <a href="javascript:;" onclick="$searchbrandname('A')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">A</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('B')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">B</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('C')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">C</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('D')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">D</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('E')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">E</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('F')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">F</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('G')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">G</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('H')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">H</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('I')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">I</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('J')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">J</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('K')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">K</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('L')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">L</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('M')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">M</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('N')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">N</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('O')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">O</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('P')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">P</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('Q')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">Q</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('R')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">R</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('S')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">S</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('T')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">T</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('U')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">U</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('V')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">V</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('W')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">W</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('X')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">X</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('Y')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">Y</i></span></a>
-                <a href="javascript:;" onclick="$searchbrandname('Z')"><span role="button"><i style="float:left;font-size: 15px;font-style: normal">Z</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('A')"><span role="button"><i class="searchAZli">A</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('B')"><span role="button"><i class="searchAZli">B</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('C')"><span role="button"><i class="searchAZli">C</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('D')"><span role="button"><i class="searchAZli">D</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('E')"><span role="button"><i class="searchAZli">E</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('F')"><span role="button"><i class="searchAZli">F</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('G')"><span role="button"><i class="searchAZli">G</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('H')"><span role="button"><i class="searchAZli">H</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('I')"><span role="button"><i class="searchAZli">I</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('J')"><span role="button"><i class="searchAZli">J</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('K')"><span role="button"><i class="searchAZli">K</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('L')"><span role="button"><i class="searchAZli">L</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('M')"><span role="button"><i class="searchAZli">M</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('N')"><span role="button"><i class="searchAZli">N</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('O')"><span role="button"><i class="searchAZli">O</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('P')"><span role="button"><i class="searchAZli">P</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('Q')"><span role="button"><i class="searchAZli">Q</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('R')"><span role="button"><i class="searchAZli">R</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('S')"><span role="button"><i class="searchAZli">S</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('T')"><span role="button"><i class="searchAZli">T</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('U')"><span role="button"><i class="searchAZli">U</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('V')"><span role="button"><i class="searchAZli">V</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('W')"><span role="button"><i class="searchAZli">W</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('X')"><span role="button"><i class="searchAZli">X</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('Y')"><span role="button"><i class="searchAZli">Y</i></span></a>
+                <a href="javascript:;" onclick="$searchbrandname('Z')"><span role="button"><i class="searchAZli">Z</i></span></a>
             </div>
         </div>
-        <div id="class2content" style="display:none;margin-top: 5px" class="searchcontentarea">
+        <div id="class2content"  class="searchcontentarea">
         </div>
-        <div class="searchdetailarea" style="margin-top: 10px">
+        <div class="searchdetailarea">
             <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}
             <span id="righToDown2" class="glyphicon glyphicon-chevron-right"></span>
             </span>
@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </span>
             {/search_keyword}
         </div>
-        <div class="searchdetailarea" style="margin-top: 10px;height: 60px">
+        <div class="searchdetailarea" >
             <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4','searchCountry')"><i class=""></i> {location}
             <span id="righToDown4" class="glyphicon glyphicon-chevron-right"></span>
             </span>

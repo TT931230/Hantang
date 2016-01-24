@@ -373,7 +373,7 @@
     width:150px;
     height: 17px;
     color:#808080;
-
+    margin-bottom:10px;
 }
 
 .iconcust{
@@ -465,19 +465,29 @@
     margin-bottom: 0px;
     margin-top: 20px;
     border-bottom: 2px dotted #9e9e9e;
-    background-color:#e4e4e4;
     color:#808080;
-    height:80px;
-    
+    background-color: #e8e8e8;
+    height:45px;   
 }
 .searchcontentarea{
     margin-left:20px;
     margin-right:20px;
-    margin-top: 10px;
     margin-bottom: 5px;
     text-align:left;
+    margin-top:20px;
+    display:none;
     
-    
+}
+.searchAZ{
+ padding-top:5px;
+ display:none;
+ height:15px;
+ }
+ .searchAZli{
+	float:left;
+	font-size: 13px;
+	font-style: normal;
+
 }
 .imagearea{
     padding: 0px;
