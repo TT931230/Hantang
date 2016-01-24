@@ -94,6 +94,7 @@ class Search extends CI_Controller
         $this->db->from('source as a');
         $this->db->join('keyword_source_relation as b','b.source_id=a.id','inner');
         $this->db->join('keyword as c','b.keyword_id=c.id','inner');
+
         $this->db->where('a.status','1');
         $this->db->where('c.id',$keyword_id);
         $this->db->where('a.type','videoimg');
@@ -112,9 +113,11 @@ class Search extends CI_Controller
 //        return $return;
     }
     function searchbrandname(){
+        $this->load->library('session');
         $brandtype=$_POST['brandtype'];
         $this->db->where('first_level','brandname');
         $this->db->where('second_level',$brandtype);
+        $this->db->where('third_level',$this->session->language);
         $this->db->from('keyword');
         $this->db->order_by('sequence','asc');
         $query=$this->db->get();
@@ -129,8 +132,10 @@ class Search extends CI_Controller
 //        return $return;
     }
     function searchcountry(){
+        $this->load->library('session');
         $countryid=$_POST['countryid'];
         $this->db->where('second_level',$countryid);
+        $this->db->where('third_level',$this->session->language);
         $this->db->from('keyword');
         $this->db->order_by('sequence','asc');
         $query=$this->db->get();
