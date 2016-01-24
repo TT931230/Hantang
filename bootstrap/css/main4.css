@@ -101,8 +101,8 @@
 .subtitle{
     width: 100%;    /* 也可以固定宽度 */
     height: 180px;
-    background-color: #fff;
-    margin-top:-45px;
+    background-color: #e0e0e0;
+    margin-top:-48px;
     margin-bottom:30px;
     padding:35px;
     font-size:20px;
@@ -136,7 +136,7 @@
 }
 .subtitle .ulinnerc {
 	height: 80px;
-    width:20%;
+    width:18%;
     font-size: 10px;
     display: inline-block;
     border-right:1px solid #a0a0a0;
@@ -146,8 +146,8 @@
     padding:10px 25px 10px 10px;
 }
 .subtitle .ulinnerb {
-	height: 80px;
-    width:20%;
+	height: 100px;
+    width:22%;
     font-size: 10px;
     overflow: hidden;
     text-align:center;
