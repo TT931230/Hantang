@@ -114,6 +114,10 @@ class Search extends CI_Controller
     }
     function searchbrandname(){
         $this->load->library('session');
+        if($this->session->language){
+        }else{
+            $this->session->set_userdata('language','zn');
+        }
         $brandtype=$_POST['brandtype'];
         $this->db->where('first_level','brandname');
         $this->db->where('second_level',$brandtype);
@@ -133,6 +137,10 @@ class Search extends CI_Controller
     }
     function searchcountry(){
         $this->load->library('session');
+        if($this->session->language){
+        }else{
+            $this->session->set_userdata('language','zn');
+        }
         $countryid=$_POST['countryid'];
         $this->db->where('second_level',$countryid);
         $this->db->where('third_level',$this->session->language);
