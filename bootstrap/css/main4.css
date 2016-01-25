@@ -34,16 +34,10 @@
     z-index: 1049
 }
 .footer_flow{
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*background-color: #000;*/
-    /*opacity: .3;*/
+
     background: #000;
-    opacity: 0.75;
-    filter: alpha(opacity=75);
+    opacity: 0.95;
+    filter: alpha(opacity=95);
     height:1000px;
     width: 100%;
     position: absolute;
@@ -75,7 +69,7 @@
     z-index: 1043;
 }
 .footer_flow #mask .popContent{
-    position:fixed;
+    position:absolute;
     z-index: 1043;
 }
 
@@ -189,7 +183,7 @@
     color:#626262;
 }
 #searchAToZ a{
-    height:10px;
+    height:18px;
     color:#808080;
     float:left;
     margin-left: 20px;
