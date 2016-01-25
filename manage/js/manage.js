@@ -25,11 +25,11 @@ function $saveImage(){
     source_remark=$('#source_remark')[0].value;
     $.ajax({
         type:"post",
-        data: "sequence=" + sequence+"&url="+url+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark,
         url:"PageManager/saveImage",
         success: function(result)
         {
-            $('#relatedvideoarea').html(result);
+            //$('#relatedvideoarea').html(result);
         },
         error: function()
         {
@@ -44,7 +44,7 @@ function $queryImage(){
     console.log(menu+source_name);
 }
 function $saveVideo(){
-    sequence=$('#sequence')[0].value;
+    first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
     videoimg=$('#videoimg')[0].value;
@@ -56,11 +56,11 @@ function $saveVideo(){
     third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level,
         url:"PageManager/saveVideo",
         success: function(result)
         {
-            $('#relatedvideoarea').html(result);
+            //$('#relatedvideoarea').html(result);
         },
         error: function()
         {
@@ -77,7 +77,7 @@ function $getselectedinfo(pagename){
                 url:"PageManager/gethomeinfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -85,7 +85,7 @@ function $getselectedinfo(pagename){
                 }
             });
             break;
-        case 'home':
+        case 'about':
             $.ajax({
                 type:"post",
                 data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level,
@@ -101,22 +101,22 @@ function $getselectedinfo(pagename){
             });
             ;
             break;
-        case 'home':
+        case 'platform':
             ;
             break;
-        case 'home':
+        case 'partner':
             ;
             break;
-        case 'home':
+        case 'ul':
             ;
             break;
-        case 'home':
+        case 'awoe':
             ;
             break;
-        case 'home':
+        case 'music':
             ;
             break;
-        case 'home':
+        case 'join':
             ;
             break;
     }
@@ -249,7 +249,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -325,7 +325,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -392,7 +392,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -435,7 +435,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -478,7 +478,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -521,7 +521,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {
@@ -601,7 +601,7 @@ function $saveArea(areatype){
                 url:"PageManager/updateareainfo",
                 success: function(result)
                 {
-                    $('#relatedvideoarea').html(result);
+                    //$('#relatedvideoarea').html(result);
                 },
                 error: function()
                 {

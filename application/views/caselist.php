@@ -6,7 +6,7 @@
  * Time: 15:12
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div>
+<div style="width:100%;background-color: #ffffff">
     <div class="row">
         <label class="col-lg-2">图片明细列表</label>
     </div>
@@ -33,14 +33,14 @@
                 <td id="{source_id}_url">
                     {source_location}
                 </td>
-                <td id="{source_id}_type">
+                <td>
                     {imgtype}
                 </td>
-                <td id="{source_id}_sequence">
-                    {sequence}
+                <td>
+                    <input type="number" value="{sequence}" name="sequence" id="{source_id}_sequence">
                 </td>
                 <td id="{source_id}_img">
-                    <img src="{source_location}">
+                    <img src="{source_location}" style="width:96px;height: 54px;">
                 </td>
                 <td id="{source_id}_edit">
                     <a href="javascript:;" onclick="$savebrand('{source_id}')">保存</a>

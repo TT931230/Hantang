@@ -13,6 +13,35 @@ class PageManager extends CI_Controller
         $this->load->model('source_model');
         $this->load->model('keyword_model');
 
+        $imagelists=array();
+
+        $this->db->from('source');
+        $this->db->where('type','img');
+        $this->db->or_where('type','videoimg');
+        $this->db->or_where('type','partnerimg');
+        $imgarray=$this->db->get()->result_array();
+        $imgtypearray=array(
+            'img','videoimg','partnerimg'
+        );
+        for($i=0;$i<count($imgarray);$i++){
+            $tmpselect='';
+            for($j=0;$j<count($imgtypearray);$j++){
+                if($imgtypearray[$j]==$imgarray[$i]['type']){
+                    $tmpselect.='<option value="'.$imgtypearray[$j].'" selected>'.$imgtypearray[$j].'</option>';
+                }else{
+                    $tmpselect.='<option value="'.$imgtypearray[$j].'">'.$imgtypearray[$j].'</option>';
+                }
+            }
+            $tmpimgarray=array(
+                'source_id'=>$imgarray[$i]['id'],
+                'source_location'=>$imgarray[$i]['source_location'],
+                'source_name'=>$imgarray[$i]['source_name'],
+                'imgtype'=>'<select id="'.$imgarray[$i]['id'].'_imgtype">'.$tmpselect.'</select>',
+                'sequence'=>$imgarray[$i]['sequence']
+            );
+            array_push($imagelists,$tmpimgarray);
+        }
+
         $imgsource=$this->source_model->querySource(
             array(
                 'status'=>null,
@@ -43,6 +72,7 @@ class PageManager extends CI_Controller
             )
         );
         $data=array(
+            'imagelists'=>$imagelists,
             'img'=>$imgsource,
             'keyword'=>$keyword,
             'video'=>$videosource
@@ -51,17 +81,17 @@ class PageManager extends CI_Controller
     }
 
     function saveImage(){
-        $sequence=$_POST['sequence'];
-        $url=$_POST['url'];
+        $sequence='1';
+//        $url=$_POST['url'];
         $source_location=$_POST['source_location'];
         $source_name=$_POST['source_name'];
         $source_remark=$_POST['source_remark'];
         $insertcontent=array(
             'source_location'=>$source_location,
-            'status'=>'2',
+            'status'=>'1',
             'source_name'=>$source_name,
             'source_remark'=>$source_remark,
-            'link_url'=>$url,
+            'link_url'=>null,
             'sequence'=>$sequence,
             'type'=>'img',
             'updater'=>'ADMIN',
@@ -75,7 +105,7 @@ class PageManager extends CI_Controller
         return $this->source_model->insertSource($insertcontent);
     }
     function saveVideo(){
-        $sequence=$_POST['sequence'];
+        $sequence='1';
         $source_location=$_POST['source_location'];
         $source_name=$_POST['source_name'];
         $source_remark=$_POST['source_remark'];
@@ -83,6 +113,7 @@ class PageManager extends CI_Controller
         $keyword=$_POST['keyword'];
         $keywordarray = explode('|||',$keyword);
         $third_level=$_POST['third_level'];
+        $first_level=$_POST['first_level'];
         $insertvideo=array(
             'videoimg'=>$videoimg,
             'keyword'=>$keyword,
@@ -94,7 +125,7 @@ class PageManager extends CI_Controller
             'type'=>'video/mp4',
             'updater'=>'ADMIN',
             'creator'=>'ADMIN',
-            'first_level'=>null,
+            'first_level'=>$first_level,
             'second_level'=>null,
             'third_level'=>$third_level,
             'link_url'=>null,
@@ -132,19 +163,58 @@ class PageManager extends CI_Controller
                 $this->keyword_model->insertKeyword($insertcontent);
             }
         }else{
-            for($i=1;$i<count($goods_list);$i++){
-                $insertcontent=array(
-                    'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                    'sequence'=>$goods_list[$i][1],
-                    'first_level'=>$goods_list[$i][2],
-                    'second_level'=>$tagtype,
-                    'third_level'=>$goods_list[$i][3],
-                    'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][4]),
-                    'creator'=>'ADMIN',
-                    'updater'=>'ADMIN',
-                    'status'=>'1',
-                );
-                $this->keyword_model->insertKeyword($insertcontent);
+            if('locationdetails'!=$tagtype){
+                for($i=1;$i<count($goods_list);$i++){
+
+                    $insertcontent=array(
+                        'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                        'sequence'=>$goods_list[$i][1],
+                        'first_level'=>$tagtype,
+                        'second_level'=>$goods_list[$i][2],
+                        'third_level'=>$goods_list[$i][3],
+                        'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][4]),
+                        'creator'=>'ADMIN',
+                        'updater'=>'ADMIN',
+                        'status'=>'1',
+                    );
+                    $this->keyword_model->insertKeyword($insertcontent);
+                }
+            }else{
+                for($i=1;$i<count($goods_list);$i++){
+                    $this->db->from('keyword');
+                    $this->db->where('keyword',iconv('gb2312', 'utf-8', $goods_list[$i][0]));
+                    $this->db->where('second_level','locationdetails');
+                    $country=$this->db->get()->result_array();
+                    if(count($country)>0){
+                        $country_id=$country[0]['id'];
+                    }else{
+                        $insertcontent=array(
+                            'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                            'sequence'=>$goods_list[$i][1],
+                            'first_level'=>$goods_list[$i][4],
+                            'second_level'=>$tagtype,
+                            'third_level'=>$goods_list[$i][5],
+                            'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][6]),
+                            'creator'=>'ADMIN',
+                            'updater'=>'ADMIN',
+                            'status'=>'1',
+                        );
+                        $this->keyword_model->insertKeyword($insertcontent);
+                        $country_id=$this->db->insert_id();
+                    }
+                    $insertcontent=array(
+                        'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                        'sequence'=>$goods_list[$i][1],
+                        'first_level'=>$goods_list[$i][4],
+                        'second_level'=>$country_id,
+                        'third_level'=>$goods_list[$i][5],
+                        'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][6]),
+                        'creator'=>'ADMIN',
+                        'updater'=>'ADMIN',
+                        'status'=>'1',
+                    );
+                    $this->keyword_model->insertKeyword($insertcontent);
+                }
             }
         }
 

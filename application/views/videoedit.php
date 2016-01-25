@@ -13,8 +13,12 @@
         <input class="col-lg-2" type="text" id="source_name">
     </div>
     <div class="row">
-        <label class="col-lg-2">排序</label>
-        <input class="col-lg-2" type="number" id="sequence">
+        <label class="col-lg-2">所属栏目</label>
+        <select  class="col-lg-2" id="first_level">
+            <option value="ul">极致</option>
+            <option value="awoe">问鼎世界</option>
+            <option value="music">音乐年</option>
+        </select>
     </div>
     <div class="row">
         <label class="col-lg-2">视频封面</label>
