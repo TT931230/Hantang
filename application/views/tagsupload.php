@@ -6,10 +6,14 @@
  * Time: 15:14
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<div class="managepagetitle">标签上传</div>
 <div>
     <form id="addform" action="PageManager/inserttags" method="post" enctype="multipart/form-data">
-        <p>请选择要导入的CSV文件：<br/><input type="file" name="file">
-        <p>请选择要导入的标签类型：<br/><select name="tagtype">
+        <div class="tu-div">
+        <p>请选择要导入的CSV文件：<input type="file" name="file">
+        </div>
+        <div class="tu-div">
+        <p>请选择要导入的标签类型：<select name="tagtype">
                 <option value="seasondetails">演出季</option>
                 <option value="displaydetails">演出类型</option>
                 <option value="displayperson">演出者</option>
@@ -21,5 +25,6 @@
             </select>
             <br/>
             <input type="submit" class="btn" value="导入CSV">
+            </div>
     </form>
 </div>

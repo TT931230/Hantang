@@ -246,3 +246,60 @@ ul.alert-dropdown {
 	margin-top:20px;
 	margin-left:65px;
 }
+/*caseedit*/
+.ce-div{
+	margin-bottom:20px;
+}
+.ce-savebtn{
+	margin-top:20px;
+	margin-left:20px;
+}
+/*vedit*/
+.ve-div{
+	margin-bottom:20px;
+}
+.ve-savebtn{
+	margin-top:20px;
+	margin-left:20px;
+}
+/*tagsedit*/
+.te-div{
+	margin-top:20px;
+}
+.te-title{
+	width:200px;
+	margin-left:20px;
+	margin-right:-100px;
+	
+}
+.te-savebtn{
+	margin-top:20px;
+	margin-left:20px;
+}
+/*tagupload*/
+.tu-div{
+	margin-left:20px;
+	margin-top:20px;
+}
+/*admininformation*/
+.adminfo-div{
+	margin-top:20px;
+	
+}
+.adminfo-savebtn{
+	margin-top:20px;
+	margin-left:2px;
+}
+
+
+/*displayedit*/
+.de-title{
+	width:200px;
+	margin-left:20px;
+	margin-right:-80px;
+	
+}
+.de-savebtn{
+	margin-top:20px;
+	margin-left:30px;
+}
