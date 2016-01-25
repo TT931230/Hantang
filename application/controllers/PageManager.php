@@ -14,6 +14,7 @@ class PageManager extends CI_Controller
         $this->load->model('keyword_model');
 
         $imagelists=array();
+        $videolists=array();
 
         $this->db->from('source');
         $this->db->where('type','img');
@@ -33,6 +34,7 @@ class PageManager extends CI_Controller
                 }
             }
             $tmpimgarray=array(
+                'language'=>$imgarray[$i]['third_level'],
                 'source_id'=>$imgarray[$i]['id'],
                 'source_location'=>$imgarray[$i]['source_location'],
                 'source_name'=>$imgarray[$i]['source_name'],
@@ -41,6 +43,37 @@ class PageManager extends CI_Controller
             );
             array_push($imagelists,$tmpimgarray);
         }
+
+        $this->db->from('source');
+        $this->db->where('type','video/mp4');
+        $videoarray=$this->db->get()->result_array();
+        for($i=0;$i<count($videoarray);$i++){
+            $this->db->from('source');
+            $this->db->where('link_url','/'.$videoarray[$i]['first_level'].'/'.$videoarray[$i]['first_level'].'inner/'.$videoarray[$i]['id']);
+            $videoimgarray=$this->db->get()->result_array();
+            if(count($videoimgarray)>0){
+                $videoimgid=$videoimgarray[0]['id'];
+                $imgurl=$videoimgarray[0]['source_location'];
+                $videosequence=$videoimgarray[0]['sequence'];
+            }else{
+                $videoimgid='none';
+                $imgurl='';
+                $videosequence='';
+            }
+
+            $tmpvideoarray=array(
+                'language'=>$videoarray[$i]['third_level'],
+                'first_level'=>$videoarray[$i]['first_level'],
+                'source_id'=>$videoarray[$i]['id'],
+                'source_location'=>$videoarray[$i]['source_location'],
+                'source_name'=>$videoarray[$i]['source_name'],
+                'sequence'=>$videosequence,
+                'imgid'=>$videoimgid,
+                'linkimg'=>$imgurl
+            );
+            array_push($videolists,$tmpvideoarray);
+        }
+
 
         $imgsource=$this->source_model->querySource(
             array(
@@ -72,6 +105,7 @@ class PageManager extends CI_Controller
             )
         );
         $data=array(
+            'videolists'=>$videolists,
             'imagelists'=>$imagelists,
             'img'=>$imgsource,
             'keyword'=>$keyword,
