@@ -25,6 +25,7 @@ class PageManager extends CI_Controller
         );
         $keyword=$this->keyword_model->queryKeyword(
             array(
+                'keyword'=>null,
                 'first_level'=>null,
                 'second_level'=>null,
                 'third_level'=>null,
@@ -105,32 +106,501 @@ class PageManager extends CI_Controller
     }
     function inserttags(){
         $this->load->model('keyword_model');
+        $tagtype=$_POST['tagtype'];
         $filename = $_FILES['file']['tmp_name'];
         if (empty ($filename)) {
             echo '请选择要导入的CSV文件！';
             exit;
         }
         $handle = fopen($filename, 'r');
-        while ($data = fgetcsv($handle)) { //每次读取CSV里面的一行内容
-//print_r($data); //此为一个数组，要获得每一个数据，访问数组下标即可
+        while ($data = fgetcsv($handle)) {
             $goods_list[] = $data;
         }
-//print_r($goods_list);
-        for($i=1;$i<count($goods_list);$i++){
-            $insertcontent=array(
-                'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                'sequence'=>$goods_list[$i][1],
-                'first_level'=>$goods_list[$i][2],
-                'second_level'=>$goods_list[$i][3],
-                'third_level'=>$goods_list[$i][4],
-                'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][5]),
-                'creator'=>'ADMIN',
-                'updater'=>'ADMIN',
-                'status'=>'1',
-            );
-            $this->keyword_model->insertKeyword($insertcontent);
+        if('brandname'==$tagtype){
+            for($i=1;$i<count($goods_list);$i++){
+                $insertcontent=array(
+                    'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                    'sequence'=>$goods_list[$i][1],
+                    'first_level'=>$tagtype,
+                    'second_level'=>$goods_list[$i][2],
+                    'third_level'=>$goods_list[$i][3],
+                    'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][4]),
+                    'creator'=>'ADMIN',
+                    'updater'=>'ADMIN',
+                    'status'=>'1',
+                );
+                $this->keyword_model->insertKeyword($insertcontent);
+            }
+        }else{
+            for($i=1;$i<count($goods_list);$i++){
+                $insertcontent=array(
+                    'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                    'sequence'=>$goods_list[$i][1],
+                    'first_level'=>$goods_list[$i][2],
+                    'second_level'=>$tagtype,
+                    'third_level'=>$goods_list[$i][3],
+                    'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][4]),
+                    'creator'=>'ADMIN',
+                    'updater'=>'ADMIN',
+                    'status'=>'1',
+                );
+                $this->keyword_model->insertKeyword($insertcontent);
+            }
         }
+
         echo "<script>alert('导入成功！')</script>";
         echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/contentm'>";
+    }
+    function updateareainfo()
+    {
+        date_default_timezone_set("UTC");
+        $areatype=$_POST['areatype'];
+        $third_level=$_POST['arealanguage'];
+        switch($areatype){
+            case 'homearea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['homearea1_is_hide'],
+                    'is_auto'=>$_POST['homearea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'home','second_level'=>'area1','third_level'=>$third_level));
+                $modelupdateinfo2=array(
+                    'is_hide'=>$_POST['homearea2_is_hide'],
+                    'is_auto'=>$_POST['homearea2_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo2, array('first_level' => 'home','second_level'=>'area2','third_level'=>$third_level));
+                $modelupdateinfo3=array(
+                    'is_hide'=>$_POST['homearea3_is_hide'],
+                    'is_auto'=>$_POST['homearea3_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo3, array('first_level' => 'home','second_level'=>'area3','third_level'=>$third_level));
+                $modelupdateinfo4=array(
+                    'is_hide'=>$_POST['homearea4_is_hide'],
+                    'is_auto'=>$_POST['homearea4_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo4, array('first_level' => 'home','second_level'=>'area4','third_level'=>$third_level));
+                $listarray1 = explode('|||',$_POST['homeimglist1']);
+                $listarray2 = explode('|||',$_POST['homeimglist2']);
+                $listarray3 = explode('|||',$_POST['homeimglist3']);
+                $listarray4 = explode('|||',$_POST['homeimglist4']);
+                for($i=0;$i<count($listarray1);$i++){
+                    $this->db->from('source');
+                    $this->db->where('id',$listarray1[$i]);
+                    if($this->db->get()->result_array()[0]['status']==1){
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'1'
+                        );
+                    }else{
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'2'
+                        );
+                    }
+                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1[$i]));
+                };
+                for($i=0;$i<count($listarray2);$i++){
+                    $this->db->from('source');
+                    $this->db->where('id',$listarray2[$i]);
+                    if($this->db->get()->result_array()[0]['status']==1){
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'1'
+                        );
+                    }else{
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'2'
+                        );
+                    }
+                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2[$i]));
+                };
+                for($i=0;$i<count($listarray3);$i++){
+                    $this->db->from('source');
+                    $this->db->where('id',$listarray3[$i]);
+                    if($this->db->get()->result_array()[0]['status']==1){
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'1'
+                        );
+                    }else{
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'2'
+                        );
+                    }
+                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3[$i]));
+                };
+                for($i=0;$i<count($listarray4);$i++){
+                    $this->db->from('source');
+                    $this->db->where('id',$listarray4[$i]);
+                    if($this->db->get()->result_array()[0]['status']==1){
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'1'
+                        );
+                    }else{
+                        $sourceupdateinfo=array(
+                            'first_level'=>'home',
+                            'second_level'=>'imagearea1',
+                            'third_level'=>$third_level,
+                            'updatetime'=>date("y-m-d",time()),
+                            'status'=>'2'
+                        );
+                    }
+                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray4[$i]));
+                };
+                break;
+
+
+
+
+            case 'aboutarea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['aboutarea1_is_hide'],
+                    'is_auto'=>$_POST['aboutarea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'about','second_level'=>'area1','third_level'=>$third_level));
+                $modelupdateinfo2=array(
+                    'is_hide'=>$_POST['aboutarea2_is_hide'],
+                    'is_auto'=>$_POST['aboutarea2_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo2, array('first_level' => 'about','second_level'=>'area2','third_level'=>$third_level));
+                $modelupdateinfo3=array(
+                    'is_hide'=>$_POST['aboutarea3_is_hide'],
+                    'is_auto'=>$_POST['aboutarea3_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo3, array('first_level' => 'about','second_level'=>'area3','third_level'=>$third_level));
+                $listarray1 = $_POST['aboutimglist1'];
+                $listarray2 = $_POST['aboutimglist2'];
+                $listarray3 = $_POST['aboutimglist3'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'about',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'about',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+
+
+                $this->db->from('source');
+                $this->db->where('id',$listarray2);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'about',
+                        'second_level'=>'imagearea2',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'about',
+                        'second_level'=>'imagearea2',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2));
+
+
+                $this->db->from('source');
+                $this->db->where('id',$listarray3);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'about',
+                        'second_level'=>'imagearea3',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'about',
+                        'second_level'=>'imagearea3',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3));
+                break;
+
+
+
+
+            case 'platformarea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['platformarea1_is_hide'],
+                    'is_auto'=>$_POST['platformarea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'platform','second_level'=>'area1','third_level'=>$third_level));
+                $modelupdateinfo2=array(
+                    'is_hide'=>$_POST['platformarea2_is_hide'],
+                    'is_auto'=>$_POST['platformarea2_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo2, array('first_level' => 'platform','second_level'=>'area2','third_level'=>$third_level));
+                $modelupdateinfo3=array(
+                    'is_hide'=>$_POST['platformarea3_is_hide'],
+                    'is_auto'=>$_POST['platformarea3_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo3, array('first_level' => 'platform','second_level'=>'area3','third_level'=>$third_level));
+                $listarray1 = $_POST['platformimglist1'];
+                $listarray2 = $_POST['platformimglist2'];
+                $listarray3 = $_POST['platformimglist3'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'platform',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'platform',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+
+
+                $this->db->from('source');
+                $this->db->where('id',$listarray2);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'platform',
+                        'second_level'=>'imagearea2',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'platform',
+                        'second_level'=>'imagearea2',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2));
+
+
+                $this->db->from('source');
+                $this->db->where('id',$listarray3);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'platform',
+                        'second_level'=>'imagearea3',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'platform',
+                        'second_level'=>'imagearea3',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3));
+                break;
+
+
+            case 'partnerarea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['partnerarea1_is_hide'],
+                    'is_auto'=>$_POST['partnerarea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'partner','second_level'=>'area1','third_level'=>$third_level));
+                $listarray1 = $_POST['partnerimglist1'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'partner',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'partner',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+
+                break;
+
+
+            case 'ularea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['ularea1_is_hide'],
+                    'is_auto'=>$_POST['ularea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'ul','second_level'=>'area1','third_level'=>$third_level));
+                $listarray1 = $_POST['ulimglist1'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'ul',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'ul',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+
+                break;
+
+
+            case 'awoearea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['awoearea1_is_hide'],
+                    'is_auto'=>$_POST['awoearea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'awoe','second_level'=>'area1','third_level'=>$third_level));
+                $listarray1 = $_POST['awoeimglist1'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'awoe',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'awoe',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+
+                break;
+
+
+            case 'musicarea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['musicarea1_is_hide'],
+                    'is_auto'=>$_POST['musicarea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'music','second_level'=>'area1','third_level'=>$third_level));
+                $listarray1 = $_POST['musicimglist1'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'music',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'music',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                break;
+
+
+            case 'joinarea':
+                $modelupdateinfo1=array(
+                    'is_hide'=>$_POST['joinarea1_is_hide'],
+                    'is_auto'=>$_POST['joinarea1_is_auto']
+                );
+                $this->db->update('source', $modelupdateinfo1, array('first_level' => 'join','second_level'=>'area1','third_level'=>$third_level));
+                $listarray1 = $_POST['joinimglist1'];
+                $this->db->from('source');
+                $this->db->where('id',$listarray1);
+                if($this->db->get()->result_array()[0]['status']==1){
+                    $sourceupdateinfo=array(
+                        'first_level'=>'join',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'1'
+                    );
+                }else{
+                    $sourceupdateinfo=array(
+                        'first_level'=>'join',
+                        'second_level'=>'imagearea1',
+                        'third_level'=>$third_level,
+                        'updatetime'=>date("y-m-d",time()),
+                        'status'=>'2'
+                    );
+                };
+                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+
+                break;
+        }
     }
 }
