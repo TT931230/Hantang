@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="musicsearch" style="display: {musicdisarea2}">
                 <div class="musictype3">
-                    <div class="musictypetitle3">{seasontype}</div>
+                    <div class="musictypetitle3">{displayseason}</div>
                     <div class="musictypedetails3">
                         {seasondetails}
                         <span class="musictypedetail3" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
