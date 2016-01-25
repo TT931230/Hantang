@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <video controls="controls" autoplay=true>
                         {video}
                         <source src="{source_location}" type="{type}" />
-
+                       
                     </video>
                 </div>
             
