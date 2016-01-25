@@ -148,7 +148,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <img id="info_str" alt="" src="http://static.acmedynasty.com/cn/images/bottom_str.png"/>
     <img id="show_info" alt="" src="http://static.acmedynasty.com/images/bottom.png"/>  </a>
 <div id="footer_flow" class="footer_flow">
-
     <div id="mask">
         <div class="closePop"></div>
         <div class="popContent">
