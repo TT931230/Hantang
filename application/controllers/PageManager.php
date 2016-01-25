@@ -132,19 +132,58 @@ class PageManager extends CI_Controller
                 $this->keyword_model->insertKeyword($insertcontent);
             }
         }else{
-            for($i=1;$i<count($goods_list);$i++){
-                $insertcontent=array(
-                    'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                    'sequence'=>$goods_list[$i][1],
-                    'first_level'=>$goods_list[$i][2],
-                    'second_level'=>$tagtype,
-                    'third_level'=>$goods_list[$i][3],
-                    'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][4]),
-                    'creator'=>'ADMIN',
-                    'updater'=>'ADMIN',
-                    'status'=>'1',
-                );
-                $this->keyword_model->insertKeyword($insertcontent);
+            if('locationdetails'!=$tagtype){
+                for($i=1;$i<count($goods_list);$i++){
+
+                    $insertcontent=array(
+                        'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                        'sequence'=>$goods_list[$i][1],
+                        'first_level'=>$tagtype,
+                        'second_level'=>$goods_list[$i][2],
+                        'third_level'=>$goods_list[$i][3],
+                        'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][4]),
+                        'creator'=>'ADMIN',
+                        'updater'=>'ADMIN',
+                        'status'=>'1',
+                    );
+                    $this->keyword_model->insertKeyword($insertcontent);
+                }
+            }else{
+                for($i=1;$i<count($goods_list);$i++){
+                    $this->db->from('keyword');
+                    $this->db->where('keyword',iconv('gb2312', 'utf-8', $goods_list[$i][0]));
+                    $this->db->where('second_level','locationdetails');
+                    $country=$this->db->get()->result_array();
+                    if(count($country)>0){
+                        $country_id=$country[0]['id'];
+                    }else{
+                        $insertcontent=array(
+                            'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                            'sequence'=>$goods_list[$i][1],
+                            'first_level'=>$goods_list[$i][4],
+                            'second_level'=>$tagtype,
+                            'third_level'=>$goods_list[$i][5],
+                            'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][6]),
+                            'creator'=>'ADMIN',
+                            'updater'=>'ADMIN',
+                            'status'=>'1',
+                        );
+                        $this->keyword_model->insertKeyword($insertcontent);
+                        $country_id=$this->db->insert_id();
+                    }
+                    $insertcontent=array(
+                        'keyword'=>iconv('gb2312', 'utf-8', $goods_list[$i][0]),
+                        'sequence'=>$goods_list[$i][1],
+                        'first_level'=>$goods_list[$i][4],
+                        'second_level'=>$country_id,
+                        'third_level'=>$goods_list[$i][5],
+                        'keyword_remark'=>iconv('gb2312', 'utf-8', $goods_list[$i][6]),
+                        'creator'=>'ADMIN',
+                        'updater'=>'ADMIN',
+                        'status'=>'1',
+                    );
+                    $this->keyword_model->insertKeyword($insertcontent);
+                }
             }
         }
 
