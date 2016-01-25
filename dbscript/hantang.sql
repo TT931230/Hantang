@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : HT
+Source Server         : mysql
 Source Server Version : 50710
 Source Host           : localhost:3306
 Source Database       : hantang
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2016-01-25 12:53:58
+Date: 2016-01-22 16:26:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -117,174 +117,51 @@ CREATE TABLE `keyword` (
   `second_level` varchar(100) DEFAULT NULL,
   `keyword_remark` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword
 -- ----------------------------
-INSERT INTO `keyword` VALUES ('music', '1', '2013-2014', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', 'zn', 'seasondetails', null);
-INSERT INTO `keyword` VALUES ('music', '2', '2014-2015', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', 'zn', 'seasondetails', null);
-INSERT INTO `keyword` VALUES ('music', '3', '2015-2016', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', 'zn', 'seasondetails', null);
-INSERT INTO `keyword` VALUES ('music', '4', '合唱', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', 'zn', 'displaydetails', null);
-INSERT INTO `keyword` VALUES ('music', '5', '独奏', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', 'zn', 'displaydetails', null);
-INSERT INTO `keyword` VALUES ('music', '6', '室内乐', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', 'zn', 'displaydetails', null);
-INSERT INTO `keyword` VALUES ('music', '7', '交响乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', 'zn', 'displaydetails', null);
-INSERT INTO `keyword` VALUES ('music', '8', '其他', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', 'zn', 'displaydetails', null);
-INSERT INTO `keyword` VALUES ('ul', '9', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '10', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '11', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '12', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '13', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '14', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '16', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '17', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '18', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '19', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '20', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '21', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '22', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '23', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '24', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '25', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', 'zn', 'locationdetails', null);
-INSERT INTO `keyword` VALUES ('ul', '26', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '27', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '28', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '29', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '30', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '31', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '32', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '33', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', 'zn', 'typedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '34', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', 'zn', 'activedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '35', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', 'zn', 'activedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '36', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', 'zn', 'activedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '37', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', 'zn', 'activedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '38', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', 'zn', 'activedetails', null);
-INSERT INTO `keyword` VALUES ('ul', '39', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', 'zn', 'activedetails', null);
+INSERT INTO `keyword` VALUES ('music', '1', '2013-2014', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'seasondetails', null);
+INSERT INTO `keyword` VALUES ('music', '2', '2014-2015', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'seasondetails', null);
+INSERT INTO `keyword` VALUES ('music', '3', '2015-2016', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'seasondetails', null);
+INSERT INTO `keyword` VALUES ('music', '4', '合唱', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '5', '独奏', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '6', '室内乐', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '7', '交响乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('music', '8', '其他', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'displaydetails', null);
+INSERT INTO `keyword` VALUES ('ul', '9', '2009', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '10', '2010', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '11', '2011', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '12', '2012', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '13', '2013', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '14', '2014', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '15', '2015', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '16', '2016', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'yeardetails', null);
+INSERT INTO `keyword` VALUES ('ul', '17', '中国大陆', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '18', '港澳台', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '19', '法国', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '20', '瑞士', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '21', '德国', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '22', '意大利', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '23', '英国', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '24', '美国', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '25', '其他', '1', 'ADMIN', '2016-01-20', '9', 'ADMIN', '2016-01-20', null, 'locationdetails', null);
+INSERT INTO `keyword` VALUES ('ul', '26', '钟表', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '27', '珠宝', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '28', '时尚', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '29', '音乐', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '30', '艺术', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '31', '电影', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '32', '汽车', '1', 'ADMIN', '2016-01-20', '7', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '33', '其他', '1', 'ADMIN', '2016-01-20', '8', 'ADMIN', '2016-01-20', null, 'typedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '34', '展览', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '35', '开店', '1', 'ADMIN', '2016-01-20', '2', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '36', '走秀', '1', 'ADMIN', '2016-01-20', '3', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '37', '演出', '1', 'ADMIN', '2016-01-20', '4', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '38', '赛事', '1', 'ADMIN', '2016-01-20', '5', 'ADMIN', '2016-01-20', null, 'activedetails', null);
+INSERT INTO `keyword` VALUES ('ul', '39', '其他', '1', 'ADMIN', '2016-01-20', '6', 'ADMIN', '2016-01-20', null, 'activedetails', null);
 INSERT INTO `keyword` VALUES ('brandname', '71', 'Abrand', '1', 'ADMIN', '2016-01-22', '1', 'ADMIN', '2016-01-22', 'zn', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '95', '积家', '1', 'ADMIN', '2016-01-23', '1', 'ADMIN', '2016-01-23', 'zn', 'J', null);
-INSERT INTO `keyword` VALUES ('ul', '96', '电影', '1', 'ADMIN', '2016-01-22', '2', 'ADMIN', '2016-01-22', 'zn', 'typedetails', '');
-INSERT INTO `keyword` VALUES ('ul', '97', '2015', '1', 'ADMIN', '2016-01-23', '7', 'ADMIN', '2016-01-23', 'zn', 'yeardetails', null);
-INSERT INTO `keyword` VALUES ('ul', '98', '博洛尼亚', '1', 'ADMIN', '2016-01-20', '1', 'ADMIN', '2016-01-23', 'zn', '22', null);
-INSERT INTO `keyword` VALUES ('brandname', '99', '德国朗格', '1', 'ADMIN', '2016-01-23', '1', 'ADMIN', '2016-01-23', 'zn', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '100', 'A.Lange&Söhne', '1', 'ADMIN', '2016-01-23', '2', 'ADMIN', '2016-01-23', 'en', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '101', 'BAUME&MERCIER', '1', 'ADMIN', '2016-01-23', '3', 'ADMIN', '2016-01-23', 'zn', 'B', null);
-INSERT INTO `keyword` VALUES ('brandname', '102', 'BAUME&MERCIER', '1', 'ADMIN', '2016-01-23', '4', 'ADMIN', '2016-01-23', 'en', 'B', null);
-INSERT INTO `keyword` VALUES ('brandname', '103', 'Cartier', '1', 'ADMIN', '2016-01-23', '5', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '104', 'Cartier', '1', 'ADMIN', '2016-01-23', '6', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '105', 'IWC Schaffhausen', '1', 'ADMIN', '2016-01-23', '7', 'ADMIN', '2016-01-23', 'zn', 'I', null);
-INSERT INTO `keyword` VALUES ('brandname', '106', 'IWC Schaffhausen', '1', 'ADMIN', '2016-01-23', '8', 'ADMIN', '2016-01-23', 'en', 'I', null);
-INSERT INTO `keyword` VALUES ('brandname', '107', '积家', '1', 'ADMIN', '2016-01-23', '9', 'ADMIN', '2016-01-23', 'zn', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '108', 'Jaeger-LeCoultre', '1', 'ADMIN', '2016-01-23', '10', 'ADMIN', '2016-01-23', 'en', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '109', 'Montblanc', '1', 'ADMIN', '2016-01-23', '11', 'ADMIN', '2016-01-23', 'zn', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '110', 'Montblanc', '1', 'ADMIN', '2016-01-23', '12', 'ADMIN', '2016-01-23', 'en', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '111', 'OFFICINE PANERAI', '1', 'ADMIN', '2016-01-23', '13', 'ADMIN', '2016-01-23', 'zn', 'O', null);
-INSERT INTO `keyword` VALUES ('brandname', '112', 'OFFICINE PANERAI', '1', 'ADMIN', '2016-01-23', '14', 'ADMIN', '2016-01-23', 'en', 'O', null);
-INSERT INTO `keyword` VALUES ('brandname', '113', 'PIAGET', '1', 'ADMIN', '2016-01-23', '15', 'ADMIN', '2016-01-23', 'zn', 'P', null);
-INSERT INTO `keyword` VALUES ('brandname', '114', 'PIAGET', '1', 'ADMIN', '2016-01-23', '16', 'ADMIN', '2016-01-23', 'en', 'P', null);
-INSERT INTO `keyword` VALUES ('brandname', '115', '罗杰杜彼', '1', 'ADMIN', '2016-01-23', '17', 'ADMIN', '2016-01-23', 'zn', 'R', null);
-INSERT INTO `keyword` VALUES ('brandname', '116', 'ROGER DUBUIS', '1', 'ADMIN', '2016-01-23', '18', 'ADMIN', '2016-01-23', 'en', 'R', null);
-INSERT INTO `keyword` VALUES ('brandname', '117', '江诗丹顿', '1', 'ADMIN', '2016-01-23', '19', 'ADMIN', '2016-01-23', 'zn', 'V', null);
-INSERT INTO `keyword` VALUES ('brandname', '118', 'VACHERON CONSTANTIN', '1', 'ADMIN', '2016-01-23', '20', 'ADMIN', '2016-01-23', 'en', 'V', null);
-INSERT INTO `keyword` VALUES ('brandname', '119', '梵克雅宝', '1', 'ADMIN', '2016-01-23', '21', 'ADMIN', '2016-01-23', 'zn', 'V', null);
-INSERT INTO `keyword` VALUES ('brandname', '120', 'VanCleef&Arpels', '1', 'ADMIN', '2016-01-23', '22', 'ADMIN', '2016-01-23', 'en', 'V', null);
-INSERT INTO `keyword` VALUES ('brandname', '121', 'AUDEMARS PIGUET', '1', 'ADMIN', '2016-01-23', '23', 'ADMIN', '2016-01-23', 'zn', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '122', 'AUDEMARS PIGUET', '1', 'ADMIN', '2016-01-23', '24', 'ADMIN', '2016-01-23', 'en', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '123', 'Breguet', '1', 'ADMIN', '2016-01-23', '25', 'ADMIN', '2016-01-23', 'zn', 'B', null);
-INSERT INTO `keyword` VALUES ('brandname', '124', 'Breguet', '1', 'ADMIN', '2016-01-23', '26', 'ADMIN', '2016-01-23', 'en', 'B', null);
-INSERT INTO `keyword` VALUES ('brandname', '125', '宝珀', '1', 'ADMIN', '2016-01-23', '27', 'ADMIN', '2016-01-23', 'zn', 'B', null);
-INSERT INTO `keyword` VALUES ('brandname', '126', 'Blancpain', '1', 'ADMIN', '2016-01-23', '28', 'ADMIN', '2016-01-23', 'en', 'B', null);
-INSERT INTO `keyword` VALUES ('brandname', '127', 'Glashutte', '1', 'ADMIN', '2016-01-23', '29', 'ADMIN', '2016-01-23', 'zn', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '128', 'Glashutte', '1', 'ADMIN', '2016-01-23', '30', 'ADMIN', '2016-01-23', 'en', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '129', '雅克德罗', '1', 'ADMIN', '2016-01-23', '31', 'ADMIN', '2016-01-23', 'zn', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '130', 'JAQUET DROZ', '1', 'ADMIN', '2016-01-23', '32', 'ADMIN', '2016-01-23', 'en', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '131', 'OMEGA', '1', 'ADMIN', '2016-01-23', '33', 'ADMIN', '2016-01-23', 'zn', 'O', null);
-INSERT INTO `keyword` VALUES ('brandname', '132', 'OMEGA', '1', 'ADMIN', '2016-01-23', '34', 'ADMIN', '2016-01-23', 'en', 'O', null);
-INSERT INTO `keyword` VALUES ('brandname', '133', 'LONGINES', '1', 'ADMIN', '2016-01-23', '35', 'ADMIN', '2016-01-23', 'zn', 'L', null);
-INSERT INTO `keyword` VALUES ('brandname', '134', 'LONGINES', '1', 'ADMIN', '2016-01-23', '36', 'ADMIN', '2016-01-23', 'en', 'L', null);
-INSERT INTO `keyword` VALUES ('brandname', '135', 'Dior', '1', 'ADMIN', '2016-01-23', '37', 'ADMIN', '2016-01-23', 'zn', 'D', null);
-INSERT INTO `keyword` VALUES ('brandname', '136', 'Dior', '1', 'ADMIN', '2016-01-23', '38', 'ADMIN', '2016-01-23', 'en', 'D', null);
-INSERT INTO `keyword` VALUES ('brandname', '137', 'CELINE', '1', 'ADMIN', '2016-01-23', '39', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '138', 'CELINE', '1', 'ADMIN', '2016-01-23', '40', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '139', 'FENDI', '1', 'ADMIN', '2016-01-23', '41', 'ADMIN', '2016-01-23', 'zn', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '140', 'FENDI', '1', 'ADMIN', '2016-01-23', '42', 'ADMIN', '2016-01-23', 'en', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '141', 'GIVENCHY', '1', 'ADMIN', '2016-01-23', '43', 'ADMIN', '2016-01-23', 'zn', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '142', 'GIVENCHY', '1', 'ADMIN', '2016-01-23', '44', 'ADMIN', '2016-01-23', 'en', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '143', 'Louis Vuitton', '1', 'ADMIN', '2016-01-23', '45', 'ADMIN', '2016-01-23', 'zn', 'L', null);
-INSERT INTO `keyword` VALUES ('brandname', '144', 'Louis Vuitton', '1', 'ADMIN', '2016-01-23', '46', 'ADMIN', '2016-01-23', 'en', 'L', null);
-INSERT INTO `keyword` VALUES ('brandname', '145', 'GUERLAIN', '1', 'ADMIN', '2016-01-23', '47', 'ADMIN', '2016-01-23', 'zn', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '146', 'GUERLAIN', '1', 'ADMIN', '2016-01-23', '48', 'ADMIN', '2016-01-23', 'en', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '147', 'CHAUMET', '1', 'ADMIN', '2016-01-23', '49', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '148', 'CHAUMET', '1', 'ADMIN', '2016-01-23', '50', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '149', 'DE BEERS', '1', 'ADMIN', '2016-01-23', '51', 'ADMIN', '2016-01-23', 'zn', 'D', null);
-INSERT INTO `keyword` VALUES ('brandname', '150', 'DE BEERS', '1', 'ADMIN', '2016-01-23', '52', 'ADMIN', '2016-01-23', 'en', 'D', null);
-INSERT INTO `keyword` VALUES ('brandname', '151', 'Hennessy', '1', 'ADMIN', '2016-01-23', '53', 'ADMIN', '2016-01-23', 'zn', 'H', null);
-INSERT INTO `keyword` VALUES ('brandname', '152', 'Hennessy', '1', 'ADMIN', '2016-01-23', '54', 'ADMIN', '2016-01-23', 'en', 'H', null);
-INSERT INTO `keyword` VALUES ('brandname', '153', 'Qeelin', '1', 'ADMIN', '2016-01-23', '55', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '154', 'Qeelin', '1', 'ADMIN', '2016-01-23', '56', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '155', '芝柏表', '1', 'ADMIN', '2016-01-23', '57', 'ADMIN', '2016-01-23', 'zn', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '156', 'GIRARD-PERREGAUX', '1', 'ADMIN', '2016-01-23', '58', 'ADMIN', '2016-01-23', 'en', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '157', 'HERMES', '1', 'ADMIN', '2016-01-23', '59', 'ADMIN', '2016-01-23', 'zn', 'H', null);
-INSERT INTO `keyword` VALUES ('brandname', '158', 'HERMES', '1', 'ADMIN', '2016-01-23', '60', 'ADMIN', '2016-01-23', 'en', 'H', null);
-INSERT INTO `keyword` VALUES ('brandname', '159', 'SHANG XIA', '1', 'ADMIN', '2016-01-23', '61', 'ADMIN', '2016-01-23', 'zn', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '160', 'SHANG XIA', '1', 'ADMIN', '2016-01-23', '62', 'ADMIN', '2016-01-23', 'en', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '161', 'CHANEL', '1', 'ADMIN', '2016-01-23', '63', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '162', 'CHANEL', '1', 'ADMIN', '2016-01-23', '64', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '163', 'Patek Philippe', '1', 'ADMIN', '2016-01-23', '65', 'ADMIN', '2016-01-23', 'zn', 'P', null);
-INSERT INTO `keyword` VALUES ('brandname', '164', 'Patek Philippe', '1', 'ADMIN', '2016-01-23', '66', 'ADMIN', '2016-01-23', 'en', 'P', null);
-INSERT INTO `keyword` VALUES ('brandname', '165', 'ROLEX', '1', 'ADMIN', '2016-01-23', '67', 'ADMIN', '2016-01-23', 'zn', 'R', null);
-INSERT INTO `keyword` VALUES ('brandname', '166', 'ROLEX', '1', 'ADMIN', '2016-01-23', '68', 'ADMIN', '2016-01-23', 'en', 'R', null);
-INSERT INTO `keyword` VALUES ('brandname', '167', '萧邦', '1', 'ADMIN', '2016-01-23', '69', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '168', 'Chopard', '1', 'ADMIN', '2016-01-23', '70', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '169', 'FOREVERMARK', '1', 'ADMIN', '2016-01-23', '71', 'ADMIN', '2016-01-23', 'zn', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '170', 'FOREVERMARK', '1', 'ADMIN', '2016-01-23', '72', 'ADMIN', '2016-01-23', 'en', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '171', 'MIKIMOTO', '1', 'ADMIN', '2016-01-23', '73', 'ADMIN', '2016-01-23', 'zn', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '172', 'MIKIMOTO', '1', 'ADMIN', '2016-01-23', '74', 'ADMIN', '2016-01-23', 'en', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '173', 'PLATINUM', '1', 'ADMIN', '2016-01-23', '75', 'ADMIN', '2016-01-23', 'zn', 'P', null);
-INSERT INTO `keyword` VALUES ('brandname', '174', 'PLATINUM', '1', 'ADMIN', '2016-01-23', '76', 'ADMIN', '2016-01-23', 'en', 'P', null);
-INSERT INTO `keyword` VALUES ('brandname', '175', 'Wellendorff', '1', 'ADMIN', '2016-01-23', '77', 'ADMIN', '2016-01-23', 'zn', 'W', null);
-INSERT INTO `keyword` VALUES ('brandname', '176', 'Wellendorff', '1', 'ADMIN', '2016-01-23', '78', 'ADMIN', '2016-01-23', 'en', 'W', null);
-INSERT INTO `keyword` VALUES ('brandname', '177', 'VERTU', '1', 'ADMIN', '2016-01-23', '79', 'ADMIN', '2016-01-23', 'zn', 'V', null);
-INSERT INTO `keyword` VALUES ('brandname', '178', 'VERTU', '1', 'ADMIN', '2016-01-23', '80', 'ADMIN', '2016-01-23', 'en', 'V', null);
-INSERT INTO `keyword` VALUES ('brandname', '179', 'LONGCHAMP', '1', 'ADMIN', '2016-01-23', '81', 'ADMIN', '2016-01-23', 'zn', 'L', null);
-INSERT INTO `keyword` VALUES ('brandname', '180', 'LONGCHAMP', '1', 'ADMIN', '2016-01-23', '82', 'ADMIN', '2016-01-23', 'en', 'L', null);
-INSERT INTO `keyword` VALUES ('brandname', '181', 'MaxMara', '1', 'ADMIN', '2016-01-23', '83', 'ADMIN', '2016-01-23', 'zn', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '182', 'MaxMara', '1', 'ADMIN', '2016-01-23', '84', 'ADMIN', '2016-01-23', 'en', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '183', 'Ermenegildo Zegna', '1', 'ADMIN', '2016-01-23', '85', 'ADMIN', '2016-01-23', 'zn', 'E', null);
-INSERT INTO `keyword` VALUES ('brandname', '184', 'Ermenegildo', '1', 'ADMIN', '2016-01-23', '86', 'ADMIN', '2016-01-23', 'en', 'E', null);
-INSERT INTO `keyword` VALUES ('brandname', '185', 'ST.JOHN', '1', 'ADMIN', '2016-01-23', '87', 'ADMIN', '2016-01-23', 'zn', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '186', 'ST.JOHN', '1', 'ADMIN', '2016-01-23', '88', 'ADMIN', '2016-01-23', 'en', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '187', 'COACH', '1', 'ADMIN', '2016-01-23', '89', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '188', 'COACH', '1', 'ADMIN', '2016-01-23', '90', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '189', 'ALFA ROMEO', '1', 'ADMIN', '2016-01-23', '91', 'ADMIN', '2016-01-23', 'zn', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '190', 'ALFA ROMEO', '1', 'ADMIN', '2016-01-23', '92', 'ADMIN', '2016-01-23', 'en', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '191', 'MASERATI', '1', 'ADMIN', '2016-01-23', '93', 'ADMIN', '2016-01-23', 'zn', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '192', 'MASERATI', '1', 'ADMIN', '2016-01-23', '94', 'ADMIN', '2016-01-23', 'en', 'M', null);
-INSERT INTO `keyword` VALUES ('brandname', '193', 'Ferrari', '1', 'ADMIN', '2016-01-23', '95', 'ADMIN', '2016-01-23', 'zn', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '194', 'Ferrari', '1', 'ADMIN', '2016-01-23', '96', 'ADMIN', '2016-01-23', 'en', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '195', 'CHRYSLER', '1', 'ADMIN', '2016-01-23', '97', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '196', 'CHRYSLER', '1', 'ADMIN', '2016-01-23', '98', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '197', 'JEEP', '1', 'ADMIN', '2016-01-23', '99', 'ADMIN', '2016-01-23', 'zn', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '198', 'JEEP', '1', 'ADMIN', '2016-01-23', '100', 'ADMIN', '2016-01-23', 'en', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '199', 'JAGUAR', '1', 'ADMIN', '2016-01-23', '101', 'ADMIN', '2016-01-23', 'zn', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '200', 'JAGUAR', '1', 'ADMIN', '2016-01-23', '102', 'ADMIN', '2016-01-23', 'en', 'J', null);
-INSERT INTO `keyword` VALUES ('brandname', '201', 'Ferretti Group', '1', 'ADMIN', '2016-01-23', '103', 'ADMIN', '2016-01-23', 'zn', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '202', 'Ferretti Group', '1', 'ADMIN', '2016-01-23', '104', 'ADMIN', '2016-01-23', 'en', 'F', null);
-INSERT INTO `keyword` VALUES ('brandname', '203', 'GODIVA', '1', 'ADMIN', '2016-01-23', '105', 'ADMIN', '2016-01-23', 'zn', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '204', 'GODIVA', '1', 'ADMIN', '2016-01-23', '106', 'ADMIN', '2016-01-23', 'en', 'G', null);
-INSERT INTO `keyword` VALUES ('brandname', '205', '洲际酒店及度假村', '1', 'ADMIN', '2016-01-23', '107', 'ADMIN', '2016-01-23', 'zn', 'I', null);
-INSERT INTO `keyword` VALUES ('brandname', '206', 'INTERCONTINENTAL', '1', 'ADMIN', '2016-01-23', '108', 'ADMIN', '2016-01-23', 'en', 'I', null);
-INSERT INTO `keyword` VALUES ('brandname', '207', 'THE LEADING HOTELS', '1', 'ADMIN', '2016-01-23', '109', 'ADMIN', '2016-01-23', 'zn', 'T', null);
-INSERT INTO `keyword` VALUES ('brandname', '208', 'THE LEADING HOTELS', '1', 'ADMIN', '2016-01-23', '110', 'ADMIN', '2016-01-23', 'en', 'T', null);
-INSERT INTO `keyword` VALUES ('brandname', '209', 'Dorchester Collection', '1', 'ADMIN', '2016-01-23', '111', 'ADMIN', '2016-01-23', 'zn', 'D', null);
-INSERT INTO `keyword` VALUES ('brandname', '210', 'Dorchester Collection', '1', 'ADMIN', '2016-01-23', '112', 'ADMIN', '2016-01-23', 'en', 'D', null);
-INSERT INTO `keyword` VALUES ('brandname', '211', '地中海俱乐部', '1', 'ADMIN', '2016-01-23', '113', 'ADMIN', '2016-01-23', 'zn', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '212', 'Club Med', '1', 'ADMIN', '2016-01-23', '114', 'ADMIN', '2016-01-23', 'en', 'C', null);
-INSERT INTO `keyword` VALUES ('brandname', '213', '瑞士航空', '1', 'ADMIN', '2016-01-23', '115', 'ADMIN', '2016-01-23', 'zn', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '214', 'Swissair', '1', 'ADMIN', '2016-01-23', '116', 'ADMIN', '2016-01-23', 'en', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '215', '新西兰航空', '1', 'ADMIN', '2016-01-23', '117', 'ADMIN', '2016-01-23', 'zn', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '216', 'Air New Zealand', '1', 'ADMIN', '2016-01-23', '118', 'ADMIN', '2016-01-23', 'en', 'A', null);
-INSERT INTO `keyword` VALUES ('brandname', '217', '施坦威钢琴', '1', 'ADMIN', '2016-01-23', '119', 'ADMIN', '2016-01-23', 'zn', 'S', null);
-INSERT INTO `keyword` VALUES ('brandname', '218', 'Steinway&Sons', '1', 'ADMIN', '2016-01-23', '120', 'ADMIN', '2016-01-23', 'en', 'S', null);
 
 -- ----------------------------
 -- Table structure for `keyword_source_relation`
@@ -299,113 +176,16 @@ CREATE TABLE `keyword_source_relation` (
   KEY `source_id` (`source_id`),
   CONSTRAINT `keyword_id` FOREIGN KEY (`keyword_id`) REFERENCES `keyword` (`id`),
   CONSTRAINT `source_id` FOREIGN KEY (`source_id`) REFERENCES `source` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keyword_source_relation
 -- ----------------------------
-INSERT INTO `keyword_source_relation` VALUES ('100217', '22', '1');
-INSERT INTO `keyword_source_relation` VALUES ('100217', '95', '3');
-INSERT INTO `keyword_source_relation` VALUES ('100217', '96', '4');
-INSERT INTO `keyword_source_relation` VALUES ('100217', '97', '5');
-INSERT INTO `keyword_source_relation` VALUES ('100217', '98', '6');
-
--- ----------------------------
--- Table structure for `language`
--- ----------------------------
-DROP TABLE IF EXISTS `language`;
-CREATE TABLE `language` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tag` varchar(50) NOT NULL,
-  `value` varchar(200) NOT NULL,
-  `lang` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of language
--- ----------------------------
-INSERT INTO `language` VALUES ('28', 'commit', '确认', 'zn');
-INSERT INTO `language` VALUES ('29', 'inputtip', '请输入关键字', 'zn');
-INSERT INTO `language` VALUES ('30', 'seniorsearch', '高级搜索', 'zn');
-INSERT INTO `language` VALUES ('31', 'search', '搜索', 'zn');
-INSERT INTO `language` VALUES ('32', 'language', '语言选择', 'zn');
-INSERT INTO `language` VALUES ('33', 'introduce', '公司简介', 'zn');
-INSERT INTO `language` VALUES ('34', 'platform', '播出平台', 'zn');
-INSERT INTO `language` VALUES ('35', 'partner', '合作伙伴', 'zn');
-INSERT INTO `language` VALUES ('36', 'home', '首页', 'zn');
-INSERT INTO `language` VALUES ('37', 'about', '博览汉唐', 'zn');
-INSERT INTO `language` VALUES ('38', 'ul', '《极致》', 'zn');
-INSERT INTO `language` VALUES ('39', 'awoe', '《问鼎世界》', 'zn');
-INSERT INTO `language` VALUES ('40', 'music', '汉唐文化音乐年', 'zn');
-INSERT INTO `language` VALUES ('41', 'join', '加入汉唐', 'zn');
-INSERT INTO `language` VALUES ('42', 'brandname', '品牌名称', 'zn');
-INSERT INTO `language` VALUES ('43', 'type', '类型分类', 'zn');
-INSERT INTO `language` VALUES ('44', 'location', '地点', 'zn');
-INSERT INTO `language` VALUES ('45', 'keyword', '关键字', 'zn');
-INSERT INTO `language` VALUES ('46', 'time', '时间', 'zn');
-INSERT INTO `language` VALUES ('47', 'reset', '重新筛选', 'zn');
-INSERT INTO `language` VALUES ('48', 'dogandhorse', '声色犬马', 'zn');
-INSERT INTO `language` VALUES ('49', 'displayseason', '演出季', 'zn');
-INSERT INTO `language` VALUES ('50', 'displaytype', '演出形式', 'zn');
-INSERT INTO `language` VALUES ('51', 'yeartype', '年份', 'zn');
-INSERT INTO `language` VALUES ('52', 'locationtype', '国家/地区', 'zn');
-INSERT INTO `language` VALUES ('53', 'typetype', '品类', 'zn');
-INSERT INTO `language` VALUES ('54', 'activetype', '活动类型', 'zn');
-INSERT INTO `language` VALUES ('55', 'commit', 'commit', 'en');
-INSERT INTO `language` VALUES ('56', 'inputtip', 'Please input the keyword', 'en');
-INSERT INTO `language` VALUES ('57', 'seniorsearch', 'advanced search', 'en');
-INSERT INTO `language` VALUES ('58', 'search', 'search', 'en');
-INSERT INTO `language` VALUES ('59', 'language', 'language', 'en');
-INSERT INTO `language` VALUES ('60', 'introduce', 'introduce', 'en');
-INSERT INTO `language` VALUES ('61', 'platform', 'Platforms', 'en');
-INSERT INTO `language` VALUES ('62', 'partner', 'Partners', 'en');
-INSERT INTO `language` VALUES ('63', 'home', 'Home', 'en');
-INSERT INTO `language` VALUES ('64', 'about', 'Follow Us', 'en');
-INSERT INTO `language` VALUES ('65', 'ul', 'The Ultimate Luxury', 'en');
-INSERT INTO `language` VALUES ('66', 'awoe', 'A World of Excellence', 'en');
-INSERT INTO `language` VALUES ('67', 'music', 'Hantang Music Festival', 'en');
-INSERT INTO `language` VALUES ('68', 'join', 'Join Us', 'en');
-INSERT INTO `language` VALUES ('69', 'brandname', 'brandname', 'en');
-INSERT INTO `language` VALUES ('70', 'type', 'type', 'en');
-INSERT INTO `language` VALUES ('71', 'location', 'location', 'en');
-INSERT INTO `language` VALUES ('72', 'keyword', 'keyword', 'en');
-INSERT INTO `language` VALUES ('73', 'time', 'time', 'en');
-INSERT INTO `language` VALUES ('74', 'reset', 'reset', 'en');
-INSERT INTO `language` VALUES ('75', 'dogandhorse', 'Hedonist', 'en');
-INSERT INTO `language` VALUES ('76', 'displayseason', 'Season', 'en');
-INSERT INTO `language` VALUES ('77', 'displaytype', 'Genre', 'en');
-INSERT INTO `language` VALUES ('78', 'yeartype', 'Year', 'en');
-INSERT INTO `language` VALUES ('79', 'locationtype', 'Country/Region', 'en');
-INSERT INTO `language` VALUES ('80', 'typetype', 'Category', 'en');
-INSERT INTO `language` VALUES ('81', 'activetype', 'Type of Event', 'en');
-INSERT INTO `language` VALUES ('82', 'commit', 'V', 'fr');
-INSERT INTO `language` VALUES ('83', 'inputtip', 'Saisie de mots clefs', 'fr');
-INSERT INTO `language` VALUES ('84', 'seniorsearch', 'Recherche avanc', 'fr');
-INSERT INTO `language` VALUES ('85', 'search', 'De recherche', 'fr');
-INSERT INTO `language` VALUES ('86', 'language', 'langue', 'fr');
-INSERT INTO `language` VALUES ('87', 'introduce', 'Introduction', 'fr');
-INSERT INTO `language` VALUES ('88', 'platform', 'Plate-forme de diffusion', 'fr');
-INSERT INTO `language` VALUES ('89', 'partner', 'Partenaires', 'fr');
-INSERT INTO `language` VALUES ('90', 'home', 'Page d', 'fr');
-INSERT INTO `language` VALUES ('91', 'about', 'Pour nous suivre', 'fr');
-INSERT INTO `language` VALUES ('92', 'ul', 'The Ultimate Luxury', 'fr');
-INSERT INTO `language` VALUES ('93', 'awoe', 'A World of Excellence', 'fr');
-INSERT INTO `language` VALUES ('94', 'music', 'Festival de musique Hantang', 'fr');
-INSERT INTO `language` VALUES ('95', 'join', 'Pour nous joindre', 'fr');
-INSERT INTO `language` VALUES ('96', 'brandname', 'Nom de marque', 'fr');
-INSERT INTO `language` VALUES ('97', 'type', 'Le type de classification', 'fr');
-INSERT INTO `language` VALUES ('98', 'location', 'Lieu', 'fr');
-INSERT INTO `language` VALUES ('99', 'keyword', 'Mots - cl', 'fr');
-INSERT INTO `language` VALUES ('100', 'time', 'Le temps', 'fr');
-INSERT INTO `language` VALUES ('101', 'reset', 'Re de criblage', 'fr');
-INSERT INTO `language` VALUES ('102', 'dogandhorse', 'Salut', 'fr');
-INSERT INTO `language` VALUES ('103', 'displayseason', 'Saisons', 'fr');
-INSERT INTO `language` VALUES ('104', 'displaytype', 'Genres de spectacle', 'fr');
-INSERT INTO `language` VALUES ('105', 'yeartype', 'Ann', 'fr');
-INSERT INTO `language` VALUES ('106', 'locationtype', 'Pays/R', 'fr');
-INSERT INTO `language` VALUES ('107', 'typetype', ' Domaines', 'fr');
-INSERT INTO `language` VALUES ('108', 'activetype', 'Activit', 'fr');
+INSERT INTO `keyword_source_relation` VALUES ('100200', '32', '1');
+INSERT INTO `keyword_source_relation` VALUES ('100201', '32', '2');
+INSERT INTO `keyword_source_relation` VALUES ('100202', '32', '3');
+INSERT INTO `keyword_source_relation` VALUES ('100203', '32', '4');
+INSERT INTO `keyword_source_relation` VALUES ('100998', '32', '99');
 
 -- ----------------------------
 -- Table structure for `menu`
@@ -459,210 +239,49 @@ CREATE TABLE `source` (
   `source_remark` varchar(2000) DEFAULT NULL,
   `third_level` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100422 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=101000 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of source
 -- ----------------------------
-INSERT INTO `source` VALUES ('100001', 'http://localhost:8080/bootstrap/images/partner1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100002', 'http://localhost:8080/bootstrap/images/homecarousel01.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100003', 'http://localhost:8080/bootstrap/images/home-jz.png', '1', 'homecarousel02-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea11', null, 'zn');
-INSERT INTO `source` VALUES ('100004', 'http://localhost:8080/bootstrap/images/wd.png', '1', 'homecarousel03-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea12', null, 'zn');
-INSERT INTO `source` VALUES ('100005', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, 'zn');
-INSERT INTO `source` VALUES ('100006', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, 'zn');
-INSERT INTO `source` VALUES ('100007', 'http://localhost:8080/bootstrap/images/homecarousel04.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, 'zn');
-INSERT INTO `source` VALUES ('100008', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, 'zn');
-INSERT INTO `source` VALUES ('100009', 'http://localhost:8080/bootstrap/images/homecarousel04.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, 'zn');
-INSERT INTO `source` VALUES ('100010', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, 'zn');
-INSERT INTO `source` VALUES ('100011', 'http://localhost:8080/bootstrap/images/music.png', '1', 'homecarousel04-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea13', null, 'zn');
-INSERT INTO `source` VALUES ('100012', 'http://localhost:8080/bootstrap/images/homecarousel04.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, 'zn');
-INSERT INTO `source` VALUES ('100013', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, 'zn');
-INSERT INTO `source` VALUES ('100014', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, 'zn');
-INSERT INTO `source` VALUES ('100015', 'http://localhost:8080/bootstrap/images/platform1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea2', null, 'zn');
-INSERT INTO `source` VALUES ('100016', 'http://localhost:8080/bootstrap/images/platform2.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea3', null, 'zn');
-INSERT INTO `source` VALUES ('100017', 'http://localhost:8080/bootstrap/images/partner1.png', '1', 'partner1', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'partner', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100018', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'ul01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100019', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100020', 'http://localhost:8080/bootstrap/images/homecarousel04.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100021', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'awoe01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100022', 'http://localhost:8080/bootstrap/images/homecarousel04.png', '1', 'awoe02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100023', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'awoe03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100024', 'http://localhost:8080/bootstrap/images/jz.png', '1', 'ul-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea11', null, 'zn');
-INSERT INTO `source` VALUES ('100025', 'http://localhost:8080/bootstrap/images/wd.png', '1', 'awoe-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea11', null, 'zn');
-INSERT INTO `source` VALUES ('100026', 'http://localhost:8080/bootstrap/images/homecarousel04.png', '1', 'music01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100027', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100028', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100029', 'http://localhost:8080/bootstrap/images/logo.png', '1', 'logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'logoimage', '', null, 'zn');
-INSERT INTO `source` VALUES ('100030', 'http://localhost:8080/bootstrap/images/partner1.png', '1', 'partner2', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'img', 'ADMIN', 'partner', 'imagearea1', null, 'zn');
-INSERT INTO `source` VALUES ('100031', 'http://localhost:8080/bootstrap/images/platform1.png', '1', 'ullogo', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'ullogo', null, null, 'zn');
-INSERT INTO `source` VALUES ('100032', 'http://localhost:8080/bootstrap/images/wd.png', '1', 'awoelogo', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'awoelogo', null, null, 'zn');
-INSERT INTO `source` VALUES ('100033', 'http://localhost:8080/bootstrap/images/musicinner.png', '1', 'mu', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'musiclogo', null, null, 'zn');
-INSERT INTO `source` VALUES ('100034', 'http://localhost:8080/bootstrap/images/logo1.png', '1', 'footerlogo1', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo1', null, 'zn');
-INSERT INTO `source` VALUES ('100035', 'http://localhost:8080/bootstrap/images/logo2.png', '1', 'footerlogo2', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo2', null, 'zn');
-INSERT INTO `source` VALUES ('100036', 'http://localhost:8080/bootstrap/images/logo3.png', '1', 'footerlogo3', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo3', null, 'zn');
-INSERT INTO `source` VALUES ('100037', 'http://localhost:8080/bootstrap/images/logo4.png', '1', 'footerlogo4', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo4', null, 'zn');
-INSERT INTO `source` VALUES ('100038', 'http://localhost:8080/bootstrap/images/weibo.png', '1', 'footerweibo', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'weibo', null, 'zn');
-INSERT INTO `source` VALUES ('100039', 'http://localhost:8080/bootstrap/images/youku.png', '1', 'footeryouku', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'youku', null, 'zn');
-INSERT INTO `source` VALUES ('100040', 'http://localhost:8080/bootstrap/images/wangyi.png', '1', 'footerwangyi', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'wangyi', null, 'zn');
-INSERT INTO `source` VALUES ('100041', 'http://localhost:8080/bootstrap/images/tengxun.png', '1', 'footertengxun', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'tengxun', null, 'zn');
-INSERT INTO `source` VALUES ('100042', 'http://localhost:8080/bootstrap/images/jianshu.png', '1', 'footerjianshu', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'jianshu', null, 'zn');
-INSERT INTO `source` VALUES ('100043', 'http://localhost:8080/bootstrap/images/douban.png', '1', 'footerdouban', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'douban', null, 'zn');
-INSERT INTO `source` VALUES ('100044', 'http://localhost:8080/bootstrap/images/wxin.png', '1', 'footerweixin', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'weixin', null, 'zn');
-INSERT INTO `source` VALUES ('100045', 'http://localhost:8080/bootstrap/images/guanzhu.png', '1', 'footerguanzhu', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'guanzhu', null, 'zn');
-INSERT INTO `source` VALUES ('100046', 'http://localhost:8080/bootstrap/images/jz_erwei.png', '1', 'footerjzerwei', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'erwei', null, 'zn');
-INSERT INTO `source` VALUES ('100047', 'http://localhost:8080/bootstrap/images/close.png', '1', 'footerclose', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'guanbi', null, 'zn');
-INSERT INTO `source` VALUES ('100048', 'http://localhost:8080/bootstrap/images/jzmap.png', '1', 'jzmap', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'platform', 'ulmap', null, 'zn');
-INSERT INTO `source` VALUES ('100049', 'http://localhost:8080/bootstrap/images/wdmap.png', '1', 'wdmap', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'platform', 'awoemap', null, 'zn');
-INSERT INTO `source` VALUES ('100099', 'http://localhost:8080/video/joinvideo.mp4', '1', 'joinvideo', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'join', null, null, 'zn');
-INSERT INTO `source` VALUES ('100200', 'http://localhost:8080/bootstrap/images/partner1.png', '1', 'testvideoimg', null, null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, 'zn');
-INSERT INTO `source` VALUES ('100201', 'http://localhost:8080/bootstrap/images/homecarousel03.png', '1', 'testvideo2', '/ul', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, 'zn');
-INSERT INTO `source` VALUES ('100202', 'http://localhost:8080/bootstrap/images/wd.png', '1', 'testvideo3', '/awoe/awoeinner/test', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, 'zn');
-INSERT INTO `source` VALUES ('100203', 'http://localhost:8080/bootstrap/images/homecarousel02.png', '1', 'T4', '/home', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, 'zn');
-INSERT INTO `source` VALUES ('100213', 'http://localhost:8080/img/视频定格图片：2015第65届柏林电影节.jpg', '1', '2015柏林电影节', '/ul/ulinner/100218', '1', '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, '2015柏林电影节 柏林当地时间2015年2月5日，第65届柏林电影节拉开帷幕。四百多部影片在11天中逐一展映，19部角逐金银熊奖。评审团成员汇集由达伦·阿伦诺夫斯基领衔，汇集导演、演员、制片人和电视剧编剧。朱丽叶·比诺什、妮可·基德曼等明星携新作亮相，闪耀红毯。汉唐文化专访柏林电影节主席Dieter Kosslick，用镜头记录这一电影盛事。', 'zn');
-INSERT INTO `source` VALUES ('100214', 'http://localhost:8080/img/视频定格图片：2015第68届戛纳电影节集锦概览.jpg', '1', '第68届戛纳电影节', '/ul/ulinner/100219', '2', '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, '第68届戛纳电影节 当地时间2015年5月24日，第68届戛纳电影节落下帷幕。最终，《流浪的迪潘》摘得“最佳影片”金棕榈奖。导演拉斯洛·奈米斯凭借处女作《索尔之子》抱得评审团大奖。最佳男演员奖落入《市场法律》的文森特·林顿囊中，《我的国王》的女主角艾玛纽尔·贝克特与《卡罗尔》的女主角鲁妮·玛拉并获最佳女演员奖。侯孝贤凭《刺客聂隐娘》获得了最佳导演奖。', 'zn');
-INSERT INTO `source` VALUES ('100215', 'http://localhost:8080/img/视频定格图片：2015莫扎特周概览.jpg', '1', '2015萨尔茨堡莫扎特周 ', '/ul/ulinner/100220', '3', '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, '2015萨尔茨堡莫扎特周  Mozart Week 2015  2015年萨尔茨堡莫扎特周于1月22日拉开大幕，为期11天。这位传奇音乐大师的经典曲目以或传统、或现代的方式精彩呈现。汉唐文化特别受邀前往萨尔茨堡，全方位呈现艺术盛会，纪念音乐大师。', 'zn');
-INSERT INTO `source` VALUES ('100216', 'http://localhost:8080/img/视频定格图片：2015日内瓦车展.jpg', '1', '2015日内瓦车展', '/ul/ulinner/100221', '4', '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, '2015日内瓦车展 2015年3月5日，第85届日内瓦车展再一次汇聚了全球68万车迷及专业人士的目光。220家参展商共展出约900多辆汽车及100多辆最新款。靓丽色彩，动力十足的发动机、全新概念车款，各大品牌都竞相推出最新杰作。展会现场，各式各样的互动也给观众带来乐趣体验。汉唐摄制组亲赴日内瓦，直击行业最新动向。', 'zn');
-INSERT INTO `source` VALUES ('100217', 'http://localhost:8080/img/视频定格图片：积家博洛尼亚电影修复工作室之旅.jpg', '1', '积家博洛尼亚电影修复实验室之旅', '/ul/ulinner/100222', '5', '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, '积家博洛尼亚电影修复实验室之旅 位于意大利北部的博洛尼亚一直是电影人心中的圣地。在瑞士钟表品牌积家的支持下，博洛尼亚电影修复实验室以4K技术，通过清洁、扫描、数字修复、颜色和声音修复经典老电影。2014年，实验室耗费超过1000小时，最终修复完成吴宇森的经典影片《英雄本色》。和《极致》一起，走进博洛尼亚电影修复实验室，探秘老电影修复。', 'zn');
-INSERT INTO `source` VALUES ('100218', 'http://localhost:8080/video/20150215_UL20m_2015柏林电影节.mpeg.mp4', '1', '2015柏林电影节', null, '1', '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, '2015柏林电影节 柏林当地时间2015年2月5日，第65届柏林电影节拉开帷幕。四百多部影片在11天中逐一展映，19部角逐金银熊奖。评审团成员汇集由达伦·阿伦诺夫斯基领衔，汇集导演、演员、制片人和电视剧编剧。朱丽叶·比诺什、妮可·基德曼等明星携新作亮相，闪耀红毯。汉唐文化专访柏林电影节主席Dieter Kosslick，用镜头记录这一电影盛事。', 'zn');
-INSERT INTO `source` VALUES ('100219', 'http://localhost:8080/video/20150618_UL20m_2015戛纳电影节集锦_U150220.mpeg.mp4', '1', '第68届戛纳电影节', null, '2', '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, '第68届戛纳电影节 当地时间2015年5月24日，第68届戛纳电影节落下帷幕。最终，《流浪的迪潘》摘得“最佳影片”金棕榈奖。导演拉斯洛·奈米斯凭借处女作《索尔之子》抱得评审团大奖。最佳男演员奖落入《市场法律》的文森特·林顿囊中，《我的国王》的女主角艾玛纽尔·贝克特与《卡罗尔》的女主角鲁妮·玛拉并获最佳女演员奖。侯孝贤凭《刺客聂隐娘》获得了最佳导演奖。', 'zn');
-INSERT INTO `source` VALUES ('100220', 'http://localhost:8080/video/20150227_UL20m_萨尔茨堡莫扎特周概览_EP1_VO4.mpeg.mp4', '1', '2015萨尔茨堡莫扎特周', null, '3', '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, '2015萨尔茨堡莫扎特周  Mozart Week 2015  2015年萨尔茨堡莫扎特周于1月22日拉开大幕，为期11天。这位传奇音乐大师的经典曲目以或传统、或现代的方式精彩呈现。汉唐文化特别受邀前往萨尔茨堡，全方位呈现艺术盛会，纪念音乐大师。', 'zn');
-INSERT INTO `source` VALUES ('100221', 'http://localhost:8080/video/20150402_UL20m_第20届日内瓦车展.mpeg.mp4', '1', '2015日内瓦车展', null, '4', '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, '2015日内瓦车展 2015年3月5日，第85届日内瓦车展再一次汇聚了全球68万车迷及专业人士的目光。220家参展商共展出约900多辆汽车及100多辆最新款。靓丽色彩，动力十足的发动机、全新概念车款，各大品牌都竞相推出最新杰作。展会现场，各式各样的互动也给观众带来乐趣体验。汉唐摄制组亲赴日内瓦，直击行业最新动向。', 'zn');
-INSERT INTO `source` VALUES ('100222', 'http://localhost:8080/video/20150728_UL20m_积家_探访博洛尼亚电影修复实验室_FINAL_U150270.mpeg.mp4', '1', '积家博洛尼亚电影修复实验室之旅', null, '5', '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, '积家博洛尼亚电影修复实验室之旅 位于意大利北部的博洛尼亚一直是电影人心中的圣地。在瑞士钟表品牌积家的支持下，博洛尼亚电影修复实验室以4K技术，通过清洁、扫描、数字修复、颜色和声音修复经典老电影。2014年，实验室耗费超过1000小时，最终修复完成吴宇森的经典影片《英雄本色》。和《极致》一起，走进博洛尼亚电影修复实验室，探秘老电影修复。', 'zn');
-INSERT INTO `source` VALUES ('100223', 'http://localhost:8080/img/视频定格图片：2015第65届柏林电影节.jpg', '1', 'Berlinale 2015', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'The 65th Berlinale opened on February 5th, 2015. Over 400 movies screened in 11 days, with 19 in contention. Darren Aronofsky presided over the jury. Juliette Binoche, Nicole Kidman, and other celebrities graced the red carpet. Hantang TV was on hand for coverage and an interview with festival director Dieter Kosslick.', 'en');
-INSERT INTO `source` VALUES ('100224', 'http://localhost:8080/img/视频定格图片：2015第68届戛纳电影节集锦概览.jpg', '1', 'Cannes Film Festival 2015', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'The 68th Cannes Film Festival closed on May 24th, 2015. Dheepan took home the Palme d’Or. László Nemes won the Grand Prix for his debut work, Saul Fia. Hou Hsiao-Hsien won the Award for Best Director for Nie Yinniang (The Assassin).', 'en');
-INSERT INTO `source` VALUES ('100225', 'http://localhost:8080/img/视频定格图片：2015莫扎特周概览.jpg', '1', 'Mozart Week 2015', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'The 2015 Mozart Week in Salzburg began on January 22nd and lasted 11 days. The great composer’s works were interpreted in both classical and modern styles. Hantang TV brings you all the details.', 'en');
-INSERT INTO `source` VALUES ('100226', 'http://localhost:8080/img/视频定格图片：2015日内瓦车展.jpg', '1', '', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, '', 'en');
-INSERT INTO `source` VALUES ('100227', 'http://localhost:8080/img/视频定格图片：积家博洛尼亚电影修复工作室之旅.jpg', '1', 'Jaeger-LeCoultre and L’Immagine Ritrovata', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'Bologna is an important place for movie lovers. With the support of Swiss watchmaker Jaeger-LeCoultre, the L’Immagine Ritrovata film restoration laboratory restores classic films. In 2014, L’Immagine Ritrovata spent over 1,000 hours to restore John Woo’s classic A Better Tomorrow. The Ultimate Luxury gives you a look into the film restoration process.', 'en');
-INSERT INTO `source` VALUES ('100228', 'http://localhost:8080/video/20150319_UL20m_2015柏林电影节_V03_ENG_张锐锐-ok.mpeg.mp4', '1', 'Berlinale 2015', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, 'The 65th Berlinale opened on February 5th, 2015. Over 400 movies screened in 11 days, with 19 in contention. Darren Aronofsky presided over the jury. Juliette Binoche, Nicole Kidman, and other celebrities graced the red carpet. Hantang TV was on hand for coverage and an interview with festival director Dieter Kosslick.', 'en');
-INSERT INTO `source` VALUES ('100229', 'http://localhost:8080/video/20150324_UL20m_萨尔茨堡莫扎特周概览_EP1_V05_ENG_张锐锐-ok.mpeg.mp4', '1', 'Mozart Week 2015', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, 'The 2015 Mozart Week in Salzburg began on January 22nd and lasted 11 days. The great composer’s works were interpreted in both classical and modern styles. Hantang TV brings you all the details.', 'en');
-INSERT INTO `source` VALUES ('100230', 'http://localhost:8080/video/20150421_UL20m_2015日内瓦车展_ENG-ok.mpeg.mp4', '1', '', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, null, 'en');
-INSERT INTO `source` VALUES ('100231', 'http://localhost:8080/video/20150819_UL20m_积家_探访博洛尼亚电影修复实验室_V02_张昊_ENG-ok.mpeg.mp4', '1', 'Jaeger-LeCoultre and L’Immagine Ritrovata', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'video/mp4', 'ADMIN', 'ul', null, 'Bologna is an important place for movie lovers. With the support of Swiss watchmaker Jaeger-LeCoultre, the L’Immagine Ritrovata film restoration laboratory restores classic films. In 2014, L’Immagine Ritrovata spent over 1,000 hours to restore John Woo’s classic A Better Tomorrow. The Ultimate Luxury gives you a look into the film restoration process.', 'en');
-INSERT INTO `source` VALUES ('100232', 'http://localhost:8080/img/视频定格图片：2015第65届柏林电影节.jpg', '1', '2015柏林电影节', 'awoe/awoeinner/100234', '1', '2016-01-24', 'ADMIN', '2016-01-24', 'videoimg', 'ADMIN', 'awoe', null, '2015柏林电影节 柏林当地时间2015年2月5日，第65届柏林电影节拉开帷幕。四百多部影片在11天中逐一展映，19部角逐金银熊奖。评审团成员汇集由达伦·阿伦诺夫斯基领衔，汇集导演、演员、制片人和电视剧编剧。朱丽叶·比诺什、妮可·基德曼等明星携新作亮相，闪耀红毯。汉唐文化专访柏林电影节主席Dieter Kosslick，用镜头记录这一电影盛事。', 'zn');
-INSERT INTO `source` VALUES ('100233', 'http://localhost:8080/img/视频定格图片：2015第68届戛纳电影节集锦概览.jpg', '1', '第68届戛纳电影节', 'awoe/awoeinner/100235', '2', '2016-01-24', 'ADMIN', '2016-01-24', 'videoimg', 'ADMIN', 'awoe', null, '第68届戛纳电影节 当地时间2015年5月24日，第68届戛纳电影节落下帷幕。最终，《流浪的迪潘》摘得“最佳影片”金棕榈奖。导演拉斯洛·奈米斯凭借处女作《索尔之子》抱得评审团大奖。最佳男演员奖落入《市场法律》的文森特·林顿囊中，《我的国王》的女主角艾玛纽尔·贝克特与《卡罗尔》的女主角鲁妮·玛拉并获最佳女演员奖。侯孝贤凭《刺客聂隐娘》获得了最佳导演奖。', 'zn');
-INSERT INTO `source` VALUES ('100234', 'http://localhost:8080/video/20150215_UL20m_2015柏林电影节.mpeg.mp4', '1', '2015柏林电影节', null, '1', '2016-01-24', 'ADMIN', '2016-01-24', 'video/mp4', 'ADMIN', 'awoe', null, '2015柏林电影节 柏林当地时间2015年2月5日，第65届柏林电影节拉开帷幕。四百多部影片在11天中逐一展映，19部角逐金银熊奖。评审团成员汇集由达伦·阿伦诺夫斯基领衔，汇集导演、演员、制片人和电视剧编剧。朱丽叶·比诺什、妮可·基德曼等明星携新作亮相，闪耀红毯。汉唐文化专访柏林电影节主席Dieter Kosslick，用镜头记录这一电影盛事。', 'zn');
-INSERT INTO `source` VALUES ('100235', 'http://localhost:8080/video/20150618_UL20m_2015戛纳电影节集锦_U150220.mpeg.mp4', '1', '第68届戛纳电影节', null, '2', '2016-01-24', 'ADMIN', '2016-01-24', 'video/mp4', 'ADMIN', 'awoe', null, '第68届戛纳电影节 当地时间2015年5月24日，第68届戛纳电影节落下帷幕。最终，《流浪的迪潘》摘得“最佳影片”金棕榈奖。导演拉斯洛·奈米斯凭借处女作《索尔之子》抱得评审团大奖。最佳男演员奖落入《市场法律》的文森特·林顿囊中，《我的国王》的女主角艾玛纽尔·贝克特与《卡罗尔》的女主角鲁妮·玛拉并获最佳女演员奖。侯孝贤凭《刺客聂隐娘》获得了最佳导演奖。', 'zn');
-INSERT INTO `source` VALUES ('100236', 'http://localhost:8080/img/视频定格图片：积家博洛尼亚电影修复工作室之旅.jpg', '1', '积家博洛尼亚电影修复实验室之旅', 'music/musicinner/100237', '1', '2016-01-24', 'ADMIN', '2016-01-24', 'videoimg', 'ADMIN', 'music', null, '积家博洛尼亚电影修复实验室之旅 位于意大利北部的博洛尼亚一直是电影人心中的圣地。在瑞士钟表品牌积家的支持下，博洛尼亚电影修复实验室以4K技术，通过清洁、扫描、数字修复、颜色和声音修复经典老电影。2014年，实验室耗费超过1000小时，最终修复完成吴宇森的经典影片《英雄本色》。和《极致》一起，走进博洛尼亚电影修复实验室，探秘老电影修复。', 'zn');
-INSERT INTO `source` VALUES ('100237', 'http://localhost:8080/video/20150728_UL20m_积家_探访博洛尼亚电影修复实验室_FINAL_U150270.mpeg.mp4', '1', '积家博洛尼亚电影修复实验室之旅', null, '2', '2016-01-24', 'ADMIN', '2016-01-24', 'video/mp4', 'ADMIN', 'music', null, '积家博洛尼亚电影修复实验室之旅 位于意大利北部的博洛尼亚一直是电影人心中的圣地。在瑞士钟表品牌积家的支持下，博洛尼亚电影修复实验室以4K技术，通过清洁、扫描、数字修复、颜色和声音修复经典老电影。2014年，实验室耗费超过1000小时，最终修复完成吴宇森的经典影片《英雄本色》。和《极致》一起，走进博洛尼亚电影修复实验室，探秘老电影修复。', 'zn');
-INSERT INTO `source` VALUES ('100300', 'http://localhost:8080/bootstrap/logos/A.Lange&Söhne.png', '1', '德国朗格', null, '1', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '99', null, 'zn');
-INSERT INTO `source` VALUES ('100301', 'http://localhost:8080/bootstrap/logos/A.Lange&Söhne.png', '1', 'A.Lange&Söhne', null, '2', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '100', null, 'en');
-INSERT INTO `source` VALUES ('100302', 'http://localhost:8080/bootstrap/logos/BAUME&MERCIER.png', '1', 'BAUME&MERCIER', null, '3', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '101', null, 'zn');
-INSERT INTO `source` VALUES ('100303', 'http://localhost:8080/bootstrap/logos/BAUME&MERCIER.png', '1', 'BAUME&MERCIER', null, '4', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '102', null, 'en');
-INSERT INTO `source` VALUES ('100304', 'http://localhost:8080/bootstrap/logos/Cartier.png', '1', 'Cartier', null, '5', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '103', null, 'zn');
-INSERT INTO `source` VALUES ('100305', 'http://localhost:8080/bootstrap/logos/Cartier.png', '1', 'Cartier', null, '6', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '104', null, 'en');
-INSERT INTO `source` VALUES ('100306', 'http://localhost:8080/bootstrap/logos/IWC Schaffhausen.png', '1', 'IWC Schaffhausen', null, '7', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '105', null, 'zn');
-INSERT INTO `source` VALUES ('100307', 'http://localhost:8080/bootstrap/logos/IWC Schaffhausen.png', '1', 'IWC Schaffhausen', null, '8', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '106', null, 'en');
-INSERT INTO `source` VALUES ('100308', 'http://localhost:8080/bootstrap/logos/Jaeger-LeCoultre.png', '1', '积家', null, '9', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '107', null, 'zn');
-INSERT INTO `source` VALUES ('100309', 'http://localhost:8080/bootstrap/logos/Jaeger-LeCoultre.png', '1', 'Jaeger-LeCoultre', null, '10', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '108', null, 'en');
-INSERT INTO `source` VALUES ('100310', 'http://localhost:8080/bootstrap/logos/Montblanc.png', '1', 'Montblanc', null, '11', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '109', null, 'zn');
-INSERT INTO `source` VALUES ('100311', 'http://localhost:8080/bootstrap/logos/Montblanc.png', '1', 'Montblanc', null, '12', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '110', null, 'en');
-INSERT INTO `source` VALUES ('100312', 'http://localhost:8080/bootstrap/logos/OFFICINE PANERAI.png', '1', 'OFFICINE PANERAI', null, '13', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '111', null, 'zn');
-INSERT INTO `source` VALUES ('100313', 'http://localhost:8080/bootstrap/logos/OFFICINE PANERAI.png', '1', 'OFFICINE PANERAI', null, '14', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '112', null, 'en');
-INSERT INTO `source` VALUES ('100314', 'http://localhost:8080/bootstrap/logos/PIAGET.png', '1', 'PIAGET', null, '15', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '113', null, 'zn');
-INSERT INTO `source` VALUES ('100315', 'http://localhost:8080/bootstrap/logos/PIAGET.png', '1', 'PIAGET', null, '16', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '114', null, 'en');
-INSERT INTO `source` VALUES ('100316', 'http://localhost:8080/bootstrap/logos/ROGER DUBUIS.png', '1', '罗杰杜彼', null, '17', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '115', null, 'zn');
-INSERT INTO `source` VALUES ('100317', 'http://localhost:8080/bootstrap/logos/ROGER DUBUIS.png', '1', 'ROGER DUBUIS', null, '18', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '116', null, 'en');
-INSERT INTO `source` VALUES ('100318', 'http://localhost:8080/bootstrap/logos/VACHERON CONSTANTIN.png', '1', '江诗丹顿', null, '19', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '117', null, 'zn');
-INSERT INTO `source` VALUES ('100319', 'http://localhost:8080/bootstrap/logos/VACHERON CONSTANTIN.png', '1', 'VACHERON CONSTANTIN', null, '20', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '118', null, 'en');
-INSERT INTO `source` VALUES ('100320', 'http://localhost:8080/bootstrap/logos/VanCleef&Arpels.png', '1', '梵克雅宝', null, '21', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '119', null, 'zn');
-INSERT INTO `source` VALUES ('100321', 'http://localhost:8080/bootstrap/logos/VanCleef&Arpels.png', '1', 'VanCleef&Arpels', null, '22', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '120', null, 'en');
-INSERT INTO `source` VALUES ('100322', 'http://localhost:8080/bootstrap/logos/AUDEMARS PIGUET.png', '1', 'AUDEMARS PIGUET', null, '23', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '121', null, 'zn');
-INSERT INTO `source` VALUES ('100323', 'http://localhost:8080/bootstrap/logos/AUDEMARS PIGUET.png', '1', 'AUDEMARS PIGUET', null, '24', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '122', null, 'en');
-INSERT INTO `source` VALUES ('100324', 'http://localhost:8080/bootstrap/logos/Breguet.png', '1', 'Breguet', null, '25', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '123', null, 'zn');
-INSERT INTO `source` VALUES ('100325', 'http://localhost:8080/bootstrap/logos/Breguet.png', '1', 'Breguet', null, '26', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '124', null, 'en');
-INSERT INTO `source` VALUES ('100326', 'http://localhost:8080/bootstrap/logos/Blancpain.png', '1', '宝珀', null, '27', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '125', null, 'zn');
-INSERT INTO `source` VALUES ('100327', 'http://localhost:8080/bootstrap/logos/Blancpain.png', '1', 'Blancpain', null, '28', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '126', null, 'en');
-INSERT INTO `source` VALUES ('100328', 'http://localhost:8080/bootstrap/logos/Glashutte PANERAI.png', '1', 'Glashutte PANERAI', null, '29', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '127', null, 'zn');
-INSERT INTO `source` VALUES ('100329', 'http://localhost:8080/bootstrap/logos/Glashutte PANERAI.png', '1', 'Glashutte PANERAI', null, '30', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '128', null, 'en');
-INSERT INTO `source` VALUES ('100330', 'http://localhost:8080/bootstrap/logos/JAQUET DROZ.png', '1', '雅克德罗', null, '31', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '129', null, 'zn');
-INSERT INTO `source` VALUES ('100331', 'http://localhost:8080/bootstrap/logos/JAQUET DROZ.png', '1', 'JAQUET DROZ', null, '32', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '130', null, 'en');
-INSERT INTO `source` VALUES ('100332', 'http://localhost:8080/bootstrap/logos/OMEGA.png', '1', 'OMEGA', null, '33', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '131', null, 'zn');
-INSERT INTO `source` VALUES ('100333', 'http://localhost:8080/bootstrap/logos/OMEGA.png', '1', 'OMEGA', null, '34', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '132', null, 'en');
-INSERT INTO `source` VALUES ('100334', 'http://localhost:8080/bootstrap/logos/LONGINES.png', '1', 'LONGINES', null, '35', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '133', null, 'zn');
-INSERT INTO `source` VALUES ('100335', 'http://localhost:8080/bootstrap/logos/LONGINES.png', '1', 'LONGINES', null, '36', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '134', null, 'en');
-INSERT INTO `source` VALUES ('100336', 'http://localhost:8080/bootstrap/logos/Dior.png', '1', 'Dior', null, '37', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '135', null, 'zn');
-INSERT INTO `source` VALUES ('100337', 'http://localhost:8080/bootstrap/logos/Dior.png', '1', 'Dior', null, '38', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '136', null, 'en');
-INSERT INTO `source` VALUES ('100338', 'http://localhost:8080/bootstrap/logos/CELINE.png', '1', 'CELINE', null, '39', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '137', null, 'zn');
-INSERT INTO `source` VALUES ('100339', 'http://localhost:8080/bootstrap/logos/CELINE.png', '1', 'CELINE', null, '40', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '138', null, 'en');
-INSERT INTO `source` VALUES ('100340', 'http://localhost:8080/bootstrap/logos/FENDI.png', '1', 'FENDI', null, '41', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '139', null, 'zn');
-INSERT INTO `source` VALUES ('100341', 'http://localhost:8080/bootstrap/logos/FENDI.png', '1', 'FENDI', null, '42', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '140', null, 'en');
-INSERT INTO `source` VALUES ('100342', 'http://localhost:8080/bootstrap/logos/GIVENCHY.png', '1', 'GIVENCHY', null, '43', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '141', null, 'zn');
-INSERT INTO `source` VALUES ('100343', 'http://localhost:8080/bootstrap/logos/GIVENCHY.png', '1', 'GIVENCHY', null, '44', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '142', null, 'en');
-INSERT INTO `source` VALUES ('100344', 'http://localhost:8080/bootstrap/logos/Louis Vuitton.png', '1', 'Louis Vuitton', null, '45', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '143', null, 'zn');
-INSERT INTO `source` VALUES ('100345', 'http://localhost:8080/bootstrap/logos/Louis Vuitton.png', '1', 'Louis Vuitton', null, '46', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '144', null, 'en');
-INSERT INTO `source` VALUES ('100346', 'http://localhost:8080/bootstrap/logos/GUERLAIN.png', '1', 'GUERLAIN', null, '47', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '145', null, 'zn');
-INSERT INTO `source` VALUES ('100347', 'http://localhost:8080/bootstrap/logos/GUERLAIN.png', '1', 'GUERLAIN', null, '48', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '146', null, 'en');
-INSERT INTO `source` VALUES ('100348', 'http://localhost:8080/bootstrap/logos/CHAUMET.png', '1', 'CHAUMET', null, '49', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '147', null, 'zn');
-INSERT INTO `source` VALUES ('100349', 'http://localhost:8080/bootstrap/logos/CHAUMET.png', '1', 'CHAUMET', null, '50', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '148', null, 'en');
-INSERT INTO `source` VALUES ('100350', 'http://localhost:8080/bootstrap/logos/DE BEERS.png', '1', 'DE BEERS', null, '51', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '149', null, 'zn');
-INSERT INTO `source` VALUES ('100351', 'http://localhost:8080/bootstrap/logos/DE BEERS.png', '1', 'DE BEERS', null, '52', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '150', null, 'en');
-INSERT INTO `source` VALUES ('100352', 'http://localhost:8080/bootstrap/logos/Hennessy.png', '1', 'Hennessy', null, '53', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '151', null, 'zn');
-INSERT INTO `source` VALUES ('100353', 'http://localhost:8080/bootstrap/logos/Hennessy.png', '1', 'Hennessy', null, '54', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '152', null, 'en');
-INSERT INTO `source` VALUES ('100354', 'http://localhost:8080/bootstrap/logos/Qeelin.png', '1', 'Qeelin', null, '55', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '153', null, 'zn');
-INSERT INTO `source` VALUES ('100355', 'http://localhost:8080/bootstrap/logos/Qeelin.png', '1', 'Qeelin', null, '56', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '154', null, 'en');
-INSERT INTO `source` VALUES ('100356', 'http://localhost:8080/bootstrap/logos/GIRARD-PERREGAUX.png', '1', '芝柏表', null, '57', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '155', null, 'zn');
-INSERT INTO `source` VALUES ('100357', 'http://localhost:8080/bootstrap/logos/GIRARD-PERREGAUX.png', '1', 'GIRARD-PERREGAUX', null, '58', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '156', null, 'en');
-INSERT INTO `source` VALUES ('100358', 'http://localhost:8080/bootstrap/logos/HERMES.png', '1', 'HERMES', null, '59', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '157', null, 'zn');
-INSERT INTO `source` VALUES ('100359', 'http://localhost:8080/bootstrap/logos/HERMES.png', '1', 'HERMES', null, '60', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '158', null, 'en');
-INSERT INTO `source` VALUES ('100360', 'http://localhost:8080/bootstrap/logos/SHANG XIA.png', '1', 'SHANG XIA', null, '61', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '159', null, 'zn');
-INSERT INTO `source` VALUES ('100361', 'http://localhost:8080/bootstrap/logos/SHANG XIA.png', '1', 'SHANG XIA', null, '62', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '160', null, 'en');
-INSERT INTO `source` VALUES ('100362', 'http://localhost:8080/bootstrap/logos/CHANEL.png', '1', 'CHANEL', null, '63', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '161', null, 'zn');
-INSERT INTO `source` VALUES ('100363', 'http://localhost:8080/bootstrap/logos/CHANEL.png', '1', 'CHANEL', null, '64', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '162', null, 'en');
-INSERT INTO `source` VALUES ('100364', 'http://localhost:8080/bootstrap/logos/Patek Philippe.png', '1', 'Patek Philippe', null, '65', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '163', null, 'zn');
-INSERT INTO `source` VALUES ('100365', 'http://localhost:8080/bootstrap/logos/Patek Philippe.png', '1', 'Patek Philippe', null, '66', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '164', null, 'en');
-INSERT INTO `source` VALUES ('100366', 'http://localhost:8080/bootstrap/logos/ROLEX.png', '1', 'ROLEX', null, '67', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '165', null, 'zn');
-INSERT INTO `source` VALUES ('100367', 'http://localhost:8080/bootstrap/logos/ROLEX.png', '1', 'ROLEX', null, '68', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '166', null, 'en');
-INSERT INTO `source` VALUES ('100368', 'http://localhost:8080/bootstrap/logos/Chopard.png', '1', '萧邦', null, '69', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '167', null, 'zn');
-INSERT INTO `source` VALUES ('100369', 'http://localhost:8080/bootstrap/logos/Chopard.png', '1', 'Chopard', null, '70', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '168', null, 'en');
-INSERT INTO `source` VALUES ('100370', 'http://localhost:8080/bootstrap/logos/FOREVERMARK.png', '1', 'FOREVERMARK', null, '71', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '169', null, 'zn');
-INSERT INTO `source` VALUES ('100371', 'http://localhost:8080/bootstrap/logos/FOREVERMARK.png', '1', 'FOREVERMARK', null, '72', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '170', null, 'en');
-INSERT INTO `source` VALUES ('100372', 'http://localhost:8080/bootstrap/logos/MIKIMOTO.png', '1', 'MIKIMOTO', null, '73', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '171', null, 'zn');
-INSERT INTO `source` VALUES ('100373', 'http://localhost:8080/bootstrap/logos/MIKIMOTO.png', '1', 'MIKIMOTO', null, '74', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '172', null, 'en');
-INSERT INTO `source` VALUES ('100374', 'http://localhost:8080/bootstrap/logos/PLATINUM.png', '1', 'PLATINUM', null, '75', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '173', null, 'zn');
-INSERT INTO `source` VALUES ('100375', 'http://localhost:8080/bootstrap/logos/PLATINUM.png', '1', 'PLATINUM', null, '76', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '174', null, 'en');
-INSERT INTO `source` VALUES ('100376', 'http://localhost:8080/bootstrap/logos/Wellendorff.png', '1', 'Wellendorff', null, '77', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '175', null, 'zn');
-INSERT INTO `source` VALUES ('100377', 'http://localhost:8080/bootstrap/logos/Wellendorff.png', '1', 'Wellendorff', null, '78', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '176', null, 'en');
-INSERT INTO `source` VALUES ('100378', 'http://localhost:8080/bootstrap/logos/VERTU.png', '1', 'VERTU', null, '79', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '177', null, 'zn');
-INSERT INTO `source` VALUES ('100379', 'http://localhost:8080/bootstrap/logos/VERTU.png', '1', 'VERTU', null, '80', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '178', null, 'en');
-INSERT INTO `source` VALUES ('100380', 'http://localhost:8080/bootstrap/logos/LONGCHAMP.png', '1', 'LONGCHAMP', null, '81', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '179', null, 'zn');
-INSERT INTO `source` VALUES ('100381', 'http://localhost:8080/bootstrap/logos/LONGCHAMP.png', '1', 'LONGCHAMP', null, '82', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '180', null, 'en');
-INSERT INTO `source` VALUES ('100382', 'http://localhost:8080/bootstrap/logos/MaxMara.png', '1', 'MaxMara', null, '83', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '181', null, 'zn');
-INSERT INTO `source` VALUES ('100383', 'http://localhost:8080/bootstrap/logos/MaxMara.png', '1', 'MaxMara', null, '84', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '182', null, 'en');
-INSERT INTO `source` VALUES ('100384', 'http://localhost:8080/bootstrap/logos/Ermenegildo.png', '1', 'Ermenegildo Zegna', null, '85', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '183', null, 'zn');
-INSERT INTO `source` VALUES ('100385', 'http://localhost:8080/bootstrap/logos/Ermenegildo.png', '1', 'Ermenegildo', null, '86', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '184', null, 'en');
-INSERT INTO `source` VALUES ('100386', 'http://localhost:8080/bootstrap/logos/ST.JOHN.png', '1', 'ST.JOHN', null, '87', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '185', null, 'zn');
-INSERT INTO `source` VALUES ('100387', 'http://localhost:8080/bootstrap/logos/ST.JOHN.png', '1', 'ST.JOHN', null, '88', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '186', null, 'en');
-INSERT INTO `source` VALUES ('100388', 'http://localhost:8080/bootstrap/logos/COACH.png', '1', 'COACH', null, '89', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '187', null, 'zn');
-INSERT INTO `source` VALUES ('100389', 'http://localhost:8080/bootstrap/logos/COACH.png', '1', 'COACH', null, '90', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '188', null, 'en');
-INSERT INTO `source` VALUES ('100390', 'http://localhost:8080/bootstrap/logos/ALFA ROMEO.png', '1', 'ALFA ROMEO', null, '91', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '189', null, 'zn');
-INSERT INTO `source` VALUES ('100391', 'http://localhost:8080/bootstrap/logos/ALFA ROMEO.png', '1', 'ALFA ROMEO', null, '92', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '190', null, 'en');
-INSERT INTO `source` VALUES ('100392', 'http://localhost:8080/bootstrap/logos/MASERATI.png', '1', 'MASERATI', null, '93', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '191', null, 'zn');
-INSERT INTO `source` VALUES ('100393', 'http://localhost:8080/bootstrap/logos/MASERATI.png', '1', 'MASERATI', null, '94', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '192', null, 'en');
-INSERT INTO `source` VALUES ('100394', 'http://localhost:8080/bootstrap/logos/Ferrari.png', '1', 'Ferrari', null, '95', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '193', null, 'zn');
-INSERT INTO `source` VALUES ('100395', 'http://localhost:8080/bootstrap/logos/Ferrari.png', '1', 'Ferrari', null, '96', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '194', null, 'en');
-INSERT INTO `source` VALUES ('100396', 'http://localhost:8080/bootstrap/logos/CHRYSLER.png', '1', 'CHRYSLER', null, '97', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '195', null, 'zn');
-INSERT INTO `source` VALUES ('100397', 'http://localhost:8080/bootstrap/logos/CHRYSLER.png', '1', 'CHRYSLER', null, '98', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '196', null, 'en');
-INSERT INTO `source` VALUES ('100398', 'http://localhost:8080/bootstrap/logos/JEEP.png', '1', 'JEEP', null, '99', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '197', null, 'zn');
-INSERT INTO `source` VALUES ('100399', 'http://localhost:8080/bootstrap/logos/JEEP.png', '1', 'JEEP', null, '100', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '198', null, 'en');
-INSERT INTO `source` VALUES ('100400', 'http://localhost:8080/bootstrap/logos/JAGUAR.png', '1', 'JAGUAR', null, '101', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '199', null, 'zn');
-INSERT INTO `source` VALUES ('100401', 'http://localhost:8080/bootstrap/logos/JAGUAR.png', '1', 'JAGUAR', null, '102', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '200', null, 'en');
-INSERT INTO `source` VALUES ('100402', 'http://localhost:8080/bootstrap/logos/Ferretti Group.png', '1', 'Ferretti Group', null, '103', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '201', null, 'zn');
-INSERT INTO `source` VALUES ('100403', 'http://localhost:8080/bootstrap/logos/Ferretti Group.png', '1', 'Ferretti Group', null, '104', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '202', null, 'en');
-INSERT INTO `source` VALUES ('100404', 'http://localhost:8080/bootstrap/logos/GODIVA.png', '1', 'GODIVA', null, '105', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '203', null, 'zn');
-INSERT INTO `source` VALUES ('100405', 'http://localhost:8080/bootstrap/logos/GODIVA.png', '1', 'GODIVA', null, '106', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '204', null, 'en');
-INSERT INTO `source` VALUES ('100406', 'http://localhost:8080/bootstrap/logos/INTERCONTINENTAL.png', '1', '洲际酒店及度假村', null, '107', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '205', null, 'zn');
-INSERT INTO `source` VALUES ('100407', 'http://localhost:8080/bootstrap/logos/INTERCONTINENTAL.png', '1', 'INTERCONTINENTAL', null, '108', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '206', null, 'en');
-INSERT INTO `source` VALUES ('100408', 'http://localhost:8080/bootstrap/logos/THE LEADING HOTELS.png', '1', 'THE LEADING HOTELS', null, '109', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '207', null, 'zn');
-INSERT INTO `source` VALUES ('100409', 'http://localhost:8080/bootstrap/logos/THE LEADING HOTELS.png', '1', 'THE LEADING HOTELS', null, '110', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '208', null, 'en');
-INSERT INTO `source` VALUES ('100410', 'http://localhost:8080/bootstrap/logos/Dorchester Collection.png', '1', 'Dorchester Collection', null, '111', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '209', null, 'zn');
-INSERT INTO `source` VALUES ('100411', 'http://localhost:8080/bootstrap/logos/Dorchester Collection.png', '1', 'Dorchester Collection', null, '112', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '210', null, 'en');
-INSERT INTO `source` VALUES ('100412', 'http://localhost:8080/bootstrap/logos/Club Med.png', '1', '地中海俱乐部', null, '113', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '211', null, 'zn');
-INSERT INTO `source` VALUES ('100413', 'http://localhost:8080/bootstrap/logos/Club Med.png', '1', 'Club Med', null, '114', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '212', null, 'en');
-INSERT INTO `source` VALUES ('100414', 'http://localhost:8080/bootstrap/logos/Swissair.png', '1', '瑞士航空', null, '115', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '213', null, 'zn');
-INSERT INTO `source` VALUES ('100415', 'http://localhost:8080/bootstrap/logos/Swissair.png', '1', 'Swissair', null, '116', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '214', null, 'en');
-INSERT INTO `source` VALUES ('100416', 'http://localhost:8080/bootstrap/logos/Air New Zealand.png', '1', '新西兰航空', null, '117', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '215', null, 'zn');
-INSERT INTO `source` VALUES ('100417', 'http://localhost:8080/bootstrap/logos/Air New Zealand.png', '1', 'Air New Zealand', null, '118', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '216', null, 'en');
-INSERT INTO `source` VALUES ('100418', 'http://localhost:8080/bootstrap/logos/Steinway&Sons.png', '1', '施坦威钢琴', null, '119', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '217', null, 'zn');
-INSERT INTO `source` VALUES ('100419', 'http://localhost:8080/bootstrap/logos/Steinway&Sons.png', '1', 'Steinway&Sons', null, '120', '2016-01-23', 'ADMIN', '2016-01-23', 'partnerimg', 'ADMIN', 'ul', '218', null, 'en');
+INSERT INTO `source` VALUES ('100000', 'bootstrap/images/homecarousel01.png', '1', 'homecarousel01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100001', 'bootstrap/images/partner1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100002', 'bootstrap/images/homecarousel01.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100003', 'bootstrap/images/home-jz.png', '1', 'homecarousel02-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea11', null, null);
+INSERT INTO `source` VALUES ('100004', 'bootstrap/images/wd.png', '1', 'homecarousel03-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea12', null, null);
+INSERT INTO `source` VALUES ('100005', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100006', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100007', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, null);
+INSERT INTO `source` VALUES ('100008', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100009', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100010', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, null);
+INSERT INTO `source` VALUES ('100011', 'bootstrap/images/music.png', '1', 'homecarousel04-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea13', null, null);
+INSERT INTO `source` VALUES ('100012', 'bootstrap/images/homecarousel04.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100013', 'bootstrap/images/homecarousel02.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100014', 'bootstrap/images/homecarousel03.png', '1', 'homecarousel04', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'home', 'imagearea4', null, null);
+INSERT INTO `source` VALUES ('100015', 'bootstrap/images/platform1.png', '1', 'homecarousel02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea2', null, null);
+INSERT INTO `source` VALUES ('100016', 'bootstrap/images/platform2.png', '1', 'homecarousel03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'platform', 'imagearea3', null, null);
+INSERT INTO `source` VALUES ('100017', 'bootstrap/images/partner1.png', '1', 'partner1', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'partner', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100018', 'bootstrap/images/homecarousel02.png', '1', 'ul01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100019', 'bootstrap/images/homecarousel03.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100020', 'bootstrap/images/homecarousel04.png', '1', 'ul02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100021', 'bootstrap/images/homecarousel03.png', '1', 'awoe01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100022', 'bootstrap/images/homecarousel04.png', '1', 'awoe02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100023', 'bootstrap/images/homecarousel02.png', '1', 'awoe03', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100024', 'bootstrap/images/jz.png', '1', 'ul-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'ul', 'imagearea11', null, null);
+INSERT INTO `source` VALUES ('100025', 'bootstrap/images/wd.png', '1', 'awoe-logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'awoe', 'imagearea11', null, null);
+INSERT INTO `source` VALUES ('100026', 'bootstrap/images/homecarousel04.png', '1', 'music01', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100027', 'bootstrap/images/homecarousel02.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100028', 'bootstrap/images/homecarousel03.png', '1', 'music02', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'music', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100029', 'bootstrap/images/logo.png', '1', 'logo', null, null, '2016-01-18', 'ADMIN', '2016-01-18', 'img', 'ADMIN', 'logoimage', '', null, null);
+INSERT INTO `source` VALUES ('100030', 'bootstrap/images/partner1.png', '1', 'partner2', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'img', 'ADMIN', 'partner', 'imagearea1', null, null);
+INSERT INTO `source` VALUES ('100099', 'video/joinvideo.mp4', '1', 'joinvideo', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'join', null, null, 'zn');
+INSERT INTO `source` VALUES ('100200', 'bootstrap/images/partner1.png', '1', 'testvideoimg', null, null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100201', 'bootstrap/images/homecarousel03.png', '1', 'testvideo2', '/ul', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100202', 'bootstrap/images/wd.png', '1', 'testvideo3', '/awoe/awoeinner/test', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100203', 'bootstrap/images/homecarousel02.png', '1', 'T4', '/home', null, '2016-01-20', 'ADMIN', '2016-01-20', 'videoimg', 'ADMIN', null, null, null, null);
+INSERT INTO `source` VALUES ('100998', 'bootstrap/images/homecarousel02.png', '1', '试试图片', '/ul/ulinner/100999', null, '2016-01-22', 'ADMIN', '2016-01-22', 'videoimg', 'ADMIN', 'ul', null, 'shishitupian描述', 'zn');
+INSERT INTO `source` VALUES ('100999', 'video/joinvideo.mp4', '1', '试试', null, null, '2016-01-22', 'ADMIN', '2016-01-19', 'video/mp4', 'ADMIN', 'ul', null, 'shishi', 'zn');
 
 -- ----------------------------
 -- Table structure for `user_info`

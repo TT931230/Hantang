@@ -6,7 +6,8 @@
  * Time: 14:34
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div>
+<div class="managepagetitle">极致管理</div>
+<div class="hpm-div">
     <div class="row"><label class="col-lg-2">极致A区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
@@ -25,7 +26,7 @@
         <label class="col-lg-2">是否自动轮播</label>
     </div>
 </div>
-<hr>
+<div class="hpm-div">
 <div class="row">
     <label class="col-lg-2">语言类型</label>
     <select  class="col-lg-2" id="third_level">
@@ -34,7 +35,9 @@
         <option value="fr">法文</option>
     </select>
 </div>
-<hr>
+</div>
+<div class="hpm-savebtn">
 <div class="row">
     <button onclick="$saveArea('ularea')">保存</button>
+</div>
 </div>
