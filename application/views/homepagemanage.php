@@ -7,8 +7,7 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <body onload="$getselectedinfo('home')">
-<div class="managepagetitle">首页管理</div>
-<div class="hpm-div">
+<div>
     <div class="row"><label class="col-lg-2">首页A区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
@@ -27,8 +26,8 @@
         <label class="col-lg-2">是否自动轮播</label>
     </div>
 </div>
-
-<div class="hpm-div">
+<hr>
+<div>
     <div class="row"><label class="col-lg-2">首页B区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
@@ -47,8 +46,8 @@
         <label class="col-lg-2">是否自动轮播</label>
     </div>
 </div>
-
-<div class="hpm-div">
+<hr>
+<div>
     <div class="row"><label class="col-lg-2">首页C区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
@@ -67,8 +66,8 @@
         <label class="col-lg-2">是否自动轮播</label>
     </div>
 </div>
-
-<div class="hpm-div">
+<hr>
+<div>
     <div class="row"><label class="col-lg-2">首页D区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
@@ -87,7 +86,7 @@
         <label class="col-lg-2">是否自动轮播</label>
     </div>
 </div>
-<div class="hpm-div">
+<hr>
 <div class="row">
     <label class="col-lg-2">语言类型</label>
     <select  class="col-lg-2" id="third_level">
@@ -96,10 +95,8 @@
         <option value="fr">法文</option>
     </select>
 </div>
-</div>
-<div class="hpm-savebtn">
+<hr>
 <div class="row">
     <button onclick="$saveArea('homearea')">保存</button>
-</div>
 </div>
 <body>

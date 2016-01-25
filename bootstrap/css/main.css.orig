@@ -308,24 +308,6 @@
     text-align: center;
     border-bottom: 0px solid #761c19;
 }
-.dropdown-list-line {
-    height: 1px;
-    padding: 0 40%;
-}
-.dropdown-list-line span {
-    display: block;
-    height: inherit;
-    background: #fff;
-}
-.dropdown-triangle {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
-    position: absolute;
-    margin-left: -4px;
-}
 .dropdowndepart>li>a {
     display: block;
     padding: 3px 20px;
@@ -334,18 +316,16 @@
     line-height: 1.42857143;
     color: #FFF;
     white-space: nowrap;
-    /*border-top: 1px solid #fff;*/
+    border-top: 1px solid #fff;
 }
 .dropdowndepart>li>a:hover{
-/*    background-color: #636363;
+    background-color: #636363;
     left:-15%;
     width:130%;
     height:60%;
+    color:#fff;
     font-size:12pt;
-    position:relative;*/
-    background-color: #C9C9C9;
-    color:#000;
-    cursor: pointer;
+    position:relative;
 
 }
 
@@ -602,12 +582,11 @@ body {
     
 }
 .masthead-nav > li + li {
-   margin-left:-10px;
+    margin-left: 20px;
 }
 .masthead-nav > li > a {
 
 	height:90px;
-	width:120px;
     margin-top:40px;
     font-size: 10px;
     font-weight: 500;
@@ -616,7 +595,6 @@ body {
     
 }
 .masthead-nav > li > a.active {
-
     background-color: transparent;
     border-bottom-color: #a9a9a9;
     border-bottom: 4px solid #a9a9a9;
@@ -624,79 +602,50 @@ body {
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
-
     background-color: transparent;  
     border-bottom: 4px solid #a9a9a9;
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-
     color: #fff;  
     border-bottom: 4px solid #a9a9a9;
 }
 
 
 #ulli > a:hover,a:focus{
-
-	background-color: #fff;
+	background-color: transparent;
     border-bottom-color: #A73D49;
     
 	
 }
 #ulli >a.active{
-	
     background-color: transparent;
     border-bottom-color: #A73D49;
 }
 
 #awoeli > a:hover,a:focus{
-
 	background-color: transparent;
     border-bottom-color: #3D5C9A;   	
 }
-
-#awoeli >a.active{
 <<<<<<< HEAD
-	
-    background-color: transparent;
-    border-bottom-color: #3D5C9A;
-}
-#musicli> a:hover{
-	margin-top:-3px;
-	height:93px;
-    width:120px;
-    
-    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
-    
-}
-#musicli > a.active{
-	margin-top:2px;
-    width: 120px;
-    height: 92px;
-    border-bottom: none;
-    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
-    
-}
-
-/*
-#musicli:hover{
-    width: 120px;
-    height: 133px;
-    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
-    
-}
-*/
-/*#music >a.active{
-
-    border-bottom-image: url('../images/musicline.jpg');
-}*/
-
 =======
+
+>>>>>>> 0bda67174cbd21b28f5eee9a93223ef2fe837923
+#awoeli >a.active{
 background-color: transparent;
 border-bottom-color: #3D5C9A;
 }
->>>>>>> abc0778d4101d0759a8e3db748b3914962473b07
+
+/*#music > a:hover,a:focus{
+    background-color: transparent;
+    border-bottom-color: green;
+}
+#music >a.active{
+    background-color: transparent;
+    border-bottom-color: green;
+}*/
+
 @media (min-width: 768px) {
     .masthead-brand {
         float: left;
