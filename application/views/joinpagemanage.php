@@ -6,8 +6,7 @@
  * Time: 14:34
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="managepagetitle">加入汉唐管理</div>
-<div class="hpm-div">
+<div>
     <div class="row"><label class="col-lg-2">加入汉唐A区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放视频</label>
@@ -22,7 +21,7 @@
         <label class="col-lg-2">是否隐藏</label>
     </div>
 </div>
-<div class="hpm-div">
+<hr>
 <div class="row">
     <label class="col-lg-2">语言类型</label>
     <select  class="col-lg-2" id="third_level">
@@ -31,9 +30,7 @@
         <option value="fr">法文</option>
     </select>
 </div>
-</div>
-<div class="hpm-savebtn">
+<hr>
 <div class="row">
     <button onclick="$saveArea('joinarea')">保存</button>
-</div>
 </div>

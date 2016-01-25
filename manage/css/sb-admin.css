@@ -225,24 +225,3 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
-.managepagetitle{
-	height:30px;
-	width:100%;
-	font-size:20px;
-	font-weight:500;
-	padding-left:45px;
-	color:#ffffff;
-	background:#008080;
-}
-
-/*homepage*/
-.hpm-div{
-	margin-top:20px;
-	margin-left:50px;
-	padding-bottom:20px;
-	border-bottom:1px solid #c8c8c8;
-}
-.hpm-savebtn{
-	margin-top:20px;
-	margin-left:65px;
-}
