@@ -83,6 +83,7 @@ class PageManager extends CI_Controller
         $keyword=$_POST['keyword'];
         $keywordarray = explode('|||',$keyword);
         $third_level=$_POST['third_level'];
+        $first_level=$_POST['first_level'];
         $insertvideo=array(
             'videoimg'=>$videoimg,
             'keyword'=>$keyword,
@@ -94,7 +95,7 @@ class PageManager extends CI_Controller
             'type'=>'video/mp4',
             'updater'=>'ADMIN',
             'creator'=>'ADMIN',
-            'first_level'=>null,
+            'first_level'=>$first_level,
             'second_level'=>null,
             'third_level'=>$third_level,
             'link_url'=>null,

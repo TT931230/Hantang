@@ -44,6 +44,7 @@ function $queryImage(){
     console.log(menu+source_name);
 }
 function $saveVideo(){
+    first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
     videoimg=$('#videoimg')[0].value;
@@ -55,7 +56,7 @@ function $saveVideo(){
     third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level,
         url:"PageManager/saveVideo",
         success: function(result)
         {
