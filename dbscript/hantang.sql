@@ -496,7 +496,7 @@ INSERT INTO `source` VALUES ('100029', 'http://localhost:8080/bootstrap/images/l
 INSERT INTO `source` VALUES ('100030', 'http://localhost:8080/bootstrap/images/partner1.png', '1', 'partner2', null, null, '2016-01-19', 'ADMIN', '2016-01-19', 'img', 'ADMIN', 'partner', 'imagearea1', null, 'zn');
 INSERT INTO `source` VALUES ('100031', 'http://localhost:8080/bootstrap/images/platform1.png', '1', 'ullogo', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'ullogo', null, null, 'zn');
 INSERT INTO `source` VALUES ('100032', 'http://localhost:8080/bootstrap/images/wd.png', '1', 'awoelogo', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'awoelogo', null, null, 'zn');
-INSERT INTO `source` VALUES ('100033', 'http://localhost:8080/bootstrap/images/musicinner.png', '1', 'musiclogo', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'musiclogo', null, null, 'zn');
+INSERT INTO `source` VALUES ('100033', 'http://localhost:8080/bootstrap/images/musicinner.png', '1', 'mu', null, null, '2016-01-22', 'ADMIN', '2016-01-22', 'img', 'ADMIN', 'musiclogo', null, null, 'zn');
 INSERT INTO `source` VALUES ('100034', 'http://localhost:8080/bootstrap/images/logo1.png', '1', 'footerlogo1', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo1', null, 'zn');
 INSERT INTO `source` VALUES ('100035', 'http://localhost:8080/bootstrap/images/logo2.png', '1', 'footerlogo2', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo2', null, 'zn');
 INSERT INTO `source` VALUES ('100036', 'http://localhost:8080/bootstrap/images/logo3.png', '1', 'footerlogo3', null, null, '2016-01-23', 'ADMIN', '2016-01-23', 'img', 'ADMIN', 'footer', 'footerlogo3', null, 'zn');
