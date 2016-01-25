@@ -51,17 +51,17 @@ class PageManager extends CI_Controller
     }
 
     function saveImage(){
-        $sequence=$_POST['sequence'];
-        $url=$_POST['url'];
+        $sequence='1';
+//        $url=$_POST['url'];
         $source_location=$_POST['source_location'];
         $source_name=$_POST['source_name'];
         $source_remark=$_POST['source_remark'];
         $insertcontent=array(
             'source_location'=>$source_location,
-            'status'=>'2',
+            'status'=>'1',
             'source_name'=>$source_name,
             'source_remark'=>$source_remark,
-            'link_url'=>$url,
+            'link_url'=>null,
             'sequence'=>$sequence,
             'type'=>'img',
             'updater'=>'ADMIN',
@@ -75,7 +75,7 @@ class PageManager extends CI_Controller
         return $this->source_model->insertSource($insertcontent);
     }
     function saveVideo(){
-        $sequence=$_POST['sequence'];
+        $sequence='1';
         $source_location=$_POST['source_location'];
         $source_name=$_POST['source_name'];
         $source_remark=$_POST['source_remark'];

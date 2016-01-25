@@ -14,12 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <input class="col-lg-2" type="text" id="source_name">
     </div>
     <div class="row">
-        <label class="col-lg-2">排序</label>
-        <input class="col-lg-2" type="number" id="sequence">
-    </div>
-    <div class="row">
-        <label class="col-lg-2">Url</label>
-        <input class="col-lg-2" type="text" id="url">
         <label class="col-lg-2">图片地址</label>
         <input class="col-lg-2" type="text" id="source_location">
     </div>
