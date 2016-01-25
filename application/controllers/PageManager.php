@@ -13,6 +13,35 @@ class PageManager extends CI_Controller
         $this->load->model('source_model');
         $this->load->model('keyword_model');
 
+        $imagelists=array();
+
+        $this->db->from('source');
+        $this->db->where('type','img');
+        $this->db->or_where('type','videoimg');
+        $this->db->or_where('type','partnerimg');
+        $imgarray=$this->db->get()->result_array();
+        $imgtypearray=array(
+            'img','videoimg','partnerimg'
+        );
+        for($i=0;$i<count($imgarray);$i++){
+            $tmpselect='';
+            for($j=0;$j<count($imgtypearray);$j++){
+                if($imgtypearray[$j]==$imgarray[$i]['type']){
+                    $tmpselect.='<option value="'.$imgtypearray[$j].'" selected>'.$imgtypearray[$j].'</option>';
+                }else{
+                    $tmpselect.='<option value="'.$imgtypearray[$j].'">'.$imgtypearray[$j].'</option>';
+                }
+            }
+            $tmpimgarray=array(
+                'source_id'=>$imgarray[$i]['id'],
+                'source_location'=>$imgarray[$i]['source_location'],
+                'source_name'=>$imgarray[$i]['source_name'],
+                'imgtype'=>'<select id="'.$imgarray[$i]['id'].'_imgtype">'.$tmpselect.'</select>',
+                'sequence'=>$imgarray[$i]['sequence']
+            );
+            array_push($imagelists,$tmpimgarray);
+        }
+
         $imgsource=$this->source_model->querySource(
             array(
                 'status'=>null,
@@ -43,6 +72,7 @@ class PageManager extends CI_Controller
             )
         );
         $data=array(
+            'imagelists'=>$imagelists,
             'img'=>$imgsource,
             'keyword'=>$keyword,
             'video'=>$videosource
