@@ -9,12 +9,8 @@
 <div>
     <div class="row"><label class="col-lg-2">加入汉唐A区域管理</label></div>
     <div class="row">
-        <label class="col-lg-2">区域名称</label>
-        <input class="col-lg-2" type="text" id="area_name_a">
-    </div>
-    <div class="row">
         <label class="col-lg-2">播放视频</label>
-        <select  class="col-lg-2 multiselect" multiple="multiple" id="source_name_a">
+        <select  class="col-lg-2" id="source_name_a">
             {video}
             <option value="{id}">{source_name}</option>
             {/video}
@@ -24,7 +20,17 @@
         <input type="checkbox" id="is_hide_a">
         <label class="col-lg-2">是否隐藏</label>
     </div>
-    <div class="row">
-        <button onclick="$saveArea('joinareaa')">保存</button>
-    </div>
+</div>
+<hr>
+<div class="row">
+    <label class="col-lg-2">语言类型</label>
+    <select  class="col-lg-2" id="third_level">
+        <option value="zn">中文</option>
+        <option value="en">英文</option>
+        <option value="fr">法文</option>
+    </select>
+</div>
+<hr>
+<div class="row">
+    <button onclick="$saveArea('joinarea')">保存</button>
 </div>

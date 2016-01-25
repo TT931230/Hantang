@@ -23,6 +23,9 @@ class Keyword_model extends CI_Model
         parent::__construct();
     }
     public function queryKeyword($querycontent){
+        if($querycontent['keyword']){
+            $this->db->where('keyword',$querycontent['keyword']);
+        }
         if($querycontent['first_level']){
             $this->db->where('first_level',$querycontent['first_level']);
         }
@@ -41,19 +44,21 @@ class Keyword_model extends CI_Model
         return $query->result_array();
     }
     public function insertKeyword($insertcontent){
-        date_default_timezone_set("UTC");
-        $this->keyword    = $insertcontent['keyword'];
-        $this->status    = $insertcontent['status'];
-        $this->sequence    = $insertcontent['sequence'];
-        $this->updater    = $insertcontent['updater'];
-        $this->creator    = $insertcontent['creator'];
-        $this->first_level    = $insertcontent['first_level'];
-        $this->second_level    = $insertcontent['second_level'];
-        $this->third_level    = $insertcontent['third_level'];
-        $this->keyword_remark = $insertcontent['keyword_remark'];
-        $this->create_time = date("y-m-d",time());
-        $this->update_time = date("y-m-d",time());
-        $this->db->insert('keyword', $this);
+        if(count(queryKeyword($insertcontent))<1){
+            date_default_timezone_set("UTC");
+            $this->keyword    = $insertcontent['keyword'];
+            $this->status    = $insertcontent['status'];
+            $this->sequence    = $insertcontent['sequence'];
+            $this->updater    = $insertcontent['updater'];
+            $this->creator    = $insertcontent['creator'];
+            $this->first_level    = $insertcontent['first_level'];
+            $this->second_level    = $insertcontent['second_level'];
+            $this->third_level    = $insertcontent['third_level'];
+            $this->keyword_remark = $insertcontent['keyword_remark'];
+            $this->create_time = date("y-m-d",time());
+            $this->update_time = date("y-m-d",time());
+            $this->db->insert('keyword', $this);
+        }
     }
     public function updateKeyword($updatecontent){
         $this->sequence    = $updatecontent['sequence'];

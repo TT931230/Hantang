@@ -9,10 +9,6 @@
 <div>
     <div class="row"><label class="col-lg-2">合作伙伴A区域管理</label></div>
     <div class="row">
-        <label class="col-lg-2">区域名称</label>
-        <input class="col-lg-2" type="text" id="area_name_a">
-    </div>
-    <div class="row">
         <label class="col-lg-2">播放图片</label>
         <select  class="col-lg-2 multiselect" multiple="multiple" id="source_name_a">
             {img}
@@ -28,7 +24,17 @@
         <input type="checkbox" id="is_auto_a">
         <label class="col-lg-2">是否自动轮播</label>
     </div>
-    <div class="row">
-        <button onclick="$saveArea('partnerareaa')">保存</button>
-    </div>
+</div>
+<hr>
+<div class="row">
+    <label class="col-lg-2">语言类型</label>
+    <select  class="col-lg-2" id="third_level">
+        <option value="zn">中文</option>
+        <option value="en">英文</option>
+        <option value="fr">法文</option>
+    </select>
+</div>
+<hr>
+<div class="row">
+    <button onclick="$saveArea('partnerarea')">保存</button>
 </div>
