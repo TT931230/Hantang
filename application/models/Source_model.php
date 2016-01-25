@@ -93,10 +93,11 @@ class Source_model extends CI_Model
         $this->db->insert('source', $this);
         $insertedid=$this->db->insert_id();
         $updatearray=array(
+            'status'=>'2',
             'type'=>'videoimg',
+            'link_url'=>'/'.$insertvideo['first_level'].'/'.$insertvideo['first_level'].'inner/'.$insertedid,
             'updater'=>$insertvideo['updater'],
-            'update_time'=>date("y-m-d",time()),
-            'third_level'=>$insertedid
+            'update_time'=>date("y-m-d",time())
         );
         $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));
         echo count($insertvideo['keyword']);
