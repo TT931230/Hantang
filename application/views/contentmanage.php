@@ -130,7 +130,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="javascript:;" onclick="$changetags('tagsupload')">标签上传</a>
                         </li>
                         <li>
-                            <a href="javascript:;" onclick="$changetags('tagsedit')">标签编辑</a>
+                            <a href="javascript:;" onclick="$changetags('tagsedit')">标签管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('brandedit')">品牌管理</a>
                         </li>
                     </ul>
                 </li>
@@ -153,17 +156,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                         <li>
                             <a href="javascript:;" onclick="$changetags('displaylist')">演出列表</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="active">
-                    <a href="javascript:;" data-toggle="collapse" data-target="#ftp">FTP<i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="ftp" class="collapse">
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('ftpusermanage')">FTP用户管理</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" onclick="$changetags('ftpfilemanage')">FTP文件管理</a>
                         </li>
                     </ul>
                 </li>

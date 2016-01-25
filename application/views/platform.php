@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </video>
             </div>
 
-            <div class="plat-subtitle platform-sub" style="display: {platformdisarea1}">
+            <div class="plat-subtitle platform-sub" style="display: {platformdisarea2}">
                 {imagearea2}
                 <a href="{link_url}"><img src="{source_location}"></a>
                 {/imagearea2}
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="plat-map">
                 <img src="{ulmap}">
             </div>
-            <div class="plat-subtitle platform-sub" style="display: {platformdisarea1}">
+            <div class="plat-subtitle platform-sub" style="display: {platformdisarea3}">
                 {imagearea3}
                 <img src='{source_location}' alt="">
                 {/imagearea3}
