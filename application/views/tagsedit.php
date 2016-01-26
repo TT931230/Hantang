@@ -7,10 +7,11 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div style="width:100%;background-color: #ffffff">
-    <div class="row"><label class="col-lg-2">标签管理</label></div>
+<div class="managepagetitle">品牌管理</div>
+<div class="te-div">
+<!--    <div class="row"><label class="col-lg-2">品牌管理</label></div>-->
     <div class="row">
-        <label class="col-lg-2">标签名称</label>
+        <label class="col-lg-2 te-title">品牌名称</label>
         <input class="col-lg-2" type="text" id="keyword">
     </div>
     <div id="caselistshow">
@@ -46,7 +47,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/keywordlists}
         </table>
     </div>
+    <div class="te-savebtn">
     <div class="row">
         <button onclick="$queryLogo()" class="btn btn-default">查询</button>
+    </div>
     </div>
 </div>
