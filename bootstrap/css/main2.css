@@ -632,12 +632,11 @@ margin-left:0px;
 }
  /* musicinner */
 .musicinner-subtitle{
-  
+	position: relative;
     height:50px;
-    
+    margin-bottom:-1px;
  }
  .musicinner-subtitle img{
-
  height: inherit;
- width: inherit;
+ width: 100%;
  } 
