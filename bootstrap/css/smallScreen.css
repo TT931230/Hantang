@@ -8,7 +8,11 @@
 
     /*                  header                 */
     .brand_logo{
-        height:100px
+        height:120px;
+        border:none
+    }
+    #li1{
+        margin-left: 5px;
     }
 
     .masthead-brand {
@@ -23,6 +27,11 @@
         height:40px;
         width:40px;
     }
+    #awoeli {
+        display: inline-block;
+        width: 33%;
+        padding: 0;
+    }
     .masthead-brand h3{
         margin-top: 5px;
         margin-bottom: 5px;
@@ -33,17 +42,70 @@
         left: 0;
         width:100%;
         margin: 0 0 0 0 ;
-        height:40px;
+        height:60px;
     }
 
     .masthead_ul ul{
         margin: 0;
         padding: 0;
     }
+
+    .headernavul{
+        padding-top: 2px;
+        display: inline-block;
+        height: auto;
+        overflow: visible;
+        width: 100%;
+    }
     .headernavul >li{
-        height:35px;
-        width:16.6%;
-        margin-left: 2px;
+        color: #808080;
+        float: left;
+
+
+        position:relative;
+        vertical-align: top;
+        display:inline-block;
+        height:30px;
+        width:33.3%
+
+    }
+    #ulli > a {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #808080;
+        padding: 0;
+    }
+    #awoeli > a {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+        color: #808080;
+        padding: 0;
+    }
+    #musicli > a {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+        color: #808080;
+        padding: 0;
+    }
+    #musicli > a:hover{
+
+    }
+    .masthead-nav > li > a {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #808080;
     }
     .masthead-nav > li + li {
         margin-left: -2px;
@@ -63,7 +125,7 @@
     }
     .masthead-nav > li > a {
         margin-top: 0;
-        font-size: 10px;
+        font-size: 15px;
         color: #808080;
     }
     .masthead-nav > li > a.active {
@@ -71,7 +133,7 @@
         border-bottom: none;
     }
     .masthead_ul ul li a{
-        font-size: 6px;
+        font-size: 15px;
         margin-top: 0;
         margin-left: 2px;
     }
@@ -312,7 +374,6 @@
         float: left;
         margin-left: 5px;
         width: 20px;
-
         position:relative;
         vertical-align: top;
         display:inline-block;
