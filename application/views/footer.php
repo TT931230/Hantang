@@ -36,7 +36,7 @@
             </div>
             <div class="footerleftdiv">
                 <div class="footertype"><img src="{footerlogo3}" alt=""></div>
-                    <div class="footerdetials">
+                    <div id="footer_3" class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
                          <span class="footerlogos">
@@ -60,7 +60,7 @@
             </div>
             <div class="footerleftdiv">           
                 <div class="footertype"><img src="{footerlogo4}" alt=""></div>
-                    <div class="footerdetials">
+                    <div id="footer_4" class="footerdetials">
                         <div class="footerdetail">
                             <a href="javascript:;">
                          <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#weixinModal">
