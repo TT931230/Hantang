@@ -12,7 +12,6 @@ class Page_data_model extends CI_Model{
     }
 
     public function get_page_data($languageType,$url){
-        $this->lang->load('test',$languageType);
         $this->db->from('source');
         $this->db->where('first_level','footer');
         $this->db->where('third_level',$languageType);

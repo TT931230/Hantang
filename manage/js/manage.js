@@ -618,3 +618,91 @@ function $savebrand(){
 function $deletebrand(){
 
 }
+function $savesingleimg(source_id){
+    imgtype=$('#'+source_id+'_imgtype')[0].value;
+    imgsequence=$('#'+source_id+'_sequence')[0].value;
+    $.ajax({
+        type:"post",
+        data: 'id='+source_id+'&imgtype='+imgtype+'&sequence='+imgsequence,
+        url:"PageManager/savesingleimg",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('caselist');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletesingleimg(source_id){
+    $.ajax({
+        type:"post",
+        data: 'source_id='+source_id,
+        url:"PageManager/deletesinglesource",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('caselist');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $savesinglevideo(imgid){
+    imgsequence=$('#'+imgid+'_sequence')[0].value;
+    $.ajax({
+        type:"post",
+        data: 'id='+imgid+'&sequence='+imgsequence,
+        url:"PageManager/savesinglevideo",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('videolist');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletesinglevideo(source_id){
+    $.ajax({
+        type:"post",
+        data: 'source_id='+source_id,
+        url:"PageManager/deletesinglesource",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('videolist');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $savebrand(brand_id){
+    $.ajax({
+        type:"post",
+        data: 'brand_id='+brand_id+'&source_id='+$('#'+brand_id+'_img')[0].value+'&sequence='+$('#'+brand_id+'_sequence')[0].value,
+        url:"PageManager/savebrand",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('brandedit');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
