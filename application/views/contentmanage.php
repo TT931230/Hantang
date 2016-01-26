@@ -172,7 +172,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper" style="height: 1200px;">
+    <div id="page-wrapper" style="height: 1500px;">
         <div class="container-fluid">
 
         </div>
