@@ -19,12 +19,14 @@ body {
 
 #wrapper {
     padding-left: 0;
+     width: 100%;
 }
 
 #page-wrapper {
     width: 100%;
     padding: 0;
     background-color: #fff;
+    height:auto;
 }
 
 .huge {
@@ -302,4 +304,134 @@ ul.alert-dropdown {
 .de-savebtn{
 	margin-top:20px;
 	margin-left:30px;
+}
+/* caselist */
+.cl-div{
+	margin-top:20px;
+	margin-left:10px;
+	margin-right:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #c0c0c0;
+}
+.cl-title{
+	width:100px;
+	height:30px;
+	padding-top:5px;
+}
+.cl-querybtn{
+	margin-left:30px;
+	height:30px;	
+}
+.cl-input{
+	height:30px;
+}
+.cl-table{
+	margin-top:20px;
+	margin-left:10px;
+	margin-rifht:10px;
+	background-color:#fff;
+	width:100%;
+}
+.cl-imgname{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgadd{
+	width:25%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgtype{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgseq{
+	width:10%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgseqinput{
+	width:50px;
+	
+}
+.cl-imgmini{
+	width:15%;
+	margin-left:10px;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgedit{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgeditbtn{
+	margin-right:10px;
+}
+/* videolist*/
+.vl-imgname{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-imgadd{
+	width:30%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-imgfirst{
+	width:5%;
+	padding-left:40px;	
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-imglang{
+	width:5%;
+	padding-left:30px;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-imgseqinput{
+	width:50px;
+
+}
+.vl-imgseq{
+	width:10%;
+	height:60px;
+	padding-left:30px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-imgmini{
+	width:15%;
+	height:60px;
+	padding-left:30px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-imgedit{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.vl-title1{
+	
+}
+.vl-title2{
+	
+}
+.vl-title3{
+	padding-left:30px;
+}
+.vl-title4{
+	padding-left:20px;
+}
+.vl-title5{
+	padding-left:30px;
+}
+.vl-title6{
+	padding-left:30px;
+}
+.vl-title7{
+	
 }
