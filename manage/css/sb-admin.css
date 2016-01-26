@@ -225,3 +225,144 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+.managepagetitle{
+	height:30px;
+	width:100%;
+	font-size:20px;
+	font-weight:500;
+	padding-left:45px;
+	color:#ffffff;
+	background:#008080;
+}
+
+/*homepage*/
+.hpm-div{
+	margin-top:20px;
+	margin-left:50px;
+	padding-bottom:20px;
+	border-bottom:1px solid #c8c8c8;
+}
+.hpm-savebtn{
+	margin-top:20px;
+	margin-left:65px;
+}
+/*caseedit*/
+.ce-div{
+	margin-bottom:20px;
+}
+.ce-savebtn{
+	margin-top:20px;
+	margin-left:20px;
+}
+/*vedit*/
+.ve-div{
+	margin-bottom:20px;
+}
+.ve-savebtn{
+	margin-top:20px;
+	margin-left:20px;
+}
+/*tagsedit*/
+.te-div{
+	margin-top:20px;
+}
+.te-title{
+	width:200px;
+	margin-left:20px;
+	margin-right:-100px;
+	
+}
+.te-savebtn{
+	margin-top:20px;
+	margin-left:20px;
+}
+/*tagupload*/
+.tu-div{
+	margin-left:20px;
+	margin-top:20px;
+}
+/*admininformation*/
+.adminfo-div{
+	margin-top:20px;
+	
+}
+.adminfo-savebtn{
+	margin-top:20px;
+	margin-left:2px;
+}
+
+
+/*displayedit*/
+.de-title{
+	width:200px;
+	margin-left:20px;
+	margin-right:-80px;
+	
+}
+.de-savebtn{
+	margin-top:20px;
+	margin-left:30px;
+}
+/* caselist */
+.cl-div{
+	margin-top:20px;
+	margin-left:10px;
+	margin-right:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #c0c0c0;
+}
+.cl-title{
+	width:100px;
+	height:30px;
+	padding-top:5px;
+}
+.cl-querybtn{
+	margin-left:30px;
+	height:30px;	
+}
+.cl-input{
+	height:30px;
+}
+.cl-table{
+	margin-top:20px;
+	margin-left:10px;
+	margin-rifht:10px;
+}
+.cl-imgname{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgadd{
+	width:25%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgtype{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgseq{
+	width:10%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgseqinput{
+	width:50px;
+	
+}
+.cl-imgmini{
+	width:15%;
+	margin-left:10px;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgedit{
+	width:15%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgeditbtn{
+	margin-right:10px;
+}

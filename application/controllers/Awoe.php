@@ -34,27 +34,37 @@ class Awoe extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='awoe';
         $source_info['second_level']='imagearea11';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='yeardetails';
+        $keyword_info['third_level']=$this->session->language;
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='locationdetails';
+        $keyword_info['third_level']=$this->session->language;
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='typedetails';
+        $keyword_info['third_level']=$this->session->language;
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='activedetails';
+        $keyword_info['third_level']=$this->session->language;
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
@@ -122,22 +132,26 @@ class Awoe extends CI_Controller
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='yeardetails';
-        $source_info['third_level']=$this->session->language;
+        $keyword_info['third_level']=$this->session->language;
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='locationdetails';
-        $source_info['third_level']=$this->session->language;
+        $keyword_info['third_level']=$this->session->language;
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $source_info['third_level']=$this->session->language;
+        $keyword_info['first_level']='awoe';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='typedetails';
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
-        $source_info['third_level']=$this->session->language;
+        $keyword_info['first_level']='awoe';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
