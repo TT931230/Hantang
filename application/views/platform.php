@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="videoarea"   style="display: {platformdisarea1}">
                 <video controls="controls" autoplay=true>
-                    {video}
+                    {videoarea1}
                     <source src="{source_location}" type="{type}" />
-                    {/video}
+                    {/videoarea1}
                 </video>
             </div>
 

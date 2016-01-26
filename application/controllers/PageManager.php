@@ -427,7 +427,7 @@ class PageManager extends CI_Controller
                     if($this->db->get()->result_array()[0]['status']==1){
                         $sourceupdateinfo=array(
                             'first_level'=>'home',
-                            'second_level'=>'imagearea1',
+                            'second_level'=>'imagearea2',
                             'third_level'=>$third_level,
                             'updatetime'=>date("y-m-d",time()),
                             'status'=>'1'
@@ -435,7 +435,7 @@ class PageManager extends CI_Controller
                     }else{
                         $sourceupdateinfo=array(
                             'first_level'=>'home',
-                            'second_level'=>'imagearea1',
+                            'second_level'=>'imagearea2',
                             'third_level'=>$third_level,
                             'updatetime'=>date("y-m-d",time()),
                             'status'=>'2'
@@ -449,7 +449,7 @@ class PageManager extends CI_Controller
                     if($this->db->get()->result_array()[0]['status']==1){
                         $sourceupdateinfo=array(
                             'first_level'=>'home',
-                            'second_level'=>'imagearea1',
+                            'second_level'=>'imagearea3',
                             'third_level'=>$third_level,
                             'updatetime'=>date("y-m-d",time()),
                             'status'=>'1'
@@ -457,7 +457,7 @@ class PageManager extends CI_Controller
                     }else{
                         $sourceupdateinfo=array(
                             'first_level'=>'home',
-                            'second_level'=>'imagearea1',
+                            'second_level'=>'imagearea3',
                             'third_level'=>$third_level,
                             'updatetime'=>date("y-m-d",time()),
                             'status'=>'2'
@@ -471,7 +471,7 @@ class PageManager extends CI_Controller
                     if($this->db->get()->result_array()[0]['status']==1){
                         $sourceupdateinfo=array(
                             'first_level'=>'home',
-                            'second_level'=>'imagearea1',
+                            'second_level'=>'imagearea4',
                             'third_level'=>$third_level,
                             'updatetime'=>date("y-m-d",time()),
                             'status'=>'1'
@@ -479,7 +479,7 @@ class PageManager extends CI_Controller
                     }else{
                         $sourceupdateinfo=array(
                             'first_level'=>'home',
-                            'second_level'=>'imagearea1',
+                            'second_level'=>'imagearea4',
                             'third_level'=>$third_level,
                             'updatetime'=>date("y-m-d",time()),
                             'status'=>'2'
@@ -538,7 +538,7 @@ class PageManager extends CI_Controller
                 if($this->db->get()->result_array()[0]['status']==1){
                     $sourceupdateinfo=array(
                         'first_level'=>'about',
-                        'second_level'=>'imagearea2',
+                        'second_level'=>'videoarea1',
                         'third_level'=>$third_level,
                         'updatetime'=>date("y-m-d",time()),
                         'status'=>'1'
@@ -546,7 +546,7 @@ class PageManager extends CI_Controller
                 }else{
                     $sourceupdateinfo=array(
                         'first_level'=>'about',
-                        'second_level'=>'imagearea2',
+                        'second_level'=>'videoarea1',
                         'third_level'=>$third_level,
                         'updatetime'=>date("y-m-d",time()),
                         'status'=>'2'
@@ -604,7 +604,7 @@ class PageManager extends CI_Controller
                 if($this->db->get()->result_array()[0]['status']==1){
                     $sourceupdateinfo=array(
                         'first_level'=>'platform',
-                        'second_level'=>'imagearea1',
+                        'second_level'=>'videoarea1',
                         'third_level'=>$third_level,
                         'updatetime'=>date("y-m-d",time()),
                         'status'=>'1'
@@ -801,7 +801,7 @@ class PageManager extends CI_Controller
                 if($this->db->get()->result_array()[0]['status']==1){
                     $sourceupdateinfo=array(
                         'first_level'=>'join',
-                        'second_level'=>'imagearea1',
+                        'second_level'=>'videoarea1',
                         'third_level'=>$third_level,
                         'updatetime'=>date("y-m-d",time()),
                         'status'=>'1'
@@ -809,7 +809,7 @@ class PageManager extends CI_Controller
                 }else{
                     $sourceupdateinfo=array(
                         'first_level'=>'join',
-                        'second_level'=>'imagearea1',
+                        'second_level'=>'videoarea1',
                         'third_level'=>$third_level,
                         'updatetime'=>date("y-m-d",time()),
                         'status'=>'2'
