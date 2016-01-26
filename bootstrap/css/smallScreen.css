@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
     body{
         margin:0 0 0 0;
         padding:0 0 0 0;
@@ -475,5 +475,15 @@
     #sharetext {
         font-size: 12px;
         margin-top: 2px;
+    }
+    .videoarea {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+    }
+    .videoarea video {
+        margin-top: -12px;
+        width: 100%;
+        height: 100%;
     }
 }
