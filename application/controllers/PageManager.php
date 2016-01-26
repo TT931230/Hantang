@@ -707,4 +707,23 @@ class PageManager extends CI_Controller
                 break;
         }
     }
+    public function savesingleimg(){
+        $updateitem = array(
+            'type'=>$_POST['imgtype'],
+            'sequence'=>$_POST['sequence']
+        );
+        $this->db->update('source',$updateitem,array('id'=>$_POST['id']));
+    }
+    public function savesinglevideo(){
+        $updateitem = array(
+            'sequence'=>$_POST['sequence']
+        );
+        $this->db->update('source',$updateitem,array('id'=>$_POST['id']));
+    }
+    public function deletesinglesource(){
+        $deleteitem = array(
+            'id'=>$_POST['source_id']
+        );
+        $this->db->delete('source',$deleteitem);
+    }
 }

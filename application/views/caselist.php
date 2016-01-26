@@ -43,8 +43,8 @@
                     <img src="{source_location}" style="width:96px;height: 54px;">
                 </td>
                 <td id="{source_id}_edit">
-                    <a href="javascript:;" onclick="$savebrand('{source_id}')">保存</a>
-                    <a href="javascript:;" onclick="$deletebrand('{source_id}')">删除</a>
+                    <a href="javascript:;" onclick="$savesingleimg('{source_id}')">保存</a>
+                    <a href="javascript:;" onclick="$deletesingleimg('{source_id}')">删除</a>
                 </td>
             </tr>
             {/imagelists}
