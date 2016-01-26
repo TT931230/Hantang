@@ -15,10 +15,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
 
-    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+<!--    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
+
+
+
 
     <meta name="author" content="">
     <!--    <link rel="icon" href="../../favicon.ico">-->
@@ -32,6 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/main2.css" rel="stylesheet">
     <link href="/bootstrap/css/main3.css" rel="stylesheet">
     <link href="/bootstrap/css/main4.css" rel="stylesheet">
+    <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
 </head>
 
 <body>
@@ -39,33 +47,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
 <div class="brand_logo">
     <div class="clearfix newborder">
-    
-        <div class="inner">
-      
-            <h3 class="masthead-brand">
+        <div  class="masthead-brand">
+            <h3>
                 {logoimage}
                 <a href="{link_url}"><img src="{source_location}"></a>
                 {/logoimage}
             </h3>
-            <nav>
-                <ul class="nav masthead-nav headernavul">
-                    <li><a href="/home" class="{homenav} navtags">{home}</a></li>
-                    <li>
-                        <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
-                        <ul class="dropdown-menu dropdownmenucust headernav">
-                            <li><a href="/about">{introduce}</a></li>
-                            <li><a href="/platform">{platform}</a></li>
-                            <li><a href="/partner">{partner}</a></li>
-                        </ul>
-                    </li>
-                    <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
-                    <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
-                    <li id="musicli"><a href="/music" class="{musicnav} navtags">{music}</a></li>
-                    <li><a href="/join" class="{joinnav} navtags">{join}</a></li>
-                </ul>
-            </nav>
-            </div>
         </div>
+
+        <div class="masthead_ul">
+            <ul class="nav masthead-nav headernavul">
+                <li id="li1"><a href="/home" class="{homenav} navtags">{home}</a></li>
+                <li id="li2">
+                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
+                    <ul class="dropdown-menu dropdownmenucust headernav">
+                        <li><a href="/about">{introduce}</a></li>
+                        <li><a href="/platform">{platform}</a></li>
+                        <li><a href="/partner">{partner}</a></li>
+                    </ul>
+                </li>
+                <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
+                <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
+                <li id="musicli"><a href="/music" class="{musicnav} navtags">{music}</a></li>
+                <li id="li3"><a href="/join" class="{joinnav} navtags">{join}</a></li>
+            </ul>
+        </div>
+<!--        <div class="inner">-->
+<!--            -->
+<!---->
+<!--        </div>-->
     </div>
     
 </div>
