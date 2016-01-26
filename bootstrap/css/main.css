@@ -2,7 +2,7 @@
  * Globals
  */
 .headernavul{
-    padding-left:30px;
+  
     /*padding-right:30px;*/
 }
 .modal-content{
@@ -593,34 +593,34 @@ body {
 }
 .masthead-nav > li {
     display: inline-block;
-    
+    width:100px;
+
 }
 .masthead-nav > li + li {
-   margin-left:-15px;
+   margin-left:0;
 }
 .masthead-nav > li > a {
 
 	height:90px;
-	width:120px;
+	width:100px;
     margin-top:40px;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
 
-    
 }
 .masthead-nav > li > a.active {
 
     background-color: transparent;
     border-bottom-color: #a9a9a9;
-    border-bottom: 2px solid #a9a9a9;
+    border-bottom: 4px solid #a9a9a9;
     
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
 
     background-color: transparent;  
-    border-bottom: 2px solid #a9a9a9;
+    border-bottom: 4px solid #a9a9a9;
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
@@ -629,8 +629,21 @@ body {
     color: #fff;  
     border-bottom: 2px solid #a9a9a9;
 }
-
-
+#homeli > a{
+	height:90px;
+	width:70px;
+    margin-top:40px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #808080; /* IE8 proofing */
+    padding-left:15px;
+    padding-right:15px;
+}
+#homeli  {
+    display: inline-block;
+    width:100px;
+    padding-left:20px;
+}
 #ulli > a:hover,a:focus{
 
 	background-color: #fff;
@@ -641,7 +654,19 @@ body {
     background-color: transparent;
     border-bottom-color: #A73D49;
 }
-
+#ulli > a{
+	height:90px;
+	width:70px;
+    margin-top:40px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #808080; /* IE8 proofing */
+    padding-left:10px;
+    padding-right:5px;
+}
+#ulli{
+	margin-right:-20px;
+}
 #awoeli > a:hover,a:focus{
 
 	background-color: transparent;
@@ -653,23 +678,60 @@ body {
 background-color: transparent;
 border-bottom-color: #3D5C9A;
 }
+#awoeli > a{
+    height:90px;
+	width:90px;
+    margin-top:40px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #808080; /* IE8 proofing */
+    padding-left:5px;
+    padding-right:5px;
+}
+#awoeli {
+	display: inline-block;
+    width:100px;
+    padding-left:10px;
+}
 #musicli> a:hover{
 	margin-top:-3px;
 	height:93px;
-    width:120px;
-    
-    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
-    
+    width:115px;
+    padding-right:10px;
+    padding-left:10px;
+    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;   
 }
 #musicli > a.active{
 	margin-top:3px;
-    width: 120px;
+    width: 115px;
     height: 93px;
     border-bottom: none;
     border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
-    
+    padding-right:10px;
+    padding-left:10px;
 }
-
+#musicli > a{
+	height:90px;
+	width:115px;
+    margin-top:40px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #808080; /* IE8 proofing */
+    padding-left:5px;
+    padding-right:5px;
+	
+}
+#joinli > a {
+    height:90px;
+	width:80px;
+    margin-top:40px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #808080; /* IE8 proofing */
+    padding-left:10px;
+    padding-right:10px;
+    margin-left:10px;
+}
 /*
 #musicli:hover{
     width: 120px;

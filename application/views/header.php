@@ -49,8 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </h3>
             <nav>
                 <ul class="nav masthead-nav headernavul">
-                    <li><a href="/home" class="{homenav} navtags">{home}</a></li>
-                    <li>
+                    <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
+                    <li >
                         <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
                         <ul class="dropdown-menu dropdownmenucust headernav">
                             <li><a href="/about">{introduce}</a></li>
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
                     <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
                     <li id="musicli"><a href="/music" class="{musicnav} navtags">{music}</a></li>
-                    <li><a href="/join" class="{joinnav} navtags">{join}</a></li>
+                    <li id="joinli"><a href="/join" class="{joinnav} navtags">{join}</a></li>
                 </ul>
             </nav>
             </div>
