@@ -28,33 +28,44 @@ class Ul extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
         $source_info['second_level']='imagearea1';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
         $source_info['second_level']='imagearea11';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='yeardetails';
+        $keyword_info['third_level']=$this->session->language;
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='locationdetails';
+        $keyword_info['third_level']=$this->session->language;
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
         $keyword_info['second_level']='typedetails';
+        $keyword_info['third_level']=$this->session->language;
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
@@ -112,27 +123,37 @@ class Ul extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='ullogo';
         $source_info['type']='img';
+        $source_info['third_level']=$this->session->language;
         $ullogo = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
         $source_info['second_level']='imagearea11';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='yeardetails';
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='locationdetails';
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='typedetails';
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
+        $keyword_info['first_level']='ul';
+        $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 

@@ -15,7 +15,11 @@ class PageManager extends CI_Controller
 
         $imagelists=array();
         $videolists=array();
+        $keywordlists=array();
+        $brandlists=array();
 
+
+        //imagelists
         $this->db->from('source');
         $this->db->where('type','img');
         $this->db->or_where('type','videoimg');
@@ -44,6 +48,8 @@ class PageManager extends CI_Controller
             array_push($imagelists,$tmpimgarray);
         }
 
+
+        //videolists
         $this->db->from('source');
         $this->db->where('type','video/mp4');
         $videoarray=$this->db->get()->result_array();
@@ -75,6 +81,75 @@ class PageManager extends CI_Controller
         }
 
 
+
+        //keywordlists
+        $this->db->from('keyword');
+        $this->db->order_by('update_time','desc');
+        $keywordarray=$this->db->get()->result_array();
+
+        for($i=0;$i<count($keywordarray);$i++){
+            $tmpkeywordarray=array(
+                'first_level'=>$keywordarray[$i]['first_level'],
+                'language'=>$keywordarray[$i]['third_level'],
+                'id'=>$keywordarray[$i]['id'],
+                'keyword'=>$keywordarray[$i]['keyword'],
+                'type'=>$keywordarray[$i]['second_level'],
+                'sequence'=>$keywordarray[$i]['sequence']
+            );
+            array_push($keywordlists,$tmpkeywordarray);
+        }
+
+
+
+        //brands
+        $this->db->from('keyword');
+        $this->db->where('first_level','brandname');
+        $this->db->order_by('update_time','desc');
+        $brandarray=$this->db->get()->result_array();
+
+        for($i=0;$i<count($brandarray);$i++){
+            $this->db->from('source');
+            $this->db->where('type','img');
+            $this->db->or_where('type','partnerimg');
+            $this->db->order_by('update_time','desc');
+            $brandimgarray=$this->db->get()->result_array();
+            $this->db->from('source');
+            $this->db->where('type','partnerimg');
+            $this->db->where('second_level',$brandarray[$i]['id']);
+            $this->db->order_by('update_time','desc');
+            $brandimg=$this->db->get()->result_array();
+
+            $tmpselect='';
+            if(count($brandimg)>0){
+                for($j=0;$j<count($brandimgarray);$j++){
+                    if($brandimgarray[$j]['id']==$brandimg[0]['id']){
+                        $realsequence=$brandimgarray[$j]['sequence'];
+                        $brandimgurl=$brandimgarray[$j]['source_location'];
+                        $tmpselect.='<option value="'.$brandimgarray[$j]['id'].'" selected>'.$brandimgarray[$j]['source_name'].'</option>';
+                    }else{
+                        $tmpselect.='<option value="'.$brandimgarray[$j]['id'].'">'.$brandimgarray[$j]['source_name'].'</option>';
+                    }
+                }
+            }else{
+                $realsequence='';
+                $brandimgurl='';
+                $tmpselect.='<option value="">--无--</option>';
+                for($j=0;$j<count($brandimgarray);$j++){
+                    $tmpselect.='<option value="'.$brandimgarray[$j]['id'].'">'.$brandimgarray[$j]['source_name'].'</option>';
+                }
+            }
+            $tmpbrandarray=array(
+                'first_level'=>$brandarray[$i]['first_level'],
+                'language'=>$brandarray[$i]['third_level'],
+                'keyword_id'=>$brandarray[$i]['id'],
+                'imgurl'=>$brandimgurl,
+                'keyword'=>$brandarray[$i]['keyword'],
+                'selections'=>'<select id="'.$brandarray[$i]['id'].'_img">'.$tmpselect.'</select>',
+                'sequence'=>$realsequence
+            );
+            array_push($brandlists,$tmpbrandarray);
+        }
+
         $imgsource=$this->source_model->querySource(
             array(
                 'status'=>null,
@@ -105,6 +180,8 @@ class PageManager extends CI_Controller
             )
         );
         $data=array(
+            'brands'=>$brandlists,
+            'keywordlists'=>$keywordlists,
             'videolists'=>$videolists,
             'imagelists'=>$imagelists,
             'img'=>$imgsource,
@@ -725,5 +802,13 @@ class PageManager extends CI_Controller
             'id'=>$_POST['source_id']
         );
         $this->db->delete('source',$deleteitem);
+    }
+    public function savebrand(){
+        $updateitem = array(
+            'type'=>'partnerimg',
+            'second_level'=>$_POST['brand_id'],
+            'sequence'=>$_POST['sequence']
+        );
+        $this->db->update('source',$updateitem,array('id'=>$_POST['source_id']));
     }
 }

@@ -7,7 +7,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div>
+<div style="width:100%;background-color: #ffffff">
     <div class="row">
         <label class="col-lg-2">视频明细列表</label>
     </div>

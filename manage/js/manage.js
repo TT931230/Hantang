@@ -689,3 +689,20 @@ function $deletesinglevideo(source_id){
         }
     });
 }
+function $savebrand(brand_id){
+    $.ajax({
+        type:"post",
+        data: 'brand_id='+brand_id+'&source_id='+$('#'+brand_id+'_img')[0].value+'&sequence='+$('#'+brand_id+'_sequence')[0].value,
+        url:"PageManager/savebrand",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('brandedit');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
