@@ -17,6 +17,7 @@ class PageManager extends CI_Controller
         $videolists=array();
         $keywordlists=array();
         $brandlists=array();
+        $examinevideolists=array();
 
 
         //imagelists
@@ -78,6 +79,40 @@ class PageManager extends CI_Controller
                 'linkimg'=>$imgurl
             );
             array_push($videolists,$tmpvideoarray);
+        }
+
+
+
+        //$examinevideolists
+        $this->db->from('source');
+        $this->db->where('status','2');
+        $this->db->where('type','video/mp4');
+        $examinevideoarray=$this->db->get()->result_array();
+        for($i=0;$i<count($examinevideoarray);$i++){
+            $this->db->from('source');
+            $this->db->where('link_url','/'.$examinevideoarray[$i]['first_level'].'/'.$examinevideoarray[$i]['first_level'].'inner/'.$examinevideoarray[$i]['id']);
+            $examinevideoimgarray=$this->db->get()->result_array();
+            if(count($examinevideoimgarray)>0){
+                $examinevideoimgid=$examinevideoimgarray[0]['id'];
+                $examinevideoimgurl=$examinevideoimgarray[0]['source_location'];
+                $examinevideosequence=$examinevideoimgarray[0]['sequence'];
+            }else{
+                $examinevideoimgid='none';
+                $examinevideoimgurl='';
+                $examinevideosequence='';
+            }
+
+            $tmpexaminevideoarray=array(
+                'language'=>$examinevideoarray[$i]['third_level'],
+                'first_level'=>$examinevideoarray[$i]['first_level'],
+                'source_id'=>$examinevideoarray[$i]['id'],
+                'source_location'=>$examinevideoarray[$i]['source_location'],
+                'source_name'=>$examinevideoarray[$i]['source_name'],
+                'sequence'=>$examinevideosequence,
+                'imgid'=>$examinevideoimgid,
+                'linkimg'=>$examinevideoimgurl
+            );
+            array_push($examinevideolists,$tmpexaminevideoarray);
         }
 
 
@@ -180,6 +215,7 @@ class PageManager extends CI_Controller
             )
         );
         $data=array(
+            'examinevideolists'=>$examinevideolists,
             'brands'=>$brandlists,
             'keywordlists'=>$keywordlists,
             'videolists'=>$videolists,
