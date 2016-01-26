@@ -163,9 +163,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a href="javascript:;" data-toggle="collapse" data-target="#shgl">审核管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="shgl" class="collapse">
                         <li>
-                            <a href="javascript:;" onclick="$changetags('videoexamine')">视频审核</a>
-                        </li>
-                        <li>
                             <a href="javascript:;" onclick="$changetags('videoexaminelist')">视频审核列表</a>
                         </li>
                     </ul>
