@@ -26,7 +26,7 @@ function $saveImage(){
     $.ajax({
         type:"post",
         data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark,
-        url:"PageManager/saveImage",
+        url:"Pagemanager/saveImage",
         success: function(result)
         {
             //$('#relatedvideoarea').html(result);
@@ -57,7 +57,7 @@ function $saveVideo(){
     $.ajax({
         type:"post",
         data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level,
-        url:"PageManager/saveVideo",
+        url:"Pagemanager/saveVideo",
         success: function(result)
         {
             //$('#relatedvideoarea').html(result);
@@ -74,7 +74,7 @@ function $getselectedinfo(pagename){
             $.ajax({
                 type:"post",
                 data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level,
-                url:"PageManager/gethomeinfo",
+                url:"Pagemanager/gethomeinfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -89,7 +89,7 @@ function $getselectedinfo(pagename){
             $.ajax({
                 type:"post",
                 data: "sequence=" + sequence+"&source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level,
-                url:"PageManager/gethomeinfo",
+                url:"Pagemanager/gethomeinfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -164,40 +164,40 @@ function $saveArea(areatype){
             $("#source_name_a option:selected").each(function(){
                 homeimglist1+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 homearea1_is_hide = 'none';
             }
-            if($('#is_auto_a').checked) {
+            if($('#is_auto_a')[0].checked) {
                 homearea1_is_auto = 'false';
             }
             homeimglist2='';
             $("#source_name_b option:selected").each(function(){
                 homeimglist2+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_b').checked) {
+            if($('#is_hide_b')[0].checked) {
                 homearea2_is_hide = 'none';
             }
-            if($('#is_auto_b').checked) {
+            if($('#is_auto_b')[0].checked) {
                 homearea2_is_auto = 'false';
             }
             homeimglist3='';
             $("#source_name_c option:selected").each(function(){
                 homeimglist3+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_c').checked) {
+            if($('#is_hide_c')[0].checked) {
                 homearea3_is_hide = 'none';
             }
-            if($('#is_auto_c').checked) {
+            if($('#is_auto_c')[0].checked) {
                 homearea3_is_auto = 'false';
             }
             homeimglist4='';
             $("#source_name_d option:selected").each(function(){
                 homeimglist4+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_d').checked) {
+            if($('#is_hide_d')[0].checked) {
                 homearea4_is_hide = 'none';
             }
-            if($('#is_auto_d').checked) {
+            if($('#is_auto_d')[0].checked) {
                 homearea4_is_auto = 'false';
             }
             third_level=$('#third_level')[0].value;
@@ -205,48 +205,49 @@ function $saveArea(areatype){
             data='homeimglist1=';
             data+=homeimglist1;
             data+='&';
-            data='homeimglist2=';
+            data+='homeimglist2=';
             data+=homeimglist2;
             data+='&';
-            data='homeimglist3=';
+            data+='homeimglist3=';
             data+=homeimglist3;
             data+='&';
-            data='homeimglist4=';
+            data+='homeimglist4=';
             data+=homeimglist4;
             data+='&';
-            data='homearea1hide=';
+            data+='homearea1_is_hide=';
             data+=homearea1_is_hide;
             data+='&';
-            data='homearea2hide=';
+            data+='homearea2_is_hide=';
             data+=homearea2_is_hide;
             data+='&';
-            data='homearea3hide=';
+            data+='homearea3_is_hide=';
             data+=homearea3_is_hide;
             data+='&';
-            data='homearea4hide=';
+            data+='homearea4_is_hide=';
             data+=homearea4_is_hide;
             data+='&';
-            data='homearea1auto=';
+            data+='homearea1_is_auto=';
             data+=homearea1_is_auto;
             data+='&';
-            data='homearea2auto=';
+            data+='homearea2_is_auto=';
             data+=homearea2_is_auto;
             data+='&';
-            data='homearea3auto=';
+            data+='homearea3_is_auto=';
             data+=homearea3_is_auto;
             data+='&';
-            data='homearea4auto=';
+            data+='homearea4_is_auto=';
             data+=homearea4_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
+            console.log(data);
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -265,24 +266,24 @@ function $saveArea(areatype){
             aboutarea3_is_hide='1';
             aboutarea3_is_auto='1';
             aboutimglist1=$('#source_name_a')[0].value;
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 aboutarea1_is_hide = 'none';
             }
-            if($('#is_auto_a').checked) {
+            if($('#is_auto_a')[0].checked) {
                 aboutarea1_is_auto = 'false';
             }
             aboutimglist2=$('#source_name_b')[0].value;
-            if($('#is_hide_b').checked) {
+            if($('#is_hide_b')[0].checked) {
                 aboutarea2_is_hide = 'none';
             }
-            if($('#is_auto_b').checked) {
+            if($('#is_auto_b')[0].checked) {
                 aboutarea2_is_auto = 'false';
             }
             aboutimglist3=$('#source_name_c')[0].value;
-            if($('#is_hide_c').checked) {
+            if($('#is_hide_c')[0].checked) {
                 aboutarea3_is_hide = 'none';
             }
-            if($('#is_auto_c').checked) {
+            if($('#is_auto_c')[0].checked) {
                 aboutarea3_is_auto = 'false';
             }
             third_level=$('#third_level')[0].value;
@@ -290,39 +291,39 @@ function $saveArea(areatype){
             data='aboutimglist1=';
             data+=aboutimglist1;
             data+='&';
-            data='aboutimglist2=';
+            data+='aboutimglist2=';
             data+=aboutimglist2;
             data+='&';
-            data='aboutimglist3=';
+            data+='aboutimglist3=';
             data+=aboutimglist3;
             data+='&';
-            data='aboutarea1hide=';
+            data+='aboutarea1_is_hide=';
             data+=aboutarea1_is_hide;
             data+='&';
-            data='aboutarea2hide=';
+            data+='aboutarea2_is_hide=';
             data+=aboutarea2_is_hide;
             data+='&';
-            data='aboutarea3hide=';
+            data+='aboutarea3_is_hide=';
             data+=aboutarea3_is_hide;
             data+='&';
-            data='aboutarea1auto=';
+            data+='aboutarea1_is_auto=';
             data+=aboutarea1_is_auto;
             data+='&';
-            data='aboutarea2auto=';
+            data+='aboutarea2_is_auto=';
             data+=aboutarea2_is_auto;
             data+='&';
-            data='aboutarea3auto=';
+            data+='aboutarea3_is_auto=';
             data+=aboutarea3_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -341,15 +342,15 @@ function $saveArea(areatype){
             platformarea3_is_hide='1';
             platformarea3_is_auto='1';
             platformimglist1=$('#source_name_a')[0].value;
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 platformarea1_is_hide = 'none';
             }
             platformimglist2=$('#source_name_b')[0].value;
-            if($('#is_hide_b').checked) {
+            if($('#is_hide_b')[0].checked) {
                 platformarea2_is_hide = 'none';
             }
             platformimglist3=$('#source_name_c')[0].value;
-            if($('#is_hide_c').checked) {
+            if($('#is_hide_c')[0].checked) {
                 platformarea3_is_hide = 'none';
             }
             third_level=$('#third_level')[0].value;
@@ -357,39 +358,39 @@ function $saveArea(areatype){
             data='platformimglist1=';
             data+=platformimglist1;
             data+='&';
-            data='platformimglist2=';
+            data+='platformimglist2=';
             data+=platformimglist2;
             data+='&';
-            data='platformimglist3=';
+            data+='platformimglist3=';
             data+=platformimglist3;
             data+='&';
-            data='platformarea1hide=';
+            data+='platformarea1_is_hide=';
             data+=platformarea1_is_hide;
             data+='&';
-            data='platformarea2hide=';
+            data+='platformarea2_is_hide=';
             data+=platformarea2_is_hide;
             data+='&';
-            data='platformarea3hide=';
+            data+='platformarea3_is_hide=';
             data+=platformarea3_is_hide;
             data+='&';
-            data='platformarea1auto=';
+            data+='platformarea1_is_auto=';
             data+=platformarea1_is_auto;
             data+='&';
-            data='platformarea2auto=';
+            data+='platformarea2_is_auto=';
             data+=platformarea2_is_auto;
             data+='&';
-            data='platformarea3auto=';
+            data+='platformarea3_is_auto=';
             data+=platformarea3_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -407,10 +408,10 @@ function $saveArea(areatype){
             $("#source_name_a option:selected").each(function(){
                 partnerimglist1+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 partnerarea1_is_hide = 'none';
             }
-            if($('#is_auto_a').checked) {
+            if($('#is_auto_a')[0].checked) {
                 partnerarea1_is_auto = 'false';
             }
             partnerlanguage=$('#third_level')[0].value;
@@ -418,21 +419,21 @@ function $saveArea(areatype){
             data='partnerimglist1=';
             data+=partnerimglist1;
             data+='&';
-            data='partnerarea1hide=';
+            data+='partnerarea1_is_hide=';
             data+=partnerarea1_is_hide;
             data+='&';
-            data='partnerarea1auto=';
+            data+='partnerarea1_is_auto=';
             data+=partnerarea1_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -450,10 +451,10 @@ function $saveArea(areatype){
             $("#source_name_a option:selected").each(function(){
                 ulimglist1+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 ularea1_is_hide = 'none';
             }
-            if($('#is_auto_a').checked) {
+            if($('#is_auto_a')[0].checked) {
                 ularea1_is_auto = 'false';
             }
             ullanguage=$('#third_level')[0].value;
@@ -461,21 +462,21 @@ function $saveArea(areatype){
             data='ulimglist1=';
             data+=ulimglist1;
             data+='&';
-            data='ularea1hide=';
+            data+='ularea1_is_hide=';
             data+=ularea1_is_hide;
             data+='&';
-            data='ularea1auto=';
+            data+='ularea1_is_auto=';
             data+=ularea1_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -493,10 +494,10 @@ function $saveArea(areatype){
             $("#source_name_a option:selected").each(function(){
                 awoeimglist1+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 awoearea1_is_hide = 'none';
             }
-            if($('#is_auto_a').checked) {
+            if($('#is_auto_a')[0].checked) {
                 awoearea1_is_auto = 'false';
             }
             awoelanguage=$('#third_level')[0].value;
@@ -504,21 +505,21 @@ function $saveArea(areatype){
             data='awoeimglist1=';
             data+=awoeimglist1;
             data+='&';
-            data='awoearea1hide=';
+            data+='awoearea1_is_hide=';
             data+=awoearea1_is_hide;
             data+='&';
-            data='awoearea1auto=';
+            data+='awoearea1_is_auto=';
             data+=awoearea1_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -536,10 +537,10 @@ function $saveArea(areatype){
             $("#source_name_a option:selected").each(function(){
                 musicimglist1+=$(this)[0].value+'|||';
             });
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 musicarea1_is_hide = 'none';
             }
-            if($('#is_auto_a').checked) {
+            if($('#is_auto_a')[0].checked) {
                 musicarea1_is_auto = 'false';
             }
             musiclanguage=$('#third_level')[0].value;
@@ -547,21 +548,21 @@ function $saveArea(areatype){
             data='musicimglist1=';
             data+=musicimglist1;
             data+='&';
-            data='musicarea1hide=';
+            data+='musicarea1_is_hide=';
             data+=musicarea1_is_hide;
             data+='&';
-            data='musicarea1auto=';
+            data+='musicarea1_is_auto=';
             data+=musicarea1_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     $('#relatedvideoarea').html(result);
@@ -576,7 +577,7 @@ function $saveArea(areatype){
             joinarea1_is_hide='1';
             joinarea1_is_auto='1';
             joinimglist1=$('#source_name_a')[0].value;
-            if($('#is_hide_a').checked) {
+            if($('#is_hide_a')[0].checked) {
                 joinarea1_is_hide = 'none';
             }
             joinlanguage=$('#third_level')[0].value;
@@ -584,21 +585,21 @@ function $saveArea(areatype){
             data='joinimglist1=';
             data+=joinimglist1;
             data+='&';
-            data='joinarea1hide=';
+            data+='joinarea1_is_hide=';
             data+=joinarea1_is_hide;
             data+='&';
-            data='joinarea1auto=';
+            data+='joinarea1_is_auto=';
             data+=joinarea1_is_auto;
             data+='&';
-            data='areatype=';
+            data+='areatype=';
             data+=areatype;
             data+='&';
-            data='arealanguage=';
+            data+='arealanguage=';
             data+=third_level;
             $.ajax({
                 type:"post",
                 data: data,
-                url:"PageManager/updateareainfo",
+                url:"Pagemanager/updateareainfo",
                 success: function(result)
                 {
                     //$('#relatedvideoarea').html(result);
@@ -624,7 +625,7 @@ function $savesingleimg(source_id){
     $.ajax({
         type:"post",
         data: 'id='+source_id+'&imgtype='+imgtype+'&sequence='+imgsequence,
-        url:"PageManager/savesingleimg",
+        url:"Pagemanager/savesingleimg",
         success: function(result)
         {
             alert('保存成功！');
@@ -641,7 +642,7 @@ function $deletesingleimg(source_id){
     $.ajax({
         type:"post",
         data: 'source_id='+source_id,
-        url:"PageManager/deletesinglesource",
+        url:"Pagemanager/deletesinglesource",
         success: function(result)
         {
             alert('删除成功！');
@@ -659,7 +660,7 @@ function $savesinglevideo(imgid){
     $.ajax({
         type:"post",
         data: 'id='+imgid+'&sequence='+imgsequence,
-        url:"PageManager/savesinglevideo",
+        url:"Pagemanager/savesinglevideo",
         success: function(result)
         {
             alert('保存成功！');
@@ -676,7 +677,7 @@ function $deletesinglevideo(source_id){
     $.ajax({
         type:"post",
         data: 'source_id='+source_id,
-        url:"PageManager/deletesinglesource",
+        url:"Pagemanager/deletesinglesource",
         success: function(result)
         {
             alert('删除成功！');
@@ -693,7 +694,7 @@ function $savebrand(brand_id){
     $.ajax({
         type:"post",
         data: 'brand_id='+brand_id+'&source_id='+$('#'+brand_id+'_img')[0].value+'&sequence='+$('#'+brand_id+'_sequence')[0].value,
-        url:"PageManager/savebrand",
+        url:"Pagemanager/savebrand",
         success: function(result)
         {
             alert('保存成功！');

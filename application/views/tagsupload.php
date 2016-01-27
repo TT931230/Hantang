@@ -8,7 +8,7 @@
 ?><!DOCTYPE html>
 <div class="managepagetitle">标签上传</div>
 <div>
-    <form id="addform" action="PageManager/inserttags" method="post" enctype="multipart/form-data">
+    <form id="addform" action="Pagemanager/inserttags" method="post" enctype="multipart/form-data">
         <div class="tu-div">
         <p>请选择要导入的CSV文件：<input type="file" name="file">
         </div>

@@ -6,7 +6,7 @@
  * Time: 8:34
  */
 
-class ContentM extends CI_Controller
+class Contentm extends CI_Controller
 {
     function index(){
         $this->load->library('parser');

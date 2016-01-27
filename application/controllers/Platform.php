@@ -24,8 +24,8 @@ class Platform extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='platform';
-        $source_info['second_level']='imagearea1';
-        $source_info['type']='img';
+        $source_info['second_level']='videoarea1';
+        $source_info['type']='video/mp4';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
@@ -49,7 +49,7 @@ class Platform extends CI_Controller
 
         $tmp_data = array(
             'logoimage'=>$logoimage,
-            'imagearea1'=>$imagearea1,
+            'videoarea1'=>$imagearea1,
             'imagearea2'=>$imagearea2,
             'imagearea3'=>$imagearea3
         );
