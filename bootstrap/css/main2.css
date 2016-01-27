@@ -144,7 +144,7 @@
 .callbacks_nav.next {
   left: auto;
   background: transparent url("http://static.acmedynasty.com/images/home_right.png") no-repeat right top;
-
+  margin-right: -18px;
   right: 0;
   }
 @media screen and (max-width:600px) {
@@ -251,7 +251,7 @@ background: transparent url("color.gif") no-repeat left top;
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   top: 51%;
-  left:15px;
+  left:13px;
   opacity: 0.3;
   z-index: 3;
   text-indent: -9999px;
@@ -261,7 +261,7 @@ background: transparent url("color.gif") no-repeat left top;
   width: 30px;
 
   background: transparent url("white.gif") no-repeat left top;
-  margin-top: -45px;
+  margin-top: -39px;
   }
 
 .music-callbacks_nav:active {
