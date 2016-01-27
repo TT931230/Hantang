@@ -129,14 +129,15 @@ class Page_data_model extends CI_Model{
             $data=array_merge($data,$temp_array);
         }
         $this->db->from('webmodel');
+        $this->db->where('third_level',$languageType);
         $areadis=$this->db->get()->result_array();
         for($i=0;$i<count($areadis);$i++){
             $tmpname=$areadis[$i]['first_level'];
             $autotmp=$areadis[$i]['first_level'];
             $tmpname.='dis';
             $autotmp.='auto';
-            $tmpname.=$areadis[$i]['areaname'];
-            $autotmp.=$areadis[$i]['areaname'];
+            $tmpname.=$areadis[$i]['second_level'];
+            $autotmp.=$areadis[$i]['second_level'];
                 $temp_array=array(
                     $tmpname=>$areadis[$i]['is_hide'],
                     $autotmp=>$areadis[$i]['is_auto']

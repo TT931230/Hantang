@@ -105,10 +105,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a href="javascript:;" data-toggle="collapse" data-target="#tpgl">图片管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="tpgl" class="collapse">
                         <li>
-                            <a href="javascript:;" onclick="$changetags('caseedit')">图片编辑</a>
+                            <a href="javascript:;" onclick="$changetags('caseedit')">新增图片</a>
                         </li>
                         <li>
-                            <a href="javascript:;" onclick="$changetags('caselist')">图片列表</a>
+                            <a href="javascript:;" onclick="$changetags('caselist')">图片管理列表</a>
                         </li>
                     </ul>
                 </li>
@@ -116,10 +116,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a href="javascript:;" data-toggle="collapse" data-target="#spgl">视频管理 <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="spgl" class="collapse">
                         <li>
-                            <a href="javascript:;" onclick="$changetags('videoedit')">视频编辑</a>
+                            <a href="javascript:;" onclick="$changetags('videoedit')">新增视频</a>
                         </li>
                         <li>
-                            <a href="javascript:;" onclick="$changetags('videolist')">视频列表</a>
+                            <a href="javascript:;" onclick="$changetags('videolist')">视频管理列表</a>
                         </li>
                     </ul>
                 </li>
@@ -152,10 +152,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a href="javascript:;" data-toggle="collapse" data-target="#yyn">音乐年<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="yyn" class="collapse">
                         <li>
-                            <a href="javascript:;" onclick="$changetags('displayedit')">演出编辑</a>
+                            <a href="javascript:;" onclick="$changetags('displayedit')">新增演出</a>
                         </li>
                         <li>
-                            <a href="javascript:;" onclick="$changetags('displaylist')">演出列表</a>
+                            <a href="javascript:;" onclick="$changetags('displaylist')">演出管理列表</a>
                         </li>
                     </ul>
                 </li>
