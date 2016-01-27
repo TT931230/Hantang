@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>
                 </ul>
             </div>
-            <div class="searcharea" style="margin-right: 0">
+            <div class="searcharea" style="margin-right: 30px">
                 <span class="dropdowncust" role="button" onclick="$use('class1content','')">
                     <i class="glyphicon glyphicon-search"></i> {search}
                 </span>
