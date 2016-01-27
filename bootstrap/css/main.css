@@ -693,18 +693,17 @@ border-bottom-color: #3D5C9A;
     width:100px;
     padding-left:10px;
 }
-#musicli> a:hover{
-	margin-top:-3px;
-	height:93px;
-    width:115px;
-    padding-right:10px;
+
+#musicli  {
+    display: inline-block;
+    width:130px;
     padding-left:10px;
-    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;   
 }
+
 #musicli > a.active{
 	margin-top:3px;
-    width: 115px;
-    height: 93px;
+    width: 130px;
+    height: 90px;
     border-bottom: none;
     border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
     padding-right:10px;
@@ -712,7 +711,7 @@ border-bottom-color: #3D5C9A;
 }
 #musicli > a{
 	height:90px;
-	width:115px;
+	width:130px;
     margin-top:40px;
     font-size: 10px;
     font-weight: 500;
@@ -720,6 +719,14 @@ border-bottom-color: #3D5C9A;
     padding-left:5px;
     padding-right:5px;
 	
+}
+#musicli >a:hover{
+    margin-top:-3px;
+    height:90px;
+    width:130px;
+    padding-right:5px;
+    padding-left:5px;
+    border-image: url('../images/musicline.jpg') 0 0 5 0 repeat;
 }
 #joinli > a {
     height:90px;

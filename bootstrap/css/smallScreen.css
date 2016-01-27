@@ -87,6 +87,11 @@
         color: #808080;
         padding: 0;
     }
+    #musicli{
+        display: inline-block;
+        width: 100px;
+        padding:0;
+    }
     #musicli > a {
         height: 100%;
         width: 100%;
@@ -97,7 +102,13 @@
         padding: 0;
     }
     #musicli > a:hover{
-
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+        color: #808080;
+        padding: 0;
     }
     .masthead-nav > li > a {
         height: 100%;
