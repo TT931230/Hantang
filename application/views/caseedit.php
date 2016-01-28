@@ -23,6 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     </div>
     <div class="ce-div">
+        <div class="row">
+            <label class="col-lg-2">图片链接</label>
+            <input class="col-lg-2" type="text" id="url">
+        </div>
+    </div>
+    <div class="ce-div">
     <div class="row">
         <label class="col-lg-2">图片描述</label>
         <input type="textarea" style="width: 450px;height: 100px;" id="source_remark">
