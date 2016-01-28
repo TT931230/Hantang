@@ -73,7 +73,7 @@ class Awoe extends CI_Controller
         $source_info['type']='videoimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
-
+        
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(

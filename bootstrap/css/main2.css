@@ -628,20 +628,9 @@ margin-left:0px;
 .musicinner-subtitle{
 	position: relative;
     height:50px;
-    margin-bottom:-1px;
-
-
-    background-color: #541B2A;
-    margin-top: 0;
-    padding: 15px;
-    font-size: 20px;
-    color: #555;
-
  }
  .musicinner-subtitle img{
-
      float: left;
-     margin-top: -10px;
-     height: 40px;
-     width: auto;
+     height: 50px;
+     width: 100%;
  } 

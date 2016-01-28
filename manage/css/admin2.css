@@ -1,0 +1,70 @@
+
+/*  login */
+.logintable{	
+position:absolute;
+width:500px;height:200px;
+left:50%;top:30%;
+margin-left:-250px;
+ font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+}
+
+.loginimg{
+	margin-top:40px;
+	width:40%;
+	float:left;
+}
+.loginimg img{
+	height:100px;
+	width:auto;
+}
+.loginform{
+	margin-top:40px;
+	margin-left:-40px;
+	width:60%;
+	float:left;
+}
+.loginname{
+	margin-bottom:20px;
+}
+.loginpsw{
+	margin-bottom:20px;
+}
+#logintitle{
+	font-size:15px;
+	text-align:right;
+	
+	
+}
+#logininput{
+	float:right;
+	padding-right:50px;
+}
+.loginbtn{
+	margin-top:30px;
+	margin-left:115px;
+}
+#loginbtn1{
+    color:#fff;
+	float:left;
+	font-size:8px;
+	padding:5px;
+    height:30px;
+    width:60px;
+    background-color: #b70000;   
+    border-radius:0;
+    border:0; 
+	
+}
+#loginbtn2{
+	margin-left:10px;
+    color:#626262;
+	float:left;
+	font-size:8px;
+	padding:5px;
+    height:30px;
+    width:60px;
+    background-color: #ffffff;   
+    border-radius:0;
+    border:1px solid #626262;
+	
+}
