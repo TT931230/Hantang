@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
            
         
-            <div class="subtitle">
+           <div class="subtitle">
                 <div class="ulinnera">
                     <div class="innertexttitle">
                         {source_name}
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div id="sharetext">分享给好友</div>
                 </div>
             </div>
-                
+
             <div class="videoslug">
                 相关视频
             </div>
@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="relatedvideoarea" id="relatedvideoarea">
                     {relatedvideo}
                     <div class="relatedvideos">
-                        <a href='{link_url}'><img src='{source_location}'></a>
+                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>
                         <div class="relavideostitle">
                             {source_name}
                         </div>
