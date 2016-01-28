@@ -142,6 +142,10 @@ class Pagemanager extends CI_Controller
         $this->db->order_by('update_time','desc');
         $brandarray=$this->db->get()->result_array();
 
+        //departments
+        $this->db->from('department');
+        $departments=$this->db->get()->result_array();
+
         for($i=0;$i<count($brandarray);$i++){
             $this->db->from('source');
             $this->db->where('type','img');
@@ -215,6 +219,7 @@ class Pagemanager extends CI_Controller
             )
         );
         $data=array(
+            'departmentselect'=>$departments,
             'examinevideolists'=>$examinevideolists,
             'brands'=>$brandlists,
             'keywordlists'=>$keywordlists,
@@ -245,7 +250,7 @@ class Pagemanager extends CI_Controller
             'creator'=>'ADMIN',
             'first_level'=>null,
             'second_level'=>null,
-            'third_level'=>null,
+            'third_level'=>$_POST['third_level'],
         );
         $this->load->model('source_model');
         var_dump($insertcontent);
@@ -854,5 +859,23 @@ class Pagemanager extends CI_Controller
             'sequence'=>$_POST['sequence']
         );
         $this->db->update('source',$updateitem,array('id'=>$_POST['source_id']));
+    }
+    public function savedepartment(){
+        date_default_timezone_set("UTC");
+        $insertdepartment=array(
+            'department'=>$_POST['department'],
+            'create_time'=>date('y-m-d',time()),
+            'creator'=>'ADMIN',
+            'update_time'=>date('y-m-d',time()),
+            'updater'=>'ADMIN'
+        );
+        $this->db->from('department');
+        $this->db->where('department',$_POST['department']);
+        if(count($this->db->get()->result_array())>0){
+            echo false;
+        }else{
+            $this->db->insert('department',$insertdepartment);
+            echo true;
+        }
     }
 }

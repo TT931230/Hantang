@@ -160,6 +160,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </ul>
                 </li>
                 <li class="active">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#qzgl">求职管理<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="qzgl" class="collapse">
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('adddepartment')">新增部门</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('addjob')">新增职位</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('departmentlist')">部门管理列表</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('joblist')">职位管理列表</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#shgl">审核管理<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="shgl" class="collapse">
                         <li>

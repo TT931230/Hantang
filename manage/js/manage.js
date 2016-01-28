@@ -23,9 +23,10 @@ function $saveImage(){
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
     source_remark=$('#source_remark')[0].value;
+    third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+'&third_level='+third_level,
         url:"Pagemanager/saveImage",
         success: function(result)
         {
@@ -699,6 +700,50 @@ function $savebrand(brand_id){
         {
             alert('保存成功！');
             $changetags('brandedit');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $saveDepartment(){
+    $.ajax({
+        type:"post",
+        data: 'department='+$('#department')[0].value,
+        url:"Pagemanager/savedepartment",
+        success: function(result)
+        {
+            if(result){
+                alert('保存成功！');
+                $changetags('departmentlist');
+            }else{
+                alert('部门已存在！');
+                $changetags('adddepartment');
+            }
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function saveJob(){
+    $.ajax({
+        type:"post",
+        data: 'department_id='+$('#departmentname')[0].value+'&jobname='+$('#jobname')[0].value+'&source_id='+$('#'+brand_id+'_img')[0].value+'&source_id='+$('#'+brand_id+'_img')[0].value,
+        url:"Pagemanager/savejob",
+        success: function(result)
+        {
+            if(result){
+                alert('保存成功！');
+                $changetags('joblist');
+            }else{
+                alert('职位已存在！');
+                $changetags('addjob');
+            }
             //$('#relatedvideoarea').html(result);
         },
         error: function()
