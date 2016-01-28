@@ -39,5 +39,6 @@
 <div class="hpm-savebtn">
 <div class="row">
     <button onclick="$saveArea('musicarea')">保存</button>
+    <button onclick="$submitarea('music')">发布</button>
 </div>
 </div>

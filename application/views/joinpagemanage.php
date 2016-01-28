@@ -35,5 +35,6 @@
 <div class="hpm-savebtn">
 <div class="row">
     <button onclick="$saveArea('joinarea')">保存</button>
+    <button onclick="$submitarea('join')">发布</button>
 </div>
 </div>

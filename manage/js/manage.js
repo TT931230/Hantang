@@ -882,3 +882,19 @@ function $deleteuser(id){
         }
     });
 }
+function $submitarea(area){
+    $.ajax({
+        type:"post",
+        data:"area="+area,
+        url:"Pagemanager/submitarea",
+        success: function(result)
+        {
+            alert('发布成功！');
+            $changetags(area+'pagemanage');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}

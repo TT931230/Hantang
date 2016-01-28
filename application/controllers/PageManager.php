@@ -1425,30 +1425,56 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;$privilige4user=$this->session->privilige;
-            date_default_timezone_set("UTC");
-            $username = $_POST['username'];
-            $password = md5($_POST['password']);
-            $privilige = array($_POST['privilige1'], $_POST['privilige2'], $_POST['privilige3'], $_POST['privilige4'], $_POST['privilige5'], $_POST['privilige6'], $_POST['privilige7'], $_POST['privilige8'], $_POST['privilige9'], $_POST['privilige10']);
-            $userinsertinfo = array(
-                'user_name' => $username,
-                'password' => $password,
-                'create_time' => date('y-m-d', time()),
-                'creator' => $username
-            );
-            $this->db->from('user_info');
-            $this->db->where('user_name', $username);
-            $tmpuserarray = $this->db->get()->result_array();
-            if (count($tmpuserarray) > 0) {
-                echo false;
-            } else {
-                $this->db->insert('user_info', $userinsertinfo);
-                $insertedid = $this->db->insert_id();
-                for ($i = 0; $i < count($privilige); $i++) {
-                    if ($privilige[$i]) {
-                        $this->db->insert('privilige_user', array('user_id' => $insertedid, 'privilige_id' => $i + 1));
-                    }
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
                 }
-                echo true;
+            }
+            if($privilige49){
+                date_default_timezone_set("UTC");
+                $username = $_POST['username'];
+                $password = md5($_POST['password']);
+                $privilige = array($_POST['privilige1'], $_POST['privilige2'], $_POST['privilige3'], $_POST['privilige4'], $_POST['privilige5'], $_POST['privilige6'], $_POST['privilige7'], $_POST['privilige8'], $_POST['privilige9'], $_POST['privilige10']);
+                $userinsertinfo = array(
+                    'user_name' => $username,
+                    'password' => $password,
+                    'create_time' => date('y-m-d', time()),
+                    'creator' => $username
+                );
+                $this->db->from('user_info');
+                $this->db->where('user_name', $username);
+                $tmpuserarray = $this->db->get()->result_array();
+                if (count($tmpuserarray) > 0) {
+                    echo false;
+                } else {
+                    $this->db->insert('user_info', $userinsertinfo);
+                    $insertedid = $this->db->insert_id();
+                    for ($i = 0; $i < count($privilige); $i++) {
+                        if ($privilige[$i]) {
+                            $this->db->insert('privilige_user', array('user_id' => $insertedid, 'privilige_id' => $i + 1));
+                        }
+                    }
+                    echo true;
+                }
             }
         }else{
             echo "<script>alert('请先登录！')</script>";
@@ -1461,9 +1487,113 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $id = $_POST['id'];
-            $this->db->delete('user_info', array('id' => $id));
-            $this->db->delete('privilige_user', array('user_id' => $id));
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
+            if($privilige410){
+                $id = $_POST['id'];
+                $this->db->delete('user_info', array('id' => $id));
+                $this->db->delete('privilige_user', array('user_id' => $id));
+            }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function submitarea(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
+            switch($_POST['area']){
+                case'home':if($privilige41){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'about':if($privilige42){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'platform':if($privilige43){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'partner':if($privilige44){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'ul':if($privilige45){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'awoe':if($privilige46){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'music':if($privilige47){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+                case'join':if($privilige48){
+                    $this->db->update('source', array('status' => '1'),array('first_level'=>$_POST['area'],'status' => '2'));
+                }else{
+
+                };break;
+            }
+
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
