@@ -125,8 +125,9 @@
 	margin-bottom:15px;
 }
 .innertext{
-	font-size:10px;
+	font-size:15px;
 	text-align:left;
+	margin-left:80px;
 }
 .subtitle .ulinnerc {
 	height: 80px;
@@ -182,6 +183,7 @@
     font-size: 12px;
     color:#626262;
 }
+
 #searchAToZ a{
     height:18px;
     color:#808080;
@@ -267,7 +269,38 @@
     display: inline-block;
 }
 
+.subtitle-music{
+    width: 100%;    /* 也可以固定宽度 */
+    height: 450px;
+    background-color: #e0e0e0;
+    margin-top:-48px;
+    margin-bottom:30px;
+    padding:35px;
+    font-size:20px;
+    color:#808080;
 
-
-
-
+}
+.musicinnera {
+	height: 350px;
+    width:65%;
+    font-size: 15px;
+    overflow: hidden;
+    white-space:normal;
+    word-break:break-all;
+    float: left;
+    display: inline-block;
+    border-right:1px solid #a0a0a0;
+    color:#626262;
+    margin-top:25px;
+}
+.musicinnerc {
+	 margin-top:25px;
+    width:35%;
+    display: inline-block;
+}
+.musicinnerc img{
+    width:330px;
+    height:200px;
+    display: inline-block;
+    margin-left:30px;
+}
