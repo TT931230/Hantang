@@ -82,6 +82,38 @@ class Pagemanager extends CI_Controller
         }
 
 
+        //musiclists
+        $this->db->from('source');
+        $this->db->where('type','video/mp4');
+        $videoarray=$this->db->get()->result_array();
+        for($i=0;$i<count($videoarray);$i++){
+            $this->db->from('source');
+            $this->db->where('link_url','/'.$videoarray[$i]['first_level'].'/'.$videoarray[$i]['first_level'].'inner/'.$videoarray[$i]['id']);
+            $videoimgarray=$this->db->get()->result_array();
+            if(count($videoimgarray)>0){
+                $videoimgid=$videoimgarray[0]['id'];
+                $imgurl=$videoimgarray[0]['source_location'];
+                $videosequence=$videoimgarray[0]['sequence'];
+            }else{
+                $videoimgid='none';
+                $imgurl='';
+                $videosequence='';
+            }
+
+            $tmpvideoarray=array(
+                'language'=>$videoarray[$i]['third_level'],
+                'first_level'=>$videoarray[$i]['first_level'],
+                'source_id'=>$videoarray[$i]['id'],
+                'source_location'=>$videoarray[$i]['source_location'],
+                'source_name'=>$videoarray[$i]['source_name'],
+                'sequence'=>$videosequence,
+                'imgid'=>$videoimgid,
+                'linkimg'=>$imgurl
+            );
+            array_push($videolists,$tmpvideoarray);
+        }
+
+
 
         //$examinevideolists
         $this->db->from('source');
@@ -199,7 +231,29 @@ class Pagemanager extends CI_Controller
             $jobs[$i]['department']=$this->db->get()->result_array()[0]['department'];
         }
 
+        //seasons
+        $this->db->from('keyword');
+        $this->db->where('second_level','seasondetails');
+        $seasons=$this->db->get()->result_array();
+        for($i=0;$i<count($seasons);$i++) {
+            $seasons[$i]['keyword']= $seasons[$i]['keyword']. $seasons[$i]['third_level'];
+        }
 
+
+        //displayer
+        $this->db->from('keyword');
+        $this->db->where('second_level','shower');
+        $showers=$this->db->get()->result_array();
+        for($i=0;$i<count($showers);$i++) {
+            $showers[$i]['keyword']= $showers[$i]['keyword']. $showers[$i]['third_level'];
+        }
+
+
+        //musicvideo
+        $this->db->from('source');
+        $this->db->where('type','videoimg');
+        $this->db->where("link_url like '%music%'");
+        $musicvido=$this->db->get()->result_array();
 
         $imgsource=$this->source_model->querySource(
             array(
@@ -231,6 +285,9 @@ class Pagemanager extends CI_Controller
             )
         );
         $data=array(
+            'musicvideo'=>$musicvido,
+            'showers'=>$showers,
+            'seasons'=>$seasons,
             'jobs'=>$jobs,
             'departmentselect'=>$departments,
             'examinevideolists'=>$examinevideolists,
@@ -975,4 +1032,38 @@ class Pagemanager extends CI_Controller
     public function deletejob(){
         $this->db->delete('jobinfo',array('id'=>$_POST['id']));
     }
+
+    public function savemusic(){
+        $music_id=$_POST['music_id'];
+        $shower_id=$_POST['shower'];
+        $season_id=$_POST['season'];
+        if($music_id&&$shower_id){
+            $this->db->from('keyword_source_relation');
+            $this->db->where('source_id',$music_id);
+            $this->db->where('keyword_id',$shower_id);
+            if(count($this->db->get()->result_array())>0){
+
+            }else{
+                $this->db->insert('keyword_source_relation',array(
+                   'source_id'=>$music_id,
+                    'keyword_id'=> $shower_id
+                ));
+            }
+        }
+        if($music_id&&$season_id){
+            $this->db->from('keyword_source_relation');
+            $this->db->where('source_id',$music_id);
+            $this->db->where('keyword_id',$season_id);
+            if(count($this->db->get()->result_array())>0){
+
+            }else{
+                $this->db->insert('keyword_source_relation',array(
+                    'source_id'=>$music_id,
+                    'keyword_id'=> $season_id
+                ));
+            }
+        }
+    }
+
+
 }

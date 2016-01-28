@@ -847,3 +847,19 @@ function $deletejob(id){
         }
     });
 }
+function $saveMusic(){
+    $.ajax({
+        type:"post",
+        data: 'music_id='+$('#musicid')[0].value+'&shower='+$('#showers')[0].value+'&season'+$('#displayseason')[0].value,
+        url:"Pagemanager/savemusic",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('displaylist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
