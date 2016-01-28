@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="hpm-div">
     {privilige}
     <div class="row adminfo-div">
-        <input type="checkbox" id="{id}_privilige">
+        <input type="checkbox" id="privilige{id}">
         <label class="col-lg-2">{privilige}</label>
     </div>
     {/privilige}

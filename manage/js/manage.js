@@ -830,3 +830,19 @@ function $saveMusic(){
         }
     });
 }
+function $addadmin(){
+    $.ajax({
+        type:"post",
+        data: 'username='+$('#username')[0].value+'&password='+$('#password')[0].value+'&privilige1='+$('#privilige1')[0].checked+'&privilige2='+$('#privilige2')[0].checked+'&privilige3='+$('#privilige3')[0].checked+'&privilige4='+$('#privilige4')[0].checked+'&privilige5='+$('#privilige5')[0].checked+'&privilige6='+$('#privilige6')[0].checked+'&privilige7='+$('#privilige7')[0].checked+'&privilige8='+$('#privilige8')[0].checked+'&privilige9='+$('#privilige9')[0].checked+'&privilige10='+$('#privilige10')[0].checked,
+        url:"Pagemanager/addadmin",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('admininformation');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}

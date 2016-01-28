@@ -1116,6 +1116,26 @@ class Pagemanager extends CI_Controller
             }
         }
     }
+    public function addadmin(){
+        date_default_timezone_set("UTC");
+        $username=$_POST['username'];
+        $password=md5($_POST['password']);
+        $privilige1=$_POST['privilige1'];
+        $privilige2=$_POST['privilige2'];
+        $privilige3=$_POST['privilige3'];
+        $privilige4=$_POST['privilige4'];
+        $privilige5=$_POST['privilige5'];
+        $privilige6=$_POST['privilige6'];
+        $privilige7=$_POST['privilige7'];
+        $privilige8=$_POST['privilige8'];
+        $privilige9=$_POST['privilige9'];
+        $privilige10=$_POST['privilige10'];
+        $userinsertinfo=array(
+            'user_name'=>$username,
+            'password'=>$password,
+            'create_time'=>date('y-m-d',time())
+        );
+    }
 
 
 }
