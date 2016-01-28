@@ -898,3 +898,7 @@ function $submitarea(area){
         }
     });
 }
+
+function $previewarea(area){
+    window.open('http://localhost:8080/'+area+'/preview');
+}

@@ -89,5 +89,70 @@ class Join extends CI_Controller
         echo($_POST['email']);
 
     }
+    function preview(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;
+            $this->load->library('parser');
+            $this->load->model('page_data_model');
+
+            if($this->session->language){
+                $page_data=$this->page_data_model->get_page_data($this->session->language,'/join');
+            }else{
+                $page_data=$this->page_data_model->get_page_data('zn','/join');
+            }
+            $source_info_base=array(
+                'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
+            );
+
+            $source_info=$source_info_base;
+            $source_info['first_level']='join';
+            $source_info['second_level']='videoarea1';
+            $source_info['type']='video/mp4';
+            $video = $this->page_data_model->query_sources($source_info);
+            $source_info=$source_info_base;
+            $source_info['status']='2';
+            $source_info['first_level']='join';
+            $source_info['second_level']='videoarea1';
+            $source_info['type']='video/mp4';
+            $video =array_merge($video,$this->page_data_model->query_sources($source_info));
+
+
+
+
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['type']='img';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+            $source_info=$source_info_base;
+            $source_info['status']='2';
+            $source_info['first_level']='logoimage';
+            $source_info['type']='img';
+            $logoimage =array_merge($logoimage,$this->page_data_model->query_sources($source_info));
+
+
+            $d_status=array(
+                'd_status'=>'1',
+                'j_status'=>'1'
+            );
+            $department = $this->page_data_model->query_departments($d_status);
+            $tag_data = $this->page_data_model->query_tags();
+            $tmp_data = array(
+                'first_id'=>$department[0]['job'][0]['id'],
+                'logoimage'=>$logoimage,
+                'department' => $department,
+                'video' => $video
+            );
+
+            $tmp_data=array_merge($tmp_data,$tag_data);
+            $data=array_merge($tmp_data,$page_data);
+
+            $this->parser->parse('header',$data);
+            $this->parser->parse('search',$data);
+            $this->parser->parse('join',$data);
+            $this->parser->parse('footer',$data);
+        }
+    }
 
 }

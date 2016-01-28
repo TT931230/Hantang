@@ -67,6 +67,7 @@
 <div class="hpm-savebtn">
 <div class="row">
     <button onclick="$saveArea('aboutarea')">保存</button>
+    <button onclick="$previewarea('about')">预览</button>
     <button onclick="$submitarea('about')">发布</button>
 </div>
 </div>
