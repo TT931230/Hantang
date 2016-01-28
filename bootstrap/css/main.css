@@ -513,7 +513,7 @@
 a,
 a:focus,
 a:hover {
-    color: #fff;
+    color: transparent;
 }
 
 /* Custom default button */
@@ -564,7 +564,6 @@ body {
     
     
 }
-
 /* Padding for spacing */
 .inner {
     padding-top:10px;
@@ -640,12 +639,12 @@ body {
 }
 #homeli > a:hover,a:focus{
 
-	background-color: #fff;
+	background-color: transparent;
     border-bottom: 4px solid #a9a9a9;border-image:none;
 }
 #homeli >a.active{
 	
-    background-color: #fff;
+    background-color: transparent;
     border-bottom: 4px solid #a9a9a9;border-image:none;
 }
 
@@ -665,25 +664,25 @@ body {
 }
 #aboutli > a:hover,a:focus{
 
-	background-color: #fff;
+	background-color:transparent;
     border-bottom: 4px solid #a9a9a9;
     border-image:none;
 }
 #aboutli >a.active{
 	
-    background-color: #fff;
+    background-color: transparent;
     border-bottom: 4px solid #a9a9a9;
     border-image:none;
 }
 #ulli > a:hover,a:focus{
 
-	background-color: #fff;
+	background-color: transparent;
     border-bottom: 4px solid #A73D49;
     border-image:none;
 }
 #ulli >a.active{
 	
-    background-color: #fff;
+    background-color: transparent;
     border-bottom: 4px solid #A73D49;
     border-image:none;
 }
@@ -700,13 +699,13 @@ body {
     margin-left:30px;
 }
 #awoeli > a:hover,a:focus{
-	background-color: #fff;
+	background-color: transparent;
     border-bottom: 4px solid #3D5C9A;   	
     border-image:none;
 }
 
 #awoeli >a.active{
-background-color: #fff;
+background-color: transparent;
 border-bottom:4px solid #3D5C9A;
 border-image:none;
 }
@@ -732,7 +731,7 @@ border-image:none;
 	background-image: url('../images/musicline2.jpg');
  /*   border-image: url('../images/musicline.jpg') 0 0 4 0 ;*/
     height:80px;
-    border-bottom-color:#fff;
+    border-bottom-color:transparent;
 }
 #musicli > a{
 	height:80px;
@@ -740,14 +739,14 @@ border-image:none;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
-    background-color: #fff;
+    background-color: transparent;
 
 }
 #musicli >a:hover,a:focus{
    background-image: url('../images/musicline2.jpg');
 /*    border-image: url('../images/musicline.jpg') 0 0 4 0 ;*/
     height:80px;
-       border-bottom-color:#fff;
+       border-bottom-color:transparent;
 }
 #joinli  {
     display: inline-block;
@@ -762,13 +761,13 @@ border-image:none;
 }
 #joinli > a:hover,a:focus{
 
-	background-color: #fff;
+	background-color: transparent;
     border-bottom: 4px solid #a9a9a9;
     border-image:none;
 }
 #joinli >a.active{
 	
-    background-color: #fff;
+    background-color: transparent;
     border-bottom: 4px solid #a9a9a9;
     border-image:none;
 }
