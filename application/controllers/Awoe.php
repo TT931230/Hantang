@@ -195,4 +195,5 @@ class Awoe extends CI_Controller
         $this->parser->parse('awoeinner',$data);
         $this->parser->parse('footer',$data);
     }
+
 }

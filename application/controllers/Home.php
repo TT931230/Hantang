@@ -174,4 +174,5 @@ class Home extends CI_Controller
 
         return $this->parser->parse('footer',$data);
     }
+
 }

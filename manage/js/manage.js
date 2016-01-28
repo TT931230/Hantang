@@ -26,7 +26,7 @@ function $saveImage(){
     third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+'&third_level='+third_level,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+'&third_level='+third_level+'&url='+url,
         url:"Pagemanager/saveImage",
         success: function(result)
         {
@@ -837,8 +837,44 @@ function $addadmin(){
         url:"Pagemanager/addadmin",
         success: function(result)
         {
-            alert('保存成功！');
-            $changetags('admininformation');
+            if(result){
+                alert('保存成功！');
+                $changetags('admininformation');
+            }else{
+                alert('用户名已存在！');
+                $changetags('admininformation');
+            }
+
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $logout(){
+    $.ajax({
+        type:"post",
+        url:"Login/logout",
+        success: function(result)
+        {
+            location.href=result;
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deleteuser(id){
+    $.ajax({
+        type:"post",
+        data:"id="+id,
+        url:"Pagemanager/deleteuser",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('authoritymanage');
         },
         error: function()
         {

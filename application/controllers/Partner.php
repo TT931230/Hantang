@@ -53,4 +53,5 @@ class Partner extends CI_Controller
         $this->session->set_userdata('language',$_POST['language']);
         $this->index();
     }
+
 }
