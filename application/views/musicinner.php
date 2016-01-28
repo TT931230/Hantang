@@ -27,27 +27,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
            
         
-            <div class="subtitle">
-                <div class="ulinnera">
+            <div class="subtitle-music">
+                <div class="musicinnera">
 
-                    <div class="innertexttitle">
-                        <label>演出名称：</label>{source_name}
+                    <div style="margin-bottom:30px;">
+                    <table style="width:100%;text-align:left;">
+                    <tr>
+                        <td style="width:13%;text-align:right;color:#000;">演出名称：<td>
+                        <td style="padding-right:30px;padding-left:10px;">{source_name}</td>
+                        </tr>
+                    </table>
                     </div>
-                    <div class="innertext">
-                        <label>简介：</label>{source_remark}
+                    <div style="margin-bottom:30px;">
+                     <table style="width:100%;text-align:left;">
+                       <tr>
+                        <td valign="top" style="width:13%; padding-left:50px;color:#000;">简介：</td>
+                        <td style="padding-right:30px;padding-left:10px;">{source_remark}</td>
+                        </tr>
+                     </table>
+                    </div>
+                    <div style="margin-bottom:30px;">
+                     <table style="width:100%;text-align:left;">
+                     <tr>
+                        <td style="width:13%;text-align:right;color:#000;">演出时间：</td>
+                        <td style="padding-right:30px;padding-left:10px;">{musictime}</td>
+                        </tr>
+                    </table>
                     </div>
                     <div>
-                        <label>演出时间：</label>{musictime}
-                    </div>
-                    <div>
-                        <label>演出地点：</label>{musiclocation}
+                       <table style="width:100%;text-align:left;">
+                       <tr>
+                        <td style="width:13%;text-align:right;color:#000;">演出地点：</td>
+                        <td style="padding-right:30px;padding-left:10px;">{musiclocation}</td>
+                        </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="ulinnerc">
+                <div class="musicinnerc">
                     <img src="{imgurl}">
                 </div>
                 {/video}
-                
+               </div>  
             <div class="videoslug">
                 相关视频
             </div>
@@ -57,14 +77,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="relatedvideoarea" id="relatedvideoarea">
                     {relatedvideo}
                     <div class="relatedvideos">
-                        <a href='{link_url}'><img src='{source_location}'></a>
+                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>
                         <div class="relavideostitle">
                             {source_name}
                         </div>
                     </div>
                     {/relatedvideo}
                 </div>
-            </div>
+           
         </div>
     </div>
 </div>

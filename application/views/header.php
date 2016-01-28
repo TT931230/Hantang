@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后�-->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后�->
     <meta name="description" content="">
 
 
@@ -88,6 +88,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/bootstrap/js/main.js"></script>
 <script src="/bootstrap/js/asszy.js"></script>
-
+<script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
 </body>
 </html>
