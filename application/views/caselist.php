@@ -12,11 +12,6 @@
         <label class="col-lg-2">图片明细列表</label>
     </div>
      -->
-    <div class="row cl-div">
-        <label class="col-lg-2 cl-title">图片标题</label>
-        <input class="col-lg-2 cl-input" type="text" id="source_name">
-        <button onclick="$queryImage()" class="btn btn-default cl-querybtn">查询</button>
-    </div>
  <!--    <div class="row">
         <button onclick="$queryImage()" class="btn btn-default">查询</button>
     </div>--> 

@@ -27,22 +27,26 @@ class Music extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='music';
         $source_info['second_level']='imagearea1';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
         $keyword_info['second_level']='seasondetails';
+        $source_info['third_level']=$this->session->language;
         $seasondetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
         $keyword_info['second_level']='displaydetails';
+        $source_info['third_level']=$this->session->language;
         $displaydetails = $this->page_data_model->query_keywords($keyword_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
+        $source_info['third_level']=$this->session->language;
         $logoimage = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
@@ -97,21 +101,25 @@ class Music extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='musiclogo';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $musiclogo = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
+        $source_info['third_level']=$this->session->language;
         $keyword_info['second_level']='seasondetails';
         $seasondetails = $this->page_data_model->query_keywords($keyword_info);
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
+        $source_info['third_level']=$this->session->language;
         $keyword_info['second_level']='displaydetails';
         $displaydetails = $this->page_data_model->query_keywords($keyword_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
 
@@ -123,9 +131,35 @@ class Music extends CI_Controller
 
         $this->db->where('status','1');
         $this->db->where('id',$videoname);
+        $this->db->where('third_level',$this->session->language);
         $this->db->from('source');
         $videoquery = $this->db->get();
         $video = $videoquery->result_array();
+
+        $this->db->from('source');
+        $this->db->where('status','1');
+        $this->db->where('third_level',$this->session->language);
+        $this->db->where("link_url like '%".$video[0]['id']."%'");
+        $imgarray=$this->db->get()->result_array();
+        if(count($imgarray)>0){
+            $video[0]['imgurl']=$imgarray[0]['source_location'];
+            $this->db->from('musicinfo');
+            $this->db->where('music_id',$imgarray[0]['id']);
+            $musicinfoarray=$this->db->get()->result_array();
+            if(count($musicinfoarray)>0) {
+                $musictime = $musicinfoarray[0]['musictime'];
+                $musiclocation = $musicinfoarray[0]['musiclocation'];
+            }else{
+                $musictime='';
+                $musiclocation='';
+            }
+        }else{
+            $musictime='';
+            $musiclocation='';
+            $video[0]['imgurl']='';
+        }
+        $video[0]['musictime']=$musictime;
+        $video[0]['musiclocation']=$musiclocation;
 
         $tag_data = $this->page_data_model->query_tags();
 

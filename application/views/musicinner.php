@@ -29,47 +29,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         
             <div class="subtitle">
                 <div class="ulinnera">
+
                     <div class="innertexttitle">
-                        {source_name}
+                        <label>演出名称：</label>{source_name}
                     </div>
                     <div class="innertext">
-                        {source_remark}
+                        <label>简介：</label>{source_remark}
+                    </div>
+                    <div>
+                        <label>演出时间：</label>{musictime}
+                    </div>
+                    <div>
+                        <label>演出地点：</label>{musiclocation}
                     </div>
                 </div>
                 <div class="ulinnerc">
-
-
-                    <div class="part2">
-                        <div>
-                            <a href="{source_url}" download="{source_name}">
-
-                                <img id="dload" alt="" src="../../bootstrap/images/dload.png"/>
-                            </a>
-
-                        </div>
-                        <div class="ul_des">下载</div>
-                    </div>
-                    <div class="part3">
-                        <div>
-                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/>
-
-                        </div>
-                        <div class="ul_des">手机</div>
-                    </div>
+                    <img src="{imgurl}">
                 </div>
                 {/video}
-                <div class="ulinnerb">
-                    <div id="share">
-                        <div class="bdsharebuttonbox">
-                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-                        </div>
-                    </div>
-                    <div id="sharetext">分享给好友</div>
-                </div>
-            </div>
                 
             <div class="videoslug">
                 相关视频

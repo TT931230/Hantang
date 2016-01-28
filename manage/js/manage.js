@@ -23,9 +23,10 @@ function $saveImage(){
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
     source_remark=$('#source_remark')[0].value;
+    third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+'&third_level='+third_level,
         url:"Pagemanager/saveImage",
         success: function(result)
         {
@@ -121,34 +122,7 @@ function $getselectedinfo(pagename){
             break;
     }
 }
-function $queryVideo(){
-    menu=$('#menu')[0].value;
-    source_name=$('#source_name')[0].value;
-    console.log();
-}
-function $queryLogo(){
-    keyword
-    keyword_remark
-    source_name
-}
-function $saveLogo(){
-    keyword
-    keyword_remark
-    source_name
-}
-function $saveMusic(){
-    source_name
-    keyword
-    keyword_season
-    keyword_time
-    sequence
-    menu
-    source_remark
-    keyword_remark
-}
-function $queryMusic(){
-    source_name
-}
+
 function $saveArea(areatype){
     switch(areatype){
         case 'homearea':
@@ -613,12 +587,6 @@ function $saveArea(areatype){
     }
 }
 
-function $savebrand(){
-
-}
-function $deletebrand(){
-
-}
 function $savesingleimg(source_id){
     imgtype=$('#'+source_id+'_imgtype')[0].value;
     imgsequence=$('#'+source_id+'_sequence')[0].value;
@@ -700,6 +668,161 @@ function $savebrand(brand_id){
             alert('保存成功！');
             $changetags('brandedit');
             //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $saveDepartment(){
+    $.ajax({
+        type:"post",
+        data: 'department='+$('#department')[0].value,
+        url:"Pagemanager/savedepartment",
+        success: function(result)
+        {
+            if(result){
+                alert('保存成功！');
+                $changetags('departmentlist');
+            }else{
+                alert('部门已存在！');
+                $changetags('adddepartment');
+            }
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function saveJob(){
+    $.ajax({
+        type:"post",
+        data: 'department_id='+$('#departmentname')[0].value+'&jobname='+$('#jobname')[0].value+'&need='+$('#need')[0].value+'&todo='+$('#todo')[0].value,
+        url:"Pagemanager/savejob",
+        success: function(result)
+        {
+            if(result){
+                alert('保存成功！');
+                $changetags('joblist');
+            }else{
+                alert('职位已存在！');
+                $changetags('addjob');
+            }
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $updatedepartment(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id+'&sequence='+$('#'+id+'_sequence')[0].value,
+        url:"Pagemanager/updatedepartment",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $changedepartmentstatus(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/changedepartmentstatus",
+        success: function(result)
+        {
+            alert('更新成功！');
+            $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletedepartment(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/deletedepartment",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $updatejob(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id+'&sequence='+$('#'+id+'_sequence')[0].value,
+        url:"Pagemanager/updatejob",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('joblist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $changejobstatus(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/changejobstatus",
+        success: function(result)
+        {
+            alert('更新成功！');
+            $changetags('joblist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletejob(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/deletejob",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('joblist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $saveMusic(){
+    $.ajax({
+        type:"post",
+        data: 'music_id='+$('#musicid')[0].value+'&shower='+$('#showers')[0].value+'&season'+$('#displayseason')[0].value+'&time'+$('#displaytime')[0].value+'&location'+$('#displaylocation')[0].value,
+        url:"Pagemanager/savemusic",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('displaylist');
         },
         error: function()
         {
