@@ -12,7 +12,31 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;
-
+            $privilige4user=$this->session->privilige;
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
             $pagename = $_POST['pagename'];
             $this->load->library('parser');
             $this->load->model('source_model');
@@ -365,6 +389,31 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
             $sequence = '1';
 //        $url=$_POST['url'];
             $source_location = $_POST['source_location'];
@@ -388,7 +437,8 @@ class Pagemanager extends CI_Controller
             var_dump($insertcontent);
             return $this->source_model->insertSource($insertcontent);
         }else{
-
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     function saveVideo(){
@@ -396,6 +446,31 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
             $sequence = '1';
             $source_location = $_POST['source_location'];
             $source_name = $_POST['source_name'];
@@ -414,8 +489,8 @@ class Pagemanager extends CI_Controller
                 'source_remark' => $source_remark,
                 'sequence' => $sequence,
                 'type' => 'video/mp4',
-                'updater' => 'ADMIN',
-                'creator' => 'ADMIN',
+                'updater' => $username,
+                'creator' => $username,
                 'first_level' => $first_level,
                 'second_level' => null,
                 'third_level' => $third_level,
@@ -425,6 +500,9 @@ class Pagemanager extends CI_Controller
             );
             $this->load->model('source_model');
             $this->source_model->insertvideoSource($insertvideo);
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     function inserttags(){
@@ -432,6 +510,31 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
             $this->load->model('keyword_model');
             $tagtype = $_POST['tagtype'];
             $filename = $_FILES['file']['tmp_name'];
@@ -452,8 +555,8 @@ class Pagemanager extends CI_Controller
                         'second_level' => $goods_list[$i][2],
                         'third_level' => $goods_list[$i][3],
                         'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][4]),
-                        'creator' => 'ADMIN',
-                        'updater' => 'ADMIN',
+                        'creator' =>$username,
+                        'updater' => $username,
                         'status' => '1',
                     );
                     $this->keyword_model->insertKeyword($insertcontent);
@@ -469,8 +572,8 @@ class Pagemanager extends CI_Controller
                             'second_level' => $goods_list[$i][2],
                             'third_level' => $goods_list[$i][3],
                             'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][4]),
-                            'creator' => 'ADMIN',
-                            'updater' => 'ADMIN',
+                            'creator' => $username,
+                            'updater' => $username,
                             'status' => '1',
                         );
                         $this->keyword_model->insertKeyword($insertcontent);
@@ -491,8 +594,8 @@ class Pagemanager extends CI_Controller
                                 'second_level' => $tagtype,
                                 'third_level' => $goods_list[$i][5],
                                 'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][6]),
-                                'creator' => 'ADMIN',
-                                'updater' => 'ADMIN',
+                                'creator' => $username,
+                                'updater' => $username,
                                 'status' => '1',
                             );
                             $this->keyword_model->insertKeyword($insertcontent);
@@ -505,8 +608,8 @@ class Pagemanager extends CI_Controller
                             'second_level' => $country_id,
                             'third_level' => $goods_list[$i][5],
                             'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][6]),
-                            'creator' => 'ADMIN',
-                            'updater' => 'ADMIN',
+                            'creator' => $username,
+                            'updater' => $username,
                             'status' => '1',
                         );
                         $this->keyword_model->insertKeyword($insertcontent);
@@ -516,6 +619,9 @@ class Pagemanager extends CI_Controller
 
             echo "<script>alert('导入成功！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/contentm'>";
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     function updateareainfo()
@@ -524,520 +630,589 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            for($i=0;$i<count($privilige4user);$i++){
+                $privilige41=false;
+                $privilige42=false;
+                $privilige43=false;
+                $privilige44=false;
+                $privilige45=false;
+                $privilige46=false;
+                $privilige47=false;
+                $privilige48=false;
+                $privilige49=false;
+                $privilige410=false;
+                switch($privilige4user[$i]){
+                    case '1':$privilige41=true;break;
+                    case '2':$privilige42=true;break;
+                    case '3':$privilige43=true;break;
+                    case '4':$privilige44=true;break;
+                    case '5':$privilige45=true;break;
+                    case '6':$privilige46=true;break;
+                    case '7':$privilige47=true;break;
+                    case '8':$privilige48=true;break;
+                    case '9':$privilige49=true;break;
+                    case '10':$privilige410=true;break;
+                }
+            }
             date_default_timezone_set("UTC");
             $areatype = $_POST['areatype'];
             $third_level = $_POST['arealanguage'];
             switch ($areatype) {
                 case 'homearea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['homearea1_is_hide'],
-                        'is_auto' => $_POST['homearea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'home', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $modelupdateinfo2 = array(
-                        'is_hide' => $_POST['homearea2_is_hide'],
-                        'is_auto' => $_POST['homearea2_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo2, array('first_level' => 'home', 'second_level' => 'area2', 'third_level' => $third_level));
-                    $modelupdateinfo3 = array(
-                        'is_hide' => $_POST['homearea3_is_hide'],
-                        'is_auto' => $_POST['homearea3_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo3, array('first_level' => 'home', 'second_level' => 'area3', 'third_level' => $third_level));
-                    $modelupdateinfo4 = array(
-                        'is_hide' => $_POST['homearea4_is_hide'],
-                        'is_auto' => $_POST['homearea4_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo4, array('first_level' => 'home', 'second_level' => 'area4', 'third_level' => $third_level));
-                    $listarray1 = explode('|||', $_POST['homeimglist1']);
-                    $listarray2 = explode('|||', $_POST['homeimglist2']);
-                    $listarray3 = explode('|||', $_POST['homeimglist3']);
-                    $listarray4 = explode('|||', $_POST['homeimglist4']);
-                    if ($listarray1[0]) {
-                        for ($i = 0; $i < count($listarray1); $i++) {
-                            $this->db->from('source');
-                            $this->db->where('id', $listarray1[$i]);
-                            if ($this->db->get()->result_array()[0]['status'] == 1) {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea1',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '1'
-                                );
-                            } else {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea1',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '2'
-                                );
-                            }
-                            $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1[$i]));
-                        };
-                    }
-                    if ($listarray2[0]) {
-                        for ($i = 0; $i < count($listarray2); $i++) {
-                            $this->db->from('source');
-                            $this->db->where('id', $listarray2[$i]);
-                            if ($this->db->get()->result_array()[0]['status'] == 1) {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea2',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '1'
-                                );
-                            } else {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea2',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '2'
-                                );
-                            }
-                            $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2[$i]));
-                        };
-                    }
-                    if ($listarray3[0]) {
-                        for ($i = 0; $i < count($listarray3); $i++) {
-                            $this->db->from('source');
-                            $this->db->where('id', $listarray3[$i]);
-                            if ($this->db->get()->result_array()[0]['status'] == 1) {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea3',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '1'
-                                );
-                            } else {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea3',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '2'
-                                );
-                            }
-                            $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3[$i]));
-                        };
-                    }
-                    if ($listarray4[0]) {
-                        for ($i = 0; $i < count($listarray4); $i++) {
-                            $this->db->from('source');
-                            $this->db->where('id', $listarray4[$i]);
-                            if ($this->db->get()->result_array()[0]['status'] == 1) {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea4',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '1'
-                                );
-                            } else {
-                                $sourceupdateinfo = array(
-                                    'first_level' => 'home',
-                                    'second_level' => 'imagearea4',
-                                    'third_level' => $third_level,
-                                    'updatetime' => date("y-m-d", time()),
-                                    'status' => '2'
-                                );
-                            }
-                            $this->db->update('source', $sourceupdateinfo, array('id' => $listarray4[$i]));
+                    if($privilige41){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['homearea1_is_hide'],
+                            'is_auto' => $_POST['homearea1_is_auto']
+                        );
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'home', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $modelupdateinfo2 = array(
+                            'is_hide' => $_POST['homearea2_is_hide'],
+                            'is_auto' => $_POST['homearea2_is_auto']
+                        );
+                        $this->db->update('webmodel', $modelupdateinfo2, array('first_level' => 'home', 'second_level' => 'area2', 'third_level' => $third_level));
+                        $modelupdateinfo3 = array(
+                            'is_hide' => $_POST['homearea3_is_hide'],
+                            'is_auto' => $_POST['homearea3_is_auto']
+                        );
+                        $this->db->update('webmodel', $modelupdateinfo3, array('first_level' => 'home', 'second_level' => 'area3', 'third_level' => $third_level));
+                        $modelupdateinfo4 = array(
+                            'is_hide' => $_POST['homearea4_is_hide'],
+                            'is_auto' => $_POST['homearea4_is_auto']
+                        );
+                        $this->db->update('webmodel', $modelupdateinfo4, array('first_level' => 'home', 'second_level' => 'area4', 'third_level' => $third_level));
+                        $listarray1 = explode('|||', $_POST['homeimglist1']);
+                        $listarray2 = explode('|||', $_POST['homeimglist2']);
+                        $listarray3 = explode('|||', $_POST['homeimglist3']);
+                        $listarray4 = explode('|||', $_POST['homeimglist4']);
+                        if ($listarray1[0]) {
+                            for ($i = 0; $i < count($listarray1); $i++) {
+                                $this->db->from('source');
+                                $this->db->where('id', $listarray1[$i]);
+                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea1',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '1'
+                                    );
+                                } else {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea1',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '2'
+                                    );
+                                }
+                                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1[$i]));
+                            };
                         }
-                    };
+                        if ($listarray2[0]) {
+                            for ($i = 0; $i < count($listarray2); $i++) {
+                                $this->db->from('source');
+                                $this->db->where('id', $listarray2[$i]);
+                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea2',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '1'
+                                    );
+                                } else {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea2',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '2'
+                                    );
+                                }
+                                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2[$i]));
+                            };
+                        }
+                        if ($listarray3[0]) {
+                            for ($i = 0; $i < count($listarray3); $i++) {
+                                $this->db->from('source');
+                                $this->db->where('id', $listarray3[$i]);
+                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea3',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '1'
+                                    );
+                                } else {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea3',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '2'
+                                    );
+                                }
+                                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3[$i]));
+                            };
+                        }
+                        if ($listarray4[0]) {
+                            for ($i = 0; $i < count($listarray4); $i++) {
+                                $this->db->from('source');
+                                $this->db->where('id', $listarray4[$i]);
+                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea4',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '1'
+                                    );
+                                } else {
+                                    $sourceupdateinfo = array(
+                                        'first_level' => 'home',
+                                        'second_level' => 'imagearea4',
+                                        'third_level' => $third_level,
+                                        'updatetime' => date("y-m-d", time()),
+                                        'status' => '2'
+                                    );
+                                }
+                                $this->db->update('source', $sourceupdateinfo, array('id' => $listarray4[$i]));
+                            }
+                        };
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
 
 
                 case 'aboutarea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['aboutarea1_is_hide'],
-                        'is_auto' => $_POST['aboutarea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'about', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $modelupdateinfo2 = array(
-                        'is_hide' => $_POST['aboutarea2_is_hide'],
-                        'is_auto' => $_POST['aboutarea2_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo2, array('first_level' => 'about', 'second_level' => 'area2', 'third_level' => $third_level));
-                    $modelupdateinfo3 = array(
-                        'is_hide' => $_POST['aboutarea3_is_hide'],
-                        'is_auto' => $_POST['aboutarea3_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo3, array('first_level' => 'about', 'second_level' => 'area3', 'third_level' => $third_level));
-                    $listarray1 = $_POST['aboutimglist1'];
-                    $listarray2 = $_POST['aboutimglist2'];
-                    $listarray3 = $_POST['aboutimglist3'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'about',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige42){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['aboutarea1_is_hide'],
+                            'is_auto' => $_POST['aboutarea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'about',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'about', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $modelupdateinfo2 = array(
+                            'is_hide' => $_POST['aboutarea2_is_hide'],
+                            'is_auto' => $_POST['aboutarea2_is_auto']
                         );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                        $this->db->update('webmodel', $modelupdateinfo2, array('first_level' => 'about', 'second_level' => 'area2', 'third_level' => $third_level));
+                        $modelupdateinfo3 = array(
+                            'is_hide' => $_POST['aboutarea3_is_hide'],
+                            'is_auto' => $_POST['aboutarea3_is_auto']
+                        );
+                        $this->db->update('webmodel', $modelupdateinfo3, array('first_level' => 'about', 'second_level' => 'area3', 'third_level' => $third_level));
+                        $listarray1 = $_POST['aboutimglist1'];
+                        $listarray2 = $_POST['aboutimglist2'];
+                        $listarray3 = $_POST['aboutimglist3'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'about',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'about',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
 
 
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray2);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'about',
-                            'second_level' => 'videoarea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
-                        );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'about',
-                            'second_level' => 'videoarea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2));
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray2);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'about',
+                                'second_level' => 'videoarea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'about',
+                                'second_level' => 'videoarea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2));
 
 
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray3);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'about',
-                            'second_level' => 'imagearea3',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
-                        );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'about',
-                            'second_level' => 'imagearea3',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3));
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray3);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'about',
+                                'second_level' => 'imagearea3',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'about',
+                                'second_level' => 'imagearea3',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
 
 
                 case 'platformarea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['platformarea1_is_hide'],
-                        'is_auto' => $_POST['platformarea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'platform', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $modelupdateinfo2 = array(
-                        'is_hide' => $_POST['platformarea2_is_hide'],
-                        'is_auto' => $_POST['platformarea2_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo2, array('first_level' => 'platform', 'second_level' => 'area2', 'third_level' => $third_level));
-                    $modelupdateinfo3 = array(
-                        'is_hide' => $_POST['platformarea3_is_hide'],
-                        'is_auto' => $_POST['platformarea3_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo3, array('first_level' => 'platform', 'second_level' => 'area3', 'third_level' => $third_level));
-                    $listarray1 = $_POST['platformimglist1'];
-                    $listarray2 = $_POST['platformimglist2'];
-                    $listarray3 = $_POST['platformimglist3'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'platform',
-                            'second_level' => 'videoarea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige43){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['platformarea1_is_hide'],
+                            'is_auto' => $_POST['platformarea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'platform',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'platform', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $modelupdateinfo2 = array(
+                            'is_hide' => $_POST['platformarea2_is_hide'],
+                            'is_auto' => $_POST['platformarea2_is_auto']
                         );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                        $this->db->update('webmodel', $modelupdateinfo2, array('first_level' => 'platform', 'second_level' => 'area2', 'third_level' => $third_level));
+                        $modelupdateinfo3 = array(
+                            'is_hide' => $_POST['platformarea3_is_hide'],
+                            'is_auto' => $_POST['platformarea3_is_auto']
+                        );
+                        $this->db->update('webmodel', $modelupdateinfo3, array('first_level' => 'platform', 'second_level' => 'area3', 'third_level' => $third_level));
+                        $listarray1 = $_POST['platformimglist1'];
+                        $listarray2 = $_POST['platformimglist2'];
+                        $listarray3 = $_POST['platformimglist3'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'platform',
+                                'second_level' => 'videoarea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'platform',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
 
 
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray2);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'platform',
-                            'second_level' => 'imagearea2',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
-                        );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'platform',
-                            'second_level' => 'imagearea2',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2));
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray2);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'platform',
+                                'second_level' => 'imagearea2',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'platform',
+                                'second_level' => 'imagearea2',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray2));
 
 
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray3);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'platform',
-                            'second_level' => 'imagearea3',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
-                        );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'platform',
-                            'second_level' => 'imagearea3',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3));
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray3);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'platform',
+                                'second_level' => 'imagearea3',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'platform',
+                                'second_level' => 'imagearea3',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray3));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
 
 
                 case 'partnerarea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['partnerarea1_is_hide'],
-                        'is_auto' => $_POST['partnerarea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'partner', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $listarray1 = $_POST['partnerimglist1'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'partner',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige44){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['partnerarea1_is_hide'],
+                            'is_auto' => $_POST['partnerarea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'partner',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'partner', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $listarray1 = $_POST['partnerimglist1'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'partner',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'partner',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
 
                     break;
 
 
                 case 'ularea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['ularea1_is_hide'],
-                        'is_auto' => $_POST['ularea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'ul', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $listarray1 = $_POST['ulimglist1'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'ul',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige45){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['ularea1_is_hide'],
+                            'is_auto' => $_POST['ularea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'ul',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
-
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'ul', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $listarray1 = $_POST['ulimglist1'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'ul',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'ul',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
 
 
                 case 'awoearea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['awoearea1_is_hide'],
-                        'is_auto' => $_POST['awoearea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'awoe', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $listarray1 = $_POST['awoeimglist1'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'awoe',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige46){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['awoearea1_is_hide'],
+                            'is_auto' => $_POST['awoearea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'awoe',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
-
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'awoe', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $listarray1 = $_POST['awoeimglist1'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'awoe',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'awoe',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
 
 
                 case 'musicarea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['musicarea1_is_hide'],
-                        'is_auto' => $_POST['musicarea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'music', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $listarray1 = $_POST['musicimglist1'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'music',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige47){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['musicarea1_is_hide'],
+                            'is_auto' => $_POST['musicarea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'music',
-                            'second_level' => 'imagearea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'music', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $listarray1 = $_POST['musicimglist1'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'music',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'music',
+                                'second_level' => 'imagearea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
 
 
                 case 'joinarea':
-                    $modelupdateinfo1 = array(
-                        'is_hide' => $_POST['joinarea1_is_hide'],
-                        'is_auto' => $_POST['joinarea1_is_auto']
-                    );
-                    $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'join', 'second_level' => 'area1', 'third_level' => $third_level));
-                    $listarray1 = $_POST['joinimglist1'];
-                    $this->db->from('source');
-                    $this->db->where('id', $listarray1);
-                    if ($this->db->get()->result_array()[0]['status'] == 1) {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'join',
-                            'second_level' => 'videoarea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '1'
+                    if($privilige48){
+                        $modelupdateinfo1 = array(
+                            'is_hide' => $_POST['joinarea1_is_hide'],
+                            'is_auto' => $_POST['joinarea1_is_auto']
                         );
-                    } else {
-                        $sourceupdateinfo = array(
-                            'first_level' => 'join',
-                            'second_level' => 'videoarea1',
-                            'third_level' => $third_level,
-                            'updatetime' => date("y-m-d", time()),
-                            'status' => '2'
-                        );
-                    };
-                    $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
-
+                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'join', 'second_level' => 'area1', 'third_level' => $third_level));
+                        $listarray1 = $_POST['joinimglist1'];
+                        $this->db->from('source');
+                        $this->db->where('id', $listarray1);
+                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'join',
+                                'second_level' => 'videoarea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '1'
+                            );
+                        } else {
+                            $sourceupdateinfo = array(
+                                'first_level' => 'join',
+                                'second_level' => 'videoarea1',
+                                'third_level' => $third_level,
+                                'updatetime' => date("y-m-d", time()),
+                                'status' => '2'
+                            );
+                        };
+                        $this->db->update('source', $sourceupdateinfo, array('id' => $listarray1));
+                    }else{
+                        echo '<script>alert("无权限！")</script>';
+                    }
                     break;
             }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function savesingleimg(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $updateitem = array(
                 'type' => $_POST['imgtype'],
                 'sequence' => $_POST['sequence']
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function savesinglevideo(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $updateitem = array(
                 'sequence' => $_POST['sequence']
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function deletesinglesource(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $deleteitem = array(
                 'id' => $_POST['source_id']
             );
             $this->db->delete('source', $deleteitem);
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function savebrand(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $updateitem = array(
                 'type' => 'partnerimg',
                 'second_level' => $_POST['brand_id'],
                 'sequence' => $_POST['sequence']
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['source_id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function savedepartment(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $insertdepartment = array(
                 'department' => $_POST['department'],
                 'create_time' => date('y-m-d', time()),
-                'creator' => 'ADMIN',
+                'creator' => $username,
                 'update_time' => date('y-m-d', time()),
-                'updater' => 'ADMIN'
+                'updater' => $username
             );
             $this->db->from('department');
             $this->db->where('department', $_POST['department']);
@@ -1047,13 +1222,16 @@ class Pagemanager extends CI_Controller
                 $this->db->insert('department', $insertdepartment);
                 echo true;
             }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function savejob(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $insertjob = array(
                 'jobname' => $_POST['jobname'],
@@ -1061,9 +1239,9 @@ class Pagemanager extends CI_Controller
                 'need' => $_POST['need'],
                 'todo' => $_POST['todo'],
                 'create_time' => date('y-m-d', time()),
-                'creator' => 'ADMIN',
+                'creator' => $username,
                 'update_time' => date('y-m-d', time()),
-                'updater' => 'ADMIN'
+                'updater' => $username
             );
             $this->db->from('jobinfo');
             $this->db->where('jobname', $_POST['jobname']);
@@ -1074,27 +1252,33 @@ class Pagemanager extends CI_Controller
                 $this->db->insert('jobinfo', $insertjob);
                 echo true;
             }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function updatedepartment(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $departmentupdateinfo = array(
                 'sequence' => $_POST['sequence'],
                 'update_time' => date('y-m-d', time()),
-                'updater' => 'ADMIN'
+                'updater' => $username
             );
             $this->db->update('department', $departmentupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function changedepartmentstatus(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $this->db->from('department');
             $this->db->where('id', $_POST['id']);
@@ -1102,23 +1286,26 @@ class Pagemanager extends CI_Controller
                 $departmentupdateinfo = array(
                     'status' => '0',
                     'update_time' => date('y-m-d', time()),
-                    'updater' => 'ADMIN'
+                    'updater' => $username
                 );
             } else {
                 $departmentupdateinfo = array(
                     'status' => '1',
                     'update_time' => date('y-m-d', time()),
-                    'updater' => 'ADMIN'
+                    'updater' => $username
                 );
             }
             $this->db->update('department', $departmentupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function deletedepartment(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $this->db->delete('department', array('id' => $_POST['id']));
         }
     }
@@ -1126,21 +1313,24 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $jobupdateinfo = array(
                 'sequence' => $_POST['sequence'],
                 'update_time' => date('y-m-d', time()),
-                'updater' => 'ADMIN'
+                'updater' => $username
             );
             $this->db->update('jobinfo', $jobupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function changejobstatus(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $this->db->from('jobinfo');
             $this->db->where('id', $_POST['id']);
@@ -1148,23 +1338,26 @@ class Pagemanager extends CI_Controller
                 $jobupdateinfo = array(
                     'status' => '0',
                     'update_time' => date('y-m-d', time()),
-                    'updater' => 'ADMIN'
+                    'updater' => $username
                 );
             } else {
                 $jobupdateinfo = array(
                     'status' => '1',
                     'update_time' => date('y-m-d', time()),
-                    'updater' => 'ADMIN'
+                    'updater' => $username
                 );
             }
             $this->db->update('jobinfo', $jobupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function deletejob(){
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $this->db->delete('jobinfo', array('id' => $_POST['id']));
         }
     }
@@ -1173,7 +1366,7 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $music_id = $_POST['music_id'];
             $shower_id = $_POST['shower'];
             $season_id = $_POST['season'];
@@ -1221,6 +1414,9 @@ class Pagemanager extends CI_Controller
                     ));
                 }
             }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
     public function addadmin()
@@ -1228,7 +1424,7 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $username = $_POST['username'];
             $password = md5($_POST['password']);
@@ -1237,7 +1433,7 @@ class Pagemanager extends CI_Controller
                 'user_name' => $username,
                 'password' => $password,
                 'create_time' => date('y-m-d', time()),
-                'creator' => 'ADMIN'
+                'creator' => $username
             );
             $this->db->from('user_info');
             $this->db->where('user_name', $username);
@@ -1254,6 +1450,9 @@ class Pagemanager extends CI_Controller
                 }
                 echo true;
             }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
 
@@ -1261,10 +1460,13 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
             $id = $_POST['id'];
             $this->db->delete('user_info', array('id' => $id));
             $this->db->delete('privilige_user', array('user_id' => $id));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
 

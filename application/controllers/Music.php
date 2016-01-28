@@ -180,4 +180,5 @@ class Music extends CI_Controller
         $this->parser->parse('musicinner',$data);
         $this->parser->parse('footer',$data);
     }
+
 }

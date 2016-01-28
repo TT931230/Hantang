@@ -196,4 +196,5 @@ class Ul extends CI_Controller
         $this->parser->parse('ulinner',$data);
         $this->parser->parse('footer',$data);
     }
+
 }
