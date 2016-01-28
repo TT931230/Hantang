@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后�-->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后�-->
     <meta name="description" content="">
 
 
@@ -57,8 +57,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="masthead_ul">
             <ul class="nav masthead-nav headernavul">
-                <li id="li1"><a href="/home" class="{homenav} navtags">{home}</a></li>
-                <li id="li2">
+                <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
+                <li id="aboutli">
                     <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
                     <ul class="dropdown-menu dropdownmenucust headernav">
                         <li><a href="/about">{introduce}</a></li>
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
                 <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
                 <li id="musicli"><a href="/music" class="{musicnav} navtags">{music}</a></li>
-                <li id="li3"><a href="/join" class="{joinnav} navtags">{join}</a></li>
+                <li id="joinli"><a href="/join" class="{joinnav} navtags">{join}</a></li>
             </ul>
         </div>
 <!--        <div class="inner">-->
