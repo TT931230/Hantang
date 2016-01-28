@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="manage/css/multi.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="manage/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="manage/css/admin2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="manage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -39,27 +39,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-<div>
+<div class="logintable">
+<div class="loginimg"><img src="bootstrap/images/logo.png"></div>
+<div class="loginform">
     <form id="addform" action="login/formsubmit" method="post" enctype="multipart/form-data">
-    <table>
-        <tr>
-            <td>用户名</td>
-            <td><input type="text" name="username"></td>
-        </tr>
-        <tr>
-            <td>密码</td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" name="submit" value="login">
-            </td>
-            <td>
-                <input type="submit" name="submit" value="register">
-            </td>
-        </tr>
-    </table>
+       
+                <div class="loginname"> <span id="logintitle">用户名</span>                                        
+                <span id="logininput"><input type="text" name="username"></span>
+                </div>
+                <div class="loginpsw"><span id="logintitle">密码</span>
+                <span id="logininput"><input type="password" name="password"></span>
+                </div>
+                <div class="loginbtn">
+                <input type="submit" name="submit" value="登录" id="loginbtn1">
+                <input type="submit" name="submit" value="注册" id="loginbtn2">
+                </div>
     </form>
+    </div>
 </div>
 
 
