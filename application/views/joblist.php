@@ -13,27 +13,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        <label class="col-lg-2">视频明细列表</label>
    </div> -->
 <div id="caselistshow" class="cl-table">
-    <table>
+    <table style="width:100%">
         <tr>
-            <td class="vl-title1">职位名称</td>
-            <td class="vl-title2">职位状态</td>
-            <td class="vl-title3">职位顺序</td>
-            <td class="vl-title4">部门名称</td>
-            <td class="vl-title5">编辑</td>
+            <td class="">职位名称</td>
+            <td class="">职位状态</td>
+            <td class="">职位顺序</td>
+            <td class="">部门名称</td>
+            <td class="">编辑</td>
         </tr>
         {jobs}
         <tr>
-            <td id="{id}" class="vl-imgname">{jobname}</td>
-            <td id="{id}_status" class="vl-imgadd">
+            <td id="{id}" class="jl-name">{jobname}</td>
+            <td id="{id}_status" class="jl-state">
                 {status}
             </td>
-            <td class="vl-imgseq">
+            <td class="jl-seq">
                 <input type="number" value="{sequence}" name="sequence" id="{id}_sequence" class="vl-imgseqinput">
             </td>
-            <td id="{id}_department" class="vl-imgadd">
+            <td id="{id}_department" class="jl-dname">
                 {department}
             </td>
-            <td id="{id}_edit" class="vl-imgadd">
+            <td id="{id}_edit" class="jl-edit">
                 <a href="javascript:;" onclick="$updatejob('{id}') " class="cl-imgeditbtn">保存</a>
                 <a href="javascript:;" onclick="$changejobstatus('{id}')" class="cl-imgeditbtn">隐藏/显示</a>
                 <a href="javascript:;" onclick="$deletejob('{id}')" class="cl-imgeditbtn">删除</a>
