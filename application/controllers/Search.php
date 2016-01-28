@@ -30,10 +30,14 @@ class Search extends CI_Controller
                 $i=0;
                 $arr_n=count($tags)-1;
                 foreach($tags as $tag){
+                    $this->db->from('keyword');
+                    $this->db->where('status','1');
+                    $this->db->where('id',$tag);
+                    $tmptagname=$this->db->get()->result_array()[0]['keyword'];
                     if ($arr_n==$i) {
-                        $where .= "c.id='".$tag."')";
+                        $where .= "c.keyword='".$tmptagname."')";
                     } else {
-                        $where .= "c.id='".$tag."' OR ";
+                        $where .= "c.keyword='".$tmptagname."' OR ";
                     }
                     $i++;
                 }
@@ -41,10 +45,14 @@ class Search extends CI_Controller
                 $i=0;
                 $arr_n=count($tags)-1;
                 foreach($tags as $tag){
+                    $this->db->from('keyword');
+                    $this->db->where('status','1');
+                    $this->db->where('id',$tag);
+                    $tmptagname=$this->db->get()->result_array()[0]['keyword'];
                     if ($arr_n==$i) {
-                        $where .= "c.id='".$tag."')";
+                        $where .= "c.keyword='".$tmptagname."')";
                     } else {
-                        $where .= "c.id='".$tag."' OR ";
+                        $where .= "c.keyword='".$tmptagname."' OR ";
                     }
                     $i++;
                 }

@@ -10,10 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="managepagetitle">品牌管理</div>
 <div class="te-div">
 <!--    <div class="row"><label class="col-lg-2">品牌管理</label></div>-->
-    <div class="row">
-        <label class="col-lg-2 te-title">品牌名称</label>
-        <input class="col-lg-2" type="text" id="keyword">
-    </div>
     <div id="caselistshow">
         <table>
             <tr>

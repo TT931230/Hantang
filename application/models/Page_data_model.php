@@ -213,6 +213,22 @@ class Page_data_model extends CI_Model{
         }
         return $return_array;
     }
+    function assoc_unique($arr, $key)
+    {
+        $tmp_arr = array();
+        foreach($arr as $k => $v)
+        {
+            if(in_array($v[$key], $tmp_arr))//搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
+            {
+                unset($arr[$k]);
+            }
+            else {
+                $tmp_arr[] = $v[$key];
+            }
+        }
+        sort($arr); //sort函数对数组进行排序
+        return $arr;
+    }
 
     public function query_tags(){
         $this->load->library('session');
@@ -222,24 +238,31 @@ class Page_data_model extends CI_Model{
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_type=$query->result_array();
+        $search_type=$this->assoc_unique($search_type,'keyword');
         $this->db->from('keyword');
         $this->db->where('second_level','keyword');
+        $this->db->distinct('keyword');
         $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_keyword=$query->result_array();
+        $search_keyword=$this->assoc_unique($search_keyword,'keyword');
         $this->db->from('keyword');
         $this->db->where('second_level','yeardetails');
+        $this->db->distinct('keyword');
         $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_time=$query->result_array();
+        $search_time=$this->assoc_unique($search_time,'keyword');
         $this->db->from('keyword');
+        $this->db->distinct('keyword');
         $this->db->where('second_level','locationdetails');
         $this->db->where('third_level',$this->session->language);
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();
         $search_country=$query->result_array();
+        $search_country=$this->assoc_unique($search_country,'keyword');
         $data=array(
             'search_type' => $search_type,
             'search_keyword' => $search_keyword,
@@ -271,4 +294,5 @@ class Page_data_model extends CI_Model{
         }
         return $return_array;
     }
+
 }
