@@ -19,6 +19,7 @@ class Pagemanager extends CI_Controller
         $musiclists=array();
         $brandlists=array();
         $examinevideolists=array();
+        $privilige=array();
 
 
         //imagelists
@@ -280,6 +281,12 @@ class Pagemanager extends CI_Controller
         $this->db->where("link_url like '%music%'");
         $musicvido=$this->db->get()->result_array();
 
+
+        //privilige
+        $this->db->from('privilige');
+        $privilige=$this->db->get()->result_array();
+
+
         $imgsource=$this->source_model->querySource(
             array(
                 'status'=>null,
@@ -310,6 +317,7 @@ class Pagemanager extends CI_Controller
             )
         );
         $data=array(
+            'privilige'=>$privilige,
             'musiclists'=>$musiclists,
             'musicvideo'=>$musicvido,
             'showers'=>$showers,
