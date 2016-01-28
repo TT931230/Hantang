@@ -733,7 +733,7 @@ function $saveDepartment(){
 function saveJob(){
     $.ajax({
         type:"post",
-        data: 'department_id='+$('#departmentname')[0].value+'&jobname='+$('#jobname')[0].value+'&source_id='+$('#'+brand_id+'_img')[0].value+'&source_id='+$('#'+brand_id+'_img')[0].value,
+        data: 'department_id='+$('#departmentname')[0].value+'&jobname='+$('#jobname')[0].value+'&need='+$('#need')[0].value+'&todo='+$('#todo')[0].value,
         url:"Pagemanager/savejob",
         success: function(result)
         {

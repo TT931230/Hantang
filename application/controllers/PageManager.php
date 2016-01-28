@@ -878,4 +878,26 @@ class Pagemanager extends CI_Controller
             echo true;
         }
     }
+    public function savejob(){
+        date_default_timezone_set("UTC");
+        $insertjob=array(
+            'jobname'=>$_POST['jobname'],
+            'department_id'=>$_POST['department_id'],
+            'need'=>$_POST['need'],
+            'todo'=>$_POST['todo'],
+            'create_time'=>date('y-m-d',time()),
+            'creator'=>'ADMIN',
+            'update_time'=>date('y-m-d',time()),
+            'updater'=>'ADMIN'
+        );
+        $this->db->from('jobinfo');
+        $this->db->where('jobname',$_POST['jobname']);
+        $this->db->where('department_id',$_POST['department_id']);
+        if(count($this->db->get()->result_array())>0){
+            echo false;
+        }else{
+            $this->db->insert('jobinfo',$insertjob);
+            echo true;
+        }
+    }
 }
