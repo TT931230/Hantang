@@ -1120,21 +1120,28 @@ class Pagemanager extends CI_Controller
         date_default_timezone_set("UTC");
         $username=$_POST['username'];
         $password=md5($_POST['password']);
-        $privilige1=$_POST['privilige1'];
-        $privilige2=$_POST['privilige2'];
-        $privilige3=$_POST['privilige3'];
-        $privilige4=$_POST['privilige4'];
-        $privilige5=$_POST['privilige5'];
-        $privilige6=$_POST['privilige6'];
-        $privilige7=$_POST['privilige7'];
-        $privilige8=$_POST['privilige8'];
-        $privilige9=$_POST['privilige9'];
-        $privilige10=$_POST['privilige10'];
+        $privilige=array($_POST['privilige1'],$_POST['privilige2'],$_POST['privilige3'],$_POST['privilige4'],$_POST['privilige5'],$_POST['privilige6'],$_POST['privilige7'],$_POST['privilige8'],$_POST['privilige9'],$_POST['privilige10']);
         $userinsertinfo=array(
             'user_name'=>$username,
             'password'=>$password,
-            'create_time'=>date('y-m-d',time())
+            'create_time'=>date('y-m-d',time()),
+            'creator'=>'ADMIN'
         );
+        $this->db->from('userinfo');
+        $this->db->where('user_name',$username);
+        $tmpuserarray=$this->db->get()->result_array();
+        if(count($tmpuserarray)>0){
+            echo false;
+        }else{
+            $this->db->insert('userinfo',$userinsertinfo);
+            $insertedid=$this->db->insert_id();
+            for($i=0;$i<count($privilige);$i++){
+                if($privilige[$i]){
+                    $this->db->insert('privilige_user',array('user_id'=>$insertedid,'privilige_id'=>$i+1));
+                }
+            }
+            echo true;
+        }
     }
 
 

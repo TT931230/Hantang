@@ -837,8 +837,14 @@ function $addadmin(){
         url:"Pagemanager/addadmin",
         success: function(result)
         {
-            alert('保存成功！');
-            $changetags('admininformation');
+            if(result){
+                alert('保存成功！');
+                $changetags('admininformation');
+            }else{
+                alert('用户名已存在！');
+                $changetags('admininformation');
+            }
+
         },
         error: function()
         {
