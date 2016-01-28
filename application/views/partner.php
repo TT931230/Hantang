@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="newborder" style="display: {partnerdisarea1}">
                <div class="ptn-border">
                     <div class="ptn-wrapper">
-                        <div class="callbacks_container">
+                        <div class="ptn-callbacks_container">
                             <ul class="rslides" id="carousel5">
                                 {imagearea1}
                                 <li><a href="{link_url}"><img src="{source_location}"></a></li>
