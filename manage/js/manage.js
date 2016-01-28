@@ -744,7 +744,102 @@ function saveJob(){
                 alert('职位已存在！');
                 $changetags('addjob');
             }
-            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $updatedepartment(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id+'&sequence='+$('#'+id+'_sequence')[0].value,
+        url:"Pagemanager/updatedepartment",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $changedepartmentstatus(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/changedepartmentstatus",
+        success: function(result)
+        {
+            alert('更新成功！');
+            $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletedepartment(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/deletedepartment",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $updatejob(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id+'&sequence='+$('#'+id+'_sequence')[0].value,
+        url:"Pagemanager/updatejob",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('joblist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $changejobstatus(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/changejobstatus",
+        success: function(result)
+        {
+            alert('更新成功！');
+            $changetags('joblist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletejob(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/deletejob",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('joblist');
         },
         error: function()
         {
