@@ -122,34 +122,7 @@ function $getselectedinfo(pagename){
             break;
     }
 }
-function $queryVideo(){
-    menu=$('#menu')[0].value;
-    source_name=$('#source_name')[0].value;
-    console.log();
-}
-function $queryLogo(){
-    keyword
-    keyword_remark
-    source_name
-}
-function $saveLogo(){
-    keyword
-    keyword_remark
-    source_name
-}
-function $saveMusic(){
-    source_name
-    keyword
-    keyword_season
-    keyword_time
-    sequence
-    menu
-    source_remark
-    keyword_remark
-}
-function $queryMusic(){
-    source_name
-}
+
 function $saveArea(areatype){
     switch(areatype){
         case 'homearea':
@@ -614,12 +587,6 @@ function $saveArea(areatype){
     }
 }
 
-function $savebrand(){
-
-}
-function $deletebrand(){
-
-}
 function $savesingleimg(source_id){
     imgtype=$('#'+source_id+'_imgtype')[0].value;
     imgsequence=$('#'+source_id+'_sequence')[0].value;

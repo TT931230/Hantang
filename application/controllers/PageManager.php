@@ -16,6 +16,7 @@ class Pagemanager extends CI_Controller
         $imagelists=array();
         $videolists=array();
         $keywordlists=array();
+        $musiclists=array();
         $brandlists=array();
         $examinevideolists=array();
 
@@ -84,33 +85,57 @@ class Pagemanager extends CI_Controller
 
         //musiclists
         $this->db->from('source');
+        $this->db->where('first_level','music');
         $this->db->where('type','video/mp4');
-        $videoarray=$this->db->get()->result_array();
-        for($i=0;$i<count($videoarray);$i++){
+        $musicarray=$this->db->get()->result_array();
+        for($i=0;$i<count($musicarray);$i++){
             $this->db->from('source');
-            $this->db->where('link_url','/'.$videoarray[$i]['first_level'].'/'.$videoarray[$i]['first_level'].'inner/'.$videoarray[$i]['id']);
-            $videoimgarray=$this->db->get()->result_array();
-            if(count($videoimgarray)>0){
-                $videoimgid=$videoimgarray[0]['id'];
-                $imgurl=$videoimgarray[0]['source_location'];
-                $videosequence=$videoimgarray[0]['sequence'];
+            $this->db->where('link_url','/'.$musicarray[$i]['first_level'].'/'.$musicarray[$i]['first_level'].'inner/'.$musicarray[$i]['id']);
+            $musicimgarray=$this->db->get()->result_array();
+            if(count($musicimgarray)>0){
+                $musicimgid=$musicimgarray[0]['id'];
+                $imgurl=$musicimgarray[0]['source_location'];
+                $musicsequence=$musicimgarray[0]['sequence'];
+                $this->db->from('keyword_source_relation');
+                $this->db->where('source_id',$musicimgid);
+                $musickeywordarray=$this->db->get()->result_array();
+                $musicshower='';
+                $musicseason='';
+                if(count($musickeywordarray)>0){
+                    for($j=0;$j<count($musickeywordarray);$j++){
+                        $this->db->from('keyword');
+                        $this->db->where('id',$musickeywordarray[$j]['keyword_id']);
+                        $tmpmusickeywordarray=$this->db->get()->result_array();
+                        if($tmpmusickeywordarray[0]['second_level']=='displayperson'){
+                            $musicshower=$tmpmusickeywordarray[0]['keyword'];
+                        }
+                        if($tmpmusickeywordarray[0]['second_level']=='seasondetails'){
+                            $musicseason=$tmpmusickeywordarray[0]['keyword'];
+                        }
+                    }
+                }
             }else{
-                $videoimgid='none';
+                $musicshower='';
+                $musicseason='';
+                $musicimgid='none';
                 $imgurl='';
-                $videosequence='';
+                $musicsequence='';
             }
 
-            $tmpvideoarray=array(
-                'language'=>$videoarray[$i]['third_level'],
-                'first_level'=>$videoarray[$i]['first_level'],
-                'source_id'=>$videoarray[$i]['id'],
-                'source_location'=>$videoarray[$i]['source_location'],
-                'source_name'=>$videoarray[$i]['source_name'],
-                'sequence'=>$videosequence,
-                'imgid'=>$videoimgid,
+
+            $tmpmusicarray=array(
+                'shower'=>$musicshower,
+                'season'=>$musicseason,
+                'language'=>$musicarray[$i]['third_level'],
+                'first_level'=>$musicarray[$i]['first_level'],
+                'source_id'=>$musicarray[$i]['id'],
+                'source_location'=>$musicarray[$i]['source_location'],
+                'source_name'=>$musicarray[$i]['source_name'],
+                'sequence'=>$musicsequence,
+                'imgid'=>$musicimgid,
                 'linkimg'=>$imgurl
             );
-            array_push($videolists,$tmpvideoarray);
+            array_push($musiclists,$tmpmusicarray);
         }
 
 
@@ -285,6 +310,7 @@ class Pagemanager extends CI_Controller
             )
         );
         $data=array(
+            'musiclists'=>$musiclists,
             'musicvideo'=>$musicvido,
             'showers'=>$showers,
             'seasons'=>$seasons,
