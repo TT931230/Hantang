@@ -82,6 +82,38 @@ class Pagemanager extends CI_Controller
         }
 
 
+        //musiclists
+        $this->db->from('source');
+        $this->db->where('type','video/mp4');
+        $videoarray=$this->db->get()->result_array();
+        for($i=0;$i<count($videoarray);$i++){
+            $this->db->from('source');
+            $this->db->where('link_url','/'.$videoarray[$i]['first_level'].'/'.$videoarray[$i]['first_level'].'inner/'.$videoarray[$i]['id']);
+            $videoimgarray=$this->db->get()->result_array();
+            if(count($videoimgarray)>0){
+                $videoimgid=$videoimgarray[0]['id'];
+                $imgurl=$videoimgarray[0]['source_location'];
+                $videosequence=$videoimgarray[0]['sequence'];
+            }else{
+                $videoimgid='none';
+                $imgurl='';
+                $videosequence='';
+            }
+
+            $tmpvideoarray=array(
+                'language'=>$videoarray[$i]['third_level'],
+                'first_level'=>$videoarray[$i]['first_level'],
+                'source_id'=>$videoarray[$i]['id'],
+                'source_location'=>$videoarray[$i]['source_location'],
+                'source_name'=>$videoarray[$i]['source_name'],
+                'sequence'=>$videosequence,
+                'imgid'=>$videoimgid,
+                'linkimg'=>$imgurl
+            );
+            array_push($videolists,$tmpvideoarray);
+        }
+
+
 
         //$examinevideolists
         $this->db->from('source');
@@ -141,7 +173,6 @@ class Pagemanager extends CI_Controller
         $this->db->where('first_level','brandname');
         $this->db->order_by('update_time','desc');
         $brandarray=$this->db->get()->result_array();
-
         for($i=0;$i<count($brandarray);$i++){
             $this->db->from('source');
             $this->db->where('type','img');
@@ -185,6 +216,45 @@ class Pagemanager extends CI_Controller
             array_push($brandlists,$tmpbrandarray);
         }
 
+
+        //departments
+        $this->db->from('department');
+        $departments=$this->db->get()->result_array();
+
+        //jobs
+        $this->db->from('jobinfo');
+        $jobs=$this->db->get()->result_array();
+
+        for($i=0;$i<count($jobs);$i++) {
+            $this->db->from('department');
+            $this->db->where('id',$jobs[$i]['department_id']);
+            $jobs[$i]['department']=$this->db->get()->result_array()[0]['department'];
+        }
+
+        //seasons
+        $this->db->from('keyword');
+        $this->db->where('second_level','seasondetails');
+        $seasons=$this->db->get()->result_array();
+        for($i=0;$i<count($seasons);$i++) {
+            $seasons[$i]['keyword']= $seasons[$i]['keyword']. $seasons[$i]['third_level'];
+        }
+
+
+        //displayer
+        $this->db->from('keyword');
+        $this->db->where('second_level','shower');
+        $showers=$this->db->get()->result_array();
+        for($i=0;$i<count($showers);$i++) {
+            $showers[$i]['keyword']= $showers[$i]['keyword']. $showers[$i]['third_level'];
+        }
+
+
+        //musicvideo
+        $this->db->from('source');
+        $this->db->where('type','videoimg');
+        $this->db->where("link_url like '%music%'");
+        $musicvido=$this->db->get()->result_array();
+
         $imgsource=$this->source_model->querySource(
             array(
                 'status'=>null,
@@ -215,6 +285,11 @@ class Pagemanager extends CI_Controller
             )
         );
         $data=array(
+            'musicvideo'=>$musicvido,
+            'showers'=>$showers,
+            'seasons'=>$seasons,
+            'jobs'=>$jobs,
+            'departmentselect'=>$departments,
             'examinevideolists'=>$examinevideolists,
             'brands'=>$brandlists,
             'keywordlists'=>$keywordlists,
@@ -245,7 +320,7 @@ class Pagemanager extends CI_Controller
             'creator'=>'ADMIN',
             'first_level'=>null,
             'second_level'=>null,
-            'third_level'=>null,
+            'third_level'=>$_POST['third_level'],
         );
         $this->load->model('source_model');
         var_dump($insertcontent);
@@ -855,4 +930,140 @@ class Pagemanager extends CI_Controller
         );
         $this->db->update('source',$updateitem,array('id'=>$_POST['source_id']));
     }
+    public function savedepartment(){
+        date_default_timezone_set("UTC");
+        $insertdepartment=array(
+            'department'=>$_POST['department'],
+            'create_time'=>date('y-m-d',time()),
+            'creator'=>'ADMIN',
+            'update_time'=>date('y-m-d',time()),
+            'updater'=>'ADMIN'
+        );
+        $this->db->from('department');
+        $this->db->where('department',$_POST['department']);
+        if(count($this->db->get()->result_array())>0){
+            echo false;
+        }else{
+            $this->db->insert('department',$insertdepartment);
+            echo true;
+        }
+    }
+    public function savejob(){
+        date_default_timezone_set("UTC");
+        $insertjob=array(
+            'jobname'=>$_POST['jobname'],
+            'department_id'=>$_POST['department_id'],
+            'need'=>$_POST['need'],
+            'todo'=>$_POST['todo'],
+            'create_time'=>date('y-m-d',time()),
+            'creator'=>'ADMIN',
+            'update_time'=>date('y-m-d',time()),
+            'updater'=>'ADMIN'
+        );
+        $this->db->from('jobinfo');
+        $this->db->where('jobname',$_POST['jobname']);
+        $this->db->where('department_id',$_POST['department_id']);
+        if(count($this->db->get()->result_array())>0){
+            echo false;
+        }else{
+            $this->db->insert('jobinfo',$insertjob);
+            echo true;
+        }
+    }
+    public function updatedepartment(){
+        date_default_timezone_set("UTC");
+        $departmentupdateinfo=array(
+            'sequence'=>$_POST['sequence'],
+            'update_time'=>date('y-m-d',time()),
+            'updater'=>'ADMIN'
+        );
+        $this->db->update('department', $departmentupdateinfo, array('id' => $_POST['id']));
+    }
+    public function changedepartmentstatus(){
+        date_default_timezone_set("UTC");
+        $this->db->from('department');
+        $this->db->where('id',$_POST['id']);
+        if($this->db->get()->result_array()[0]['status']=='1'){
+            $departmentupdateinfo=array(
+                'status'=>'0',
+                'update_time'=>date('y-m-d',time()),
+                'updater'=>'ADMIN'
+            );
+        }else {
+            $departmentupdateinfo=array(
+                'status'=>'1',
+                'update_time'=>date('y-m-d',time()),
+                'updater'=>'ADMIN'
+            );
+        }
+        $this->db->update('department', $departmentupdateinfo, array('id' => $_POST['id']));
+    }
+    public function deletedepartment(){
+        $this->db->delete('department',array('id'=>$_POST['id']));
+    }
+    public function updatejob(){
+        date_default_timezone_set("UTC");
+        $jobupdateinfo=array(
+            'sequence'=>$_POST['sequence'],
+            'update_time'=>date('y-m-d',time()),
+            'updater'=>'ADMIN'
+        );
+        $this->db->update('jobinfo', $jobupdateinfo, array('id' => $_POST['id']));
+    }
+    public function changejobstatus(){
+        date_default_timezone_set("UTC");
+        $this->db->from('jobinfo');
+        $this->db->where('id',$_POST['id']);
+        if($this->db->get()->result_array()[0]['status']=='1'){
+            $jobupdateinfo=array(
+                'status'=>'0',
+                'update_time'=>date('y-m-d',time()),
+                'updater'=>'ADMIN'
+            );
+        }else {
+            $jobupdateinfo=array(
+                'status'=>'1',
+                'update_time'=>date('y-m-d',time()),
+                'updater'=>'ADMIN'
+            );
+        }
+        $this->db->update('jobinfo', $jobupdateinfo, array('id' => $_POST['id']));
+    }
+    public function deletejob(){
+        $this->db->delete('jobinfo',array('id'=>$_POST['id']));
+    }
+
+    public function savemusic(){
+        $music_id=$_POST['music_id'];
+        $shower_id=$_POST['shower'];
+        $season_id=$_POST['season'];
+        if($music_id&&$shower_id){
+            $this->db->from('keyword_source_relation');
+            $this->db->where('source_id',$music_id);
+            $this->db->where('keyword_id',$shower_id);
+            if(count($this->db->get()->result_array())>0){
+
+            }else{
+                $this->db->insert('keyword_source_relation',array(
+                   'source_id'=>$music_id,
+                    'keyword_id'=> $shower_id
+                ));
+            }
+        }
+        if($music_id&&$season_id){
+            $this->db->from('keyword_source_relation');
+            $this->db->where('source_id',$music_id);
+            $this->db->where('keyword_id',$season_id);
+            if(count($this->db->get()->result_array())>0){
+
+            }else{
+                $this->db->insert('keyword_source_relation',array(
+                    'source_id'=>$music_id,
+                    'keyword_id'=> $season_id
+                ));
+            }
+        }
+    }
+
+
 }

@@ -8,23 +8,32 @@
 ?><!DOCTYPE html>
 <div class="managepagetitle">新增演出</div>
 <div class="hpm-div">
-  <!-- <div class="row"><label class="col-lg-2">音乐年管理</label></div> -->  
-    <div class="ce-div">
+  <!-- <div class="row"><label class="col-lg-2">音乐年管理</label></div> -->
+    <div class="row">
+        <label class="col-lg-2 de-title">演出视频</label>
+        <select  class="col-lg-2" id="musicid">
+            {musicvideo}
+            <option value="{id}">{source_name}</option>
+            {/musicvideo}
+        </select>
     </div>
     <div class="ce-div">
     <div class="row">
         <label class="col-lg-2 de-title">表演者</label>
-        {displayer}
-        <input class="col-lg-2" type="text" id="keyword">
+        <select  class="col-lg-2" id="showers">
+            {showers}
+            <option value="{id}">{keyword}</option>
+            {/showers}
+        </select>
     </div>
     </div>
     <div class="ce-div">
     <div class="row">
         <label class="col-lg-2 de-title">演出时间</label>
-        <select  class="col-lg-2" id="menu">
-            {displaytime}
-            <option value="{id}">{source_name}</option>
-            {/displaytime}
+        <select  class="col-lg-2" id="displayseason">
+            {seasons}
+            <option value="{id}">{keyword}</option>
+            {/seasons}
         </select>
     </div>
     </div>
@@ -32,7 +41,7 @@
     </div>
     <div class="de-savebtn">
     <div class="row">
-        <button onclick="$updateMusic()">保存</button>
+        <button onclick="$saveMusic()">保存</button>
     </div>
     </div>
 </div>
