@@ -19,6 +19,7 @@ class Pagemanager extends CI_Controller
         $musiclists=array();
         $brandlists=array();
         $examinevideolists=array();
+        $privilige=array();
 
 
         //imagelists
@@ -280,6 +281,12 @@ class Pagemanager extends CI_Controller
         $this->db->where("link_url like '%music%'");
         $musicvido=$this->db->get()->result_array();
 
+
+        //privilige
+        $this->db->from('privilige');
+        $privilige=$this->db->get()->result_array();
+
+
         $imgsource=$this->source_model->querySource(
             array(
                 'status'=>null,
@@ -310,6 +317,7 @@ class Pagemanager extends CI_Controller
             )
         );
         $data=array(
+            'privilige'=>$privilige,
             'musiclists'=>$musiclists,
             'musicvideo'=>$musicvido,
             'showers'=>$showers,
@@ -1063,6 +1071,8 @@ class Pagemanager extends CI_Controller
         $music_id=$_POST['music_id'];
         $shower_id=$_POST['shower'];
         $season_id=$_POST['season'];
+        $time=$_POST['time'];
+        $location=$_POST['location'];
         if($music_id&&$shower_id){
             $this->db->from('keyword_source_relation');
             $this->db->where('source_id',$music_id);
@@ -1082,6 +1092,22 @@ class Pagemanager extends CI_Controller
             $this->db->where('keyword_id',$season_id);
             if(count($this->db->get()->result_array())>0){
 
+            }else{
+                $this->db->insert('keyword_source_relation',array(
+                    'source_id'=>$music_id,
+                    'keyword_id'=> $season_id
+                ));
+            }
+        }
+        if($music_id){
+            $this->db->from('musicinfo');
+            $this->db->where('music_id',$music_id);
+            $tmpinfo=$this->db->get()->result_array();
+            if(count($tmpinfo)>0){
+                $this->db->update('musicinfo',array(
+                    'musiclocation'=>$location,
+                    'musiclocation'=>$time
+                ),array('id'=>$tmpinfo[0]['id']));
             }else{
                 $this->db->insert('keyword_source_relation',array(
                     'source_id'=>$music_id,

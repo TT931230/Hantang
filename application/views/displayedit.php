@@ -36,6 +36,14 @@
             {/seasons}
         </select>
     </div>
+    <div class="row">
+        <label class="col-lg-2 de-title">演出详细时间</label>
+        <input type="text"  class="col-lg-2" id="displaytime">
+    </div>
+    <div class="row">
+        <label class="col-lg-2 de-title">演出地点</label>
+        <input type="text" class="col-lg-2" id="displaylocation">
+    </div>
     </div>
     <div class="ce-div">
     </div>

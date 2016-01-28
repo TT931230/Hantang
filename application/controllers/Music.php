@@ -143,11 +143,21 @@ class Music extends CI_Controller
         $imgarray=$this->db->get()->result_array();
         if(count($imgarray)>0){
             $video[0]['imgurl']=$imgarray[0]['source_location'];
+            $this->db->from('musicinfo');
+            $this->db->where('music_id',$imgarray[0]['id']);
+            $musicinfoarray=$this->db->get()->result_array();
+            if(count($musicinfoarray)>0) {
+                $musictime = $musicinfoarray[0]['musictime'];
+                $musiclocation = $musicinfoarray[0]['musiclocation'];
+            }else{
+                $musictime='';
+                $musiclocation='';
+            }
         }else{
+            $musictime='';
+            $musiclocation='';
             $video[0]['imgurl']='';
         }
-        $musictime='';
-        $musiclocation='';
         $video[0]['musictime']=$musictime;
         $video[0]['musiclocation']=$musiclocation;
 
