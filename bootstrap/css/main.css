@@ -292,8 +292,8 @@
 }
 .dropdowndepart{
     top:95%;
-    left:5%;
-    width:90%;
+    left:0%;
+    width:100%;
     padding:0;
     text-align: center;
     border-bottom: 0px solid #761c19;
@@ -306,6 +306,7 @@
     display: block;
     height: inherit;
     background: #fff;
+     width:30px;
 }
 .dropdown-triangle {
     width: 0;
@@ -318,12 +319,15 @@
 }
 .dropdowndepart>li>a {
     display: block;
-    padding: 3px 20px;
+    padding-left:20px;
+    padding-top:5px;
+    padding-bottom:5px;
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
     color: #FFF;
     white-space: nowrap;
+    text-align:center;
     /*border-top: 1px solid #fff;*/
 }
 .dropdowndepart>li>a:hover{
@@ -334,7 +338,7 @@
     font-size:12pt;
     position:relative;*/
     background-color: #C9C9C9;
-    color:#000;
+    color:#626262;
     cursor: pointer;
 
 }

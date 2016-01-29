@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <ul class="dropdown-menu dropdownmenucust dropdowndepart">
                                     <span class="dropdown-triangle"></span>
                                     {job}
-                                    <li><a onclick="$departmentajax('{id}')">{jobname}</a></li>
+                                    <li><a onclick="$departmentajax('{id}')" class="job-dropdownli">{jobname}</a></li>
                                     <li class="dropdown-list-line"><span></span></li>
 
                                     {/job}
