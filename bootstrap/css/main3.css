@@ -17,8 +17,8 @@
  }
  .headernav>li>a:hover{
      background-color: #636363;
-     left:-15%;
-     width:130%;
+     left:-5%;
+     width:110%;
      line-height:35px;
      vertical-align:middle;
      color:#fff;
@@ -81,8 +81,8 @@ input[type="checkbox"]:checked {
 }
 #choseLan{
     padding: 0px 0;
-    margin: 0px 0 0;
-    min-width: 60px;
+    margin-left:-15px;
+    min-width: 40px;
 }
 .dropdowncustspan {
     text-align: center;
@@ -93,12 +93,13 @@ input[type="checkbox"]:checked {
     padding: 0 0px;
     z-index: 1024;
     border-top: 1px solid #fff;
+    width:80px;
 }
 
  #choseLan>li:hover{
      background-color: #636363;
-     left:-30%;
-     width:150%;
+     left:-5%;
+     width:110%;
      line-height:30px;
      vertical-align:middle;
      font-size:13pt;
