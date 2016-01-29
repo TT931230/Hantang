@@ -1,6 +1,6 @@
 .headernav{
     top:55%;
-    left:-15%;
+    left:-12%;
     padding:0;
     text-align: center;
 }
@@ -13,6 +13,7 @@
     color: #FFF;
     white-space: nowrap;
     border-top: 1px solid #fff;
+    width:100px;
  }
  .headernav>li>a:hover{
      background-color: #636363;
@@ -26,6 +27,7 @@
  }
 .dropdownmenucust li{
     background-color: #C9C9C9;
+     width:100px;
 }
 .dropdownmenucust {
     border: #C9C9C9;
