@@ -14,16 +14,20 @@
     white-space: nowrap;
     border-top: 1px solid #fff;
     width:100px;
+    font-size:12px;
+    height:25px;
+    padding-top:5px;
  }
  .headernav>li>a:hover{
-     background-color: #636363;
-     left:-5%;
-     width:110%;
-     line-height:35px;
-     vertical-align:middle;
+     background-color: #808080;
+     left:-15%;
+     width:130%;
+     line-height:18px;
+     vertical-align:center;
      color:#fff;
-     font-size:14pt;
+     font-size:14px;
      position:relative;
+    opacity:0.9;  
  }
 .dropdownmenucust li{
     background-color: #C9C9C9;
@@ -79,10 +83,20 @@ input[type=checkbox], input[type=radio] {
 input[type="checkbox"]:checked {
     background-color:#6D6F70;
 }
+.dropdownmenucustLan li{
+    background-color: #C9C9C9;
+     width:60px;
+}
+.dropdownmenucustLan {
+    border: #C9C9C9;
+    background-color: #C9C9C9;
+}
 #choseLan{
     padding: 0px 0;
-    margin-left:-15px;
-    min-width: 40px;
+    margin-left:5px;
+    min-width: 20px;
+    font-size:12px;
+
 }
 .dropdowncustspan {
     text-align: center;
@@ -93,17 +107,17 @@ input[type="checkbox"]:checked {
     padding: 0 0px;
     z-index: 1024;
     border-top: 1px solid #fff;
-    width:80px;
 }
 
  #choseLan>li:hover{
-     background-color: #636363;
-     left:-5%;
-     width:110%;
+     background-color: #808080;
+     left:-15%;
+     width:130%;
      line-height:30px;
      vertical-align:middle;
-     font-size:13pt;
+     font-size:14px;
      position:relative;
+     opacity:0.7;
  }
  .searchcontentdiv {
     display: inline-block;
@@ -139,7 +153,7 @@ input[type="checkbox"]:checked {
       left:2px;
  }
  .dropdowndepart{
-    min-width: 60px;
+    min-width: 40px;
  }
  #searchTool{
     float: left;

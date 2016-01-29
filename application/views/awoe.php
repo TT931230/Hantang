@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div id="right">
                     <div class="wrapper">
-                        <div class="callbacks_container">
+                        <div class="ulcallbacks_container">
                             <ul class="rslides" id="carousel">
                                 {imagearea1}
                                 <li><a href="{link_url}"><img src='{source_location}' alt=""></a></li>
@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="relatedvideoarea" id="relatedvideoarea">
                         {relatedvideo}
                         <div class="relatedvideos">
-                            <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>
+                            <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; opacity:0.9;"><img src='{source_location}'></a>
                             <div class="relavideostitle">
                                 {source_name}
                             </div>
