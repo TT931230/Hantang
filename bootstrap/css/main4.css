@@ -195,16 +195,25 @@
     text-decoration: underline;
 
 }
+#searchAToZ a:focus {
+background:transparent;
+  }
 #searchCountry a{
     padding: 2px 5px 2px 5px;
     color: #808080;
     float:left;
     font-style: normal;
     margin-top:-5px;
+    height:20px;
 
 }
 #searchCountry a:hover{
    text-decoration: underline;
+
+}
+#searchCountry a:focus{
+  background:transparent;
+  boder-bottom:1px solid #808080;
 
 }
 .result_container{
