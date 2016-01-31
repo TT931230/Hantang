@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="bootstrap/css/style.css" />
+
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
