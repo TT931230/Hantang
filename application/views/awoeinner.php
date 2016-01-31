@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="innertexttitle">
                         {source_name}
                     </div>
-                    <div class="innertext">
+                    <div class="ulinnertext">
                         {source_remark}
                     </div>
                 </div>

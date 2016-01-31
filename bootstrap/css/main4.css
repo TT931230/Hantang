@@ -129,6 +129,10 @@
 	text-align:left;
 	margin-left:80px;
 }
+.ulinnertext{
+	font-size:15px;
+	text-align:left;
+}
 .subtitle .ulinnerc {
 	height: 80px;
     width:18%;
