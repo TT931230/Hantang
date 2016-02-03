@@ -284,7 +284,7 @@ background:transparent;
 
 .subtitle-music{
     width: 100%;    /* 也可以固定宽度 */
-    height: 450px;
+    height: 520px;
     background-color: #e0e0e0;
     margin-top:-48px;
     margin-bottom:30px;
@@ -294,7 +294,7 @@ background:transparent;
 
 }
 .musicinnera {
-	height: 350px;
+	height: 410px;
     width:65%;
     font-size: 15px;
     overflow: hidden;

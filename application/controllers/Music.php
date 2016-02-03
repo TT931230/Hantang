@@ -51,7 +51,7 @@ class Music extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='music';
-        $source_info['type']='videoimg';
+        $source_info['type']='proimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
 

@@ -47,24 +47,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-            <div class="dashline" style="display: {musicdisarea3}">
-                <div class="videoslug">
-                    相关视频
-                </div>
+            <div  style="display: {musicdisarea3}">
 
                 <div class="dashline">
 
                     <div class="relatedvideoarea" id="relatedvideoarea">
                         {relatedvideo}
-                        <div class="relatedvideos">
-                            <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute;opacity:0.9;"><img src='{source_location}'></a>
-                            <div class="relavideostitle">
+                        <div class="music-relatedvideos">
+                        <div class="music-relavideoinfo">
+
+                           <div class="music-relavideostitle">
                                 {source_name}
                             </div>
+                            <div class="music-relavideoremark">
+                                {source_remark}
+                            </div>
+                            <div class="music-relavideotime">
+                                {update_time}
+                            </div>
+                            <div class="music-more">
+                           <a href='{link_url}'><img src="/bootstrap/images/more.png" class="moreimg"></a>
+                            </div>
+                        </div>
+                            <a href='{link_url}'><img src='{source_location}'></a>
                         </div>
                         {/relatedvideo}
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>

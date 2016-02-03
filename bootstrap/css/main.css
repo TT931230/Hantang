@@ -906,4 +906,68 @@ border-image:none;
     margin-bottom:10px;
     text-align:center;
 }
+.music-relatedvideos{
+	float:left;
+	height:310px;
+    width:100%;
+    margin-bottom:55px;
+    display: inline-block;
+    background-color: #ffffff;
+    border-top:2px dotted #d6d6d6;
+}
+.music-relatedvideos img{
+	margin-top:40px;
+	margin-left:10px;
+    float:right;
+    height:280px;
+    width:750px;  
+}
+.music-relavideoinfo{
+	margin-top:30px;
+	width:33%;
+	float:left;
+	margin-right:20px;
+}
+.music-relavideostitle{
+	height:50px;
+	float:left;
+	font-size:15px;
+	color:#808080;
+	margin-top:10px;
+	width:100%;
+	text-align:left;
+}
+.music-relavideoremark{
+	height:100px;
+	font-size:12px;
+	color:#808080;
+	float:left;
+	margin-top:10px;
+	text-align:left;
+	margin-right:10px;
+	width:100%;
+}
+.music-relavideotime{
+	height:15px;
+	font-size:12px;
+	color:#808080;
+	float:left;
+	text-align:left;
+	margin-top:20px;
+	width:100%;
+}
+.music-more{
+	height:20px;
+	width:100%;
+	font-size:12px;
+	color:#808080;
+	text-align:left;
+	padding-top:235px;
+}
+.music-more img{
+width:60px;
+height:15px;
+float:left;
+margin-left:-1px;
+}
 
