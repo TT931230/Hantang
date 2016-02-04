@@ -49,6 +49,15 @@ class About extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('about',$data);
+        $this->db->from('webcontent');
+        $this->db->where('page','about');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $homecontents=$this->db->get()->result_array();
+        for($i=0;$i<count($homecontents);$i++){
+            $this->parser->parse($homecontents[$i]['name'],$data);
+        }
+        $this->parser->parse('aboutend',$data);
         $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
@@ -113,6 +122,15 @@ class About extends CI_Controller
             $this->parser->parse('header',$data);
             $this->parser->parse('search',$data);
             $this->parser->parse('about',$data);
+            $this->db->from('webcontent');
+            $this->db->where('page','about');
+            $this->db->where('previewstatus','1');
+            $this->db->order_by('sequence','asc');
+            $homecontents=$this->db->get()->result_array();
+            for($i=0;$i<count($homecontents);$i++){
+                $this->parser->parse($homecontents[$i]['name'],$data);
+            }
+            $this->parser->parse('aboutend',$data);
             $this->parser->parse('footer',$data);
         }
     }

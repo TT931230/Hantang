@@ -95,6 +95,15 @@ class Ul extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('ul',$data);
+        $this->db->from('webcontent');
+        $this->db->where('page','ul');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $homecontents=$this->db->get()->result_array();
+        for($i=0;$i<count($homecontents);$i++){
+            $this->parser->parse($homecontents[$i]['name'],$data);
+        }
+        $this->parser->parse('ulend',$data);
         $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
@@ -323,6 +332,15 @@ class Ul extends CI_Controller
             $this->parser->parse('header',$data);
             $this->parser->parse('search',$data);
             $this->parser->parse('ul',$data);
+            $this->db->from('webcontent');
+            $this->db->where('page','ul');
+            $this->db->where('previewstatus','1');
+            $this->db->order_by('sequence','asc');
+            $homecontents=$this->db->get()->result_array();
+            for($i=0;$i<count($homecontents);$i++){
+                $this->parser->parse($homecontents[$i]['name'],$data);
+            }
+            $this->parser->parse('ulend',$data);
             $this->parser->parse('footer',$data);
         }
     }

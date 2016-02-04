@@ -70,7 +70,6 @@ class Home extends CI_Controller
         $logoimage = $this->page_data_model->query_sources($source_info);
 
         $tag_data = $this->page_data_model->query_tags();
-
         $tmp_data = array(
             'logoimage'=>$logoimage,
             'imagearea1'=>$imagearea1,
@@ -88,6 +87,15 @@ class Home extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('home',$data);
+        $this->db->from('webcontent');
+        $this->db->where('page','home');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $homecontents=$this->db->get()->result_array();
+        for($i=0;$i<count($homecontents);$i++){
+            $this->parser->parse($homecontents[$i]['name'],$data);
+        }
+        $this->parser->parse('homeend',$data);
         $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
@@ -316,6 +324,15 @@ class Home extends CI_Controller
             $this->parser->parse('header',$data);
             $this->parser->parse('search',$data);
             $this->parser->parse('home',$data);
+            $this->db->from('webcontent');
+            $this->db->where('page','home');
+            $this->db->where('previewstatus','1');
+            $this->db->order_by('sequence','asc');
+            $homecontents=$this->db->get()->result_array();
+            for($i=0;$i<count($homecontents);$i++){
+                $this->parser->parse($homecontents[$i]['name'],$data);
+            }
+            $this->parser->parse('homeend',$data);
             $this->parser->parse('footer',$data);
         }
     }
