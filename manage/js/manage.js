@@ -113,6 +113,7 @@ function $saveVideo(){
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
     videoimg=$('#videoimg')[0].value;
+    index=$('#index')[0].value;
     keyword='';
     $("#keyword option:selected").each(function(){
         keyword+=$(this)[0].value+'|||';
@@ -121,7 +122,7 @@ function $saveVideo(){
     third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level+"&index="+index,
         url:"Pagemanager/saveVideo",
         success: function(result)
         {
@@ -757,9 +758,10 @@ function $deletesingleimg(source_id){
 }
 function $savesinglevideo(imgid){
     imgsequence=$('#'+imgid+'_sequence')[0].value;
+    index=$('#'+imgid+'_index')[0].value;
     $.ajax({
         type:"post",
-        data: 'id='+imgid+'&sequence='+imgsequence,
+        data: 'id='+imgid+'&sequence='+imgsequence+'&index='+index,
         url:"Pagemanager/savesinglevideo",
         success: function(result)
         {

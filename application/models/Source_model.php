@@ -20,6 +20,7 @@ class Source_model extends CI_Model
     public $third_level;
     public $create_time;
     public $update_time;
+    public $index;
     public function __construct()
     {
         parent::__construct();
@@ -88,6 +89,7 @@ class Source_model extends CI_Model
         $this->second_level    = $insertvideo['second_level'];
         $this->third_level    = $insertvideo['third_level'];
         $this->source_remark  = $insertvideo['source_remark'];
+        $this->index = $insertvideo['index'];
         $this->create_time = date("y-m-d",time());
         $this->update_time = date("y-m-d",time());
         $this->db->insert('source', $this);
@@ -96,6 +98,7 @@ class Source_model extends CI_Model
             'status'=>'2',
             'type'=>'videoimg',
             'link_url'=>'/'.$insertvideo['first_level'].'/'.$insertvideo['first_level'].'inner/'.$insertedid,
+            'index'=>$insertvideo['index'],
             'updater'=>$insertvideo['updater'],
             'update_time'=>date("y-m-d",time())
         );

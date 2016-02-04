@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td class="vl-title4">语言</td>
                 <td class="vl-title5">顺序</td>
                 <td class="vl-title6">封面缩略图</td>
+                <td class="vl-title6">视频系列</td>
                 <td class="vl-title7">编辑</td>
             </tr>
             {videolists}
@@ -50,10 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     {language}
                 </td>
                 <td class="vl-imgseq">
-                    <input type="number" value="{sequence}" name="sequence" id="{source_id}_sequence" class="vl-imgseqinput">
+                    <input type="number" value="{sequence}" name="sequence" id="{imgid}_sequence" class="vl-imgseqinput">
                 </td>
                 <td id="{imgid}_img" class="vl-imgmini">
                     <img src="{linkimg}" style="width:96px;height: 54px;">
+                </td>
+                <td class="vl-imgseq">
+                    <input type="text" value="{index}" name="sequence" id="{imgid}_index" class="vl-imgseqinput">
                 </td>
                 <td id="{imgid}_edit" class="vl-imgedit">
                     <a href="javascript:;" onclick="$savesinglevideo('{imgid}') " class="cl-imgeditbtn">保存</a>

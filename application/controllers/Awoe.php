@@ -176,6 +176,28 @@ class Awoe extends CI_Controller
         $source_info['type']='videoimg';
         $relatedvideo = $this->page_data_model->query_sources($source_info);
 
+        $this->db->where("status='1' and first_level='awoe' and third_level='".$this->session->language."' and link_url like '%".$videoname."%' and type='videoimg'");
+        $this->db->from('source');
+        $videoimgarray = $this->db->get()->result_array();
+        if($videoimgarray[0]['index']) {
+            $this->db->where("status='1' and index ='" . $videoimgarray[0]['index'] . "' and type='videoimg' and first_level='awoe'");
+            $this->db->from('source');
+            $this->db->order_by('sequence','asc');
+            $relatedvideo1 = $this->db->get()->result_array();
+        }else{
+            $relatedvideo1=array();
+        }
+        if(count($relatedvideo1)>0){
+            for($i=count($relatedvideo)-1;$i>0;$i--){
+                for($j=0;$j<count($relatedvideo1);$j++){
+                    if($relatedvideo[$i]['id']==$relatedvideo1[$j]['id']){
+                        array_splice($relatedvideo,$i+1,1);
+                    }
+                }
+            }
+        }
+
+
         $this->db->where('status','1');
         $this->db->where('id',$videoname);
         $this->db->from('source');
@@ -186,6 +208,7 @@ class Awoe extends CI_Controller
 
         $tmp_data = array(
             'video'=>$video,
+            'relatedvideo1'=>$relatedvideo1,
             'relatedvideo'=>$relatedvideo,
             'logoimage'=>$logoimage,
             'awoelogo'=>$awoelogo,

@@ -115,13 +115,16 @@ class Pagemanager extends CI_Controller
                     $videoimgid = $videoimgarray[0]['id'];
                     $imgurl = $videoimgarray[0]['source_location'];
                     $videosequence = $videoimgarray[0]['sequence'];
+                    $index=$videoimgarray[0]['index'];
                 } else {
                     $videoimgid = 'none';
                     $imgurl = '';
                     $videosequence = '';
+                    $index='';
                 }
 
                 $tmpvideoarray = array(
+                    'index'=>$index,
                     'language' => $videoarray[$i]['third_level'],
                     'first_level' => $videoarray[$i]['first_level'],
                     'source_id' => $videoarray[$i]['id'],
@@ -550,8 +553,10 @@ class Pagemanager extends CI_Controller
             $keywordarray = explode('|||', $keyword);
             $third_level = $_POST['third_level'];
             $first_level = $_POST['first_level'];
+            $index = $_POST['index'];
             $insertvideo = array(
                 'videoimg' => $videoimg,
+                'index'=>$index,
                 'keyword' => $keyword,
                 'source_location' => $source_location,
                 'status' => '2',
@@ -1780,7 +1785,7 @@ TAG;
 
             $videoarray = $this->db->get()->result_array();
             $result="";
-            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title7\">编辑</td></tr>";
+            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title6\">视频系列</td><td class=\"vl-title7\">编辑</td></tr>";
             for ($i = 0; $i < count($videoarray); $i++) {
                 $this->db->from('source');
                 $this->db->where('link_url', '/' . $videoarray[$i]['first_level'] . '/' . $videoarray[$i]['first_level'] . 'inner/' . $videoarray[$i]['id']);
@@ -1789,13 +1794,16 @@ TAG;
                     $videoimgid = $videoimgarray[0]['id'];
                     $imgurl = $videoimgarray[0]['source_location'];
                     $videosequence = $videoimgarray[0]['sequence'];
+                    $index=$videoimgarray[0]['index'];
                 } else {
                     $videoimgid = 'none';
                     $imgurl = '';
                     $videosequence = '';
+                    $index='';
                 }
 
                 $tmpvideoarray = array(
+                    'index'=>$index,
                     'language' => $videoarray[$i]['third_level'],
                     'first_level' => $videoarray[$i]['first_level'],
                     'source_id' => $videoarray[$i]['id'],
@@ -1817,10 +1825,13 @@ TAG;
                 $result.=$tmpvideoarray['language'];
                 $result.="</td>";
                 $result.="<td class=\"vl-imgseq\">";
-                $result.="    <input type=\"number\" value=\"".$tmpvideoarray['sequence']."\" name=\"sequence\" id=\"".$tmpvideoarray['source_id']."_sequence\" class=\"vl-imgseqinput\">";
+                $result.="    <input type=\"number\" value=\"".$tmpvideoarray['sequence']."\" name=\"sequence\" id=\"".$tmpvideoarray['imgid']."_sequence\" class=\"vl-imgseqinput\">";
                 $result.="</td>";
                 $result.="<td id=\"".$tmpvideoarray['imgid']."_img\" class=\"vl-imgmini\">";
                 $result.="    <img src=\"".$tmpvideoarray['linkimg']."\" style=\"width:96px;height: 54px;\">";
+                $result.="</td>";
+                $result.="<td class=\"vl-imgseq\">";
+                $result.="<input type=\"text\" value=\"".$tmpvideoarray['index']."\" name=\"sequence\" id=\"".$tmpvideoarray['imgid']."_index\" class=\"vl-imgseqinput\">";
                 $result.="</td>";
                 $result.="<td id=\"".$tmpvideoarray['imgid']."_edit\" class=\"vl-imgedit\">";
                 $result.=<<<TAG
