@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div style="margin-bottom:30px;font-weight:500">
                     <table style="width:100%;text-align:left">
                     <tr>
-                        <td style="width:13%;text-align:right;color:#000;">演出名称：<td>
+                        <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出名称：<td>
                         <td style="padding-right:40px;padding-left:10px;">{source_name}</td>
                         </tr>
                     </table>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div style="margin-bottom:30px;font-weight:500">
                      <table style="width:100%;text-align:left;">
                        <tr>
-                        <td valign="top" style="width:13%; padding-left:50px;color:#000;">简介：</td>
+                        <td valign="top" style="width:13%; padding-left:50px;color:#000;font-weight:600;">简介：</td>
                         <td style="padding-right:40px;padding-left:10px;">{source_remark}</td>
                         </tr>
                      </table>
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div style="margin-bottom:30px;font-weight:500">
                      <table style="width:100%;text-align:left;">
                      <tr>
-                        <td style="width:13%;text-align:right;color:#000;">演出时间：</td>
+                        <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出时间：</td>
                         <td style="padding-right:40px;padding-left:10px;">{musictime}</td>
                         </tr>
                     </table>
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div style="font-weight:500">
                        <table style="width:100%;text-align:left;">
                        <tr>
-                        <td style="width:13%;text-align:right;color:#000;">演出地点：</td>
+                        <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出地点：</td>
                         <td style="padding-right:40px;padding-left:10px;">{musiclocation}</td>
                         </tr>
                         </table>
