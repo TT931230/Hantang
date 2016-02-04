@@ -40,10 +40,74 @@ function $saveImage(){
 }
 
 function $queryImage(){
-    menu=$('#menu')[0].value;
-    source_name=$('#source_name')[0].value;
-    console.log(menu+source_name);
+    imglevel=$('#imglevel')[0].value;
+    imgname=$('#imgname')[0].value;
+    $.ajax({
+        type:"post",
+        data: "imglevel="+imglevel+"&imgname="+imgname,
+        url:"Pagemanager/queryimage",
+        success: function(result)
+        {
+            $('#caselistshow').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
 }
+function $queryPage(){
+    imglevel=$('#imglevel')[0].value;
+    imgname=$('#imgname')[0].value;
+    $.ajax({
+        type:"post",
+        data: "imglevel="+imglevel+"&imgname="+imgname,
+        url:"Pagemanager/queryimage",
+        success: function(result)
+        {
+            $('#caselistshow').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $queryVideo(){
+    videolevel=$('#videolevel')[0].value;
+    videoname=$('#videoname')[0].value;
+    $.ajax({
+        type:"post",
+        data: "videolevel="+videolevel+"&videoname="+videoname,
+        url:"Pagemanager/queryvideo",
+        success: function(result)
+        {
+            $('#caselistshow').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $queryKeyword(){
+    keywordlevel=$('#keywordlevel')[0].value;
+    keywordname=$('#keywordname')[0].value;
+    $.ajax({
+        type:"post",
+        data: "keywordlevel="+keywordlevel+"&keywordname="+keywordname,
+        url:"Pagemanager/querykeyword",
+        success: function(result)
+        {
+            $('#caselistshow').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+
 function $saveVideo(){
     first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
@@ -61,7 +125,7 @@ function $saveVideo(){
         url:"Pagemanager/saveVideo",
         success: function(result)
         {
-            //$('#relatedvideoarea').html(result);
+
         },
         error: function()
         {
@@ -606,6 +670,74 @@ function $savesingleimg(source_id){
         }
     });
 }
+function $updatearea(id){
+    imgsequence=$('#'+id+'_sequence')[0].value;
+    $.ajax({
+        type:"post",
+        data: 'id='+id+'&sequence='+imgsequence,
+        url:"Pagemanager/updatearea",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('webpagemanage');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $queryArea(){
+    pagelevel=$('#pagelevel')[0].value;
+    pagename=$('#pagename')[0].value;
+    $.ajax({
+        type:"post",
+        data: "pagelevel="+pagelevel+"&pagename="+pagename,
+        url:"Pagemanager/queryarea",
+        success: function(result)
+        {
+            $('#caselistshow').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletearea(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/deletearea",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags('webpagemanage');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $changeareastatus(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/changeareastatus",
+        success: function(result)
+        {
+            alert('更新成功！');
+            $changetags('webpagemanage');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
 function $deletesingleimg(source_id){
     $.ajax({
         type:"post",
@@ -667,6 +799,23 @@ function $savebrand(brand_id){
         {
             alert('保存成功！');
             $changetags('brandedit');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $saveshower(shower_id){
+    $.ajax({
+        type:"post",
+        data: 'shower_id='+shower_id+'&source_id='+$('#'+shower_id+'_img')[0].value+'&sequence='+$('#'+shower_id+'_sequence')[0].value,
+        url:"Pagemanager/saveshower",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('showeredit');
             //$('#relatedvideoarea').html(result);
         },
         error: function()
@@ -743,6 +892,22 @@ function $changedepartmentstatus(id){
         {
             alert('更新成功！');
             $changetags('departmentlist');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $changekeywordstatus(id){
+    $.ajax({
+        type:"post",
+        data: 'id='+id,
+        url:"Pagemanager/changekeywordstatus",
+        success: function(result)
+        {
+            alert('更新成功！');
+            $changetags('tagsedit');
         },
         error: function()
         {
@@ -830,6 +995,7 @@ function $saveMusic(){
         }
     });
 }
+
 function $addadmin(){
     $.ajax({
         type:"post",

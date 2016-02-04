@@ -50,7 +50,28 @@ class Pagemanager extends CI_Controller
             $brandlists = array();
             $examinevideolists = array();
             $privilige = array();
+            $shows = array();
+            $arealists=array();
 
+            //arealists
+            $this->db->from('webcontent');
+            $areaarray = $this->db->get()->result_array();
+            for ($i = 0; $i < count($areaarray); $i++) {
+                $this->db->from('webcontent');
+                $this->db->where('page',$areaarray[$i]['page']);
+                $this->db->where('status','1');
+                $tmparray = $this->db->get()->result_array();
+                $tmpareaarray = array(
+                    'id' => $areaarray[$i]['id'],
+                    'name' => $areaarray[$i]['name'],
+                    'page' => $areaarray[$i]['page'],
+                    'status' => $areaarray[$i]['status'],
+                    'sequence' => $areaarray[$i]['sequence'],
+                    'update_time' => $areaarray[$i]['update_time'],
+                    'count' => count($tmparray)
+                );
+                array_push($arealists, $tmpareaarray);
+            }
 
             //imagelists
             $this->db->from('source');
@@ -213,6 +234,7 @@ class Pagemanager extends CI_Controller
                     'first_level' => $keywordarray[$i]['first_level'],
                     'language' => $keywordarray[$i]['third_level'],
                     'id' => $keywordarray[$i]['id'],
+                    'status'=>$keywordarray[$i]['status'],
                     'keyword' => $keywordarray[$i]['keyword'],
                     'type' => $keywordarray[$i]['second_level'],
                     'sequence' => $keywordarray[$i]['sequence']
@@ -269,6 +291,52 @@ class Pagemanager extends CI_Controller
                 array_push($brandlists, $tmpbrandarray);
             }
 
+            //shows
+            $this->db->from('keyword');
+            $this->db->where('second_level', 'shower');
+            $this->db->order_by('update_time', 'desc');
+            $showarray = $this->db->get()->result_array();
+            for ($i = 0; $i < count($showarray); $i++) {
+                $this->db->from('source');
+                $this->db->where('type', 'img');
+                $this->db->or_where('type', 'partnerimg');
+                $this->db->order_by('update_time', 'desc');
+                $showerimgarray = $this->db->get()->result_array();
+                $this->db->from('source');
+                $this->db->where('second_level', $showarray[$i]['id']);
+                $this->db->order_by('update_time', 'desc');
+                $showerimg = $this->db->get()->result_array();
+
+                $tmpselect = '';
+                if (count($showerimg) > 0) {
+                    for ($j = 0; $j < count($showerimgarray); $j++) {
+                        if ($brandimgarray[$j]['id'] == $showerimg[0]['id']) {
+                            $realsequence = $showerimgarray[$j]['sequence'];
+                            $showerimgurl = $showerimgarray[$j]['source_location'];
+                            $tmpselect .= '<option value="' . $showerimgarray[$j]['id'] . '" selected>' . $showerimgarray[$j]['source_name'] . '</option>';
+                        } else {
+                            $tmpselect .= '<option value="' . $showerimgarray[$j]['id'] . '">' . $showerimgarray[$j]['source_name'] . '</option>';
+                        }
+                    }
+                } else {
+                    $realsequence = '';
+                    $showerimgurl = '';
+                    $tmpselect .= '<option value="">--无--</option>';
+                    for ($j = 0; $j < count($showerimgarray); $j++) {
+                        $tmpselect .= '<option value="' . $showerimgarray[$j]['id'] . '">' . $showerimgarray[$j]['source_name'] . '</option>';
+                    }
+                }
+                $tmpshowarray = array(
+                    'first_level' => $showarray[$i]['first_level'],
+                    'language' => $showarray[$i]['third_level'],
+                    'keyword_id' => $showarray[$i]['id'],
+                    'imgurl' => $showerimgurl,
+                    'keyword' => $showarray[$i]['keyword'],
+                    'selections' => '<select id="' . $showarray[$i]['id'] . '_img">' . $tmpselect . '</select>',
+                    'sequence' => $realsequence
+                );
+                array_push($shows, $tmpshowarray);
+            }
 
             //departments
             $this->db->from('department');
@@ -359,12 +427,14 @@ class Pagemanager extends CI_Controller
                 )
             );
             $data = array(
+                'arealists'=>$arealists,
                 'userlists'=>$userlists,
                 'username' => $username,
                 'privilige' => $privilige,
                 'musiclists' => $musiclists,
                 'musicvideo' => $musicvido,
                 'showers' => $showers,
+                'shows'=>$shows,
                 'seasons' => $seasons,
                 'jobs' => $jobs,
                 'departmentselect' => $departments,
@@ -568,8 +638,8 @@ class Pagemanager extends CI_Controller
                         $insertcontent = array(
                             'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i][0]),
                             'sequence' => $goods_list[$i][1],
-                            'first_level' => $tagtype,
-                            'second_level' => $goods_list[$i][2],
+                            'first_level' => $goods_list[$i][2],
+                            'second_level' => $tagtype,
                             'third_level' => $goods_list[$i][3],
                             'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][4]),
                             'creator' => $username,
@@ -1201,6 +1271,22 @@ class Pagemanager extends CI_Controller
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+    public function saveshower(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            $updateitem = array(
+                'second_level' => $_POST['shower_id'],
+                'sequence' => $_POST['sequence']
+            );
+            $this->db->update('source', $updateitem, array('id' => $_POST['source_id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
     public function savedepartment(){
         $this->load->library('session');
 
@@ -1597,6 +1683,368 @@ class Pagemanager extends CI_Controller
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+
+    /**
+     *
+     */
+    public function queryimage(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $imglevel=$_POST['imglevel'];
+            $imgname=$_POST['imgname'];
+            $this->db->from('source');
+            if($imglevel){
+                $this->db->where("source_name like '%".$imgname."%' and first_level='".$imglevel."' and ( type='img' or type='partnerimg')");
+            }else{
+                $this->db->where("source_name like '%".$imgname."%' and ( type='img' or type='partnerimg')");
+            }
+
+//            $this->db->where("first_level",$imglevel);
+//            $this->db->where('type', 'img');
+//            $this->db->or_where('type', 'partnerimg');
+            $resultarray=$this->db->get()->result_array();
+            $result="";
+            $result.="<table><tr><td>图片名称</td><td>图片地址</td><td>图片类型</td><td>顺序</td><td>图片缩略图</td><td>编辑</td></tr>";
+
+
+            $imgtypearray = array(
+                'img', 'videoimg', 'partnerimg'
+            );
+            for($i=0;$i<count($resultarray);$i++){
+                $tmpselect = '';
+                for ($j = 0; $j < count($imgtypearray); $j++) {
+                    if ($imgtypearray[$j] == $resultarray[$i]['type']) {
+                        $tmpselect .= '<option value="' . $imgtypearray[$j] . '" selected>' . $imgtypearray[$j] . '</option>';
+                    } else {
+                        $tmpselect .= '<option value="' . $imgtypearray[$j] . '">' . $imgtypearray[$j] . '</option>';
+                    }
+                }
+                $result.="<tr><td id=\'".$resultarray[$i]['id']."\' class=\'cl-imgname\'>";
+                $result.=$resultarray[$i]['source_name'];
+                $result.="</td><td class=\"cl-imgadd\">";
+                $result.=$resultarray[$i]['source_location'];
+                $result.="</td><td class=\"cl-imgtype\">";
+                $result.=<<<TAG
+<select id=\'
+TAG;
+                $result.=$resultarray[$i]['id'];
+                $result.=<<<TAG
+_imgtype\'>
+TAG;
+                $result.=$tmpselect;
+                $result.="</select>";
+                $result.="</td><td class=\"cl-imgseq\"><input type=\"number\" value=\'";
+                $result.=$resultarray[$i]['sequence'];
+                $result.=<<<TAG
+\' name="sequence" id=\'
+TAG;
+                $result.=$resultarray[$i]['id'];
+                $result.="_sequence\' class=\"cl-imgseqinput\"></td><td id=\'";
+                $result.=$resultarray[$i]['id'];
+                $result.=<<<TAG
+_img\' class="cl-imgmini"><img src=\'
+TAG;
+                $result.=$resultarray[$i]['source_location'];
+                $result.=<<<TAG
+\' style="width:96px;height: 54px;"></td><td class="cl-imgedit"><a href="javascript:;" onclick="\$savesingleimg(\'
+TAG;
+                $result.=$resultarray[$i]['id'];
+                $result.=<<<TAG
+\')" class="cl-imgeditbtn">保存</a><a href="javascript:;" onclick="\$deletesingleimg(\'
+TAG;
+                $result.=$resultarray[$i]['id'];
+                $result.="\')\" class=\"cl-imgeditbtn\">删除</a></td></tr>";
+            }
+            $result.="</table></div></div>";
+            echo $result;
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function queryvideo(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $videolevel=$_POST['videolevel'];
+            $videoname=$_POST['videoname'];
+            $this->db->from('source');
+            if($videolevel){
+                $this->db->where("source_name like '%".$videoname."%' and first_level='".$videolevel."' and type='video/mp4'");
+            }else{
+                $this->db->where("source_name like '%".$videoname."%' and type='video/mp4'");
+            }
+
+            $videoarray = $this->db->get()->result_array();
+            $result="";
+            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title7\">编辑</td></tr>";
+            for ($i = 0; $i < count($videoarray); $i++) {
+                $this->db->from('source');
+                $this->db->where('link_url', '/' . $videoarray[$i]['first_level'] . '/' . $videoarray[$i]['first_level'] . 'inner/' . $videoarray[$i]['id']);
+                $videoimgarray = $this->db->get()->result_array();
+                if (count($videoimgarray) > 0) {
+                    $videoimgid = $videoimgarray[0]['id'];
+                    $imgurl = $videoimgarray[0]['source_location'];
+                    $videosequence = $videoimgarray[0]['sequence'];
+                } else {
+                    $videoimgid = 'none';
+                    $imgurl = '';
+                    $videosequence = '';
+                }
+
+                $tmpvideoarray = array(
+                    'language' => $videoarray[$i]['third_level'],
+                    'first_level' => $videoarray[$i]['first_level'],
+                    'source_id' => $videoarray[$i]['id'],
+                    'source_location' => $videoarray[$i]['source_location'],
+                    'source_name' => $videoarray[$i]['source_name'],
+                    'sequence' => $videosequence,
+                    'imgid' => $videoimgid,
+                    'linkimg' => $imgurl
+                );
+                $result.="                <tr>";
+                $result.="<td id=\"".$tmpvideoarray['imgid']."\" class=\"vl-imgname\">".$tmpvideoarray['source_name']. "</td>";
+                $result.="<td id=\"".$tmpvideoarray['imgid']."_url\" class=\"vl-imgadd\">";
+                $result.=$tmpvideoarray['source_location'];
+                $result.="</td>";
+                $result.="<td id=\"".$tmpvideoarray['source_id']."_first\" class=\"vl-imgfirst\">";
+                $result.=$tmpvideoarray['first_level'];
+                $result.="</td>";
+                $result.="<td id=\"".$tmpvideoarray['source_id']."_lang\" class=\"vl-imglang\">";
+                $result.=$tmpvideoarray['language'];
+                $result.="</td>";
+                $result.="<td class=\"vl-imgseq\">";
+                $result.="    <input type=\"number\" value=\"".$tmpvideoarray['sequence']."\" name=\"sequence\" id=\"".$tmpvideoarray['source_id']."_sequence\" class=\"vl-imgseqinput\">";
+                $result.="</td>";
+                $result.="<td id=\"".$tmpvideoarray['imgid']."_img\" class=\"vl-imgmini\">";
+                $result.="    <img src=\"".$tmpvideoarray['linkimg']."\" style=\"width:96px;height: 54px;\">";
+                $result.="</td>";
+                $result.="<td id=\"".$tmpvideoarray['imgid']."_edit\" class=\"vl-imgedit\">";
+                $result.=<<<TAG
+    <a href="javascript:;" onclick="\$savesinglevideo(\'
+TAG
+.$tmpvideoarray['imgid'].<<<TAG
+\') " class="cl-imgeditbtn">保存</a>
+TAG;
+                $result.=<<<TAG
+    <a href="javascript:;" onclick="\$deletesinglevideo(\'
+TAG
+.$tmpvideoarray['source_id'].<<<TAG
+\')" class="cl-imgeditbtn">删除</a>
+TAG;
+                $result.="</td>";
+                $result.="</tr>";
+
+            }
+            $result.="</table>";
+            echo $result;
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function querykeyword(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $keywordlevel=$_POST['keywordlevel'];
+            $keywordname=$_POST['keywordname'];
+            $this->db->from('keyword');
+            if($keywordlevel){
+                $this->db->where("keyword like '%".$keywordname."%' and first_level='".$keywordlevel."'");
+            }else{
+                $this->db->where("keyword like '%".$keywordname."%'");
+            }
+
+            $keywordarray = $this->db->get()->result_array();
+            $result="";
+            $result.="<table><tr><td>标签名称</td><td>标签栏目</td><td>标签语言</td><td>标签状态</td><td>顺序</td><td>标签类型</td><td>编辑</td></tr>";
+            for ($i = 0; $i < count($keywordarray); $i++) {
+                $tmpkeywordarray = array(
+                    'first_level' => $keywordarray[$i]['first_level'],
+                    'language' => $keywordarray[$i]['third_level'],
+                    'id' => $keywordarray[$i]['id'],
+                    'status'=>$keywordarray[$i]['status'],
+                    'keyword' => $keywordarray[$i]['keyword'],
+                    'type' => $keywordarray[$i]['second_level'],
+                    'sequence' => $keywordarray[$i]['sequence']
+                );
+                $result.="<tr>";
+                $result.="<td id=\"".$tmpkeywordarray['id']."\">".$tmpkeywordarray['keyword']."</td>";
+                $result.="<td id=\"".$tmpkeywordarray['id']."_first\">";
+                $result.=$tmpkeywordarray['first_level'];
+                $result.="</td>";
+                $result.="<td id=\"".$tmpkeywordarray['id']."_lang\">";
+                $result.=$tmpkeywordarray['language'];
+                $result.="</td>";
+                $result.="<td>";
+                $result.=$tmpkeywordarray['status'];
+                $result.="</td>";
+                $result.="<td>";
+                $result.="<input type=\"number\" value=\"".$tmpkeywordarray['sequence']."\" name=\"sequence\" id=\"".$tmpkeywordarray['id']."_sequence\">";
+                $result.="</td>";
+                $result.="<td id=\"".$tmpkeywordarray['id']."_type\">";
+                $result.=$tmpkeywordarray['type'];
+                $result.="</td>";
+                $result.="<td id=\"".$tmpkeywordarray['id']."_edit\">";
+                $result.="<a href=\"javascript:;\" onclick=\"\$savesinglekeyword('".$tmpkeywordarray['id']."')\">保存</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$changekeywordstatus('".$tmpkeywordarray['id']."')\">隐藏/显示</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$deletesinglekeyword('".$tmpkeywordarray['id']."')\">删除</a>";
+                $result.="</td>";
+                $result.="</tr>";
+            }
+
+            $result.="</table>";
+            echo $result;
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function changekeywordstatus(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
+            date_default_timezone_set("UTC");
+            $this->db->from('keyword');
+            $this->db->where('id', $_POST['id']);
+            if ($this->db->get()->result_array()[0]['status'] == '1') {
+                $keywordupdateinfo = array(
+                    'status' => '0',
+                    'update_time' => date('y-m-d', time()),
+                    'updater' => $username
+                );
+            } else {
+                $keywordupdateinfo = array(
+                    'status' => '1',
+                    'update_time' => date('y-m-d', time()),
+                    'updater' => $username
+                );
+            }
+            $this->db->update('keyword', $keywordupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function changeareastatus(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
+            date_default_timezone_set("UTC");
+            $this->db->from('webcontent');
+            $this->db->where('id', $_POST['id']);
+            if ($this->db->get()->result_array()[0]['status'] == '1') {
+                $areaupdateinfo = array(
+                    'status' => '0',
+                    'update_time' => date('y-m-d', time()),
+                    'updater' => $username
+                );
+            } else {
+                $areaupdateinfo = array(
+                    'status' => '1',
+                    'update_time' => date('y-m-d', time()),
+                    'updater' => $username
+                );
+            }
+            $this->db->update('area', $areaupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function queryarea(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $arealevel=$_POST['arealevel'];
+            $areaname=$_POST['areaname'];
+            $this->db->from('keyword');
+            if($arealevel){
+                $this->db->where("name like '%".$areaname."%' and page='".$arealevel."'");
+            }else{
+                $this->db->where("name like '%".$areaname."%'");
+            }
+
+            $areaarray = $this->db->get()->result_array();
+            $result="";
+            $result.="<table><tr><td>模块名称</td><td>所属页面</td><td>状态</td><td>顺序</td><td>更新时间</td><td>所属页面内容数</td><td>编辑</td></tr>";
+            for ($i = 0; $i < count($areaarray); $i++) {
+                $this->db->from('webcontent');
+                $this->db->where('page',$areaarray[$i]['page']);
+                $this->db->where('status','1');
+                $tmparray = $this->db->get()->result_array();
+                $tmpareaarray = array(
+                    'id' => $areaarray[$i]['id'],
+                    'name' => $areaarray[$i]['name'],
+                    'page' => $areaarray[$i]['page'],
+                    'status' => $areaarray[$i]['status'],
+                    'sequence' => $areaarray[$i]['sequence'],
+                    'update_time' => $areaarray[$i]['update_time'],
+                    'count' => count($tmparray)
+                );
+
+                $result.="<tr>";
+                $result.="<td class=\"cl-imgname\">";
+                $result.=$tmpareaarray['name'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgadd\">";
+                $result.=$tmpareaarray['page'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgtype\">";
+                $result.=$tmpareaarray['status'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgseq\">";
+                $result.="<input type=\"number\" value=\"".$tmpareaarray['sequence']."\" name=\"sequence\" id=\"".$tmpareaarray['id']."_sequence\" class=\"cl-imgseqinput\">";
+                $result.="</td>";
+                $result.="<td class=\"cl-imgmini\">";
+                $result.=$tmpareaarray['update_time'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgmini\">";
+                $result.=$tmpareaarray['count'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgedit\">";
+                $result.="<a href=\"javascript:;\" onclick=\"\$updatearea('".$tmpareaarray['id']."')\" class=\"cl-imgeditbtn\">保存</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$changeareastatus('".$tmpareaarray['id']."')\" class=\"cl-imgeditbtn\">显示/隐藏</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$deletearea('".$tmpareaarray['id']."')\" class=\"cl-imgeditbtn\">删除</a>";
+                $result.="</td>";
+                $result.="</tr>";
+            }
+            $result.="</table>";
+            echo $result;
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function updatearea(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
+            date_default_timezone_set("UTC");
+            $areaupdateinfo = array(
+                'sequence' => $_POST['sequence'],
+                'update_time' => date('y-m-d', time()),
+                'updater' => $username
+            );
+            $this->db->update('webcontent', $areaupdateinfo, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function deletearea(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
+            $this->db->delete('webcontent', array('id' => $_POST['id']));
         }
     }
 }

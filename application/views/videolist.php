@@ -9,12 +9,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="managepagetitle">视频列表</div>
 
- <!--    <div class="row">
-        <label class="col-lg-2">视频明细列表</label>
-    </div> -->
- <!--   <div class="row">
+<div>
+    <!--   <div class="row">
+           <label class="col-lg-2">图片明细列表</label>
+       </div>
+        -->
+    <label>所属类别：</label>
+    <select id="videolevel">
+        <option value=""></option>
+        <option value="ul">极致</option>
+        <option value="awoe">问鼎世界</option>
+        <option value="music">音乐年</option>
+    </select>
+    <label>视频名称：</label>
+    <input type="text" id="videoname">
+    <div class="row">
         <button onclick="$queryVideo()" class="btn btn-default">查询</button>
-    </div> --> 
+    </div>
     <div id="caselistshow" class="cl-table">
         <table>
             <tr>
