@@ -46,6 +46,15 @@ class Partner extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('partner',$data);
+        $this->db->from('webcontent');
+        $this->db->where('page','partner');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $homecontents=$this->db->get()->result_array();
+        for($i=0;$i<count($homecontents);$i++){
+            $this->parser->parse($homecontents[$i]['name'],$data);
+        }
+        $this->parser->parse('partnerend',$data);
         $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
@@ -108,6 +117,15 @@ class Partner extends CI_Controller
             $this->parser->parse('header',$data);
             $this->parser->parse('search',$data);
             $this->parser->parse('partner',$data);
+            $this->db->from('webcontent');
+            $this->db->where('page','partner');
+            $this->db->where('previewstatus','1');
+            $this->db->order_by('sequence','asc');
+            $homecontents=$this->db->get()->result_array();
+            for($i=0;$i<count($homecontents);$i++){
+                $this->parser->parse($homecontents[$i]['name'],$data);
+            }
+            $this->parser->parse('partnerend',$data);
             $this->parser->parse('footer',$data);
 
         }

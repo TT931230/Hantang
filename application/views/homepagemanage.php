@@ -12,7 +12,7 @@
     <div class="row"><label class="col-lg-2">首页A区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
-        <select  class="col-lg-2 multiselect" multiple="multiple" id="source_name_a">
+        <select  class="col-lg-2 form-control selectpicker" multiple="multiple" id="source_name_a">
             {img}
             <option value="{id}">{source_name}</option>
             {/img}
