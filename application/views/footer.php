@@ -106,7 +106,7 @@
                 <div>All Rights Reserved.</div>
                 <div >
                 <a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action" style="color:#ff0000;text-decoration:none;border-bottom:none;">沪ICP备13044328号&nbsp;</a>
-                <a href="" style="color:#ff0000;text-decoration:none;border-bottom:none;">|&nbsp;网站声明</a></div>
+                <a href="legal" style="color:#ff0000;text-decoration:none;border-bottom:none;">|&nbsp;网站声明</a></div>
             </div>
         </div>
         <div class="modal fade" id="weixinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

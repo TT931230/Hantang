@@ -755,3 +755,117 @@ background: transparent url("white.png") no-repeat left top;
     top: 100%;
     }
   }
+/* legal*/
+.legal-title{
+	height:35px;
+	background-color:#d7d7d7;
+	color:#fff;
+	text-align:left;
+	font-size:18px;
+	padding-left:15px;
+	padding-top:5px;
+	
+}
+.legal-subtitle{
+	width:910px;
+	height:35px;
+	margin-top:20px;
+	color:#808080;
+    text-align:left;
+	font-size:18px;
+	border-bottom:2px solid #d7d7d7;	
+}
+.legal-content{
+	margin-top:10px;
+	font-size:10px;
+	color:#808080;
+	text-align:left;
+}
+
+
+.dumascroll_area {
+	height: 100%;
+	overflow: hidden
+}
+
+.dumascroll_bar, .dumascroll_handle, .dumascroll_handle_a,
+	.dumascroll_arrow_up, .dumascroll_arrow_up_a, .dumascroll_arrow_down,
+	.dumascroll_arrow_down_a {
+	background-image: url(/bootstrap/images/un_bg_bar.gif);
+	background-repeat: no-repeat
+}
+
+.dumascroll_bar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+	width: 14px;
+	height: 100%;
+	cursor: default;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	background-repeat: repeat-y;
+	background-position: -42px 0;
+	float: left
+}
+
+.dumascroll_arrow_up, .dumascroll_arrow_up_a, .dumascroll_handle,
+	.dumascroll_handle_a, .dumascroll_arrow_down, .dumascroll_arrow_down_a
+	{
+	position: absolute;
+	left: 0
+}
+
+.dumascroll_arrow_up, .dumascroll_arrow_up_a, .dumascroll_arrow_down,
+	.dumascroll_arrow_down_a {
+	width: 100%;
+	height: 9px;
+	color: #fff;
+	text-align: center;
+	background-repeat: no-repeat
+}
+
+.dumascroll_arrow_up, .dumascroll_arrow_up_a {
+	top: 0
+}
+
+.dumascroll_arrow_down, .dumascroll_arrow_down_a {
+	bottom: 0
+}
+
+.dumascroll_handle, .dumascroll_handle_a {
+	width: 100%;
+	background-repeat: repeat-y
+}
+
+.dumascroll_arrow_up {
+	background-position: 0 0
+}
+
+.dumascroll_arrow_up_a {
+	background-position: -14px 0
+}
+
+.dumascroll_handle {
+	background-position: -28px 0
+}
+
+.dumascroll_handle_a {
+	background-position: -56px 0
+}
+
+.dumascroll_arrow_down {
+	background-position: -70px 0
+}
+
+.dumascroll_arrow_down_a {
+	background-position: -84px 0
+}
+.career {
+	height: 598px;
+	text-align: left;
+	font-size: 12px;
+	margin: 16px 0 0 -2px
+}
