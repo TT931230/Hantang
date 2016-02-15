@@ -292,8 +292,8 @@
 }
 .dropdowndepart{
     top:95%;
-    left:5%;
-    width:90%;
+    left:4%;
+    width:92%;
     padding:0;
     text-align: center;
     border-bottom: 0px solid #761c19;
@@ -306,6 +306,7 @@
     display: block;
     height: inherit;
     background: #fff;
+     width:30px;
 }
 .dropdown-triangle {
     width: 0;
@@ -318,12 +319,15 @@
 }
 .dropdowndepart>li>a {
     display: block;
-    padding: 3px 20px;
+    padding-left:20px;
+    padding-top:5px;
+    padding-bottom:5px;
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
     color: #FFF;
     white-space: nowrap;
+    text-align:center;
     /*border-top: 1px solid #fff;*/
 }
 .dropdowndepart>li>a:hover{
@@ -334,9 +338,9 @@
     font-size:12pt;
     position:relative;*/
     background-color: #C9C9C9;
-    color:#000;
+    color:#626262;
     cursor: pointer;
-
+    width:150px;
 }
 
 .navcust{
@@ -387,6 +391,7 @@
     margin-bottom: 20px;
     margin-top: 150px;
     text-align: right;
+    color:#808080;
 }
 .footerleftdiv{
     display:inline;
@@ -640,18 +645,18 @@ body {
 #homeli > a:hover,a:focus{
 
 	background-color: transparent;
-    border-bottom: 4px solid #a9a9a9;border-image:none;
+    border-bottom: 2px solid #a9a9a9;border-image:none;
 }
 #homeli >a.active{
 	
     background-color: transparent;
-    border-bottom: 4px solid #a9a9a9;border-image:none;
+    border-bottom: 2px solid #a9a9a9;border-image:none;
 }
 
 
 #aboutli > a{
 	height:80px;
-	width:80px;
+	width:70px;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
@@ -665,30 +670,30 @@ body {
 #aboutli > a:hover,a:focus{
 
 	background-color:transparent;
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
     border-image:none;
 }
 #aboutli >a.active{
 	
     background-color: transparent;
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
     border-image:none;
 }
 #ulli > a:hover,a:focus{
 
 	background-color: transparent;
-    border-bottom: 4px solid #A73D49;
+    border-bottom: 2px solid #A73D49;
     border-image:none;
 }
 #ulli >a.active{
 	
     background-color: transparent;
-    border-bottom: 4px solid #A73D49;
+    border-bottom: 2px solid #A73D49;
     border-image:none;
 }
 #ulli > a{
 	height:80px;
-	width:60px;
+	width:70px;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
@@ -696,22 +701,22 @@ body {
 #ulli{
   display: inline-block;
     width:60px;
-    margin-left:30px;
+    margin-left:5px;
 }
 #awoeli > a:hover,a:focus{
 	background-color: transparent;
-    border-bottom: 4px solid #3D5C9A;   	
+    border-bottom: 2px solid #3D5C9A;   	
     border-image:none;
 }
 
 #awoeli >a.active{
 background-color: transparent;
-border-bottom:4px solid #3D5C9A;
+border-bottom:2px solid #3D5C9A;
 border-image:none;
 }
 #awoeli > a{
     height:80px;
-	width:80px;
+	width:75px;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
@@ -719,12 +724,11 @@ border-image:none;
 #awoeli {
 	display: inline-block;
 	width:80px;
-	margin-left:30px;
 }
 
 #musicli  {
     display: inline-block;
-    width:120px;
+    width:90px;
 }
 
 #musicli > a.active{
@@ -735,7 +739,7 @@ border-image:none;
 }
 #musicli > a{
 	height:80px;
-	width:120px;
+	width:90px;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
@@ -754,7 +758,7 @@ border-image:none;
 }
 #joinli > a {
     height:80px;
-	width:80px;
+	width:70px;
     font-size: 10px;
     font-weight: 500;
     color: #808080; /* IE8 proofing */
@@ -762,13 +766,13 @@ border-image:none;
 #joinli > a:hover,a:focus{
 
 	background-color: transparent;
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
     border-image:none;
 }
 #joinli >a.active{
 	
     background-color: transparent;
-    border-bottom: 4px solid #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
     border-image:none;
 }
 /*
@@ -902,5 +906,69 @@ border-image:none;
     margin-top:15px;
     margin-bottom:10px;
     text-align:center;
+}
+.music-relatedvideos{
+	float:left;
+	height:310px;
+    width:100%;
+    margin-bottom:55px;
+    display: inline-block;
+    background-color: #ffffff;
+    border-top:2px dotted #d6d6d6;
+}
+.music-relatedvideos img{
+	margin-top:40px;
+	margin-left:10px;
+    float:right;
+    height:280px;
+    width:750px;  
+}
+.music-relavideoinfo{
+	margin-top:30px;
+	width:33%;
+	float:left;
+	margin-right:20px;
+}
+.music-relavideostitle{
+	height:50px;
+	float:left;
+	font-size:15px;
+	color:#808080;
+	margin-top:10px;
+	width:100%;
+	text-align:left;
+}
+.music-relavideoremark{
+	height:100px;
+	font-size:12px;
+	color:#808080;
+	float:left;
+	margin-top:10px;
+	text-align:left;
+	margin-right:10px;
+	width:100%;
+}
+.music-relavideotime{
+	height:15px;
+	font-size:12px;
+	color:#808080;
+	float:left;
+	text-align:left;
+	margin-top:20px;
+	width:100%;
+}
+.music-more{
+	height:20px;
+	width:100%;
+	font-size:12px;
+	color:#808080;
+	text-align:left;
+	padding-top:235px;
+}
+.music-more img{
+width:60px;
+height:15px;
+float:left;
+margin-left:-1px;
 }
 

@@ -12,9 +12,26 @@
         <label class="col-lg-2">图片明细列表</label>
     </div>
      -->
- <!--    <div class="row">
-        <button onclick="$queryImage()" class="btn btn-default">查询</button>
-    </div>--> 
+    <label>所属类别：</label>
+    <select id="imglevel">
+        <option value=""></option>
+        <option value="ul">极致</option>
+        <option value="awoe">问鼎世界</option>
+        <option value="home">首页</option>
+        <option value="music">音乐年</option>
+        <option value="platform">播出平台</option>
+        <option value="partner">合作伙伴</option>
+        <option value="logoimage">汉唐logo</option>
+        <option value="ullogo">极致logo</option>
+        <option value="awoelogo">问鼎世界logo</option>
+        <option value="musiclogo">音乐年logo</option>
+        <option value="displayer">表演者</option>
+    </select>
+    <label>图片名称：</label>
+    <input type="text" id="imgname">
+<div class="row">
+    <button onclick="$queryImage()" class="btn btn-default">查询</button>
+</div>
     <div id="caselistshow" class="cl-table">
         <table>
             <tr>

@@ -51,7 +51,7 @@ class Music extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='music';
-        $source_info['type']='videoimg';
+        $source_info['type']='proimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
 
@@ -71,6 +71,15 @@ class Music extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('music',$data);
+        $this->db->from('webcontent');
+        $this->db->where('page','music');
+        $this->db->where('status','1');
+        $this->db->order_by('sequence','asc');
+        $homecontents=$this->db->get()->result_array();
+        for($i=0;$i<count($homecontents);$i++){
+            $this->parser->parse($homecontents[$i]['name'],$data);
+        }
+        $this->parser->parse('musicend',$data);
         $this->parser->parse('footer',$data);
     }
 
@@ -276,6 +285,15 @@ class Music extends CI_Controller
             $this->parser->parse('header',$data);
             $this->parser->parse('search',$data);
             $this->parser->parse('music',$data);
+            $this->db->from('webcontent');
+            $this->db->where('page','music');
+            $this->db->where('previewstatus','1');
+            $this->db->order_by('sequence','asc');
+            $homecontents=$this->db->get()->result_array();
+            for($i=0;$i<count($homecontents);$i++){
+                $this->parser->parse($homecontents[$i]['name'],$data);
+            }
+            $this->parser->parse('musicend',$data);
             $this->parser->parse('footer',$data);
         }
     }

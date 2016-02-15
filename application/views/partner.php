@@ -9,31 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
     <div class="clearfix newborder">
         <div class="inner">
-            <div class="aboutsubtitle">
-                   合作伙伴                                 
-            </div>
-            <div class="newborder" style="display: {partnerdisarea1}">
-               <div class="ptn-border">
-                    <div class="ptn-wrapper">
-                        <div class="ptn-callbacks_container">
-                            <ul class="rslides" id="carousel5">
-                                {imagearea1}
-                                <li><a href="{link_url}"><img src="{source_location}"></a></li>
-                                {/imagearea1}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dashline" id="showarea" style="display: {partnerdisarea2}">
-               {partnerimgs}
-                <div class="brandlogo">
-                    <a href="javascript:;" onclick="$partnerrelatedvideo('{second_level}')"><img src="{source_location}"></a>
-                </div>
-                {/partnerimgs}
-            </div>
-        </div>
-        
-    </div>
-    
-</div>
+
+
+

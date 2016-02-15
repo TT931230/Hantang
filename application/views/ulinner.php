@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="innertexttitle">
                         {source_name}
                     </div>
-                    <div class="innertext">
+                    <div class="ulinnertext">
                         {source_remark}
                     </div>
                 </div>
@@ -75,6 +75,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="dashline">
 
                 <div class="relatedvideoarea" id="relatedvideoarea">
+                    {relatedvideo1}
+                    <div class="relatedvideos">
+                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>
+                        <div class="relavideostitle">
+                            {source_name}
+                        </div>
+                    </div>
+                    {/relatedvideo1}
                     {relatedvideo}
                     <div class="relatedvideos">
                         <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>

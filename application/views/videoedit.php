@@ -47,6 +47,12 @@
         </select>
     </div>
  </div>
+<div class="ce-div">
+    <div class="row">
+        <label class="col-lg-2">视频系列</label>
+        <input type="textarea" style="width: 450px;height: 100px;" id="index">
+    </div>
+</div>
  <div class="ce-div">
     <div class="row">
         <label class="col-lg-2">视频描述</label>

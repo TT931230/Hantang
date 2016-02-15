@@ -20,7 +20,7 @@
         </tr>
         {musiclists}
         <tr>
-            <td id="{imgid}" class="vl-imgname">{imgname}</td>
+            <td id="{imgid}" class="vl-imgname">{source_name}</td>
             <td id="{imgid}_shower" class="vl-imgadd">
                 {shower}
             </td>
@@ -33,6 +33,7 @@
             <td class="vl-imgseq">
                 <input type="number" value="{sequence}" name="sequence" id="{source_id}_sequence" class="vl-imgseqinput">
             </td>
+
             <td id="{imgid}_img" class="vl-imgmini">
                 <img src="{linkimg}" style="width:96px;height: 54px;">
             </td>

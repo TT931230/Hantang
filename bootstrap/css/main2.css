@@ -95,7 +95,11 @@
   width: 100%;
   }
 .callbacks_container > a:focus{
-background: transparent url("themes2.png") no-repeat left top;;
+background: transparent url("home_left.png") no-repeat left top;;
+border-bottom-color:transparent;
+  }
+  .callbacks_container.next > a:focus{
+background: transparent url("home_right.png") no-repeat left top;;
 border-bottom-color:transparent;
   }
 .callbacks {
@@ -135,13 +139,14 @@ border-bottom-color:transparent;
   text-decoration: none;
   height: 60px;
   width: 38px;
-  background: transparent url("themes2.png") no-repeat left top;
+  background: transparent url("home_left.png") no-repeat left top;
   margin-top: -32px;
   border-bottom-color:transparent;
+  opacity:0.7;
   }
 
 .callbacks_nav:active {
-    background: transparent url("themes2.png") no-repeat left top;
+    background: transparent url("home_right.png") no-repeat left top;
     border-bottom-color:transparent;
     border-bottom:none;
   }
@@ -149,12 +154,12 @@ border-bottom-color:transparent;
 
 .callbacks_nav.next {
   left: auto;
-  background: transparent url("themes2.png") no-repeat right top;
+  background: transparent url("home_right.png") no-repeat right top;
   right: 0;
   }
   .callbacks_nav.next:focus {
   left: auto;
-  background: transparent url("themes2.png") no-repeat right top;
+  background: transparent url("home_right.png") no-repeat right top;
   right: 0;
   }
 @media screen and (max-width:600px) {
@@ -227,7 +232,7 @@ border-bottom-color:transparent;
   }
 .musicsearch{
 	margin-top:30px;
-	height:55px;
+	height:80px;
 	margin-bottom:10px;
 }
 
@@ -240,7 +245,6 @@ border-bottom-color:transparent;
   padding: 0;
   margin: 0;
   }
-
 .music-callbacks li {
   position: absolute;
   width: 100%;
@@ -252,7 +256,7 @@ border-bottom-color:transparent;
   display: block;
   position: relative;
   z-index: 1;
-  height:550px;
+  height:590px;
   width:100%;
   border: 0;
   }
@@ -347,12 +351,12 @@ background: transparent url("white.png") no-repeat left top;
   .homeborder1{
  padding:0px;
  width:100%;
- height:550px;
+ height:590px;
  margin:0px;
 
  }
  .homewrapper1{
-  height:550px;
+  height:590px;
   width:auto;
  }
  .homewrapper2{
@@ -365,7 +369,7 @@ background: transparent url("white.png") no-repeat left top;
   height: 5px;
   width: 100%;
   position: absolute;
-  top: 551px;
+  top:585px;
   margin: 0;
   z-index: 10;
   opacity: 0.5;
@@ -460,7 +464,10 @@ margin-left:0px;
     text-decoration: none;
     color:#808080;
 }
-
+.job-dropdownli{
+	width:155px;
+	
+}
 
 
 
@@ -666,3 +673,199 @@ border-bottom-color:transparent;
      height: 50px;
      width: 100%;
  } 
+ 
+ /*  ul */
+ .ulcallbacks_container {
+  margin-bottom: 0px;
+  position: relative;
+  float: right;
+  width: 100%;
+  }
+  
+  .ulcallbacks_container > a:hover {
+background: transparent url("color.png") no-repeat left top;
+  }
+  .ulcallbacks_container > a:focus{
+background: transparent url("color.png") no-repeat left top;;
+border-bottom-color:transparent;
+  }
+  .ul-callbacks_nav.next:hover{
+  left: auto;
+  background-position: right top;
+  right: 15px;
+  }
+  .ul-callbacks_nav.next:focus{
+  left: auto;
+  background-position: right top;
+  right: 15px;
+  }
+.ul-callbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.ul-callbacks li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.ul-callbacks img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 400px;
+  width:100%;
+  border: 0;
+  }
+
+
+.ul-callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); 
+  opacity:0.7;
+  top: 51%;
+  left:13px;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 30px;
+  background: transparent url("white.png") no-repeat left top;
+  margin-top: -39px;
+  } 
+
+.ul-callbacks_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 15px;
+  }
+.ul-callbacks_nav >a:active {
+background: transparent url("white.png") no-repeat left top;
+	
+}
+@media screen and (max-width:600px) {
+  .ul-callbacks_nav {
+    top: 100%;
+    }
+  }
+/* legal*/
+.legal-title{
+	height:35px;
+	background-color:#d7d7d7;
+	color:#fff;
+	text-align:left;
+	font-size:18px;
+	padding-left:15px;
+	padding-top:5px;
+	
+}
+.legal-subtitle{
+	width:910px;
+	height:35px;
+	margin-top:20px;
+	color:#808080;
+    text-align:left;
+	font-size:18px;
+	border-bottom:2px solid #d7d7d7;	
+}
+.legal-content{
+	margin-top:10px;
+	font-size:10px;
+	color:#808080;
+	text-align:left;
+}
+
+
+.dumascroll_area {
+	height: 100%;
+	overflow: hidden
+}
+
+.dumascroll_bar, .dumascroll_handle, .dumascroll_handle_a,
+	.dumascroll_arrow_up, .dumascroll_arrow_up_a, .dumascroll_arrow_down,
+	.dumascroll_arrow_down_a {
+	background-image: url(/bootstrap/images/un_bg_bar.gif);
+	background-repeat: no-repeat
+}
+
+.dumascroll_bar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+	width: 14px;
+	height: 100%;
+	cursor: default;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	background-repeat: repeat-y;
+	background-position: -42px 0;
+	float: left
+}
+
+.dumascroll_arrow_up, .dumascroll_arrow_up_a, .dumascroll_handle,
+	.dumascroll_handle_a, .dumascroll_arrow_down, .dumascroll_arrow_down_a
+	{
+	position: absolute;
+	left: 0
+}
+
+.dumascroll_arrow_up, .dumascroll_arrow_up_a, .dumascroll_arrow_down,
+	.dumascroll_arrow_down_a {
+	width: 100%;
+	height: 9px;
+	color: #fff;
+	text-align: center;
+	background-repeat: no-repeat
+}
+
+.dumascroll_arrow_up, .dumascroll_arrow_up_a {
+	top: 0
+}
+
+.dumascroll_arrow_down, .dumascroll_arrow_down_a {
+	bottom: 0
+}
+
+.dumascroll_handle, .dumascroll_handle_a {
+	width: 100%;
+	background-repeat: repeat-y
+}
+
+.dumascroll_arrow_up {
+	background-position: 0 0
+}
+
+.dumascroll_arrow_up_a {
+	background-position: -14px 0
+}
+
+.dumascroll_handle {
+	background-position: -28px 0
+}
+
+.dumascroll_handle_a {
+	background-position: -56px 0
+}
+
+.dumascroll_arrow_down {
+	background-position: -70px 0
+}
+
+.dumascroll_arrow_down_a {
+	background-position: -84px 0
+}
+.career {
+	height: 598px;
+	text-align: left;
+	font-size: 12px;
+	margin: 16px 0 0 -2px
+}

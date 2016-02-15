@@ -7,7 +7,6 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,7 +18,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="">
 
     <title>后台管理</title>
-    <link href="manage/css/multi.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.4/css/bootstrap-select.min.css">
+
+
+
     <!-- Bootstrap Core CSS -->
     <link href="manage/css/bootstrap.min.css" rel="stylesheet">
 
@@ -65,6 +68,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="active">
                     <a href="javascript:;" data-toggle="collapse" data-target="#wznrgl">网站内容管理 <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="wznrgl" class="collapse">
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('webpagemanage')">模块管理</a>
+                        </li>
                         <li>
                             <a href="javascript:;" onclick="$changetags('homepagemanage')">首页管理</a>
                         </li>
@@ -124,6 +130,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                         <li>
                             <a href="javascript:;" onclick="$changetags('brandedit')">品牌管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="$changetags('showeredit')">表演者管理</a>
                         </li>
                     </ul>
                 </li>
@@ -196,11 +205,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Morris Charts JavaScript -->
 <script src="manage/js/plugins/morris/raphael.min.js"></script>
 <script src="manage/js/manage.js"></script>
-<script src="manage/js/multi.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="manage/js/js/i18n/defaults-en_US.min.js"></script>
+
+
+
+
 <script src="manage/js/plugins/morris/morris.min.js"></script>
 <script src="manage/js/plugins/morris/morris-data.js"></script>
 </body>
 </html>
 
-<!DOCTYPE html>
 

@@ -16,7 +16,7 @@
         <p>请选择要导入的标签类型：<select name="tagtype">
                 <option value="seasondetails">演出季</option>
                 <option value="displaydetails">演出类型</option>
-                <option value="displayperson">演出者</option>
+                <option value="shower">演出者</option>
                 <option value="yeardetails">年份</option>
                 <option value="locationdetails">国家及地区</option>
                 <option value="typedetails">类型</option>

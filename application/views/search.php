@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="inner newborder showsearcharea1">
             <div class="radio-inline language">
                 <span class="dropdown dropdowncust" style="margin-left: 10px;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{language}</span>
-                <ul class="dropdown-menu dropdownmenucust" id="choseLan">
+                <ul class="dropdown-menu dropdownmenucustLan" id="choseLan">
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>
