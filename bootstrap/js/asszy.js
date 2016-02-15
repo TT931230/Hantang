@@ -25,9 +25,28 @@ function getfooter(){
     $(".footer_flow").css("display","block");
 }
 
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone",
+        "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
 
 $(document).ready(function(){
 
+    if(!IsPC()){
+        location.href = 'http://m.domain.com';
+    }else{
+        location.href = 'localhost:8080/index.php/join';
+    }
     var timer=null;
     $("#to_top").hover(function(){
         $("#top_str").css("display","block");

@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Created by PhpStorm.
- * User: TT
- * Date: 2016/1/12
- * Time: 8:14
+ * User: Administrator
+ * Date: 2016/2/15 0015
+ * Time: ÏÂÎç 22:19
  */
 class Home extends CI_Controller
 {
@@ -320,5 +321,4 @@ class Home extends CI_Controller
             $this->parser->parse('footer',$data);
         }
     }
-
 }
