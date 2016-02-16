@@ -6,6 +6,9 @@
  * Time: 14:33
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<script>
+    $('.selectpicker').selectpicker();
+</script>
 <div class="managepagetitle">播出平台管理</div>
 <div class="hpm-div">
     <div class="row"><label class="col-lg-2">播放平台A区域管理</label></div>
@@ -16,10 +19,6 @@
             <option value="{id}">{source_name}</option>
             {/video}
         </select>
-    </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_a">
-        <label class="col-lg-2">是否隐藏</label>
     </div>
 </div>
 
@@ -33,10 +32,6 @@
             {/img}
         </select>
     </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_b">
-        <label class="col-lg-2">是否隐藏</label>
-    </div>
 </div>
 
 <div class="hpm-div">
@@ -48,10 +43,6 @@
             <option value="{id}">{source_name}</option>
             {/img}
         </select>
-    </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_c">
-        <label class="col-lg-2">是否隐藏</label>
     </div>
 </div>
 <div class="hpm-div">

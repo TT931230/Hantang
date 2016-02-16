@@ -7,6 +7,9 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="managepagetitle">视频管理</div>
+<script>
+    $('.selectpicker').selectpicker();
+</script>
 <div class="hpm-div">
  <!--   <div class="row"><label class="col-lg-2">视频管理</label></div> --> 
  <div class="ce-div">
@@ -40,7 +43,7 @@
 <div class="ce-div">
     <div class="row">
         <label class="col-lg-2">标签选择</label>
-        <select  class="col-lg-2 multiselect" multiple="multiple" id="keyword">
+        <select  class="selectpicker bla bla bli" multiple data-live-search="true" id="keyword">
             {keyword}
             <option value="{id}">{keyword}</option>
             {/keyword}

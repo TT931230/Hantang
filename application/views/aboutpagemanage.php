@@ -17,10 +17,6 @@
             {/img}
         </select>
     </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_a">
-        <label class="col-lg-2">是否隐藏</label>
-    </div>
 </div>
 
 <div class="hpm-div">
@@ -33,10 +29,6 @@
             {/video}
         </select>
     </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_b">
-        <label class="col-lg-2">是否隐藏</label>
-    </div>
 </div>
 
 <div class="hpm-div">
@@ -48,10 +40,6 @@
             <option value="{id}">{source_name}</option>
             {/img}
         </select>
-    </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_c">
-        <label class="col-lg-2">是否隐藏</label>
     </div>
 </div>
 <div class="hpm-div">
