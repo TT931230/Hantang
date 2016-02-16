@@ -8,6 +8,29 @@
  */
 class Home extends CI_Controller
 {
+
+    function isset_mob(){
+
+        $this->load->library('session');
+        $this->load->library('parser');
+        $this->load->model('page_data_model');
+
+
+        if(isset($this->session->userdata["isMob"])){
+            echo "true";
+        }else{
+            echo "false";
+        }
+
+    }
+    function addSession(){
+
+        $this->load->library('session');
+        $this->load->library('parser');
+        $this->load->model('page_data_model');
+        $this->session->isMob=true;
+        echo true;
+    }
     function index()
     {
         $this->load->library('session');
@@ -86,11 +109,12 @@ class Home extends CI_Controller
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
 
-        $this->parser->parse('header',$data);
-        $this->parser->parse('search',$data);
-        $this->parser->parse('home',$data);
-        $this->parser->parse('footer',$data);
+        $this->parser->parse('m/header',$data);
+        $this->parser->parse('m/search',$data);
+        $this->parser->parse('m/home',$data);
+        $this->parser->parse('m/footer',$data);
     }
+
     function Changelanguage(){
         $this->load->library('session');
         $this->session->set_userdata('language',$_POST['language']);
@@ -173,8 +197,8 @@ class Home extends CI_Controller
 
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
-        var_dump($page_data);
-        return $this->parser->parse('footer',$data);
+       // var_dump($page_data);
+        return $this->parser->parse('m/footer',$data);
     }
     function preview(){
         $this->load->library('session');
@@ -315,10 +339,10 @@ class Home extends CI_Controller
             $tmp_data=array_merge($tmp_data,$tag_data);
             $data=array_merge($tmp_data,$page_data);
 
-            $this->parser->parse('header',$data);
-            $this->parser->parse('search',$data);
-            $this->parser->parse('home',$data);
-            $this->parser->parse('footer',$data);
+            $this->parser->parse('m/header',$data);
+            $this->parser->parse('m/search',$data);
+            $this->parser->parse('m/home',$data);
+            $this->parser->parse('m/footer',$data);
         }
     }
 }

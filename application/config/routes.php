@@ -62,3 +62,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['m/home']='m/home';
+$route['m/about']='m/about';
+$route['m/platform']='m/platform';
+$route['m/partner']='m/partner';
+$route['m/ul']='m/ul';
+$route['m/awoe']='m/awoe';
+$route['m/music']='m/music';
+$route['m/join']='m/join';
