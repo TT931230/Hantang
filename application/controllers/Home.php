@@ -7,6 +7,7 @@
  */
 class Home extends CI_Controller
 {
+
     function index()
     {
         $this->load->library('session');
@@ -118,7 +119,8 @@ class Home extends CI_Controller
         );
 
         $source_info=$source_info_base;
-        $source_info['first_level']='home';
+        $source_info['
+        ']='home';
         $source_info['second_level']='imagearea1';
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
@@ -179,7 +181,7 @@ class Home extends CI_Controller
 
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
-
+        var_dump($page_data);
         return $this->parser->parse('footer',$data);
     }
     function preview(){
