@@ -12,31 +12,39 @@
         border:none
     }
     #homeli{
-        display:inline-block;
+        display:none;
         width: 40px;
         margin-left: 10px;
         font-size: 12px;
     }
     #ulli{
         display: inline-block;
-        width: 60px;
-        margin-left: -5px;
+        width: 50px;
+        margin-left: 5px;
+    }
+    #musicli{
+        display: inline-block;
+        width: 95px;
+        margin-left: 1px;
     }
     #awoeli {
         display: inline-block;
-        width: 80px;
+        width: 78px;
         padding: 0;
+        margin-left: -2px;
     }
     #aboutli{
         display: none;
     }
     #joinli{
-        display: none;
+        display: inline-block;
+        width: 55px;
+        padding: 0px;
     }
     .masthead-brand {
         position: absolute;
         top: 6px;
-        left: 46%;
+        left: 42%;
         margin: 0 0 0 0 ;
         width:70px;
         height:70px;
@@ -115,11 +123,7 @@
         color: #808080;
         padding: 0;
     }
-    #musicli{
-        display: inline-block;
-        width: 100px;
-        padding:0;
-    }
+
     #musicli > a {
         height: 100%;
         width: 100%;
@@ -202,7 +206,7 @@
         float: left;
         width: 100%;
         border-bottom: 1px solid #BBB;
-        height: 60px;
+        height: 100px;
         overflow: hidden;
         zoom: 1;
     }
@@ -212,6 +216,7 @@
         width:25%
     }
     .footertype img {
+        margin-top: 25px;
         width: 100%;
         height: 50px;
         margin-left: -5%;
@@ -219,18 +224,19 @@
     }
     .footerleftdiv .footerdetials {
         position: relative;
-        top: -58px;
-        left: 25%;
+        top: -80px;
+        left: 35%;
         margin: 0;
         text-align: left;
         height: auto;
     }
+
     #footer_3 {
         display: block;
         margin: 0;
         float: left;
         width: 100%;
-        border-bottom: 1px solid #BBB;
+
         height: 60px;
         overflow: hidden;
         zoom: 1;
@@ -238,8 +244,10 @@
     .footerdetail {
         font-size: 10px;
         color: #808080;
-        margin: 0;
+
         width: 100px;
+        height: 20px;
+        margin-top: 5px;
         float: left;
         position:relative;
         vertical-align: top;
@@ -600,9 +608,12 @@
         color: #808080;
     }
     .subtitle .ulinnera {
-        background: #d4d4d4;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+
         height: auto;
-        width: 100%;
+        width: auto;
         font-size: 10px;
         overflow: hidden;
         white-space: normal;
@@ -610,8 +621,55 @@
         float: left;
         padding: 0;
         display: inline-block;
-        border-right: 1px solid #A0A0A0;
+        border: none;
         color: #626262;
+    }
+    .innertexttitle {
+        font-size: 12px;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .ulinnertext {
+        font-size: 10px;
+        text-align: left;
+    }
+    .musicinner-subtitle {
+        position: relative;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .awoeinner-subtitle {
+        background-color: #00376f;
+        margin-top: 0;
+        padding: 5px;
+        font-size: 20px;
+        color: #555555;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .awoeinner-subtitle img {
+        float: left;
+        margin-top: 1px;
+        height: 40px;
+        width: auto;
+    }
+    .ulinner-subtitle {
+        background-color: #541B2A;
+        margin-top: 0;
+        padding: 5px;
+        font-size: 20px;
+        color: #555555;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .ulinner-subtitle img {
+        float: left;
+        margin-top: 1px;
+        height: 40px;
+        width: auto;
     }
     .subtitle .ulinnerc {
         height: 50px;
@@ -620,13 +678,16 @@
         display: inline-block;
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-left: 10px;
         border-right: 1px solid #808080;
         padding: 0;
         float:left
     }
     .subtitle .ulinnerb {
+        margin-top: 10px;
         height: 65px;
-        width: 80%;
+        width: auto;
+        margin-left: 20px;
         font-size: 10px;
         overflow: hidden;
         text-align: center;
@@ -640,10 +701,24 @@
         font-size: 12px;
         margin-top: 2px;
     }
-    .videoarea {
+    .awoevideoarea {
         margin-bottom: 20px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 200px;
+    }
+    .inner>.videoarea {
+        margin-bottom: 20px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 200px;
+    }
+    .awoevideoarea video {
+        margin-top: 0;
         width: 100%;
-        height: 300px;
+        height: 200px;
     }
     .videoarea video {
         margin-top: -12px;
@@ -654,4 +729,171 @@
     .inner .newborder{
         display: none;
     }
+
+    .homeborder1 {
+        padding: 0px;
+        width: auto;
+        float: left;
+        height: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    .homewrapper1 {
+        height:auto;
+        width: 100%;
+    }
+    .musiccallbacks_container {
+        margin-bottom: 0px;
+        position: relative;
+        float: right;
+        width: 100%;
+    }
+    .music-callbacks img {
+        display: block;
+        position: relative;
+        z-index: 1;
+        height: auto;
+        width: 100%;
+        border: 0px none;
+    }
+    .music-callbacks_nav {
+        top: 60%;
+    }
+    .homeborder {
+        padding: 0px;
+        width: 100%;
+        height: 90px;
+        margin: 10px 10px;
+    }
+    #left {
+        margin: 0px;
+        float: left;
+        width: 30%;
+        height: 90px;
+    }
+    #left img {
+        margin-top: 10px;
+        height: auto;
+        width: 100%;
+    }
+    #right {
+        margin-left: 30%;
+        width: 70%;
+        height:100%
+    }
+    .homewrapper2 {
+        width: 100%;
+        height:100%;
+    }
+    .callbacks_container {
+        margin-bottom: 0px;
+        position: relative;
+        float: right;
+        width: 100%;
+    }
+    .callbacks {
+        position: relative;
+        list-style: outside none none;
+        overflow: hidden;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        height: 100%;
+    }
+    .callbacks img{
+        width: 99%;
+        height: auto;
+        float: left;
+    }
+    .callbacks_nav {
+        top: 60%;
+    }
+
+    .aboutsubtitle {
+        background-color: #C4C4C4;
+        border: 1px none;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 5px;
+        font-size: 20px;
+        color: #555;
+    }
+    .videoarea {
+        margin-bottom: 10px;
+        width: auto;
+        height: auto;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .navcust {
+        width: 100%;
+        float: left !important;
+        height: auto;
+    }
+    .join-masthead-nav > li {
+        display: inline-block;
+        float: left;
+        width: 90px;
+        overflow: hidden;
+        text-align: left;
+        margin-bottom: 5px;
+        margin-left: 5px;
+
+    }
+    .join-masthead-nav > li > a {
+        font-size: 14px;
+        font-weight: 600;
+        color: #777;
+        text-align: center;
+        overflow: hidden;
+        border-right: 1px solid #C0C0C0;
+    }
+    .dropdowndepart {
+        min-width: 40px;
+    }
+    .dropdownmenucust li {
+        background-color: #C9C9C9;
+        width: 100px;
+    }
+    .open > .dropdown-menu{
+        border: medium none #C9C9C9;
+        background-color: #C9C9C9;
+        display:block;
+        top: 95%;
+        left: 4%;
+        width: 92%;
+        padding: 0px;
+        text-align: center;
+        border-radius: 0px;
+
+        position: absolute;
+        z-index: 1004;
+    }
+    .jobname {
+        text-align: left;
+        margin-top: 10px;
+        margin-left: 3%;
+        margin-right: 3%;
+        padding-bottom: 10px;
+        font-size: large;
+        font-family: "Î¢ÈíÑÅºÚ","Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+        color: #808080;
+        border-bottom: 1px solid #C0C0C0;
+    }
+    .departcontent {
+        overflow: hidden;
+        text-align: left;
+        margin-left: 3%;
+        margin-right: 3%;
+        font-family: "Î¢ÈíÑÅºÚ","Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+        color: #808080;
+        font-size: 10px;
+        background-color: #FFF;
+        border: 0px none;
+    }
+
 }

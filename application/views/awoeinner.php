@@ -46,13 +46,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="ul_des">下载</div>
                     </div>
-                    <div class="part3">
-                        <div>
-                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/>
-
-                        </div>
-                        <div class="ul_des">手机</div>
-                    </div>
+<!--                    <div class="part3">-->
+<!--                        <div>-->
+<!--                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/>-->
+<!---->
+<!--                        </div>-->
+<!--                        <div class="ul_des">手机</div>-->
+<!--                    </div>-->
                 </div>
                 {/video}
                 <div class="ulinnerb">

@@ -42,7 +42,7 @@ function redirection(){
         type:"post",
         url:"m/Home/isset_mob",
         success: function(result) {
-            alert(result[0]);
+            //alert(result[0]);
             if(result[0]=='f'){
                 if(!IsPC()){
                     alert("横屏浏览体验更好哦~");
@@ -50,7 +50,7 @@ function redirection(){
                         type:"post", url:"m/Home/addSession",
                         success: function(result) {
                             if(result){
-                                location.href="http://localhost:8080/m/home";
+                                location.href="http://192.168.16.119:8080/ul";
                             }
                         }, error: function() {
                         }
