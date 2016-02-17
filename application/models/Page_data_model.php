@@ -84,22 +84,58 @@ class Page_data_model extends CI_Model{
         }
         $this->db->from('source');
         $this->db->where('first_level','platform');
-        $this->db->where('second_level','ulmap');
+        $this->db->where('second_level','aboutmap1');
         $this->db->where('third_level',$languageType);
-        $ulmap=$this->db->get()->result_array();
+        $aboutmap1=$this->db->get()->result_array();
+        
         $this->db->from('source');
         $this->db->where('first_level','platform');
-        $this->db->where('second_level','awoemap');
+        $this->db->where('second_level','aboutmap2');
         $this->db->where('third_level',$languageType);
-        $awoemap=$this->db->get()->result_array();
+        $aboutmap2=$this->db->get()->result_array();
+        
+        $this->db->from('source');
+        $this->db->where('first_level','platform');
+        $this->db->where('second_level','aboutmap3');
+        $this->db->where('third_level',$languageType);
+        $aboutmap3=$this->db->get()->result_array();
+        
+        $this->db->from('source');
+        $this->db->where('first_level','about');
+        $this->db->where('second_level','about01');
+        $this->db->where('third_level',$languageType);
+        $about01=$this->db->get()->result_array();
+        
+        $this->db->from('source');
+        $this->db->where('first_level','about');
+        $this->db->where('second_level','about02');
+        $this->db->where('third_level',$languageType);
+        $about02=$this->db->get()->result_array();
+        
+        $this->db->from('source');
+        $this->db->where('first_level','about');
+        $this->db->where('second_level','about03');
+        $this->db->where('third_level',$languageType);
+        $about03=$this->db->get()->result_array();
 
+        $this->db->from('source');
+        $this->db->where('first_level','about');
+        $this->db->where('second_level','about04');
+        $this->db->where('third_level',$languageType);
+        $about04=$this->db->get()->result_array();
+        
         $this->db->from('language');
         $this->db->where('lang',$languageType);
         $languages=$this->db->get()->result_array();
         $data = array(
             'partnerimgs'=>$partner,
-            'awoemap'=>$awoemap[0]['source_location'],
-            'ulmap'=>$ulmap[0]['source_location'],
+            'aboutmap1'=>$aboutmap1[0]['source_location'],
+            'aboutmap2'=>$aboutmap2[0]['source_location'],
+        	'aboutmap3'=>$aboutmap3[0]['source_location'],
+            'about01'=>$about01[0]['source_location'],
+        	'about02'=>$about02[0]['source_location'],
+        	'about03'=>$about03[0]['source_location'],
+        	'about04'=>$about04[0]['source_location'],
             'wangyi'=>$wangyi,
             'jianshu'=>$jianshu,
             'tengxun'=>$tengxun,

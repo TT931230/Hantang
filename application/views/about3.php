@@ -7,7 +7,7 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div  style="display: {aboutdisarea3}">
-    <div >
+<!--   <div >
         <p style="color: #CD0000;font-size: 18px;font-weight:550;margin-top:40px">上海汉唐文化发展有限公司简介</p>
         <p style="color: #636363;font-size:10px;margin-top:30px">上海汉唐文化发展有限公司成立于2003年，是一家拥有360°跨媒体平台的媒体企业，</p>
         <p style="color: #636363;font-size:10px">开创了用视频方式传播全球奢侈品品牌文化的先河，在中国推广高端生活方式。</p>
@@ -54,5 +54,17 @@
         <p style="color:#636363;font-size:10px;margin-top:-8px">这是首次由一家中国民营传媒企业独立策划、筹备、运营的跨年度公益性演出。</p>
         <p style="color:#636363;font-size:10px;margin-top:30px">举办至今，“汉唐文化国际音乐年”的演出形式涵盖交响乐、室内乐、独奏、合唱等，累计吸引现场观众超过25000人次。</p>
         <p style="color:#636363;font-size:10px;margin-top:-8px;margin-bottom:40px;">同时，汉唐文化也依托自有跨媒体平台，进行古典音乐艺术的全年度推广普及。</p>
+    </div> -->  
+    <div class="aboutimg">
+         <img src="{about01}">
+    </div>
+      <div class="aboutimg">
+         <img src="{about02}">
+    </div>
+      <div class="aboutimg">
+         <img src="{about03}">
+    </div>
+       <div class="aboutimg">
+         <img src="{about04}">
     </div>
 </div>

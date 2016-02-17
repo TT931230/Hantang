@@ -20,20 +20,20 @@ class About extends CI_Controller
             $page_data=$this->page_data_model->get_page_data('zn','/about');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>'','type'=>'',
+            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
         );
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';
         $source_info['second_level']='videoarea1';
         $source_info['type']='video/mp4';
-        $source_info['third_level']=$this->session->language;
+       
         $video = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
-        $source_info['third_level']=$this->session->language;
+       
         $logoimage = $this->page_data_model->query_sources($source_info);
 
         $tag_data = $this->page_data_model->query_tags();
@@ -80,27 +80,27 @@ class About extends CI_Controller
                 $page_data=$this->page_data_model->get_page_data('zn','/about');
             }
             $source_info_base=array(
-                'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>'','type'=>'',
+                'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
             );
 
             $source_info=$source_info_base;
             $source_info['first_level']='about';
             $source_info['second_level']='videoarea1';
             $source_info['type']='video/mp4';
-            $source_info['third_level']=$this->session->language;
+         
             $video = $this->page_data_model->query_sources($source_info);
             $source_info=$source_info_base;
             $source_info['status']='2';
             $source_info['first_level']='about';
             $source_info['second_level']='videoarea1';
             $source_info['type']='video/mp4';
-            $source_info['third_level']=$this->session->language;
+          
             $video =array_merge($video,$this->page_data_model->query_sources($source_info));
 
             $source_info=$source_info_base;
             $source_info['first_level']='logoimage';
             $source_info['type']='img';
-            $source_info['third_level']=$this->session->language;
+           
             $logoimage = $this->page_data_model->query_sources($source_info);
             $source_info=$source_info_base;
             $source_info['status']='2';
