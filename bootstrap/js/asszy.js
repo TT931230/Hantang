@@ -25,8 +25,45 @@ function getfooter(){
     $(".footer_flow").css("display","block");
 }
 
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;break;
+        }
+    }
+    return flag;
 
+}
+function redirection(){
+    $.ajax({
+        type:"post",
+        url:"m/Home/isset_mob",
+        success: function(result) {
+            alert(result[0]);
+            if(result[0]=='f'){
+                if(!IsPC()){
+                    alert("横屏浏览体验更好哦~");
+                    $.ajax({
+                        type:"post", url:"m/Home/addSession",
+                        success: function(result) {
+                            if(result){
+                                location.href="http://localhost:8080/m/home";
+                            }
+                        }, error: function() {
+                        }
+                    });
+                }
+            }
+        }, error: function() {
+        }
+    });
+}
 $(document).ready(function(){
+    redirection();
+
 
     var timer=null;
     $("#to_top").hover(function(){

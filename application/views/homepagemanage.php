@@ -8,12 +8,15 @@
 ?><!DOCTYPE html>
 
 <body onload="$getselectedinfo('home')">
+<script>
+    $('.selectpicker').selectpicker();
+</script>
 <div class="managepagetitle">首页管理</div>
 <div class="hpm-div">
     <div class="row"><label class="col-lg-2">首页A区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
-            <select multiple="multiple" class="selectpicker" id="source_name_a">
+            <select class="selectpicker bla bla bli" multiple data-live-search="true" id="source_name_a">
 <!--        <select  class="col-lg-2 form-control selectpicker" multiple="multiple" id="source_name_a">-->
             {img}
             <option value="{id}">{source_name}</option>
@@ -26,7 +29,7 @@
     <div class="row"><label class="col-lg-2">首页B区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
-        <select multiple="multiple" class="selectpicker"  id="source_name_b">
+        <select class="selectpicker bla bla bli" multiple data-live-search="true"  id="source_name_b">
             {img}
             <option value="{id}">{source_name}</option>
             {/img}
@@ -38,7 +41,7 @@
     <div class="row"><label class="col-lg-2">首页C区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
-        <select  multiple="multiple" class="selectpicker"  id="source_name_c">
+        <select  class="selectpicker bla bla bli" multiple data-live-search="true"  id="source_name_c">
             {img}
             <option value="{id}">{source_name}</option>
             {/img}
@@ -50,7 +53,7 @@
     <div class="row"><label class="col-lg-2">首页D区域管理</label></div>
     <div class="row">
         <label class="col-lg-2">播放图片</label>
-        <select  multiple="multiple" class="selectpicker"  id="source_name_d">
+        <select  class="selectpicker bla bla bli" multiple data-live-search="true"  id="source_name_d">
             {img}
             <option value="{id}">{source_name}</option>
             {/img}

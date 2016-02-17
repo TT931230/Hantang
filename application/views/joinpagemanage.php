@@ -17,10 +17,6 @@
             {/video}
         </select>
     </div>
-    <div class="row">
-        <input type="checkbox" id="is_hide_a">
-        <label class="col-lg-2">是否隐藏</label>
-    </div>
 </div>
 <div class="hpm-div">
 <div class="row">
