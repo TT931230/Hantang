@@ -7,5 +7,5 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="plat-map">
-    <img src="{awoemap}">
+    <img src="{aboutmap3}">
 </div>

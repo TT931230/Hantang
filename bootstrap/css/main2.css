@@ -33,7 +33,13 @@
     margin-top: 0;
     padding:175px;
  }
- 
+ .aboutimg{
+ margin-top:25px;
+  }
+ .aboutimg img{
+ height:800px;
+ width:auto;
+ }
 
  
  
@@ -630,9 +636,9 @@ border-bottom-color:transparent;
  }
  
 .plat-map img{
-	width:1200px;
-	height:auto;
-	margin-bottom:20px;
+	width:auto;
+	height:700px;
+	margin-top:30px;
 }
 
 
