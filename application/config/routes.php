@@ -61,7 +61,7 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['m/home']='m/home';
+$route['m/home']='m/home/index';
 $route['m/about']='m/about';
 $route['m/platform']='m/platform';
 $route['m/partner']='m/partner';

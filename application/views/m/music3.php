@@ -28,7 +28,7 @@
                         <a href='{link_url}'><img src="/bootstrap/images/more.png" class="moreimg"></a>
                     </div>
                 </div>
-                <a href='{link_url}'><img src='{source_location}'></a>
+                <a class="music-link" href='{link_url}'><img src='{source_location}'></a>
             </div>
             {/relatedvideo}
         </div>

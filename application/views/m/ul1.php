@@ -6,7 +6,7 @@
  * Time: 10:26
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="newborder" style="display: {uldisarea1}">
+<div class="newborder"  style="display: {uldisarea1}">
     <div id="left" style="background-color:#A73D49">
         {imagearea11}
         <img src='{source_location}' alt="">

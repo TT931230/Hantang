@@ -8,48 +8,76 @@
 
     /*                  header                 */
     .brand_logo{
-        height:120px;
+        height:140px;
         border:none
     }
-    #li1{
-        margin-left: 5px;
+    #homeli{
+        display:inline-block;
+        width: 40px;
+        margin-left: 10px;
+        font-size: 12px;
     }
-
-    .masthead-brand {
-        position: absolute;
-        top: 2px;
-        left: 46%;
-        margin: 0 0 0 0 ;
-        width:20%;
-        height:55px;
-    }
-    .masthead-brand img{
-        height:40px;
-        width:40px;
+    #ulli{
+        display: inline-block;
+        width: 60px;
+        margin-left: -5px;
     }
     #awoeli {
         display: inline-block;
-        width: 33%;
+        width: 80px;
         padding: 0;
     }
+    #aboutli{
+        display: none;
+    }
+    #joinli{
+        display: none;
+    }
+    .masthead-brand {
+        position: absolute;
+        top: 6px;
+        left: 46%;
+        margin: 0 0 0 0 ;
+        width:70px;
+        height:70px;
+    }
+    .masthead-brand img{
+        height:70px;
+        width:70px;
+    }
+
     .masthead-brand h3{
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin:0
     }
     .masthead_ul{
         position: absolute;
-        top: 60px;
+        top: 100px;
         left: 0;
         width:100%;
         margin: 0 0 0 0 ;
-        height:auto;
+        height:40px;
+        border-bottom: 1px solid #dedede;
     }
 
     .masthead_ul ul{
         margin: 0;
         padding: 0;
+        display: block;
+        overflow: hidden;
+        height:40px
     }
+    .masthead_ul ul li{
+        margin-top: 10px;
+        font-size: 12px;
+        color: #808080;
 
+        width: 60px;
+        height: 40px;
+        float: left;
+        position: relative;
+        vertical-align: top;
+        display: inline-block;
+    }
     .headernavul{
         padding-top: 2px;
         display: inline-block;
@@ -279,41 +307,53 @@
         height:100%;
     }
     .relatedvideoarea {
-
+        border-top: 1px solid #c4c4c4;
         height: auto;
-
+        margin-top: 10px;
         margin-bottom: 10px;
         display: inline-block;
         background-color: #FFF;
-        border: none;
+
 
     }
     .relatedvideos {
         float: left;
         height: auto;
-        width: 33%;
-        margin-bottom: 10px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 0;
         display: inline-block;
         background-color: #FFF;
-        border-right: 1px solid #D6D6D6;
+        border: none;
 
     }
     .relatedvideos a{
-        width: 100%;
-        height: 10px;
-        border: 1px solid #d4d4d4;
+        width: 28%;
+        height: auto;
+        border: none;
     }
-    .relavideostitle {
+    .relatedvideos a img{
+        margin-left: 10px;
         overflow: hidden;
-        width: 100%;
+        width: 28%;
         height: auto;
         padding: 0;
-        margin: 0;
+
+
+    }
+    .relatedvideos  .relavideostitle {
+        overflow: hidden;
+        width: 60%;
+        height: auto;
+        padding: 0px;
+        float: right;
+        margin-left: 0;
+        text-align:left;
         font-size: 10px;
         color: #808080;
     }
     .diftype {
-        width: 25%;
+        width: 100%;
         float: left;
         margin-top: 5px;
         height: auto;
@@ -322,31 +362,144 @@
         color: #808080;
         text-align: left;
     }
+    .ultypes {
+        height: 30px;
+        background-color: #E0E0E0;
+        text-align: center;
+        padding-top: 5px;
+    }
     .uldetails {
         margin: 0;
         height: auto;
         border-right: 1px solid #C0C0C0;
         color: #808080;
         padding: 0;
+        margin-top: 5px;
         text-align: left;
         overflow: auto;
         width: 100%;
     }
     .uldetails a{
-        width: 30px;
+        width: 50px;
         float: left;
+        height: 25px;
         position:relative;
         vertical-align: top;
         display:inline-block;
     }
-    .videoslug {
+    .musicsearch {
+        margin-top: 10px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .musictype3 {
+        margin-bottom: 10px;
+        width: 100%;
+        float: left;
+        height: 40px;
+    }
+    .musictypetitle3 {
+        width: 35%;
+        float: left;
+        background-color: #E4E4E4;
+        height: 40px;
+        padding: 0;
+        text-align:center;
+
+        line-height:40px;
+        border: 1px solid #FFF;
+        color: #808080;
+    }
+    .musictypedetail {
+        width: 40px;
+        float: left;
+        color: #000;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .music-relatedvideos {
+        float: left;
+        height: auto;
+        width: 100%;
+        margin-bottom: 10px;
+        display: inline-block;
+        background-color: #FFF;
+        border-top: 2px dotted #D6D6D6;
+    }
+    .music-relatedvideos > a {
+
+        width: 30%;
+        height: auto;
+        float: right;
+    }
+    .music-relatedvideos > a img{
+        margin-top: 10px;
+        width: 100%;
+        height:auto;
+        float: right;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .music-relavideostitle {
+        height: auto;
+        float: left;
+        font-size: 10px;
+        color: #808080;
+        margin-top: 10px;
+        width: 100%;
+        text-align: left;
+    }
+    .music-relavideoremark {
         display: none;
+        height: auto;
+        font-size: 12px;
+        color: #808080;
+        float: left;
+        text-align: left;
+        margin: 10px;
+        width: 100%;
+    }
+    .music-relavideotime {
+        height: 15px;
+        font-size: 12px;
+        color: #808080;
+        float: left;
+        text-align: left;
+        margin-top: 5px;
+        width: 100%;
+    }
+    .music-relavideoinfo {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 60%;
+        float: left;
+        margin-right: 0;
+    }
+    .music-more {
+        height: 20px;
+        width: 60px;
+        font-size: 12px;
+        color: #808080;
+        text-align: left;
+        padding: 0;
+    }
+    .music-more img {
+        width: 60px;
+        height: 15px;
+        float: left;
+        margin-left: -1px;
+        margin-top:10px;
+    }
+    .videoslug {
+        display: inline-block;
         font-size: 10px;
         text-align: left;
         margin-bottom: 0;
         margin-top: 40px;
+        margin-left: 20px;
         padding: 0;
         border: none;
+        float: left;
 
     }
     /*                      search                      */
@@ -496,5 +649,9 @@
         margin-top: -12px;
         width: 100%;
         height: 100%;
+    }
+
+    .inner .newborder{
+        display: none;
     }
 }
