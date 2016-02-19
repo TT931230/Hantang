@@ -33,10 +33,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/main4.css" rel="stylesheet">
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
 </head>
-<script language="Javascript"> 
-document.oncontextmenu=new Function("event.returnValue=false"); 
-document.onselectstart=new Function("event.returnValue=false"); 
-</script>  
+<script type="text/javascript"> 
+    // Forbid Copy     
+    function rt() 
+    {
+        return true; 
+    }  
+    function rf()
+    {
+        return false;
+    } 
+    // IE,Chrome
+    document.oncontextmenu = rf;
+    document.onselectstart = rf;
+    document.ondragstart = rf;  
+
+    $(document).ready(function(){
+        $("#ctl00_ContentBody_searchTextBox").mousedown(function(){
+            //IE 
+            document.oncontextmenu = rt;
+            document.onselectstart = rt;
+            document.ondragstart = rt;  
+            //Firefox
+            $("body").css("-moz-user-select","-moz-none");     
+            
+   });
+   $("#ctl00_ContentBody_searchTextBox").mouseout(function(){
+    //IE
+    document.oncontextmenu = rf;
+            document.onselectstart = rf;
+            document.ondragstart = rf; 
+            //Firefox
+            $("body").css("-moz-user-select","none");    
+   });
+   //Firefox
+   $("body").css("-moz-user-select","none");    
+    });
+</script>
 <body>
 
 <div class="cover-container">
