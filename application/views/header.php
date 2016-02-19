@@ -33,10 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/main4.css" rel="stylesheet">
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
 </head>
-<script language="Javascript"> 
+<!-- <script language="Javascript"> 
 document.oncontextmenu=new Function("event.returnValue=false"); 
 document.onselectstart=new Function("event.returnValue=false"); 
-</script> 
+</script>  -->
 <body>
 
 <div class="cover-container">
