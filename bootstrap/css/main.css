@@ -505,12 +505,12 @@
 }
 .videoarea{
     margin-bottom: 20px;
-    height:700px;
-
+    height:auto;
+    width:1280px;
 }
 .videoarea video{
-    
-    height:700px;
+    width:1280px;
+    height:auto;
 }
 /* Links */
 a,
