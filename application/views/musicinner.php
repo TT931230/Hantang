@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="subtitle-music">
                 <div class="musicinnera">
 
-                    <div style="margin-bottom:30px;font-weight:500">
+                    <div class="music-name" style="margin-bottom:10px;font-weight:500">
                     <table style="width:100%;text-align:left">
                     <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出名称：<td>
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                     </table>
                     </div>
-                    <div style="margin-bottom:30px;font-weight:500">
+                    <div class="music-brief" style="margin-bottom:10px;font-weight:500">
                      <table style="width:100%;text-align:left;">
                        <tr>
                         <td valign="top" style="width:13%; padding-left:50px;color:#000;font-weight:600;">简介：</td>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                      </table>
                     </div>
-                    <div style="margin-bottom:30px;font-weight:500">
+                    <div class="music-time" style="margin-bottom:10px;font-weight:500">
                      <table style="width:100%;text-align:left;">
                      <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出时间：</td>
@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                     </table>
                     </div>
-                    <div style="font-weight:500">
+                    <div class="music-place" style="font-weight:500">
                        <table style="width:100%;text-align:left;">
                        <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出地点：</td>

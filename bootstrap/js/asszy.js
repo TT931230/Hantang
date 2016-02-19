@@ -45,7 +45,7 @@ function redirection(){
             //alert(result[0]);
             if(result[0]=='f'){
                 if(!IsPC()){
-                    alert("横屏浏览体验更好哦~");
+                    //alert("横屏浏览体验更好哦~");
                     $.ajax({
                         type:"post", url:"m/Home/addSession",
                         success: function(result) {
