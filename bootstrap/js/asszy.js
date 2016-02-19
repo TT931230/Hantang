@@ -3,8 +3,8 @@
  */
 function getfooter(){
     var footer_flow=document.getElementById("footer_flow");
-    var sHeight=document.documentElement.scrollHeight;
-    var sWidth=document.documentElement.scrollWidth;
+    var sHeight=document.documentElement.scrollHeight||document.body.scrollHeight;
+    var sWidth=document.documentElement.clientWidth||document.body.clientWidth;
     footer_flow.style.height=sHeight+"px";
     footer_flow.style.width=sWidth+"px";
     console.log("get footer");
