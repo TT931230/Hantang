@@ -10,7 +10,7 @@
 
     <div class="dashline">
 
-        <div class="relatedvideoarea" id="relatedvideoarea">
+        <div class="music-relatedvideoarea" id="relatedvideoarea">
             {relatedvideo}
             <div class="music-relatedvideos">
                 <div class="music-relavideoinfo">

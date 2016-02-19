@@ -148,7 +148,12 @@
 .navtags{
     text-align: center;
 }
-
+.music-relatedvideoarea{
+	width:100%;
+    display: inline-block;     
+    margin-top:30px;
+    padding-bottom:5px;
+}
 .relatedvideoarea{
 	width:110%;
     display: inline-block;     
