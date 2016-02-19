@@ -2,18 +2,19 @@
  * Created by Administrator on 2016/1/21 0021.
  */
 function getfooter(){
+
     var footer_flow=document.getElementById("footer_flow");
     var sHeight=document.documentElement.scrollHeight||document.body.scrollHeight;
     var sWidth=window.screen.width;
     footer_flow.style.height=sHeight+"px";
     footer_flow.style.width=sWidth+"px";
-    console.log("get footer");
+
 
     $.ajax({
         type:"post",
         url:"http://localhost:8080/Home/getfooter",
         success: function(result) {
-            alert(result);
+            //alert(result);
             $("#mask .popContent").html(result);
         },
         error: function() {
@@ -61,10 +62,11 @@ function redirection(){
         }
     });
 }
+var isFirst=true;
 $(document).ready(function(){
     //redirection();
 
-    var isFirst=true;
+
     var timer=null;
     $("#to_top").hover(function(){
         $("#top_str").css("display","block");
@@ -89,10 +91,12 @@ $(document).ready(function(){
     }).click(function(){
 
         if(isFirst){
+
             getfooter();
-            console.log("css");
+
             isFirst=false;
         }else{
+
             $(".footer_flow").css("display","block");
         }
 
