@@ -148,12 +148,18 @@
 .navtags{
     text-align: center;
 }
-
-.relatedvideoarea{
+.music-relatedvideoarea{
 	width:100%;
     display: inline-block;     
     margin-top:30px;
     padding-bottom:5px;
+}
+.relatedvideoarea{
+	width:110%;
+    display: inline-block;     
+    margin-top:30px;
+    padding-bottom:5px;
+    margin-left:-53px;
 
 }
 .relatedvideos{
@@ -166,16 +172,16 @@
     border-right:1px solid #d6d6d6;
 }
 .relatedvideos img{
-	margin-left:20px;
-    float:left;
+	
+    float:center;
     height:200px;
     width:350px;  
 }
 .relavideostitle{
-	width:350px;
+	
 	height:50px;
 	font-size:15px;
-	padding-top:220px;
+	padding-top:10px;
 	color:#808080;
 }
 

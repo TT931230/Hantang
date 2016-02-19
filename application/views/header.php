@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script language="Javascript"> 
 document.oncontextmenu=new Function("event.returnValue=false"); 
 document.onselectstart=new Function("event.returnValue=false"); 
-</script> 
+</script>  
 <body>
 
 <div class="cover-container">
