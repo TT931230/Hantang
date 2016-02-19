@@ -180,7 +180,7 @@ class Home extends CI_Controller
 
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
-        var_dump($page_data);
+        //var_dump($page_data);
         return $this->parser->parse('footer',$data);
     }
     function preview(){

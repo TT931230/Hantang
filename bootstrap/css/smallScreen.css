@@ -1,8 +1,11 @@
 @media screen and (max-width: 400px) {
-    body{
+    html,body{
         margin:0 0 0 0;
         padding:0 0 0 0;
-
+        width: 100%;
+        height:auto;
+        font-size: 10px;
+        background-color: #ffffff;
     }
 
 
@@ -361,7 +364,14 @@
         color: #808080;
         text-align: left;
     }
+    .ulsearch {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        padding: 0;
+    }
     .ultypes {
+        width:100%;
         height: 30px;
         background-color: #E0E0E0;
         text-align: center;
