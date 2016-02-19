@@ -4,14 +4,14 @@
 function getfooter(){
     var footer_flow=document.getElementById("footer_flow");
     var sHeight=document.documentElement.scrollHeight||document.body.scrollHeight;
-    var sWidth=document.documentElement.clientWidth||document.body.clientWidth;
+    var sWidth=window.screen.width;
     footer_flow.style.height=sHeight+"px";
     footer_flow.style.width=sWidth+"px";
     console.log("get footer");
 
     $.ajax({
         type:"post",
-        url:"Home/getfooter",
+        url:"http://localhost:8080/Home/getfooter",
         success: function(result) {
             alert(result);
             $("#mask .popContent").html(result);
@@ -87,6 +87,7 @@ $(document).ready(function(){
     }).mouseleave(function(){
         $("#info_str").css("display","none");
     }).click(function(){
+
         if(isFirst){
             getfooter();
             console.log("css");
