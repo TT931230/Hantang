@@ -13,7 +13,7 @@ function getfooter(){
         type:"post",
         url:"Home/getfooter",
         success: function(result) {
-            //alert(result);
+            alert(result);
             $("#mask .popContent").html(result);
         },
         error: function() {
@@ -62,9 +62,9 @@ function redirection(){
     });
 }
 $(document).ready(function(){
-    redirection();
+    //redirection();
 
-
+    var isFirst=true;
     var timer=null;
     $("#to_top").hover(function(){
         $("#top_str").css("display","block");
@@ -87,8 +87,14 @@ $(document).ready(function(){
     }).mouseleave(function(){
         $("#info_str").css("display","none");
     }).click(function(){
-        getfooter();
-        console.log("css");
+        if(isFirst){
+            getfooter();
+            console.log("css");
+            isFirst=false;
+        }else{
+            $(".footer_flow").css("display","block");
+        }
+
 
     });
 
