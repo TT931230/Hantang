@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     {/relatedvideo1}
                     {relatedvideo}
                     <div class="relatedvideos">
-                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>
+                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute;margin-left:50px; "><img src='{source_location}'></a>
                         <div class="relavideostitle">
                             {source_name}
                         </div>

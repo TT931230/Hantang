@@ -16,7 +16,7 @@
         <div class="relatedvideoarea" id="relatedvideoarea">
             {relatedvideo}
             <div class="relatedvideos">
-                <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; opacity:0.9;"><img src='{source_location}'></a>
+                <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; opacity:0.9;margin-left:50px;"><img src='{source_location}'></a>
                 <div class="relavideostitle">
                     {source_name}
                 </div>
