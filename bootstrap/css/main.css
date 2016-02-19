@@ -23,7 +23,7 @@
     padding-bottom:8px;
     margin-bottom:12px;
     color:#5a5a5a;
-   border-bottom:1px solid #c8c8c8;
+    border-bottom:1px solid #c8c8c8;
 	
 }
 .sendcommitbtn{
@@ -505,13 +505,11 @@
 }
 .videoarea{
     margin-bottom: 20px;
-    width:100%;
     height:700px;
 
 }
 .videoarea video{
-    margin-top: -12px;
-    width:100%;
+    
     height:700px;
 }
 /* Links */
