@@ -129,7 +129,7 @@ border-bottom-color:transparent;
   position: relative;
   z-index: 1;
   height: 400px;
-  width:auto;
+  width:100%;
   border: 0;
   }
 
