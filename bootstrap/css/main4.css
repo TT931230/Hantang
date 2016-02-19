@@ -51,8 +51,8 @@
 
     position:fixed;
     bottom:0;
-    left:60px;
-    right:60px;
+    left:20px;
+    right:20px;
     width:auto;
     height:280px;
     z-index: 1042;
@@ -66,10 +66,11 @@
     background: url(../images/close.png) no-repeat;
     right: 10px;
     top:10px;
-    z-index: 1043;
+    z-index: 9999;
 }
 .footer_flow #mask .popContent{
-    position:absolute;
+    position:relative;
+    min-width: 100%;
     z-index: 1043;
 }
 
