@@ -2,7 +2,7 @@ function $changetags(pagename){
     $.ajax({
         type:"post",
         data: "pagename=" + pagename,
-        url:"Pagemanager/redirectpage",
+        url:"pagemanager/redirectpage",
         success: function(result)
         {
             $("#page-wrapper").html(result);
