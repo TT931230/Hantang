@@ -42,7 +42,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('username',$userinfo[0]['user_name']);
             $this->session->set_userdata('privilige',$privilige);
             echo "<script>alert('登录成功！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/contentm'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/ContentM'>";
         }else{
             echo "<script>alert('登录失败！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
