@@ -115,7 +115,7 @@ class Pagemanager extends CI_Controller
                     $videoimgid = $videoimgarray[0]['id'];
                     $imgurl = $videoimgarray[0]['source_location'];
                     $videosequence = $videoimgarray[0]['sequence'];
-                    $index=$videoimgarray[0]['index'];
+                    //$index=$videoimgarray[0]['index'];
                 } else {
                     $videoimgid = 'none';
                     $imgurl = '';
@@ -352,7 +352,8 @@ class Pagemanager extends CI_Controller
             for ($i = 0; $i < count($jobs); $i++) {
                 $this->db->from('department');
                 $this->db->where('id', $jobs[$i]['department_id']);
-                $jobs[$i]['department'] = $this->db->get()->result_array()[0]['department'];
+                $departmentData = $this->db->get()->result_array();
+                $jobs[$i]['department'] = $departmentData[0]['department'];
             }
 
             //seasons
@@ -396,7 +397,8 @@ class Pagemanager extends CI_Controller
                 for ($j = 0; $j < count($tmpuserprivilige); $j++) {
                     $this->db->from('privilige');
                     $this->db->where('id',$tmpuserprivilige[$j]['privilige_id']);
-                    $userlists[$i]['privilige'].=$this->db->get()->result_array()[0]['privilige'].' ';
+                    $priviligeData = $this->db->get()->result_array();
+                    $userlists[$i]['privilige'].=$priviligeData[0]['privilige'].' ';
                 }
             }
 
@@ -764,7 +766,8 @@ class Pagemanager extends CI_Controller
                             for ($i = 0; $i < count($listarray1); $i++) {
                                 $this->db->from('source');
                                 $this->db->where('id', $listarray1[$i]);
-                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                $listData1 = $this->db->get()->result_array();
+                                if ($listData1[0]['status'] == 1) {
                                     $sourceupdateinfo = array(
                                         'first_level' => 'home',
                                         'second_level' => 'imagearea1',
@@ -788,7 +791,8 @@ class Pagemanager extends CI_Controller
                             for ($i = 0; $i < count($listarray2); $i++) {
                                 $this->db->from('source');
                                 $this->db->where('id', $listarray2[$i]);
-                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                $listData2 = $this->db->get()->result_array();
+                                if ($listData2[0]['status'] == 1) {
                                     $sourceupdateinfo = array(
                                         'first_level' => 'home',
                                         'second_level' => 'imagearea2',
@@ -812,7 +816,8 @@ class Pagemanager extends CI_Controller
                             for ($i = 0; $i < count($listarray3); $i++) {
                                 $this->db->from('source');
                                 $this->db->where('id', $listarray3[$i]);
-                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                $listData3 = $this->db->get()->result_array();
+                                if ($listData3[0]['status'] == 1) {
                                     $sourceupdateinfo = array(
                                         'first_level' => 'home',
                                         'second_level' => 'imagearea3',
@@ -836,7 +841,8 @@ class Pagemanager extends CI_Controller
                             for ($i = 0; $i < count($listarray4); $i++) {
                                 $this->db->from('source');
                                 $this->db->where('id', $listarray4[$i]);
-                                if ($this->db->get()->result_array()[0]['status'] == 1) {
+                                $listData4 = $this->db->get()->result_array();
+                                if ($listData4[0]['status'] == 1) {
                                     $sourceupdateinfo = array(
                                         'first_level' => 'home',
                                         'second_level' => 'imagearea4',
@@ -884,7 +890,8 @@ class Pagemanager extends CI_Controller
                         $listarray3 = $_POST['aboutimglist3'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray1Data = $this->db->get()->result_array();
+                        if ($listarray1Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'about',
                                 'second_level' => 'imagearea1',
@@ -906,7 +913,8 @@ class Pagemanager extends CI_Controller
 
                         $this->db->from('source');
                         $this->db->where('id', $listarray2);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray2Data = $this->db->get()->result_array();
+                        if ($listarray2Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'about',
                                 'second_level' => 'videoarea1',
@@ -928,7 +936,8 @@ class Pagemanager extends CI_Controller
 
                         $this->db->from('source');
                         $this->db->where('id', $listarray3);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray3Data = $this->db->get()->result_array();
+                        if ($listarray3Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'about',
                                 'second_level' => 'imagearea3',
@@ -974,7 +983,8 @@ class Pagemanager extends CI_Controller
                         $listarray3 = $_POST['platformimglist3'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray4Data = $this->db->get()->result_array();
+                        if ($listarray4Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'platform',
                                 'second_level' => 'videoarea1',
@@ -996,7 +1006,8 @@ class Pagemanager extends CI_Controller
 
                         $this->db->from('source');
                         $this->db->where('id', $listarray2);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray5Data = $this->db->get()->result_array();
+                        if ($listarray5Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'platform',
                                 'second_level' => 'imagearea2',
@@ -1018,7 +1029,8 @@ class Pagemanager extends CI_Controller
 
                         $this->db->from('source');
                         $this->db->where('id', $listarray3);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray6Data = $this->db->get()->result_array();
+                        if ($listarray6Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'platform',
                                 'second_level' => 'imagearea3',
@@ -1052,7 +1064,8 @@ class Pagemanager extends CI_Controller
                         $listarray1 = $_POST['partnerimglist1'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray7Data = $this->db->get()->result_array();
+                        if ($listarray7Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'partner',
                                 'second_level' => 'imagearea1',
@@ -1087,7 +1100,8 @@ class Pagemanager extends CI_Controller
                         $listarray1 = $_POST['ulimglist1'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray8Data = $this->db->get()->result_array();
+                        if ($listarray8Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'ul',
                                 'second_level' => 'imagearea1',
@@ -1121,7 +1135,8 @@ class Pagemanager extends CI_Controller
                         $listarray1 = $_POST['awoeimglist1'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray9Data = $this->db->get()->result_array();
+                        if ($listarray9Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'awoe',
                                 'second_level' => 'imagearea1',
@@ -1155,7 +1170,8 @@ class Pagemanager extends CI_Controller
                         $listarray1 = $_POST['musicimglist1'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray10Data = $this->db->get()->result_array();
+                        if ($listarray10Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'music',
                                 'second_level' => 'imagearea1',
@@ -1189,7 +1205,8 @@ class Pagemanager extends CI_Controller
                         $listarray1 = $_POST['joinimglist1'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
-                        if ($this->db->get()->result_array()[0]['status'] == 1) {
+                        $listarray11Data = $this->db->get()->result_array();
+                        if ($listarray11Data[0]['status'] == 1) {
                             $sourceupdateinfo = array(
                                 'first_level' => 'join',
                                 'second_level' => 'videoarea1',
@@ -1373,7 +1390,8 @@ class Pagemanager extends CI_Controller
             date_default_timezone_set("UTC");
             $this->db->from('department');
             $this->db->where('id', $_POST['id']);
-            if ($this->db->get()->result_array()[0]['status'] == '1') {
+            $departmentData = $this->db->get()->result_array();
+            if ($departmentData[0]['status'] == '1') {
                 $departmentupdateinfo = array(
                     'status' => '0',
                     'update_time' => date('y-m-d', time()),
@@ -1425,7 +1443,8 @@ class Pagemanager extends CI_Controller
             date_default_timezone_set("UTC");
             $this->db->from('jobinfo');
             $this->db->where('id', $_POST['id']);
-            if ($this->db->get()->result_array()[0]['status'] == '1') {
+            $jobInfoData = $this->db->get()->result_array();
+            if ($jobInfoData[0]['status'] == '1') {
                 $jobupdateinfo = array(
                     'status' => '0',
                     'update_time' => date('y-m-d', time()),
@@ -1923,7 +1942,8 @@ TAG;
             date_default_timezone_set("UTC");
             $this->db->from('keyword');
             $this->db->where('id', $_POST['id']);
-            if ($this->db->get()->result_array()[0]['status'] == '1') {
+            $userInfoData = $this->db->get()->result_array();
+            if ($userInfoData[0]['status'] == '1') {
                 $keywordupdateinfo = array(
                     'status' => '0',
                     'update_time' => date('y-m-d', time()),
@@ -1950,7 +1970,8 @@ TAG;
             date_default_timezone_set("UTC");
             $this->db->from('webcontent');
             $this->db->where('id', $_POST['id']);
-            if ($this->db->get()->result_array()[0]['status'] == '1') {
+            $userInfoData = $this->db->get()->result_array();
+            if ($userInfoData[0]['status'] == '1') {
                 $areaupdateinfo = array(
                     'status' => '0',
                     'update_time' => date('y-m-d', time()),
