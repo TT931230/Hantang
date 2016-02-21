@@ -24,12 +24,14 @@ class Music extends CI_Controller
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language
         );
 
+        //get music/image
         $source_info=$source_info_base;
         $source_info['first_level']='music';
         $source_info['second_level']='imagearea1';
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
+
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
@@ -43,18 +45,20 @@ class Music extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $displaydetails = $this->page_data_model->query_keywords($keyword_info);
 
+        //get logo source
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
         $source_info['third_level']=$this->session->language;
         $logoimage = $this->page_data_model->query_sources($source_info);
 
+        //get music relative radio
         $source_info=$source_info_base;
         $source_info['first_level']='music';
         $source_info['type']='proimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
-
+        //get search tag
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
@@ -71,6 +75,8 @@ class Music extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('music',$data);
+
+
         $this->db->from('webcontent');
         $this->db->where('page','music');
         $this->db->where('status','1');
@@ -137,6 +143,8 @@ class Music extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $source_info['type']='videoimg';
         $relatedvideo = $this->page_data_model->query_sources($source_info);
+
+
 
         $this->db->where('status','1');
         $this->db->where('id',$videoname);

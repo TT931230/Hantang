@@ -12,10 +12,12 @@ class Page_data_model extends CI_Model{
     }
 
     public function get_page_data($languageType,$url){
+        //get footer source
         $this->db->from('source');
         $this->db->where('first_level','footer');
         $this->db->where('third_level',$languageType);
         $returnquery=$this->db->get()->result_array();
+
         $weixin="";
         $weibo="";
         $youku="";
@@ -30,12 +32,7 @@ class Page_data_model extends CI_Model{
         $guanzhu="";
         $erwei="";
         $guanbi="";
-        $this->db->from('source');
-        $this->db->where('type','partnerimg');
-        $this->db->where('status','1');
-        $this->db->where('third_level',$languageType);
-        $this->db->order_by('sequence','asc');
-        $partner=$this->db->get()->result_array();
+
         for($i=0;$i<count($returnquery);$i++){
             switch ($returnquery[$i]['second_level']){
                 case 'weixin':
@@ -82,6 +79,16 @@ class Page_data_model extends CI_Model{
                     break;
             }
         }
+
+        //get partner image
+        $this->db->from('source');
+        $this->db->where('type','partnerimg');
+        $this->db->where('status','1');
+        $this->db->where('third_level',$languageType);
+        $this->db->order_by('sequence','asc');
+        $partner=$this->db->get()->result_array();
+
+        //get play platform source
         $this->db->from('source');
         $this->db->where('first_level','platform');
         $this->db->where('second_level','aboutmap1');
@@ -99,7 +106,8 @@ class Page_data_model extends CI_Model{
         $this->db->where('second_level','aboutmap3');
         $this->db->where('third_level',$languageType);
         $aboutmap3=$this->db->get()->result_array();
-        
+
+        //get about source
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about01');
@@ -123,10 +131,11 @@ class Page_data_model extends CI_Model{
         $this->db->where('second_level','about04');
         $this->db->where('third_level',$languageType);
         $about04=$this->db->get()->result_array();
-        
+        //get language source
         $this->db->from('language');
         $this->db->where('lang',$languageType);
         $languages=$this->db->get()->result_array();
+
         $data = array(
             'partnerimgs'=>$partner,
             'aboutmap1'=>$aboutmap1[0]['source_location'],
@@ -158,12 +167,14 @@ class Page_data_model extends CI_Model{
             'musicnav' => '',
             'joinnav' => ''
         );
+        // initialize tag name by language
         for($i=0;$i<count($languages);$i++){
             $temp_array=array(
                 $languages[$i]['tag']=>$languages[$i]['value']
             );
             $data=array_merge($data,$temp_array);
         }
+        //get all model by language
         $this->db->from('webmodel');
         $this->db->where('third_level',$languageType);
         $areadis=$this->db->get()->result_array();
@@ -267,6 +278,7 @@ class Page_data_model extends CI_Model{
     }
 
     public function query_tags(){
+        //get search tag
         $this->load->library('session');
         $this->db->from('keyword');
         $this->db->where('second_level','typedetails');

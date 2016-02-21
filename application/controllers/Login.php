@@ -14,7 +14,7 @@ class Login extends CI_Controller
     }
     function formsubmit(){
         $this->load->library ( 'form_validation' );
-
+        //useless
         $this->form_validation->set_rules ( 'username', 'Username', 'required' );
         $this->form_validation->set_rules ( 'password', 'Password', 'required' );
         if ($this->form_validation->run () == FALSE) {
