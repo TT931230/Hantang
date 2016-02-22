@@ -57,12 +57,13 @@ function $queryImage(){
     });
 }
 function $queryPage(){
-    imglevel=$('#imglevel')[0].value;
-    imgname=$('#imgname')[0].value;
+
+    arealevel=$('#pagelevel')[0].value;
+    areaname=$('#pagename').val();
     $.ajax({
         type:"post",
-        data: "imglevel="+imglevel+"&imgname="+imgname,
-        url:"Pagemanager/queryimage",
+        data: "arealevel="+arealevel+"&areaname="+areaname,
+        url:"Pagemanager/queryarea",
         success: function(result)
         {
             $('#caselistshow').html(result);

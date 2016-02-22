@@ -1992,7 +1992,6 @@ TAG;
     }
     public function queryarea(){
         $this->load->library('session');
-
         if($this->session->username) {
             $arealevel=$_POST['arealevel'];
             $areaname=$_POST['areaname'];
