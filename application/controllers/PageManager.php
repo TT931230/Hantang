@@ -1092,11 +1092,7 @@ class Pagemanager extends CI_Controller
 
                 case 'ularea':
                     if($privilige45){
-//                        $modelupdateinfo1 = array(
-//                            'is_hide' => $_POST['ularea1_is_hide'],
-//                            'is_auto' => $_POST['ularea1_is_auto']
-//                        );
-//                        $this->db->update('webmodel', $modelupdateinfo1, array('first_level' => 'ul', 'second_level' => 'area1', 'third_level' => $third_level));
+
                         $listarray1 = $_POST['ulimglist1'];
                         $this->db->from('source');
                         $this->db->where('id', $listarray1);
