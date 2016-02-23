@@ -76,11 +76,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="brand_logo">
     <div class="clearfix newborder">
         <div  class="masthead-brand">
-            <h3>
+         
                 {logoimage}
                 <a href="{link_url}"><img src="{source_location}"></a>
                 {/logoimage}
-            </h3>
+         
         </div>
 
         <div class="masthead_ul">

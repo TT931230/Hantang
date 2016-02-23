@@ -12,7 +12,7 @@
         <img src='{source_location}' alt="">
         {/imagearea13}
     </div>
-    <div id="right">
+    <div id="right-music">
         <div class="homewrapper2 homeimagearea4bg">
             <div class="callbacks_container homeimagearea4">
                 <ul class="rslides" id="carousel4">
