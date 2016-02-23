@@ -7,12 +7,12 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="newborder" style="display: {uldisarea1}">
-    <div id="left" style="background-color:#A73D49">
+    <div id="left-ul" style="background-color:#A73D49">
         {imagearea11}
         <img src='{source_location}' alt="">
         {/imagearea11}
     </div>
-    <div id="right">
+    <div id="right-ul">
         <div class="wrapper">
             <div class="ulcallbacks_container">
                 <ul class="rslides" id="carousel">

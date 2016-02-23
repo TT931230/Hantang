@@ -69,18 +69,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    //Firefox
    $("body").css("-moz-user-select","none");    
     });
-</script>
+</script> 
 <body>
 
 <div class="cover-container">
 <div class="brand_logo">
     <div class="clearfix newborder">
         <div  class="masthead-brand">
-            <h3>
+         
                 {logoimage}
                 <a href="{link_url}"><img src="{source_location}"></a>
                 {/logoimage}
-            </h3>
+         
         </div>
 
         <div class="masthead_ul">

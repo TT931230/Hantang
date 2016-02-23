@@ -285,7 +285,7 @@ background:transparent;
 
 .subtitle-music{
     width: 100%;    /* 也可以固定宽度 */
-    height: 520px;
+    height: 560px;
     background-color: #e0e0e0;
     margin-top:-48px;
     margin-bottom:30px;
@@ -295,7 +295,7 @@ background:transparent;
 
 }
 .musicinnera {
-	height: 410px;
+	height: 480px;
     width:65%;
     font-size: 15px;
     overflow: hidden;
@@ -313,8 +313,8 @@ background:transparent;
     display: inline-block;
 }
 .musicinnerc img{
-    width:330px;
-    height:200px;
+    width:320px;
+    height:auto;
     display: inline-block;
     margin-left:30px;
 }
