@@ -1964,13 +1964,14 @@ TAG;
     }
     public function changeareastatus(){
         $this->load->library('session');
-
         if($this->session->username) {
-            $username = $this->session->username;$privilige4user=$this->session->privilige;
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
             date_default_timezone_set("UTC");
             $this->db->from('webcontent');
             $this->db->where('id', $_POST['id']);
             $userInfoData = $this->db->get()->result_array();
+
             if ($userInfoData[0]['status'] == '1') {
                 $areaupdateinfo = array(
                     'status' => '0',
@@ -1984,13 +1985,87 @@ TAG;
                     'updater' => $username
                 );
             }
-            $this->db->update('area', $areaupdateinfo, array('id' => $_POST['id']));
+            $this->db->update('webcontent', $areaupdateinfo, array('id' => $_POST['id']));
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+
     public function queryarea(){
+        $this->load->library('session');
+        if($this->session->username){
+            $arealevel=$_POST['arealevel'];
+            $areaname=$_POST['areaname'];
+
+            $result="";
+            $result.="<table><tr><td>模块名称</td><td>所属页面</td><td>状态</td><td>顺序</td><td>更新时间</td><td>所属页面内容数</td><td>编辑</td></tr>";
+            $this->db->from('webcontent');
+
+            if(!$arealevel && !$areaname){
+            }else{
+                if(!$arealevel && $areaname){
+                    $this->db->where("name like '%".$areaname."%'");
+                }else if(!$areaname && $arealevel){
+                    $this->db->where("page='".$arealevel."'");
+                }else{
+                    $this->db->where("name like '%".$areaname."%' and page='".$arealevel."'");
+                }
+            }
+            $this->db->where('status','1');
+            $tmparray = $this->db->get()->result_array();
+
+            for ($i = 0; $i < count($tmparray); $i++){
+                $this->db->from('webcontent');
+                $this->db->where('page',$tmparray[$i]['page']);
+                $this->db->where('status','1');
+                $tmpcount = $this->db->get()->result_array();
+                $countContentInPage = count($tmpcount);
+                $tmpareaarray = array(
+                    'id' => $tmparray[$i]['id'],
+                    'name' => $tmparray[$i]['name'],
+                    'page' => $tmparray[$i]['page'],
+                    'status' => $tmparray[$i]['status'],
+                    'sequence' => $tmparray[$i]['sequence'],
+                    'update_time' => $tmparray[$i]['update_time'],
+                    'count' => $countContentInPage
+                );
+                $result.="<tr>";
+                $result.="<td class=\"cl-imgname\">";
+                $result.=$tmpareaarray['name'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgadd\">";
+                $result.=$tmpareaarray['page'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgtype\">";
+                $result.=$tmpareaarray['status'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgseq\">";
+                $result.="<input type=\"number\" value=\"".$tmpareaarray['sequence']."\" name=\"sequence\" id=\"".$tmpareaarray['id']."_sequence\" class=\"cl-imgseqinput\">";
+                $result.="</td>";
+                $result.="<td class=\"cl-imgmini\">";
+                $result.=$tmpareaarray['update_time'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgmini\">";
+                $result.=$tmpareaarray['count'];
+                $result.="</td>";
+                $result.="<td class=\"cl-imgedit\">";
+                $result.="<a href=\"javascript:;\" onclick=\"\$updatearea('".$tmpareaarray['id']."')\" class=\"cl-imgeditbtn\">保存</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$changeareastatus('".$tmpareaarray['id']."')\" class=\"cl-imgeditbtn\">显示/隐藏</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$deletearea('".$tmpareaarray['id']."')\" class=\"cl-imgeditbtn\">删除</a>";
+                $result.="</td>";
+                $result.="</tr>";
+            }
+
+            $result.="</table>";
+            echo $result;
+
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    /*public function queryarea(){
         $this->load->library('session');
         if($this->session->username) {
             $arealevel=$_POST['arealevel'];
@@ -2052,7 +2127,8 @@ TAG;
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
-    }
+    }*/
+
     public function updatearea(){
         $this->load->library('session');
 

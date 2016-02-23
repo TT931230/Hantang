@@ -731,6 +731,7 @@ function $changeareastatus(id){
         url:"Pagemanager/changeareastatus",
         success: function(result)
         {
+            //alert(result);
             alert('更新成功！');
             $changetags('webpagemanage');
         },

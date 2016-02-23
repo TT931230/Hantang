@@ -27,7 +27,7 @@
     <label>模块名称：</label>
     <input type="text" id="pagename">
     <div class="row">
-        <button onclick="$queryPage()" class="btn btn-default">查询</button>
+        <button onclick="$queryPage()" class="btn btn-default" style="margin-left: 23px;">查询</button>
     </div>
     <div id="caselistshow" class="cl-table">
         <table>
