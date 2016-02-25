@@ -62,11 +62,31 @@ function redirection(){
         }
     });
 }
+var about_visible=false;
 var isFirst=true;
+var menu_visible=false;
 $(document).ready(function(){
     //redirection();
+    $("#aboutli").click(function(){
+        if(!about_visible){
+            $("#aboutli ul").css("display","block");
+            about_visible=true;
+        }else{
+            $("#aboutli ul").css("display","none");
+            about_visible=false;
+        }
+    });
+    $(".mob_menu").click(function(){
 
+        if(!menu_visible){
+            $(".masthead_ul").css("display","block");
+            menu_visible=true;
+        }else{
+            $(".masthead_ul").css("display","none");
+            menu_visible=false;
+        }
 
+    });
     var timer=null;
     $("#to_top").hover(function(){
         $("#top_str").css("display","block");

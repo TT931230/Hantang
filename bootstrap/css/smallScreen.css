@@ -14,175 +14,189 @@
         height:140px;
         border:none
     }
-    #homeli{
-        display:none;
-        width: 40px;
-        margin-left: 10px;
-        font-size: 12px;
-    }
-    #ulli{
-        display: inline-block;
-        width: 50px;
-        margin-left: 5px;
-    }
-    #musicli{
-        display: inline-block;
-        width: 95px;
-        margin-left: 1px;
-    }
-    #awoeli {
-        display: inline-block;
-        width: 78px;
-        padding: 0;
-        margin-left: -2px;
-    }
-    #aboutli{
-        display: none;
-    }
-    #joinli{
-        display: inline-block;
-        width: 55px;
-        padding: 0px;
-    }
+
     .masthead-brand {
-        position: absolute;
-        top: 6px;
-        left: 42%;
-        margin: 0 0 0 0 ;
-        width:70px;
-        height:70px;
+
+        margin-top: 30px;
+        margin-left: 4%;
+        float: left;
+
+        width:40px;
+        height:40px;
+    }
+    .mob_menu{
+        float: right;
+        margin-top: 26px;
+        margin-right: 4%;
+
+        display: block;
+    }
+    .mob_menu:hover{
+        cursor: pointer;
+        background: #dedede;
     }
     .masthead-brand img{
-        height:70px;
-        width:70px;
+        height:40px;
+        width:40px;
+        margin: 0;
     }
 
     .masthead-brand h3{
         margin:0
     }
+
     .masthead_ul{
         position: absolute;
-        top: 100px;
+        top: 75px;
         left: 0;
-        width:100%;
+        width:100px;
+        background-color: #dedede;
         margin: 0 0 0 0 ;
-        height:40px;
-        border-bottom: 1px solid #dedede;
+        height:auto;
+        border: none;
+        z-index: 9000;
+        display: none;
     }
 
     .masthead_ul ul{
         margin: 0;
         padding: 0;
         display: block;
-        overflow: hidden;
-        height:40px
-    }
-    .masthead_ul ul li{
-        margin-top: 10px;
-        font-size: 12px;
-        color: #808080;
-
-        width: 60px;
-        height: 40px;
-        float: left;
-        position: relative;
-        vertical-align: top;
-        display: inline-block;
-    }
-    .headernavul{
-        padding-top: 2px;
-        display: inline-block;
-        height: auto;
-        overflow: visible;
+        list-style: none;
         width: 100%;
+        height:auto;
+        text-align: left;
     }
-    .headernavul >li{
+    #homeli{
+        border:none;
+        width: auto;
+        height: 30px;
+        margin-left: 10px;
+        font-size: 12px;
+        display: block;
+        padding: 0;
+
+    }
+    #homeli > a {
+        height: 100%;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 500;
         color: #808080;
-        float: left;
-
-
-        position:relative;
-        vertical-align: top;
-        display:inline-block;
-        height:30px;
-        width:33.3%
+        text-align: left;
+    }
+    #ulli{
+        border:none;
+        width: auto;
+        height: 30px;
+        margin-left: 10px;
+        font-size: 12px;
+        display: block;
+        padding: 0;
 
     }
     #ulli > a {
         height: 100%;
         width: 100%;
-        margin: 0;
         font-size: 12px;
         font-weight: 500;
         color: #808080;
+        text-align: left;
+    }
+    #musicli{
+        display: block;
+        border:none;
+        width: auto;
+        height: 30px;
+        margin-left: 10px;
+        font-size: 12px;
         padding: 0;
+
+    }
+    #musicli > a {
+        height: 100%;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 500;
+        color: #808080;
+        text-align: left;
+    }
+    #awoeli {
+        border:none;
+        width: auto;
+        height: 30px;
+        margin-left: 10px;
+        font-size: 12px;
+        display: block;
+        padding: 0;
+        border-image:none ;
+
     }
     #awoeli > a {
         height: 100%;
         width: 100%;
-        margin: 0;
         font-size: 12px;
         font-weight: 500;
         color: #808080;
-        padding: 0;
-    }
-
-    #musicli > a {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        font-size: 12px;
-        font-weight: 500;
-        color: #808080;
-        padding: 0;
-    }
-    #musicli > a:hover{
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        font-size: 12px;
-        font-weight: 500;
-        color: #808080;
-        padding: 0;
-    }
-    .masthead-nav > li > a {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        font-size: 12px;
-        font-weight: 500;
-        color: #808080;
-    }
-    .masthead-nav > li + li {
-        margin-left: -2px;
-    }
-    .headernavul > li:first-child
-    {
-        margin-left: -20px;
-    }
-    .navtags {
         text-align: left;
     }
-    .nav li a{
+    #aboutli{
         border:none;
-    }
-    .nav li a:hover{
-        border:none;
-    }
-    .masthead-nav > li > a {
-        margin-top: 0;
+        width: auto;
+        height: 30px;
+        margin-left: 10px;
         font-size: 12px;
+        display: block;
+        padding: 0;
+
+    }
+    #aboutli > a {
+        height: 100%;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 500;
         color: #808080;
+        text-align: left;
     }
-    .masthead-nav > li > a.active {
-        background-color: transparent;
-        border-bottom: none;
+    #aboutli ul{
+        position: absolute;
+        top: 0;
+        left: 92px;
+        list-style: none;
+        display: none;
+        z-index: 8999;
     }
-    .masthead_ul ul li a{
+    #aboutli ul li{
+
+    }
+    #joinli{
+        padding: 0;
+        border:none;
+        width: auto;
+        height: 30px;
+        margin-left: 10px;
         font-size: 12px;
-        margin-top: 0;
-        margin-left: 2px;
+        display: block;
+
     }
+    #joinli > a {
+        height: 100%;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 500;
+        color: #808080;
+        text-align: left;
+    }
+
+    .headernavul{
+        padding-top: 2px;
+        display: inline-block;
+        height: auto;
+
+        width: 100%;
+    }
+
+
     .inner,
     .masthead,
     .mastfoot,
