@@ -105,6 +105,7 @@ class Pagemanager extends CI_Controller
             //videolists
             $this->db->from('source');
             $this->db->where('type', 'video/mp4');
+            $this->db->where('deleted', 0);
             $videoarray = $this->db->get()->result_array();
             for ($i = 0; $i < count($videoarray); $i++) {
                 $this->db->from('source');
@@ -135,7 +136,6 @@ class Pagemanager extends CI_Controller
                 );
                 array_push($videolists, $tmpvideoarray);
             }
-
 
             //musiclists
             $this->db->from('source');
@@ -1311,11 +1311,17 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $deleteitem = array(
-                'id' => $_POST['source_id']
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+//            $deleteitem = array(
+//                'id' => $_POST['source_id']
+//            );
+//            $this->db->delete('source', $deleteitem);
+            $data = array(
+                'deleted' => 1,
             );
-            $this->db->delete('source', $deleteitem);
+            $this->db->where('id', $_POST['source_id']);
+            $this->db->update('source', $data);
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";

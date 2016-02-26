@@ -105,6 +105,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--            -->
 <!---->
 <!--        </div>-->
+        <div class="mob_menu">
+            <img src="http://localhost:8080/bootstrap/images/menu.png">
+        </div>
     </div>
     
 </div>

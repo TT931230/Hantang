@@ -1,3 +1,27 @@
+function checkAll()
+{
+    var el = document.getElementsByTagName('input');
+    var len = el.length;
+    for(var i=0; i<len; i++)
+    {
+        if(el[i].type=="checkbox")
+        {
+            el[i].checked = true;
+        }
+    }
+}
+function clearAll()
+{
+    var el = document.getElementsByTagName('input');
+    var len = el.length;
+    for(var i=0; i<len; i++)
+    {
+        if(el[i].type=="checkbox")
+        {
+            el[i].checked = false;
+        }
+    }
+}
 function $changetags(pagename){
     $.ajax({
         type:"post",
@@ -620,6 +644,28 @@ function $savesinglevideo(imgid){
             alert("ajax error");
         }
     });
+}
+function $deleteselectedvideo(){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".vl-imglang").attr("id");
+            var arr=source_id.split('_');
+            //alert(arr[0]);
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/deletesinglesource",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags('videolist');
+    //alert("success");
 }
 function $deletesinglevideo(source_id){
     $.ajax({

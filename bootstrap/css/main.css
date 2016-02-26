@@ -994,4 +994,7 @@ height:15px;
 float:left;
 margin-left:-1px;
 }
+.mob_menu{
+    display: none;
+}
 
