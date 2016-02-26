@@ -23,9 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link href="manage/css/sb-admin.css" rel="stylesheet">
     <link href="manage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!--<link rel="stylesheet"  href="/bootstrap/css/fileinput.min.css" type="text/css"/ >-->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
 <script>
     $('.selectpicker').selectpicker();
@@ -186,6 +189,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="manage/js/plugins/morris/morris.min.js"></script>
 <script src="manage/js/plugins/morris/morris-data.js"></script>
 <script src="manage/js/manage.js"></script>
+<script src="manage/js/ajaxfileupload.js"  type="text/javascript"></script>
 </body>
 </html>
 

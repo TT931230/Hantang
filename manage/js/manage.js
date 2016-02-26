@@ -113,7 +113,8 @@ function $saveVideo(){
     first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
-    videoimg=$('#videoimg')[0].value;
+    //videoimg=$('#videoimg')[0].value;
+    //inputVideoImgId = $('inputVideoImg')[0].value;
     index=$('#index')[0].value;
     keyword='';
     $("#keyword option:selected").each(function(){
@@ -123,11 +124,24 @@ function $saveVideo(){
     third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level+"&index="+index,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level+"&index="+index,
         url:"Pagemanager/saveVideo",
+        //dataType:'json',
         success: function(result)
         {
-
+            var data = result.split("|");
+            $.ajaxFileUpload ({
+                url:"Pagemanager/uploadLocalImg",
+                secureuri:false,
+                fileElementId:'inputVideoImg',
+                dataType: 'text',
+                data:{"id":data[0],"first_level":data[1],"third_level":data[2]} ,
+                success: function (data){
+                    alert(data);
+                },error:function(){
+                    alert("ajax error");
+                }
+            });
         },
         error: function()
         {
