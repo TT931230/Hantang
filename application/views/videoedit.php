@@ -31,13 +31,15 @@
 <div class="ce-div">
     <div class="row">
         <label class="col-lg-2">视频封面</label>
-        <select  class="col-lg-2" id="videoimg">
+        <!--<select  class="col-lg-2" id="videoimg">
             {img}
             <option value="{id}">{source_name}</option>
             {/img}
-        </select>
-        <label class="col-lg-2">视频地址</label>
-        <input class="col-lg-2" type="text" id="source_location">
+        </select>-->
+        <input id="inputVideoImg" type="file" class="file" name="img">
+        <label class="col-lg-2" style="margin-left: -170px;
+    margin-top: 25px;">视频地址</label>
+        <input class="col-lg-2" type="text" id="source_location" style="margin-top: 25px;">
     </div>
 </div>
 <div class="ce-div">
@@ -72,6 +74,9 @@
         </select>
     </div>
 </div>
+  <!--  <div class="ce-div">
+        <input id="input-1" type="file" class="file">
+        </div>-->
  <div class="ce-savebtn">
     <div class="row">
         <button onclick="$saveVideo()" class="btn btn-default">保存</button>

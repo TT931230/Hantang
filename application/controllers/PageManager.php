@@ -114,7 +114,6 @@ class Pagemanager extends CI_Controller
                 array_push($imagelists, $tmpimgarray);
             }
 
-
             //videolists
             $this->db->from('source');
             $this->db->where('type', 'video/mp4');
@@ -531,6 +530,52 @@ class Pagemanager extends CI_Controller
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+    function uploadLocalImg(){
+        date_default_timezone_set("UTC");
+        $this->load->library('session');
+        if($this->session->username) {
+            $username = $this->session->username;
+            if ($_FILES["img"]["error"] > 0) {
+                return json_encode(array("msg" => "Return Code:" . $_FILES["img"]["error"], "error" => "true"));
+            } else {
+                $third_level = $_POST['third_level'];
+                $first_level = $_POST['first_level'];
+                $id = $_POST['id'];
+                //echo "456";
+
+                $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/img/';
+                //$fileUrl = $_SERVER['DOCUMENT_ROOT'].'/img/';
+                $imageName = $_FILES["img"]["name"];
+                //$imageName = explode('.',$imageName);
+                $insertLocalImgArray = array(
+                    'source_location' => $fileUrl.$imageName,
+                    'status' => '2',
+                    'source_name' => $imageName,
+                    'type' => 'videoimg',
+                    'updater' => $username,
+                    'creator' => $username,
+                    'first_level' => $first_level,
+                    'third_level' => $third_level,
+                    'update_time'=>date("y-m-d", time()),
+                    'create_time'=>date("y-m-d", time()),
+                    'link_url'=>'/' . $first_level . '/' . $first_level . 'inner/' . $id,
+                );
+                $this->load->model('source_model');
+                $this->source_model->insertLocalImg($insertLocalImgArray);
+
+
+
+                //$userAction->setImage($_SESSION["email"],$imageName);   //存入数据库
+
+                move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/img/' .$imageName);    //缓存文件存入服务器
+            //return json_encode(array("msg"=>$fileUrl.$imageName,"error"=>"false"));
+            }
+        }
+        else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
     function saveVideo(){
         $this->load->library('session');
 
@@ -561,19 +606,20 @@ class Pagemanager extends CI_Controller
                     case '10':$privilige410=true;break;
                 }
             }
+
             $sequence = '1';
             $source_location = $_POST['source_location'];
             $source_name = $_POST['source_name'];
             $source_remark = $_POST['source_remark'];
-            $videoimg = $_POST['videoimg'];
+            //$videoimg = $_POST['videoimg'];
             $keyword = $_POST['keyword'];
             $keywordarray = explode('|||', $keyword);
             $third_level = $_POST['third_level'];
             $first_level = $_POST['first_level'];
-            $index = $_POST['index'];
+            //$index = $_POST['index'];
             $insertvideo = array(
-                'videoimg' => $videoimg,
-                'index'=>$index,
+                //'videoimg' => $videoimg,
+                //'index'=>$index,
                 'keyword' => $keyword,
                 'source_location' => $source_location,
                 'status' => '2',
@@ -587,11 +633,13 @@ class Pagemanager extends CI_Controller
                 'second_level' => null,
                 'third_level' => $third_level,
                 'link_url' => null,
-                'videoimgid' => $videoimg,
+                //'videoimgid' => $videoimg,
                 'keywordid' => $keywordarray
             );
             $this->load->model('source_model');
-            $this->source_model->insertvideoSource($insertvideo);
+            $returnId=$this->source_model->insertvideoSource($insertvideo);
+            $returnData = $returnId.'|'.$first_level.'|'.$third_level;
+            echo $returnData;
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";

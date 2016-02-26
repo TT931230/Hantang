@@ -76,25 +76,28 @@ class Source_model extends CI_Model
     }
     public function insertvideoSource($insertvideo){
         date_default_timezone_set("UTC");
-        $this->source_location    = $insertvideo['source_location'];
-        $this->status    = $insertvideo['status'];
-        $this->source_name    = $insertvideo['source_name'];
-        $this->link_url    = $insertvideo['link_url'];
-        $this->sequence    = $insertvideo['sequence'];
-        $this->type    = $insertvideo['type'];
-        $this->link_url    = $insertvideo['link_url'];
-        $this->updater    = $insertvideo['updater'];
-        $this->creator    = $insertvideo['creator'];
-        $this->first_level    = $insertvideo['first_level'];
-        $this->second_level    = $insertvideo['second_level'];
-        $this->third_level    = $insertvideo['third_level'];
-        $this->source_remark  = $insertvideo['source_remark'];
-        $this->index = $insertvideo['index'];
-        $this->create_time = date("y-m-d",time());
-        $this->update_time = date("y-m-d",time());
-        $this->db->insert('source', $this);
+        $data=array(
+            'source_location' => $insertvideo['source_location'],
+            'status' => $insertvideo['status'],
+            'source_name' => $insertvideo['source_name'],
+            'link_url' => $insertvideo['link_url'],
+            'sequence' => $insertvideo['sequence'],
+            'type' => $insertvideo['type'],
+            'updater' => $insertvideo['updater'],
+            'creator' => $insertvideo['creator'],
+            'first_level' => $insertvideo['first_level'],
+            'second_level' => $insertvideo['second_level'],
+            'third_level' => $insertvideo['third_level'],
+            'source_remark' => $insertvideo['source_remark'],
+            //$this->index = $insertvideo['index'];
+            'create_time' => date("y-m-d",time()),
+            'update_time' => date("y-m-d",time())
+        );
+
+        $this->db->insert('source',$data);
         $insertedid=$this->db->insert_id();
-        $updatearray=array(
+        //echo "<script>alert()</script>";
+        /*$updatearray=array(
             'status'=>'2',
             'type'=>'videoimg',
             'link_url'=>'/'.$insertvideo['first_level'].'/'.$insertvideo['first_level'].'inner/'.$insertedid,
@@ -102,15 +105,38 @@ class Source_model extends CI_Model
             'updater'=>$insertvideo['updater'],
             'update_time'=>date("y-m-d",time())
         );
-        $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));
-        echo count($insertvideo['keyword']);
-        for($i=0;$i<count($insertvideo['keyword'])-1;$i++){
+        $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));*/
+        for($i=0;$i<count($insertvideo['keywordid'])-1;$i++){
             $insertrelation=array(
-                'keyword_id'=>$insertvideo['keyword'][$i],
+                'keyword_id'=>$insertvideo['keywordid'][$i],
                 'source_id'=>$insertedid               
             );
-            var_dump($insertrelation);         
             $this->db->insert('keyword_source_relation', $insertrelation);
         }
+        return $insertedid;
+    }
+    public function insertLocalImg($insertLocalImgArray){
+        date_default_timezone_set("UTC");
+        $a = $insertLocalImgArray['source_location'];
+
+        $data=array(
+            'source_location' => $insertLocalImgArray['source_location'],
+            'status' => $insertLocalImgArray['status'],
+            'source_name' => $insertLocalImgArray['source_name'],
+            'link_url' => $insertLocalImgArray['link_url'],
+            //'sequence' => $insertvideo['sequence'],
+            'type' => $insertLocalImgArray['type'],
+            'updater' => $insertLocalImgArray['updater'],
+            'creator' => $insertLocalImgArray['creator'],
+            'first_level' => $insertLocalImgArray['first_level'],
+            //'second_level' => $insertvideo['second_level'],
+            'third_level' => $insertLocalImgArray['third_level'],
+            //'source_remark' => $insertvideo['source_remark'],
+            //$this->index = $insertvideo['index'];
+            'create_time' => $insertLocalImgArray['create_time'],
+            'update_time' => $insertLocalImgArray['update_time']
+        );
+
+        $this->db->insert('source', $data);
     }
 }
