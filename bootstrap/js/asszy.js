@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2016/1/21 0021.
  */
+
 function getfooter(){
 
     var footer_flow=document.getElementById("footer_flow");
