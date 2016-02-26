@@ -212,7 +212,29 @@ function $getselectedinfo(pagename){
             break;
     }
 }
+function $savewebcontent(pagename){
 
+    title=$("#hpm-content-title").val();
+    affiliated=$("#affiliatedmoudle option:selected").text();
+    info=$("#hpm-contentinfo").val();
+
+    $.ajax({
+        type:"post",
+        data: data,
+        url:"Pagemanager/updateareainfo",
+        success: function(result)
+        {
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+    alert(title);
+    alert(affiliated);
+    alert(info);
+}
 function $saveArea(areatype){
     switch(areatype){
         case 'homearea':
@@ -612,6 +634,29 @@ function $deletesingleimg(source_id){
         }
     });
 }
+function $deleteselectedimg(){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".cl-imgmini").attr("id");
+            var arr=source_id.split('_');
+
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/deletesinglesource",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags('caselist');
+    //alert("success");
+}
+
 function $savesinglevideo(imgid){
     imgsequence=$('#'+imgid+'_sequence')[0].value;
     index=$('#'+imgid+'_index')[0].value;

@@ -38,6 +38,17 @@ class Pagemanager extends CI_Controller
                 }
             }
             $pagename = $_POST['pagename'];
+            $pieces = explode("pagemanage", $pagename);
+
+
+            $contentsquence=array();
+            $query = $this->db->query("SELECT name FROM webcontent where page='$pieces[0]'");
+            $affiliatedmodules=$query->result();
+            //var_dump($query->result());
+
+
+
+
             $this->load->library('parser');
             $this->load->model('source_model');
             $this->load->model('keyword_model');
@@ -75,6 +86,7 @@ class Pagemanager extends CI_Controller
 
             //imagelists
             $this->db->from('source');
+            $this->db->where('deleted', 0);
             $this->db->where('type', 'img');
             $this->db->or_where('type', 'videoimg');
             $this->db->or_where('type', 'partnerimg');
@@ -450,8 +462,10 @@ class Pagemanager extends CI_Controller
                 'imagelists' => $imagelists,
                 'img' => $imgsource,
                 'keyword' => $keyword,
-                'video' => $videosource
+                'video' => $videosource,
+                'affiliatedmodules'=>$affiliatedmodules,
             );
+            //var_dump($arealists);
             return $this->parser->parse($pagename, $data);
         }else{
             echo "<script>alert('请先登录！')</script>";
@@ -507,9 +521,10 @@ class Pagemanager extends CI_Controller
                 'first_level' => null,
                 'second_level' => null,
                 'third_level' => $_POST['third_level'],
+
             );
             $this->load->model('source_model');
-            var_dump($insertcontent);
+            //var_dump($insertcontent);
             return $this->source_model->insertSource($insertcontent);
         }else{
             echo "<script>alert('请先登录！')</script>";
@@ -1272,6 +1287,7 @@ class Pagemanager extends CI_Controller
             $data = array(
                 'deleted' => 1,
             );
+
             $this->db->where('id', $_POST['source_id']);
             $this->db->update('source', $data);
         }else{

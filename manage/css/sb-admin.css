@@ -234,7 +234,7 @@ ul.alert-dropdown {
 	font-weight:500;
 	padding-left:45px;
 	color:#ffffff;
-	background:#408080;
+	background:#228B22;
 }
 
 /*homepage*/
@@ -363,7 +363,12 @@ ul.alert-dropdown {
 	border-bottom:1px solid #d8d8d8;
 }
 .cl-imgedit{
-	width:15%;
+	width:6%;
+	height:60px;
+	border-bottom:1px solid #d8d8d8;
+}
+.cl-imgedit1{
+	width:9%;
 	height:60px;
 	border-bottom:1px solid #d8d8d8;
 }
@@ -523,4 +528,87 @@ ul.alert-dropdown {
 	border-bottom:1px solid #c0c0c0;
 	padding-top:20px;
 	padding-bottom:20px;
+}
+.hpm-content{
+	width: 100%;
+	height: auto;
+	border: 1px solid #228B22;
+}
+.hpm-title{
+	height: 100px;
+	margin-left: 40px;
+	margin-top: 20px;
+
+	width: 100%;
+	border: none;
+	padding: 0;
+}
+.hpm-part{
+	float: left;
+	overflow: visible;
+	width: 30%;
+	margin-left: 20px;
+	height: 100px;
+}
+.hpm-page{
+	width: 100%;
+	height: 50px;
+}
+.hpm-label{
+	width: 83px;
+	height: 100%;
+	float: left;
+	text-align: right;
+}
+.hpm-input{
+	width: 200px;
+	height: 100%;
+	float: right;
+}
+.hpm-input select{
+	width: 100%;
+}
+.hpm-text{
+	margin-left: 40px;
+	width: 100%;
+	height: 150px;
+	margin-top: 20px;
+}
+.hpm-text-label{
+	width: 83px;
+	height: 150px;
+	margin-left: 20px;
+	text-align: right;
+	float: left;
+}
+.hpm-text-input{
+	width: 400px;
+	height: 100%;
+	position: relative;
+	top: -100%;
+	left: 170px;
+}
+.hpm-text-input textarea{
+	width: 100%;
+	height: auto;
+}
+.hpm-save{
+	margin-top: 20px;
+	height: 60px;
+	width: 100%;
+	background: #dedede;
+	border: none;
+}
+.hpm-save button{
+
+	margin-top: 15px;
+	height: 30px;
+	width: 60px;
+	text-align: center;
+	margin-left: 90px;
+}
+.hpm-footer{
+	width: 100%;
+
+
 }

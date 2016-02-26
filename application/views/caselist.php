@@ -35,15 +35,22 @@
     <div id="caselistshow" class="cl-table">
         <table>
             <tr>
+                <td class="vl-title0">
+                    <input type="checkbox" name="test" value="" onclick="if(this.checked==true) { checkAll(); } else { clearAll(); }">全选
+                </td>
                 <td>图片名称</td>
                 <td>图片地址</td>
                 <td>图片类型</td>
                 <td>顺序</td>
                 <td>图片缩略图</td>
                 <td>编辑</td>
+                <td class="vl-title9">
+                    <a href="javascript:;" onclick="$deleteselectedimg()" class="cl-imgeditbtn">删除所选</a>
+                </td>
             </tr>
             {imagelists}
             <tr>
+                <td id="vl-check" class="vl-check"><input type="checkbox" name="check" value=""></td>
                 <td id="{source_id}" class="cl-imgname">{source_name}</td>
                 <td id="{source_id}_url" class="cl-imgadd">
                     {source_location}
@@ -59,6 +66,8 @@
                 </td>
                 <td id="{source_id}_edit" class="cl-imgedit">
                     <a href="javascript:;" onclick="$savesingleimg('{source_id}')" class="cl-imgeditbtn">保存</a>
+                </td>
+                <td id="{source_id}_edit" class="cl-imgedit1">
                     <a href="javascript:;" onclick="$deletesingleimg('{source_id}')" class="cl-imgeditbtn">删除</a>
                 </td>
             </tr>
