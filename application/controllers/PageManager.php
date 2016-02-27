@@ -67,6 +67,8 @@ class Pagemanager extends CI_Controller
             $shows = array();
             $arealists=array();
 
+            $relatedimg=array();
+
             //arealists
             $this->db->from('webcontent');
             $areaarray = $this->db->get()->result_array();
@@ -86,6 +88,7 @@ class Pagemanager extends CI_Controller
                 );
                 array_push($arealists, $tmpareaarray);
             }
+            //relatedimg
 
             //imagelists
             $this->db->from('source');
@@ -445,6 +448,7 @@ class Pagemanager extends CI_Controller
                     'type' => 'video/mp4'
                 )
             );
+
             $data = array(
                 'arealists'=>$arealists,
                 'userlists'=>$userlists,
@@ -601,133 +605,134 @@ class Pagemanager extends CI_Controller
                 $affiliated=$_POST['affiliated'];
                 $first_level = $_POST['first_level'];
                 $second_level="";
-                move_uploaded_file($_FILES["files"]["tmp_name"], $source_location);
-//                switch($first_level){
-//                    case 'home':
-//                        switch($affiliated){
-//                            case 'home1':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'home2':
-//                                $second_level='imagearea2';
-//                                break;
-//                            case 'home3':
-//                                $second_level='imagearea3';
-//                                break;
-//                            case 'home4':
-//                                $second_level='imagearea4';
-//                                break;
-//                        }
-//                        break;
-//                    case 'about':
-//                        switch($affiliated){
-//                            case 'about1':
-//                                $second_level='about1';
-//                                break;
-//                            case 'about2':
-//                                $second_level='about2';
-//                                break;
-//                            case 'about3':
-//                                $second_level='about3';
-//                                break;
-//                        }
-//                        break;
-//                    case 'platform':
-//                        switch($affiliated){
-//                            case 'platform1':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'platform2':
-//                                $second_level='videoarea1';
-//                                break;
-//                            case 'platform3':
-//                                $second_level='imagearea2';
-//                                break;
-//                            case 'platform4':
-//                                $second_level='aboutmap1';
-//                                break;
-//                            case 'platform5':
-//                                $second_level='aboutmap2';
-//                                break;
-//                            case 'platform6':
-//                                $second_level='aboutmap3';
-//                                break;
-//                        }
-//                        break;
-//                    case 'partner':
-//                        switch($affiliated){
-//                            case 'partner1':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'partner2':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'partner3':
-//                                $second_level='imagearea1';
-//                                break;
-//                        }
-//                        break;
-//                    case 'ul':
-//                        switch($affiliated){
-//                            case 'ul1':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'ul2':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'ul3':
-//                                $second_level='imagearea1';
-//                                break;
-//                        }
-//                        break;
-//                    case 'awoe':
-//                        switch($affiliated){
-//                            case 'awoe1':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'awoe2':
-//                                $second_level='imagearea11';
-//                                break;
-//                            case 'awoe3':
-//                                $second_level='imagearea1';
-//                                break;
-//                        }
-//                        break;
-//                    case 'music':
-//                        switch($affiliated){
-//                            case 'music1':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'music2':
-//                                $second_level='imagearea1';
-//                                break;
-//                            case 'music3':
-//                                $second_level='imagearea1';
-//                                break;
-//                        }
-//                        break;
-//                    case 'join':
-//                        $second_level='imagearea1';
-//                        break;
-//                }
-//
-//                $insertimg=array(
-//                    'source_location' => $source_location,
-//                    'status' => '2',
-//                    'source_name' => $source_name,
-//                    'link_url' => null,
-//                    'sequence' => $sequence,
-//                    'updater' => $username,
-//                    'type' => 'img',
-//                    'creator' => $username,
-//                    'first_level' => $first_level,
-//                    'second_level' => $second_level,
-//                    'source_remark' => $source_remark,
-//                    'third_level' => $third_level,
-//                );
-//                $this->load->model('source_model');
-//                $this->source_model->insertimg($insertimg);
-                echo $source_location.'||||';
+                //echo $_FILES["files"]["tmp_name"];
+                move_uploaded_file($_FILES["files"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["files"]["name"]);
+                switch($first_level){
+                    case 'home':
+                        switch($affiliated){
+                            case 'home1':
+                                $second_level='imagearea1';
+                                break;
+                            case 'home2':
+                                $second_level='imagearea2';
+                                break;
+                            case 'home3':
+                                $second_level='imagearea3';
+                                break;
+                            case 'home4':
+                                $second_level='imagearea4';
+                                break;
+                        }
+                        break;
+                    case 'about':
+                        switch($affiliated){
+                            case 'about1':
+                                $second_level='about1';
+                                break;
+                            case 'about2':
+                                $second_level='about2';
+                                break;
+                            case 'about3':
+                                $second_level='about3';
+                                break;
+                        }
+                        break;
+                    case 'platform':
+                        switch($affiliated){
+                            case 'platform1':
+                                $second_level='imagearea1';
+                                break;
+                            case 'platform2':
+                                $second_level='videoarea1';
+                                break;
+                            case 'platform3':
+                                $second_level='imagearea2';
+                                break;
+                            case 'platform4':
+                                $second_level='aboutmap1';
+                                break;
+                            case 'platform5':
+                                $second_level='aboutmap2';
+                                break;
+                            case 'platform6':
+                                $second_level='aboutmap3';
+                                break;
+                        }
+                        break;
+                    case 'partner':
+                        switch($affiliated){
+                            case 'partner1':
+                                $second_level='imagearea1';
+                                break;
+                            case 'partner2':
+                                $second_level='imagearea1';
+                                break;
+                            case 'partner3':
+                                $second_level='imagearea1';
+                                break;
+                        }
+                        break;
+                    case 'ul':
+                        switch($affiliated){
+                            case 'ul1':
+                                $second_level='imagearea1';
+                                break;
+                            case 'ul2':
+                                $second_level='imagearea1';
+                                break;
+                            case 'ul3':
+                                $second_level='imagearea1';
+                                break;
+                        }
+                        break;
+                    case 'awoe':
+                        switch($affiliated){
+                            case 'awoe1':
+                                $second_level='imagearea1';
+                                break;
+                            case 'awoe2':
+                                $second_level='imagearea11';
+                                break;
+                            case 'awoe3':
+                                $second_level='imagearea1';
+                                break;
+                        }
+                        break;
+                    case 'music':
+                        switch($affiliated){
+                            case 'music1':
+                                $second_level='imagearea1';
+                                break;
+                            case 'music2':
+                                $second_level='imagearea1';
+                                break;
+                            case 'music3':
+                                $second_level='imagearea1';
+                                break;
+                        }
+                        break;
+                    case 'join':
+                        $second_level='imagearea1';
+                        break;
+                }
+
+                $insertimg=array(
+                    'source_location' => $source_location,
+                    'status' => '1',
+                    'source_name' => $source_name,
+                    'link_url' => null,
+                    'sequence' => $sequence,
+                    'updater' => $username,
+                    'type' => 'img',
+                    'creator' => $username,
+                    'first_level' => $first_level,
+                    'second_level' => $second_level,
+                    'source_remark' => $source_remark,
+                    'third_level' => $third_level,
+                );
+                $this->load->model('source_model');
+                $this->source_model->insertimg($insertimg);
+                echo 'success'.'||||';
 
             }
 

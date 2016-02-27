@@ -68,7 +68,52 @@
 
 <div class="hpm-footer">
     <table>
+        <tr>
+            <td class="hpm-td0">
+                <input type="checkbox" name="test" value="" onclick="if(this.checked==true) { checkAll(); } else { clearAll(); }">全选
+            </td>
+            <td class="hpm-td1">图片内容</td>
+            <td class="hpm-td2">内容描述</td>
+            <td class="hpm-td3">内容图片</td>
+            <td class="hpm-td4">所属模块</td>
+            <td class="hpm-td5">
+                <a href="javascript:;" onclick="" class="cl-imgeditbtn">保存所选</a>
+            </td>
+            <td class="hpm-td6">
+                <a href="javascript:;" onclick="" class="cl-imgeditbtn">删除所选</a>
+            </td>
+        </tr>
+        {videolists}
+        <tr>
+            <td id="hpm-check" class="vl-check"><input type="checkbox" name="check" value=""></td>
+            <td id="{imgid}" class="vl-imgname">{source_name}</td>
+            <td id="{imgid}_url" class="vl-imgadd">
+                {source_location}
+            </td>
+            <td id="{source_id}_first" class="vl-imgfirst">
+                {first_level}
+            </td>
+            <td id="{source_id}_lang" class="vl-imglang">
+                {language}
+            </td>
+            <td class="vl-imgseq">
+                <input type="number" value="{sequence}" name="sequence" id="{imgid}_sequence" class="vl-imgseqinput">
+            </td>
+            <td id="{imgid}_img" class="vl-imgmini">
+                <img src="{linkimg}" style="width:96px;height: 54px;">
+            </td>
+            <td class="vl-imgseq">
+                <input type="text" value="{index}" name="sequence" id="{imgid}_index" class="vl-imgseqinput">
+            </td>
+            <td id="{imgid}_edit" class="vl-imgedit">
+                <a href="javascript:;" onclick="$savesinglevideo('{imgid}') " class="cl-imgeditbtn">保存</a>
 
+            </td>
+            <td id="{imgid}_edit" class="vl-imgedits">
+                <a href="javascript:;" onclick="$deletesinglevideo('{source_id}')" class="cl-imgeditbtn">删除</a>
+            </td>
+        </tr>
+        {/videolists}
     </table>
 </div>
 
@@ -81,69 +126,5 @@
 
 
 
-<div class="hpm-div">
-    <div class="row"><label class="col-lg-2">首页A区域管理</label></div>
-    <div class="row">
-        <label class="col-lg-2">播放图片</label>
-            <select class="selectpicker bla bla bli" multiple data-live-search="true" id="source_name_a">
-<!--        <select  class="col-lg-2 form-control selectpicker" multiple="multiple" id="source_name_a">-->
-            {img}
-            <option value="{id}">{source_name}</option>
-            {/img}
-        </select>
-    </div>
-</div>
 
-<div class="hpm-div">
-    <div class="row"><label class="col-lg-2">首页B区域管理</label></div>
-    <div class="row">
-        <label class="col-lg-2">播放图片</label>
-        <select class="selectpicker bla bla bli" multiple data-live-search="true"  id="source_name_b">
-            {img}
-            <option value="{id}">{source_name}</option>
-            {/img}
-        </select>
-    </div>
-</div>
 
-<div class="hpm-div">
-    <div class="row"><label class="col-lg-2">首页C区域管理</label></div>
-    <div class="row">
-        <label class="col-lg-2">播放图片</label>
-        <select  class="selectpicker bla bla bli" multiple data-live-search="true"  id="source_name_c">
-            {img}
-            <option value="{id}">{source_name}</option>
-            {/img}
-        </select>
-    </div>
-</div>
-
-<div class="hpm-div">
-    <div class="row"><label class="col-lg-2">首页D区域管理</label></div>
-    <div class="row">
-        <label class="col-lg-2">播放图片</label>
-        <select  class="selectpicker bla bla bli" multiple data-live-search="true"  id="source_name_d">
-            {img}
-            <option value="{id}">{source_name}</option>
-            {/img}
-        </select>
-    </div>
-</div>
-<div class="hpm-div">
-<div class="row">
-    <label class="col-lg-2">语言类型</label>
-    <select  class="col-lg-2" id="third_level">
-        <option value="zn">中文</option>
-        <option value="en">英文</option>
-        <option value="fr">法文</option>
-    </select>
-</div>
-</div>
-<div class="hpm-savebtn">
-<div class="row">
-    <button onclick="$saveArea('homearea')">保存</button>
-    <button onclick="$previewarea('home')">预览</button>
-    <button onclick="$submitarea('home')">发布</button>
-</div>
-</div>
-<body>
