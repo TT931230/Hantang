@@ -7,7 +7,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="managepagetitle">品牌管理</div>
+<div class="managepagetitle">标签管理</div>
 <div class="te-div">
     <label>所属类别：</label>
     <select id="keywordlevel">
@@ -24,39 +24,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <button onclick="$queryKeyword()" class="btn btn-default">查询</button>
     </div>
 <!--    <div class="row"><label class="col-lg-2">品牌管理</label></div>-->
-    <div id="caselistshow">
+    <div id="caselistshow" class="caselistshow">
         <table>
             <tr>
-                <td>标签名称</td>
-                <td>标签栏目</td>
-                <td>标签语言</td>
-                <td>标签状态</td>
-                <td>顺序</td>
-                <td>标签类型</td>
-                <td>编辑</td>
+                <td class="vl-check">
+                    <input type="checkbox" name="test" value="" onclick="if(this.checked==true) { checkAll(); } else { clearAll(); }">全选
+                </td>
+                <td class="hpm-tags1">标签名称</td>
+                <td class="hpm-tags2">标签栏目</td>
+                <td class="hpm-tags3">标签语言</td>
+                <td class="hpm-tags4">标签状态</td>
+                <td class="hpm-tags5">顺序</td>
+                <td class="hpm-tags6">标签类型</td>
+                <td class="hpm-tags7">保存所选</td>
+                <td class="hpm-tags8">删除所选</td>
+                <td class="hpm-tags9">全部 隐/显</td>
             </tr>
             {keywordlists}
             <tr>
-                <td id="{id}">{keyword}</td>
-                <td id="{id}_first">
-                    {first_level}
-                </td>
-                <td id="{id}_lang">
-                    {language}
-                </td>
-                <td>
-                    {status}
-                </td>
-                <td>
+                <td id="hpm-check" class="vl-check"><input type="checkbox" name="check" value=""></td>
+                <td id="{id}" class="hpm-tags1">{keyword}</td>
+                <td id="{id}_first" class="hpm-tags2">{first_level}</td>
+                <td id="{id}_lang" class="hpm-tags3">{language}</td>
+                <td id="{id}_sta" class="hpm-tags4">{status}</td>
+                <td class="hpm-tags5">
                     <input type="number" value="{sequence}" name="sequence" id="{id}_sequence">
                 </td>
-                <td id="{id}_type">
-                    {type}
-                </td>
-                <td id="{id}_edit">
+                <td id="{id}_type" class="hpm-tags6">{type}</td>
+                <td id="{id}_edit1" class="hpm-tags7">
                     <a href="javascript:;" onclick="$savesinglekeyword('{id}')">保存</a>
-                    <a href="javascript:;" onclick="$changekeywordstatus('{id}')">隐藏/显示</a>
+                </td>
+                <td id="{id}_edit2" class="hpm-tags8">
                     <a href="javascript:;" onclick="$deletesinglekeyword('{id}')">删除</a>
+                </td>
+                <td id="{id}_edit3" class="hpm-tags9">
+                    <a href="javascript:;" onclick="$changekeywordstatus('{id}')">隐藏/显示</a>
                 </td>
             </tr>
             {/keywordlists}
