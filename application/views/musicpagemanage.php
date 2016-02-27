@@ -23,27 +23,13 @@
     </div>
     <div class="hpm-div">
         <label class="col-lg-2">所属模块</label>
-        <select class="selectpicker bla bla bli"  data-live-search="true" id="affiliatedmoudle">
-            <!--        <select  class="col-lg-2 form-control selectpicker" multiple="multiple" id="source_name_a">-->
+        <select class="selectpicker bla bla bli"  data-live-search="true" id="affiliatedmoudle">     <!--        <select  class="col-lg-2 form-control selectpicker" multiple="multiple" id="source_name_a">-->
             {affiliatedmodules}
             <option value="">{name}</option>
             {/affiliatedmodules}
         </select>
     </div>
-    <!--    <div class="hpm-div">-->
-    <!--        <label class="col-lg-2">内容链接</label>-->
-    <!--        <input id="" class="col-lg-2" type="text">-->
-    <!---->
-    <!--    </div>-->
-    <!--    <div class="hpm-div">-->
-    <!--        <label class="col-lg-2">内容序列</label>-->
-    <!--        <select class="selectpicker bla bla bli" multiple data-live-search="true" id="source_name_a">-->
-    <!--            <!--        <select  class="col-lg-2 form-control selectpicker" multiple="multiple" id="source_name_a">-->-->
-    <!--            {img}-->
-    <!--            <option value="{id}">{source_name}</option>-->
-    <!--            {/img}-->
-    <!--        </select>-->
-    <!--    </div>-->
+
     <div class="hpm-div">
         <label class="col-lg-2">内容图片</label>
         <input id="hpminputimg" name="files" class="col-lg-2" type="file">
