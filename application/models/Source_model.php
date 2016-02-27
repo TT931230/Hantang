@@ -74,6 +74,27 @@ class Source_model extends CI_Model
         $this->update_time = time();
         $this->db->update('source', $this, array('id' => $updatecontent['id']));
     }
+    public function insertimg($insertimg){
+        date_default_timezone_set("UTC");
+        $data=array(
+            'source_location' => $insertimg['source_location'],
+            'status' => $insertimg['status'],
+            'source_name' => $insertimg['source_name'],
+            'link_url' => $insertimg['link_url'],
+            'sequence' => $insertimg['sequence'],
+            'type' => $insertimg['type'],
+            'updater' => $insertimg['updater'],
+            'creator' => $insertimg['creator'],
+            'first_level' => $insertimg['first_level'],
+            'second_level' => $insertimg['second_level'],
+            'third_level' => $insertimg['third_level'],
+            'source_remark' => $insertimg['source_remark'],
+            'create_time' => date("y-m-d",time()),
+            'update_time' => date("y-m-d",time())
+        );
+        $this->db->insert('source',$data);
+
+    }
     public function insertvideoSource($insertvideo){
         date_default_timezone_set("UTC");
         $data=array(

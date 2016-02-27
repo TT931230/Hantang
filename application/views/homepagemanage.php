@@ -49,7 +49,7 @@
 <!--    </div>-->
     <div class="hpm-div">
         <label class="col-lg-2">内容图片</label>
-        <input id="hpm-contentimg" class="col-lg-2" type="file">
+        <input id="hpminputimg" name="files" class="col-lg-2" type="file">
     </div>
 
 
@@ -58,7 +58,7 @@
         <input id="hpm-contentinfo" type="textarea" style="width: 450px;height: 100px">
     </div>
     <div class="hpm-save">
-        <button class="btn btn-default" onclick="$savewebcontent('home')">保存</button>
+        <button class="btn btn-default" onclick="$savepageimg('home')">保存</button>
     </div>
 </div>
 
