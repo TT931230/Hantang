@@ -2106,7 +2106,22 @@ TAG;
 
             $keywordarray = $this->db->get()->result_array();
             $result="";
-            $result.="<table><tr><td>标签名称</td><td>标签栏目</td><td>标签语言</td><td>标签状态</td><td>顺序</td><td>标签类型</td><td>编辑</td></tr>";
+            $result.="<table>";
+            $result.="<tr>";
+            $result.="<td class=\""."vl-check\">";
+            $result.="<input type=\"checkbox\" name=\"test\"";
+            $result.=" onclick=\"if(this.checked==true) { checkAll(); } else { clearAll(); }\">全选";
+            $result.="</td>";
+            $result.="<td class=\""."hpm-tags1\">标签名称</td>";
+            $result.="<td class=\""."hpm-tags2\">标签栏目</td>";
+            $result.="<td class=\""."hpm-tags3\">标签语言</td>";
+            $result.="<td class=\""."hpm-tags4\">标签状态</td>";
+            $result.="<td class=\""."hpm-tags5\">顺序</td>";
+            $result.="<td class=\""."hpm-tags6\">标签类型</td>";
+            $result.="<td class=\""."hpm-tags7\">保存所选</td>";
+            $result.="<td class=\""."hpm-tags8\">删除所选</td>";
+            $result.="<td class=\""."hpm-tags9\">全部 隐/显</td>". "</tr>";
+
             for ($i = 0; $i < count($keywordarray); $i++) {
                 $tmpkeywordarray = array(
                     'first_level' => $keywordarray[$i]['first_level'],
@@ -2118,26 +2133,31 @@ TAG;
                     'sequence' => $keywordarray[$i]['sequence']
                 );
                 $result.="<tr>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."\">".$tmpkeywordarray['keyword']."</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_first\">";
+                $result.="<td id=\""."hpm-check\""." class=\""."vl-check\""."><input type=\""."checkbox\""." name=\""."check\""."></td>";
+                $result.="<td class=\""."hpm-tags1\""." id=\"".$tmpkeywordarray['id']."\">".$tmpkeywordarray['keyword']."</td>";
+                $result.="<td class=\""."hpm-tags2\""." id=\"".$tmpkeywordarray['id']."_first\">";
                 $result.=$tmpkeywordarray['first_level'];
                 $result.="</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_lang\">";
+                $result.="<td class=\""."hpm-tags3\""." id=\"".$tmpkeywordarray['id']."_lang\">";
                 $result.=$tmpkeywordarray['language'];
                 $result.="</td>";
-                $result.="<td>";
+                $result.="<td class=\""."hpm-tags4\">";
                 $result.=$tmpkeywordarray['status'];
                 $result.="</td>";
-                $result.="<td>";
+                $result.="<td class=\""."hpm-tags5\">";
                 $result.="<input type=\"number\" value=\"".$tmpkeywordarray['sequence']."\" name=\"sequence\" id=\"".$tmpkeywordarray['id']."_sequence\">";
                 $result.="</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_type\">";
+                $result.="<td class=\""."hpm-tags6\""." id=\"".$tmpkeywordarray['id']."_type\">";
                 $result.=$tmpkeywordarray['type'];
                 $result.="</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_edit\">";
+                $result.="<td class=\""."hpm-tags7\""." id=\"".$tmpkeywordarray['id']."_edit1\">";
                 $result.="<a href=\"javascript:;\" onclick=\"\$savesinglekeyword('".$tmpkeywordarray['id']."')\">保存</a>";
-                $result.="<a href=\"javascript:;\" onclick=\"\$changekeywordstatus('".$tmpkeywordarray['id']."')\">隐藏/显示</a>";
+                $result.="</td>";
+                $result.="<td class=\""."hpm-tags8\""." id=\"".$tmpkeywordarray['id']."_edit2\">";
                 $result.="<a href=\"javascript:;\" onclick=\"\$deletesinglekeyword('".$tmpkeywordarray['id']."')\">删除</a>";
+                $result.="</td>";
+                $result.="<td class=\""."hpm-tags9\""." id=\"".$tmpkeywordarray['id']."_edit3\">";
+                $result.="<a href=\"javascript:;\" onclick=\"\$changekeywordstatus('".$tmpkeywordarray['id']."')\">隐藏/显示</a>";
                 $result.="</td>";
                 $result.="</tr>";
             }
