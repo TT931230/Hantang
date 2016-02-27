@@ -7,6 +7,7 @@
  */
 class Pagemanager extends CI_Controller
 {
+
     function redirectpage(){
         $this->load->library('session');
 
@@ -41,11 +42,9 @@ class Pagemanager extends CI_Controller
             $pieces = explode("pagemanage", $pagename);
 
 
-            $contentsquence=array();
-            $query = $this->db->query("SELECT name FROM webcontent where page='$pieces[0]'");
-            $affiliatedmodules=$query->result();
-            //var_dump($query->result());
 
+
+            //var_dump($query->result());
 
 
 
@@ -63,6 +62,8 @@ class Pagemanager extends CI_Controller
             $privilige = array();
             $shows = array();
             $arealists=array();
+
+
 
             //arealists
             $this->db->from('webcontent');
@@ -83,6 +84,89 @@ class Pagemanager extends CI_Controller
                 );
                 array_push($arealists, $tmpareaarray);
             }
+
+            $affiliatedmodules='';
+
+            //relatedimg
+            $tmparr='';
+            $relatedimg=array();
+            switch($pieces[0]){
+                case 'home':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                        array('name'=>'imagearea2'),
+                        array('name'=>'imagearea3'),
+                        array('name'=>'imagearea4'),
+                    );
+                    $tmparr=array('imagearea1','imagearea2','imagearea3','imagearea4');break;
+                case 'about':
+                    $affiliatedmodules=array(
+                        array('name'=>'about01'),
+                        array('name'=>'about02'),
+                        array('name'=>'about03'),
+                        array('name'=>'about04'),
+                    );
+                    $tmparr=array('about01','about02','about03','about04');break;
+                case 'platform':
+                    $affiliatedmodules=array(
+                        array('name'=>'aboutmap1'),
+                        array('name'=>'aboutmap2'),
+                        array('name'=>'aboutmap3'),
+                    );
+                    $tmparr=array('aboutmap1','aboutmap2','aboutmap3');break;
+                case 'partner':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'ul':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'awoe':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'music':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'join':
+                    $tmparr=NULL;break;
+            }
+            $this->db->from('source');
+            $this->db->where('deleted', 0);
+            $this->db->where('first_level',$pieces[0]);
+            $this->db->where('third_level','zn');
+            $this->db->where('type', 'img');
+            $imgarray = $this->db->get()->result_array();
+            for ($i = 0; $i < count($imgarray); $i++) {
+                $tmpselect='';
+                $str=$imgarray[$i]['second_level'];
+                if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
+                    continue;
+                }
+                for ($j = 0; $j < count($tmparr); $j++) {
+                    if ($tmparr[$j] == $imgarray[$i]['second_level']) {
+                        $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
+                    } else {
+                        $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+                    }
+                }
+                $tmpimgarray = array(
+                    'source_id' => $imgarray[$i]['id'],
+                    'source_name' => $imgarray[$i]['source_name'],
+                    'source_remark' => $imgarray[$i]['source_remark'],
+                    'source_location' => $imgarray[$i]['source_location'],
+                    'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                );
+                array_push($relatedimg, $tmpimgarray);
+            }
+
+
 
             //imagelists
             $this->db->from('source');
@@ -442,6 +526,7 @@ class Pagemanager extends CI_Controller
                     'type' => 'video/mp4'
                 )
             );
+
             $data = array(
                 'arealists'=>$arealists,
                 'userlists'=>$userlists,
@@ -463,6 +548,7 @@ class Pagemanager extends CI_Controller
                 'keyword' => $keyword,
                 'video' => $videosource,
                 'affiliatedmodules'=>$affiliatedmodules,
+                'relatedimg'=>$relatedimg,
             );
             //var_dump($arealists);
             return $this->parser->parse($pagename, $data);
@@ -530,6 +616,7 @@ class Pagemanager extends CI_Controller
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+
     function uploadLocalImg(){
         date_default_timezone_set("UTC");
         $this->load->library('session');
@@ -568,6 +655,56 @@ class Pagemanager extends CI_Controller
             }
         }
         else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    function savepageimg(){
+        date_default_timezone_set("UTC");
+        $this->load->library('session');
+
+        if($this->session->username) {
+
+            $username = $this->session->username;
+            if ($_FILES["files"]["error"] > 0) {
+                return json_encode(array("msg" => "Return Code:" . $_FILES["files"]["error"], "error" => "true"));
+            } else {
+                $sequence = '1';
+
+                $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/bootstrap/images/';
+                $source_location = $fileUrl.$_FILES["files"]["name"];
+                //echo $_POST['source_location'];
+                $source_name = $_POST['source_name'];
+                $source_remark = $_POST['source_remark'];
+                $third_level = 'zn';
+                $first_level = $_POST['first_level'];
+                $second_level=$_POST['affiliated'];
+                //echo $_FILES["files"]["tmp_name"];
+                move_uploaded_file($_FILES["files"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["files"]["name"]);
+
+                $insertimg=array(
+                    'source_location' => $source_location,
+                    'status' => '1',
+                    'source_name' => $source_name,
+                    'link_url' => null,
+                    'sequence' => $sequence,
+                    'updater' => $username,
+                    'type' => 'img',
+                    'creator' => $username,
+                    'first_level' => $first_level,
+                    'second_level' => $second_level,
+                    'source_remark' => $source_remark,
+                    'third_level' => $third_level,
+                );
+                $this->load->model('source_model');
+                $this->source_model->insertimg($insertimg);
+                echo 'success'.'||||';
+
+            }
+
+
+
+        }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
@@ -1291,6 +1428,20 @@ class Pagemanager extends CI_Controller
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+    public function savhpmsingleimg(){
+        $this->load->library('session');
+        if($this->session->username) {
+            $updateitem = array(
+                'source_name' => $_POST['sourcename'],
+                'source_remark' => $_POST['sourceremark'],
+                'second_level' => $_POST['second_level']
+            );
+            $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
     public function savesingleimg(){
         $this->load->library('session');
 
@@ -1955,7 +2106,22 @@ TAG;
 
             $keywordarray = $this->db->get()->result_array();
             $result="";
-            $result.="<table><tr><td>标签名称</td><td>标签栏目</td><td>标签语言</td><td>标签状态</td><td>顺序</td><td>标签类型</td><td>编辑</td></tr>";
+            $result.="<table>";
+            $result.="<tr>";
+            $result.="<td class=\""."vl-check\">";
+            $result.="<input type=\"checkbox\" name=\"test\"";
+            $result.=" onclick=\"if(this.checked==true) { checkAll(); } else { clearAll(); }\">全选";
+            $result.="</td>";
+            $result.="<td class=\""."hpm-tags1\">标签名称</td>";
+            $result.="<td class=\""."hpm-tags2\">标签栏目</td>";
+            $result.="<td class=\""."hpm-tags3\">标签语言</td>";
+            $result.="<td class=\""."hpm-tags4\">标签状态</td>";
+            $result.="<td class=\""."hpm-tags5\">顺序</td>";
+            $result.="<td class=\""."hpm-tags6\">标签类型</td>";
+            $result.="<td class=\""."hpm-tags7\">保存所选</td>";
+            $result.="<td class=\""."hpm-tags8\">删除所选</td>";
+            $result.="<td class=\""."hpm-tags9\">全部 隐/显</td>". "</tr>";
+
             for ($i = 0; $i < count($keywordarray); $i++) {
                 $tmpkeywordarray = array(
                     'first_level' => $keywordarray[$i]['first_level'],
@@ -1967,26 +2133,31 @@ TAG;
                     'sequence' => $keywordarray[$i]['sequence']
                 );
                 $result.="<tr>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."\">".$tmpkeywordarray['keyword']."</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_first\">";
+                $result.="<td id=\""."hpm-check\""." class=\""."vl-check\""."><input type=\""."checkbox\""." name=\""."check\""."></td>";
+                $result.="<td class=\""."hpm-tags1\""." id=\"".$tmpkeywordarray['id']."\">".$tmpkeywordarray['keyword']."</td>";
+                $result.="<td class=\""."hpm-tags2\""." id=\"".$tmpkeywordarray['id']."_first\">";
                 $result.=$tmpkeywordarray['first_level'];
                 $result.="</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_lang\">";
+                $result.="<td class=\""."hpm-tags3\""." id=\"".$tmpkeywordarray['id']."_lang\">";
                 $result.=$tmpkeywordarray['language'];
                 $result.="</td>";
-                $result.="<td>";
+                $result.="<td class=\""."hpm-tags4\">";
                 $result.=$tmpkeywordarray['status'];
                 $result.="</td>";
-                $result.="<td>";
+                $result.="<td class=\""."hpm-tags5\">";
                 $result.="<input type=\"number\" value=\"".$tmpkeywordarray['sequence']."\" name=\"sequence\" id=\"".$tmpkeywordarray['id']."_sequence\">";
                 $result.="</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_type\">";
+                $result.="<td class=\""."hpm-tags6\""." id=\"".$tmpkeywordarray['id']."_type\">";
                 $result.=$tmpkeywordarray['type'];
                 $result.="</td>";
-                $result.="<td id=\"".$tmpkeywordarray['id']."_edit\">";
+                $result.="<td class=\""."hpm-tags7\""." id=\"".$tmpkeywordarray['id']."_edit1\">";
                 $result.="<a href=\"javascript:;\" onclick=\"\$savesinglekeyword('".$tmpkeywordarray['id']."')\">保存</a>";
-                $result.="<a href=\"javascript:;\" onclick=\"\$changekeywordstatus('".$tmpkeywordarray['id']."')\">隐藏/显示</a>";
+                $result.="</td>";
+                $result.="<td class=\""."hpm-tags8\""." id=\"".$tmpkeywordarray['id']."_edit2\">";
                 $result.="<a href=\"javascript:;\" onclick=\"\$deletesinglekeyword('".$tmpkeywordarray['id']."')\">删除</a>";
+                $result.="</td>";
+                $result.="<td class=\""."hpm-tags9\""." id=\"".$tmpkeywordarray['id']."_edit3\">";
+                $result.="<a href=\"javascript:;\" onclick=\"\$changekeywordstatus('".$tmpkeywordarray['id']."')\">隐藏/显示</a>";
                 $result.="</td>";
                 $result.="</tr>";
             }

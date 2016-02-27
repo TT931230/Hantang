@@ -14,6 +14,7 @@
                 <li><a href="{link_url}"><img src="{source_location}"></a></li>
                 {/imagearea1}
             </ul>
+
         </div>
     </div>
 </div>

@@ -222,6 +222,7 @@ class Page_data_model extends CI_Model{
 
     public function query_sources($source_info){
         $this->db->where('status',$source_info['status']);
+
         if($source_info['first_level']){
             $this->db->where('first_level',$source_info['first_level']);
         }
@@ -231,6 +232,7 @@ class Page_data_model extends CI_Model{
         if($source_info['third_level']){
             $this->db->where('third_level',$source_info['third_level']);
         }
+        $this->db->where('deleted',0);
         $this->db->where('type',$source_info['type']);
         $this->db->from('source');
         $this->db->order_by("sequence"," desc");

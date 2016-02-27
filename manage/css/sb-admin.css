@@ -609,6 +609,65 @@ ul.alert-dropdown {
 }
 .hpm-footer{
 	width: 100%;
+}
+.hpm-td0{
+	width: 10%;
+}
+.hpm-td1{
+	width: 15%;
+}
+.hpm-td2{
+	width: 15%;
+}
+.hpm-td3{
+	width: 15%;
+}
+.hpm-td4{
+	width: 10%;
+}
+.hpm-td5{
+	width: 10%;
+}
+.hpm-td6{
+	width: 10%;
+}
 
-
+.caselistshow{
+	margin-top: 30px;
+}
+.hpm-tags1{
+	width: 10%;
+}
+.hpm-tags2{
+	width: 10%;
+}
+.hpm-tags3{
+	width:10% ;
+	text-align: center;
+}
+.hpm-tags4{
+	width:10% ;
+	text-align: center;
+}
+.hpm-tags5{
+	width:6% ;
+}
+.hpm-tags5 input{
+	width: 100%;
+}
+.hpm-tags6{
+	width: 10%;
+	text-align: center;
+}
+.hpm-tags7{
+	width: 12%;
+	text-align: center;
+}
+.hpm-tags8{
+	width: 12%;
+	text-align: center;
+}
+.hpm-tags9{
+	width: 14%;
+	text-align: center;
 }

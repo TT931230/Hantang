@@ -132,46 +132,180 @@ function $queryKeyword(){
         }
     });
 }
+function $savhpmsingleimg(sourceid,pagename){
+    sourcename=$('#'+sourceid+'_name').val();
+    sourceremark=$('#'+sourceid+'_remark').val();
+    second_level=$('#'+sourceid+'_imgarea '+'option:selected').text();
 
-function $saveVideo(){
-    first_level=$('#first_level')[0].value;
-    source_location=$('#source_location')[0].value;
-    source_name=$('#source_name')[0].value;
-
-    index=$('#index')[0].value;
-    keyword='';
-    $("#keyword option:selected").each(function(){
-        keyword+=$(this)[0].value+'|||';
-    });
-    source_remark=$('#source_remark')[0].value;
-    third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level+"&index="+index,
-        url:"Pagemanager/saveVideo",
-        //dataType:'json',
+        data: 'id='+sourceid+'&sourcename='+sourcename+'&sourceremark='+sourceremark+'&second_level='+second_level,
+        url:"Pagemanager/savhpmsingleimg",
         success: function(result)
         {
-            var data = result.split("|");
-            var lan = data[2].substr(0,2);
-            $.ajaxFileUpload ({
-                url:"Pagemanager/uploadLocalImg",
-                secureuri:false,
-                fileElementId:'inputVideoImg',
-                dataType: 'text',
-                data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
-                success: function (data){
-
-                },error:function(){
-                    alert("ajax error");
-                }
-            });
+            alert('保存成功！');
+            $changetags(''+pagename+'pagemanage');
+            //$('#relatedvideoarea').html(result);
         },
         error: function()
         {
             alert("ajax error");
         }
     });
+}
+function $delhpmsingleimg(sourceid,pagename){
+    $.ajax({
+        type:"post",
+        data: 'source_id='+sourceid,
+        url:"Pagemanager/deletesinglesource",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags(''+pagename+'pagemanage');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $delhpmselected(pagename){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".hpm-td3").attr("id");
+            var arr=source_id.split('_');
+
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/deletesinglesource",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags(''+pagename+'pagemanage');
+}
+function $savehpmselected(pagename){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".hpm-td3").attr("id");
+            var arr=source_id.split('_');
+
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/savhpmsingleimg",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags(''+pagename+'pagemanage');
+}
+function $savepageimg(pagename){
+    imgname=$("#hpm-content-title").val();
+    affiliated=$("#affiliatedmoudle option:selected").text();
+    source_remark=$("#hpm-contentinfo").val();
+    source_location=$("#hpminputimg").val();
+
+    if(imgname==""||affiliated==""||source_location==""||source_remark==""){
+        alert("值不能为空！");
+        return;
+    }
+    $.ajaxFileUpload ({
+        url:"Pagemanager/savepageimg",
+        secureuri:false,
+        fileElementId:'hpminputimg',
+        dataType: 'text',
+        data:{"first_level":pagename,"source_name":imgname,"affiliated":affiliated,
+            "source_remark":source_remark} ,
+        success: function (data){
+            result=data.split('||||');
+            alert(result[0]);
+            imgname=$("#hpm-content-title").val("");
+            source_remark=$("#hpm-contentinfo").val("");
+            source_location=$("#hpminputimg").val("");
+            $changetags(''+pagename+'pagemanage');
+        },error:function(){
+            alert("ajax error");
+        }
+    });
+
+
+}
+function $saveVideo(){
+    first_level='';
+    third_level='';
+    source_location='';
+    source_name='';
+    keyword='';
+    source_name='';
+
+
+    first_level=$('#first_level')[0].value;
+    source_location=$('#source_location')[0].value;
+    source_name=$('#source_name')[0].value;
+
+    //index=$('#index')[0].value;
+
+    $("#keyword option:selected").each(function(){
+        keyword+=$(this)[0].value+'|||';
+    });
+    source_remark=$('#source_remark')[0].value;
+    third_level=$('#third_level')[0].value;
+
+        if(first_level==''||
+            third_level==''||
+            source_location==''||
+            source_name==''||
+            keyword==''||
+            source_name==''){
+            alert('please input infomation');
+        }else{
+            $.ajax({
+                type:"post",
+                data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="
+                +source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="
+                +first_level,
+                url:"Pagemanager/saveVideo",
+                //dataType:'json',
+                success: function(result)
+                {
+                    var data = result.split("|");
+                    var lan = data[2].substr(0,2);
+                    $.ajaxFileUpload ({
+                        url:"Pagemanager/uploadLocalImg",
+                        secureuri:false,
+                        fileElementId:'inputVideoImg',
+                        dataType: 'text',
+                        data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
+                        success: function (data){
+                            alert('upload success');
+                            $('#source_location')[0].value='';
+                            $('#source_name')[0].value='';
+                            $('#source_remark')[0].value='';
+                        },error:function(){
+                            alert("ajax error");
+                        }
+                    });
+                },
+                error: function()
+                {
+                    alert("ajax error");
+                }
+            });
+        }
+
 }
 function $getselectedinfo(pagename){
     switch(pagename){
@@ -226,29 +360,7 @@ function $getselectedinfo(pagename){
             break;
     }
 }
-function $savewebcontent(pagename){
 
-    title=$("#hpm-content-title").val();
-    affiliated=$("#affiliatedmoudle option:selected").text();
-    info=$("#hpm-contentinfo").val();
-
-    $.ajax({
-        type:"post",
-        data: data,
-        url:"Pagemanager/updateareainfo",
-        success: function(result)
-        {
-            //$('#relatedvideoarea').html(result);
-        },
-        error: function()
-        {
-            alert("ajax error");
-        }
-    });
-    alert(title);
-    alert(affiliated);
-    alert(info);
-}
 function $saveArea(areatype){
     switch(areatype){
         case 'homearea':
