@@ -38,6 +38,17 @@ class Pagemanager extends CI_Controller
                 }
             }
             $pagename = $_POST['pagename'];
+            $pieces = explode("pagemanage", $pagename);
+
+
+            $contentsquence=array();
+            $query = $this->db->query("SELECT name FROM webcontent where page='$pieces[0]'");
+            $affiliatedmodules=$query->result();
+            //var_dump($query->result());
+
+
+
+
             $this->load->library('parser');
             $this->load->model('source_model');
             $this->load->model('keyword_model');
@@ -75,6 +86,7 @@ class Pagemanager extends CI_Controller
 
             //imagelists
             $this->db->from('source');
+            $this->db->where('deleted', 0);
             $this->db->where('type', 'img');
             $this->db->or_where('type', 'videoimg');
             $this->db->or_where('type', 'partnerimg');
@@ -102,10 +114,10 @@ class Pagemanager extends CI_Controller
                 array_push($imagelists, $tmpimgarray);
             }
 
-
             //videolists
             $this->db->from('source');
             $this->db->where('type', 'video/mp4');
+            $this->db->where('deleted', 0);
             $videoarray = $this->db->get()->result_array();
             for ($i = 0; $i < count($videoarray); $i++) {
                 $this->db->from('source');
@@ -136,7 +148,6 @@ class Pagemanager extends CI_Controller
                 );
                 array_push($videolists, $tmpvideoarray);
             }
-
 
             //musiclists
             $this->db->from('source');
@@ -450,8 +461,10 @@ class Pagemanager extends CI_Controller
                 'imagelists' => $imagelists,
                 'img' => $imgsource,
                 'keyword' => $keyword,
-                'video' => $videosource
+                'video' => $videosource,
+                'affiliatedmodules'=>$affiliatedmodules,
             );
+            //var_dump($arealists);
             return $this->parser->parse($pagename, $data);
         }else{
             echo "<script>alert('请先登录！')</script>";
@@ -507,11 +520,54 @@ class Pagemanager extends CI_Controller
                 'first_level' => null,
                 'second_level' => null,
                 'third_level' => $_POST['third_level'],
+
             );
             $this->load->model('source_model');
-            var_dump($insertcontent);
+            //var_dump($insertcontent);
             return $this->source_model->insertSource($insertcontent);
         }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    function uploadLocalImg(){
+        date_default_timezone_set("UTC");
+        $this->load->library('session');
+        if($this->session->username) {
+            $username = $this->session->username;
+            if ($_FILES["img"]["error"] > 0) {
+                return json_encode(array("msg" => "Return Code:" . $_FILES["img"]["error"], "error" => "true"));
+            } else {
+                $id = $_POST['id'];
+                echo $id;
+                $first_level = $_POST['first_level'];
+                $third_level = $_POST['third_level'];
+
+                $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/img/';
+
+                $imageName = $_FILES["img"]["name"];
+
+                $insertLocalImgArray = array(
+                    'source_location' => $fileUrl.$imageName,
+                    'status' => '2',
+                    'source_name' => $imageName,
+                    'type' => 'videoimg',
+                    'updater' => $username,
+                    'creator' => $username,
+                    'first_level' => $first_level,
+                    'third_level' => $third_level,
+                    'update_time'=>date("y-m-d", time()),
+                    'create_time'=>date("y-m-d", time()),
+                    'link_url'=>'/' . $first_level . '/' . $first_level . 'inner/' . $id,
+                );
+
+                $this->load->model('source_model');
+                $this->source_model->insertLocalImg($insertLocalImgArray);
+
+                move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/img/' .$imageName);    //缓存文件存入服务器
+            }
+        }
+        else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
@@ -546,19 +602,20 @@ class Pagemanager extends CI_Controller
                     case '10':$privilige410=true;break;
                 }
             }
+
             $sequence = '1';
             $source_location = $_POST['source_location'];
             $source_name = $_POST['source_name'];
             $source_remark = $_POST['source_remark'];
-            $videoimg = $_POST['videoimg'];
+            //$videoimg = $_POST['videoimg'];
             $keyword = $_POST['keyword'];
             $keywordarray = explode('|||', $keyword);
             $third_level = $_POST['third_level'];
             $first_level = $_POST['first_level'];
-            $index = $_POST['index'];
+            //$index = $_POST['index'];
             $insertvideo = array(
-                'videoimg' => $videoimg,
-                'index'=>$index,
+                //'videoimg' => $videoimg,
+                //'index'=>$index,
                 'keyword' => $keyword,
                 'source_location' => $source_location,
                 'status' => '2',
@@ -572,11 +629,15 @@ class Pagemanager extends CI_Controller
                 'second_level' => null,
                 'third_level' => $third_level,
                 'link_url' => null,
-                'videoimgid' => $videoimg,
+                //'videoimgid' => $videoimg,
                 'keywordid' => $keywordarray
             );
             $this->load->model('source_model');
-            $this->source_model->insertvideoSource($insertvideo);
+
+            $returnId=$this->source_model->insertvideoSource($insertvideo);
+
+            $returnData = $returnId.'|'.$first_level.'|'.$third_level;
+            echo $returnData;
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
@@ -1263,11 +1324,18 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
-            $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $deleteitem = array(
-                'id' => $_POST['source_id']
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+//            $deleteitem = array(
+//                'id' => $_POST['source_id']
+//            );
+//            $this->db->delete('source', $deleteitem);
+            $data = array(
+                'deleted' => 1,
             );
-            $this->db->delete('source', $deleteitem);
+
+            $this->db->where('id', $_POST['source_id']);
+            $this->db->update('source', $data);
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";

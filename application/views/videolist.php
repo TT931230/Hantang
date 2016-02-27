@@ -27,19 +27,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <button onclick="$queryVideo()" class="btn btn-default">查询</button>
     </div>
     <div id="caselistshow" class="cl-table">
+        <form>
         <table>
             <tr>
+                <td class="vl-title0">
+                    <input type="checkbox" name="test" value="" onclick="if(this.checked==true) { checkAll(); } else { clearAll(); }">全选
+                </td>
                 <td class="vl-title1">视频名称</td>
                 <td class="vl-title2">视频地址</td>
                 <td class="vl-title3">栏目</td>
                 <td class="vl-title4">语言</td>
                 <td class="vl-title5">顺序</td>
                 <td class="vl-title6">封面缩略图</td>
-                <td class="vl-title6">视频系列</td>
-                <td class="vl-title7">编辑</td>
+                <td class="vl-title7">视频系列</td>
+                <td class="vl-title8">编辑</td>
+                <td class="vl-title9">
+                    <a href="javascript:;" onclick="$deleteselectedvideo()" class="cl-imgeditbtn">删除所选</a>
+                </td>
             </tr>
             {videolists}
             <tr>
+                <td id="vl-check" class="vl-check"><input type="checkbox" name="check" value=""></td>
                 <td id="{imgid}" class="vl-imgname">{source_name}</td>
                 <td id="{imgid}_url" class="vl-imgadd">
                     {source_location}
@@ -61,9 +69,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </td>
                 <td id="{imgid}_edit" class="vl-imgedit">
                     <a href="javascript:;" onclick="$savesinglevideo('{imgid}') " class="cl-imgeditbtn">保存</a>
+
+                </td>
+                <td id="{imgid}_edit" class="vl-imgedits">
                     <a href="javascript:;" onclick="$deletesinglevideo('{source_id}')" class="cl-imgeditbtn">删除</a>
                 </td>
             </tr>
             {/videolists}
         </table>
+        </form>
     </div>

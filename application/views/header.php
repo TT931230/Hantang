@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/main3.css" rel="stylesheet">
     <link href="/bootstrap/css/main4.css" rel="stylesheet">
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
+    <link rel="stylesheet"  href="/bootstrap/css/fileinput.min.css"/>
 </head>
 <!--<script type="text/javascript"> 
     // Forbid Copy     
@@ -104,6 +105,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--            -->
 <!---->
 <!--        </div>-->
+        <div class="mob_menu">
+            <img src="http://localhost:8080/bootstrap/images/menu.png">
+        </div>
     </div>
     
 </div>

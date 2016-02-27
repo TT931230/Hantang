@@ -1,3 +1,27 @@
+function checkAll()
+{
+    var el = document.getElementsByTagName('input');
+    var len = el.length;
+    for(var i=0; i<len; i++)
+    {
+        if(el[i].type=="checkbox")
+        {
+            el[i].checked = true;
+        }
+    }
+}
+function clearAll()
+{
+    var el = document.getElementsByTagName('input');
+    var len = el.length;
+    for(var i=0; i<len; i++)
+    {
+        if(el[i].type=="checkbox")
+        {
+            el[i].checked = false;
+        }
+    }
+}
 function $changetags(pagename){
     $.ajax({
         type:"post",
@@ -113,7 +137,7 @@ function $saveVideo(){
     first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
-    videoimg=$('#videoimg')[0].value;
+
     index=$('#index')[0].value;
     keyword='';
     $("#keyword option:selected").each(function(){
@@ -123,11 +147,25 @@ function $saveVideo(){
     third_level=$('#third_level')[0].value;
     $.ajax({
         type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&videoimg="+videoimg+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level+"&index="+index,
+        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="+source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="+first_level+"&index="+index,
         url:"Pagemanager/saveVideo",
+        //dataType:'json',
         success: function(result)
         {
+            var data = result.split("|");
+            var lan = data[2].substr(0,2);
+            $.ajaxFileUpload ({
+                url:"Pagemanager/uploadLocalImg",
+                secureuri:false,
+                fileElementId:'inputVideoImg',
+                dataType: 'text',
+                data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
+                success: function (data){
 
+                },error:function(){
+                    alert("ajax error");
+                }
+            });
         },
         error: function()
         {
@@ -188,7 +226,29 @@ function $getselectedinfo(pagename){
             break;
     }
 }
+function $savewebcontent(pagename){
 
+    title=$("#hpm-content-title").val();
+    affiliated=$("#affiliatedmoudle option:selected").text();
+    info=$("#hpm-contentinfo").val();
+
+    $.ajax({
+        type:"post",
+        data: data,
+        url:"Pagemanager/updateareainfo",
+        success: function(result)
+        {
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+    alert(title);
+    alert(affiliated);
+    alert(info);
+}
 function $saveArea(areatype){
     switch(areatype){
         case 'homearea':
@@ -588,6 +648,29 @@ function $deletesingleimg(source_id){
         }
     });
 }
+function $deleteselectedimg(){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".cl-imgmini").attr("id");
+            var arr=source_id.split('_');
+
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/deletesinglesource",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags('caselist');
+    //alert("success");
+}
+
 function $savesinglevideo(imgid){
     imgsequence=$('#'+imgid+'_sequence')[0].value;
     index=$('#'+imgid+'_index')[0].value;
@@ -606,6 +689,28 @@ function $savesinglevideo(imgid){
             alert("ajax error");
         }
     });
+}
+function $deleteselectedvideo(){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".vl-imglang").attr("id");
+            var arr=source_id.split('_');
+            //alert(arr[0]);
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/deletesinglesource",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags('videolist');
+    //alert("success");
 }
 function $deletesinglevideo(source_id){
     $.ajax({
