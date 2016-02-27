@@ -72,48 +72,40 @@
             <td class="hpm-td0">
                 <input type="checkbox" name="test" value="" onclick="if(this.checked==true) { checkAll(); } else { clearAll(); }">全选
             </td>
-            <td class="hpm-td1">图片内容</td>
+            <td class="hpm-td1">图片名称</td>
             <td class="hpm-td2">内容描述</td>
             <td class="hpm-td3">内容图片</td>
             <td class="hpm-td4">所属模块</td>
             <td class="hpm-td5">
-                <a href="javascript:;" onclick="" class="cl-imgeditbtn">保存所选</a>
+                <a href="javascript:;" onclick="$savehpmselected('home')" class="cl-imgeditbtn">保存所选</a>
             </td>
             <td class="hpm-td6">
-                <a href="javascript:;" onclick="" class="cl-imgeditbtn">删除所选</a>
+                <a href="javascript:;" onclick="$delhpmselected('home')" class="cl-imgeditbtn">删除所选</a>
             </td>
         </tr>
-        {videolists}
+        {relatedimg}
         <tr>
             <td id="hpm-check" class="vl-check"><input type="checkbox" name="check" value=""></td>
-            <td id="{imgid}" class="vl-imgname">{source_name}</td>
-            <td id="{imgid}_url" class="vl-imgadd">
-                {source_location}
+            <td id="" class="hpm-td1">
+                <input type="text" value="{source_name}" name="source_name" id="{source_id}_name" class="">
             </td>
-            <td id="{source_id}_first" class="vl-imgfirst">
-                {first_level}
+            <td id="" class="hpm-td2">
+                <input type="text" value="{source_remark}" name="source_ramark" id="{source_id}_remark" class="">
             </td>
-            <td id="{source_id}_lang" class="vl-imglang">
-                {language}
+            <td id="{source_id}_img" class="hpm-td3">
+                <img src="{source_location}" style="width:96px;height: 54px;">
             </td>
-            <td class="vl-imgseq">
-                <input type="number" value="{sequence}" name="sequence" id="{imgid}_sequence" class="vl-imgseqinput">
+            <td id="{source_id}_area" class="hpm-td4">
+                {second_level}
             </td>
-            <td id="{imgid}_img" class="vl-imgmini">
-                <img src="{linkimg}" style="width:96px;height: 54px;">
+            <td id="{source_id}_edit1" class="hpm-td5">
+                <a href="javascript:;" onclick="$savhpmsingleimg('{source_id}','home') " class="cl-imgeditbtn">保存</a>
             </td>
-            <td class="vl-imgseq">
-                <input type="text" value="{index}" name="sequence" id="{imgid}_index" class="vl-imgseqinput">
-            </td>
-            <td id="{imgid}_edit" class="vl-imgedit">
-                <a href="javascript:;" onclick="$savesinglevideo('{imgid}') " class="cl-imgeditbtn">保存</a>
-
-            </td>
-            <td id="{imgid}_edit" class="vl-imgedits">
-                <a href="javascript:;" onclick="$deletesinglevideo('{source_id}')" class="cl-imgeditbtn">删除</a>
+            <td id="{source_id}_edit2" class="hpm-td6">
+                <a href="javascript:;" onclick="$delhpmsingleimg('{source_id}','home')" class="cl-imgeditbtn">删除</a>
             </td>
         </tr>
-        {/videolists}
+        {/relatedimg}
     </table>
 </div>
 

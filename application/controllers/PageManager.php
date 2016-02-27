@@ -7,9 +7,7 @@
  */
 class Pagemanager extends CI_Controller
 {
-    function insertpageimg(){
-        //$_FILES[]
-    }
+
     function redirectpage(){
         $this->load->library('session');
 
@@ -44,11 +42,9 @@ class Pagemanager extends CI_Controller
             $pieces = explode("pagemanage", $pagename);
 
 
-            $contentsquence=array();
-            $query = $this->db->query("SELECT name FROM webcontent where page='$pieces[0]'");
-            $affiliatedmodules=$query->result();
-            //var_dump($query->result());
 
+
+            //var_dump($query->result());
 
 
 
@@ -67,7 +63,7 @@ class Pagemanager extends CI_Controller
             $shows = array();
             $arealists=array();
 
-            $relatedimg=array();
+
 
             //arealists
             $this->db->from('webcontent');
@@ -88,7 +84,89 @@ class Pagemanager extends CI_Controller
                 );
                 array_push($arealists, $tmpareaarray);
             }
+
+            $affiliatedmodules='';
+
             //relatedimg
+            $tmparr='';
+            $relatedimg=array();
+            switch($pieces[0]){
+                case 'home':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                        array('name'=>'imagearea2'),
+                        array('name'=>'imagearea3'),
+                        array('name'=>'imagearea4'),
+                    );
+                    $tmparr=array('imagearea1','imagearea2','imagearea3','imagearea4');break;
+                case 'about':
+                    $affiliatedmodules=array(
+                        array('name'=>'about01'),
+                        array('name'=>'about02'),
+                        array('name'=>'about03'),
+                        array('name'=>'about04'),
+                    );
+                    $tmparr=array('about01','about02','about03','about04');break;
+                case 'platform':
+                    $affiliatedmodules=array(
+                        array('name'=>'aboutmap1'),
+                        array('name'=>'aboutmap2'),
+                        array('name'=>'aboutmap3'),
+                    );
+                    $tmparr=array('aboutmap1','aboutmap2','aboutmap3');break;
+                case 'partner':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'ul':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'awoe':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'music':
+                    $affiliatedmodules=array(
+                        array('name'=>'imagearea1'),
+                    );
+                    $tmparr=array('imagearea1');break;
+                case 'join':
+                    $tmparr=NULL;break;
+            }
+            $this->db->from('source');
+            $this->db->where('deleted', 0);
+            $this->db->where('first_level',$pieces[0]);
+            $this->db->where('third_level','zn');
+            $this->db->where('type', 'img');
+            $imgarray = $this->db->get()->result_array();
+            for ($i = 0; $i < count($imgarray); $i++) {
+                $tmpselect='';
+                $str=$imgarray[$i]['second_level'];
+                if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
+                    continue;
+                }
+                for ($j = 0; $j < count($tmparr); $j++) {
+                    if ($tmparr[$j] == $imgarray[$i]['second_level']) {
+                        $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
+                    } else {
+                        $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+                    }
+                }
+                $tmpimgarray = array(
+                    'source_id' => $imgarray[$i]['id'],
+                    'source_name' => $imgarray[$i]['source_name'],
+                    'source_remark' => $imgarray[$i]['source_remark'],
+                    'source_location' => $imgarray[$i]['source_location'],
+                    'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                );
+                array_push($relatedimg, $tmpimgarray);
+            }
+
+
 
             //imagelists
             $this->db->from('source');
@@ -470,6 +548,7 @@ class Pagemanager extends CI_Controller
                 'keyword' => $keyword,
                 'video' => $videosource,
                 'affiliatedmodules'=>$affiliatedmodules,
+                'relatedimg'=>$relatedimg,
             );
             //var_dump($arealists);
             return $this->parser->parse($pagename, $data);
@@ -598,119 +677,10 @@ class Pagemanager extends CI_Controller
                 $source_name = $_POST['source_name'];
                 $source_remark = $_POST['source_remark'];
                 $third_level = 'zn';
-                $affiliated=$_POST['affiliated'];
                 $first_level = $_POST['first_level'];
-                $second_level="";
+                $second_level=$_POST['affiliated'];
                 //echo $_FILES["files"]["tmp_name"];
                 move_uploaded_file($_FILES["files"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["files"]["name"]);
-                switch($first_level){
-                    case 'home':
-                        switch($affiliated){
-                            case 'home1':
-                                $second_level='imagearea1';
-                                break;
-                            case 'home2':
-                                $second_level='imagearea2';
-                                break;
-                            case 'home3':
-                                $second_level='imagearea3';
-                                break;
-                            case 'home4':
-                                $second_level='imagearea4';
-                                break;
-                        }
-                        break;
-                    case 'about':
-                        switch($affiliated){
-                            case 'about1':
-                                $second_level='about1';
-                                break;
-                            case 'about2':
-                                $second_level='about2';
-                                break;
-                            case 'about3':
-                                $second_level='about3';
-                                break;
-                        }
-                        break;
-                    case 'platform':
-                        switch($affiliated){
-                            case 'platform1':
-                                $second_level='imagearea1';
-                                break;
-                            case 'platform2':
-                                $second_level='videoarea1';
-                                break;
-                            case 'platform3':
-                                $second_level='imagearea2';
-                                break;
-                            case 'platform4':
-                                $second_level='aboutmap1';
-                                break;
-                            case 'platform5':
-                                $second_level='aboutmap2';
-                                break;
-                            case 'platform6':
-                                $second_level='aboutmap3';
-                                break;
-                        }
-                        break;
-                    case 'partner':
-                        switch($affiliated){
-                            case 'partner1':
-                                $second_level='imagearea1';
-                                break;
-                            case 'partner2':
-                                $second_level='imagearea1';
-                                break;
-                            case 'partner3':
-                                $second_level='imagearea1';
-                                break;
-                        }
-                        break;
-                    case 'ul':
-                        switch($affiliated){
-                            case 'ul1':
-                                $second_level='imagearea1';
-                                break;
-                            case 'ul2':
-                                $second_level='imagearea1';
-                                break;
-                            case 'ul3':
-                                $second_level='imagearea1';
-                                break;
-                        }
-                        break;
-                    case 'awoe':
-                        switch($affiliated){
-                            case 'awoe1':
-                                $second_level='imagearea1';
-                                break;
-                            case 'awoe2':
-                                $second_level='imagearea11';
-                                break;
-                            case 'awoe3':
-                                $second_level='imagearea1';
-                                break;
-                        }
-                        break;
-                    case 'music':
-                        switch($affiliated){
-                            case 'music1':
-                                $second_level='imagearea1';
-                                break;
-                            case 'music2':
-                                $second_level='imagearea1';
-                                break;
-                            case 'music3':
-                                $second_level='imagearea1';
-                                break;
-                        }
-                        break;
-                    case 'join':
-                        $second_level='imagearea1';
-                        break;
-                }
 
                 $insertimg=array(
                     'source_location' => $source_location,
@@ -1453,6 +1423,20 @@ class Pagemanager extends CI_Controller
                     }
                     break;
             }
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function savhpmsingleimg(){
+        $this->load->library('session');
+        if($this->session->username) {
+            $updateitem = array(
+                'source_name' => $_POST['sourcename'],
+                'source_remark' => $_POST['sourceremark'],
+                'second_level' => $_POST['second_level']
+            );
+            $this->db->update('source', $updateitem, array('id' => $_POST['id']));
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";

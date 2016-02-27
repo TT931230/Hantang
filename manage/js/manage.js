@@ -132,6 +132,86 @@ function $queryKeyword(){
         }
     });
 }
+function $savhpmsingleimg(sourceid,pagename){
+    sourcename=$('#'+sourceid+'_name').val();
+    sourceremark=$('#'+sourceid+'_remark').val();
+    second_level=$('#'+sourceid+'_imgarea '+'option:selected').text();
+
+    $.ajax({
+        type:"post",
+        data: 'id='+sourceid+'&sourcename='+sourcename+'&sourceremark='+sourceremark+'&second_level='+second_level,
+        url:"Pagemanager/savhpmsingleimg",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags(''+pagename+'pagemanage');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $delhpmsingleimg(sourceid,pagename){
+    $.ajax({
+        type:"post",
+        data: 'source_id='+sourceid,
+        url:"Pagemanager/deletesinglesource",
+        success: function(result)
+        {
+            alert('删除成功！');
+            $changetags(''+pagename+'pagemanage');
+            //$('#relatedvideoarea').html(result);
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $delhpmselected(pagename){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".hpm-td3").attr("id");
+            var arr=source_id.split('_');
+
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/deletesinglesource",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags(''+pagename+'pagemanage');
+}
+function $savehpmselected(pagename){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            var source_id=$(this).parent().siblings(".hpm-td3").attr("id");
+            var arr=source_id.split('_');
+
+            $.ajax({
+                type:"post",
+                data: 'source_id='+arr[0],
+                url:"Pagemanager/savhpmsingleimg",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags(''+pagename+'pagemanage');
+}
 function $savepageimg(pagename){
     imgname=$("#hpm-content-title").val();
     affiliated=$("#affiliatedmoudle option:selected").text();
@@ -142,10 +222,6 @@ function $savepageimg(pagename){
         alert("值不能为空！");
         return;
     }
-
-    //arr="first_level="+pagename+"&source_name="+imgname+"&affiliated="+affiliated+
-    //    "&source_remark="+source_remark+"&source_location="+source_location;
-    //alert(arr);
     $.ajaxFileUpload ({
         url:"Pagemanager/savepageimg",
         secureuri:false,
@@ -157,9 +233,9 @@ function $savepageimg(pagename){
             result=data.split('||||');
             alert(result[0]);
             imgname=$("#hpm-content-title").val("");
-            affiliated=$("#affiliatedmoudle option:selected").text();
             source_remark=$("#hpm-contentinfo").val("");
             source_location=$("#hpminputimg").val("");
+            $changetags(''+pagename+'pagemanage');
         },error:function(){
             alert("ajax error");
         }
