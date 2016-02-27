@@ -79,9 +79,8 @@
   margin-bottom:150px;
   
   }
- #left-music img{
- margin-top:120px;  
- height:120px;
+ #left-music img{ 
+ height:433px;
  width:auto;
 
   }
@@ -692,10 +691,12 @@ border-bottom-color:transparent;
  }
  .footerlogos{
  margin-right:5px;
+ 
  }
  .footerlogos img{
  width:16px;
  height:auto;
+ border-radius:50%;
  }
  
 .plat-map img{

@@ -136,7 +136,7 @@ class Search extends CI_Controller
         $results=$query->result_array();
         $return="";
         for($i=0;$i<count($results);$i++){
-            $return.='<span class="searchcontent">';
+            $return.='<span class="searchcontent-brand">';
             $return.='<input type="checkbox" id="'.$results[$i]['id'].'" value="'.$results[$i]['keyword'].'" onclick="$searchcontent('.$results[$i]['id'].')"/><span class="searchItem">'.$results[$i]['keyword'].'</span>';
             $return.='</span>';
         }

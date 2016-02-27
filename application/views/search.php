@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="javascript:;" onclick="$searchbrandname('Z')"><span role="button"><i class="searchAZli">Z</i></span></a>
             </div>
         </div>
-        <div id="class2content"  class="searchcontentarea">
+        <div id="class2content"  class="searchcontentarea-brand">
         </div>
         <div class="searchdetailarea">
             <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}
