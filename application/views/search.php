@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </ul>
             </div>
             <div class="searcharea">
-                <span class="dropdowncust" style="margin-right:30px;" role="button" onclick="$use('class1content','')">
+                <span class="dropdowncust" role="button" onclick="$use('class1content','')">
                     <i class="glyphicon glyphicon-search"></i> {search}
                 </span>
             </div>

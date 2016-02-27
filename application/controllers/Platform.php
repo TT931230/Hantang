@@ -69,7 +69,7 @@ class Platform extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('platformend',$data);
-        $this->parser->parse('footer',$data);
+      //  $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
         $this->load->library('session');
@@ -172,7 +172,7 @@ class Platform extends CI_Controller
                 $this->parser->parse($homecontents[$i]['name'],$data);
             }
             $this->parser->parse('platformend',$data);
-            $this->parser->parse('footer',$data);
+      //      $this->parser->parse('footer',$data);
         }
     }
 }
