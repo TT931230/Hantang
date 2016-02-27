@@ -538,15 +538,15 @@ class Pagemanager extends CI_Controller
             if ($_FILES["img"]["error"] > 0) {
                 return json_encode(array("msg" => "Return Code:" . $_FILES["img"]["error"], "error" => "true"));
             } else {
-                $third_level = $_POST['third_level'];
-                $first_level = $_POST['first_level'];
                 $id = $_POST['id'];
-                //echo "456";
+                echo $id;
+                $first_level = $_POST['first_level'];
+                $third_level = $_POST['third_level'];
 
                 $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/img/';
-                //$fileUrl = $_SERVER['DOCUMENT_ROOT'].'/img/';
+
                 $imageName = $_FILES["img"]["name"];
-                //$imageName = explode('.',$imageName);
+
                 $insertLocalImgArray = array(
                     'source_location' => $fileUrl.$imageName,
                     'status' => '2',
@@ -560,15 +560,11 @@ class Pagemanager extends CI_Controller
                     'create_time'=>date("y-m-d", time()),
                     'link_url'=>'/' . $first_level . '/' . $first_level . 'inner/' . $id,
                 );
+
                 $this->load->model('source_model');
                 $this->source_model->insertLocalImg($insertLocalImgArray);
 
-
-
-                //$userAction->setImage($_SESSION["email"],$imageName);   //存入数据库
-
                 move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/img/' .$imageName);    //缓存文件存入服务器
-            //return json_encode(array("msg"=>$fileUrl.$imageName,"error"=>"false"));
             }
         }
         else{
@@ -637,7 +633,9 @@ class Pagemanager extends CI_Controller
                 'keywordid' => $keywordarray
             );
             $this->load->model('source_model');
+
             $returnId=$this->source_model->insertvideoSource($insertvideo);
+
             $returnData = $returnId.'|'.$first_level.'|'.$third_level;
             echo $returnData;
         }else{

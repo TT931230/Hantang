@@ -96,16 +96,7 @@ class Source_model extends CI_Model
 
         $this->db->insert('source',$data);
         $insertedid=$this->db->insert_id();
-        //echo "<script>alert()</script>";
-        /*$updatearray=array(
-            'status'=>'2',
-            'type'=>'videoimg',
-            'link_url'=>'/'.$insertvideo['first_level'].'/'.$insertvideo['first_level'].'inner/'.$insertedid,
-            'index'=>$insertvideo['index'],
-            'updater'=>$insertvideo['updater'],
-            'update_time'=>date("y-m-d",time())
-        );
-        $this->db->update('source', $updatearray, array('id' => $insertvideo['videoimg']));*/
+
         for($i=0;$i<count($insertvideo['keywordid'])-1;$i++){
             $insertrelation=array(
                 'keyword_id'=>$insertvideo['keywordid'][$i],
@@ -117,7 +108,6 @@ class Source_model extends CI_Model
     }
     public function insertLocalImg($insertLocalImgArray){
         date_default_timezone_set("UTC");
-        $a = $insertLocalImgArray['source_location'];
 
         $data=array(
             'source_location' => $insertLocalImgArray['source_location'],

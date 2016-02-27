@@ -137,8 +137,7 @@ function $saveVideo(){
     first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
-    //videoimg=$('#videoimg')[0].value;
-    //inputVideoImgId = $('inputVideoImg')[0].value;
+
     index=$('#index')[0].value;
     keyword='';
     $("#keyword option:selected").each(function(){
@@ -154,14 +153,15 @@ function $saveVideo(){
         success: function(result)
         {
             var data = result.split("|");
+            var lan = data[2].substr(0,2);
             $.ajaxFileUpload ({
                 url:"Pagemanager/uploadLocalImg",
                 secureuri:false,
                 fileElementId:'inputVideoImg',
                 dataType: 'text',
-                data:{"id":data[0],"first_level":data[1],"third_level":data[2]} ,
+                data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
                 success: function (data){
-                    alert(data);
+
                 },error:function(){
                     alert("ajax error");
                 }
