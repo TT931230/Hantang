@@ -28,7 +28,7 @@ class Home extends CI_Controller
         $source_info['second_level']='imagearea1';
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
-var_dump($imagearea1);
+
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
