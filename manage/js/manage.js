@@ -154,7 +154,12 @@ function $savepageimg(pagename){
         data:{"first_level":pagename,"source_name":imgname,"affiliated":affiliated,
             "source_remark":source_remark} ,
         success: function (data){
-            alert(data);
+            result=data.split('||||');
+            alert(result[0]);
+            imgname=$("#hpm-content-title").val("");
+            affiliated=$("#affiliatedmoudle option:selected").text();
+            source_remark=$("#hpm-contentinfo").val("");
+            source_location=$("#hpminputimg").val("");
         },error:function(){
             alert("ajax error");
         }
