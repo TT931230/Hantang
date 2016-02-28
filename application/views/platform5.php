@@ -11,6 +11,6 @@
     <img src='{source_location}' alt="">
     {/imagearea3}
 </div> -->
-<div class="plat-map">
+<div class="plat-map" style="padding-top:80px;padding-bottom:93px">
     <img src="{aboutmap2}">
 </div>

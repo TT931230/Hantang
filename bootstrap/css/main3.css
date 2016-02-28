@@ -92,7 +92,6 @@ input[type="checkbox"]:checked {
 }
 #choseLan{
     padding: 0px 0;
-    margin-left:13px;
     min-width: 20px;
     font-size:12px;
 

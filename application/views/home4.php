@@ -7,7 +7,7 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="homeborder"  style="display: {homedisarea4}">
-    <div id="left-music" style="background-color:#EAEAEA">
+    <div id="left-music" >
         {imagearea13}
         <img src='{source_location}' alt="">
         {/imagearea13}
