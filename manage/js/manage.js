@@ -244,51 +244,68 @@ function $savepageimg(pagename){
 
 }
 function $saveVideo(){
+    first_level='';
+    third_level='';
+    source_location='';
+    source_name='';
+    keyword='';
+    source_name='';
+
+
     first_level=$('#first_level')[0].value;
     source_location=$('#source_location')[0].value;
     source_name=$('#source_name')[0].value;
 
-    index=$('#index')[0].value;
-    keyword='';
+    //index=$('#index')[0].value;
+
     $("#keyword option:selected").each(function(){
         keyword+=$(this)[0].value+'|||';
     });
     source_remark=$('#source_remark')[0].value;
     third_level=$('#third_level')[0].value;
-    array="source_location="+source_location+"&source_name="+source_name+"&source_remark="
-        +source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="
-        +first_level+"&index="+index;
-    alert(array);
-    $.ajax({
-        type:"post",
-        data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="
-        +source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="
-        +first_level+"&index="+index,
-        url:"Pagemanager/saveVideo",
-        //dataType:'json',
-        success: function(result)
-        {
 
-            var data = result.split("|");
-            var lan = data[2].substr(0,2);
-            $.ajaxFileUpload ({
-                url:"Pagemanager/uploadLocalImg",
-                secureuri:false,
-                fileElementId:'inputVideoImg',
-                dataType: 'text',
-                data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
-                success: function (data){
-
-                },error:function(){
+        if(first_level==''||
+            third_level==''||
+            source_location==''||
+            source_name==''||
+            keyword==''||
+            source_name==''){
+            alert('please input infomation');
+        }else{
+            $.ajax({
+                type:"post",
+                data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="
+                +source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="
+                +first_level,
+                url:"Pagemanager/saveVideo",
+                //dataType:'json',
+                success: function(result)
+                {
+                    var data = result.split("|");
+                    var lan = data[2].substr(0,2);
+                    $.ajaxFileUpload ({
+                        url:"Pagemanager/uploadLocalImg",
+                        secureuri:false,
+                        fileElementId:'inputVideoImg',
+                        dataType: 'text',
+                        data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
+                        success: function (data){
+                            alert('upload success');
+                            $('#source_location')[0].value='';
+                            $('#source_name')[0].value='';
+                            $('#source_remark')[0].value='';
+                        },error:function(){
+                            alert("ajax error");
+                        }
+                    });
+                },
+                error: function()
+                {
                     alert("ajax error");
                 }
             });
-        },
-        error: function()
-        {
-            alert("ajax error");
         }
-    });
+
 }
 function $getselectedinfo(pagename){
     switch(pagename){

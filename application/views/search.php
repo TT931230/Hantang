@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </ul>
             </div>
             <div class="searcharea">
-                <span class="dropdowncust" style="margin-right:30px;" role="button" onclick="$use('class1content','')">
+                <span class="dropdowncust" role="button" onclick="$use('class1content','')">
                     <i class="glyphicon glyphicon-search"></i> {search}
                 </span>
             </div>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="javascript:;" onclick="$searchbrandname('Z')"><span role="button"><i class="searchAZli">Z</i></span></a>
             </div>
         </div>
-        <div id="class2content"  class="searchcontentarea">
+        <div id="class2content"  class="searchcontentarea-brand">
         </div>
         <div class="searchdetailarea">
             <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}

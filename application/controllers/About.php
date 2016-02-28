@@ -58,7 +58,7 @@ class About extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('aboutend',$data);
-        $this->parser->parse('footer',$data);
+    //    $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
         $this->load->library('session');
@@ -131,7 +131,7 @@ class About extends CI_Controller
                 $this->parser->parse($homecontents[$i]['name'],$data);
             }
             $this->parser->parse('aboutend',$data);
-            $this->parser->parse('footer',$data);
+         //   $this->parser->parse('footer',$data);
         }
     }
 }

@@ -6,10 +6,11 @@
     border: 1px ;
     margin-bottom: 0;
     margin-top: 0;
-    padding:35px;
+    padding:40px;
     font-size:20px;
     color:#555555;
     width:100%;
+    height:112px;
  }
  .dashline{
     border-bottom:2px dotted #C4C4C4;   
@@ -33,14 +34,14 @@
     margin-top: 0;
     padding:175px;
  }
- .aboutimg{
- margin-top:25px;
-  }
+ 
  .aboutimg img{
- height:800px;
- width:auto;
+ height:auto;
+ width:100%;
  }
-
+.aboutimgarea{
+	margin-bottom:42px;
+}
  
  
  
@@ -59,9 +60,9 @@
   #left{
   margin:0;
   float:left;
-  width:364px;
+  width:364;
   height:432px;
-  margin-bottom:18px;
+  margin-bottom:0.46%;
   
   }
  #left img{
@@ -76,12 +77,11 @@
   float:left;
   width:364px;
   height:432px;
-    margin-bottom:150px;
+  margin-bottom:150px;
   
   }
- #left-music img{
- margin-top:120px;  
- height:120px;
+ #left-music img{ 
+ height:433px;
  width:auto;
 
   }
@@ -92,9 +92,9 @@
   
   }
   #right{
- float:right;
-  width:916px;
-  margin-bottom:18px;
+ float:left;
+  width:916;
+margin-bottom:0.46%;
   
   }
    #left-ul{
@@ -285,7 +285,7 @@ border-bottom-color:transparent;
   display: block;
   position: relative;
   z-index: 1;
-  height:608px;
+  height:610px;
   width:100%;
   border: 0;
   margin-bottom:18px;
@@ -391,7 +391,7 @@ background: transparent url("white.png") no-repeat left top;
  }
  
  .progress {
-  height: 5px;
+  height: 7px;
   width: 100%;
   position: absolute;
   top:603px;
@@ -536,7 +536,7 @@ margin-left:0px;
  padding:0px;
  width:100%;
  height:700px;
- margin:0px;
+ margin-bottom:43px;
 
  }
  .ptn-wrapper{
@@ -617,7 +617,7 @@ border-bottom-color:transparent;
   right: 15px;
   }
  .brandlogo{
- width:25%;
+ width:33.33%;
  float:left;
  }
  
@@ -692,10 +692,12 @@ border-bottom-color:transparent;
  }
  .footerlogos{
  margin-right:5px;
+ 
  }
  .footerlogos img{
  width:16px;
  height:auto;
+ border-radius:50%;
  }
  
 .plat-map img{
