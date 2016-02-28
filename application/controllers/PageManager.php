@@ -70,7 +70,7 @@ class Pagemanager extends CI_Controller
             $areaarray = $this->db->get()->result_array();
             for ($i = 0; $i < count($areaarray); $i++) {
                 $this->db->from('webcontent');
-                $this->db->where('page',$areaarray[$i]['page']);
+                $this->db->where('page',$areaarray[$i]['page']);//select every page get count
                 $this->db->where('status','1');
                 $tmparray = $this->db->get()->result_array();
                 $tmpareaarray = array(
@@ -647,6 +647,10 @@ class Pagemanager extends CI_Controller
                     'create_time'=>date("y-m-d", time()),
                     'link_url'=>'/' . $first_level . '/' . $first_level . 'inner/' . $id,
                 );
+                if($first_level=='music'){
+                    $insertLocalImgArray['type'] = 'proimg';
+                }
+
 
                 $this->load->model('source_model');
                 $this->source_model->insertLocalImg($insertLocalImgArray);
@@ -814,7 +818,7 @@ class Pagemanager extends CI_Controller
             $tagtype = $_POST['tagtype'];
             $filename = $_FILES['file']['tmp_name'];
             if (empty ($filename)) {
-                echo '请选择要导入的CSV文件！';
+                echo '请选择要导入的EXCEL文件！';
                 exit;
             }
             $handle = fopen($filename, 'r');

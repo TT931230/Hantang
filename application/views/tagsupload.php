@@ -10,7 +10,7 @@
 <div>
     <form id="addform" action="Pagemanager/inserttags" method="post" enctype="multipart/form-data">
         <div class="tu-div">
-        <p>请选择要导入的CSV文件：<input type="file" name="file">
+        <p>请选择要导入的标签EXCEL文件：<input type="file" name="file">
         </div>
         <div class="tu-div">
         <p>请选择要导入的标签类型：<select name="tagtype">
@@ -24,7 +24,7 @@
                 <option value="brandname">品牌</option>
             </select>
             <br/>
-            <input type="submit" class="btn" value="导入CSV">
+            <input type="submit" class="btn" value="导入">
             </div>
     </form>
 </div>
