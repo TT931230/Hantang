@@ -36,9 +36,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td class="hpm-tags4">标签状态</td>
                 <td class="hpm-tags5">顺序</td>
                 <td class="hpm-tags6">标签类型</td>
-                <td class="hpm-tags7">保存所选</td>
-                <td class="hpm-tags8">删除所选</td>
-                <td class="hpm-tags9">全部 隐/显</td>
+                <td class="hpm-tags7">
+                    <a href="javascript:;" onclick="$saveselectedkeyword()">保存所选</a>
+                </td>
+                <td class="hpm-tags8">
+                    <a href="javascript:;" onclick="$deleteselectedkeyword()">删除所选</a>
+                </td>
+                <td class="hpm-tags9">
+                    <a href="javascript:;" onclick="$changeselectedkeyword()">隐/显 所选</a>
+                </td>
             </tr>
             {keywordlists}
             <tr>
@@ -52,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </td>
                 <td id="{id}_type" class="hpm-tags6">{type}</td>
                 <td id="{id}_edit1" class="hpm-tags7">
-                    <a href="javascript:;" onclick="$savesinglekeyword('{id}')">保存</a>
+                    <a href="javascript:;" onclick="$savekeywordchanges('{id}')">保存</a>
                 </td>
                 <td id="{id}_edit2" class="hpm-tags8">
                     <a href="javascript:;" onclick="$deletesinglekeyword('{id}')">删除</a>

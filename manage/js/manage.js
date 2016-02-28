@@ -933,6 +933,65 @@ function $changedepartmentstatus(id){
         }
     });
 }
+function $saveselectedkeyword(){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            id=$(this).parent().siblings(".hpm-tags1").attr("id");
+            sequence=$('#'+id+'_sequence')[0].value;
+            $.ajax({
+                type:"post",
+                data: 'id='+id+"&sequence="+sequence,
+                url:"Pagemanager/savekeywordchanges",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags('tagsedit');
+}
+function $savekeywordchanges(id){
+    sequence=$('#'+id+'_sequence')[0].value;
+    $.ajax({
+        type:"post",
+        data: 'id='+id+"&sequence="+sequence,
+        url:"Pagemanager/savekeywordchanges",
+        success: function(result)
+        {
+            alert('保存成功！');
+            $changetags('tagsedit');
+        },
+        error: function()
+        {
+            alert("ajax error");
+        }
+    });
+}
+function $deletesinglekeyword(id){
+    alert("此功能暂时有疑问!");
+}
+function $changeselectedkeyword(){
+    $(".vl-check input[type='checkbox']").each(function(){
+        if($(this).prop("checked")){
+            source_id=$(this).parent().siblings(".hpm-tags1").attr("id");
+            $.ajax({
+                type:"post",
+                data: 'id='+source_id,
+                url:"Pagemanager/changekeywordstatus",
+                success: function(result) {
+                },
+                error: function() {
+                    alert("ajax error");
+                }
+            });
+        }
+    });
+    alert("success");
+    $changetags('tagsedit');
+}
 function $changekeywordstatus(id){
     $.ajax({
         type:"post",

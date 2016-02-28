@@ -2118,9 +2118,17 @@ TAG;
             $result.="<td class=\""."hpm-tags4\">标签状态</td>";
             $result.="<td class=\""."hpm-tags5\">顺序</td>";
             $result.="<td class=\""."hpm-tags6\">标签类型</td>";
-            $result.="<td class=\""."hpm-tags7\">保存所选</td>";
-            $result.="<td class=\""."hpm-tags8\">删除所选</td>";
-            $result.="<td class=\""."hpm-tags9\">全部 隐/显</td>". "</tr>";
+            $result.="<td class=\""."hpm-tags7\">";
+            $result.="<a href=\""."javascript:;\" onclick=\""."\$saveselectedkeyword()\">保存所选</a>";
+            $result.="</td>";
+            $result.="<td class=\""."hpm-tags8\">";
+            $result.="<a href=\""."javascript:;\" onclick=\""."\$deleteselectedkeyword()\">删除所选</a>";
+            $result.="</td>";
+            $result.="<td class=\""."hpm-tags9\">";
+            $result.="<a href=\""."javascript:;\" onclick=\""."\$changeselectedkeyword()\">隐/显 所选</a>";
+            $result.="</td>"."</tr>";
+
+
 
             for ($i = 0; $i < count($keywordarray); $i++) {
                 $tmpkeywordarray = array(
@@ -2151,7 +2159,7 @@ TAG;
                 $result.=$tmpkeywordarray['type'];
                 $result.="</td>";
                 $result.="<td class=\""."hpm-tags7\""." id=\"".$tmpkeywordarray['id']."_edit1\">";
-                $result.="<a href=\"javascript:;\" onclick=\"\$savesinglekeyword('".$tmpkeywordarray['id']."')\">保存</a>";
+                $result.="<a href=\"javascript:;\" onclick=\"\$savekeywordchanges('".$tmpkeywordarray['id']."')\">保存</a>";
                 $result.="</td>";
                 $result.="<td class=\""."hpm-tags8\""." id=\"".$tmpkeywordarray['id']."_edit2\">";
                 $result.="<a href=\"javascript:;\" onclick=\"\$deletesinglekeyword('".$tmpkeywordarray['id']."')\">删除</a>";
@@ -2164,6 +2172,24 @@ TAG;
 
             $result.="</table>";
             echo $result;
+        }else{
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+        }
+    }
+    public function savekeywordchanges(){
+        $this->load->library('session');
+        if($this->session->username) {
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+            date_default_timezone_set("UTC");
+
+            $keywordupdateinfo = array(
+                'sequence' => $_POST['sequence'],
+                'update_time' => date('y-m-d', time()),
+                'updater' => $username
+            );
+            $this->db->update('keyword', $keywordupdateinfo, array('id' => $_POST['id']));
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
