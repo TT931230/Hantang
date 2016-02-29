@@ -25,7 +25,40 @@
         <option value="join">加入汉唐</option>
     </select>
     <label>模块名称：</label>
-    <input type="text" id="pagename">
+    <!--<input type="text" id="pagename">-->
+    <select id="pagename">
+        <option value=""></option>
+        <option value="home1">首页1</option>
+        <option value="home2">首页2</option>
+        <option value="home3">首页3</option>
+        <option value="home4">首页4</option>
+        <option value="about1">关于汉唐1</option>
+        <option value="about2">关于汉唐2</option>
+        <option value="about3">关于汉唐3</option>
+
+        <option value="platform1">播出平台1</option>
+        <option value="platform2">播出平台2</option>
+        <option value="platform3">播出平台3</option>
+        <option value="platform4">播出平台4</option>
+        <option value="platform5">播出平台5</option>
+        <option value="platform6">播出平台6</option>
+        <option value="partner1">合作伙伴1</option>
+        <option value="partner2">合作伙伴2</option>
+        <option value="partner3">合作伙伴3</option>
+
+        <option value="ul1">极致1</option>
+        <option value="ul2">极致2</option>
+        <option value="ul3">极致3</option>
+        <option value="awoe1">问鼎世界1</option>
+        <option value="awoe2">问鼎世界2</option>
+        <option value="awoe3">问鼎世界3</option>
+        <option value="music1">音乐年1</option>
+        <option value="music2">音乐年2</option>
+        <option value="music3">音乐年3</option>
+        <option value="join1">加入汉唐1</option>
+        <option value="join2">加入汉唐2</option>
+        <option value="join3">加入汉唐3</option>
+    </select>
     <div class="row">
         <button onclick="$queryPage()" class="btn btn-default" style="margin-left: 23px;">查询</button>
     </div>

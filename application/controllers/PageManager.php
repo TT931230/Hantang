@@ -93,45 +93,44 @@ class Pagemanager extends CI_Controller
             switch($pieces[0]){
                 case 'home':
                     $affiliatedmodules=array(
-                        array('name'=>'imagearea1'),
-                        array('name'=>'imagearea2'),
-                        array('name'=>'imagearea3'),
-                        array('name'=>'imagearea4'),
+                        array('name'=>'首页1'),
+                        array('name'=>'首页2'),
+                        array('name'=>'首页3'),
+                        array('name'=>'首页4'),
                     );
                     $tmparr=array('imagearea1','imagearea2','imagearea3','imagearea4');break;
                 case 'about':
                     $affiliatedmodules=array(
-                        array('name'=>'about01'),
-                        array('name'=>'about02'),
-                        array('name'=>'about03'),
-                        array('name'=>'about04'),
+                        array('name'=>'关于汉唐1'),
+                        array('name'=>'关于汉唐2'),
+                        array('name'=>'关于汉唐3'),
+                        array('name'=>'关于汉唐4'),
                     );
                     $tmparr=array('about01','about02','about03','about04');break;
                 case 'platform':
                     $affiliatedmodules=array(
-                        array('name'=>'aboutmap1'),
-                        array('name'=>'aboutmap2'),
-                        array('name'=>'aboutmap3'),
+                        array('name'=>'播出平台1'),
+                        array('name'=>'播出平台2'),
                     );
-                    $tmparr=array('aboutmap1','aboutmap2','aboutmap3');break;
+                    $tmparr=array('aboutmap1','aboutmap2');break;
                 case 'partner':
                     $affiliatedmodules=array(
-                        array('name'=>'imagearea1'),
+                        array('name'=>'合作伙伴1'),
                     );
                     $tmparr=array('imagearea1');break;
                 case 'ul':
                     $affiliatedmodules=array(
-                        array('name'=>'imagearea1'),
+                        array('name'=>'极致1'),
                     );
                     $tmparr=array('imagearea1');break;
                 case 'awoe':
                     $affiliatedmodules=array(
-                        array('name'=>'imagearea1'),
+                        array('name'=>'问鼎世界1'),
                     );
                     $tmparr=array('imagearea1');break;
                 case 'music':
                     $affiliatedmodules=array(
-                        array('name'=>'imagearea1'),
+                        array('name'=>'音乐年1'),
                     );
                     $tmparr=array('imagearea1');break;
                 case 'join':
@@ -485,7 +484,7 @@ class Pagemanager extends CI_Controller
             $this->db->from('user_info');
             $userlists=$this->db->get()->result_array();
             for ($i = 0; $i < count($userlists); $i++) {
-                $this->db->from('privilige_user');
+                $this->db->from('user_privilege');
                 $this->db->where('user_id',$userlists[$i]['id']);
                 $tmpuserprivilige= $this->db->get()->result_array();
                 $userlists[$i]['privilige']='';
@@ -526,6 +525,15 @@ class Pagemanager extends CI_Controller
                     'type' => 'video/mp4'
                 )
             );
+            //过滤
+            for($i=0;$i<count($arealists);$i ++){
+                $arealists[$i]['page'] = $this->getzn($arealists[$i]['page']);
+                $arealists[$i]['name'] = $this->getzn($arealists[$i]['name']);
+            }
+
+
+
+
 
             $data = array(
                 'arealists'=>$arealists,
@@ -557,6 +565,68 @@ class Pagemanager extends CI_Controller
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+
+    function getzn($newStr){
+        if(strstr($newStr,'home')){
+            if(strlen($newStr) > strlen('home')){
+                return '首页'.substr($newStr,4);
+            }else{
+                return '首页';
+            }
+        }
+        if(strstr($newStr,'about')){
+            if(strlen($newStr) > strlen('about')){
+                return '关于汉唐'.substr($newStr,5);
+            }else{
+                return '关于汉唐';
+            }
+
+        }
+        if(strstr($newStr,'platform')){
+            if(strlen($newStr) > strlen('platform')){
+                return '播出平台'.substr($newStr,8);
+            }else{
+                return '播出平台';
+            }
+        }
+        if(strstr($newStr,'partner')){
+            if(strlen($newStr) > strlen('partner')){
+                return '合作伙伴'.substr($newStr,7);
+            }else{
+                return '合作伙伴';
+            }
+        }
+        if(strstr($newStr,'ul')){
+            if(strlen($newStr) > strlen('ul')){
+                return '极致'.substr($newStr,2);
+            }else{
+                return '极致';
+            }
+        }
+        if(strstr($newStr,'awoe')){
+            if(strlen($newStr) > strlen('awoe')){
+                return '问鼎'.substr($newStr,4);
+            }else{
+                return '问鼎';
+            }
+        }
+        if(strstr($newStr,'music')){
+            if(strlen($newStr) > strlen('music')){
+                return '音乐年'.substr($newStr,5);
+            }else{
+                return '音乐年';
+            }
+        }
+        if(strstr($newStr,'join')){
+            if(strlen($newStr) > strlen('join')){
+                return '加入汉唐'.substr($newStr,4);
+            }else{
+                return '加入汉唐';
+            }
+        }
+    }
+
+
 
     function saveImage(){
         $this->load->library('session');
@@ -754,31 +824,55 @@ class Pagemanager extends CI_Controller
             $third_level = $_POST['third_level'];
             $first_level = $_POST['first_level'];
             //$index = $_POST['index'];
-            $insertvideo = array(
-                //'videoimg' => $videoimg,
-                //'index'=>$index,
-                'keyword' => $keyword,
-                'source_location' => $source_location,
-                'status' => '2',
-                'source_name' => $source_name,
-                'source_remark' => $source_remark,
-                'sequence' => $sequence,
-                'type' => 'video/mp4',
-                'updater' => $username,
-                'creator' => $username,
-                'first_level' => $first_level,
-                'second_level' => null,
-                'third_level' => $third_level,
-                'link_url' => null,
-                //'videoimgid' => $videoimg,
-                'keywordid' => $keywordarray
-            );
             $this->load->model('source_model');
 
-            $returnId=$this->source_model->insertvideoSource($insertvideo);
-
-            $returnData = $returnId.'|'.$first_level.'|'.$third_level;
-            echo $returnData;
+            if($first_level == 'about' || $first_level == 'platform' || $first_level == 'join'){
+                $insertvideo = array(
+                    //'videoimg' => $videoimg,
+                    //'index'=>$index,
+                    'keyword' => $keyword,
+                    'source_location' => $source_location,
+                    'status' => '2',
+                    'source_name' => $source_name,
+                    'source_remark' => $source_remark,
+                    'sequence' => $sequence,
+                    'type' => 'video/mp4',
+                    'updater' => $username,
+                    'creator' => $username,
+                    'first_level' => $first_level,
+                    'second_level' => 'videoarea1',
+                    'third_level' => $third_level,
+                    'link_url' => null,
+                    //'videoimgid' => $videoimg,
+                    'keywordid' => $keywordarray
+                );
+                $returnId=$this->source_model->insertvideoSource($insertvideo);
+                $returnData = 'noimg';
+                echo $returnData;
+            }else{
+                $insertvideo = array(
+                    //'videoimg' => $videoimg,
+                    //'index'=>$index,
+                    'keyword' => $keyword,
+                    'source_location' => $source_location,
+                    'status' => '2',
+                    'source_name' => $source_name,
+                    'source_remark' => $source_remark,
+                    'sequence' => $sequence,
+                    'type' => 'video/mp4',
+                    'updater' => $username,
+                    'creator' => $username,
+                    'first_level' => $first_level,
+                    'second_level' => null,
+                    'third_level' => $third_level,
+                    'link_url' => null,
+                    //'videoimgid' => $videoimg,
+                    'keywordid' => $keywordarray
+                );
+                $returnId=$this->source_model->insertvideoSource($insertvideo);
+                $returnData = $returnId.'|'.$first_level.'|'.$third_level;
+                echo $returnData;
+            }
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
@@ -2112,7 +2206,7 @@ TAG;
                     $videoimgid = $videoimgarray[0]['id'];
                     $imgurl = $videoimgarray[0]['source_location'];
                     $videosequence = $videoimgarray[0]['sequence'];
-                    $index=$videoimgarray[0]['index'];
+                    /*$index=$videoimgarray[0]['index'];*/
                 } else {
                     $videoimgid = 'none';
                     $imgurl = '';
@@ -2377,10 +2471,10 @@ TAG;
                 );
                 $result.="<tr>";
                 $result.="<td class=\"cl-imgname\">";
-                $result.=$tmpareaarray['name'];
+                $result.=$this->getzn($tmpareaarray['name']);
                 $result.="</td>";
                 $result.="<td class=\"cl-imgadd\">";
-                $result.=$tmpareaarray['page'];
+                $result.=$this->getzn($tmpareaarray['page']);
                 $result.="</td>";
                 $result.="<td class=\"cl-imgtype\">";
                 $result.=$tmpareaarray['status'];

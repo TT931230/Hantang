@@ -32,7 +32,7 @@ class Login extends CI_Controller
         $userinfo=$this->db->get()->result_array();
         if(count($userinfo)>0){
             $this->load->library('session');
-            $this->db->from('privilige_user');
+            $this->db->from('user_privilege');
             $this->db->where('user_id',$userinfo[0]['id']);
             $userprivilige=$this->db->get()->result_array();
             $privilige=array();
