@@ -879,35 +879,13 @@ class Pagemanager extends CI_Controller
         }
     }
     function inserttags(){
+        require_once $_SERVER['DOCUMENT_ROOT'].'/application/libraries/PHPExcel_1.8.0/Classes/PHPExcel.php';
         $this->load->library('session');
 
         if($this->session->username) {
+
             $username = $this->session->username;
-            $privilige4user=$this->session->privilige;
-            for($i=0;$i<count($privilige4user);$i++){
-                $privilige41=false;
-                $privilige42=false;
-                $privilige43=false;
-                $privilige44=false;
-                $privilige45=false;
-                $privilige46=false;
-                $privilige47=false;
-                $privilige48=false;
-                $privilige49=false;
-                $privilige410=false;
-                switch($privilige4user[$i]){
-                    case '1':$privilige41=true;break;
-                    case '2':$privilige42=true;break;
-                    case '3':$privilige43=true;break;
-                    case '4':$privilige44=true;break;
-                    case '5':$privilige45=true;break;
-                    case '6':$privilige46=true;break;
-                    case '7':$privilige47=true;break;
-                    case '8':$privilige48=true;break;
-                    case '9':$privilige49=true;break;
-                    case '10':$privilige410=true;break;
-                }
-            }
+
             $this->load->model('keyword_model');
             $tagtype = $_POST['tagtype'];
             $filename = $_FILES['file']['tmp_name'];
@@ -915,19 +893,34 @@ class Pagemanager extends CI_Controller
                 echo '请选择要导入的EXCEL文件！';
                 exit;
             }
-            $handle = fopen($filename, 'r');
-            while ($data = fgetcsv($handle)) {
-                $goods_list[] = $data;
+            $objReader = PHPExcel_IOFactory::createReaderForFile($filename);
+            $objPHPExcel = $objReader->load($filename);
+            $currentSheet = $objPHPExcel->getSheet(0); //第一个工作簿
+            $allRow = $currentSheet->getHighestRow(); //行数
+            $goods_list=array();
+            for($currentRow = 2;$currentRow<=$allRow;$currentRow++){
+                $xhA = $currentSheet->getCell('A'.$currentRow)->getValue();
+                $xhB = $currentSheet->getCell('B'.$currentRow)->getValue();
+                $xhC = $currentSheet->getCell('C'.$currentRow)->getValue();
+                $xhD = $currentSheet->getCell('D'.$currentRow)->getValue();
+                $xhE = $currentSheet->getCell('E'.$currentRow)->getValue();
+                $xhF = $currentSheet->getCell('F'.$currentRow)->getValue();
+                $temparr=array(
+                    'A'=>$xhA, 'B'=>$xhB,'C'=>$xhC,
+                    'D'=>$xhD, 'E'=>$xhE,'F'=>$xhF,
+                );
+                $goods_list[]=$temparr;
             }
+
             if ('brandname' == $tagtype) {
                 for ($i = 1; $i < count($goods_list); $i++) {
                     $insertcontent = array(
-                        'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                        'sequence' => $goods_list[$i][1],
+                        'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+                        'sequence' => $goods_list[$i]['B'],
                         'first_level' => $tagtype,
-                        'second_level' => $goods_list[$i][2],
-                        'third_level' => $goods_list[$i][3],
-                        'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][4]),
+                        'second_level' => $goods_list[$i]['D'],
+                        'third_level' => $goods_list[$i]['E'],
+                        'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
                         'creator' =>$username,
                         'updater' => $username,
                         'status' => '1',
@@ -937,14 +930,13 @@ class Pagemanager extends CI_Controller
             } else {
                 if ('locationdetails' != $tagtype) {
                     for ($i = 1; $i < count($goods_list); $i++) {
-
                         $insertcontent = array(
-                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                            'sequence' => $goods_list[$i][1],
-                            'first_level' => $goods_list[$i][2],
+                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+                            'sequence' => $goods_list[$i]['B'],
+                            'first_level' => $goods_list[$i]['C'],
                             'second_level' => $tagtype,
-                            'third_level' => $goods_list[$i][3],
-                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][4]),
+                            'third_level' => $goods_list[$i]['E'],
+                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
                             'creator' => $username,
                             'updater' => $username,
                             'status' => '1',
@@ -954,19 +946,19 @@ class Pagemanager extends CI_Controller
                 } else {
                     for ($i = 1; $i < count($goods_list); $i++) {
                         $this->db->from('keyword');
-                        $this->db->where('keyword', iconv('gb2312', 'utf-8', $goods_list[$i][0]));
+                        $this->db->where('keyword', iconv('gb2312', 'utf-8', $goods_list[$i]['A']));
                         $this->db->where('second_level', 'locationdetails');
                         $country = $this->db->get()->result_array();
                         if (count($country) > 0) {
                             $country_id = $country[0]['id'];
                         } else {
                             $insertcontent = array(
-                                'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                                'sequence' => $goods_list[$i][1],
-                                'first_level' => $goods_list[$i][4],
+                                'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+                                'sequence' => $goods_list[$i]['B'],
+                                'first_level' => $goods_list[$i]['C'],
                                 'second_level' => $tagtype,
-                                'third_level' => $goods_list[$i][5],
-                                'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][6]),
+                                'third_level' => $goods_list[$i]['E'],
+                                'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
                                 'creator' => $username,
                                 'updater' => $username,
                                 'status' => '1',
@@ -975,12 +967,12 @@ class Pagemanager extends CI_Controller
                             $country_id = $this->db->insert_id();
                         }
                         $insertcontent = array(
-                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i][0]),
-                            'sequence' => $goods_list[$i][1],
-                            'first_level' => $goods_list[$i][4],
+                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+                            'sequence' => $goods_list[$i]['B'],
+                            'first_level' => $goods_list[$i]['C'],
                             'second_level' => $country_id,
-                            'third_level' => $goods_list[$i][5],
-                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i][6]),
+                            'third_level' => $goods_list[$i]['E'],
+                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
                             'creator' => $username,
                             'updater' => $username,
                             'status' => '1',
