@@ -931,27 +931,34 @@ class Pagemanager extends CI_Controller
                 }else if(strpos($xhA, '音乐年') !== false){
                     $first_level='music';
                 }
-                echo $first_level;
+                //echo $first_level;
                 //locationdetails
                 $keyword1=array(
                     'keyword' => $xhE,
                     'sequence' => 2,
                     'first_level' => $first_level,
                     'second_level' => 'locationdetails',
-                    'third_level' => 'zn',
+                    'third_level' => '',
                     'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
                     'creator' =>$username,
                     'updater' => $username,
                     'status' => '1',
                 );
                 $this->keyword_model->insertKeyword($keyword1);
+
+                $this->db->from('keyword');
+                $this->db->where('keyword', $xhE);
+                $this->db->where('first_level', $first_level);
+                $this->db->where('second_level', 'locationdetails');
+                $country = $this->db->get()->result_array();
+                $country_id = $country[0]['id'];
                 //yeardetails
                 $keyword2=array(
                     'keyword' => $str1,
                     'sequence' => 2,
                     'first_level' => $first_level,
                     'second_level' => 'yeardetails',
-                    'third_level' => 'zn',
+                    'third_level' => '',
                     'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
                     'creator' =>$username,
                     'updater' => $username,
@@ -964,26 +971,26 @@ class Pagemanager extends CI_Controller
                     'sequence' => 2,
                     'first_level' => $first_level,
                     'second_level' => 'typedetails',
-                    'third_level' => 'zn',
+                    'third_level' => '',
                     'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
                     'creator' =>$username,
                     'updater' => $username,
                     'status' => '1',
                 );
                 $this->keyword_model->insertKeyword($keyword3);
-//                //citydetails
-//                $keyword4=array(
-//                    'keyword' => $xhF,
-//                    'sequence' => 2,
-//                    'first_level' => $first_level,
-//                    'second_level' => 'typedetails',
-//                    'third_level' => 'zn',
-//                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
-//                    'creator' =>$username,
-//                    'updater' => $username,
-//                    'status' => '1',
-//                );
-//                $this->keyword_model->insertKeyword($keyword4);
+                //citydetails
+                $keyword4=array(
+                    'keyword' => $xhF,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => $country_id,
+                    'third_level' => '',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword4);
             }
 
 //            for($currentRow = 2;$currentRow<=$allRow;$currentRow++){
