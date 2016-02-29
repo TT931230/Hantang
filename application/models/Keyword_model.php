@@ -22,6 +22,7 @@ class Keyword_model extends CI_Model
     {
         parent::__construct();
     }
+
     public function queryKeyword($querycontent){
         if($querycontent['keyword']){
             $this->db->where('keyword',$querycontent['keyword']);
@@ -44,7 +45,8 @@ class Keyword_model extends CI_Model
         return $query->result_array();
     }
     public function insertKeyword($insertcontent){
-        if(count(queryKeyword($insertcontent))<1){
+
+        if(count(self::queryKeyword($insertcontent))<1){
             date_default_timezone_set("UTC");
             $this->keyword    = $insertcontent['keyword'];
             $this->status    = $insertcontent['status'];
