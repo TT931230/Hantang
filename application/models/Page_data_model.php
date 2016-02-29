@@ -140,7 +140,7 @@ class Page_data_model extends CI_Model{
             'partnerimgs'=>$partner,
             'aboutmap1'=>$aboutmap1[0]['source_location'],
             'aboutmap2'=>$aboutmap2[0]['source_location'],
-        	'aboutmap3'=>$aboutmap3[0]['source_location'],
+        	//'aboutmap3'=>$aboutmap3[0]['source_location'],
             'about01'=>$about01[0]['source_location'],
         	'about02'=>$about02[0]['source_location'],
         	'about03'=>$about03[0]['source_location'],

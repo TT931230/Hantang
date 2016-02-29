@@ -22,9 +22,12 @@
     <div class="row">
         <label class="col-lg-2">所属栏目</label>
         <select  class="col-lg-2" id="first_level">
+            <option value="about">关于汉唐</option>
+            <option value="platform">播放平台</option>
             <option value="ul">极致</option>
             <option value="awoe">问鼎世界</option>
             <option value="music">音乐年</option>
+            <option value="join">加入汉唐</option>
         </select>
     </div>
 </div>
