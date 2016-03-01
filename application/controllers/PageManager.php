@@ -878,16 +878,33 @@ class Pagemanager extends CI_Controller
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
         }
     }
+    function excelTime($date, $time = false) {
+        if(function_exists('GregorianToJD')){
+            if (is_numeric( $date )) {
+                $jd = GregorianToJD( 1, 1, 1970 );
+                $gregorian = JDToGregorian( $jd + intval ( $date ) - 25569 );
+                $date = explode( '/', $gregorian );
+                $date_str = str_pad( $date [2], 4, '0', STR_PAD_LEFT )
+                    ."-". str_pad( $date [0], 2, '0', STR_PAD_LEFT )
+                    ."-". str_pad( $date [1], 2, '0', STR_PAD_LEFT )
+                    . ($time ? " 00:00:00" : '');
+                return $date_str;
+            }
+        }else{
+            $date=$date>25568?$date+1:25569;
+            /*There was a bug if Converting date before 1-1-1970 (tstamp 0)*/
+            $ofs=(70 * 365 + 17+2) * 86400;
+            $date = date("Y-m-d",($date * 86400) - $ofs).($time ? " 00:00:00" : '');
+        }
+        return $date;
+    }
     function inserttags(){
         require_once $_SERVER['DOCUMENT_ROOT'].'/application/libraries/PHPExcel_1.8.0/Classes/PHPExcel.php';
         $this->load->library('session');
-
         if($this->session->username) {
-
             $username = $this->session->username;
-
             $this->load->model('keyword_model');
-            $tagtype = $_POST['tagtype'];
+            //$tagtype = $_POST['tagtype'];
             $filename = $_FILES['file']['tmp_name'];
             if (empty ($filename)) {
                 echo '请选择要导入的EXCEL文件！';
@@ -900,87 +917,165 @@ class Pagemanager extends CI_Controller
             $goods_list=array();
             for($currentRow = 2;$currentRow<=$allRow;$currentRow++){
                 $xhA = $currentSheet->getCell('A'.$currentRow)->getValue();
-                $xhB = $currentSheet->getCell('B'.$currentRow)->getValue();
                 $xhC = $currentSheet->getCell('C'.$currentRow)->getValue();
-                $xhD = $currentSheet->getCell('D'.$currentRow)->getValue();
                 $xhE = $currentSheet->getCell('E'.$currentRow)->getValue();
                 $xhF = $currentSheet->getCell('F'.$currentRow)->getValue();
-                $temparr=array(
-                    'A'=>$xhA, 'B'=>$xhB,'C'=>$xhC,
-                    'D'=>$xhD, 'E'=>$xhE,'F'=>$xhF,
+                $xhG = $currentSheet->getCell('G'.$currentRow)->getValue();
+                $xhJ = $currentSheet->getCell('J'.$currentRow)->getValue();
+                $str1 = substr(self::excelTime($xhG),0,4);
+                $first_level='';
+                if (strpos($xhA, '极致') !== false) {
+                    $first_level='ul';
+                }else if(strpos($xhA, '问鼎') !== false){
+                    $first_level='awoe';
+                }else if(strpos($xhA, '音乐年') !== false){
+                    $first_level='music';
+                }
+                //echo $first_level;
+                //locationdetails
+                $keyword1=array(
+                    'keyword' => $xhE,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'locationdetails',
+                    'third_level' => '',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
                 );
-                $goods_list[]=$temparr;
+                $this->keyword_model->insertKeyword($keyword1);
+
+                $this->db->from('keyword');
+                $this->db->where('keyword', $xhE);
+                $this->db->where('first_level', $first_level);
+                $this->db->where('second_level', 'locationdetails');
+                $country = $this->db->get()->result_array();
+                $country_id = $country[0]['id'];
+                //yeardetails
+                $keyword2=array(
+                    'keyword' => $str1,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'yeardetails',
+                    'third_level' => '',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword2);
+                //typedetails
+                $keyword3=array(
+                    'keyword' => $xhJ,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'typedetails',
+                    'third_level' => '',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword3);
+                //citydetails
+                $keyword4=array(
+                    'keyword' => $xhF,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => $country_id,
+                    'third_level' => '',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword4);
             }
 
-            if ('brandname' == $tagtype) {
-                for ($i = 1; $i < count($goods_list); $i++) {
-                    $insertcontent = array(
-                        'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
-                        'sequence' => $goods_list[$i]['B'],
-                        'first_level' => $tagtype,
-                        'second_level' => $goods_list[$i]['D'],
-                        'third_level' => $goods_list[$i]['E'],
-                        'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
-                        'creator' =>$username,
-                        'updater' => $username,
-                        'status' => '1',
-                    );
-                    $this->keyword_model->insertKeyword($insertcontent);
-                }
-            } else {
-                if ('locationdetails' != $tagtype) {
-                    for ($i = 1; $i < count($goods_list); $i++) {
-                        $insertcontent = array(
-                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
-                            'sequence' => $goods_list[$i]['B'],
-                            'first_level' => $goods_list[$i]['C'],
-                            'second_level' => $tagtype,
-                            'third_level' => $goods_list[$i]['E'],
-                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
-                            'creator' => $username,
-                            'updater' => $username,
-                            'status' => '1',
-                        );
-                        $this->keyword_model->insertKeyword($insertcontent);
-                    }
-                } else {
-                    for ($i = 1; $i < count($goods_list); $i++) {
-                        $this->db->from('keyword');
-                        $this->db->where('keyword', iconv('gb2312', 'utf-8', $goods_list[$i]['A']));
-                        $this->db->where('second_level', 'locationdetails');
-                        $country = $this->db->get()->result_array();
-                        if (count($country) > 0) {
-                            $country_id = $country[0]['id'];
-                        } else {
-                            $insertcontent = array(
-                                'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
-                                'sequence' => $goods_list[$i]['B'],
-                                'first_level' => $goods_list[$i]['C'],
-                                'second_level' => $tagtype,
-                                'third_level' => $goods_list[$i]['E'],
-                                'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
-                                'creator' => $username,
-                                'updater' => $username,
-                                'status' => '1',
-                            );
-                            $this->keyword_model->insertKeyword($insertcontent);
-                            $country_id = $this->db->insert_id();
-                        }
-                        $insertcontent = array(
-                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
-                            'sequence' => $goods_list[$i]['B'],
-                            'first_level' => $goods_list[$i]['C'],
-                            'second_level' => $country_id,
-                            'third_level' => $goods_list[$i]['E'],
-                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
-                            'creator' => $username,
-                            'updater' => $username,
-                            'status' => '1',
-                        );
-                        $this->keyword_model->insertKeyword($insertcontent);
-                    }
-                }
-            }
+//            for($currentRow = 2;$currentRow<=$allRow;$currentRow++){
+//                $xhA = $currentSheet->getCell('A'.$currentRow)->getValue();
+//                $xhB = $currentSheet->getCell('B'.$currentRow)->getValue();
+//                $xhC = $currentSheet->getCell('C'.$currentRow)->getValue();
+//                $xhD = $currentSheet->getCell('D'.$currentRow)->getValue();
+//                $xhE = $currentSheet->getCell('E'.$currentRow)->getValue();
+//                $xhF = $currentSheet->getCell('F'.$currentRow)->getValue();
+//                $temparr=array(
+//                    'A'=>$xhA, 'B'=>$xhB,'C'=>$xhC,
+//                    'D'=>$xhD, 'E'=>$xhE,'F'=>$xhF,
+//                );
+//                $goods_list[]=$temparr;
+//            }
+//
+//            if ('brandname' == $tagtype) {
+//                for ($i = 1; $i < count($goods_list); $i++) {
+//                    $insertcontent = array(
+//                        'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+//                        'sequence' => $goods_list[$i]['B'],
+//                        'first_level' => $tagtype,
+//                        'second_level' => $goods_list[$i]['D'],
+//                        'third_level' => $goods_list[$i]['E'],
+//                        'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
+//                        'creator' =>$username,
+//                        'updater' => $username,
+//                        'status' => '1',
+//                    );
+//                    $this->keyword_model->insertKeyword($insertcontent);
+//                }
+//            } else {
+//                if ('locationdetails' != $tagtype) {
+//                    for ($i = 1; $i < count($goods_list); $i++) {
+//                        $insertcontent = array(
+//                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+//                            'sequence' => $goods_list[$i]['B'],
+//                            'first_level' => $goods_list[$i]['C'],
+//                            'second_level' => $tagtype,
+//                            'third_level' => $goods_list[$i]['E'],
+//                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
+//                            'creator' => $username,
+//                            'updater' => $username,
+//                            'status' => '1',
+//                        );
+//                        $this->keyword_model->insertKeyword($insertcontent);
+//                    }
+//                } else {
+//                    for ($i = 1; $i < count($goods_list); $i++) {
+//                        $this->db->from('keyword');
+//                        $this->db->where('keyword', iconv('gb2312', 'utf-8', $goods_list[$i]['A']));
+//                        $this->db->where('second_level', 'locationdetails');
+//                        $country = $this->db->get()->result_array();
+//                        if (count($country) > 0) {
+//                            $country_id = $country[0]['id'];
+//                        } else {
+//                            $insertcontent = array(
+//                                'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+//                                'sequence' => $goods_list[$i]['B'],
+//                                'first_level' => $goods_list[$i]['C'],
+//                                'second_level' => $tagtype,
+//                                'third_level' => $goods_list[$i]['E'],
+//                                'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
+//                                'creator' => $username,
+//                                'updater' => $username,
+//                                'status' => '1',
+//                            );
+//                            $this->keyword_model->insertKeyword($insertcontent);
+//                            $country_id = $this->db->insert_id();
+//                        }
+//                        $insertcontent = array(
+//                            'keyword' => iconv('gb2312', 'utf-8', $goods_list[$i]['A']),
+//                            'sequence' => $goods_list[$i]['B'],
+//                            'first_level' => $goods_list[$i]['C'],
+//                            'second_level' => $country_id,
+//                            'third_level' => $goods_list[$i]['E'],
+//                            'keyword_remark' => iconv('gb2312', 'utf-8', $goods_list[$i]['F']),
+//                            'creator' => $username,
+//                            'updater' => $username,
+//                            'status' => '1',
+//                        );
+//                        $this->keyword_model->insertKeyword($insertcontent);
+//                    }
+//                }
+//            }
 
             echo "<script>alert('导入成功！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/contentm'>";

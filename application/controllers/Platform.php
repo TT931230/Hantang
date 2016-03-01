@@ -57,6 +57,7 @@ class Platform extends CI_Controller
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
 
+
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('platform',$data);
@@ -68,6 +69,7 @@ class Platform extends CI_Controller
         for($i=0;$i<count($homecontents);$i++){
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
+
         $this->parser->parse('platformend',$data);
       //  $this->parser->parse('footer',$data);
     }
