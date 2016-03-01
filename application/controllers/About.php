@@ -87,15 +87,16 @@ class About extends CI_Controller
             $source_info['first_level']='about';
             $source_info['second_level']='videoarea1';
             $source_info['type']='video/mp4';
+            $source_info['status']='1';
          
             $video = $this->page_data_model->query_sources($source_info);
-            $source_info=$source_info_base;
+          /*  $source_info=$source_info_base;
             $source_info['status']='2';
             $source_info['first_level']='about';
             $source_info['second_level']='videoarea1';
             $source_info['type']='video/mp4';
           
-            $video =array_merge($video,$this->page_data_model->query_sources($source_info));
+            $video =array_merge($video,$this->page_data_model->query_sources($source_info));*/
 
             $source_info=$source_info_base;
             $source_info['first_level']='logoimage';
@@ -130,6 +131,7 @@ class About extends CI_Controller
             for($i=0;$i<count($homecontents);$i++){
                 $this->parser->parse($homecontents[$i]['name'],$data);
             }
+            echo $data;
             $this->parser->parse('aboutend',$data);
          //   $this->parser->parse('footer',$data);
         }

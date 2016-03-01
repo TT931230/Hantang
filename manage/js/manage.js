@@ -783,16 +783,16 @@ function $deleteselectedimg(){
     //alert("success");
 }
 
-function $savesinglevideo(imgid){
+function $savesinglevideo(imgid,video_id,first_level){
     imgsequence=$('#'+imgid+'_sequence')[0].value;
     index=$('#'+imgid+'_index')[0].value;
     $.ajax({
         type:"post",
-        data: 'id='+imgid+'&sequence='+imgsequence+'&index='+index,
+        data: 'id='+imgid+'&video_id='+video_id+'&first_level='+first_level+'&sequence='+imgsequence+'&index='+index,
         url:"Pagemanager/savesinglevideo",
         success: function(result)
         {
-            alert('保存成功！');
+            alert(result);
             $changetags('videolist');
             //$('#relatedvideoarea').html(result);
         },

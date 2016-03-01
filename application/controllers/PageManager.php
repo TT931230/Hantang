@@ -1551,11 +1551,31 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
+            $first_level = $_POST['first_level'];
+            $video_id = $_POST['video_id'];
             $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $updateitem = array(
-                'sequence' => $_POST['sequence']
-            );
-            $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+            if($first_level == 'about' || $first_level == 'platform' || $first_level == 'join'){
+                $updateitem1 = array(
+                   'status'=>'2'
+                );
+
+               $this->db->update('source',$updateitem1,
+                    array(
+                        'first_level'=>$first_level,
+                        'second_level'=>'videoarea1',
+                        'type'=>'video/mp4'
+                    )
+                );
+                $updateitem2 = array(
+                    'status'=>'1'
+                );
+                $this->db->update('source', $updateitem2, array('id' => $video_id));
+            }else{
+                $updateitem = array(
+                    'sequence' => $_POST['sequence']
+                );
+                $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+            }
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
@@ -2109,7 +2129,7 @@ TAG;
 
             $videoarray = $this->db->get()->result_array();
             $result="";
-            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title6\">视频系列</td><td class=\"vl-title7\">编辑</td></tr>";
+            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title7\">编辑</td></tr>";
             for ($i = 0; $i < count($videoarray); $i++) {
                 $this->db->from('source');
                 $this->db->where('link_url', '/' . $videoarray[$i]['first_level'] . '/' . $videoarray[$i]['first_level'] . 'inner/' . $videoarray[$i]['id']);
@@ -2127,7 +2147,7 @@ TAG;
                 }
 
                 $tmpvideoarray = array(
-                    'index'=>$index,
+                    //'index'=>$index,
                     'language' => $videoarray[$i]['third_level'],
                     'first_level' => $videoarray[$i]['first_level'],
                     'source_id' => $videoarray[$i]['id'],
@@ -2154,12 +2174,12 @@ TAG;
                 $result.="<td id=\"".$tmpvideoarray['imgid']."_img\" class=\"vl-imgmini\">";
                 $result.="    <img src=\"".$tmpvideoarray['linkimg']."\" style=\"width:96px;height: 54px;\">";
                 $result.="</td>";
-                $result.="<td class=\"vl-imgseq\">";
+               /* $result.="<td class=\"vl-imgseq\">";
                 $result.="<input type=\"text\" value=\"".$tmpvideoarray['index']."\" name=\"sequence\" id=\"".$tmpvideoarray['imgid']."_index\" class=\"vl-imgseqinput\">";
-                $result.="</td>";
+                $result.="</td>";*/
                 $result.="<td id=\"".$tmpvideoarray['imgid']."_edit\" class=\"vl-imgedit\">";
                 $result.=<<<TAG
-    <a href="javascript:;" onclick="\$savesinglevideo(\'
+<a href="javascript:;" onclick="\$savesinglevideo(\'
 TAG
 .$tmpvideoarray['imgid'].<<<TAG
 \') " class="cl-imgeditbtn">保存</a>
