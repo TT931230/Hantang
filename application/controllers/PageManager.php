@@ -144,8 +144,17 @@ class Pagemanager extends CI_Controller
                 $this->db->where('first_level',$pieces[0]);
                 $this->db->where('third_level','zn');
                 $this->db->where('type', 'img');
-                $this->db->or_where('type', 'proimg');
-                $imgarray = $this->db->get()->result_array();
+
+                $imgarray1 = $this->db->get()->result_array();
+
+                $this->db->from('source');
+                $this->db->where('deleted', 0);
+                $this->db->where('first_level',$pieces[0]);
+                $this->db->where('third_level','zn');
+                $this->db->where('type', 'proimg');
+
+                $imgarray2 = $this->db->get()->result_array();
+                $imgarray = array_merge($imgarray1,$imgarray2);
                 for ($i = 0; $i < count($imgarray); $i++) {
                     $tmpselect='';
                     $str=$imgarray[$i]['second_level'];
@@ -506,6 +515,7 @@ class Pagemanager extends CI_Controller
             //musicvideo
             $this->db->from('source');
             $this->db->where('type', 'videoimg');
+            $this->db->or_where('type','proimg');
             $this->db->where("link_url like '%music%'");
             $musicvido = $this->db->get()->result_array();
 
@@ -1958,15 +1968,13 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $music_id = $_POST['music_id'];
-            $shower_id = $_POST['shower'];
-            $season_id = $_POST['season'];
+            $music_id = $_POST['musicId'];
+            $season = $_POST['season'];
             $time = $_POST['time'];
             $location = $_POST['location'];
-            if ($music_id && $shower_id) {
+            /*if ($music_id) {
                 $this->db->from('keyword_source_relation');
                 $this->db->where('source_id', $music_id);
-                $this->db->where('keyword_id', $shower_id);
                 if (count($this->db->get()->result_array()) > 0) {
 
                 } else {
@@ -1975,8 +1983,8 @@ class Pagemanager extends CI_Controller
                         'keyword_id' => $shower_id
                     ));
                 }
-            }
-            if ($music_id && $season_id) {
+            }*/
+           /* if ($music_id && $season_id) {
                 $this->db->from('keyword_source_relation');
                 $this->db->where('source_id', $music_id);
                 $this->db->where('keyword_id', $season_id);
@@ -1988,7 +1996,7 @@ class Pagemanager extends CI_Controller
                         'keyword_id' => $season_id
                     ));
                 }
-            }
+            }*/
             if ($music_id) {
                 $this->db->from('musicinfo');
                 $this->db->where('music_id', $music_id);
@@ -1996,12 +2004,17 @@ class Pagemanager extends CI_Controller
                 if (count($tmpinfo) > 0) {
                     $this->db->update('musicinfo', array(
                         'musiclocation' => $location,
-                        'musiclocation' => $time
+                        'musictime' => $season.$time
                     ), array('id' => $tmpinfo[0]['id']));
                 } else {
-                    $this->db->insert('keyword_source_relation', array(
-                        'source_id' => $music_id,
-                        'keyword_id' => $season_id
+                    //$this->db->from('musicinfo');
+                    //$maxid =  $this->db->select_max('id')->get_where('musicinfo');
+                    $maxid = $this->db->count_all('musicinfo');
+                    $this->db->insert('musicinfo', array(
+                        'id'=>$maxid+1,
+                        'music_id' => $music_id,
+                        'musiclocation' => $location,
+                        'musictime' => $season.$time
                     ));
                 }
             }

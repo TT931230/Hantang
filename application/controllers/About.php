@@ -20,7 +20,7 @@ class About extends CI_Controller
             $page_data=$this->page_data_model->get_page_data('zn','/about');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
+            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>''
         );
 
         $source_info=$source_info_base;
@@ -46,19 +46,59 @@ class About extends CI_Controller
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
 
+        $source_info=$source_info_base;
+        $source_info['first_level']='about';
+        $source_info['second_level']='about01';
+        $source_info['type']='img';
+        $source_info['deleted']=0;
+        $about1 = $this->page_data_model->query_sources($source_info);
+
+        $source_info=$source_info_base;
+        $source_info['first_level']='about';
+        $source_info['second_level']='about02';
+        $source_info['type']='img';
+        $source_info['deleted']=0;
+        $about2 = $this->page_data_model->query_sources($source_info);
+
+        $source_info=$source_info_base;
+        $source_info['first_level']='about';
+        $source_info['second_level']='about03';
+        $source_info['type']='img';
+        $source_info['deleted']=0;
+        $about3 = $this->page_data_model->query_sources($source_info);
+
+        $source_info=$source_info_base;
+        $source_info['first_level']='about';
+        $source_info['second_level']='about04';
+        $source_info['type']='img';
+        $source_info['deleted']=0;
+        $about4 = $this->page_data_model->query_sources($source_info);
+
+        $aboutData = array(
+            'about1'=>$about1,
+            'about2'=>$about2,
+            'about3'=>$about3,
+            'about4'=>$about4,
+        );
+
+
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('about',$data);
-        $this->db->from('webcontent');
+       /* $this->db->from('webcontent');
         $this->db->where('page','about');
         $this->db->where('status','1');
         $this->db->order_by('sequence','asc');
         $homecontents=$this->db->get()->result_array();
-        for($i=0;$i<count($homecontents);$i++){
+        for($i=0;$i<3;$i++){
             $this->parser->parse($homecontents[$i]['name'],$data);
-        }
+        }*/
+
+        $this->parser->parse('about1',$tmp_data);
+        $this->parser->parse('about2',$tmp_data);
+        $this->parser->parse('about3',$aboutData);
         $this->parser->parse('aboutend',$data);
-    //    $this->parser->parse('footer',$data);
+           $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
         $this->load->library('session');

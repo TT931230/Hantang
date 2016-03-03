@@ -1129,9 +1129,10 @@ function $deletejob(id){
     });
 }
 function $saveMusic(){
+    //alert($('#music_id')[0].value);
     $.ajax({
         type:"post",
-        data: 'music_id='+$('#musicid')[0].value+'&shower='+$('#showers')[0].value+'&season'+$('#displayseason')[0].value+'&time'+$('#displaytime')[0].value+'&location'+$('#displaylocation')[0].value,
+        data: 'musicId='+$('#music_id')[0].value+'&season='+$('#displayseason')[0].value+'&time='+$('#displaytime')[0].value+'&location='+$('#displaylocation')[0].value,
         url:"Pagemanager/savemusic",
         success: function(result)
         {

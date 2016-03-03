@@ -30,15 +30,17 @@ class Platform extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='platform';
-        $source_info['second_level']='imagearea2';
+        $source_info['second_level']='aboutmap1';
         $source_info['type']='img';
-        $imagearea2 = $this->page_data_model->query_sources($source_info);
+        $source_info['deleted'] = '0';
+        $aboutmap1 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='platform';
-        $source_info['second_level']='imagearea3';
+        $source_info['second_level']='aboutmap2';
         $source_info['type']='img';
-        $imagearea3 = $this->page_data_model->query_sources($source_info);
+        $source_info['deleted'] = '0';
+        $aboutmap2 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
@@ -50,8 +52,8 @@ class Platform extends CI_Controller
         $tmp_data = array(
             'logoimage'=>$logoimage,
             'videoarea1'=>$imagearea1,
-            'imagearea2'=>$imagearea2,
-            'imagearea3'=>$imagearea3
+            'aboutmap1'=>$aboutmap1,
+            'aboutmap2'=>$aboutmap2
         );
 
         $tmp_data=array_merge($tmp_data,$tag_data);
@@ -60,18 +62,23 @@ class Platform extends CI_Controller
 
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
-        $this->parser->parse('platform',$data);
-        $this->db->from('webcontent');
+        $this->parser->parse('platform1',$tmp_data);
+        $this->parser->parse('platform2',$tmp_data);
+        $this->parser->parse('platform3',$tmp_data);
+        $this->parser->parse('platform4',$tmp_data);
+        $this->parser->parse('platform5',$tmp_data);
+        $this->parser->parse('platform6',$tmp_data);
+        /*$this->db->from('webcontent');
         $this->db->where('page','platform');
         $this->db->where('status','1');
         $this->db->order_by('sequence','asc');
         $homecontents=$this->db->get()->result_array();
         for($i=0;$i<count($homecontents);$i++){
             $this->parser->parse($homecontents[$i]['name'],$data);
-        }
+        }*/
 
         $this->parser->parse('platformend',$data);
-      //  $this->parser->parse('footer',$data);
+        $this->parser->parse('footer',$data);
     }
     function Changelanguage(){
         $this->load->library('session');
