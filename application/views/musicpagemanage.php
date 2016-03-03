@@ -29,6 +29,11 @@
             {/affiliatedmodules}
         </select>
     </div>
+    <div class="hpm-div">
+        <label class="col-lg-2">视频链接</label>
+        <input id="hpm-content-video" class="col-lg-2" type="text">
+
+    </div>
 
     <div class="hpm-div">
         <label class="col-lg-2">内容图片</label>

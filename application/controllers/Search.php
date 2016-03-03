@@ -99,6 +99,24 @@ class Search extends CI_Controller
 
     function searchrelatedvideo(){
         $keyword_id=$_POST['keyword_id'];
+
+        /*$this->db->from('keyword_source_relation');
+        $this->db->where('keyword_id',$keyword_id);
+        $query=$this->db->get();
+        $result1=$query->result_array();
+        $source_id=$result1[0]['source_id'];
+        $this->db->from('source');
+        $this->db->where('id',$source_id);
+        $query=$this->db->get();
+        $result2=$query->result_array();
+        $id = $result2[0].['id'];
+
+        $this->db->from('source');
+        $this->db->where("link_url like '%".$id."%'");
+        $query=$this->db->get();
+        $results=$query->result_array();*/
+
+
         $this->db->from('source as a');
         $this->db->join('keyword_source_relation as b','b.source_id=a.id','inner');
         $this->db->join('keyword as c','b.keyword_id=c.id','inner');
@@ -106,8 +124,13 @@ class Search extends CI_Controller
         $this->db->where('a.status','1');
         $this->db->where('c.id',$keyword_id);
         $this->db->where('a.type','videoimg');
+
+
+        //$this->db->where("a.link_url like %a.id%%");
         $query=$this->db->get();
         $results=$query->result_array();
+        //$insertedid=$this->db->insert_id();
+
         $return="";
         for($i=0;$i<count($results);$i++){
             $return.='<div class="relatedvideos">';

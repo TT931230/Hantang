@@ -131,39 +131,83 @@ class Pagemanager extends CI_Controller
                 case 'music':
                     $affiliatedmodules=array(
                         array('name'=>'音乐年1'),
+                        array('name'=>'音乐年2')
                     );
-                    $tmparr=array('imagearea1');break;
+                    $tmparr=array('imagearea1','imagearea2');break;
                 case 'join':
                     $tmparr=NULL;break;
             }
-            $this->db->from('source');
-            $this->db->where('deleted', 0);
-            $this->db->where('first_level',$pieces[0]);
-            $this->db->where('third_level','zn');
-            $this->db->where('type', 'img');
-            $imgarray = $this->db->get()->result_array();
-            for ($i = 0; $i < count($imgarray); $i++) {
-                $tmpselect='';
-                $str=$imgarray[$i]['second_level'];
-                if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
-                    continue;
-                }
-                for ($j = 0; $j < count($tmparr); $j++) {
-                    if ($tmparr[$j] == $imgarray[$i]['second_level']) {
-                        $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
-                    } else {
-                        $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+
+            if($pieces[0] == 'music'){
+                $this->db->from('source');
+                $this->db->where('deleted', 0);
+                $this->db->where('first_level',$pieces[0]);
+                $this->db->where('third_level','zn');
+                $this->db->where('type', 'img');
+
+                $imgarray1 = $this->db->get()->result_array();
+
+                $this->db->from('source');
+                $this->db->where('deleted', 0);
+                $this->db->where('first_level',$pieces[0]);
+                $this->db->where('third_level','zn');
+                $this->db->where('type', 'proimg');
+
+                $imgarray2 = $this->db->get()->result_array();
+                $imgarray = array_merge($imgarray1,$imgarray2);
+                for ($i = 0; $i < count($imgarray); $i++) {
+                    $tmpselect='';
+                    $str=$imgarray[$i]['second_level'];
+                    if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
+                        continue;
                     }
+                    for ($j = 0; $j < count($tmparr); $j++) {
+                        if ($tmparr[$j] == $imgarray[$i]['second_level']) {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
+                        } else {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+                        }
+                    }
+                    $tmpimgarray = array(
+                        'source_id' => $imgarray[$i]['id'],
+                        'source_name' => $imgarray[$i]['source_name'],
+                        'source_remark' => $imgarray[$i]['source_remark'],
+                        'source_location' => $imgarray[$i]['source_location'],
+                        'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                    );
+                    array_push($relatedimg, $tmpimgarray);
                 }
-                $tmpimgarray = array(
-                    'source_id' => $imgarray[$i]['id'],
-                    'source_name' => $imgarray[$i]['source_name'],
-                    'source_remark' => $imgarray[$i]['source_remark'],
-                    'source_location' => $imgarray[$i]['source_location'],
-                    'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
-                );
-                array_push($relatedimg, $tmpimgarray);
+            }else{
+                $this->db->from('source');
+                $this->db->where('deleted', 0);
+                $this->db->where('first_level',$pieces[0]);
+                $this->db->where('third_level','zn');
+                $this->db->where('type', 'img');
+                $imgarray = $this->db->get()->result_array();
+                for ($i = 0; $i < count($imgarray); $i++) {
+                    $tmpselect='';
+                    $str=$imgarray[$i]['second_level'];
+                    if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
+                        continue;
+                    }
+                    for ($j = 0; $j < count($tmparr); $j++) {
+                        if ($tmparr[$j] == $imgarray[$i]['second_level']) {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
+                        } else {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+                        }
+                    }
+                    $tmpimgarray = array(
+                        'source_id' => $imgarray[$i]['id'],
+                        'source_name' => $imgarray[$i]['source_name'],
+                        'source_remark' => $imgarray[$i]['source_remark'],
+                        'source_location' => $imgarray[$i]['source_location'],
+                        'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                    );
+                    array_push($relatedimg, $tmpimgarray);
+                }
             }
+
 
 
 
@@ -471,6 +515,7 @@ class Pagemanager extends CI_Controller
             //musicvideo
             $this->db->from('source');
             $this->db->where('type', 'videoimg');
+            $this->db->or_where('type','proimg');
             $this->db->where("link_url like '%music%'");
             $musicvido = $this->db->get()->result_array();
 
@@ -706,7 +751,7 @@ class Pagemanager extends CI_Controller
 
                 $insertLocalImgArray = array(
                     'source_location' => $fileUrl.$imageName,
-                    'status' => '2',
+                    'status' => '1',
                     'source_name' => $imageName,
                     'type' => 'videoimg',
                     'updater' => $username,
@@ -717,9 +762,6 @@ class Pagemanager extends CI_Controller
                     'create_time'=>date("y-m-d", time()),
                     'link_url'=>'/' . $first_level . '/' . $first_level . 'inner/' . $id,
                 );
-                if($first_level=='music'){
-                    $insertLocalImgArray['type'] = 'proimg';
-                }
 
 
                 $this->load->model('source_model');
@@ -753,24 +795,53 @@ class Pagemanager extends CI_Controller
                 $third_level = 'zn';
                 $first_level = $_POST['first_level'];
                 $second_level=$_POST['affiliated'];
+                $link_url = $_POST['link_url'];
                 //echo $_FILES["files"]["tmp_name"];
                 move_uploaded_file($_FILES["files"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["files"]["name"]);
+                if($second_level == 'imagearea2' && $first_level == 'music'){
+                    $this->db->from('source');
+                    //$this->db->select('id');
+                    $this->db->where('source_location',$link_url);
+                    $this->db->where('first_level','music');
+                    $query=$this->db->get();
+                    $results=$query->result_array();
+                    $url="/music/musicinner/".$results[0]['id'];
 
-                $insertimg=array(
-                    'source_location' => $source_location,
-                    'status' => '1',
-                    'source_name' => $source_name,
-                    'link_url' => null,
-                    'sequence' => $sequence,
-                    'updater' => $username,
-                    'type' => 'img',
-                    'creator' => $username,
-                    'first_level' => $first_level,
-                    'second_level' => $second_level,
-                    'source_remark' => $source_remark,
-                    'third_level' => $third_level,
-                );
-                $this->load->model('source_model');
+                    $insertimg=array(
+                        'source_location' => $source_location,
+                        'status' => '1',
+                        'source_name' => $source_name,
+                        'link_url' => $url,
+                        'sequence' => $sequence,
+                        'updater' => $username,
+                        'type' => 'proimg',
+                        'creator' => $username,
+                        'first_level' => $first_level,
+                        'second_level' => $second_level,
+                        'source_remark' => $source_remark,
+                        'third_level' => $third_level,
+                    );
+                }else{
+                    $insertimg=array(
+                        'source_location' => $source_location,
+                        'status' => '1',
+                        'source_name' => $source_name,
+                        'link_url' => null,
+                        'sequence' => $sequence,
+                        'updater' => $username,
+                        'type' => 'img',
+                        'creator' => $username,
+                        'first_level' => $first_level,
+                        'second_level' => $second_level,
+                        'source_remark' => $source_remark,
+                        'third_level' => $third_level,
+                    );
+                }
+
+
+
+
+               $this->load->model('source_model');
                 $this->source_model->insertimg($insertimg);
                 echo 'success'.'||||';
 
@@ -832,7 +903,7 @@ class Pagemanager extends CI_Controller
                     //'index'=>$index,
                     'keyword' => $keyword,
                     'source_location' => $source_location,
-                    'status' => '2',
+                    'status' => '1',
                     'source_name' => $source_name,
                     'source_remark' => $source_remark,
                     'sequence' => $sequence,
@@ -855,7 +926,7 @@ class Pagemanager extends CI_Controller
                     //'index'=>$index,
                     'keyword' => $keyword,
                     'source_location' => $source_location,
-                    'status' => '2',
+                    'status' => '1',
                     'source_name' => $source_name,
                     'source_remark' => $source_remark,
                     'sequence' => $sequence,
@@ -1646,11 +1717,31 @@ class Pagemanager extends CI_Controller
         $this->load->library('session');
 
         if($this->session->username) {
+            $first_level = $_POST['first_level'];
+            $video_id = $_POST['video_id'];
             $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $updateitem = array(
-                'sequence' => $_POST['sequence']
-            );
-            $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+            if($first_level == 'about' || $first_level == 'platform' || $first_level == 'join'){
+                $updateitem1 = array(
+                   'status'=>'2'
+                );
+
+               $this->db->update('source',$updateitem1,
+                    array(
+                        'first_level'=>$first_level,
+                        'second_level'=>'videoarea1',
+                        'type'=>'video/mp4'
+                    )
+                );
+                $updateitem2 = array(
+                    'status'=>'1'
+                );
+                $this->db->update('source', $updateitem2, array('id' => $video_id));
+            }else{
+                $updateitem = array(
+                    'sequence' => $_POST['sequence']
+                );
+                $this->db->update('source', $updateitem, array('id' => $_POST['id']));
+            }
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
@@ -1877,15 +1968,13 @@ class Pagemanager extends CI_Controller
 
         if($this->session->username) {
             $username = $this->session->username;$privilige4user=$this->session->privilige;
-            $music_id = $_POST['music_id'];
-            $shower_id = $_POST['shower'];
-            $season_id = $_POST['season'];
+            $music_id = $_POST['musicId'];
+            $season = $_POST['season'];
             $time = $_POST['time'];
             $location = $_POST['location'];
-            if ($music_id && $shower_id) {
+            /*if ($music_id) {
                 $this->db->from('keyword_source_relation');
                 $this->db->where('source_id', $music_id);
-                $this->db->where('keyword_id', $shower_id);
                 if (count($this->db->get()->result_array()) > 0) {
 
                 } else {
@@ -1894,8 +1983,8 @@ class Pagemanager extends CI_Controller
                         'keyword_id' => $shower_id
                     ));
                 }
-            }
-            if ($music_id && $season_id) {
+            }*/
+           /* if ($music_id && $season_id) {
                 $this->db->from('keyword_source_relation');
                 $this->db->where('source_id', $music_id);
                 $this->db->where('keyword_id', $season_id);
@@ -1907,7 +1996,7 @@ class Pagemanager extends CI_Controller
                         'keyword_id' => $season_id
                     ));
                 }
-            }
+            }*/
             if ($music_id) {
                 $this->db->from('musicinfo');
                 $this->db->where('music_id', $music_id);
@@ -1915,12 +2004,17 @@ class Pagemanager extends CI_Controller
                 if (count($tmpinfo) > 0) {
                     $this->db->update('musicinfo', array(
                         'musiclocation' => $location,
-                        'musiclocation' => $time
+                        'musictime' => $season.$time
                     ), array('id' => $tmpinfo[0]['id']));
                 } else {
-                    $this->db->insert('keyword_source_relation', array(
-                        'source_id' => $music_id,
-                        'keyword_id' => $season_id
+                    //$this->db->from('musicinfo');
+                    //$maxid =  $this->db->select_max('id')->get_where('musicinfo');
+                    $maxid = $this->db->count_all('musicinfo');
+                    $this->db->insert('musicinfo', array(
+                        'id'=>$maxid+1,
+                        'music_id' => $music_id,
+                        'musiclocation' => $location,
+                        'musictime' => $season.$time
                     ));
                 }
             }
@@ -2204,7 +2298,7 @@ TAG;
 
             $videoarray = $this->db->get()->result_array();
             $result="";
-            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title6\">视频系列</td><td class=\"vl-title7\">编辑</td></tr>";
+            $result.="<table><tr><td class=\"vl-title1\">视频名称</td><td class=\"vl-title2\">视频地址</td><td class=\"vl-title3\">栏目</td><td class=\"vl-title4\">语言</td><td class=\"vl-title5\">顺序</td><td class=\"vl-title6\">封面缩略图</td><td class=\"vl-title7\">编辑</td></tr>";
             for ($i = 0; $i < count($videoarray); $i++) {
                 $this->db->from('source');
                 $this->db->where('link_url', '/' . $videoarray[$i]['first_level'] . '/' . $videoarray[$i]['first_level'] . 'inner/' . $videoarray[$i]['id']);
@@ -2222,7 +2316,7 @@ TAG;
                 }
 
                 $tmpvideoarray = array(
-                    'index'=>$index,
+                    //'index'=>$index,
                     'language' => $videoarray[$i]['third_level'],
                     'first_level' => $videoarray[$i]['first_level'],
                     'source_id' => $videoarray[$i]['id'],
@@ -2249,12 +2343,12 @@ TAG;
                 $result.="<td id=\"".$tmpvideoarray['imgid']."_img\" class=\"vl-imgmini\">";
                 $result.="    <img src=\"".$tmpvideoarray['linkimg']."\" style=\"width:96px;height: 54px;\">";
                 $result.="</td>";
-                $result.="<td class=\"vl-imgseq\">";
+               /* $result.="<td class=\"vl-imgseq\">";
                 $result.="<input type=\"text\" value=\"".$tmpvideoarray['index']."\" name=\"sequence\" id=\"".$tmpvideoarray['imgid']."_index\" class=\"vl-imgseqinput\">";
-                $result.="</td>";
+                $result.="</td>";*/
                 $result.="<td id=\"".$tmpvideoarray['imgid']."_edit\" class=\"vl-imgedit\">";
                 $result.=<<<TAG
-    <a href="javascript:;" onclick="\$savesinglevideo(\'
+<a href="javascript:;" onclick="\$savesinglevideo(\'
 TAG
 .$tmpvideoarray['imgid'].<<<TAG
 \') " class="cl-imgeditbtn">保存</a>

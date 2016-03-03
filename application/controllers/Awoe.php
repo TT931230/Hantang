@@ -179,14 +179,15 @@ class Awoe extends CI_Controller
         $this->db->where("status='1' and first_level='awoe' and third_level='".$this->session->language."' and link_url like '%".$videoname."%' and type='videoimg'");
         $this->db->from('source');
         $videoimgarray = $this->db->get()->result_array();
-        if($videoimgarray[0]['index']) {
+        /*if($videoimgarray[0]['index']) {
             $this->db->where("status='1' and index ='" . $videoimgarray[0]['index'] . "' and type='videoimg' and first_level='awoe'");
             $this->db->from('source');
             $this->db->order_by('sequence','asc');
             $relatedvideo1 = $this->db->get()->result_array();
         }else{
             $relatedvideo1=array();
-        }
+        }*/
+        $relatedvideo1=array();
         if(count($relatedvideo1)>0){
             for($i=count($relatedvideo)-1;$i>0;$i--){
                 for($j=0;$j<count($relatedvideo1);$j++){

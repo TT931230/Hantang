@@ -30,6 +30,7 @@ class Music extends CI_Controller
         $source_info['second_level']='imagearea1';
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
+        $source_info['deleted']='0';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
 
@@ -55,6 +56,7 @@ class Music extends CI_Controller
         //get music relative radio
         $source_info=$source_info_base;
         $source_info['first_level']='music';
+        $source_info['deleted']='0';
         $source_info['type']='proimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
@@ -158,7 +160,8 @@ class Music extends CI_Controller
         $this->db->from('source');
         $this->db->where('status','1');
         $this->db->where('third_level',$this->session->language);
-        $this->db->where('first_level',$videoname);
+        $this->db->where("link_url like '%".$videoname."%'");
+
         $imgdata=$this->db->get()->result_array();
         if(count($imgdata)>0){
             $video[0]['imgurl']=$imgdata[0]['source_location'];

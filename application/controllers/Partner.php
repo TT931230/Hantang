@@ -26,6 +26,8 @@ class Partner extends CI_Controller
         $source_info['first_level']='partner';
         $source_info['second_level']='imagearea1';
         $source_info['type']='img';
+        $source_info['deleted']='0';
+
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;

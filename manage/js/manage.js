@@ -215,9 +215,41 @@ function $savehpmselected(pagename){
 function $savepageimg(pagename){
     imgname=$("#hpm-content-title").val();
     affiliated=$("#affiliatedmoudle option:selected").text();
+    if(pagename == 'home'){
+        affiliated = affiliated.substr(2,1);
+        affiliated = 'imagearea'+affiliated;
+    }
+    if(pagename == 'about'){
+        affiliated = affiliated.substr(4,1);
+        affiliated = 'about0'+affiliated;
+    }
+    if(pagename == 'platform'){
+        affiliated = affiliated.substr(4,1);
+        affiliated = 'aboutmap'+affiliated;
+    }
+    if(pagename == 'partner'){
+        affiliated = affiliated.substr(4,1);
+        affiliated = 'imagearea'+affiliated;
+    }
+    if(pagename == 'ul'){
+        affiliated = affiliated.substr(2,1);
+        affiliated = 'imagearea'+affiliated;
+    }
+    if(pagename == 'awoe'){
+        affiliated = affiliated.substr(4,1);
+        affiliated = 'imagearea'+affiliated;
+    }
+    if(pagename == 'music'){
+        affiliated = affiliated.substr(3,1);
+        affiliated = 'imagearea'+affiliated;
+    }
+
     source_remark=$("#hpm-contentinfo").val();
     source_location=$("#hpminputimg").val();
-
+    link_url='';
+    if(pagename=='music'){
+        link_url = $("#hpm-content-video").val();
+    }
     if(imgname==""||affiliated==""||source_location==""||source_remark==""){
         alert("值不能为空！");
         return;
@@ -228,10 +260,11 @@ function $savepageimg(pagename){
         fileElementId:'hpminputimg',
         dataType: 'text',
         data:{"first_level":pagename,"source_name":imgname,"affiliated":affiliated,
-            "source_remark":source_remark} ,
+            "source_remark":source_remark,"link_url":link_url} ,
         success: function (data){
+
+            alert(data);
             result=data.split('||||');
-            alert(result[0]);
             imgname=$("#hpm-content-title").val("");
             source_remark=$("#hpm-contentinfo").val("");
             source_location=$("#hpminputimg").val("");
@@ -281,23 +314,29 @@ function $saveVideo(){
                 //dataType:'json',
                 success: function(result)
                 {
-                    var data = result.split("|");
-                    var lan = data[2].substr(0,2);
-                    $.ajaxFileUpload ({
-                        url:"Pagemanager/uploadLocalImg",
-                        secureuri:false,
-                        fileElementId:'inputVideoImg',
-                        dataType: 'text',
-                        data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
-                        success: function (data){
-                            alert('upload success');
-                            $('#source_location')[0].value='';
-                            $('#source_name')[0].value='';
-                            $('#source_remark')[0].value='';
-                        },error:function(){
-                            alert("ajax error");
-                        }
-                    });
+                    var flag = result.substr(0,5);
+                    if(flag == "noimg"){
+                        alert('上传成功！');
+                    }else{
+                        var data = result.split("|");
+                        var lan = data[2].substr(0,2);
+                        $.ajaxFileUpload ({
+                            url:"Pagemanager/uploadLocalImg",
+                            secureuri:false,
+                            fileElementId:'inputVideoImg',
+                            dataType: 'text',
+                            data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
+                            success: function (data){
+                                alert('upload success');
+                                $('#source_location')[0].value='';
+                                $('#source_name')[0].value='';
+                                $('#source_remark')[0].value='';
+                            },error:function(){
+                                alert("ajax error");
+                            }
+                        });
+                    }
+
                 },
                 error: function()
                 {
@@ -783,16 +822,16 @@ function $deleteselectedimg(){
     //alert("success");
 }
 
-function $savesinglevideo(imgid){
+function $savesinglevideo(imgid,video_id,first_level){
     imgsequence=$('#'+imgid+'_sequence')[0].value;
     index=$('#'+imgid+'_index')[0].value;
     $.ajax({
         type:"post",
-        data: 'id='+imgid+'&sequence='+imgsequence+'&index='+index,
+        data: 'id='+imgid+'&video_id='+video_id+'&first_level='+first_level+'&sequence='+imgsequence+'&index='+index,
         url:"Pagemanager/savesinglevideo",
         success: function(result)
         {
-            alert('保存成功！');
+            alert(result);
             $changetags('videolist');
             //$('#relatedvideoarea').html(result);
         },
@@ -1090,9 +1129,10 @@ function $deletejob(id){
     });
 }
 function $saveMusic(){
+    //alert($('#music_id')[0].value);
     $.ajax({
         type:"post",
-        data: 'music_id='+$('#musicid')[0].value+'&shower='+$('#showers')[0].value+'&season'+$('#displayseason')[0].value+'&time'+$('#displaytime')[0].value+'&location'+$('#displaylocation')[0].value,
+        data: 'musicId='+$('#music_id')[0].value+'&season='+$('#displayseason')[0].value+'&time='+$('#displaytime')[0].value+'&location='+$('#displaylocation')[0].value,
         url:"Pagemanager/savemusic",
         success: function(result)
         {
