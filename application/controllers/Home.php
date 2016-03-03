@@ -102,6 +102,7 @@ class Home extends CI_Controller
         }
         $this->parser->parse('homeend',$data);
         $this->parser->parse('footer',$data);
+
     }
     function Changelanguage(){
         $this->load->library('session');
