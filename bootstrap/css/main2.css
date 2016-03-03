@@ -60,7 +60,7 @@
   #left{
   margin:0;
   float:left;
-  width:364;
+  width:364px;
   height:432px;
   margin-bottom:0.46%;
   
@@ -93,7 +93,7 @@
   }
   #right{
  float:left;
-  width:916;
+  width:916px;
 margin-bottom:0.46%;
   
   }
@@ -526,7 +526,7 @@ margin-left:0px;
  
 #sharetext{
 	font-size:12px;
-	color:color:#626262;
+	color:#626262;
 	margin-top:10px;
 }
   /*

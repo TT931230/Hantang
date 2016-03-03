@@ -258,7 +258,7 @@ function $changelanguage($url,$language){
 }
 
 function $searchrelatedvideo($keyword_id){
-    alert($keyword_id);
+
     $.ajax({
         type:"post",
         data: "keyword_id=" + $keyword_id,

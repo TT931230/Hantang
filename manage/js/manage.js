@@ -194,12 +194,16 @@ function $delhpmselected(pagename){
 function $savehpmselected(pagename){
     $(".vl-check input[type='checkbox']").each(function(){
         if($(this).prop("checked")){
-            var source_id=$(this).parent().siblings(".hpm-td3").attr("id");
-            var arr=source_id.split('_');
+            source_id=$(this).parent().siblings(".hpm-td3").attr("id");
+            arr=source_id.split('_');
+            sourceid=arr[0];
+            sourcename=$('#'+sourceid+'_name').val();
+            sourceremark=$('#'+sourceid+'_remark').val();
+            second_level=$('#'+sourceid+'_imgarea '+'option:selected').text();
 
             $.ajax({
                 type:"post",
-                data: 'source_id='+arr[0],
+                data: 'id='+sourceid+'&sourcename='+sourcename+'&sourceremark='+sourceremark+'&second_level='+second_level,
                 url:"Pagemanager/savhpmsingleimg",
                 success: function(result) {
                 },
@@ -262,9 +266,8 @@ function $savepageimg(pagename){
         data:{"first_level":pagename,"source_name":imgname,"affiliated":affiliated,
             "source_remark":source_remark,"link_url":link_url} ,
         success: function (data){
-
-            alert(data);
             result=data.split('||||');
+            alert(result[0]);
             imgname=$("#hpm-content-title").val("");
             source_remark=$("#hpm-contentinfo").val("");
             source_location=$("#hpminputimg").val("");
