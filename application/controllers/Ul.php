@@ -181,14 +181,15 @@ class Ul extends CI_Controller
         $this->db->where("status='1' and first_level='ul' and third_level='".$this->session->language."' and link_url like '%".$videoid."%' and type='videoimg'");
         $this->db->from('source');
         $videoimgarray = $this->db->get()->result_array();
-        if($videoimgarray[0]['index']) {
+       /* if($videoimgarray[0]['index']) {
             $this->db->where("status='1' and index ='" . $videoimgarray[0]['index'] . "' and type='videoimg' and first_level='ul'");
             $this->db->from('source');
             $this->db->order_by('sequence','asc');
             $relatedvideo1 = $this->db->get()->result_array();
         }else{
             $relatedvideo1=array();
-        }
+        }*/
+        $relatedvideo1=array();
         if(count($relatedvideo1)>0){
             for($i=count($relatedvideo)-1;$i>0;$i--){
                 for($j=0;$j<count($relatedvideo1);$j++){
@@ -321,7 +322,7 @@ class Ul extends CI_Controller
 
 
 
-            $source_info=$source_info_base;
+            /*$source_info=$source_info_base;
             $source_info['first_level']='ul';
             $source_info['type']='videoimg';
             $source_info['third_level']=$this->session->language;
@@ -331,7 +332,13 @@ class Ul extends CI_Controller
             $source_info['first_level']='ul';
             $source_info['type']='videoimg';
             $source_info['third_level']=$this->session->language;
-            $relatedvideo =array_merge($relatedvideo,$this->page_data_model->query_sources($source_info));
+            $relatedvideo =array_merge($relatedvideo,$this->page_data_model->query_sources($source_info));*/
+            $source_info=$source_info_base;
+            $source_info['first_level']='ul';
+            $source_info['status']='1';
+            $source_info['type']='videoimg';
+            $source_info['third_level']=$this->session->language;
+            $relatedvideo = $this->page_data_model->query_sources($source_info);
 
 
 

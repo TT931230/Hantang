@@ -131,39 +131,74 @@ class Pagemanager extends CI_Controller
                 case 'music':
                     $affiliatedmodules=array(
                         array('name'=>'音乐年1'),
+                        array('name'=>'音乐年2')
                     );
-                    $tmparr=array('imagearea1');break;
+                    $tmparr=array('imagearea1','imagearea2');break;
                 case 'join':
                     $tmparr=NULL;break;
             }
-            $this->db->from('source');
-            $this->db->where('deleted', 0);
-            $this->db->where('first_level',$pieces[0]);
-            $this->db->where('third_level','zn');
-            $this->db->where('type', 'img');
-            $imgarray = $this->db->get()->result_array();
-            for ($i = 0; $i < count($imgarray); $i++) {
-                $tmpselect='';
-                $str=$imgarray[$i]['second_level'];
-                if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
-                    continue;
-                }
-                for ($j = 0; $j < count($tmparr); $j++) {
-                    if ($tmparr[$j] == $imgarray[$i]['second_level']) {
-                        $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
-                    } else {
-                        $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+
+            if($pieces[0] == 'music'){
+                $this->db->from('source');
+                $this->db->where('deleted', 0);
+                $this->db->where('first_level',$pieces[0]);
+                $this->db->where('third_level','zn');
+                $this->db->where('type', 'img');
+                $this->db->or_where('type', 'proimg');
+                $imgarray = $this->db->get()->result_array();
+                for ($i = 0; $i < count($imgarray); $i++) {
+                    $tmpselect='';
+                    $str=$imgarray[$i]['second_level'];
+                    if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
+                        continue;
                     }
+                    for ($j = 0; $j < count($tmparr); $j++) {
+                        if ($tmparr[$j] == $imgarray[$i]['second_level']) {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
+                        } else {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+                        }
+                    }
+                    $tmpimgarray = array(
+                        'source_id' => $imgarray[$i]['id'],
+                        'source_name' => $imgarray[$i]['source_name'],
+                        'source_remark' => $imgarray[$i]['source_remark'],
+                        'source_location' => $imgarray[$i]['source_location'],
+                        'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                    );
+                    array_push($relatedimg, $tmpimgarray);
                 }
-                $tmpimgarray = array(
-                    'source_id' => $imgarray[$i]['id'],
-                    'source_name' => $imgarray[$i]['source_name'],
-                    'source_remark' => $imgarray[$i]['source_remark'],
-                    'source_location' => $imgarray[$i]['source_location'],
-                    'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
-                );
-                array_push($relatedimg, $tmpimgarray);
+            }else{
+                $this->db->from('source');
+                $this->db->where('deleted', 0);
+                $this->db->where('first_level',$pieces[0]);
+                $this->db->where('third_level','zn');
+                $this->db->where('type', 'img');
+                $imgarray = $this->db->get()->result_array();
+                for ($i = 0; $i < count($imgarray); $i++) {
+                    $tmpselect='';
+                    $str=$imgarray[$i]['second_level'];
+                    if($str=='imagearea11'||$str=='imagearea12'||$str=='imagearea13'){
+                        continue;
+                    }
+                    for ($j = 0; $j < count($tmparr); $j++) {
+                        if ($tmparr[$j] == $imgarray[$i]['second_level']) {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '" selected>' . $tmparr[$j] . '</option>';
+                        } else {
+                            $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
+                        }
+                    }
+                    $tmpimgarray = array(
+                        'source_id' => $imgarray[$i]['id'],
+                        'source_name' => $imgarray[$i]['source_name'],
+                        'source_remark' => $imgarray[$i]['source_remark'],
+                        'source_location' => $imgarray[$i]['source_location'],
+                        'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                    );
+                    array_push($relatedimg, $tmpimgarray);
+                }
             }
+
 
 
 
@@ -706,7 +741,7 @@ class Pagemanager extends CI_Controller
 
                 $insertLocalImgArray = array(
                     'source_location' => $fileUrl.$imageName,
-                    'status' => '2',
+                    'status' => '1',
                     'source_name' => $imageName,
                     'type' => 'videoimg',
                     'updater' => $username,
@@ -717,9 +752,6 @@ class Pagemanager extends CI_Controller
                     'create_time'=>date("y-m-d", time()),
                     'link_url'=>'/' . $first_level . '/' . $first_level . 'inner/' . $id,
                 );
-                if($first_level=='music'){
-                    $insertLocalImgArray['type'] = 'proimg';
-                }
 
 
                 $this->load->model('source_model');
@@ -753,24 +785,53 @@ class Pagemanager extends CI_Controller
                 $third_level = 'zn';
                 $first_level = $_POST['first_level'];
                 $second_level=$_POST['affiliated'];
+                $link_url = $_POST['link_url'];
                 //echo $_FILES["files"]["tmp_name"];
                 move_uploaded_file($_FILES["files"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["files"]["name"]);
+                if($second_level == 'imagearea2' && $first_level == 'music'){
+                    $this->db->from('source');
+                    //$this->db->select('id');
+                    $this->db->where('source_location',$link_url);
+                    $this->db->where('first_level','music');
+                    $query=$this->db->get();
+                    $results=$query->result_array();
+                    $url="/music/musicinner/".$results[0]['id'];
 
-                $insertimg=array(
-                    'source_location' => $source_location,
-                    'status' => '1',
-                    'source_name' => $source_name,
-                    'link_url' => null,
-                    'sequence' => $sequence,
-                    'updater' => $username,
-                    'type' => 'img',
-                    'creator' => $username,
-                    'first_level' => $first_level,
-                    'second_level' => $second_level,
-                    'source_remark' => $source_remark,
-                    'third_level' => $third_level,
-                );
-                $this->load->model('source_model');
+                    $insertimg=array(
+                        'source_location' => $source_location,
+                        'status' => '1',
+                        'source_name' => $source_name,
+                        'link_url' => $url,
+                        'sequence' => $sequence,
+                        'updater' => $username,
+                        'type' => 'proimg',
+                        'creator' => $username,
+                        'first_level' => $first_level,
+                        'second_level' => $second_level,
+                        'source_remark' => $source_remark,
+                        'third_level' => $third_level,
+                    );
+                }else{
+                    $insertimg=array(
+                        'source_location' => $source_location,
+                        'status' => '1',
+                        'source_name' => $source_name,
+                        'link_url' => null,
+                        'sequence' => $sequence,
+                        'updater' => $username,
+                        'type' => 'img',
+                        'creator' => $username,
+                        'first_level' => $first_level,
+                        'second_level' => $second_level,
+                        'source_remark' => $source_remark,
+                        'third_level' => $third_level,
+                    );
+                }
+
+
+
+
+               $this->load->model('source_model');
                 $this->source_model->insertimg($insertimg);
                 echo 'success'.'||||';
 
@@ -832,7 +893,7 @@ class Pagemanager extends CI_Controller
                     //'index'=>$index,
                     'keyword' => $keyword,
                     'source_location' => $source_location,
-                    'status' => '2',
+                    'status' => '1',
                     'source_name' => $source_name,
                     'source_remark' => $source_remark,
                     'sequence' => $sequence,
@@ -855,7 +916,7 @@ class Pagemanager extends CI_Controller
                     //'index'=>$index,
                     'keyword' => $keyword,
                     'source_location' => $source_location,
-                    'status' => '2',
+                    'status' => '1',
                     'source_name' => $source_name,
                     'source_remark' => $source_remark,
                     'sequence' => $sequence,
