@@ -811,7 +811,8 @@ class Pagemanager extends CI_Controller
                 //echo $_POST['source_location'];
                 $source_name = $_POST['source_name'];
                 $source_remark = $_POST['source_remark'];
-                $third_level = 'zn';
+
+                $third_level = $_POST['third_level'];
                 $first_level = $_POST['first_level'];
                 $second_level=$_POST['affiliated'];
                 $link_url = $_POST['link_url'];
