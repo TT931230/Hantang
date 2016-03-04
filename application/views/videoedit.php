@@ -68,7 +68,7 @@
  <div class="ce-div">
     <div class="row">
         <label class="col-lg-2">视频描述</label>
-        <input type="textarea" style="width: 450px;height: 100px;" id="source_remark">
+        <textarea id="hpm-contentinfo"  rows="4" cols="50"></textarea>
     </div>
 </div>
 <div class="ce-div">

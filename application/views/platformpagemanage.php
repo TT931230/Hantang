@@ -45,7 +45,7 @@
 
     <div class="hpm-div">
         <label class="col-lg-2">内容描述</label>
-        <input id="hpm-contentinfo" type="textarea" style="width: 450px;height: 100px">
+        <textarea id="hpm-contentinfo"  rows="4" cols="50"></textarea>
     </div>
     <div class="hpm-save">
         <button class="btn btn-default" onclick="$savepageimg('platform')">保存</button>
