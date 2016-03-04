@@ -101,7 +101,7 @@
                     </div>
             </div>
             <div class="footerrightdiv">
-                <div>© 2002-2011 by</div>
+                <div>© 2002-2015 by</div>
                 <div>Shanghai Hantang Culture Development Co., Ltd.</div>
                 <div>All Rights Reserved.</div>
                 <div class="footerrightdiv2">

@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="dropdown-menu dropdownmenucustLan" id="choseLan">
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
-                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>
+             <!--   <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li> -->     
                 </ul>
             </div>
             <div class="searcharea">
