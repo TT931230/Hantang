@@ -20,7 +20,7 @@ class About extends CI_Controller
             $page_data=$this->page_data_model->get_page_data('zn','/about');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','type'=>''
+            'status'=>'1','first_level'=>'','second_level'=>'','type'=>'','third_level'=>$this->session->language
         );//'third_level'=>$this->session->language,
 
         $source_info=$source_info_base;

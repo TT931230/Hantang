@@ -84,7 +84,7 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('type','partnerimg');
         $this->db->where('status','1');
-        $this->db->where('third_level',$languageType);
+       // $this->db->where('third_level',$languageType);            //update
         $this->db->order_by('sequence','asc');
         $partner=$this->db->get()->result_array();
 
@@ -92,44 +92,44 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('first_level','platform');
         $this->db->where('second_level','aboutmap1');
-        $this->db->where('third_level',$languageType);
+        //$this->db->where('third_level',$languageType);            //      update
         $aboutmap1=$this->db->get()->result_array();
         
         $this->db->from('source');
         $this->db->where('first_level','platform');
         $this->db->where('second_level','aboutmap2');
-        $this->db->where('third_level',$languageType);
+        //$this->db->where('third_level',$languageType);             //update
         $aboutmap2=$this->db->get()->result_array();
         
         $this->db->from('source');
         $this->db->where('first_level','platform');
         $this->db->where('second_level','aboutmap3');
-        $this->db->where('third_level',$languageType);
+       // $this->db->where('third_level',$languageType);        //update
         $aboutmap3=$this->db->get()->result_array();
 
         //get about source
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about01');
-        $this->db->where('third_level',$languageType);
+        //$this->db->where('third_level',$languageType);           //update
         $about01=$this->db->get()->result_array();
         
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about02');
-        $this->db->where('third_level',$languageType);
+        //$this->db->where('third_level',$languageType);               //update
         $about02=$this->db->get()->result_array();
         
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about03');
-        $this->db->where('third_level',$languageType);
+        //$this->db->where('third_level',$languageType);            //update
         $about03=$this->db->get()->result_array();
 
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about04');
-        $this->db->where('third_level',$languageType);
+        //$this->db->where('third_level',$languageType);           //update
         $about04=$this->db->get()->result_array();
         //get language source
         $this->db->from('language');
@@ -229,9 +229,9 @@ class Page_data_model extends CI_Model{
         if($source_info['second_level']){
             $this->db->where('second_level',$source_info['second_level']);
         }
-        if($source_info['third_level']){
-            $this->db->where('third_level',$source_info['third_level']);
-        }
+//        if($source_info['third_level']){
+//            $this->db->where('third_level',$source_info['third_level']);
+//        }
         $this->db->where('deleted',0);
         $this->db->where('type',$source_info['type']);
         $this->db->from('source');

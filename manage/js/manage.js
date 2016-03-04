@@ -308,7 +308,9 @@ function $saveVideo(){
         keyword+=$(this)[0].value+'|||';
     });
     source_remark=$('#source_remark')[0].value;
-    third_level=$('#third_level')[0].value;
+    third_level='';
+    temp=$('#third_level')[0].value;
+
 
         if(first_level==''||
             third_level==''||
@@ -318,6 +320,13 @@ function $saveVideo(){
             source_name==''){
             alert('please input infomation');
         }else{
+            if(temp=='中文'){
+                third_level='zn';
+            }else if(temp=='英文'){
+                third_level='en'
+            }else{
+                third_level='fr';
+            }
             $.ajax({
                 type:"post",
                 data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="
@@ -338,7 +347,7 @@ function $saveVideo(){
                             secureuri:false,
                             fileElementId:'inputVideoImg',
                             dataType: 'text',
-                            data:{"id":data[0],"first_level":data[1],"third_level":lan} ,
+                            data:{"id":data[0],"first_level":data[1],"third_level":third_level} ,
                             success: function (data){
                                 alert('upload success');
                                 $('#source_location')[0].value='';
