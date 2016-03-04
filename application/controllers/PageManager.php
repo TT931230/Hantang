@@ -153,6 +153,7 @@ class Pagemanager extends CI_Controller
                 $this->db->where('third_level','zn');
                 $this->db->where('type', 'proimg');
 
+                $templang=array('zn','en','fr');
                 $imgarray2 = $this->db->get()->result_array();
                 $imgarray = array_merge($imgarray1,$imgarray2);
                 for ($i = 0; $i < count($imgarray); $i++) {
@@ -168,14 +169,27 @@ class Pagemanager extends CI_Controller
                             $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
                         }
                     }
+
+                    $langselect='';
+                    $third=$imgarray[$i]['third_level'];
+                    for($j=0;$j<3;$j++){
+                        if ($templang[$j] == $third) {
+                            $langselect .= '<option value="' . $templang[$j] . '" selected>' . $templang[$j] . '</option>';
+                        } else {
+                            $langselect .= '<option value="' . $templang[$j] . '">' . $templang[$j] . '</option>';
+                        }
+                    }
                     $tmpimgarray = array(
                         'source_id' => $imgarray[$i]['id'],
                         'source_name' => $imgarray[$i]['source_name'],
                         'source_remark' => $imgarray[$i]['source_remark'],
                         'source_location' => $imgarray[$i]['source_location'],
                         'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                        'third_level' => '<select id="' . $imgarray[$i]['id'] . '_langarea">' .$langselect . '</select>',
                     );
+
                     array_push($relatedimg, $tmpimgarray);
+
                 }
             }else{
                 $this->db->from('source');
@@ -184,6 +198,8 @@ class Pagemanager extends CI_Controller
                 $this->db->where('third_level','zn');
                 $this->db->where('type', 'img');
                 $imgarray = $this->db->get()->result_array();
+
+                $templang=array('zn','en','fr');
                 for ($i = 0; $i < count($imgarray); $i++) {
                     $tmpselect='';
                     $str=$imgarray[$i]['second_level'];
@@ -197,12 +213,23 @@ class Pagemanager extends CI_Controller
                             $tmpselect .= '<option value="' . $tmparr[$j] . '">' . $tmparr[$j] . '</option>';
                         }
                     }
+
+                    $langselect='';
+                    $third=$imgarray[$i]['third_level'];
+                    for($j=0;$j<3;$j++){
+                        if ($templang[$j] == $third) {
+                            $langselect .= '<option value="' . $templang[$j] . '" selected>' . $templang[$j] . '</option>';
+                        } else {
+                            $langselect .= '<option value="' . $templang[$j] . '">' . $templang[$j] . '</option>';
+                        }
+                    }
                     $tmpimgarray = array(
                         'source_id' => $imgarray[$i]['id'],
                         'source_name' => $imgarray[$i]['source_name'],
                         'source_remark' => $imgarray[$i]['source_remark'],
                         'source_location' => $imgarray[$i]['source_location'],
                         'second_level' => '<select id="' . $imgarray[$i]['id'] . '_imgarea">' . $tmpselect . '</select>',
+                        'third_level' => '<select id="' . $imgarray[$i]['id'] . '_langarea">' .$langselect . '</select>'
                     );
                     array_push($relatedimg, $tmpimgarray);
                 }
@@ -1024,10 +1051,34 @@ class Pagemanager extends CI_Controller
                 //locationdetails
                 $keyword1=array(
                     'keyword' => $xhE,
-                    'sequence' => 2,
+                    'sequence' => 8,
                     'first_level' => $first_level,
                     'second_level' => 'locationdetails',
                     'third_level' => 'zn',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword1);
+                $keyword1=array(
+                    'keyword' => $xhE,
+                    'sequence' => 8,
+                    'first_level' => $first_level,
+                    'second_level' => 'locationdetails',
+                    'third_level' => 'en',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword1);
+                $keyword1=array(
+                    'keyword' => $xhE,
+                    'sequence' => 8,
+                    'first_level' => $first_level,
+                    'second_level' => 'locationdetails',
+                    'third_level' => 'fr',
                     'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
                     'creator' =>$username,
                     'updater' => $username,
@@ -1054,6 +1105,31 @@ class Pagemanager extends CI_Controller
                     'status' => '1',
                 );
                 $this->keyword_model->insertKeyword($keyword2);
+                $keyword2=array(
+                    'keyword' => $str1,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'yeardetails',
+                    'third_level' => 'en',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword2);
+                $keyword2=array(
+                    'keyword' => $str1,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'yeardetails',
+                    'third_level' => 'fr',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword2);
+
                 //typedetails
                 $keyword3=array(
                     'keyword' => $xhJ,
@@ -1067,6 +1143,31 @@ class Pagemanager extends CI_Controller
                     'status' => '1',
                 );
                 $this->keyword_model->insertKeyword($keyword3);
+                $keyword3=array(
+                    'keyword' => $xhJ,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'typedetails',
+                    'third_level' => 'en',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword3);
+                $keyword3=array(
+                    'keyword' => $xhJ,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => 'typedetails',
+                    'third_level' => 'fr',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword3);
+
                 //citydetails
                 $keyword4=array(
                     'keyword' => $xhF,
@@ -1074,6 +1175,30 @@ class Pagemanager extends CI_Controller
                     'first_level' => $first_level,
                     'second_level' => $country_id,
                     'third_level' => 'zn',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword4);
+                $keyword4=array(
+                    'keyword' => $xhF,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => $country_id,
+                    'third_level' => 'en',
+                    'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
+                    'creator' =>$username,
+                    'updater' => $username,
+                    'status' => '1',
+                );
+                $this->keyword_model->insertKeyword($keyword4);
+                $keyword4=array(
+                    'keyword' => $xhF,
+                    'sequence' => 2,
+                    'first_level' => $first_level,
+                    'second_level' => $country_id,
+                    'third_level' => 'fr',
                     'keyword_remark' => iconv('gb2312', 'utf-8', $xhC),
                     'creator' =>$username,
                     'updater' => $username,

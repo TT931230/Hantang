@@ -62,6 +62,7 @@
             <td class="hpm-td2">内容描述</td>
             <td class="hpm-td3">内容图片</td>
             <td class="hpm-td4">所属模块</td>
+            <td class="hpm-td4">语言类型</td>
             <td class="hpm-td5">
                 <a href="javascript:;" onclick="$savehpmselected('about')" class="cl-imgeditbtn">保存所选</a>
             </td>
@@ -83,6 +84,9 @@
             </td>
             <td id="{source_id}_area" class="hpm-td4">
                 {second_level}
+            </td>
+            <td id="{source_id}_lang" class="hpm-td4">
+                {third_level}
             </td>
             <td id="{source_id}_edit1" class="hpm-td5">
                 <a href="javascript:;" onclick="$savhpmsingleimg('{source_id}','about') " class="cl-imgeditbtn">保存</a>

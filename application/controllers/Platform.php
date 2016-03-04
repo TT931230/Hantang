@@ -19,8 +19,8 @@ class Platform extends CI_Controller
             $page_data=$this->page_data_model->get_page_data('zn','/platform');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
-        );
+            'status'=>'1','first_level'=>'','second_level'=>'','type'=>'',
+        );//'third_level'=>$this->session->language,
 
         $source_info=$source_info_base;
         $source_info['first_level']='platform';
