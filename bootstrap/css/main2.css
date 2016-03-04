@@ -625,6 +625,9 @@ border-bottom-color:transparent;
   /*
  * footer
  */
+ .footerarea{
+ width:100%;
+ }
  .footertype{
  height:73px;
  width:164px;

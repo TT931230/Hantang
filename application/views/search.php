@@ -141,7 +141,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 </div>
 <div id="bg" class="searchbg"></div>
-</div>
 <a href="javascript:void(0)">
     <img id="top_str" alt="" src="http://www.acmedynasty.com/cn/images/top_str.png"/>
     <img id="to_top" alt="" src="http://static.acmedynasty.com/images/top.png"/>  </a>
@@ -154,4 +153,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="popContent">
         </div>
     </div>
+</div>
 </div>

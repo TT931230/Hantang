@@ -8,6 +8,7 @@
 ?><!DOCTYPE html>
     <div class="clearfix">
         <div class="inner">
+        <div class="footerarea">
             <div class="footerleftdiv">
                 <div class="footertype"><img src="{footerlogo1}" alt=""></div>
                     <div class="footerdetials">
@@ -124,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
     </div>
 </div>
