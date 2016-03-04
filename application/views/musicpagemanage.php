@@ -30,6 +30,14 @@
         </select>
     </div>
     <div class="hpm-div">
+        <label class="col-lg-2">语言类型</label>
+        <select class="selectpicker bla bla bli"  data-live-search="true" id="hpmhomelang">
+            <option value="">中文</option>
+            <option value="">English</option>
+            <option value="">Français</option>
+        </select>
+    </div>
+    <div class="hpm-div">
         <label class="col-lg-2">视频链接</label>
         <input id="hpm-content-video" class="col-lg-2" type="text">
 

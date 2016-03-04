@@ -219,6 +219,16 @@ function $savehpmselected(pagename){
 function $savepageimg(pagename){
     imgname=$("#hpm-content-title").val();
     affiliated=$("#affiliatedmoudle option:selected").text();
+    language=$("#hpmhomelang option:selected").text();
+    third_level='';
+    if(language=='中文'){
+        third_level='zn';
+    }else if(language=='English'){
+        third_level='en';
+    }else{
+        third_level='fr';
+    }
+
     if(pagename == 'home'){
         affiliated = affiliated.substr(2,1);
         affiliated = 'imagearea'+affiliated;
@@ -264,7 +274,7 @@ function $savepageimg(pagename){
         fileElementId:'hpminputimg',
         dataType: 'text',
         data:{"first_level":pagename,"source_name":imgname,"affiliated":affiliated,
-            "source_remark":source_remark,"link_url":link_url} ,
+            "source_remark":source_remark,"link_url":link_url,"third_level":third_level} ,
         success: function (data){
             result=data.split('||||');
             alert(result[0]);
