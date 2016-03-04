@@ -313,7 +313,7 @@ function $saveVideo(){
 
 
         if(first_level==''||
-            third_level==''||
+            temp==''||
             source_location==''||
             source_name==''||
             keyword==''||
@@ -327,6 +327,7 @@ function $saveVideo(){
             }else{
                 third_level='fr';
             }
+           
             $.ajax({
                 type:"post",
                 data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="
