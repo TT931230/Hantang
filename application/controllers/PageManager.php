@@ -760,14 +760,12 @@ class Pagemanager extends CI_Controller
                 return json_encode(array("msg" => "Return Code:" . $_FILES["img"]["error"], "error" => "true"));
             } else {
                 $id = $_POST['id'];
-                echo $id;
                 $first_level = $_POST['first_level'];
                 $third_level = $_POST['third_level'];
 
-                $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/img/';
-
+                //$fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/img/';
+                $fileUrl = 'http://'.$_SERVER['HTTP_HOST'].'/img/';
                 $imageName = $_FILES["img"]["name"];
-
                 $insertLocalImgArray = array(
                     'source_location' => $fileUrl.$imageName,
                     'status' => '1',
@@ -786,7 +784,7 @@ class Pagemanager extends CI_Controller
                 $this->load->model('source_model');
                 $this->source_model->insertLocalImg($insertLocalImgArray);
 
-                move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/img/' .$imageName);    //缓存文件存入服务器
+                move_uploaded_file($_FILES["img"]["tmp_name"], 'http://'.$_SERVER['HTTP_HOST'].'/img/' .$imageName);    //缓存文件存入服务器
             }
         }
         else{
