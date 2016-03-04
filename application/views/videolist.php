@@ -52,7 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td id="vl-check" class="vl-check"><input type="checkbox" name="check" value=""></td>
                 <td id="{imgid}" class="vl-imgname">{source_name}</td>
                 <td id="{imgid}_url" class="vl-imgadd">
-                    {source_location}
+
+                    <a href="{source_location}">{source_location}</a>
                 </td>
                 <td id="{source_id}_first" class="vl-imgfirst">
                     {first_level}
@@ -68,11 +69,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </td>
 
                 <td id="{imgid}_edit" class="vl-imgedit">
-                    <a href="javascript:;" onclick="$savesinglevideo('{imgid}','{source_id}','{first_level}') " class="cl-imgeditbtn">保存</a>
+                    <a href="javascript:;" onclick="$savesinglevideo('{imgid}','{source_id}','{pagename}') " class="cl-imgeditbtn">保存</a>
 
                 </td>
                 <td id="{imgid}_edit" class="vl-imgedits">
-                    <a href="javascript:;" onclick="$deletesinglevideo('{source_id}')" class="cl-imgeditbtn">删除</a>
+                    <a href="javascript:;" onclick="$deletesinglevideo('{source_id}','{pagename}')" class="cl-imgeditbtn">删除</a>
                 </td>
             </tr>
             {/videolists}
