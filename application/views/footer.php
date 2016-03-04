@@ -6,7 +6,6 @@
  * Time: 9:50
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="cover-container">
     <div class="clearfix">
         <div class="inner">
             <div class="footerleftdiv">
@@ -115,7 +114,7 @@
                     <div>
                         <div id="weixin2" style="width: 250px; height: 300px; position: fixed; z-index: 100; top: 25%; left: 40%; display: block; background: white;">
                             <div style="height: 30px">
-                                <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="{guanbi}" style="float: right; padding-top: 13px; padding-right: 13px"></a>
+                                <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="{guanbi}" style="float: right; padding-top: 13px; padding-right: 13px;"></a>
                             </div>
                             <div>
                                 <img alt="" src="{guanzhu}">

@@ -35,28 +35,26 @@
 }
 .footer_flow{
 
-    background: #000;
-    opacity: 0.95;
-    filter: alpha(opacity=95);
+    background: #000000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
     height:100px;
     width: 1400px;
     position: absolute;
     left: 0;
     top:0;
-    z-index: 1041;
+    z-index: 1040;
     display: none;
 }
 .footer_flow #mask{
-    background: #fff;
-
+    background: #ffffff;
     position:fixed;
     bottom:0;
-    left:30px;
-    right:30px;
-    width:auto;
+    width:1280px;
     height:280px;
-    z-index: 1042;
-
+    z-index: 1055;
+    left:35px;
+    right:35px;
 }
 .footer_flow #mask .closePop{
     width: 24px;
@@ -71,7 +69,6 @@
 .footer_flow #mask .popContent{
     position:relative;
     min-width: 100%;
-    z-index: 1043;
 }
 
 #share a.bds_weixin:hover{
