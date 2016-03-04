@@ -876,10 +876,10 @@ function $deleteselectedvideo(){
     $changetags('videolist');
     //alert("success");
 }
-function $deletesinglevideo(source_id){
+function $deletesinglevideo(source_id,first_level){
     $.ajax({
         type:"post",
-        data: 'source_id='+source_id,
+        data: 'source_id='+source_id+'&first_level='+first_level,
         url:"Pagemanager/deletesinglesource",
         success: function(result)
         {

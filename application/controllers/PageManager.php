@@ -288,11 +288,30 @@ class Pagemanager extends CI_Controller
                     $videosequence = '';
                     $index='';
                 }
-
+                $first_level = $videoarray[$i]['first_level'];
+                if($first_level == 'about'){
+                    $first_level = '关于汉唐';
+                }
+                if($first_level == 'platform'){
+                    $first_level = '播放平台';
+                }
+                if($first_level == 'ul'){
+                    $first_level = '极致';
+                }
+                if($first_level == 'awoe'){
+                    $first_level = '问鼎世界';
+                }
+                if($first_level == 'music'){
+                    $first_level = '音乐年';
+                }
+                if($first_level == 'join'){
+                    $first_level = '加入汉唐';
+                }
                 $tmpvideoarray = array(
-                    'index'=>$index,
+                    //'index'=>$index,
                     'language' => $videoarray[$i]['third_level'],
-                    'first_level' => $videoarray[$i]['first_level'],
+                    'first_level' => $first_level,
+                    'pagename' => $videoarray[$i]['first_level'],
                     'source_id' => $videoarray[$i]['id'],
                     'source_location' => $videoarray[$i]['source_location'],
                     'source_name' => $videoarray[$i]['source_name'],
@@ -1883,12 +1902,26 @@ class Pagemanager extends CI_Controller
 //                'id' => $_POST['source_id']
 //            );
 //            $this->db->delete('source', $deleteitem);
+            $videoId=$_POST['source_id'];
+            $first_level = $_POST['first_level'];
+            $this->db->from('source');
+            $this->db->where('first_level',$first_level);
+            $this->db->where("link_url like '%".$videoId."%'");
+
+            $vedioImgData = $this->db->get()->result_array();
+            $videoImgId = $vedioImgData[0]['id'];
+
+            $updateitem = array(
+                'deleted' => '1'
+            );
+            $this->db->update('source', $updateitem, array('id' => $videoImgId));
+
+
             $data = array(
-                'deleted' => 1,
+                'deleted' => '1',
             );
 
-            $this->db->where('id', $_POST['source_id']);
-            $this->db->update('source', $data);
+            $this->db->update('source', $data,array('id' => $videoId,'first_level' => $first_level));
         }else{
             echo "<script>alert('请先登录！')</script>";
             echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
