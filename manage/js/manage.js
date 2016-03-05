@@ -809,7 +809,7 @@ function $deletesingleimg(source_id){
     $.ajax({
         type:"post",
         data: 'source_id='+source_id,
-        url:"Pagemanager/deletesinglesource",
+        url:"Pagemanager/deletesingleImgsource",
         success: function(result)
         {
             alert('删除成功！');

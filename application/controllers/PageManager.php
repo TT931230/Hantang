@@ -234,16 +234,26 @@ class Pagemanager extends CI_Controller
                 }
             }
 
-
-
-
             //imagelists
             $this->db->from('source');
             $this->db->where('deleted', 0);
             $this->db->where('type', 'img');
-            $this->db->or_where('type', 'videoimg');
-            $this->db->or_where('type', 'partnerimg');
-            $imgarray = $this->db->get()->result_array();
+            $imgarray1 = $this->db->get()->result_array();
+
+            $this->db->from('source');
+            $this->db->where('deleted', 0);
+            $this->db->where('type', 'videoimg');
+            $imgarray2 = $this->db->get()->result_array();
+
+
+            $this->db->from('source');
+            $this->db->where('deleted', 0);
+            $this->db->where('type', 'partnerimg');
+
+            $imgarray3 = $this->db->get()->result_array();
+
+            $imgarray = array_merge($imgarray1,$imgarray2,$imgarray3);
+
             $imgtypearray = array(
                 'img', 'videoimg', 'partnerimg'
             );
@@ -1940,6 +1950,25 @@ class Pagemanager extends CI_Controller
             $deleteitem = array(
                 'id' => $_POST['source_id']
             );
+        }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
+        }
+    }
+    public function deletesingleImgsource(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+
+            $data = array(
+                'deleted' => '1',
+            );
+
+            $this->db->update('source', $data,array('id' => $_POST['source_id']));
         }else{
             $this->config->load('sourceurl', TRUE);
             $url  = $this->config->item('url', 'sourceurl');
