@@ -1,6 +1,6 @@
 .headernav{
     top:55%;
-    left:-12%;
+    left:-35%;
     padding:0;
     text-align: center;
 }
@@ -91,9 +91,10 @@ input[type="checkbox"]:checked {
     background-color: #C9C9C9;
 }
 #choseLan{
-    padding: 0px 0;
+    margin-left:-5px;
     min-width: 20px;
     font-size:12px;
+    margin-top:-3px;
 
 }
 .dropdowncustspan {

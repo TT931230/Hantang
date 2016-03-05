@@ -6,9 +6,9 @@
  * Time: 9:50
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="cover-container">
     <div class="clearfix">
         <div class="inner">
+        <div class="footerarea">
             <div class="footerleftdiv">
                 <div class="footertype"><img src="{footerlogo1}" alt=""></div>
                     <div class="footerdetials">
@@ -101,7 +101,7 @@
                     </div>
             </div>
             <div class="footerrightdiv">
-                <div>© 2002-2011 by</div>
+                <div>© 2002-2015 by</div>
                 <div>Shanghai Hantang Culture Development Co., Ltd.</div>
                 <div>All Rights Reserved.</div>
                 <div class="footerrightdiv2">
@@ -115,7 +115,7 @@
                     <div>
                         <div id="weixin2" style="width: 250px; height: 300px; position: fixed; z-index: 100; top: 25%; left: 40%; display: block; background: white;">
                             <div style="height: 30px">
-                                <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="{guanbi}" style="float: right; padding-top: 13px; padding-right: 13px"></a>
+                                <a href="javascript:void(0)" data-dismiss="modal"><img alt="" src="{guanbi}" style="float: right; padding-top: 13px; padding-right: 13px;"></a>
                             </div>
                             <div>
                                 <img alt="" src="{guanzhu}">
@@ -125,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
     </div>
 </div>
