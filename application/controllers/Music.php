@@ -18,7 +18,7 @@ class Music extends CI_Controller
             $page_data=$this->page_data_model->get_page_data('zn','/music');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
+            'status'=>'1','first_level'=>'','second_level'=>'',/*'third_level'=>$this->session->language,*/'type'=>'',
         );
         $keyword_info_base=array(
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language
@@ -28,7 +28,7 @@ class Music extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='music';
         $source_info['second_level']='imagearea1';
-        $source_info['third_level']=$this->session->language;
+        /*$source_info['third_level']=$this->session->language;*/
         $source_info['type']='img';
         $source_info['deleted']='0';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
@@ -50,7 +50,7 @@ class Music extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
-        $source_info['third_level']=$this->session->language;
+        /*$source_info['third_level']=$this->session->language;*/
         $logoimage = $this->page_data_model->query_sources($source_info);
 
         //get music relative radio
@@ -60,6 +60,14 @@ class Music extends CI_Controller
         $source_info['type']='proimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
+        if(count($relatedvideo) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='music';
+            $source_info['deleted']='0';
+            $source_info['type']='proimg';
+            $source_info['third_level']='zn';
+            $relatedvideo = $this->page_data_model->query_sources($source_info);
+        }
         //get search tag
         $tag_data = $this->page_data_model->query_tags();
 
@@ -121,6 +129,13 @@ class Music extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $musiclogo = $this->page_data_model->query_sources($source_info);
+        if(count($musiclogo) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='musiclogo';
+            $source_info['third_level']='zn';
+            $source_info['type']='img';
+            $musiclogo = $this->page_data_model->query_sources($source_info);
+        }
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
@@ -139,13 +154,21 @@ class Music extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
+        if(count($logoimage)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['third_level']='zn';
+            $source_info['type']='img';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+        }
+
 
         $source_info=$source_info_base;
         $source_info['first_level']='music';
         $source_info['third_level']=$this->session->language;
         $source_info['type']='videoimg';
-        $relatedvideo = $this->page_data_model->query_sources($source_info);
 
+        $relatedvideo = $this->page_data_model->query_sources($source_info);
 
 
         $this->db->where('status','1');
@@ -154,10 +177,19 @@ class Music extends CI_Controller
         $this->db->from('source');
         $videoquery = $this->db->get();
         $video = $videoquery->result_array();
+        if(count($video)<=0){
+            $this->db->where('status','1');
+            $this->db->where('id',$videoname);
+            $this->db->where('third_level','zn');
+            $this->db->from('source');
+            $videoquery = $this->db->get();
+            $video = $videoquery->result_array();
+        }
+
 
 
         //add new img
-        $this->db->from('source');
+       /* $this->db->from('source');
         $this->db->where('status','1');
         $this->db->where('third_level',$this->session->language);
         $this->db->where("link_url like '%".$videoname."%'");
@@ -167,16 +199,17 @@ class Music extends CI_Controller
             $video[0]['imgurl']=$imgdata[0]['source_location'];
         }else{
             $video[0]['imgurl']='';
-        }
+        }*/
 
 
         $this->db->from('source');
         $this->db->where('status','1');
         $this->db->where('third_level',$this->session->language);
-        $this->db->where("link_url like '%".$video[0]['id']."%'");
+        $this->db->where('deleted','0');
+        $this->db->where("link_url like '%".$videoname."%'");
         $imgarray=$this->db->get()->result_array();
         if(count($imgarray)>0){
-            //$video[0]['imgurl']=$imgarray[0]['source_location'];
+            $video[0]['imgurl']=$imgarray[0]['source_location'];
             $this->db->from('musicinfo');
             $this->db->where('music_id',$imgarray[0]['id']);
             $musicinfoarray=$this->db->get()->result_array();
@@ -190,7 +223,7 @@ class Music extends CI_Controller
         }else{
             $musictime='';
             $musiclocation='';
-            //$video[0]['imgurl']='';
+            $video[0]['imgurl']='';
         }
         $video[0]['musictime']=$musictime;
         $video[0]['musiclocation']=$musiclocation;

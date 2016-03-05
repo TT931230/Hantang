@@ -34,6 +34,15 @@ class Platform extends CI_Controller
         $source_info['type']='img';
         $source_info['deleted'] = '0';
         $aboutmap1 = $this->page_data_model->query_sources($source_info);
+        if(count($aboutmap1)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='platform';
+            $source_info['second_level']='aboutmap1';
+            $source_info['third_level']='zn';
+            $source_info['type']='img';
+            $source_info['deleted'] = '0';
+            $aboutmap1 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='platform';
@@ -41,11 +50,27 @@ class Platform extends CI_Controller
         $source_info['type']='img';
         $source_info['deleted'] = '0';
         $aboutmap2 = $this->page_data_model->query_sources($source_info);
+        if(count($aboutmap2)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='platform';
+            $source_info['second_level']='aboutmap2';
+            $source_info['third_level']='zn';
+            $source_info['type']='img';
+            $source_info['deleted'] = '0';
+            $aboutmap2 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
+        if(count($logoimage)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['type']='img';
+            $source_info['third_level']='zn';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+        }
 
         $tag_data = $this->page_data_model->query_tags();
 
