@@ -71,19 +71,26 @@ input[type="checkbox"]:checked {
     background-color:#6D6F70;
 }
 .dropdownmenucustLan li{
-    background-color: #C9C9C9;
      width:60px;
 }
 .dropdownmenucustLan {
-    border: #C9C9C9;
-    background-color: #C9C9C9;
+    background-color: #e4e4e4;
 }
 #choseLan{
-    margin-left:-5px;
     min-width: 20px;
     font-size:12px;
-    margin-top:-3px;
-
+    left:-15%;
+    margin-top:-5px;
+    border:0;
+}
+.dropdown-triangle-Lan {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    margin-left: 40%;
 }
 .dropdowncustspan {
     text-align: center;
@@ -97,14 +104,11 @@ input[type="checkbox"]:checked {
 }
 
  #choseLan>li:hover{
-     background-color: #808080;
-     left:-15%;
-     width:130%;
-     line-height:30px;
      vertical-align:middle;
-     font-size:14px;
+     font-size:12px;
      position:relative;
-     opacity:0.7;
+     color:#808080;
+     background-color:#e4e4e4;
  }
  .searchcontentdiv {
     display: inline-block;
