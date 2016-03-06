@@ -578,6 +578,14 @@ font-size:8px;
     width:1280px;
     height:auto;
 }
+.videoareamusicinner{
+    height:720px;
+    width:1280px;
+}
+.videoareamusicinner video{
+    width:1280px;
+    height:auto;
+}
 /* Links */
 a,
 a:focus,

@@ -751,11 +751,11 @@ border-bottom-color:transparent;
  /* musicinner */
 .musicinner-subtitle{
 	position: relative;
-    height:50px;
+    height:52px;
  }
  .musicinner-subtitle img{
      float: left;
-     height: 50px;
+     height: 52px;
      width: 100%;
  } 
  
