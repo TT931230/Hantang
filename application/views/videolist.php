@@ -26,9 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </select>
     <label>视频名称：</label>
     <input type="text" id="videoname">
-    <div class="row">
+    <!--<div class="row">
         <button onclick="$queryVideo()" class="btn btn-default">查询</button>
-    </div>
+    </div>-->
     <div id="caselistshow" class="cl-table">
         <form>
         <table>

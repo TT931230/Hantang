@@ -29,9 +29,9 @@
     </select>
     <label>图片名称：</label>
     <input type="text" id="imgname">
-<div class="row">
+<!--<div class="row">
     <button onclick="$queryImage()" class="btn btn-default">查询</button>
-</div>
+</div>-->
     <div id="caselistshow" class="cl-table">
         <table>
             <tr>
