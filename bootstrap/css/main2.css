@@ -455,7 +455,7 @@ margin-bottom:16px;
     color: #777777; /* IE8 proofing */ 
     text-align:center;  
     overflow:hidden;
-      border-right:1px solid #c0c0c0;
+    border-right:1px solid #c0c0c0;
   
 
 }
@@ -482,9 +482,9 @@ margin-bottom:16px;
 }
 
 .join-dropdownmenucust{	
-    border: #808080;
+    border: #c0c0c0;
     border-radius: 0px;
-    background-color: #fff;
+    background-color: transparent;
 
 }
 
@@ -501,10 +501,6 @@ margin-bottom:16px;
 .join-dropdowncust:hover{
     text-decoration: none;
     color:#808080;
-}
-.job-dropdownli{
-	width:155px;
-	
 }
 
 

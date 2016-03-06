@@ -279,9 +279,7 @@
     width:100%;
 }
 .dropdownmenucust{
-    border:#e4e4e4;
     border-radius: 0px;
-    background-color: #e4e4e4;
     position:absolute ;
     z-index:1004;
 
@@ -291,13 +289,17 @@
     width:100%;
     background-color: #e4e4e4;
 }
+.dropdownmenucust li>a:hover{
+    width:100%;
+    background-color: #e4e4e4;
+}
 .dropdowndepart{
-    top:95%;
     left:4%;
     width:92%;
     padding:0;
     text-align: center;
     border-bottom: 0px solid #761c19;
+    margin-top:8px;
 }
 .dropdown-list-line {
     height: 1px;
@@ -320,7 +322,6 @@
 }
 .dropdowndepart>li>a {
     display: block;
-    padding-left:20px;
     padding-top:5px;
     padding-bottom:5px;
     clear: both;
@@ -338,10 +339,8 @@
     height:60%;
     font-size:12pt;
     position:relative;*/
-    background-color: #C9C9C9;
     color:#626262;
     cursor: pointer;
-    width:150px;
 }
 
 .navcust{
@@ -454,7 +453,7 @@ font-size:8px;
 }
 .language{
     height:36px;
-    margin-left: 2.75%;
+    margin-left: 3.21%;
     float:left;
     padding-top:12px;
     font-size:12px;
@@ -467,7 +466,7 @@ font-size:8px;
 }
 .searcharea{
 	 padding-top:12px;
-    margin-right:2.92%;
+    margin-right:4%;
     float:right;
     font-size:12px;
     height:36px;
@@ -654,7 +653,7 @@ body {
  height:162px;
  }
 .masthead-brand {   
-    margin-left:2.75%;   
+    margin-left:3.21%;   
 }
 .masthead-brand img{
 	height:88px;
@@ -667,7 +666,7 @@ body {
     padding-top:75px;
 }
 .masthead-nav > li + li {
-   margin-left:3.35%;
+   margin-left:2.3%;
 }
 /*.masthead-nav > li > a {
 	height:80px;
@@ -705,7 +704,7 @@ body {
 }
 #homeli  {
     display: inline-block;
-    width:4.45%;
+    width:5.25%;
 }
 #homeli > a:hover,a:focus{
 
@@ -728,7 +727,7 @@ body {
 }
 #aboutli  {
     display: inline-block;
-    width:4.45%;
+    width:5.25%;
 }
 #aboutli > a:hover,a:focus{
 
@@ -762,7 +761,7 @@ body {
 }
 #ulli{
   display: inline-block;
-  width:4.45%;
+  width:5%;
 }
 #awoeli > a:hover,a:focus{
 	background-color: transparent;
@@ -783,7 +782,7 @@ border-image:none;
 }
 #awoeli {
 	display: inline-block;
-	width:5.65%;
+	width:5.8%;
 }
 
 #musicli  {
@@ -813,8 +812,8 @@ border-image:none;
 }
 #joinli  {
     display: inline-block;
-    width:4.45%;
-    margin-right:2.92%;
+    width:5%;
+    margin-right:3.41%;
   
 }
 #joinli > a {
