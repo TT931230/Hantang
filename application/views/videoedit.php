@@ -44,7 +44,7 @@
 </div>
     <div class="ce-div">
         <div class="row">
-            <label class="col-lg-2" style="margin-left: -170px;
+            <label class="col-lg-2" style="
     margin-top: 25px;">视频地址</label>
             <input class="col-lg-2" type="text" id="source_location" style="margin-top: 25px;">
         </div>

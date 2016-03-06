@@ -156,8 +156,8 @@ function $savhpmsingleimg(sourceid,pagename){
 function $delhpmsingleimg(sourceid,pagename){
     $.ajax({
         type:"post",
-        data: 'source_id='+sourceid,
-        url:"Pagemanager/deletesinglesource",
+        data: 'source_id='+sourceid+'&first_level='+pagename,
+        url:"Pagemanager/deletesinggleimg",
         success: function(result)
         {
             alert('删除成功！');
@@ -262,6 +262,7 @@ function $savepageimg(pagename){
     source_location=$("#hpminputimg").val();
     link_url='';
     if(pagename=='music'){
+        /*link_url = 'http://'+$_SERVER['HTTP_HOST']+'/video/'+$("#hpm-content-video").val();*/
         link_url = $("#hpm-content-video").val();
     }
     if(imgname==""||affiliated==""||source_location==""||source_remark==""){
@@ -307,10 +308,9 @@ function $saveVideo(){
     $("#keyword option:selected").each(function(){
         keyword+=$(this)[0].value+'|||';
     });
-    source_remark=$('#source_remark')[0].value;
+    source_remark=$('#hpm-contentinfo')[0].value;
     third_level='';
     temp=$('#third_level')[0].value;
-
 
         if(first_level==''||
             temp==''||
@@ -320,18 +320,18 @@ function $saveVideo(){
             source_name==''){
             alert('please input infomation');
         }else{
-            if(temp=='中文'){
+            /*if(temp=='中文'){
                 third_level='zn';
             }else if(temp=='英文'){
                 third_level='en'
             }else{
                 third_level='fr';
-            }
+            }*/
 
             $.ajax({
                 type:"post",
                 data: "source_location="+source_location+"&source_name="+source_name+"&source_remark="
-                +source_remark+"&keyword="+keyword+"&third_level="+third_level+"&first_level="
+                +source_remark+"&keyword="+keyword+"&third_level="+temp+"&first_level="
                 +first_level,
                 url:"Pagemanager/saveVideo",
                 //dataType:'json',
@@ -348,7 +348,7 @@ function $saveVideo(){
                             secureuri:false,
                             fileElementId:'inputVideoImg',
                             dataType: 'text',
-                            data:{"id":data[0],"first_level":data[1],"third_level":third_level} ,
+                            data:{"id":data[0],"first_level":data[1],"third_level":temp} ,
                             success: function (data){
                                 alert('upload success');
                                 $('#source_location')[0].value='';
@@ -809,7 +809,7 @@ function $deletesingleimg(source_id){
     $.ajax({
         type:"post",
         data: 'source_id='+source_id,
-        url:"Pagemanager/deletesinglesource",
+        url:"Pagemanager/deletesingleImgsource",
         success: function(result)
         {
             alert('删除成功！');
@@ -1239,5 +1239,5 @@ function $submitarea(area){
 }
 
 function $previewarea(area){
-    window.open('http://localhost:8080/'+area+'/preview');
+    /*window.open('http://localhost:8080/'+area+'/preview');*/
 }

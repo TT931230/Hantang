@@ -103,12 +103,13 @@ class Home extends CI_Controller
         $this->load->model('page_data_model');
 
         if($this->session->language){
-            $page_data=$this->page_data_model->get_page_data($this->session->language,'/home');//'third_level'=>$this->session->language,
+            $page_data=$this->page_data_model->get_page_data($this->session->language,'/home');
+            /*$third_level=$this->session->language;*/
         }else{
             $page_data=$this->page_data_model->get_page_data('zn','/home');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','type'=>'','third_level'=>$this->session->language
+            'status'=>'1','first_level'=>'','second_level'=>'','type'=>''/*,'third_level'=>$this->session->language*/
         );
 
         $source_info=$source_info_base;

@@ -19,7 +19,7 @@ class Awoe extends CI_Controller
             $page_data=$this->page_data_model->get_page_data('zn','/awoe');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>'','type'=>'',
+            'status'=>'1','first_level'=>'','second_level'=>'','type'=>'',
         );
         $keyword_info_base=array(
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>''
@@ -29,13 +29,15 @@ class Awoe extends CI_Controller
         $source_info['first_level']='awoe';
         $source_info['second_level']='imagearea1';
         $source_info['type']='img';
+        /*$source_info['third_level']=$this->session->language;*/
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='awoe';
         $source_info['second_level']='imagearea11';
-        $source_info['third_level']=$this->session->language;
+        /*$source_info['third_level']=$this->session->language;*/
         $source_info['type']='img';
+        $source_info['deleted']='0';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
@@ -67,12 +69,28 @@ class Awoe extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
+        if(count($logoimage)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['type']='img';
+            $source_info['third_level']='zn';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='awoe';
         $source_info['type']='videoimg';
         $source_info['third_level']=$this->session->language;
         $relatedvideo = $this->page_data_model->query_sources($source_info);
+
+        if(count($relatedvideo) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='awoe';
+            $source_info['deleted']='0';
+            $source_info['type']='videoimg';
+            $source_info['third_level']='zn';
+            $relatedvideo = $this->page_data_model->query_sources($source_info);
+        }
         
         $tag_data = $this->page_data_model->query_tags();
 
@@ -132,6 +150,13 @@ class Awoe extends CI_Controller
         $source_info['type']='img';
         $source_info['third_level']=$this->session->language;
         $awoelogo = $this->page_data_model->query_sources($source_info);
+        if(count($awoelogo) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='awoelogo';
+            $source_info['type']='img';
+            $source_info['third_level']='zn';
+            $awoelogo = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='awoe';
@@ -169,6 +194,14 @@ class Awoe extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
+        if(count($logoimage) <= 0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['third_level']='zn';
+            $source_info['type']='img';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+        }
+
 
         $source_info=$source_info_base;
         $source_info['first_level']='awoe';

@@ -229,15 +229,22 @@ class Page_data_model extends CI_Model{
         if($source_info['second_level']){
             $this->db->where('second_level',$source_info['second_level']);
         }
-//        if($source_info['third_level']){
-//            $this->db->where('third_level',$source_info['third_level']);
-//        }
+        if(isset($source_info['third_level'])){
+           $this->db->where('third_level',$source_info['third_level']);
+        }
         $this->db->where('deleted',0);
         $this->db->where('type',$source_info['type']);
+        //$this->db->where('third_level',$source_info['third_level']);
         $this->db->from('source');
+
         $this->db->order_by("sequence"," desc");
         $query = $this->db->get();
-        return $query->result_array();
+        $sourcedata = $query->result_array();
+
+         return $sourcedata;
+
+
+
     }
 
     public function query_departments($status){

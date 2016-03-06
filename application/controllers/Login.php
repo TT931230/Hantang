@@ -41,11 +41,16 @@ class Login extends CI_Controller
             }
             $this->session->set_userdata('username',$userinfo[0]['user_name']);
             $this->session->set_userdata('privilige',$privilige);
-            echo "<script>alert('登录成功！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/ContentM'>";
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."ContentM'>";
+
         }else{
-            echo "<script>alert('登录失败！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     function logout(){

@@ -15,8 +15,10 @@ class Contentm extends CI_Controller
         if($this->session->username){
             $username=$this->session->username;
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
         $data=array(
             'username'=>$username

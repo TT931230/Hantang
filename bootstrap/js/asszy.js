@@ -13,7 +13,7 @@ function getfooter(){
 
     $.ajax({
         type:"post",
-        url:"http://localhost:8080/Home/getfooter",
+        url:"http://"+window.location.host+"/Home/getfooter",
         success: function(result) {
             //alert(result);
             $("#mask .popContent").html(result);
@@ -47,7 +47,7 @@ function redirection(){
             //alert(result[0]);
             if(result[0]=='f'){
                 if(!IsPC()){
-                    //alert("ºáÆÁä¯ÀÀÌåÑé¸üºÃÅ¶~");
+                    //alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶~");
                     $.ajax({
                         type:"post", url:"m/Home/addSession",
                         success: function(result) {

@@ -142,7 +142,7 @@ class Pagemanager extends CI_Controller
                 $this->db->from('source');
                 $this->db->where('deleted', 0);
                 $this->db->where('first_level',$pieces[0]);
-                $this->db->where('third_level','zn');
+
                 $this->db->where('type', 'img');
 
                 $imgarray1 = $this->db->get()->result_array();
@@ -150,7 +150,7 @@ class Pagemanager extends CI_Controller
                 $this->db->from('source');
                 $this->db->where('deleted', 0);
                 $this->db->where('first_level',$pieces[0]);
-                $this->db->where('third_level','zn');
+
                 $this->db->where('type', 'proimg');
 
                 $templang=array('zn','en','fr');
@@ -195,7 +195,6 @@ class Pagemanager extends CI_Controller
                 $this->db->from('source');
                 $this->db->where('deleted', 0);
                 $this->db->where('first_level',$pieces[0]);
-                $this->db->where('third_level','zn');
                 $this->db->where('type', 'img');
                 $imgarray = $this->db->get()->result_array();
 
@@ -235,16 +234,26 @@ class Pagemanager extends CI_Controller
                 }
             }
 
-
-
-
             //imagelists
             $this->db->from('source');
             $this->db->where('deleted', 0);
             $this->db->where('type', 'img');
-            $this->db->or_where('type', 'videoimg');
-            $this->db->or_where('type', 'partnerimg');
-            $imgarray = $this->db->get()->result_array();
+            $imgarray1 = $this->db->get()->result_array();
+
+            $this->db->from('source');
+            $this->db->where('deleted', 0);
+            $this->db->where('type', 'videoimg');
+            $imgarray2 = $this->db->get()->result_array();
+
+
+            $this->db->from('source');
+            $this->db->where('deleted', 0);
+            $this->db->where('type', 'partnerimg');
+
+            $imgarray3 = $this->db->get()->result_array();
+
+            $imgarray = array_merge($imgarray1,$imgarray2,$imgarray3);
+
             $imgtypearray = array(
                 'img', 'videoimg', 'partnerimg'
             );
@@ -652,8 +661,10 @@ class Pagemanager extends CI_Controller
             //var_dump($arealists);
             return $this->parser->parse($pagename, $data);
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
 
@@ -773,16 +784,21 @@ class Pagemanager extends CI_Controller
             //var_dump($insertcontent);
             return $this->source_model->insertSource($insertcontent);
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
 
     function uploadLocalImg(){
+
         date_default_timezone_set("UTC");
         $this->load->library('session');
         if($this->session->username) {
             $username = $this->session->username;
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             if ($_FILES["img"]["error"] > 0) {
                 return json_encode(array("msg" => "Return Code:" . $_FILES["img"]["error"], "error" => "true"));
             } else {
@@ -791,12 +807,14 @@ class Pagemanager extends CI_Controller
                 $third_level = $_POST['third_level'];
 
                 //$fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/img/';
-                $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/bootstrap/images/';
+                /*$fileUrl = $url['imgurl'];*/
                 $imageName = $_FILES["img"]["name"];
+
+                $source_name = substr($imageName,0,strrpos($imageName,'.'));
                 $insertLocalImgArray = array(
-                    'source_location' => $fileUrl.$imageName,
+                    'source_location' => $url['serverurl'].$url['imgurl'].$imageName,
                     'status' => '1',
-                    'source_name' => $imageName,
+                    'source_name' => $source_name,
                     'type' => 'videoimg',
                     'updater' => $username,
                     'creator' => $username,
@@ -811,12 +829,15 @@ class Pagemanager extends CI_Controller
                 $this->load->model('source_model');
                 $this->source_model->insertLocalImg($insertLocalImgArray);
 
-                move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["img"]["name"]);    //缓存文件存入服务器
+                move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/'.$url['imgurl'].$_FILES["img"]["name"]);    //缓存文件存入服务器
+
             }
         }
         else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     function savepageimg(){
@@ -826,13 +847,15 @@ class Pagemanager extends CI_Controller
         if($this->session->username) {
 
             $username = $this->session->username;
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             if ($_FILES["files"]["error"] > 0) {
                 return json_encode(array("msg" => "Return Code:" . $_FILES["files"]["error"], "error" => "true"));
             } else {
                 $sequence = '1';
 
-                $fileUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/bootstrap/images/';
-                $source_location = $fileUrl.$_FILES["files"]["name"];
+                $fileUrl = $url['imgurl'];
+                $source_location = $url['serverurl'].$url['imgurl'].$_FILES["files"]["name"];
                 //echo $_POST['source_location'];
                 $source_name = $_POST['source_name'];
                 $source_remark = $_POST['source_remark'];
@@ -840,9 +863,11 @@ class Pagemanager extends CI_Controller
                 $third_level = $_POST['third_level'];
                 $first_level = $_POST['first_level'];
                 $second_level=$_POST['affiliated'];
-                $link_url = $_POST['link_url'];
+                $link_url = $url['serverurl'].$url['videourl'].$_POST['link_url'];
+
                 //echo $_FILES["files"]["tmp_name"];
-                move_uploaded_file($_FILES["files"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].'/bootstrap/images/'.$_FILES["files"]["name"]);
+
+                move_uploaded_file($_FILES["files"]["tmp_name"],  $_SERVER['DOCUMENT_ROOT'].'/'.$url['imgurl'].$_FILES["files"]["name"]);
                 if($second_level == 'imagearea2' && $first_level == 'music'){
                     $this->db->from('source');
                     //$this->db->select('id');
@@ -895,8 +920,10 @@ class Pagemanager extends CI_Controller
 
 
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     function saveVideo(){
@@ -905,6 +932,10 @@ class Pagemanager extends CI_Controller
         if($this->session->username) {
             $username = $this->session->username;
             $privilige4user=$this->session->privilige;
+
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
+
             for($i=0;$i<count($privilige4user);$i++){
                 $privilige41=false;
                 $privilige42=false;
@@ -931,7 +962,7 @@ class Pagemanager extends CI_Controller
             }
 
             $sequence = '1';
-            $source_location = $_POST['source_location'];
+            $source_location = $url['serverurl'].$url['videourl'].$_POST['source_location'];
             $source_name = $_POST['source_name'];
             $source_remark = $_POST['source_remark'];
             //$videoimg = $_POST['videoimg'];
@@ -990,8 +1021,10 @@ class Pagemanager extends CI_Controller
                 echo $returnData;
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     function excelTime($date, $time = false) {
@@ -1290,12 +1323,16 @@ class Pagemanager extends CI_Controller
 //                    }
 //                }
 //            }
-
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('导入成功！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/contentm'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."contentm'>";
+
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     function updateareainfo()
@@ -1823,8 +1860,10 @@ class Pagemanager extends CI_Controller
                     break;
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savhpmsingleimg(){
@@ -1837,8 +1876,10 @@ class Pagemanager extends CI_Controller
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savesingleimg(){
@@ -1852,8 +1893,10 @@ class Pagemanager extends CI_Controller
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savesinglevideo(){
@@ -1886,8 +1929,51 @@ class Pagemanager extends CI_Controller
                 $this->db->update('source', $updateitem, array('id' => $_POST['id']));
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
+        }
+    }
+    public function deletesinggleimg(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;$privilige4user=$this->session->privilige;
+            $source_id = $_POST['source_id'];
+            $first_level = $_POST['first_level'];
+            $data = array(
+                'deleted' => '1',
+            );
+
+            $this->db->update('source', $data,array('id' => $source_id,'first_level' => $first_level));
+            $deleteitem = array(
+                'id' => $_POST['source_id']
+            );
+        }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
+        }
+    }
+    public function deletesingleImgsource(){
+        $this->load->library('session');
+
+        if($this->session->username) {
+            $username = $this->session->username;
+            $privilige4user=$this->session->privilige;
+
+            $data = array(
+                'deleted' => '1',
+            );
+
+            $this->db->update('source', $data,array('id' => $_POST['source_id']));
+        }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
+            echo "<script>alert('请先登录！')</script>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function deletesinglesource(){
@@ -1921,8 +2007,10 @@ class Pagemanager extends CI_Controller
 
             $this->db->update('source', $data,array('id' => $videoId,'first_level' => $first_level));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savebrand(){
@@ -1937,8 +2025,10 @@ class Pagemanager extends CI_Controller
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['source_id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function saveshower(){
@@ -1953,8 +2043,10 @@ class Pagemanager extends CI_Controller
             );
             $this->db->update('source', $updateitem, array('id' => $_POST['source_id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savedepartment(){
@@ -1979,8 +2071,10 @@ class Pagemanager extends CI_Controller
                 echo true;
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savejob(){
@@ -2009,8 +2103,10 @@ class Pagemanager extends CI_Controller
                 echo true;
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function updatedepartment(){
@@ -2026,8 +2122,10 @@ class Pagemanager extends CI_Controller
             );
             $this->db->update('department', $departmentupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function changedepartmentstatus(){
@@ -2054,8 +2152,10 @@ class Pagemanager extends CI_Controller
             }
             $this->db->update('department', $departmentupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function deletedepartment(){
@@ -2079,8 +2179,10 @@ class Pagemanager extends CI_Controller
             );
             $this->db->update('jobinfo', $jobupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function changejobstatus(){
@@ -2107,8 +2209,10 @@ class Pagemanager extends CI_Controller
             }
             $this->db->update('jobinfo', $jobupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function deletejob(){
@@ -2176,8 +2280,10 @@ class Pagemanager extends CI_Controller
                 }
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function addadmin()
@@ -2238,8 +2344,10 @@ class Pagemanager extends CI_Controller
                 }
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
 
@@ -2278,8 +2386,10 @@ class Pagemanager extends CI_Controller
                 $this->db->delete('privilige_user', array('user_id' => $id));
             }
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function submitarea(){
@@ -2356,8 +2466,10 @@ class Pagemanager extends CI_Controller
             }
 
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
 
@@ -2436,8 +2548,10 @@ TAG;
             $result.="</table></div></div>";
             echo $result;
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function queryvideo(){
@@ -2523,8 +2637,10 @@ TAG;
             $result.="</table>";
             echo $result;
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function querykeyword(){
@@ -2609,8 +2725,10 @@ TAG;
             $result.="</table>";
             echo $result;
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function savekeywordchanges(){
@@ -2627,8 +2745,10 @@ TAG;
             );
             $this->db->update('keyword', $keywordupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function changekeywordstatus(){
@@ -2655,8 +2775,10 @@ TAG;
             }
             $this->db->update('keyword', $keywordupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function changeareastatus(){
@@ -2684,8 +2806,10 @@ TAG;
             }
             $this->db->update('webcontent', $areaupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
 
@@ -2758,8 +2882,10 @@ TAG;
             echo $result;
 
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     /*public function queryarea(){
@@ -2839,8 +2965,10 @@ TAG;
             );
             $this->db->update('webcontent', $areaupdateinfo, array('id' => $_POST['id']));
         }else{
+            $this->config->load('sourceurl', TRUE);
+            $url  = $this->config->item('url', 'sourceurl');
             echo "<script>alert('请先登录！')</script>";
-            echo "<meta http-equiv='Refresh' content='0;URL=http://localhost:8080/login'>";
+            echo "<meta http-equiv='Refresh' content='0;URL=".$url['serverurl']."login'>";
         }
     }
     public function deletearea(){

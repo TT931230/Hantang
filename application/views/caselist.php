@@ -29,9 +29,9 @@
     </select>
     <label>图片名称：</label>
     <input type="text" id="imgname">
-<div class="row">
+<!--<div class="row">
     <button onclick="$queryImage()" class="btn btn-default">查询</button>
-</div>
+</div>-->
     <div id="caselistshow" class="cl-table">
         <table>
             <tr>
@@ -42,6 +42,7 @@
                 <td>图片地址</td>
                 <td>图片类型</td>
                 <td>顺序</td>
+                <td>语言</td>
                 <td>图片缩略图</td>
                 <td>编辑</td>
                 <td class="vl-title9">
@@ -60,6 +61,9 @@
                 </td>
                 <td class="cl-imgseq">
                     <input type="number" value="{sequence}" name="sequence" id="{source_id}_sequence" class="cl-imgseqinput">
+                </td>
+                <td id="{source_id}_lang" class="vl-imglang">
+                    {language}
                 </td>
                 <td id="{source_id}_img" class="cl-imgmini">
                     <img src="{source_location}" style="width:96px;height: 54px;">
