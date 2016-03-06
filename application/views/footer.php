@@ -9,7 +9,7 @@
     <div class="clearfix">
         <div class="inner">
         <div class="footerarea">
-            <div class="footerleftdiv">
+            <div class="footerleftdiv1">
                 <div class="footertype"><img src="{footerlogo1}" alt=""></div>
                     <div class="footerdetials">
                         <div class="footerdetail">
@@ -24,7 +24,7 @@
                         </a>优酷</div>
                     </div>
             </div>
-            <div class="footerleftdiv">
+            <div class="footerleftdiv2">
                 <div class="footertype"><img src="{footerlogo2}" alt=""></div>
                    <div class="footerdetials">
                        <div class="footerdetail">

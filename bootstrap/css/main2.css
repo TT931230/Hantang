@@ -42,7 +42,10 @@
 .aboutimgarea{
 	margin-bottom:42px;
 }
- 
+.brandlogoarea{
+	width:95.31%;
+	margin:auto;
+} 
  
  
  /*
@@ -60,7 +63,7 @@
   #left{
   margin:0;
   float:left;
-  width:364px;
+  width:28.44%;
   height:432px;
   margin-bottom:0.46%;
   
@@ -75,7 +78,7 @@
   #left-music{
   margin:0;
   float:left;
-  width:364px;
+   width:28.44%;
   height:432px;
   margin-bottom:150px;
   
@@ -87,20 +90,20 @@
   }
  #right-music{
  float:right;
-  width:916px;
+  width:71.56%;
   margin-bottom:150px;
   
   }
   #right{
  float:left;
-  width:916px;
+  width:71.56%;
 margin-bottom:0.46%;
   
   }
    #left-ul{
   float:left;
-  width:364px;
-  height:432px;
+  width:32.66%;
+  height:485px;
   
   }
  #left-ul img{
@@ -111,7 +114,24 @@ margin-bottom:0.46%;
   }
    #right-ul{
  float:right;
-  width:916px;
+  width:67.34%;
+  
+  }
+  #left-awoe{
+  float:left;
+  width:32.66%;
+  height:485px;
+  
+  }
+ #left-awoe img{
+ margin-top:100px;  
+ height:200px;
+ width:auto;
+
+  }
+   #right-awoe{
+ float:right;
+  width:67.34%;
   
   }
   /* Callback example */
@@ -166,8 +186,8 @@ border-bottom-color:transparent;
   text-indent: -9999px;
   overflow: hidden;
   text-decoration: none;
-  height: 60px;
-  width: 38px;
+  height: 38px;
+  width: 28px;
   background: transparent url("home_left.png") no-repeat left top;
   margin-top: -32px;
   border-bottom-color:transparent;
@@ -200,31 +220,29 @@ border-bottom-color:transparent;
 .videoslug {
 	font-size:10px;
 	text-align:left;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom:10px;
+    padding-bottom: 22px;
 	border-bottom:2px dotted #C4C4C4; 
 	color:#808080;
 }
 
-.ulsearch{
-	
+.ulsearch{	
     margin-top: 0;
     padding:0;
-   
 }
 .ultypes{
-height:50px;
+height:57px;
 background-color:#e0e0e0;
 text-align:center;
-padding-top:15px;
+padding-top:20px;
+margin-top:50px;
 }
 .uldetails{
-margin-top:25px;
-height:50px;
+margin-top:20px;
+height:60px;
 border-right:1px solid #c0c0c0;
 color:#808080;
 padding-right:10px;
+margin-bottom:50px;
 }
 
 
@@ -259,11 +277,6 @@ border-bottom-color:transparent;
   background-position: right top;
   right: 15px;
   }
-.musicsearch{
-
-	height:80px;
-	margin-bottom:10px;
-}
 
 
 .music-callbacks {
@@ -415,9 +428,9 @@ background: transparent url("white.png") no-repeat left top;
  */
 
 .joininfo{
-margin-top:20px;
-height:150px;
-margin-left:0px;
+
+height:148px;
+margin-bottom:16px;
 
 }
 
@@ -426,7 +439,7 @@ margin-left:0px;
     float:left;
     width:14%;      
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:40px;
    margin-left:10px;
     
   
@@ -505,16 +518,15 @@ margin-left:0px;
     background-color:#541B2A;
     margin-bottom: -1px;
     margin-top: 0;
-    padding:15px;
     font-size:20px;
     color:#555555;
-    height:50px;
+    height:52px;
     
  }
  .ulinner-subtitle img{
+ margin-left:10px;
  float:left;
- margin-top:-10px;
- height:40px;
+ height:52px;
  width:auto;
  }
 
@@ -617,7 +629,7 @@ border-bottom-color:transparent;
   right: 15px;
   }
  .brandlogo{
- width:33.33%;
+ width:31.77%;
  float:left;
  }
  
@@ -727,7 +739,6 @@ border-bottom-color:transparent;
  width:auto;
  }
  .awoevideoarea{
-    margin-bottom: 20px;
     height:auto;
     width:1280px;
 
@@ -793,7 +804,7 @@ border-bottom-color:transparent;
   display: block;
   position: relative;
   z-index: 1;
-  height: 432px;
+  height: 485px;
   width:100%;
   border: 0;
   }
@@ -943,3 +954,81 @@ background: transparent url("white.png") no-repeat left top;
 	font-size: 12px;
 	margin: 16px 0 0 -2px
 }
+
+.musicpagecallbacks_container {
+  position: relative;
+  float: right;
+  width: 100%;
+  }
+  .musicpagecallbacks_container > a:hover {
+background: transparent url("color.png") no-repeat left top;
+  }
+    .musicpagecallbacks_container > a:focus{
+background: transparent url("color.png") no-repeat left top;;
+border-bottom-color:transparent;
+  }
+  .musicpage-callbacks_nav.next:hover{
+  left: auto;
+  background-position: right top;
+  right: 15px;
+  }
+  .musicpage-callbacks_nav.next:focus{
+  left: auto;
+  background-position: right top;
+  right: 15px;
+  }
+
+.musicpage-callbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+.musicpage-callbacks li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.musicpage-callbacks img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height:720px;
+  width:100%;
+  }
+
+
+.musicpage-callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); 
+  opacity:0.7;
+  top: 51%;
+  left:13px;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 30px;
+  background: transparent url("white.png") no-repeat left top;
+  margin-top: -39px;
+  } 
+
+.musicpage-callbacks_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 15px;
+  }
+.musicpage-callbacks_nav >a:active {
+background: transparent url("white.png") no-repeat left top;
+	
+}
+@media screen and (max-width:600px) {
+  .musicpage-callbacks_nav {
+    top: 100%;
+    }
+  }
