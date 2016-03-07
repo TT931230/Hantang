@@ -42,6 +42,7 @@
                 <td>图片地址</td>
                 <td>图片类型</td>
                 <td>顺序</td>
+                <td>栏目</td>
                 <td>语言</td>
                 <td>图片缩略图</td>
                 <td>编辑</td>
@@ -61,6 +62,9 @@
                 </td>
                 <td class="cl-imgseq">
                     <input type="number" value="{sequence}" name="sequence" id="{source_id}_sequence" class="cl-imgseqinput">
+                </td>
+                <td class="vl-imglang">
+                    {first_level}
                 </td>
                 <td id="{source_id}_lang" class="vl-imglang">
                     {language}

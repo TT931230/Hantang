@@ -27,6 +27,15 @@ class Platform extends CI_Controller
         $source_info['second_level']='videoarea1';
         $source_info['type']='video/mp4';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
+        if(count($imagearea1)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='platform';
+            $source_info['second_level']='videoarea1';
+            $source_info['third_level']='zn';
+            $source_info['type']='video/mp4';
+            $imagearea1 = $this->page_data_model->query_sources($source_info);
+        }
+
 
         $source_info=$source_info_base;
         $source_info['first_level']='platform';
