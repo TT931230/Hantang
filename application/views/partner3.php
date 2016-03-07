@@ -6,10 +6,12 @@
  * Time: 10:22
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="dashline" id="showarea" style="display: {partnerdisarea2}">
+<divid="showarea" style="display: {partnerdisarea2}">
+    <div class="brandlogoarea">
     {partnerimgs}
     <div class="brandlogo">
-        <a href="javascript:;" onclick="$partnerrelatedvideo('{second_level}')"><img src="{source_location}"></a>
+       <span class="brandlogospan"></span> <a href="javascript:;" onclick="$partnerrelatedvideo('{second_level}')"><img src="{source_location}"></a>
     </div>
     {/partnerimgs}
+    </div>
 </div>

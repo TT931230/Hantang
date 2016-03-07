@@ -89,10 +89,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
                 <li id="aboutli">
                     <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
-                    <ul class="dropdown-menu dropdownmenucust headernav">
+                    <ul class="dropdown-menu dropdownmenucust headernav" style="width:75px;">
+                    <span class="dropdown-triangle"></span>
                         <li><a href="/about">{introduce}</a></li>
+                         <li class="dropdown-list-line" style="padding-left:30%;"><span></span></li>
                         <li><a href="/platform">{platform}</a></li>
+                         <li class="dropdown-list-line" style="padding-left:30%;"><span></span></li>
                         <li><a href="/partner">{partner}</a></li>
+                         
                     </ul>
                 </li>
                 <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>

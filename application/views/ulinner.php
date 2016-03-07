@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 {/ullogo}
             </div>
            
-                <div class="videoarea">
+                <div class="videoareainner">
                     <video controls="controls" autoplay=true>
                         {video}
                         <source src="{source_location}" type="{type}" />
@@ -26,14 +26,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <div class="subtitle">
                 <div class="ulinnera">
+                <div class="ulinneracontent">
                     <div class="innertexttitle">
                         {source_name}
                     </div>
                     <div class="ulinnertext">
                         {source_remark}
                     </div>
+                 </div>
                 </div>
-                <div class="ulinnerc">
+               
+   <!--             <div class="ulinnerc">
 
 
                     <div class="part2">
@@ -53,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--                        </div>-->
 <!--                        <div class="ul_des">手机</div>-->
 <!--                    </div>-->
-                </div>
+             <!--    </div> --> 
                 {/video}
                 <div class="ulinnerb">
                     <div id="share">

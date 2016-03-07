@@ -16,9 +16,9 @@
         </div>
     </div>
 
-    <div class="musictype3">
-        <div class="musictypetitle3">{displaytype}</div>
-        <div class="musictypedetails3">
+    <div class="musictype4">
+        <div class="musictypetitle4">{displaytype}</div>
+        <div class="musictypedetails4">
             {displaydetails}
             <span class="musictypedetail4" onclick="$searchrelatedvideo('{id}')">{keyword}</span>
             {/displaydetails}

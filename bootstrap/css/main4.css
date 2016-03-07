@@ -91,35 +91,37 @@
 
 .subtitle{
     width: 100%;    /* 也可以固定宽度 */
-    height: 180px;
-    background-color: #e0e0e0;
-    margin-top:-48px;
-    margin-bottom:30px;
-    padding:35px;
-    font-size:20px;
     color:#808080;
 
 }
 .subtitle .ulinnerb #share .bdsharebuttonbox{
-    margin-left:auto;
+    padding-left:25%;
 }
 .subtitle .ulinnera {
-	height: 120px;
-    width:60%;
+	height:172px;
+    width:70%;
     font-size: 10px;
     overflow: hidden;
     white-space:normal;
     word-break:break-all;
     float: left;
-    padding:0px 25px 10px 10px;
     display: inline-block;
-    border-right:1px solid #a0a0a0;
     color:#626262;
+   background-color: #e0e0e0;
+       margin-bottom:30px;
+   
+}
+.subtitle .ulinneracontent{
+	margin-top:35px;
+    margin-bottom:45px;
+    padding-left:8%;
+    padding-right:11.7%;
+    border-right:1px solid #c0c0c0;
 }
 .innertexttitle{
-	font-size:15px;
+	font-size:18px;
 	text-align:left;
-	margin-bottom:15px;
+	margin-bottom:22px;
 }
 .innertext{
 	font-size:15px;
@@ -127,11 +129,11 @@
 	margin-left:80px;
 }
 .ulinnertext{
-	font-size:15px;
+	font-size:12px;
 	text-align:left;
 }
 .subtitle .ulinnerc {
-	height: 80px;
+	height:172px;
     width:18%;
     font-size: 10px;
     display: inline-block;
@@ -142,8 +144,8 @@
     padding:10px 25px 10px 10px;
 }
 .subtitle .ulinnerb {
-	height: 100px;
-    width:22%;
+	height:172px;
+    width:30%;
     font-size: 10px;
     overflow: hidden;
     text-align:center;
@@ -151,8 +153,11 @@
     word-break:break-all; ;
     float:right;
     display: inline-block;
-    padding-top:20px;
-    padding-left:45px;
+    padding-top:60px;
+    background-color: #e0e0e0;
+        margin-bottom:30px;
+    
+
 }
 .subtitle .ulinnerc .part1{
     float: left;
@@ -286,15 +291,11 @@ background:transparent;
     width: 100%;    /* 也可以固定宽度 */
     height: 560px;
     background-color: #e0e0e0;
-    margin-top:-48px;
-    margin-bottom:30px;
-    padding:35px;
-    font-size:20px;
     color:#808080;
-
+    margin-bottom:30px;
 }
 .musicinnera {
-	height: 480px;
+    margin-top:56px;
     width:65%;
     font-size: 15px;
     overflow: hidden;
@@ -304,16 +305,33 @@ background:transparent;
     display: inline-block;
     border-right:1px solid #a0a0a0;
     color:#626262;
-    margin-top:25px;
 }
 .musicinnerc {
-	 margin-top:25px;
+	 margin-top:56px;
     width:35%;
     display: inline-block;
 }
 .musicinnerc img{
-    width:320px;
+    width:364px;
     height:auto;
     display: inline-block;
-    margin-left:30px;
+    margin:auto;
+}
+.musicinnerb {
+    width:100%;
+    font-size: 10px;
+    overflow: hidden;
+    text-align:center;
+    white-space:normal;
+    word-break:break-all; ;
+    float:right;
+    display: inline-block;
+    background-color: #e0e0e0;
+
+}
+.musicinnerbshare{
+	margin-left:27.5%;
+}
+.musicinnercimg{
+	height:370px;
 }
