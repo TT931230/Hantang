@@ -84,6 +84,7 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('type','partnerimg');
         $this->db->where('status','1');
+        $this->db->where('third_level','zn');
        // $this->db->where('third_level',$languageType);            //update
         $this->db->order_by('sequence','asc');
         $partner=$this->db->get()->result_array();

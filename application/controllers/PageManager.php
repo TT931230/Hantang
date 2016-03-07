@@ -235,10 +235,10 @@ class Pagemanager extends CI_Controller
             }
 
             //imagelists
-            $this->db->from('source');
+           /* $this->db->from('source');
             $this->db->where('deleted', 0);
             $this->db->where('type', 'img');
-            $imgarray1 = $this->db->get()->result_array();
+            $imgarray1 = $this->db->get()->result_array();*/
 
             $this->db->from('source');
             $this->db->where('deleted', 0);
@@ -252,10 +252,10 @@ class Pagemanager extends CI_Controller
 
             $imgarray3 = $this->db->get()->result_array();
 
-            $imgarray = array_merge($imgarray1,$imgarray2,$imgarray3);
+            $imgarray = array_merge($imgarray2,$imgarray3);
 
             $imgtypearray = array(
-                'img', 'videoimg', 'partnerimg'
+                'videoimg', 'partnerimg'
             );
             for ($i = 0; $i < count($imgarray); $i++) {
                 $tmpselect = '';
@@ -266,8 +266,31 @@ class Pagemanager extends CI_Controller
                         $tmpselect .= '<option value="' . $imgtypearray[$j] . '">' . $imgtypearray[$j] . '</option>';
                     }
                 }
+                $first_level='';
+                if($imgarray[$i]['first_level'] == 'home'){
+                    $first_level = '首页';
+                }
+                if($imgarray[$i]['first_level'] == 'about'){
+                    $first_level = '关于汉唐';
+                }
+                if($imgarray[$i]['first_level'] == 'platform'){
+                    $first_level = '播放平台';
+                }
+                if($imgarray[$i]['first_level'] == 'ul'){
+                    $first_level = '极致';
+                }
+                if($imgarray[$i]['first_level'] == 'awoe'){
+                    $first_level = '问鼎世界';
+                }
+                if($imgarray[$i]['first_level'] == 'music'){
+                    $first_level = '音乐年';
+                }
+                if($imgarray[$i]['first_level'] == 'join'){
+                    $first_level = '加入汉唐';
+                }
                 $tmpimgarray = array(
                     'language' => $imgarray[$i]['third_level'],
+                    'first_level' =>$first_level,
                     'source_id' => $imgarray[$i]['id'],
                     'source_location' => $imgarray[$i]['source_location'],
                     'source_name' => $imgarray[$i]['source_name'],
@@ -569,9 +592,10 @@ class Pagemanager extends CI_Controller
 
             //musicvideo
             $this->db->from('source');
-            $this->db->where('type', 'videoimg');
-            $this->db->or_where('type','proimg');
-            $this->db->where("link_url like '%music%'");
+            $this->db->where('first_level','music');
+            $this->db->where('type', 'proimg');
+            /*$this->db->or_where('type','proimg');*/
+            /*$this->db->where("link_url like '%music%'");*/
             $musicvido = $this->db->get()->result_array();
 
 
