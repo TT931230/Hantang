@@ -107,9 +107,8 @@ margin-bottom:0.46%;
   height:485px;
   
   }
- #left-ul img{
- margin-top:100px;  
- height:200px;
+ #left-ul img{  
+ height:485px;
  width:auto;
 
   }
@@ -521,9 +520,10 @@ margin-bottom:16px;
     
  }
  .ulinner-subtitle img{
- margin-left:10px;
+ margin-left:15px;
+ margin-top:10px;
  float:left;
- height:52px;
+ height:40px;
  width:auto;
  }
 

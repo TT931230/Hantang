@@ -5,6 +5,16 @@
   height:162px;
   text-align:right;
 }
+.headerdroplist_line{
+	height:1px;
+
+}
+.headerdroplist_line span{
+	display: block;
+    height: inherit;
+    background:#808080;
+	width:30px;
+}
 .modal-content{
 	height:750px;
 	width:674px;
