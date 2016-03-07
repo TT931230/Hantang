@@ -206,6 +206,7 @@ class Music extends CI_Controller
         $this->db->where('status','1');
         $this->db->where('third_level',$this->session->language);
         $this->db->where('deleted','0');
+        $this->db->where('type','proimg');
         $this->db->where("link_url like '%".$videoname."%'");
         $imgarray=$this->db->get()->result_array();
         if(count($imgarray)>0){
