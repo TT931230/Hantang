@@ -557,11 +557,11 @@ margin-bottom:16px;
   width: 100%;
   }
  .ptn-callbacks_container > a:focus{
-background: transparent url("color.png") no-repeat left top;;
+ background: transparent url("color.png") no-repeat left top;;
 border-bottom-color:transparent;
   }
 .ptn-callbacks_container > a:hover{
- background: transparent url("color.png") no-repeat left top;
+  background: transparent url("color.png") no-repeat left top;
   }
   .ptn-callbacks_nav.next:hover{
   left: auto;
@@ -602,7 +602,7 @@ border-bottom-color:transparent;
 .ptn-callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 60%;
+  top: 49%;
   left: 15px;
   z-index: 3;
   text-indent: -9999px;

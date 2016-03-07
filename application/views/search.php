@@ -29,10 +29,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div id="class1content" style="display:none;" class="cover-container showsearcharea">
         <div class="searchdetailarea">
-            <span id="searchMsg">{seniorsearch}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span id="searchMsg">{seniorsearch}</span>
             <input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent">
             <span id="searchTool" class="glyphicon glyphicon-search"></span>
-            <span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">&nbsp;&nbsp;&nbsp;&nbsp;{commit}</span>
+            <span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">{commit}</span>
             <span class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
  
             <div id="searchdetailarea"></div>
@@ -102,7 +102,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4','searchCountry')"><i class=""></i> {location}
             <span id="righToDown4" class="glyphicon glyphicon-chevron-right"></span>
             </span>
-            <div class="searchAZ" id="searchCountry">
+            <div class="searchLocation" id="searchCountry" >
                 {search_location}
                 <a href="javascript:;" onclick="$searchcity('{id}')" id="'{id}'"><span role="button"><i style="float:left;font-size: 12px;font-style: normal">{keyword}</i></span></a>
                 {/search_location}
