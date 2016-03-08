@@ -127,6 +127,9 @@ class Ul extends CI_Controller
         $this->load->library('parser');
         $this->load->model('page_data_model');
 
+        $this->config->load('sourceurl', TRUE);
+        $url  = $this->config->item('url', 'sourceurl');
+
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/ul');
         }else{
@@ -229,6 +232,8 @@ class Ul extends CI_Controller
         $this->db->from('source');
         $videoquery = $this->db->get();
         $video = $videoquery->result_array();
+        $video[0]['source_location']  = $url['serverurl']. $video[0]['source_location'];
+
 
         $tag_data = $this->page_data_model->query_tags();
 

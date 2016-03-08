@@ -608,7 +608,7 @@ class Pagemanager extends CI_Controller
             $this->db->from('user_info');
             $userlists=$this->db->get()->result_array();
             for ($i = 0; $i < count($userlists); $i++) {
-                $this->db->from('user_privilege');
+                $this->db->from('privilige_user');
                 $this->db->where('user_id',$userlists[$i]['id']);
                 $tmpuserprivilige= $this->db->get()->result_array();
                 $userlists[$i]['privilige']='';

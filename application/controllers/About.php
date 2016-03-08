@@ -21,7 +21,7 @@ class About extends CI_Controller
         }
         $source_info_base=array(
             'status'=>'1','first_level'=>'','second_level'=>'','type'=>'','third_level'=>$this->session->language
-        );//'third_level'=>$this->session->language,
+        );
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';

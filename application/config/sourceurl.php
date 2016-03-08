@@ -6,7 +6,7 @@
  * Time: 2:11
  */
 $config['url'] = array(
-    'imgurl' => 'bootstrap/images/',
+    'imgurl' => 'imges/',
     'videourl' => 'video/',
     'serverurl' =>'http://localhost:8080/'
 );
