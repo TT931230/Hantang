@@ -238,7 +238,7 @@ class Page_data_model extends CI_Model{
         //$this->db->where('third_level',$source_info['third_level']);
         $this->db->from('source');
 
-        $this->db->order_by("sequence"," desc");
+        $this->db->order_by("sequence"," asc");
         $query = $this->db->get();
         $sourcedata = $query->result_array();
 
