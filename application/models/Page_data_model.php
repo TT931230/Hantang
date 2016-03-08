@@ -17,14 +17,14 @@ class Page_data_model extends CI_Model{
         //get footer source
         $this->db->from('source');
         $this->db->where('first_level','footer');
-        //$this->db->where('third_level',$languageType);
+        $this->db->where('third_level',$languageType);
         $returnquery=$this->db->get()->result_array();
-       /* if(count($returnquery) <=0){
+        if(count($returnquery) <=0){
             $this->db->from('source');
             $this->db->where('first_level','footer');
             $this->db->where('third_level','zn');
             $returnquery=$this->db->get()->result_array();
-        }*/
+        }
 
         $weixin="";
         $weibo="";
