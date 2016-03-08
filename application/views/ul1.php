@@ -7,7 +7,7 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="newborder" style="display: {uldisarea1}">
-    <div id="left-ul" style="background-color:#A73D49">
+    <div id="left-ul">
         {imagearea11}
         <img src='{source_location}' alt="">
         {/imagearea11}

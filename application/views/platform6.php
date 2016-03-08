@@ -6,6 +6,8 @@
  * Time: 10:24
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<!--<div class="plat-map">-->
-<!--    <img src="{aboutmap3}">-->
-<!--</div>-->
+<div class="plat-map" style="padding-top:80px;padding-bottom:93px">
+    {aboutmap3}
+    <img src='{source_location}'>
+    {/aboutmap3}
+</div>

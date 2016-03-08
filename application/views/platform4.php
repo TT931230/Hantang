@@ -8,6 +8,6 @@
 ?><!DOCTYPE html>
 <div class="plat-map" style="padding-top:80px;padding-bottom:93px">
     {aboutmap1}
-    <img src="{source_location}">
+    <img src='{source_location}'>
     {/aboutmap1}
 </div>

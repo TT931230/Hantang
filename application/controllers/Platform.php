@@ -68,7 +68,23 @@ class Platform extends CI_Controller
             $source_info['deleted'] = '0';
             $aboutmap2 = $this->page_data_model->query_sources($source_info);
         }
-
+        
+        $source_info=$source_info_base;
+        $source_info['first_level']='platform';
+        $source_info['second_level']='aboutmap3';
+        $source_info['type']='img';
+        $source_info['deleted'] = '0';
+        $aboutmap3 = $this->page_data_model->query_sources($source_info);
+        if(count($aboutmap3)<=0){
+        	$source_info=$source_info_base;
+        	$source_info['first_level']='platform';
+        	$source_info['second_level']='aboutmap3';
+        	$source_info['third_level']='zn';
+        	$source_info['type']='img';
+        	$source_info['deleted'] = '0';
+        	$aboutmap3 = $this->page_data_model->query_sources($source_info);
+        }
+        
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
@@ -87,7 +103,8 @@ class Platform extends CI_Controller
             'logoimage'=>$logoimage,
             'videoarea1'=>$imagearea1,
             'aboutmap1'=>$aboutmap1,
-            'aboutmap2'=>$aboutmap2
+            'aboutmap2'=>$aboutmap2,
+        	'aboutmap3'=>$aboutmap3
         );
 
         $tmp_data=array_merge($tmp_data,$tag_data);
@@ -98,7 +115,7 @@ class Platform extends CI_Controller
         $this->parser->parse('search',$data);
         $this->parser->parse('platform1',$tmp_data);
         $this->parser->parse('platform2',$tmp_data);
-        $this->parser->parse('platform3',$tmp_data);
+    //    $this->parser->parse('platform3',$tmp_data);
         $this->parser->parse('platform4',$tmp_data);
         $this->parser->parse('platform5',$tmp_data);
         $this->parser->parse('platform6',$tmp_data);
