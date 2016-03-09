@@ -181,7 +181,17 @@ class Music extends CI_Controller
         $this->db->from('source');
         $videoquery = $this->db->get();
         $video = $videoquery->result_array();
-        $video[0]['source_location']  = $url['serverurl']. $video[0]['source_location'];
+        if(count($video)>0){
+            $video[0]['source_location'] = $url['serverurl']. $video[0]['source_location'];
+            $this->db->where('status','1');
+            $this->db->where('first_level',$videoname);
+            $this->db->where('third_level',$this->session->language);
+            $this->db->from('source');
+            $queryData1= $this->db->get();
+            $queryData2=$queryData1->result_array();
+            $video[0]['imgurl'] = $url['serverurl']. $queryData2[0]['source_location'];
+        }
+
         if(count($video)<=0){
             $this->db->where('status','1');
             $this->db->where('id',$videoname);
@@ -190,23 +200,30 @@ class Music extends CI_Controller
             $videoquery = $this->db->get();
 
             $video = $videoquery->result_array();
-            $video['source_location']  = $url['serverurl']. $video['source_location'];
+            $video[0]['source_location']  = $url['serverurl']. $video[0]['source_location'];
+            $this->db->where('status','1');
+            $this->db->where('first_level',$videoname);
+            $this->db->where('third_level','zn');
+            $this->db->from('source');
+            $queryData1= $this->db->get();
+            $queryData2=$queryData1->result_array();
+            $video[0]['imgurl'] = $url['serverurl']. $queryData2[0]['source_location'];
         }
 
 
-
         //add new img
-       /* $this->db->from('source');
-        $this->db->where('status','1');
-        $this->db->where('third_level',$this->session->language);
-        $this->db->where("link_url like '%".$videoname."%'");
+        /* $this->db->from('source');
+         $this->db->where('status','1');
+         $this->db->where('third_level',$this->session->language);
+         $this->db->where("link_url like '%".$videoname."%'");
 
-        $imgdata=$this->db->get()->result_array();
-        if(count($imgdata)>0){
-            $video[0]['imgurl']=$imgdata[0]['source_location'];
-        }else{
-            $video[0]['imgurl']='';
-        }*/
+         $imgdata=$this->db->get()->result_array();
+         if(count($imgdata)>0){
+             $video[0]['imgurl']=$imgdata[0]['source_location'];
+         }else{
+             $video[0]['imgurl']='';
+         }*/
+
 
 
         $this->db->from('source');
@@ -217,7 +234,7 @@ class Music extends CI_Controller
         $this->db->where("link_url like '%".$videoname."%'");
         $imgarray=$this->db->get()->result_array();
         if(count($imgarray)>0){
-            $video[0]['imgurl']=$imgarray[0]['source_location'];
+            /* $video[0]['imgurl']=$imgarray[0]['source_location'];*/
             $this->db->from('musicinfo');
             $this->db->where('music_id',$imgarray[0]['id']);
             $musicinfoarray=$this->db->get()->result_array();
@@ -231,7 +248,7 @@ class Music extends CI_Controller
         }else{
             $musictime='';
             $musiclocation='';
-            $video[0]['imgurl']='';
+            /*$video[0]['imgurl']='';*/
         }
         $video[0]['musictime']=$musictime;
         $video[0]['musiclocation']=$musiclocation;
