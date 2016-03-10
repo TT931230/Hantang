@@ -1,6 +1,7 @@
 /**
  * Created by TT on 2016/1/11.
  */
+$(document).ready($changeStyle());
 function $a(element){
     return element = document.getElementById(element);
 }
@@ -240,6 +241,20 @@ function $searchresult(){
         $("#bg").css("height",document.body.scrollHeight);
     }
 }
+function $changeStyle(){
+    var tmp = $('#homeli').children()[0].innerHTML;
+
+    if(tmp !== "Home"){
+        $('#ulli').removeClass('languge-en-ulli');
+        $('#awoeli').removeClass('languge-en-awoeli');
+        $('#musicli').removeClass('languge-en-musicli');
+    }
+    else{
+        $('#ulli').addClass('languge-en-ulli');
+        $('#awoeli').addClass('languge-en-awoeli');
+        $('#musicli').addClass('languge-en-musicli');
+    }
+}
 
 function $changelanguage($url,$language){
     $.ajax({
@@ -249,6 +264,7 @@ function $changelanguage($url,$language){
         success: function(result)
         {
             location.reload(true);
+            $changeStyle();
         },
         error: function()
         {
