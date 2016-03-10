@@ -1,6 +1,11 @@
 /*
  * Globals
  */
+input:focus {
+    border: 1px solid #808080;
+    outline:none;
+}
+
 .headernavul{
   height:162px;
   text-align:right;
@@ -582,6 +587,15 @@ font-size:8px;
     width:1280px;
 }
 .videoarea video{
+    width:1280px;
+    height:auto;
+}
+.videoarea_join{
+    margin-bottom: 60px;
+    height:720px;
+    width:1280px;
+}
+.videoarea_join video{
     width:1280px;
     height:auto;
 }

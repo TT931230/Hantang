@@ -25,7 +25,7 @@
                     </div>
             </div>
             <div class="footerleftdiv2">
-                <div class="footertype"><img src="{footerlogo2}" alt=""></div>
+                <div class="footertype2"><img src="{footerlogo2}" alt=""></div>
                    <div class="footerdetials">
                        <div class="footerdetail">
                            <a href="javascript:;">

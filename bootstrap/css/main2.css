@@ -301,7 +301,7 @@ border-bottom-color:transparent;
   height:610px;
   width:100%;
   border: 0;
-  margin-bottom:18px;
+  margin-bottom:25px;
   }
 
 
@@ -407,7 +407,7 @@ background: transparent url("white.png") no-repeat left top;
   height: 7px;
   width: 100%;
   position: absolute;
-  top:603px;
+  top:610px;
   margin: 0;
   z-index: 10;
   opacity: 0.5;
@@ -654,6 +654,17 @@ border-bottom-color:transparent;
  height:auto;
  float:left;
  margin-left:10px;
+ }
+  .footertype2{
+ height:73px;
+ width:164px;
+ }
+ .footertype2 img{
+ width:100px;
+ height:auto;
+ float:left;
+ margin-left:20%;
+ margin-top:10px;
  }
   .footertype3{
  height:73px;
