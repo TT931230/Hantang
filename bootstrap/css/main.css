@@ -1066,4 +1066,10 @@ margin-left:-1px;
 .mob_menu{
     display: none;
 }
-
+.languge-en-ulli,
+.languge-en-awoeli {
+    width: 10% !important;
+}
+.languge-en-musicli {
+    width: 12% !important;
+}
