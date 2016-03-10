@@ -149,7 +149,11 @@ class About extends CI_Controller
         $this->parser->parse('about2',$tmp_data);
         $this->parser->parse('about3',$aboutData);
         $this->parser->parse('aboutend',$data);
-           $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function Changelanguage(){
         $this->load->library('session');

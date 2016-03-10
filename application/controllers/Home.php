@@ -190,7 +190,12 @@ class Home extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('homeend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            $this->parser->parse('footeren',$data);
+        }else{
+            $this->parser->parse('footer',$data);
+        }
+
 
     }
     function Changelanguage(){
@@ -279,7 +284,11 @@ class Home extends CI_Controller
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
         //var_dump($page_data);
-        return $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function preview(){
         $this->load->library('session');

@@ -115,7 +115,11 @@ class Ul extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('ulend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function Changelanguage(){
         $this->load->library('session');
@@ -256,7 +260,11 @@ class Ul extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('ulinner',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
 
     function preview(){

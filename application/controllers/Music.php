@@ -96,7 +96,11 @@ class Music extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('musicend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
 
 
@@ -191,11 +195,18 @@ class Music extends CI_Controller
             $queryData2=$queryData1->result_array();
             $video[0]['imgurl'] = $url['serverurl']. $queryData2[0]['source_location'];
         }
-
         if(count($video)<=0){
+            if($this->session->language == 'zn'){
+                $this->db->where('third_level','en');
+                $lan = 'en';
+
+            }else{
+                $this->db->where('third_level','zn');
+                $lan = 'zn';
+            }
             $this->db->where('status','1');
             $this->db->where('id',$videoname);
-            $this->db->where('third_level','zn');
+
             $this->db->from('source');
             $videoquery = $this->db->get();
 
@@ -203,7 +214,7 @@ class Music extends CI_Controller
             $video[0]['source_location']  = $url['serverurl']. $video[0]['source_location'];
             $this->db->where('status','1');
             $this->db->where('first_level',$videoname);
-            $this->db->where('third_level','zn');
+            $this->db->where('third_level',$lan);
             $this->db->from('source');
             $queryData1= $this->db->get();
             $queryData2=$queryData1->result_array();
@@ -270,7 +281,11 @@ class Music extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('musicinner',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function preview(){
         $this->load->library('session');

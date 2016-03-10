@@ -129,7 +129,11 @@ class Platform extends CI_Controller
         }*/
 
         $this->parser->parse('platformend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function Changelanguage(){
         $this->load->library('session');

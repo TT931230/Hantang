@@ -120,7 +120,11 @@ class Awoe extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('awoeend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function Changelanguage(){
         $this->load->library('session');
@@ -263,7 +267,11 @@ class Awoe extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('awoeinner',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function preview(){
         $this->load->library('session');
