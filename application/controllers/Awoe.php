@@ -35,7 +35,7 @@ class Awoe extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='awoe';
         $source_info['second_level']='imagearea11';
-        /*$source_info['third_level']=$this->session->language;*/
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $source_info['deleted']='0';
         $imagearea11 = $this->page_data_model->query_sources($source_info);
@@ -155,6 +155,7 @@ class Awoe extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='awoelogo';
         $source_info['type']='img';
+
         $source_info['third_level']=$this->session->language;
         $awoelogo = $this->page_data_model->query_sources($source_info);
         if(count($awoelogo) <=0){
