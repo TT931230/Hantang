@@ -184,10 +184,14 @@ input:focus {
     margin-bottom:69px;
     display: inline-block;
     background-color: #ffffff;
+}
+.relatedvideos:nth-child(3n+1) , .relatedvideos:nth-child(3n+2){
     border-right:1px solid #d6d6d6;
 }
+.relatedvideos:last-of-type{
+    border-right:0px solid #d6d6d6;
+}
 .relatedvideos img{
-	
     float:center;
     height:228px;
     width:392px;  
