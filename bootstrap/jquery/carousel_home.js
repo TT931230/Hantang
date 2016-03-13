@@ -1,28 +1,7 @@
 var videocount=0;
 $(function () {
 
-	$('#videolist1').css('left','0');
-	var divWidth = $('#process1').width();
-	var processdevWidth = (divWidth-6)/3+'px';
-	$('.processdev').css('width',processdevWidth);
-	var vid1 = document.getElementById("video1");
-	vid1.play();
-	$("#video1").on('ended', function(){
-		setTimeout(function(){
-			$("#video1")[0].load();
-		}, 500);
-	})
-	$("#video2").on('ended', function(){
-		setTimeout(function(){
-			$("#video2")[0].load();
-		}, 500);
-	})
-	$("#video3").on('ended', function(){
-		setTimeout(function(){
-			$("#video3")[0].load();
-		}, 500);
-	})
-	clock();
+
   // Slideshow 4
   $("#carousel1").responsiveSlides({
 	auto: true,
@@ -138,3 +117,30 @@ function clock(){
 	}
 	setTimeout(clock,300);
 }
+$(function(){
+	var vid1 = document.getElementById("video1");
+	if(vid1 != null){
+		$('#videolist1').css('left','0');
+		var divWidth = $('#process1').width();
+		var processdevWidth = (divWidth-6)/3+'px';
+		$('.processdev').css('width',processdevWidth);
+
+		vid1.play();
+		$("#video1").on('ended', function(){
+			setTimeout(function(){
+				$("#video1")[0].load();
+			}, 500);
+		})
+		$("#video2").on('ended', function(){
+			setTimeout(function(){
+				$("#video2")[0].load();
+			}, 500);
+		})
+		$("#video3").on('ended', function(){
+			setTimeout(function(){
+				$("#video3")[0].load();
+			}, 500);
+		})
+		clock();
+	}
+})
