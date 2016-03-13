@@ -115,7 +115,7 @@ function clock(){
 			vid1.play();
 			videocount = 0;
 	}
-	setTimeout(clock,300);
+	setTimeout(clock,100);
 }
 $(function(){
 	var vid1 = document.getElementById("video1");
