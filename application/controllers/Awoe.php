@@ -29,7 +29,7 @@ class Awoe extends CI_Controller
         $source_info['first_level']='awoe';
         $source_info['second_level']='imagearea1';
         $source_info['type']='img';
-        /*$source_info['third_level']=$this->session->language;*/
+        $source_info['third_level']=$this->session->language;
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
