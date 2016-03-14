@@ -28,6 +28,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            
         
             <div class="subtitle-music">
+            <table>
+            <tr>
+            <td style="width:65%;">
                 <div class="musicinnera">
 
                     <div class="music-name" style="margin-bottom:56px;font-weight:500">
@@ -63,10 +66,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </table>
                     </div>
                 </div>
+                </td>
+                <td style="width:35%;" valign="top">
+               
                 <div class="musicinnerc">
+                  <table>
+                    <tr>
                     <div class="musicinnercimg">
                     <img src="{imgurl}">
                     </div>
+                    </tr>
+                    <tr>
                     <div class="musicinnerb">
                     <div id="share" class="musicinnerbshare">
                         <div class="bdsharebuttonbox">
@@ -77,9 +87,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div id="sharetext">分享给好友</div>
+                    </div>
+                    </tr>
+                  </table> 
                 </div>
-                </div>
+                 
+   
+                </td>
                 {/video}
+                </tr>
+                </table>
                </div>  
             <div class="videoslug">
                 相关视频

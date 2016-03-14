@@ -289,14 +289,14 @@ background:transparent;
 
 .subtitle-music{
     width: 100%;    /* 也可以固定宽度 */
-    height: 560px;
-    background-color: #e0e0e0;
+    background-color:#e0e0e0;
     color:#808080;
     margin-bottom:30px;
+
 }
 .musicinnera {
     margin-top:56px;
-    width:65%;
+  
     font-size: 15px;
     overflow: hidden;
     white-space:normal;
@@ -305,11 +305,14 @@ background:transparent;
     display: inline-block;
     border-right:1px solid #a0a0a0;
     color:#626262;
+    background-color: #e0e0e0;
+    margin-bottom:30px;
 }
 .musicinnerc {
-	 margin-top:56px;
-    width:35%;
     display: inline-block;
+        background-color: #e0e0e0;
+        padding-top:56px;
+        height:100%;
 }
 .musicinnerc img{
     width:364px;
@@ -327,11 +330,11 @@ background:transparent;
     float:right;
     display: inline-block;
     background-color: #e0e0e0;
-
+    height:25%;
 }
 .musicinnerbshare{
 	margin-left:27.5%;
 }
 .musicinnercimg{
-	height:370px;
+height:75%;
 }
