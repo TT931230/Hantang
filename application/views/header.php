@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    //Firefox
    $("body").css("-moz-user-select","none");    
     });
-</script>
+</script> 
 <body>
 
 <div class="cover-container">
