@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="">
     <!--    <link rel="icon" href="../../favicon.ico">-->
 
-    <title>Cover Template for Bootstrap</title>
+    <title>汉唐文化</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
