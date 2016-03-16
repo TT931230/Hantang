@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
     <link rel="stylesheet"  href="/bootstrap/css/fileinput.min.css"/>
 </head>
-<script type="text/javascript"> 
+<!-- <script type="text/javascript"> 
     // Forbid Copy     
     function rt() 
     {
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    //Firefox
    $("body").css("-moz-user-select","none");    
     });
-</script> 
+</script> -->
 <body>
 
 <div class="cover-container">

@@ -9,11 +9,11 @@
 <div class="homeborder1" style="display: {homedisarea1};">
     <div class="homewrapper1" style="display: block;overflow: hidden;position: relative;">
         <div class="videolist" style="width:1280px;height:610px;margin-left: 10px;">
-            {imagearea1}
+            {videoarea}
             <div id="videolist{sequence}" style="overflow: hidden;left: 9999px;position: absolute;">
                 <video src="{source_location}" id="video{sequence}" style="width: 1280px;height:auto;"></video>
             </div>
-            {/imagearea1}
+            {/videoarea}
 
         </div>
         <div id="process1" style=" margin-left: -8px;margin-bottom:18px;border-style:solid; border-width:0px;height: 7px;width:1290px;border-color:#e4e4e4;background-color: #e8e8e8">

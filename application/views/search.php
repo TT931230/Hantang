@@ -16,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="dropdown-menu dropdownmenucustLan" id="choseLan">
                 <span class="dropdown-triangle-Lan"></span>
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
+                    <li class="dropdown-list-line" style="margin-top:25px;margin-left:-10px;"><span></span></li>
                     <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
              <!--   <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li> -->     
                 </ul>
@@ -143,11 +144,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div id="bg" class="searchbg"></div>
 <a href="javascript:void(0)">
-    <img id="top_str" alt="" src="http://www.acmedynasty.com/cn/images/top_str.png"/>
-    <img id="to_top" alt="" src="http://static.acmedynasty.com/images/top.png"/>  </a>
+    <img id="top_str" alt="" src="../../bootstrap/images/top_str.png"/>
+    <img id="to_top" alt="" src="../../bootstrap/images/top.png"/>  </a>
 <a href="javascript:void(0)">
-    <img id="info_str" alt="" src="http://static.acmedynasty.com/cn/images/bottom_str.png"/>
-    <img id="show_info" alt="" src="http://static.acmedynasty.com/images/bottom.png"/>  </a>
+    <img id="info_str" alt="" src="../../bootstrap/images/bottom_str.png"/>
+    <img id="show_info" alt="" src="../../bootstrap/images/bottom.png"/>  </a>
 <div id="footer_flow" class="footer_flow">
     <div id="mask">
         <div class="closePop"></div>

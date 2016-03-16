@@ -19,12 +19,10 @@
      color:#808080;
      font-size:12px;
      position:relative;
-     opacity:0.9;  
+     opacity:0.9; 
+     border:none; 
  }
 
-.dropdownmenucust {
-    border: #C9C9C9;
-}
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
     background-color: transparent;
 }
@@ -74,6 +72,7 @@ input[type="checkbox"]:checked {
 }
 .dropdownmenucustLan li{
      width:60px;
+    
 }
 .dropdownmenucustLan {
     background-color: #e4e4e4;
@@ -92,17 +91,16 @@ input[type="checkbox"]:checked {
     border-right: 5px solid transparent;
     border-top: 5px solid #fff;
     position: absolute;
-    margin-left: 40%;
+    margin-left: -5px;
 }
 .dropdowncustspan {
     text-align: center;
-    color: #FFF;
     float: left;
-    line-height: 21px;
+    height: 25px;
     text-decoration: none;
-    padding: 0 0px;
+    padding-top:5px;
     z-index: 1024;
-    border-top: 1px solid #fff;
+  
 }
 
  #choseLan>li:hover{
@@ -110,7 +108,7 @@ input[type="checkbox"]:checked {
      font-size:12px;
      position:relative;
      color:#808080;
-     background-color:#e4e4e4;
+     background-color:transparent;
  }
  .searchcontentdiv {
     display: inline-block;

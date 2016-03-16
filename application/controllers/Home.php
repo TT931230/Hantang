@@ -114,10 +114,10 @@ class Home extends CI_Controller
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
-        $source_info['second_level']='imagearea1';
-        $source_info['type']='img';
+        $source_info['second_level']='videoarea';
+        $source_info['type']='video/mp4';
         $source_info['deleted']=0;
-        $imagearea1 = $this->page_data_model->query_sources($source_info);
+        $videoarea = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
@@ -166,7 +166,7 @@ class Home extends CI_Controller
         $tag_data = $this->page_data_model->query_tags();
         $tmp_data = array(
             'logoimage'=>$logoimage,
-            'imagearea1'=>$imagearea1,
+            'videoarea'=>$videoarea,
             'imagearea2'=>$imagearea2,
             'imagearea3'=>$imagearea3,
             'imagearea4'=>$imagearea4,
