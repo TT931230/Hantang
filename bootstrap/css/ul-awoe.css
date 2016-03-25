@@ -211,3 +211,29 @@
 	opacity:0.9;
 	margin-left:25px;
 }
+/*   awoeinner   */
+.awoeinner-subtitle{
+    background-color:#00376f;
+    margin-top: 0;
+    padding:15px;
+    font-size:20px;
+    color:#555555;
+    height:50px;
+    
+ }
+ .awoeinner-subtitle img{
+ float:left;
+ margin-top:-25px;
+ height:70px;
+ width:auto;
+ }
+ .awoevideoarea{
+    height:auto;
+    width:1280px;
+
+}
+.awoevideoarea video{
+	margin-top:-15px;
+    width:1280px;
+    height:auto;
+}

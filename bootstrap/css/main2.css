@@ -230,16 +230,7 @@ background: transparent url("white.png") no-repeat left top;
  * home
  */
 
-  .homeborder1{
- padding:0px;
- width:100%;
 
-
- }
- .homewrapper1{
-  width:auto;
- }
- 
  .progress {
   height: 7px;
   width: 100%;
@@ -513,42 +504,7 @@ border-bottom-color:transparent;
  }
  
 
-/*   awoeinner   */
-.awoeinner-subtitle{
-    background-color:#00376f;
-    margin-top: 0;
-    padding:15px;
-    font-size:20px;
-    color:#555555;
-    height:50px;
-    
- }
- .awoeinner-subtitle img{
- float:left;
- margin-top:-25px;
- height:70px;
- width:auto;
- }
- .awoevideoarea{
-    height:auto;
-    width:1280px;
 
-}
-.awoevideoarea video{
-	margin-top:-15px;
-    width:1280px;
-    height:auto;
-}
- /* musicinner */
-.musicinner-subtitle{
-	position: relative;
-    height:52px;
- }
- .musicinner-subtitle img{
-     float: left;
-     height: 52px;
-     width: 100%;
- } 
  
  /*  ul */
  .ulcallbacks_container {

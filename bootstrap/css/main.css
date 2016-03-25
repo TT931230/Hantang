@@ -146,11 +146,7 @@ input:focus {
 .navtags{
     text-align: center;
 }
-.music-relatedvideoarea{
-	width:100%;
-    display: inline-block;     
 
-}
 
 .searchresult{
     margin-bottom: 20px;
@@ -198,45 +194,8 @@ input:focus {
 .searchresults{
     background-color: #fff;
 }
-.musictype{
 
-	margin-bottom:10px;
-    width:50%;
-    float:left;
-    height:auto;
-   
-}
-.musictypetitle{
-	width:35%;
-    float:left;    
-    background-color: #e4e4e4;
-    height:55px;
-    padding:15px;
-    border:1px solid #fff;
-    color:#808080;
-}
-.musictypedetails{
-    width:60%;
-    height:55px;
-    float:left;
-    
-}
-.musictypedetail{
-    width:25%;
-    float:left;
-    color:#808080;
-    margin-bottom:6px;
-    margin-top:6px;
-    text-align:center;
-}
-.musictypedetail2{
-   margin-left:20px;
-   margin-right:5px;
-    display:inline-block;
-    color:#000;
-   margin-bottom:10px;
-   
-}
+
 
 
 .dropdownmenucust{
@@ -543,14 +502,7 @@ font-size:8px;
     height:auto;
 }
 
-.videoareamusicinner{
-    height:720px;
-    width:1280px;
-}
-.videoareamusicinner video{
-    width:1280px;
-    height:auto;
-}
+
 /* Links */
 a,
 a:focus,
@@ -852,128 +804,8 @@ border-image:none;
     }
 }
 
-/* music */
 
-.musictype3{
-    margin-top:48px;
-	margin-bottom:48px;
-    width:48%;
-    float:left;
-    height:58px;
-   
-}
-.musictype4{
-    margin-top:48px;
-	margin-bottom:48px;
-    width:52%;
-    float:left;
-    height:58px;
-   
-}
-.musictypetitle3{
-	width:31.17%;
-    float:left;    
-    background-color: #e4e4e4;
-    height:58px;
-    padding:20px;
-    border:1px solid #fff;
-    color:#808080;
-}
-.musictypedetails3{
-    width:68.83%;
-    height:58px;
-    float:left;
-    
-}
-.musictypedetail3{
-    width:33.3%;
-    float:left;
-    color:#808080;
-    padding:20px;
-    text-align:center;
-}
-.musictypetitle4{
-	width:30.68%;
-    float:left;    
-    background-color: #e4e4e4;
-    height:58px;
-    padding:20px;
-    border:1px solid #fff;
-    color:#808080;
-}
-.musictypedetails4{
-    width:69.32%;
-    height:58px;
-    float:left;
-    
-}
-.musictypedetail4{
-    width:20%;
-    float:left;
-    color:#808080;
-    padding:20px;
-    text-align:center;
-}
-.music-relatedvideos{
-	float:left;
-	height:380px;
-    width:100%;
-    display: inline-block;
-    background-color: #ffffff;
-    border-top:2px dotted #d6d6d6;
-}
-.music-relatedvideos img{
-	margin-top:48px;
 
-    float:right;
-    height:284px;
-    width:62.5%;  
-}
-.music-relavideoinfo{
-	padding-top:48px;
-	width:37.5%;
-	float:left;
-	padding-right:5%;
-}
-.music-relavideostitle{
-	height:50px;
-	float:left;
-	font-size:15px;
-	color:#808080;
-	margin-top:10px;
-	width:100%;
-	text-align:left;
-}
-.music-relavideoremark{
-	font-size:12px;
-	color:#808080;
-	float:left;
-	margin-top:10px;
-	text-align:left;
-	margin-right:10px;
-	width:100%;
-}
-.music-relavideotime{
-	font-size:12px;
-	color:#808080;
-	float:left;
-	text-align:left;
-	margin-top:20px;
-	width:100%;
-}
-.music-more{
-	width:100%;
-	font-size:12px;
-	color:#808080;
-	text-align:left;
-	padding-top:230px;
-}
-.music-more img{
-width:60px;
-height:15px;
-float:left;
-margin-left:-1px;
-}
 .mob_menu{
     display: none;
 }

@@ -34,6 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/home.css" rel="stylesheet">
     <link href="/bootstrap/css/about.css" rel="stylesheet">
     <link href="/bootstrap/css/ul-awoe.css" rel="stylesheet">
+    <link href="/bootstrap/css/music.css" rel="stylesheet">
     <link href="/bootstrap/css/join.css" rel="stylesheet">
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
     <link rel="stylesheet"  href="/bootstrap/css/fileinput.min.css"/>

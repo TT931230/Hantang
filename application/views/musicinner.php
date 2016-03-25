@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td style="width:65%;">
                 <div class="musicinnera">
 
-                    <div class="music-name" style="margin-bottom:56px;font-weight:500">
+                    <div class="music-name">
                     <table style="width:100%;text-align:left">
                     <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出名称：<td>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                     </table>
                     </div>
-                    <div class="music-brief" style="margin-bottom:56px;font-weight:500">
+                    <div class="music-brief">
                      <table style="width:100%;text-align:left;">
                        <tr>
                         <td valign="top" style="width:13%; padding-left:50px;color:#000;font-weight:600;">简介：</td>
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                      </table>
                     </div>
-                    <div class="music-time" style="margin-bottom:56px;font-weight:500">
+                    <div class="music-time">
                      <table style="width:100%;text-align:left;">
                      <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出时间：</td>
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                     </table>
                     </div>
-                    <div class="music-place" style="font-weight:500">
+                    <div class="music-place">
                        <table style="width:100%;text-align:left;">
                        <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出地点：</td>
@@ -107,7 +107,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="relatedvideoarea" id="relatedvideoarea">
                     {relatedvideo}
                     <div class="relatedvideos">
-                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; margin-left:50px;"><img src='{source_location}'></a>
+                        <a href='{link_url}'>
+                        <img src='/bootstrap/images/play.png' class="playimg" >
+                        <img src='{source_location}'></a>
                         <div class="relavideostitle">
                             {source_name}
                         </div>

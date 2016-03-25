@@ -25,7 +25,9 @@
                         {update_time}
                     </div>
                     <div class="music-more">
-                        <a href='{link_url}'><img src="/bootstrap/images/more.png" class="moreimg"></a>
+                        <a href='{link_url}'>
+                        <img src="/bootstrap/images/more.png" class="moreimg">
+                        </a>
                     </div>
                 </div>
                 <a href='{link_url}'><img src='{source_location}'></a>
