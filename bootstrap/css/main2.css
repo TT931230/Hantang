@@ -17,59 +17,8 @@
      
  }
 
- .partnerimg{
-    background-color: #EAEAEA;
-    border-bottom:1px dashed #C4C4C4;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding:175px;
- }
  
-
  
- /*
- * ul
- */
-
- .wrapper {
-  padding: 0px;
-  width:100%;
-  height:432px;
-  
-  }
- 
-   #left-ul{
-  float:left;
-  width:32.66%;
-  height:485px;
-  
-  }
- #left-ul img{  
- height:485px;
- width:auto;
-
-  }
-   #right-ul{
- float:right;
-  width:67.34%;
-  
-  }
-  #left-awoe{
-  float:left;
-  width:32.66%;
-  height:485px;
-  
-  }
- #left-awoe img{  
- height:485px;
- width:auto;
-
-  }
-   #right-awoe{
- float:right;
-  width:67.34%;
-  
-  }
   /* Callback example */
 
 
@@ -153,33 +102,8 @@ border-bottom-color:transparent;
     }
   }
   
-.videoslug {
-	font-size:10px;
-	text-align:left;
-    padding-bottom: 22px;
-	border-bottom:2px dotted #C4C4C4; 
-	color:#808080;
-}
 
-.ulsearch{	
-    margin-top: 0;
-    padding:0;
-}
-.ultypes{
-height:57px;
-background-color:#e0e0e0;
-text-align:center;
-padding-top:20px;
-margin-top:50px;
-}
-.uldetails{
-margin-top:20px;
-height:60px;
-border-right:1px solid #c0c0c0;
-color:#808080;
-padding-right:10px;
-margin-bottom:50px;
-}
+
 
 
 

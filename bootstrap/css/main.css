@@ -151,13 +151,13 @@ input:focus {
     display: inline-block;     
 
 }
+/* relative video - ul/awoe/music*/
 .relatedvideoarea{
-	width:106%;
+	width:105%;
     display: inline-block;     
     margin-top:43px;
     padding-bottom:5px;
-    margin-left:-28px;
-
+    margin-left:-24px;
 }
 .relatedvideos{
 	float:left;
@@ -182,8 +182,21 @@ input:focus {
 	font-size:15px;
 	color:#808080;
     padding-top:18px;
-}
 
+}
+.videoslug {
+	font-size:10px;
+	text-align:left;
+    padding-bottom: 22px;
+	border-bottom:2px dotted #C4C4C4; 
+	color:#808080;
+}
+.playimg{
+	display:block;
+	position: absolute;
+	opacity:0.9;
+	margin-left:25px;
+}
 .searchresult{
     margin-bottom: 20px;
     border-top:1px dotted #808080;
@@ -269,13 +282,7 @@ input:focus {
    margin-bottom:10px;
    
 }
-.diftype{
-    width:25%;
-    float:left;
-    border:1px solid #fff;
-    color:#808080;
-    text-align:center;
-}
+
 
 .dropdownmenucust{
     border-radius: 0px;

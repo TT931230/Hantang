@@ -39,7 +39,7 @@
     </div>
     <div class="diftype">
         <div class="ultypes">{activetype}</div>
-        <div class="uldetails" style="border-right: 0px solid #c0c0c0;">
+        <div class="uldetails-right">
             {activedetails}
             <a href="javascript:;" onclick="$searchrelatedvideo('{id}')">
                 <span class="musictypedetail" >{keyword}</span>

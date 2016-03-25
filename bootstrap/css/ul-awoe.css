@@ -1,0 +1,67 @@
+/*
+ * UL page / Awoe page 
+ */
+
+/* UL page */
+#left-ul{
+   float:left;
+   width:32.66%;
+   height:485px;  
+}
+#left-ul img{  
+   height:485px;
+   width:auto;
+}
+#right-ul{
+   float:right;
+   width:67.34%; 
+}
+.ulsearch{	
+    margin-top: 0;
+    padding:0;
+}
+.ultypes{
+    height:57px;
+    background-color:#e0e0e0;
+    text-align:center;
+    padding-top:20px;
+    margin-top:50px;
+}
+.uldetails{
+    margin-top:20px;
+    height:60px;
+    border-right:1px solid #c0c0c0;
+    color:#808080;
+    padding-right:10px;
+    margin-bottom:50px;
+}
+.uldetails-right{
+    margin-top:20px;
+    height:60px;
+    border-right:0px solid #c0c0c0;
+    color:#808080;
+    padding-right:10px;
+    margin-bottom:50px;
+}
+.diftype{
+    width:25%;
+    float:left;
+    border:1px solid #fff;
+    color:#808080;
+    text-align:center;
+}
+
+/* Awoe page */
+#left-awoe{
+   float:left;
+   width:32.66%;
+   height:485px;
+}
+#left-awoe img{  
+   height:485px;
+   width:auto;
+}
+#right-awoe{
+   float:right;
+   width:67.34%;
+}

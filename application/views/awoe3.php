@@ -10,13 +10,14 @@
     <div class="videoslug">
         相关视频
     </div>
-
     <div class="dashline">
-
         <div class="relatedvideoarea" id="relatedvideoarea">
             {relatedvideo}
             <div class="relatedvideos">
-                <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; opacity:0.9;margin-left:25px;"><img src='{source_location}'></a>
+                <a href='{link_url}'>
+                <img src='/bootstrap/images/play.png' class="playimg">
+                <img src='{source_location}'>
+                </a>
                 <div class="relavideostitle">
                     {source_name}
                 </div>

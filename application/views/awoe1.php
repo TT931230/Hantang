@@ -13,7 +13,6 @@
         {/imagearea11}
     </div>
     <div id="right-awoe">
-        <div class="wrapper">
             <div class="ulcallbacks_container">
                 <ul class="rslides" id="carousel">
                     {imagearea1}
@@ -21,6 +20,5 @@
                     {/imagearea1}
                 </ul>
             </div>
-        </div>
     </div>
 </div>
