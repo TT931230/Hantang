@@ -8,7 +8,7 @@
 ?><!DOCTYPE html>
 
 <div class="dashline"   style="display: {aboutdisarea2}">
-    <div class="videoarea">
+    <div class="about-videoarea">
         <video controls="controls" autoplay=true>
             {video}
             <source src="{source_location}" type="{type}" />

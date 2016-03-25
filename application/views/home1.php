@@ -8,7 +8,7 @@
 ?><!DOCTYPE html>
 <!-- module 1 : video -->
 <div style="display: {homedisarea1};">
-    <div class="homewrapper1" style="display: block;overflow: hidden;position: relative;">
+    <div style="display: block;overflow: hidden;position: relative;">
         <div class="videolist" style="width:1280px;height:610px;margin-left: 10px;">
             {videoarea}
             <div id="videolist{sequence}" style="overflow: hidden;left: 9999px;position: absolute;">

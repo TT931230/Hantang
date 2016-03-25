@@ -1,6 +1,9 @@
 /*
  * Globals
  */
+ 
+ 
+ 
 input:focus {
     border: 1px solid #808080;
     outline:none;
@@ -273,9 +276,7 @@ input:focus {
     color:#808080;
     text-align:center;
 }
-.platform-sub{
-    width:100%;
-}
+
 .dropdownmenucust{
     border-radius: 0px;
     position:absolute ;

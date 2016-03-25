@@ -1,17 +1,7 @@
 /*
- * About
+ * 
  */
- .aboutsubtitle{
-    background-color: #C4C4C4;
-    border: 1px ;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding:40px;
-    font-size:20px;
-    color:#555555;
-    width:100%;
-    height:112px;
- }
+
  .dashline{
     border-bottom:2px dotted #C4C4C4;   
     width:100%;
@@ -35,18 +25,6 @@
     padding:175px;
  }
  
- .aboutimg img{
- height:auto;
- width:100%;
- }
-.aboutimgarea{
-	margin-bottom:42px;
-}
-.brandlogoarea{
-	margin:auto;
-	width:97.03%;
-	margin-top:10px;
-} 
 
  
  /*
@@ -60,13 +38,6 @@
   
   }
  
-
-  #right{
- float:left;
-  width:71.56%;
-margin-bottom:0.46%;
-  
-  }
    #left-ul{
   float:left;
   width:32.66%;
@@ -329,21 +300,7 @@ background: transparent url("white.png") no-repeat left top;
   height: 50px;
   }
  
-  
-    /*
- * paltform
- */
-  .plat-subtitle{
-  margin-top:30px;
-  margin-bottom:30px;
-  width:auto;
-  height:100px;
-  background-color:#EAEAEA;
-  }
-  .plat-subtitle img{
-  margin-top:10px;
-  height:80px;
-  }
+
   
       /*
  * home
@@ -497,20 +454,13 @@ margin-bottom:16px;
   /*
  * partner
  */
- .ptn-border{
- padding:0px;
- width:100%;
- height:763px;
 
- }
- .ptn-wrapper{
-  width:auto;
- }
 .ptn-callbacks_container {
   padding-bottom: 43px;
   position: relative;
   float: right;
   width: 100%;
+  border-bottom:2px dotted #c4c4c4;
   }
  .ptn-callbacks_container > a:focus{
  background: transparent url("color.png") no-repeat left top;;
@@ -579,22 +529,7 @@ border-bottom-color:transparent;
   background-position: right top;
   right: 15px;
   }
- .brandlogo{
- width:32.69%;
- float:left;
- margin-right:4px;
- margin-bottom:4px;
- height:280px;
- text-align:center;
- }
- .brandlogo img{
-  vertical-align:middle;
- }
- .brandlogospan{
- height:100%;
- display:inline-block;
- vertical-align:middle;
- }
+
   /*
  * footer
  */
@@ -687,12 +622,6 @@ border-bottom-color:transparent;
  border-radius:50%;
  }
  
-.plat-map img{
-	width:auto;
-	height:700px;
-	margin-top:30px;
-}
-
 
 /*   awoeinner   */
 .awoeinner-subtitle{

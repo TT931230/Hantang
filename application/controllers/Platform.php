@@ -115,10 +115,9 @@ class Platform extends CI_Controller
         $this->parser->parse('search',$data);
         $this->parser->parse('platform1',$tmp_data);
         $this->parser->parse('platform2',$tmp_data);
-    //    $this->parser->parse('platform3',$tmp_data);
+        $this->parser->parse('platform3',$tmp_data);
         $this->parser->parse('platform4',$tmp_data);
         $this->parser->parse('platform5',$tmp_data);
-        $this->parser->parse('platform6',$tmp_data);
         /*$this->db->from('webcontent');
         $this->db->where('page','platform');
         $this->db->where('status','1');

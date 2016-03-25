@@ -6,6 +6,6 @@
  * Time: 10:18
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="aboutsubtitle" style="display: {joindisarea1}">
+<div class="join-title" style="display: {joindisarea1}">
     加入汉唐
 </div>

@@ -6,7 +6,7 @@
  * Time: 10:22
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<divid="showarea" style="display: {partnerdisarea2}">
+<div style="display: {partnerdisarea2}">
     <div class="brandlogoarea">
     {partnerimgs}
     <div class="brandlogo">
