@@ -65,3 +65,149 @@
    float:right;
    width:67.34%;
 }
+
+/*
+ * inner
+ */
+
+.ulinner-subtitle{
+    background-color:#541B2A;
+    margin-bottom: -1px;
+    margin-top: 0;
+    font-size:20px;
+    color:#555555;
+    height:52px;    
+}
+ .ulinner-subtitle img{
+    margin-left:15px;
+    margin-top:10px;
+    float:left;
+    height:40px;
+    width:auto;
+}
+.videoareainner{
+    height:720px;
+    width:1280px;
+}
+.videoareainner video{
+    width:1280px;
+    height:auto;
+}
+.subtitle{
+    width: 100%;    
+    color:#808080;
+}
+
+/* ulinner-a */
+.subtitle .ulinnera {
+	height:172px;
+    width:70%;
+    font-size: 10px;
+    overflow: hidden;
+    white-space:normal;
+    word-break:break-all;
+    float: left;
+    display: inline-block;
+    color:#626262;
+    background-color: #e0e0e0;
+    margin-bottom:30px;  
+}
+.subtitle .ulinneracontent{
+	margin-top:35px;
+    margin-bottom:45px;
+    padding-left:8%;
+    padding-right:11.7%;
+    border-right:1px solid #c0c0c0;
+}
+.innertexttitle{
+	font-size:18px;
+	text-align:left;
+	margin-bottom:22px;
+}
+.innertext{
+	font-size:15px;
+	text-align:left;
+	margin-left:80px;
+}
+.ulinnertext{
+	font-size:12px;
+	text-align:left;
+}
+
+/* ulinner-b */
+.subtitle .ulinnerb {
+	height:172px;
+    width:30%;
+    font-size: 10px;
+    overflow: hidden;
+    text-align:center;
+    white-space:normal;
+    word-break:break-all; ;
+    float:right;
+    display: inline-block;
+    padding-top:40px;
+    background-color: #e0e0e0;
+    margin-bottom:30px;
+}
+.subtitle .ulinnerb #share .bdsharebuttonbox{
+    padding-left:25%;
+}
+
+#share a{width:30px;height:30px;margin-left:10px;margin-right:10px;}
+#share a.bds_weixin{background:url(../../bootstrap/images/wx.png)no-repeat;background-size:25px 25px;}
+#share a.bds_tsina{background:url(../../bootstrap/images/sn.png)no-repeat;background-size:25px 25px;}
+#share a.bds_qzone{background:url(../../bootstrap/images/qz.png)no-repeat;background-size:25px 25px;}
+#share a.bds_sqq{background:url(../../bootstrap/images/qq.png)no-repeat;background-size:25px 25px;}
+ 
+#sharetext{
+	font-size:12px;
+	color:#626262;
+	margin-top:10px;
+}
+
+/* relative video - ul/awoe/music*/
+.relatedvideoarea{
+	width:105%;
+    display: inline-block;     
+    margin-top:43px;
+    padding-bottom:5px;
+    margin-left:-24px;
+}
+.relatedvideos{
+	float:left;
+	height:220px;
+    width:33%;
+    margin-bottom:69px;
+    display: inline-block;
+    background-color: #ffffff;
+}
+.relatedvideos:nth-child(3n+1) , .relatedvideos:nth-child(3n+2){
+    border-right:1px solid #d6d6d6;
+}
+.relatedvideos:last-of-type{
+    border-right:0px solid #d6d6d6;
+}
+.relatedvideos img{
+    float:center;
+    height:228px;
+    width:392px;  
+}
+.relavideostitle{
+	font-size:15px;
+	color:#808080;
+    padding-top:18px;
+
+}
+.videoslug {
+	font-size:10px;
+	text-align:left;
+    padding-bottom: 22px;
+	border-bottom:2px dotted #C4C4C4; 
+	color:#808080;
+}
+.playimg{
+	display:block;
+	position: absolute;
+	opacity:0.9;
+	margin-left:25px;
+}

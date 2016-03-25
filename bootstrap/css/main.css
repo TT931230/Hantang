@@ -151,52 +151,7 @@ input:focus {
     display: inline-block;     
 
 }
-/* relative video - ul/awoe/music*/
-.relatedvideoarea{
-	width:105%;
-    display: inline-block;     
-    margin-top:43px;
-    padding-bottom:5px;
-    margin-left:-24px;
-}
-.relatedvideos{
-	float:left;
-	height:220px;
-    width:33%;
-    margin-bottom:69px;
-    display: inline-block;
-    background-color: #ffffff;
-}
-.relatedvideos:nth-child(3n+1) , .relatedvideos:nth-child(3n+2){
-    border-right:1px solid #d6d6d6;
-}
-.relatedvideos:last-of-type{
-    border-right:0px solid #d6d6d6;
-}
-.relatedvideos img{
-    float:center;
-    height:228px;
-    width:392px;  
-}
-.relavideostitle{
-	font-size:15px;
-	color:#808080;
-    padding-top:18px;
 
-}
-.videoslug {
-	font-size:10px;
-	text-align:left;
-    padding-bottom: 22px;
-	border-bottom:2px dotted #C4C4C4; 
-	color:#808080;
-}
-.playimg{
-	display:block;
-	position: absolute;
-	opacity:0.9;
-	margin-left:25px;
-}
 .searchresult{
     margin-bottom: 20px;
     border-top:1px dotted #808080;
@@ -587,14 +542,7 @@ font-size:8px;
     width:1280px;
     height:auto;
 }
-.videoareainner{
-    height:720px;
-    width:1280px;
-}
-.videoareainner video{
-    width:1280px;
-    height:auto;
-}
+
 .videoareamusicinner{
     height:720px;
     width:1280px;

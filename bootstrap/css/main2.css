@@ -341,40 +341,6 @@ margin-bottom:16px;
 }
 
 
-
-  /*
- * inner
- */
-
-
-.ulinner-subtitle{
-    background-color:#541B2A;
-    margin-bottom: -1px;
-    margin-top: 0;
-    font-size:20px;
-    color:#555555;
-    height:52px;
-    
- }
- .ulinner-subtitle img{
- margin-left:15px;
- margin-top:10px;
- float:left;
- height:40px;
- width:auto;
- }
-
-#share a{width:30px;height:30px;margin-left:10px;margin-right:10px;}
-#share a.bds_weixin{background:url(../../bootstrap/images/wx.png)no-repeat;background-size:25px 25px;}
-#share a.bds_tsina{background:url(../../bootstrap/images/sn.png)no-repeat;background-size:25px 25px;}
-#share a.bds_qzone{background:url(../../bootstrap/images/qz.png)no-repeat;background-size:25px 25px;}
-#share a.bds_sqq{background:url(../../bootstrap/images/qq.png)no-repeat;background-size:25px 25px;}
- 
-#sharetext{
-	font-size:12px;
-	color:#626262;
-	margin-top:10px;
-}
   /*
  * partner
  */
