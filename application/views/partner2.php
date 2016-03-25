@@ -10,7 +10,7 @@
     <div class="ptn-border">
         <div class="ptn-wrapper">
             <div class="ptn-callbacks_container" style="border-bottom:2px dotted #c4c4c4;">
-                <ul class="rslides" id="carousel5">
+                <ul class="rslides" id="carousel">
                     {imagearea1}
                     <li><a href="{link_url}"><img src="{source_location}"></a></li>
                     {/imagearea1}

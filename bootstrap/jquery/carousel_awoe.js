@@ -4,7 +4,7 @@ $(function () {
 	pager: false,
 	nav: true,
 	speed: 500,
-	namespace: "musicpage-callbacks",
+	namespace: "awoe-callbacks",
 	before: function () {
 	  $('.events').append("<li>before event fired.</li>");
 	},

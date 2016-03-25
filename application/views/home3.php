@@ -6,6 +6,7 @@
  * Time: 9:30
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<!--  module 3 : awoe   -->
 <div class="homeborder"  style="display: {homedisarea3}">
     <div id="left" style="background-color:#3D5C9A">
         {imagearea12}

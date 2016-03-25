@@ -6,6 +6,7 @@
  * Time: 9:30
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
+<!-- module 4 : music -->
 <div class="homeborder"  style="display: {homedisarea4}">
     <div id="left-music" >
         {imagearea13}

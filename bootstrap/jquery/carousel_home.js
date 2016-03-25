@@ -1,40 +1,12 @@
 var videocount=0;
-$(function () {
+$(function () { 
 
-
-  // Slideshow 4
-  $("#carousel1").responsiveSlides({
+/* module 2 : ul */
+  $("#carousel2").responsiveSlides({
 	auto: true,
 	pager: false,
 	nav: true,
 	speed: 500,
-	namespace: "music-callbacks",
-	before: function () {
-	  $('.events').append("<li>before event fired.</li>");
-	},
-	after: function () {
-	  $('.events').append("<li>after event fired.</li>");
-	},
-	fuck: true
-  });
-  $("#carousel5").responsiveSlides({
-		auto: false,
-		pager: false,
-		nav: true,
-		speed: 500,
-		namespace: "ptn-callbacks",
-		before: function () {
-		  $('.events').append("<li>before event fired.</li>");
-		},
-		after: function () {
-		  $('.events').append("<li>after event fired.</li>");
-		}
-	  });
-  $("#carousel2").responsiveSlides({
-	auto: false,
-	pager: false,
-	nav: true,
-	speed: 500,
 	namespace: "callbacks",
 	before: function () {
 	  $('.events').append("<li>before event fired.</li>");
@@ -43,8 +15,11 @@ $(function () {
 	  $('.events').append("<li>after event fired.</li>");
 	}
   });
+  
+  
+/* module 3 : awoe */
     $("#carousel3").responsiveSlides({
-	auto: false,
+	auto: true,
 	pager: false,
 	nav: true,
 	speed: 500,
@@ -56,8 +31,11 @@ $(function () {
 	  $('.events').append("<li>after event fired.</li>");
 	}
   });
+    
+    
+/* module 4 : music */
     $("#carousel4").responsiveSlides({
-	auto: false,
+	auto: true,
 	pager: false,
 	nav: true,
 	speed: 500,
@@ -70,6 +48,8 @@ $(function () {
 	}
   });
   });
+
+/* module 1 : video */
 function clock(){
 	var processdevDivwidth = $('.processdev').width();
 	if(videocount==0){

@@ -2,7 +2,7 @@ $(function () {
 
   // Slideshow 4
   $("#carousel").responsiveSlides({
-	auto: false,
+	auto: true,
 	pager: false,
 	nav: true,
 	speed: 500,

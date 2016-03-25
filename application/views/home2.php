@@ -6,7 +6,7 @@
  * Time: 9:29
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-
+<!-- module 2: ul -->
 <div class="homeborder"  style="display: {homedisarea2}">
     <div id="left" style="background-color:#A73D49">
         {imagearea11}
