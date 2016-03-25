@@ -251,86 +251,9 @@ background: transparent url("white.png") no-repeat left top;
   background: #000;
  }
  
-  /*
- * join
- */
 
-.joininfo{
 
-height:148px;
-margin-bottom:16px;
-
-}
-
- .join-masthead-nav > li {
-    display: inline-block;
-    float:left;
-    width:14%;      
-    text-align:center;
-    margin-bottom:40px;
-   margin-left:10px;
-    
-  
-}
-.join-masthead-nav > li + li {
-    margin-left: 0px;
  
-}
-.join-masthead-nav > li > a {
-	
-    font-size: 14px;
-    font-weight: 600;
-    color: #777777; /* IE8 proofing */ 
-    text-align:center;  
-    overflow:hidden;
-    border-right:1px solid #c0c0c0;
-  
-
-}
-.join-masthead-nav > li > a.active {
-    background-color: transparent;
-    border-bottom-color: #c0c0c0;
-   
-   
-}
-   
-    
-
-.join-masthead-nav > li > a:hover,
-.join-masthead-nav > li > a:focus {
-    background-color: transparent;
-    
-   
-}
-.join-masthead-nav > .active > a,
-.join-masthead-nav > .active > a:hover,
-.join-masthead-nav > .active > a:focus {
-    color: #fff;
-   
-}
-
-.join-dropdownmenucust{	
-    border: #c0c0c0;
-    border-radius: 0px;
-    background-color: transparent;
-
-}
-
-.join-dropdowncust{
-    text-decoration: none;
-    color:#808080;
-    padding:0;
- 
-}
-.join-dropdowncust:focus{
-    text-decoration: none;
-    color:#808080;
-}
-.join-dropdowncust:hover{
-    text-decoration: none;
-    color:#808080;
-}
-
 
   /*
  * partner

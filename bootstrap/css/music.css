@@ -62,6 +62,14 @@
     padding:20px;
     text-align:center;
 }
+.musictypedetail{
+	 width:25%;
+    float:left;
+    color:#808080;
+    margin-bottom:6px;
+    margin-top:6px;
+    text-align:center;
+}
 /* relative video*/
 .music-relatedvideoarea{
 	width:100%;

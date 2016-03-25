@@ -31,117 +31,14 @@ input:focus {
 .modal-footer{
 	border:0;
 }
-.sendmailtext{
-	text-align: left;
-    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    margin-left: 3%;
-    margin-right: 3%;
-    font-size:16px;
-    margin-top:48px;
-    padding-bottom:16px;
-    color:#5a5a5a;
-    border-bottom:1px solid #c8c8c8;
-	
-}
-.sendcommitbtn{
-	float:left;
-	font-size:8px;
-	padding:5px;
-    height:30px;
-    width:50px;
-    background-color: #b70000;   
-    border-radius:0;
-    border:0; 
- 
-	
-}
-.sendcanclebtn{
-	float:left;
-	font-size:8px;
-	padding:5px;
-    height:30px;
-    width:50px;
-    background-color: #fff;   
-    border-radius:0;
-    border:0; 
-	
-}
-.sendbtn{
-	padding-left: 3%;
-    padding-right: 3%;
-    margin-top:18px;
-    border:0;
-    height:30px;
-}
-.jobinfoinput{
-    text-align: left;
-    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    padding-left: 3%;
-    padding-right: 3%;
-  
-   
-}
 
-.jobinfotext{
-    text-align: left;
-    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    padding-left: 3%;
-    padding-right: 3%;
-    font-size:10px;
-    margin-top:20px;
-    color:#5a5a5a;
-}
-.jobcommit{ 
-	text-align: left;
-    padding-top: 30px;
-    padding-left: 3%;
-    padding-right: 3%;
-    margin-bottom:88px;
-    
-}
-.jobcommitbtn{ 
-	float:left;
-	font-size:8px;
-	padding:5px;
-    height:30px;
-    width:70px;
-    background-color: #b70000;   
-    border-radius:0;
-    border:0; 
-}
-.jobname{
-    text-align: left;
-    margin-top: 60px;
-    margin-left: 3%;
-    margin-right: 3%;
-    padding-bottom: 36px;
-    font-size: large;
-    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    color:#808080;
-    border-bottom:1px solid #c0c0c0;
-}
 
-.gzzz{
-    text-align: left;
-    margin-top: 14px;
-    margin-left: 3%;
-    margin-right: 3%;
-    font-size: 10px;
-    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    color:#808080;
-}
 
-.departcontent{
-    text-align: left;
-    margin-left: 2.5%;
-    margin-right: 3%;
-    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
-    color:#808080;
-    font-size: 10px;
-    background-color:#fff;
-    border:0;
-    line-height:20px;
-}
+
+
+
+
+
 
 .navtags{
     text-align: center;
@@ -474,33 +371,8 @@ font-size:8px;
 	font-style: normal;
 
 }
-.imagearea{
-    padding: 0px;
-    width:auto;
-}
-.imagearea img{
-    padding: 0px;
-    width:100%;
-    height:100%
-}
-.videoarea{
-    margin-bottom: 43px;
-    height:720px;
-    width:1280px;
-}
-.videoarea video{
-    width:1280px;
-    height:auto;
-}
-.videoarea_join{
-    margin-bottom: 60px;
-    height:720px;
-    width:1280px;
-}
-.videoarea_join video{
-    width:1280px;
-    height:auto;
-}
+
+
 
 
 /* Links */

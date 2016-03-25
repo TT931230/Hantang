@@ -6,7 +6,7 @@
  * Time: 10:18
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="videoarea_join">
+<div class="join-videoarea">
     <video controls="controls" autoplay=true>
         {video}
         <source src="{source_location}" type="{type}" />

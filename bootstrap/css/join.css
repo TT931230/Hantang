@@ -1,7 +1,7 @@
 /*
  * Join 
  */
- .join-title{
+.join-title{
     background-color: #C4C4C4;
     border: 1px ;
     margin-bottom: 0;
@@ -12,3 +12,171 @@
     width:100%;
     height:112px;
  }
+.join-videoarea{
+    margin-bottom: 60px;
+    height:720px;
+    width:1280px;
+}
+.join-videoarea video{
+    width:1280px;
+    height:auto;
+}
+.joininfo{
+    height:148px;
+    margin-bottom:16px;
+}
+.join-masthead-nav > li {
+    display: inline-block;
+    float:left;
+    width:14%;      
+    text-align:center;
+    margin-bottom:40px;
+    margin-left:10px; 
+}
+.join-masthead-nav > li + li {
+    margin-left: 0px;
+}
+.join-masthead-nav > li > a {	
+    font-size: 14px;
+    font-weight: 600;
+    color: #777777; /* IE8 proofing */ 
+    text-align:center;  
+    overflow:hidden;
+    border-right:1px solid #c0c0c0;  
+}
+.join-masthead-nav > li > a.active {
+    background-color: transparent;
+    border-bottom-color: #c0c0c0;  
+}       
+.join-masthead-nav > li > a:hover,
+.join-masthead-nav > li > a:focus {
+    background-color: transparent;  
+}
+.join-masthead-nav > .active > a,
+.join-masthead-nav > .active > a:hover,
+.join-masthead-nav > .active > a:focus {
+    color: #fff;  
+}
+.join-dropdownmenucust{	
+    border: #c0c0c0;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+.join-dropdowncust{
+    text-decoration: none;
+    color:#808080;
+    padding:0; 
+}
+.join-dropdowncust:focus{
+    text-decoration: none;
+    color:#808080;
+}
+.join-dropdowncust:hover{
+    text-decoration: none;
+    color:#808080;
+}
+.jobname{
+    text-align: left;
+    margin-top: 60px;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-bottom: 36px;
+    font-size: large;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    color:#808080;
+    border-bottom:1px solid #c0c0c0;
+}
+
+.gzzz{
+    text-align: left;
+    margin-top: 14px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 10px;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    color:#808080;
+}
+
+.departcontent{
+    text-align: left;
+    margin-left: 2.5%;
+    margin-right: 3%;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    color:#808080;
+    font-size: 10px;
+    background-color:#fff;
+    border:0;
+    line-height:20px;
+}
+.jobcommit{ 
+	text-align: left;
+    padding-top: 30px;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-bottom:88px;
+    
+}
+.jobcommitbtn{ 
+	float:left;
+	font-size:8px;
+	padding:5px;
+    height:30px;
+    width:70px;
+    background-color: #b70000;   
+    border-radius:0;
+    border:0; 
+}
+.jobinfotext{
+    text-align: left;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size:10px;
+    margin-top:20px;
+    color:#5a5a5a;
+}
+.jobinfoinput{
+    text-align: left;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    padding-left: 3%;
+    padding-right: 3%;  
+}
+.sendbtn{
+	padding-left: 3%;
+    padding-right: 3%;
+    margin-top:18px;
+    border:0;
+    height:30px;
+}
+.sendcommitbtn{
+	float:left;
+	font-size:8px;
+	padding:5px;
+    height:30px;
+    width:50px;
+    background-color: #b70000;   
+    border-radius:0;
+    border:0; 	
+}
+.sendcanclebtn{
+	float:left;
+	font-size:8px;
+	padding:5px;
+    height:30px;
+    width:50px;
+    background-color: #fff;   
+    border-radius:0;
+    border:0; 	
+}
+.sendmailtext{
+	text-align: left;
+    font-family: "微软雅黑", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size:16px;
+    margin-top:48px;
+    padding-bottom:16px;
+    color:#5a5a5a;
+    border-bottom:1px solid #c8c8c8;	
+}
