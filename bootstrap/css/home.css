@@ -1,0 +1,72 @@
+/*
+ * Home page
+ */
+ 
+/* module 2 : ul */
+.home-ul-left{
+	background-color:#A73D49;
+	margin:0;
+    float:left;
+    width:28.44%;
+    height:432px;
+    margin-bottom:0.46%;
+}
+.home-ul-left:hover{
+    opacity:0.7;
+}
+.home-ul-left img{
+    margin-top:100px;  
+    height:200px;
+    width:auto;
+}
+.home-ul-right{
+    float:left;
+    width:71.56%;
+    margin-bottom:0.46%;
+}
+
+/* module 3 : awoe */
+.home-awoe-left{
+	background-color:#3D5C9A;
+    margin:0;
+    float:left;
+    width:28.44%;
+    height:432px;
+    margin-bottom:0.46%;
+  
+}
+.home-awoe-left img{
+    margin-top:100px;  
+    height:200px;
+    width:auto;
+}
+.home-awoe-left:hover{
+    opacity:0.7;
+}
+.home-awoe-right{
+    float:left;
+    width:71.56%;
+    margin-bottom:0.46%;
+}
+
+
+/* module 4 : music */
+.home-music-left{
+    margin:0;
+    float:left;
+    width:28.44%;
+    height:432px;
+    margin-bottom:150px;  
+}
+.home-music-left img{ 
+    height:433px;
+    width:auto;
+}
+.home-music-left:hover{
+    opacity:0.7;
+}
+.home-music-right{
+    float:right;
+    width:71.56%;
+    margin-bottom:150px;
+}

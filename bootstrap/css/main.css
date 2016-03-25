@@ -140,27 +140,6 @@ input:focus {
     line-height:20px;
 }
 
-.homeimagearea2bg{
-    background-color: #541B2A;
- }
-.homeimagearea3bg{
-    background-color: #0F366A;
-}
-.homeimagearea4bg{
-    background-color: #c8c8c8;
-}
-.homeimagearea2:hover{
-    opacity:0.4;
-    background-color: #541B2A;
-}
-.homeimagearea3:hover{
-    opacity:0.4;
-    background-color: #0F366A;
-}
-.homeimagearea4:hover{
-    opacity:0.4;
-    background-color: #c8c8c8;
-}
 .navtags{
     text-align: center;
 }

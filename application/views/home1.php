@@ -7,7 +7,7 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <!-- module 1 : video -->
-<div class="homeborder1" style="display: {homedisarea1};">
+<div style="display: {homedisarea1};">
     <div class="homewrapper1" style="display: block;overflow: hidden;position: relative;">
         <div class="videolist" style="width:1280px;height:610px;margin-left: 10px;">
             {videoarea}
