@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="bootstrap/js/responsiveslides.min.js"></script>
 
 <div class="cover-container">
-    <div class="clearfix newborder">
+    <div class="clearfix">
         <div class="inner">
 
 

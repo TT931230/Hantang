@@ -23,9 +23,7 @@
      border:none; 
  }
 
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-    background-color: transparent;
-}
+
 #bg {
     display: none;
     position: absolute;

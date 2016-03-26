@@ -13,7 +13,7 @@
         {/imagearea11}
     </div>
     <div id="right-ul">
-            <div class="awoecallbacks_container">
+            <div class="ulcallbacks_container">
                 <ul class="rslides" id="carousel">
                     {imagearea1}
                     <li><a href="{link_url}"><img src="{source_location}"></a></li>

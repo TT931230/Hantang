@@ -11,14 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
-
     <meta name="author" content="">
     <!--    <link rel="icon" href="../../favicon.ico">-->
 
@@ -28,9 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/bootstrap/css/main.css" rel="stylesheet">
-    <link href="/bootstrap/css/main2.css" rel="stylesheet">
     <link href="/bootstrap/css/main3.css" rel="stylesheet">
     <link href="/bootstrap/css/main4.css" rel="stylesheet">
+    <link href="/bootstrap/css/header-footer.css" rel="stylesheet">
     <link href="/bootstrap/css/home.css" rel="stylesheet">
     <link href="/bootstrap/css/about.css" rel="stylesheet">
     <link href="/bootstrap/css/ul-awoe.css" rel="stylesheet">
@@ -79,8 +75,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div class="cover-container">
-<div class="brand_logo">
-    <div class="clearfix newborder">
+<div class="header-area">
+    <div class="clearfix">
         <div  class="masthead-brand">
          
                 {logoimage}

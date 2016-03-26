@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <div class="cover-container">
-    <div class="clearfix newborder">
+    <div class="clearfix">
         <div class="inner">
 
 
