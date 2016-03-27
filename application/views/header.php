@@ -23,10 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/bootstrap/css/main.css" rel="stylesheet">
-    <link href="/bootstrap/css/main3.css" rel="stylesheet">
-    <link href="/bootstrap/css/main4.css" rel="stylesheet">
-    <link href="/bootstrap/css/header-footer.css" rel="stylesheet">
+    <link href="/bootstrap/css/global.css" rel="stylesheet">
     <link href="/bootstrap/css/home.css" rel="stylesheet">
     <link href="/bootstrap/css/about.css" rel="stylesheet">
     <link href="/bootstrap/css/ul-awoe.css" rel="stylesheet">
@@ -90,12 +87,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
                 <li id="aboutli">
                     <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
-                    <ul class="dropdown-menu dropdownmenucust headernav" style="width:75px;">
+                    <ul class="dropdown-menu headernav">
                     <span class="dropdown-triangle"></span>
                         <li><a href="/about">{introduce}</a></li>
-                         <li class="dropdown-list-line" style="padding-left:30%;"><span></span></li>
+                         <li class="header-dropdown-list-line"><span></span></li>
                         <li><a href="/platform">{platform}</a></li>
-                         <li class="dropdown-list-line" style="padding-left:30%;"><span></span></li>
+                         <li class="header-dropdown-list-line"><span></span></li>
                         <li><a href="/partner">{partner}</a></li>
                          
                     </ul>

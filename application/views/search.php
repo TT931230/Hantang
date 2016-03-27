@@ -10,19 +10,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
 <div class="searchallarea">
     <div class="cover-container showsearcharea">
-        <div class="newborder showsearcharea1">
+        <div class="showsearcharea1">
             <div class="radio-inline language">
-                <span class="dropdown dropdowncust"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >{language}</span>
-                <ul class="dropdown-menu dropdownmenucustLan" id="choseLan">
-                <span class="dropdown-triangle-Lan"></span>
-                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
-                    <li class="dropdown-list-line" style="margin-top:25px;margin-left:-10px;"><span></span></li>
-                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
-             <!--   <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li> -->     
+                <span class="dropdown lan-dropdowncust"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >{language}</span>
+                <ul class="dropdown-menu choseLan">
+                <span class="lan-dropdown-triangle"></span>
+                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
+                    <li class="lan-dropdown-list-line"><span></span></li>
+                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
+             <!--   <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li> -->     
                 </ul>
             </div>
             <div class="searcharea">
-                <span class="dropdowncust" role="button" onclick="$use('class1content','')">
+                <span class="sch-dropdowncust" role="button" onclick="$use('class1content','')">
                     <i class="glyphicon glyphicon-search"></i> {search}
                 </span>
             </div>
@@ -33,8 +33,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span id="searchMsg">{seniorsearch}</span>
             <input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent">
             <span id="searchTool" class="glyphicon glyphicon-search"></span>
-            <span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">{commit}</span>
-            <span class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
+            <span id="searchcommit" role="button" onclick="$searchresult()">{commit}</span>
+            <span id="searchreset" role="button" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
  
             <div id="searchdetailarea"></div>
     
