@@ -6,7 +6,7 @@
  * Time: 10:24
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="videoarea"   style="display: {platformdisarea1}">
+<div class="about-videoarea"   style="display: {platformdisarea1}">
     <video controls="controls" autoplay=true>
         {videoarea1}
         <source src="{source_location}" type="{type}" />

@@ -1,6 +1,7 @@
 /**
  * Created by TT on 2016/1/11.
  */
+$(document).ready($changeStyle());
 function $a(element){
     return element = document.getElementById(element);
 }
@@ -152,16 +153,16 @@ function $departmentajax(id){
                             '<div class="sendmailtext">发送电子邮件</div>'+
                    //         '<hr/>'+
                             '<div class="jobinfotext">如有疑问或需要帮助，请填写下面表格</div>'+
-                            '<div class="jobinfotext">填写信息</div>'+
-                            '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 530px;resize:none; height:100px;" ></textarea></div>'+
-                            '<div class="jobinfotext" style="margin-top:35px;">称呼（非必须）</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 530px;height:40px"></div>'+
-                            '<div class="jobinfotext">姓名</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 530px;height:40px"></div>'+
-                            '<div class="jobinfotext">联系电话（非必须）</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="phoneno" id="phoneno"  style=" width: 530px;height:40px"></div>'+
-                            '<div class="jobinfotext">您的电子邮件地址</div>'+
-                            '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width: 530px;height:40px"></div>'+
+                            '<div class="jobinfotext" style="margin-top:30px;margin-bottom:4px">填写信息</div>'+
+                            '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 100%;resize:none; height:100px;margin:auto;" ></textarea></div>'+
+                            '<div class="jobinfotext" style="margin-top:44px;margin-bottom:4px">称呼（非必须）选择标题 姓</div>'+
+                            '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 100%;;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfotext" style="margin-top:12px;margin-bottom:4px">名</div>'+
+                            '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 100%;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfotext" style="margin-top:12px;margin-bottom:4px">联系电话（非必须）</div>'+
+                            '<div class="jobinfoinput"><input type="text" name="phoneno" id="phoneno"  style=" width: 100%;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfotext" style="margin-top:12px;margin-bottom:4px">您的电子邮件地址</div>'+
+                            '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width:100%;height:40px;margin:auto;"></div>'+
                         '</div>'+
                         '<div class="modal-footer">'+'<div class="sendbtn">'+
                             '<button type="button" class="btn btn-primary sendcommitbtn"onclick="$ask4job(\''+id+'\')">发送</button>'+
@@ -240,6 +241,20 @@ function $searchresult(){
         $("#bg").css("height",document.body.scrollHeight);
     }
 }
+function $changeStyle(){
+    var tmp = $('#homeli').children()[0].innerHTML;
+
+    if(tmp !== "Home"){
+        $('#ulli').removeClass('languge-en-ulli');
+        $('#awoeli').removeClass('languge-en-awoeli');
+        $('#musicli').removeClass('languge-en-musicli');
+    }
+    else{
+        $('#ulli').addClass('languge-en-ulli');
+        $('#awoeli').addClass('languge-en-awoeli');
+        $('#musicli').addClass('languge-en-musicli');
+    }
+}
 
 function $changelanguage($url,$language){
     $.ajax({
@@ -249,6 +264,7 @@ function $changelanguage($url,$language){
         success: function(result)
         {
             location.reload(true);
+            $changeStyle();
         },
         error: function()
         {

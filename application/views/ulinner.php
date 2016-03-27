@@ -8,7 +8,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="cover-container">
-    <div class="clearfix newborder">
+    <div class="clearfix">
         <div class="inner">
             <div class="ulinner-subtitle">
                 {ullogo}
@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 {/ullogo}
             </div>
            
-                <div class="videoarea">
+                <div class="videoareainner">
                     <video controls="controls" autoplay=true>
                         {video}
                         <source src="{source_location}" type="{type}" />
@@ -26,33 +26,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <div class="subtitle">
                 <div class="ulinnera">
+                 <div class="ulinneracontent">
                     <div class="innertexttitle">
                         {source_name}
                     </div>
                     <div class="ulinnertext">
                         {source_remark}
                     </div>
-                </div>
-                <div class="ulinnerc">
-
-
-                    <div class="part2">
-                        <div>
-                            <a href="{source_url}" download="{source_name}">
-
-                                <img id="dload" alt="" src="../../bootstrap/images/dload.png"/>
-                            </a>
-
-                        </div>
-                        <div class="ul_des">下载</div>
-                    </div>
-<!--                    <div class="part3">-->
-<!--                        <div>-->
-<!--                            <img id="phone" alt="" src="../../bootstrap/images/dload.png"/>-->
-<!---->
-<!--                        </div>-->
-<!--                        <div class="ul_des">手机</div>-->
-<!--                    </div>-->
+                 </div>
                 </div>
                 {/video}
                 <div class="ulinnerb">
@@ -77,7 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="relatedvideoarea" id="relatedvideoarea">
                     {relatedvideo1}
                     <div class="relatedvideos">
-                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; "><img src='{source_location}'></a>
+                        <a href='{link_url}'><img src='/bootstrap/images/play.png' class="playimg">
+                        <img src='{source_location}'></a>
                         <div class="relavideostitle">
                             {source_name}
                         </div>
@@ -85,7 +67,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     {/relatedvideo1}
                     {relatedvideo}
                     <div class="relatedvideos">
-                        <a href='{link_url}'><img src='/bootstrap/images/play.png' style="display:block;position: absolute; margin-left:50px;"><img src='{source_location}'></a>
+                        <a href='{link_url}'><img src='/bootstrap/images/play.png' class="playimg">
+                        <img src='{source_location}'></a>
                         <div class="relavideostitle">
                             {source_name}
                         </div>

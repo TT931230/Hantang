@@ -11,30 +11,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
-
     <meta name="author" content="">
     <!--    <link rel="icon" href="../../favicon.ico">-->
 
-    <title>Cover Template for Bootstrap</title>
+    <title>汉唐文化</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/bootstrap/css/main.css" rel="stylesheet">
-    <link href="/bootstrap/css/main2.css" rel="stylesheet">
-    <link href="/bootstrap/css/main3.css" rel="stylesheet">
-    <link href="/bootstrap/css/main4.css" rel="stylesheet">
+    <link href="/bootstrap/css/global.css" rel="stylesheet">
+    <link href="/bootstrap/css/home.css" rel="stylesheet">
+    <link href="/bootstrap/css/about.css" rel="stylesheet">
+    <link href="/bootstrap/css/ul-awoe.css" rel="stylesheet">
+    <link href="/bootstrap/css/music.css" rel="stylesheet">
+    <link href="/bootstrap/css/join.css" rel="stylesheet">
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
     <link rel="stylesheet"  href="/bootstrap/css/fileinput.min.css"/>
 </head>
-<!--<script type="text/javascript"> 
+<!-- <script type="text/javascript"> 
     // Forbid Copy     
     function rt() 
     {
@@ -70,12 +68,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    //Firefox
    $("body").css("-moz-user-select","none");    
     });
-</script>   -->
+</script> -->
 <body>
 
 <div class="cover-container">
-<div class="brand_logo">
-    <div class="clearfix newborder">
+<div class="header-area">
+    <div class="clearfix">
         <div  class="masthead-brand">
          
                 {logoimage}
@@ -89,10 +87,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
                 <li id="aboutli">
                     <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
-                    <ul class="dropdown-menu dropdownmenucust headernav">
+                    <ul class="dropdown-menu headernav">
+                    <span class="dropdown-triangle"></span>
                         <li><a href="/about">{introduce}</a></li>
+                         <li class="header-dropdown-list-line"><span></span></li>
                         <li><a href="/platform">{platform}</a></li>
+                         <li class="header-dropdown-list-line"><span></span></li>
                         <li><a href="/partner">{partner}</a></li>
+                         
                     </ul>
                 </li>
                 <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
@@ -105,9 +107,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--            -->
 <!---->
 <!--        </div>-->
-        <div class="mob_menu">
+        <!--<div class="mob_menu">
             <img src="http://localhost:8080/bootstrap/images/menu.png">
-        </div>
+        </div>-->
     </div>
     
 </div>

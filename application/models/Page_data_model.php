@@ -12,11 +12,19 @@ class Page_data_model extends CI_Model{
     }
 
     public function get_page_data($languageType,$url){
+        $this->config->load('sourceurl', TRUE);
+        $url1  = $this->config->item('url', 'sourceurl');
         //get footer source
         $this->db->from('source');
         $this->db->where('first_level','footer');
-        //$this->db->where('third_level',$languageType);
+        $this->db->where('third_level',$languageType);
         $returnquery=$this->db->get()->result_array();
+        if(count($returnquery) <=0){
+            $this->db->from('source');
+            $this->db->where('first_level','footer');
+            $this->db->where('third_level','zn');
+            $returnquery=$this->db->get()->result_array();
+        }
 
         $weixin="";
         $weibo="";
@@ -36,46 +44,46 @@ class Page_data_model extends CI_Model{
         for($i=0;$i<count($returnquery);$i++){
             switch ($returnquery[$i]['second_level']){
                 case 'weixin':
-                    $weixin=$returnquery[$i]['source_location'];
+                    $weixin=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'weibo':
-                    $weibo=$returnquery[$i]['source_location'];
+                    $weibo=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'youku':
-                    $youku=$returnquery[$i]['source_location'];
+                    $youku=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'douban':
-                    $douban=$returnquery[$i]['source_location'];
+                    $douban=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'tengxun':
-                    $tengxun=$returnquery[$i]['source_location'];
+                    $tengxun=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'jianshu':
-                    $jianshu=$returnquery[$i]['source_location'];
+                    $jianshu=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'wangyi':
-                    $wangyi=$returnquery[$i]['source_location'];
+                    $wangyi=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'footerlogo1':
-                    $footerlogo1=$returnquery[$i]['source_location'];
+                    $footerlogo1=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'footerlogo2':
-                    $footerlogo2=$returnquery[$i]['source_location'];
+                    $footerlogo2=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'footerlogo3':
-                    $footerlogo3=$returnquery[$i]['source_location'];
+                    $footerlogo3=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'footerlogo4':
-                    $footerlogo4=$returnquery[$i]['source_location'];
+                    $footerlogo4=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'guanzhu':
-                    $guanzhu=$returnquery[$i]['source_location'];
+                    $guanzhu=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'erwei':
-                    $erwei=$returnquery[$i]['source_location'];
+                    $erwei=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
                 case 'guanbi':
-                    $guanbi=$returnquery[$i]['source_location'];
+                    $guanbi=$url1['serverurl'].$returnquery[$i]['source_location'];
                     break;
             }
         }
@@ -84,6 +92,7 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('type','partnerimg');
         $this->db->where('status','1');
+        $this->db->where('third_level','zn');
        // $this->db->where('third_level',$languageType);            //update
         $this->db->order_by('sequence','asc');
         $partner=$this->db->get()->result_array();
@@ -229,15 +238,30 @@ class Page_data_model extends CI_Model{
         if($source_info['second_level']){
             $this->db->where('second_level',$source_info['second_level']);
         }
-//        if($source_info['third_level']){
-//            $this->db->where('third_level',$source_info['third_level']);
-//        }
+        if(isset($source_info['third_level'])){
+           $this->db->where('third_level',$source_info['third_level']);
+        }
         $this->db->where('deleted',0);
         $this->db->where('type',$source_info['type']);
+        //$this->db->where('third_level',$source_info['third_level']);
         $this->db->from('source');
-        $this->db->order_by("sequence"," desc");
+
+        $this->db->order_by("sequence"," asc");
         $query = $this->db->get();
-        return $query->result_array();
+        $this->config->load('sourceurl', TRUE);
+        $url  = $this->config->item('url', 'sourceurl');
+
+        $sourcedata = $query->result_array();
+            for($i=0;$i<count($sourcedata);$i ++){
+                $oldlocation = $sourcedata[$i]['source_location'];
+                $sourcedata[$i]['source_location'] = $url['serverurl'].$oldlocation;
+            }
+
+
+         return $sourcedata;
+
+
+
     }
 
     public function query_departments($status){

@@ -1,0 +1,152 @@
+/*
+ * Home page
+ */
+ 
+/* module 2 : ul */
+.home-ul-left{
+	background-color:#A73D49;
+	margin:0;
+    float:left;
+    width:28.44%;
+    height:432px;
+    margin-bottom:0.46%;
+}
+.home-ul-left:hover{
+    opacity:0.7;
+}
+.home-ul-left img{
+    margin-top:100px;  
+    height:200px;
+    width:auto;
+}
+.home-ul-right{
+    float:left;
+    width:71.56%;
+    margin-bottom:0.46%;
+}
+
+/* module 3 : awoe */
+.home-awoe-left{
+	background-color:#3D5C9A;
+    margin:0;
+    float:left;
+    width:28.44%;
+    height:432px;
+    margin-bottom:0.46%;
+  
+}
+.home-awoe-left img{
+    margin-top:100px;  
+    height:200px;
+    width:auto;
+}
+.home-awoe-left:hover{
+    opacity:0.7;
+}
+.home-awoe-right{
+    float:left;
+    width:71.56%;
+    margin-bottom:0.46%;
+}
+
+
+/* module 4 : music */
+.home-music-left{
+    margin:0;
+    float:left;
+    width:28.44%;
+    height:432px;
+    margin-bottom:150px;  
+}
+.home-music-left img{ 
+    height:433px;
+    width:auto;
+}
+.home-music-left:hover{
+    opacity:0.7;
+}
+.home-music-right{
+    float:right;
+    width:71.56%;
+    margin-bottom:150px;
+}
+ /* carousel css */
+ .callbacks_container {
+  margin-bottom: 0px;
+  position: relative;
+  float: right;
+  width: 100%;
+  }
+.callbacks_container > a:focus{
+background: transparent url("home_left.png") no-repeat left top;;
+border-bottom-color:transparent;
+  }
+  .callbacks_container.next > a:focus{
+background: transparent url("home_right.png") no-repeat left top;;
+border-bottom-color:transparent;
+  }
+.callbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.callbacks li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.callbacks img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 432px;
+  width:100%;
+  border: 0;
+  }
+
+
+.callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 50%;
+  left: 0px;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 38px;
+  width: 28px;
+  background: transparent url("home_left.png") no-repeat left top;
+  margin-top: -32px;
+  border-bottom-color:transparent;
+  opacity:0.7;
+  }
+
+.callbacks_nav:active {
+    background: transparent url("home_right.png") no-repeat left top;
+    border-bottom-color:transparent;
+    border-bottom:none;
+  }
+
+
+.callbacks_nav.next {
+  left: auto;
+  background: transparent url("home_right.png") no-repeat right top;
+  right: 0;
+  }
+  .callbacks_nav.next:focus {
+  left: auto;
+  background: transparent url("home_right.png") no-repeat right top;
+  right: 0;
+  }
+@media screen and (max-width:600px) {
+  .callbacks_nav {
+    top: 100%;
+    }
+  }

@@ -41,7 +41,11 @@ class Legal extends CI_Controller
 		$this->parser->parse('header',$data);
 		$this->parser->parse('search',$data);
 		$this->parser->parse('legal',$data);
-		$this->parser->parse('footer',$data);
+		if($this->session->language == 'en'){
+			return $this->parser->parse('footeren',$data);
+		}else{
+			return $this->parser->parse('footer',$data);
+		}
 	}
 	function Changelanguage(){
 		$this->load->library('session');

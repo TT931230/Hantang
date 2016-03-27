@@ -21,20 +21,34 @@ class About extends CI_Controller
         }
         $source_info_base=array(
             'status'=>'1','first_level'=>'','second_level'=>'','type'=>'','third_level'=>$this->session->language
-        );//'third_level'=>$this->session->language,
+        );
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';
         $source_info['second_level']='videoarea1';
         $source_info['type']='video/mp4';
-       
         $video = $this->page_data_model->query_sources($source_info);
+        if(count($video)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='about';
+            $source_info['second_level']='videoarea1';
+            $source_info['third_level']='zn';
+            $source_info['type']='video/mp4';
+            $video = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
        
         $logoimage = $this->page_data_model->query_sources($source_info);
+        if(count($logoimage)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['type']='img';
+            $source_info['third_level']='zn';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+        }
 
         $tag_data = $this->page_data_model->query_tags();
 
@@ -52,6 +66,15 @@ class About extends CI_Controller
         $source_info['type']='img';
         $source_info['deleted']=0;
         $about1 = $this->page_data_model->query_sources($source_info);
+        if(count($about1) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='about';
+            $source_info['second_level']='about01';
+            $source_info['type']='img';
+            $source_info['deleted']=0;
+            $source_info['third_level']='zn';
+            $about1 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';
@@ -59,6 +82,16 @@ class About extends CI_Controller
         $source_info['type']='img';
         $source_info['deleted']=0;
         $about2 = $this->page_data_model->query_sources($source_info);
+        if(count($about2) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='about';
+            $source_info['second_level']='about02';
+            $source_info['type']='img';
+            $source_info['deleted']=0;
+            $source_info['third_level']='zn';
+            $about2 = $this->page_data_model->query_sources($source_info);
+        }
+
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';
@@ -66,6 +99,15 @@ class About extends CI_Controller
         $source_info['type']='img';
         $source_info['deleted']=0;
         $about3 = $this->page_data_model->query_sources($source_info);
+        if(count($about3) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='about';
+            $source_info['second_level']='about03';
+            $source_info['type']='img';
+            $source_info['deleted']=0;
+            $source_info['third_level']='zn';
+            $about3 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';
@@ -73,6 +115,15 @@ class About extends CI_Controller
         $source_info['type']='img';
         $source_info['deleted']=0;
         $about4 = $this->page_data_model->query_sources($source_info);
+        if(count($about4) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='about';
+            $source_info['second_level']='about04';
+            $source_info['type']='img';
+            $source_info['deleted']=0;
+            $source_info['third_level']='zn';
+            $about4 = $this->page_data_model->query_sources($source_info);
+        }
 
         $aboutData = array(
             'about1'=>$about1,
@@ -98,7 +149,11 @@ class About extends CI_Controller
         $this->parser->parse('about2',$tmp_data);
         $this->parser->parse('about3',$aboutData);
         $this->parser->parse('aboutend',$data);
-           $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function Changelanguage(){
         $this->load->library('session');

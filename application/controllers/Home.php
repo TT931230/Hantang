@@ -230,20 +230,21 @@ class Home extends CI_Controller
         $this->load->model('page_data_model');
 
         if($this->session->language){
-            $page_data=$this->page_data_model->get_page_data($this->session->language,'/home');//'third_level'=>$this->session->language,
+            $page_data=$this->page_data_model->get_page_data($this->session->language,'/home');
+            /*$third_level=$this->session->language;*/
         }else{
             $page_data=$this->page_data_model->get_page_data('zn','/home');
         }
         $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','type'=>'','third_level'=>$this->session->language
+            'status'=>'1','first_level'=>'','second_level'=>'','type'=>''/*,'third_level'=>$this->session->language*/
         );
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
-        $source_info['second_level']='imagearea1';
-        $source_info['type']='img';
+        $source_info['second_level']='videoarea';
+        $source_info['type']='video/mp4';
         $source_info['deleted']=0;
-        $imagearea1 = $this->page_data_model->query_sources($source_info);
+        $videoarea = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
@@ -292,7 +293,7 @@ class Home extends CI_Controller
         $tag_data = $this->page_data_model->query_tags();
         $tmp_data = array(
             'logoimage'=>$logoimage,
-            'imagearea1'=>$imagearea1,
+            'videoarea'=>$videoarea,
             'imagearea2'=>$imagearea2,
             'imagearea3'=>$imagearea3,
             'imagearea4'=>$imagearea4,
@@ -316,7 +317,12 @@ class Home extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('homeend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            $this->parser->parse('footeren',$data);
+        }else{
+            $this->parser->parse('footer',$data);
+        }
+
 
     }
     function Changelanguage(){
@@ -405,7 +411,11 @@ class Home extends CI_Controller
         $tmp_data=array_merge($tmp_data,$tag_data);
         $data=array_merge($tmp_data,$page_data);
         //var_dump($page_data);
-        return $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function preview(){
         $this->load->library('session');

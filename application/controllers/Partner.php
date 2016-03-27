@@ -29,11 +29,28 @@ class Partner extends CI_Controller
         $source_info['deleted']='0';
 
         $imagearea1 = $this->page_data_model->query_sources($source_info);
+        if(count($imagearea1) <=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='partner';
+            $source_info['second_level']='imagearea1';
+            $source_info['third_level']='zn';
+            $source_info['type']='img';
+            $source_info['deleted']='0';
+
+            $imagearea1 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='logoimage';
         $source_info['type']='img';
         $logoimage = $this->page_data_model->query_sources($source_info);
+        if(count($logoimage)<=0){
+            $source_info=$source_info_base;
+            $source_info['first_level']='logoimage';
+            $source_info['type']='img';
+            $source_info['third_level']='zn';
+            $logoimage = $this->page_data_model->query_sources($source_info);
+        }
 
         $tag_data = $this->page_data_model->query_tags();
 
@@ -57,7 +74,11 @@ class Partner extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('partnerend',$data);
-        $this->parser->parse('footer',$data);
+        if($this->session->language == 'en'){
+            return $this->parser->parse('footeren',$data);
+        }else{
+            return $this->parser->parse('footer',$data);
+        }
     }
     function Changelanguage(){
         $this->load->library('session');

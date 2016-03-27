@@ -10,17 +10,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="cover-container">
 <div class="searchallarea">
     <div class="cover-container showsearcharea">
-        <div class="newborder showsearcharea1">
+        <div class="showsearcharea1">
             <div class="radio-inline language">
-                <span class="dropdown dropdowncust"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >{language}</span>
-                <ul class="dropdown-menu dropdownmenucustLan" id="choseLan">
-                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
-                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
-                    <li class="dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>
+                <span class="dropdown lan-dropdowncust"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >{language}</span>
+                <ul class="dropdown-menu choseLan">
+                <span class="lan-dropdown-triangle"></span>
+                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
+                    <li class="lan-dropdown-list-line"><span></span></li>
+                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
+             <!--   <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li> -->     
                 </ul>
             </div>
             <div class="searcharea">
-                <span class="dropdowncust" role="button" onclick="$use('class1content','')">
+                <span class="sch-dropdowncust" role="button" onclick="$use('class1content','')">
                     <i class="glyphicon glyphicon-search"></i> {search}
                 </span>
             </div>
@@ -28,11 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div id="class1content" style="display:none;" class="cover-container showsearcharea">
         <div class="searchdetailarea">
-            <span id="searchMsg">{seniorsearch}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span id="searchMsg">{seniorsearch}</span>
             <input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent">
             <span id="searchTool" class="glyphicon glyphicon-search"></span>
-            <span class="searchdetail" id="searchcommit" role="button" onclick="$searchresult()">&nbsp;&nbsp;&nbsp;&nbsp;{commit}</span>
-            <span class="resetsearch" role="button" id="searchreset" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
+            <span id="searchcommit" role="button" onclick="$searchresult()">{commit}</span>
+            <span id="searchreset" role="button" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
  
             <div id="searchdetailarea"></div>
     
@@ -101,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4','searchCountry')"><i class=""></i> {location}
             <span id="righToDown4" class="glyphicon glyphicon-chevron-right"></span>
             </span>
-            <div class="searchAZ" id="searchCountry">
+            <div class="searchLocation" id="searchCountry" >
                 {search_location}
                 <a href="javascript:;" onclick="$searchcity('{id}')" id="'{id}'"><span role="button"><i style="float:left;font-size: 12px;font-style: normal">{keyword}</i></span></a>
                 {/search_location}
@@ -141,17 +143,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 </div>
 <div id="bg" class="searchbg"></div>
-</div>
 <a href="javascript:void(0)">
-    <img id="top_str" alt="" src="http://www.acmedynasty.com/cn/images/top_str.png"/>
-    <img id="to_top" alt="" src="http://static.acmedynasty.com/images/top.png"/>  </a>
+    <img id="top_str" alt="" src="../../bootstrap/images/top_str.png"/>
+    <img id="to_top" alt="" src="../../bootstrap/images/top.png"/>  </a>
 <a href="javascript:void(0)">
-    <img id="info_str" alt="" src="http://static.acmedynasty.com/cn/images/bottom_str.png"/>
-    <img id="show_info" alt="" src="http://static.acmedynasty.com/images/bottom.png"/>  </a>
+    <img id="info_str" alt="" src="../../bootstrap/images/bottom_str.png"/>
+    <img id="show_info" alt="" src="../../bootstrap/images/bottom.png"/>  </a>
 <div id="footer_flow" class="footer_flow">
     <div id="mask">
         <div class="closePop"></div>
         <div class="popContent">
         </div>
     </div>
+</div>
 </div>

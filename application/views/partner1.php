@@ -6,6 +6,6 @@
  * Time: 10:22
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<div class="aboutsubtitle">
+<div class="about-title">
     合作伙伴
 </div>
