@@ -8,9 +8,11 @@
 ?><!DOCTYPE html>
 <div class="newborder" style="display: {awoedisarea1}">
     <div id="left-awoe">
-        {imagearea11}
-        <img src='{source_location}' alt="">
-        {/imagearea11}
+   <?php if($this->session->language == 'zn'){?>
+        <img src="../../bootstrap/images/AWOE_Bnner_logo.jpg" alt="">
+   <?php }else{?>
+        <img src="../../bootstrap/images/AWOE_Bnner_logo_ENG.jpg" alt="">
+   <?php }?>
     </div>
     <div id="right-awoe">
             <div class="awoecallbacks_container">

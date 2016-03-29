@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix">
         <div class="inner">
             <div class="awoeinner-subtitle">
-                {awoelogo}
-                <img src="{source_location}">
-                {/awoelogo}
+            
+                <img src="../../bootstrap/images/awoeinner_logo.png" alt="">
+               
             </div>
            
                 <div class="awoevideoarea">

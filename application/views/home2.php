@@ -9,9 +9,9 @@
 <!-- module 2: ul -->
 <div style="display: {homedisarea2}">
     <div class="home-ul-left">
-        {imagearea11}
-        <img src='{source_location}' alt="">
-        {/imagearea11}
+       
+        <img src="../../bootstrap/images/home_ul_left.png" alt="">
+       
     </div>
     <div class="home-ul-right">
             <div class="callbacks_container ">

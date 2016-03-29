@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix">
         <div class="inner">
             <div class="ulinner-subtitle">
-                {ullogo}
-                    <img src="{source_location}">
-                {/ullogo}
+                
+                    <img src="../../bootstrap/images/ulinner_logo.png" alt="">
+                
             </div>
            
                 <div class="videoareainner">

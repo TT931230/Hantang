@@ -11,10 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="clearfix newborder">
         <div class="inner">
             <div class="musicinner-subtitle">
-            
-                {musiclogo}
-                <img src="{source_location}">
-                {/musiclogo}
+                       
+                <img src="../../bootstrap/images/musicinner_logo.png" alt="">
                
             </div>
           

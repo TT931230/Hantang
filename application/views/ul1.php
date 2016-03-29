@@ -8,9 +8,9 @@
 ?><!DOCTYPE html>
 <div class="newborder" style="display: {uldisarea1}">
     <div id="left-ul">
-        {imagearea11}
-        <img src='{source_location}' alt="">
-        {/imagearea11}
+       
+        <img src="../../bootstrap/images/UL_leftlogo.png" alt="">
+      
     </div>
     <div id="right-ul">
             <div class="ulcallbacks_container">

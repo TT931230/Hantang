@@ -93,7 +93,7 @@ class Awoe extends CI_Controller
         }
         
         $tag_data = $this->page_data_model->query_tags();
-
+        
         $tmp_data = array(
             'relatedvideo'=>$relatedvideo,
             'logoimage'=>$logoimage,

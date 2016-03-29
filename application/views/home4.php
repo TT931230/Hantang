@@ -9,9 +9,9 @@
 <!-- module 4 : music -->
 <div style="display: {homedisarea4}">
     <div class="home-music-left" >
-        {imagearea13}
-        <img src='{source_location}' alt="">
-        {/imagearea13}
+       
+        <img src="../../bootstrap/images/home_music_left.png" alt="">
+       
     </div>
     <div class="home-music-right">
             <div class="callbacks_container">

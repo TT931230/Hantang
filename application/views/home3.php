@@ -9,9 +9,9 @@
 <!-- module 3 : awoe   -->
 <div style="display: {homedisarea3}">
     <div class="home-awoe-left">
-        {imagearea12}
-        <img src='{source_location}' alt="">
-        {/imagearea12}
+     
+        <img src="../../bootstrap/images/home_awoe_left.png" alt="">
+       
     </div>
     <div class="home-awoe-right">
             <div class="callbacks_container">
