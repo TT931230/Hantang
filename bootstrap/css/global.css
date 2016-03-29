@@ -132,7 +132,7 @@ border-image:none;
 }
 
 #musicli > a.active{
-	background-image: url('../images/musicline2.jpg');
+	background-image: url('../images/header_musicline.jpg');
  /*   border-image: url('../images/musicline.jpg') 0 0 4 0 ;*/
     height:87px;
     border-bottom-color:transparent;
@@ -146,7 +146,7 @@ border-image:none;
 
 }
 #musicli >a:hover,a:focus{
-   background-image: url('../images/musicline2.jpg');
+   background-image: url('../images/header_musicline.jpg');
 /*    border-image: url('../images/musicline.jpg') 0 0 4 0 ;*/
     height:88px;
        border-bottom-color:transparent;

@@ -225,10 +225,10 @@
   width: 100%;
   }
   .musicpagecallbacks_container > a:hover {
-background: transparent url("color.png") no-repeat left top;
+background: transparent url("../images/color.png") no-repeat left top;
   }
     .musicpagecallbacks_container > a:focus{
-background: transparent url("color.png") no-repeat left top;;
+background: transparent url("../images/color.png") no-repeat left top;;
 border-bottom-color:transparent;
   }
   .musicpage-callbacks_nav.next:hover{
@@ -278,7 +278,7 @@ border-bottom-color:transparent;
   text-decoration: none;
   height: 61px;
   width: 30px;
-  background: transparent url("white.png") no-repeat left top;
+  background: transparent url("../images/white.png") no-repeat left top;
   margin-top: -39px;
   } 
 
@@ -288,7 +288,7 @@ border-bottom-color:transparent;
   right: 15px;
   }
 .musicpage-callbacks_nav >a:active {
-background: transparent url("white.png") no-repeat left top;
+background: transparent url("../images/white.png") no-repeat left top;
 	
 }
 @media screen and (max-width:600px) {

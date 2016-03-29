@@ -101,11 +101,11 @@
   border-bottom:2px dotted #c4c4c4;
   }
  .ptn-callbacks_container > a:focus{
- background: transparent url("color.png") no-repeat left top;;
+ background: transparent url("../images/color.png") no-repeat left top;;
 border-bottom-color:transparent;
   }
 .ptn-callbacks_container > a:hover{
-  background: transparent url("color.png") no-repeat left top;
+  background: transparent url("../images/color.png") no-repeat left top;
   }
   .ptn-callbacks_nav.next:hover{
   left: auto;
@@ -154,12 +154,12 @@ border-bottom-color:transparent;
   text-decoration: none;
   height: 61px;
   width: 38px;
-  background: transparent url("white.png") no-repeat left top;
+  background: transparent url("../images/white.png") no-repeat left top;
   margin-top: -45px;
   }
 
 .ptn-callbacks_nav:active {
-   background: transparent url("color.png") no-repeat left top;
+   background: transparent url("../images/color.png") no-repeat left top;
   }
 
 .ptn-callbacks_nav.next {

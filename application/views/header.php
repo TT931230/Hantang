@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet"  href="/bootstrap/css/smallScreen.css"/>
     <link rel="stylesheet"  href="/bootstrap/css/fileinput.min.css"/>
 </head>
+<!-- no copy  -->
 <!-- <script type="text/javascript"> 
     // Forbid Copy     
     function rt() 
@@ -69,19 +70,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    $("body").css("-moz-user-select","none");    
     });
 </script> -->
+
+
 <body>
 
 <div class="cover-container">
 <div class="header-area">
     <div class="clearfix">
-        <div  class="masthead-brand">
-         
-                {logoimage}
-                <a href="{link_url}"><img src="{source_location}"></a>
-                {/logoimage}
-         
+    
+<!-- header left logo -->
+        <div  class="masthead-brand">                       
+               <img src="\..\..\bootstrap\images\logo.png" alt="">                        
         </div>
-
+        
+<!-- header navigation bar -->
         <div class="masthead_ul">
             <ul class="nav masthead-nav headernavul">
                 <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
@@ -103,10 +105,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li id="joinli"><a href="/join" class="{joinnav} navtags">{join}</a></li>
             </ul>
         </div>
-<!--        <div class="inner">-->
-<!--            -->
-<!---->
-<!--        </div>-->
+        
+<!-- mobile -->
         <div class="mob_menu">
             <img src="http://localhost:8080/bootstrap/images/menu.png">
         </div>
