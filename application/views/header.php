@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul class="nav masthead-nav headernavul">
                 <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
                 <li id="aboutli">
-                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{about}</a>
+                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" data-hover="dropdown" data-delay="500" data-close-others="false">{about}</a>
                     <ul class="dropdown-menu headernav">
                     <span class="dropdown-triangle"></span>
                         <li><a href="/about">{introduce}</a></li>

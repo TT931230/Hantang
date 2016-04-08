@@ -8,36 +8,43 @@
 ?><!DOCTYPE html>
     <div class="clearfix">
         <div class="inner">
-        <div class="footerarea">
+        <div class="footerarea"> 
             <div class="footerleftdiv1">
-                <div class="footertype"><img src="\..\..\bootstrap\images\footer_logo1.png" alt=""></div>
-                    <div class="footerdetials">
-                        <div class="footerdetail">
-                            <a href="javascript:;">
-                            <span class="footerlogos" data-toggle="modal" data-target="#ul-weixinModal">
-                            
-                                 <img src="\..\..\bootstrap\images\footer_wechat.png" alt="">
-                                 
-                            </span></a>微信
-                         </div>
-                        <div class="footerdetail">
-                         <a class="footerlogos"  href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
-                                  
-                                  <img src="\..\..\bootstrap\images\footer_youku.png" alt="">
-                                  
-                        </a>优酷</div>
-                    </div>
-            </div>
-            <div class="footerleftdiv2">
-                <div class="footertype2"><img src="\..\..\bootstrap\images\footer_logo2.png" alt=""></div>
+                <div class="footertype1"><img src="\..\..\bootstrap\images\footer_logo1.png" alt=""></div>
                    <div class="footerdetials">
                        <div class="footerdetail">
                            <a href="javascript:;">
                         <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#ul-weixinModal">
                         
-                                    <img src="\..\..\bootstrap\images\footer_wechat.png" alt=""></span> 
+                                    <img src="\..\..\bootstrap\images\wechat.png" alt=""></span> 
                                      
                             </a>微信</div>
+                            <div class="footerdetail">
+                           <a href="javascript:;">
+                        <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#ul-weixinModal">
+                        
+                                    <img src="\..\..\bootstrap\images\youku.png" alt=""></span> 
+                                     
+                            </a>优酷</div>
+                            <div class="footerdetail">
+                           <a href="javascript:;">
+                        <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#ul-weixinModal">
+                        
+                                    <img src="\..\..\bootstrap\images\sina.png" alt=""></span> 
+                                     
+                            </a>微博</div>
+                  </div>
+            </div>
+            <div class="footerleftdiv2">
+                <div class="footertype2"><img src="\..\..\bootstrap\images\footer_logo2.png" alt=""></div>
+                   <div class="footerdetials">
+                       <div class="footerdetail2">
+                           <a href="javascript:;">
+                        <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#ul-weixinModal">
+                        
+                                    <img src="\..\..\bootstrap\images\iqiyi.png" alt=""></span> 
+                                     
+                            </a>爱奇艺</div>
                   </div>
             </div>
             <div class="footerleftdiv3">
@@ -47,19 +54,19 @@
                             <a href="javascript:;">
                          <span class="footerlogos">                           
                                  
-                                 <img  data-toggle="modal" data-target="#music-weixinModal" src="\..\..\bootstrap\images\footer_wechat.png" alt=""> 
+                                 <img  data-toggle="modal" data-target="#music-weixinModal" src="\..\..\bootstrap\images\wechat.png" alt=""> 
                                                             
                             </span></a>微信</div>
                         <div class="footerdetail3">
                          <a class="footerlogos" href="http://weibo.com/hantangyinyue?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" style="text-decoration: none;">
                            
-                                  <img src="\..\..\bootstrap\images\footer_sina.png" alt="">
+                                  <img src="\..\..\bootstrap\images\sina.png" alt="">
                           
                             </a>微博</div>
                         <div class="footerdetail3">
                          <a class="footerlogos" href="http://site.douban.com/221186/" target="_blank" style="text-decoration: none;">
                             
-                                 <img src="\..\..\bootstrap\images\footer_douban.png" alt="">
+                                 <img src="\..\..\bootstrap\images\douban.png" alt="">
                            
                             </a>豆瓣小站</div>
                     </div>
@@ -71,45 +78,45 @@
                             <a href="javascript:;">
                          <span class="footerlogos" class="footerlogos" data-toggle="modal" data-target="#hedonist-weixinModal">
                           
-                                <img src="\..\..\bootstrap\images\footer_wechat.png" alt="">
+                                <img src="\..\..\bootstrap\images\wechat.png" alt="">
                            
                             </span></a>微信</div>
                         <div class="footerdetail4">
                          <a class="footerlogos" href="http://weibo.com/hedonists?topnav=1&wvr=6&topsug=1&is_hot=1" target="_blank" style="text-decoration: none;">
                            
-                                <img src="\..\..\bootstrap\images\footer_sina.png" alt="">
+                                <img src="\..\..\bootstrap\images\sina.png" alt="">
                             
                             </a>微博</div>
                         <div class="footerdetail4">
                          <a class="footerlogos" href="http://i.youku.com/u/UMTczODA2ODE2MA==" target="_blank" style="text-decoration: none;">
                            
-                                 <img src="\..\..\bootstrap\images\footer_youku.png" alt="">
+                                 <img src="\..\..\bootstrap\images\youku.png" alt="">
                         
                             </a>优酷</div>
                         <div class="footerdetail4">
                          <a class="footerlogos" href="http://v.qq.com/vplus/hedonist" target="_blank" style="text-decoration: none;">
                           
-                                 <img src="\..\..\bootstrap\images\footer_vqq.png" alt="">
+                                 <img src="\..\..\bootstrap\images\vqq.png" alt="">
                             
                             </a>腾讯视频</div>
-                        <div class="footerdetail4">
+<!--                         <div class="footerdetail4"> 
                          <a  class="footerlogos"href="http://www.jianshu.com/users/e447b96581bd/latest_articles" target="_blank" style="text-decoration: none;">
                            
-                                 <img src="\..\..\bootstrap\images\footer_jianshu.png" alt="">
+<!--                                  <img src="\..\..\bootstrap\images\footer_jianshu.png" alt=""> -->
                            
-                            </a>简书</div>
-                        <div class="footerdetail4">
+<!--                             </a>简书</div> -->
+<!--                         <div class="footerdetail4"> 
                          <a  class="footerlogos"href="http://yuedu.163.com/news_reader/#/~/source?id=81ed83ba67fb49d78bc1b43c25d882ff_1&amp;cid=ab11d60e6ea049b8b61981ec3188" target="_blank" style="text-decoration: none;">
                             
-                                 <img src="\..\..\bootstrap\images\footer_netease.png" alt="">
+<!--                                  <img src="\..\..\bootstrap\images\footer_netease.png" alt=""> -->
                            
-                            </a>网易云阅读</div>
+<!--                             </a>网易云阅读</div> -->
                     </div>
             </div>
             <div class="footerrightdiv">
-                <div>© 2002-2015 by</div>
-                <div>Shanghai Hantang Culture Development Co., Ltd.</div>
-                <div>All Rights Reserved.</div>
+                <div>© 2002-2016</div>
+                <div>上海汉唐文化发展有限公司</div>
+                <div>版权所有</div>
                 <div class="footerrightdiv2">
                 <a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action" style="color:#ff0000;text-decoration:none;border-bottom:none;">沪ICP备13044328号&nbsp;</a>
                 <a href="legal" style="color:#ff0000;text-decoration:none;border-bottom:none;">|&nbsp;&nbsp;网站声明</a></div>
