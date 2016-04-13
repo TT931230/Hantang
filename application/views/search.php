@@ -24,7 +24,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="searcharea">
                 <span class="sch-dropdowncust" role="button" onclick="$use('class1content','')">
-                    <i class="glyphicon glyphicon-search"></i> {search}
+                     <?php if($this->session->language == 'zn'){?>
+                    <i class="glyphicon glyphicon-search"></i> 搜索
+                    <?php }else{?>
+                    <i class="glyphicon glyphicon-search"></i> search
+                    <?php }?>
                 </span>
             </div>
         </div>

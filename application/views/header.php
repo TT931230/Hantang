@@ -84,27 +84,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         
 <!-- header navigation bar -->
+        <?php if($this->session->language == 'zn'){?>
         <div class="masthead_ul">
             <ul class="nav masthead-nav headernavul">
-                <li id="homeli"><a href="/home" class="{homenav} navtags">{home}</a></li>
+                <li id="homeli"><a href="/home" class="{homenav} navtags">首页</a></li>
                 <li id="aboutli">
-                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" data-hover="dropdown" data-delay="500" data-close-others="false">{about}</a>
+                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" data-hover="dropdown" data-delay="500" data-close-others="false">博览汉唐</a>
                     <ul class="dropdown-menu headernav">
                     <span class="dropdown-triangle"></span>
-                        <li><a href="/about">{introduce}</a></li>
+                        <li><a href="/about">公司简介</a></li>
                          <li class="header-dropdown-list-line"><span></span></li>
-                        <li><a href="/platform">{platform}</a></li>
+                        <li><a href="/platform">播出平台</a></li>
                          <li class="header-dropdown-list-line"><span></span></li>
-                        <li><a href="/partner">{partner}</a></li>
+                        <li><a href="/partner">合作伙伴</a></li>
                          
                     </ul>
                 </li>
-                <li id="ulli"><a href="/ul" class="{ulnav} navtags">{ul}</a></li>
-                <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">{awoe}</a></li>
-                <li id="musicli"><a href="/music" class="{musicnav} navtags">{music}</a></li>
-                <li id="joinli"><a href="/join" class="{joinnav} navtags">{join}</a></li>
+                <li id="ulli"><a href="/ul" class="{ulnav} navtags">《极致》</a></li>
+                <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">《问鼎世界》</a></li>
+                <li id="musicli"><a href="/music" class="{musicnav} navtags">国际音乐年</a></li>
+                <li id="joinli"><a href="/join" class="{joinnav} navtags">加入汉唐</a></li>
             </ul>
         </div>
+        <?php }else{?>
+        <div class="masthead_ul">
+            <ul class="nav masthead-nav headernavul">
+                <li id="homeli"><a href="/home" class="{homenav} navtags">Home</a></li>
+                <li id="aboutli">
+                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" data-hover="dropdown" data-delay="500" data-close-others="false">About Us</a>
+                    <ul class="dropdown-menu headernav">
+                    <span class="dropdown-triangle"></span>
+                        <li><a href="/about">Introduce</a></li>
+                         <li class="header-dropdown-list-line"><span></span></li>
+                        <li><a href="/platform">Platforms</a></li>
+                         <li class="header-dropdown-list-line"><span></span></li>
+                        <li><a href="/partner">Partners</a></li>
+                         
+                    </ul>
+                </li>
+                <li id="ulli"><a href="/ul" class="{ulnav} navtags">The Ultimate Luxury</a></li>
+                <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">A World of Excellence</a></li>
+                <li id="musicli"><a href="/music" class="{musicnav} navtags">Hantang Music Festival</a></li>
+                <li id="joinli"><a href="/join" class="{joinnav} navtags">Join Us</a></li>
+            </ul>
+        </div>
+         <?php }?>
         
 <!-- mobile -->
         <div class="mob_menu">
