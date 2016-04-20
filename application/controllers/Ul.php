@@ -32,12 +32,12 @@ class Ul extends CI_Controller
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='imagearea11';
-        /*$source_info['third_level']=$this->session->language;*/
-        $source_info['type']='img';
-        $imagearea11 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='ul';
+//         $source_info['second_level']='imagearea11';
+//         /*$source_info['third_level']=$this->session->language;*/
+//         $source_info['type']='img';
+//         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='ul';
@@ -63,11 +63,11 @@ class Ul extends CI_Controller
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        /*$source_info['third_level']=$this->session->language;*/
-        $source_info['type']='img';
-        $logoimage = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         /*$source_info['third_level']=$this->session->language;*/
+//         $source_info['type']='img';
+//         $logoimage = $this->page_data_model->query_sources($source_info);
 
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
@@ -91,9 +91,9 @@ class Ul extends CI_Controller
 
         $tmp_data = array(
             'relatedvideo'=>$relatedvideo,
-            'logoimage'=>$logoimage,
+  //          'logoimage'=>$logoimage,
             'imagearea1'=>$imagearea1,
-            'imagearea11'=>$imagearea11,
+  //          'imagearea11'=>$imagearea11,
             'yeardetails'=>$yeardetails,
             'locationdetails'=>$locationdetails,
             'typedetails'=>$typedetails,
@@ -147,25 +147,25 @@ class Ul extends CI_Controller
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>''
         );
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ullogo';
-        $source_info['type']='img';
-        $source_info['third_level']=$this->session->language;
-        $ullogo = $this->page_data_model->query_sources($source_info);
-        if(count($ullogo) <=0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='ullogo';
-            $source_info['type']='img';
-            $source_info['third_level']='zn';
-            $ullogo = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='ullogo';
+//         $source_info['type']='img';
+//         $source_info['third_level']=$this->session->language;
+//         $ullogo = $this->page_data_model->query_sources($source_info);
+//         if(count($ullogo) <=0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='ullogo';
+//             $source_info['type']='img';
+//             $source_info['third_level']='zn';
+//             $ullogo = $this->page_data_model->query_sources($source_info);
+//         }
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='ul';
-        $source_info['second_level']='imagearea11';
-        $source_info['third_level']=$this->session->language;
-        $source_info['type']='img';
-        $imagearea11 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='ul';
+//         $source_info['second_level']='imagearea11';
+//         $source_info['third_level']=$this->session->language;
+//         $source_info['type']='img';
+//         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='ul';
@@ -191,17 +191,17 @@ class Ul extends CI_Controller
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['type']='img';
-        $logoimage = $this->page_data_model->query_sources($source_info);
-        if(count($logoimage) <= 0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='logoimage';
-            $source_info['third_level']='zn';
-            $source_info['type']='img';
-            $logoimage = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['type']='img';
+//         $logoimage = $this->page_data_model->query_sources($source_info);
+//         if(count($logoimage) <= 0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='logoimage';
+//             $source_info['third_level']='zn';
+//             $source_info['type']='img';
+//             $logoimage = $this->page_data_model->query_sources($source_info);
+//         }
 
         $source_info=$source_info_base;
         $source_info['first_level']='ul';
@@ -245,9 +245,9 @@ class Ul extends CI_Controller
             'video'=>$video,
             'relatedvideo1'=>$relatedvideo1,
             'relatedvideo'=>$relatedvideo,
-            'logoimage'=>$logoimage,
-            'ullogo'=>$ullogo,
-            'imagearea11'=>$imagearea11,
+  //          'logoimage'=>$logoimage,
+  //          'ullogo'=>$ullogo,
+  //          'imagearea11'=>$imagearea11,
             'yeardetails'=>$yeardetails,
             'locationdetails'=>$locationdetails,
             'typedetails'=>$typedetails,

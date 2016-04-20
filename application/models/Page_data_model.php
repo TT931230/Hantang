@@ -1,4 +1,4 @@
-<?php
++<?php
 /**
  * Created by PhpStorm.
  * User: TT
@@ -15,78 +15,78 @@ class Page_data_model extends CI_Model{
         $this->config->load('sourceurl', TRUE);
         $url1  = $this->config->item('url', 'sourceurl');
         //get footer source
-        $this->db->from('source');
-        $this->db->where('first_level','footer');
-        $this->db->where('third_level',$languageType);
-        $returnquery=$this->db->get()->result_array();
-        if(count($returnquery) <=0){
-            $this->db->from('source');
-            $this->db->where('first_level','footer');
-            $this->db->where('third_level','zn');
-            $returnquery=$this->db->get()->result_array();
-        }
+//        $this->db->from('source');
+//         $this->db->where('first_level','footer');
+//         $this->db->where('third_level',$languageType);
+//         $returnquery=$this->db->get()->result_array();
+//         if(count($returnquery) <=0){
+//             $this->db->from('source');
+//             $this->db->where('first_level','footer');
+//             $this->db->where('third_level','zn');
+//             $returnquery=$this->db->get()->result_array();
+//         }
 
-        $weixin="";
-        $weibo="";
-        $youku="";
-        $wangyi="";
-        $tengxun="";
-        $jianshu="";
-        $douban="";
-        $footerlogo1="";
-        $footerlogo2="";
-        $footerlogo3="";
-        $footerlogo4="";
-        $guanzhu="";
-        $erwei="";
-        $guanbi="";
+//         $weixin="";
+//         $weibo="";
+//         $youku="";
+//         $wangyi="";
+//         $tengxun="";
+//         $jianshu="";
+//         $douban="";
+//         $footerlogo1="";
+//         $footerlogo2="";
+//         $footerlogo3="";
+//         $footerlogo4="";
+//         $guanzhu="";
+//         $erwei="";
+//         $guanbi="";
 
-        for($i=0;$i<count($returnquery);$i++){
-            switch ($returnquery[$i]['second_level']){
-                case 'weixin':
-                    $weixin=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'weibo':
-                    $weibo=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'youku':
-                    $youku=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'douban':
-                    $douban=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'tengxun':
-                    $tengxun=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'jianshu':
-                    $jianshu=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'wangyi':
-                    $wangyi=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'footerlogo1':
-                    $footerlogo1=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'footerlogo2':
-                    $footerlogo2=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'footerlogo3':
-                    $footerlogo3=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'footerlogo4':
-                    $footerlogo4=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'guanzhu':
-                    $guanzhu=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'erwei':
-                    $erwei=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-                case 'guanbi':
-                    $guanbi=$url1['serverurl'].$returnquery[$i]['source_location'];
-                    break;
-            }
-        }
+//         for($i=0;$i<count($returnquery);$i++){
+//             switch ($returnquery[$i]['second_level']){
+//                 case 'weixin':
+//                     $weixin=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'weibo':
+//                     $weibo=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'youku':
+//                     $youku=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'douban':
+//                     $douban=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'tengxun':
+//                     $tengxun=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'jianshu':
+//                     $jianshu=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'wangyi':
+//                     $wangyi=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'footerlogo1':
+//                     $footerlogo1=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'footerlogo2':
+//                     $footerlogo2=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'footerlogo3':
+//                     $footerlogo3=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'footerlogo4':
+//                     $footerlogo4=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'guanzhu':
+//                     $guanzhu=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'erwei':
+//                     $erwei=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//                 case 'guanbi':
+//                     $guanbi=$url1['serverurl'].$returnquery[$i]['source_location'];
+//                     break;
+//             }
+//         }
 
         //get partner image
         $this->db->from('source');
@@ -154,20 +154,20 @@ class Page_data_model extends CI_Model{
         	'about02'=>$about02[0]['source_location'],
         	'about03'=>$about03[0]['source_location'],
         	'about04'=>$about04[0]['source_location'],
-            'wangyi'=>$wangyi,
-            'jianshu'=>$jianshu,
-            'tengxun'=>$tengxun,
-            'douban'=>$douban,
-            'youku'=>$youku,
-            'weibo'=>$weibo,
-            'weixin'=>$weixin,
-            'footerlogo1'=>$footerlogo1,
-            'footerlogo2'=>$footerlogo2,
-            'footerlogo3'=>$footerlogo3,
-            'footerlogo4'=>$footerlogo4,
-            'guanzhu'=>$guanzhu,
-            'erwei'=>$erwei,
-            'guanbi'=>$guanbi,
+//             'wangyi'=>$wangyi,
+//             'jianshu'=>$jianshu,
+//             'tengxun'=>$tengxun,
+//             'douban'=>$douban,
+//             'youku'=>$youku,
+//             'weibo'=>$weibo,
+//             'weixin'=>$weixin,
+//             'footerlogo1'=>$footerlogo1,
+//             'footerlogo2'=>$footerlogo2,
+//             'footerlogo3'=>$footerlogo3,
+//             'footerlogo4'=>$footerlogo4,
+//             'guanzhu'=>$guanzhu,
+//             'erwei'=>$erwei,
+//             'guanbi'=>$guanbi,
             'url' => $url,
             'homenav' => '',
             'aboutnav' =>  '',

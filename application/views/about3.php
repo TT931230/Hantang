@@ -22,9 +22,9 @@
         <img src="{source_location}">
         {/about3}
     </div>
-    <div class="aboutimg4">
-        {about4}
-        <img src="{source_location}">
-        {/about4}
-    </div>
+<!--     <div class="aboutimg4"> -->
+<!--         {about4} -->
+<!--         <img src="{source_location}"> -->
+<!--         {/about4} -->
+<!--     </div> -->
 </div>

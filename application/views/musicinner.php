@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="inner">
             <div class="musicinner-subtitle">
                        
-                <img src="../../bootstrap/images/musicinner_logo.png" alt="">
+                <img src="../../bootstrap/images/musicinner_logo.jpg" alt="">
                
             </div>
           
@@ -40,10 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </table>
                     </div>
                     <div class="music-brief">
-                     <table style="width:100%;text-align:left;">
+                     <table style="width:100%;text-align:justify;">
                        <tr>
-                        <td valign="top" style="width:13%; padding-left:50px;color:#000;font-weight:600;">简介：</td>
-                        <td style="padding-right:50px;padding-left:14px;">{source_remark}</td>
+                        <td valign="top" style="text-align:right;width:13%;color:#000;font-weight:600;">简介：</td>
+                        <td style="padding-right:54px;padding-left:14px;">{source_remark}</td>
                         </tr>
                      </table>
                     </div>

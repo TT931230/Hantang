@@ -49,6 +49,8 @@ class Source_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    
+    //insert source
     public function insertSource($insertcontent){
     	date_default_timezone_set("UTC");
         $this->source_location    = $insertcontent['source_location'];
@@ -67,6 +69,8 @@ class Source_model extends CI_Model
         $this->update_time = date("y-m-d",time());
         $this->db->insert('source', $this);
     }
+    
+    //update source
     public function updateSource($updatecontent){
         $this->status    = $updatecontent['status'];
         $this->sequence    = $updatecontent['sequence'];
@@ -74,6 +78,8 @@ class Source_model extends CI_Model
         $this->update_time = time();
         $this->db->update('source', $this, array('id' => $updatecontent['id']));
     }
+    
+    //insert image
     public function insertimg($insertimg){
         date_default_timezone_set("UTC");
         $data=array(
@@ -95,6 +101,8 @@ class Source_model extends CI_Model
         $this->db->insert('source',$data);
 
     }
+    
+    //insert video
     public function insertvideoSource($insertvideo){
         date_default_timezone_set("UTC");
         $data=array(
@@ -110,7 +118,6 @@ class Source_model extends CI_Model
             'second_level' => $insertvideo['second_level'],
             'third_level' => $insertvideo['third_level'],
             'source_remark' => $insertvideo['source_remark'],
-            //$this->index = $insertvideo['index'];
             'create_time' => date("y-m-d",time()),
             'update_time' => date("y-m-d",time())
         );
@@ -127,27 +134,28 @@ class Source_model extends CI_Model
         }
         return $insertedid;
     }
-    public function insertLocalImg($insertLocalImgArray){
-        date_default_timezone_set("UTC");
+//     public function insertLocalImg($insertLocalImgArray){
+//         date_default_timezone_set("UTC");
 
-        $data=array(
-            'source_location' => $insertLocalImgArray['source_location'],
-            'status' => $insertLocalImgArray['status'],
-            'source_name' => $insertLocalImgArray['source_name'],
-            'link_url' => $insertLocalImgArray['link_url'],
-            //'sequence' => $insertvideo['sequence'],
-            'type' => $insertLocalImgArray['type'],
-            'updater' => $insertLocalImgArray['updater'],
-            'creator' => $insertLocalImgArray['creator'],
-            'first_level' => $insertLocalImgArray['first_level'],
-            //'second_level' => $insertvideo['second_level'],
-            'third_level' => $insertLocalImgArray['third_level'],
-            //'source_remark' => $insertvideo['source_remark'],
-            //$this->index = $insertvideo['index'];
-            'create_time' => $insertLocalImgArray['create_time'],
-            'update_time' => $insertLocalImgArray['update_time']
-        );
+//         $data=array(
+//             'source_location' => $insertLocalImgArray['source_location'],
+//             'status' => $insertLocalImgArray['status'],
+//             'source_name' => $insertLocalImgArray['source_name'],
+//             'link_url' => $insertLocalImgArray['link_url'],
+//             //'sequence' => $insertvideo['sequence'],
+//             'type' => $insertLocalImgArray['type'],
+//             'updater' => $insertLocalImgArray['updater'],
+//             'creator' => $insertLocalImgArray['creator'],
+//             'first_level' => $insertLocalImgArray['first_level'],
+//             //'second_level' => $insertvideo['second_level'],
+//             'third_level' => $insertLocalImgArray['third_level'],
+//             //'source_remark' => $insertvideo['source_remark'],
+//             //$this->index = $insertvideo['index'];
+//             'create_time' => $insertLocalImgArray['create_time'],
+//             'update_time' => $insertLocalImgArray['update_time']
+//         );
 
-        $this->db->insert('source', $data);
-    }
+//         $this->db->insert('source', $data);
+//     }
+
 }

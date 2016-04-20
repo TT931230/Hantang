@@ -25,42 +25,53 @@
 .aboutimgarea{
 	margin-bottom:42px;
 }
+.aboutimg1{
+    padding-top:56px;
+    padding-bottom:78px;
+    border-bottom: 2px dotted #d9d9d9;
+}
 .aboutimg1 img{
     height:auto;
-    width:100%;
-    padding-top:43px;
-    padding-bottom:40px;
+    width:auto;
+}
+.aboutimg2{
+    padding-top:22px;
+    padding-bottom:43px;
+    border-bottom: 2px dotted #d9d9d9;
 }
 .aboutimg2 img{
     height:auto;
-    width:100%;
-    padding-top:56px;
+    width:auto;
+}
+.aboutimg3{
+    padding-top:43px;
     padding-bottom:56px;
 }
 .aboutimg3 img{
     height:auto;
-    width:100%;
-    padding-top:56px;
-    padding-bottom:56px;
+    width:auto;
 }
-.aboutimg4 img{
-    height:auto;
-    width:100%;
-    padding-top:56px;
-    padding-bottom:56px;
-}
+
 
 /*
  * platform page
  */
-.plat-map{
+.plat-map1{
     padding-top:80px;
-    padding-bottom:93px	
+    padding-bottom:92px;
+    border-bottom: 2px dotted #d9d9d9;
 }
-.plat-map img{
+.plat-map1 img{
 	width:auto;
-	height:700px;
-	margin-top:30px;
+	height:auto;
+}
+.plat-map2{
+    padding-top:78px;
+    padding-bottom:98px	
+}
+.plat-map2 img{
+	width:auto;
+	height:auto;
 }
 /*
  * partner page
@@ -73,19 +84,16 @@
 }
 .brandlogoarea{
 	margin:auto;
-	width:97.03%;
-	margin-top:10px;
+	margin-top:4px;
 } 
 .brandlogo{
-    width:32.69%;
+    width:25%;
     float:left;
-    margin-right:4px;
-    margin-bottom:4px;
-    height:280px;
-    text-align:center;
+    height:230px;
 }
 .brandlogo img{
     vertical-align:middle;
+    width:auto;
 }
 .brandlogospan{
     height:100%;

@@ -7,156 +7,156 @@
  */
 class Home extends CI_Controller
 {
-    public function insertkeywords(){
-        $this->load->library('session');
-        $this->load->library('parser');
-        $this->load->database();
-        $this->load->model('keyword_model');
-        $username = $this->session->username;
-        $country=array('America','Canada','China');
-        $city=array('NewYork','London','Beijing');
-        $type=array('fashion','music','film');
-        $display=array('chorus','Symphony','others');
-        for($i=0;$i<3;$i++){
-            $year='201';
-            //echo $country[$i];
-            $keyword1=array(
-                'keyword' => $country[$i],
-                'sequence' => $i,
-                'first_level' => 'ul',
-                'second_level' => 'locationdetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword1);
+//     public function insertkeywords(){
+//         $this->load->library('session');
+//         $this->load->library('parser');
+//         $this->load->database();
+//         $this->load->model('keyword_model');
+//         $username = $this->session->username;
+//         $country=array('America','Canada','China');
+//         $city=array('NewYork','London','Beijing');
+//         $type=array('fashion','music','film');
+//         $display=array('chorus','Symphony','others');
+//         for($i=0;$i<3;$i++){
+//             $year='201';
+//             //echo $country[$i];
+//             $keyword1=array(
+//                 'keyword' => $country[$i],
+//                 'sequence' => $i,
+//                 'first_level' => 'ul',
+//                 'second_level' => 'locationdetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword1);
 
-            //yeardetails
-            $keyword2=array(
-                'keyword' => $year.$i,
-                'sequence' => $i,
-                'first_level' => 'ul',
-                'second_level' => 'yeardetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword2);
-            //typedetails
-            $keyword3=array(
-                'keyword' => $type[$i],
-                'sequence' => $i,
-                'first_level' => 'ul',
-                'second_level' => 'typedetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword3);
-
-
-
-            $a=$i+1;
-            $keyword4=array(
-                'keyword' => '201'.$i.'-'.'201'.$a,
-                'sequence' => $i,
-                'first_level' => 'music',
-                'second_level' => 'seasondetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword4);
-
-            $keyword4=array(
-                'keyword' => $display[$i],
-                'sequence' => $i,
-                'first_level' => 'music',
-                'second_level' => 'displaydetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword4);
+//             //yeardetails
+//             $keyword2=array(
+//                 'keyword' => $year.$i,
+//                 'sequence' => $i,
+//                 'first_level' => 'ul',
+//                 'second_level' => 'yeardetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword2);
+//             //typedetails
+//             $keyword3=array(
+//                 'keyword' => $type[$i],
+//                 'sequence' => $i,
+//                 'first_level' => 'ul',
+//                 'second_level' => 'typedetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword3);
 
 
 
-            $keyword1=array(
-                'keyword' => $country[$i],
-                'sequence' => $i,
-                'first_level' => 'awoe',
-                'second_level' => 'locationdetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword1);
+//             $a=$i+1;
+//             $keyword4=array(
+//                 'keyword' => '201'.$i.'-'.'201'.$a,
+//                 'sequence' => $i,
+//                 'first_level' => 'music',
+//                 'second_level' => 'seasondetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword4);
+
+//             $keyword4=array(
+//                 'keyword' => $display[$i],
+//                 'sequence' => $i,
+//                 'first_level' => 'music',
+//                 'second_level' => 'displaydetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword4);
 
 
-            $keyword2=array(
-                'keyword' => $year.$i,
-                'sequence' => $i,
-                'first_level' => 'awoe',
-                'second_level' => 'yeardetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword2);
 
-            $keyword3=array(
-                'keyword' => $type[$i],
-                'sequence' => $i,
-                'first_level' => 'awoe',
-                'second_level' => 'typedetails',
-                'third_level' => 'en',
-                'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
-                'creator' =>$username,
-                'updater' => $username,
-                'status' => '1',
-            );
-            $this->keyword_model->insertKeyword($keyword3);
+//             $keyword1=array(
+//                 'keyword' => $country[$i],
+//                 'sequence' => $i,
+//                 'first_level' => 'awoe',
+//                 'second_level' => 'locationdetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword1);
 
 
-        }
-    }
-    public function querySource($querycontent){
-        $this->load->library('session');
-        $this->load->library('parser');
-        $this->load->database();
-        $this->db->from('source');
-        if($querycontent['source_location']){
-            $this->db->where('source_location',$querycontent['source_location']);
-        }
-        if($querycontent['first_level']){
-            $this->db->where('first_level',$querycontent['first_level']);
-        }
-        if($querycontent['second_level']){
-            $this->db->where('second_level',$querycontent['second_level']);
-        }
-        if($querycontent['third_level']){
-            $this->db->where('third_level',$querycontent['third_level']);
-        }
-        if($querycontent['type']){
-            $this->db->where('type',$querycontent['type']);
-        }
-        $query = $this->db->get();
-        return $query->result_array();
-    }
+//             $keyword2=array(
+//                 'keyword' => $year.$i,
+//                 'sequence' => $i,
+//                 'first_level' => 'awoe',
+//                 'second_level' => 'yeardetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword2);
+
+//             $keyword3=array(
+//                 'keyword' => $type[$i],
+//                 'sequence' => $i,
+//                 'first_level' => 'awoe',
+//                 'second_level' => 'typedetails',
+//                 'third_level' => 'en',
+//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
+//                 'creator' =>$username,
+//                 'updater' => $username,
+//                 'status' => '1',
+//             );
+//             $this->keyword_model->insertKeyword($keyword3);
+
+
+//         }
+//     }
+//     public function querySource($querycontent){
+//         $this->load->library('session');
+//         $this->load->library('parser');
+//         $this->load->database();
+//         $this->db->from('source');
+//         if($querycontent['source_location']){
+//             $this->db->where('source_location',$querycontent['source_location']);
+//         }
+//         if($querycontent['first_level']){
+//             $this->db->where('first_level',$querycontent['first_level']);
+//         }
+//         if($querycontent['second_level']){
+//             $this->db->where('second_level',$querycontent['second_level']);
+//         }
+//         if($querycontent['third_level']){
+//             $this->db->where('third_level',$querycontent['third_level']);
+//         }
+//         if($querycontent['type']){
+//             $this->db->where('type',$querycontent['type']);
+//         }
+//         $query = $this->db->get();
+//         return $query->result_array();
+//     }
     function updatedb(){
         $this->load->library('session');
         $this->load->library('parser');
@@ -285,14 +285,14 @@ class Home extends CI_Controller
         $source_info['type']='img';
         $imagearea13 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['type']='img';
-        $logoimage = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['type']='img';
+//         $logoimage = $this->page_data_model->query_sources($source_info);
 
         $tag_data = $this->page_data_model->query_tags();
         $tmp_data = array(
-            'logoimage'=>$logoimage,
+//             'logoimage'=>$logoimage,
             'videoarea'=>$videoarea,
             'imagearea2'=>$imagearea2,
             'imagearea3'=>$imagearea3,
@@ -340,83 +340,86 @@ class Home extends CI_Controller
         }else{
             $page_data=$this->page_data_model->get_page_data('zn','/home');
         }
-        $source_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
-        );
+//         $source_info_base=array(
+//             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',
+//         );
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea1';
-        $source_info['type']='img';
-        $source_info['deleted']=0;
-        $imagearea1 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea1';
+//         $source_info['type']='img';
+//         $source_info['deleted']=0;
+//         $imagearea1 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea2';
-        $source_info['type']='img';
-        $source_info['deleted']=0;
-        $imagearea2 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea2';
+//         $source_info['type']='img';
+//         $source_info['deleted']=0;
+//         $imagearea2 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea3';
-        $source_info['type']='img';
-        $source_info['deleted']=0;
-        $imagearea3 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea3';
+//         $source_info['type']='img';
+//         $source_info['deleted']=0;
+//         $imagearea3 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea4';
-        $source_info['type']='img';
-        $source_info['deleted']=0;
-        $imagearea4 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea4';
+//         $source_info['type']='img';
+//         $source_info['deleted']=0;
+//         $imagearea4 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea11';
-        $source_info['type']='img';
-        $imagearea11 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea11';
+//         $source_info['type']='img';
+//         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea12';
-        $source_info['type']='img';
-        $imagearea12 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea12';
+//         $source_info['type']='img';
+//         $imagearea12 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea13';
-        $source_info['type']='img';
-        $imagearea13 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea13';
+//         $source_info['type']='img';
+//         $imagearea13 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['type']='img';
-        $logoimage = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['type']='img';
+//         $logoimage = $this->page_data_model->query_sources($source_info);
 
-        $tag_data = $this->page_data_model->query_tags($source_info);
+//         $tag_data = $this->page_data_model->query_tags($source_info);
 
-        $tmp_data = array(
-            'logoimage'=>$logoimage,
-            'imagearea1'=>$imagearea1,
-            'imagearea2'=>$imagearea2,
-            'imagearea3'=>$imagearea3,
-            'imagearea4'=>$imagearea4,
-            'imagearea11'=>$imagearea11,
-            'imagearea12'=>$imagearea12,
-            'imagearea13'=>$imagearea13,
-        );
+//         $tmp_data = array(
+//             'logoimage'=>$logoimage,
+//             'imagearea1'=>$imagearea1,
+//             'imagearea2'=>$imagearea2,
+//             'imagearea3'=>$imagearea3,
+//             'imagearea4'=>$imagearea4,
+//             'imagearea11'=>$imagearea11,
+//             'imagearea12'=>$imagearea12,
+//             'imagearea13'=>$imagearea13,
+//         );
 
-        $tmp_data=array_merge($tmp_data,$tag_data);
-        $data=array_merge($tmp_data,$page_data);
-        //var_dump($page_data);
+//         $tmp_data=array_merge($tmp_data,$tag_data);
+//         $data=array_merge($tmp_data,$page_data);
+//         //var_dump($page_data);
         if($this->session->language == 'en'){
             return $this->parser->parse('footeren',$data);
         }else{
             return $this->parser->parse('footer',$data);
         }
     }
+    
+    
+   //预览功能
     function preview(){
         $this->load->library('session');
 

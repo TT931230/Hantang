@@ -137,6 +137,22 @@ function $reset(){
     $("#bg").css("height",document.body.scrollHeight);
 }
 
+function $jobajax(id){
+    $.ajax({
+        type:"post",
+        data: "dep_id=" + id,
+        url:"Join/getJobName",
+        success: function(result)
+        {         
+            $("#jobdetailarea").html(result);
+        },
+        error: function()
+        {
+            $("#jobdetailarea").html('error');
+            alert("ajax error");
+        }
+    });
+}
 function $departmentajax(id){
     $.ajax({
         type:"post",
@@ -144,7 +160,7 @@ function $departmentajax(id){
         url:"Join/getJobInfo",
         success: function(result)
         {
-            var submitbutton='<div class="jobcommit"><button class="btn btn-primary btn-lg jobcommitbtn" data-toggle="modal" data-target="#myModal">点击申请</button></div>';
+		    var submitbutton='<div class="jobcommit"><button class="btn btn-primary btn-lg jobcommitbtn" data-toggle="modal" data-target="#myModal">点击申请</button></div>';
             var modal =
             '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
                 '<div class="modal-dialog">'+
@@ -169,7 +185,7 @@ function $departmentajax(id){
                             '<button type="button" class="btn btn-default sendcanclebtn" data-dismiss="modal" style="border:0;">关闭</button>'+'</div>'+
                         '</div>'+
                     '</div>'+
-                '</div>'
+                '</div>';
             $("#departmentdetailarea").html(result+submitbutton+modal);
         },
         error: function()

@@ -37,23 +37,23 @@ class About extends CI_Controller
             $video = $this->page_data_model->query_sources($source_info);
         }
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['type']='img';
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['type']='img';
        
-        $logoimage = $this->page_data_model->query_sources($source_info);
-        if(count($logoimage)<=0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='logoimage';
-            $source_info['type']='img';
-            $source_info['third_level']='zn';
-            $logoimage = $this->page_data_model->query_sources($source_info);
-        }
+//         $logoimage = $this->page_data_model->query_sources($source_info);
+//         if(count($logoimage)<=0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='logoimage';
+//             $source_info['type']='img';
+//             $source_info['third_level']='zn';
+//             $logoimage = $this->page_data_model->query_sources($source_info);
+//         }
 
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
-            'logoimage'=>$logoimage,
+//             'logoimage'=>$logoimage,
             'video'=>$video,
         );
 

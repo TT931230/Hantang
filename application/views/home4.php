@@ -10,7 +10,7 @@
 <div style="display: {homedisarea4}">
     <div class="home-music-left" >
        
-        <img src="../../bootstrap/images/home_music_left.png" alt="">
+        <img src="../../bootstrap/images/home_music_left.jpg" alt="">
        
     </div>
     <div class="home-music-right">

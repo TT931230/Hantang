@@ -80,16 +80,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 <!-- header left logo -->
         <div  class="masthead-brand">                       
-               <img src="\..\..\bootstrap\images\logo.png" alt="">                        
+               <img src="../../bootstrap/images/logo.png" alt="">                        
         </div>
         
 <!-- header navigation bar -->
         <?php if($this->session->language == 'zn'){?>
         <div class="masthead_ul">
             <ul class="nav masthead-nav headernavul">
-                <li id="homeli"><a href="/home" class="{homenav} navtags">首页</a></li>
+                <li id="homeli"><a href="/home" class="{homenav} navtags"><span>首页</span></a></li>
                 <li id="aboutli">
-                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" data-hover="dropdown" data-delay="500" data-close-others="false">博览汉唐</a>
+                    <a href="#" class="{aboutnav} dropdown dropdowncust navtags" data-toggle="dropdown" data-hover="dropdown" data-delay="500" data-close-others="false"><span>博览汉唐</span></a>
                     <ul class="dropdown-menu headernav">
                     <span class="dropdown-triangle"></span>
                         <li><a href="/about">公司简介</a></li>
@@ -100,10 +100,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          
                     </ul>
                 </li>
-                <li id="ulli"><a href="/ul" class="{ulnav} navtags">《极致》</a></li>
-                <li id="awoeli"><a href="/awoe" class="{awoenav} navtags">《问鼎世界》</a></li>
-                <li id="musicli"><a href="/music" class="{musicnav} navtags">国际音乐年</a></li>
-                <li id="joinli"><a href="/join" class="{joinnav} navtags">加入汉唐</a></li>
+                <li id="ulli"><a href="/ul" class="{ulnav} navtags"><span>《极致》</span></a></li>
+                <li id="awoeli"><a href="/awoe" class="{awoenav} navtags"><span>《问鼎世界》</span></a></li>
+                <li id="musicli"><a href="/music" class="{musicnav} navtags"><span>国际音乐年</span></a></li>
+                <li id="joinli"><a href="/join" class="{joinnav} navtags"><span>加入汉唐</span></a></li>
             </ul>
         </div>
         <?php }else{?>

@@ -10,7 +10,7 @@
 <div style="display: {homedisarea2}">
     <div class="home-ul-left">
        
-        <img src="../../bootstrap/images/home_ul_left.png" alt="">
+        <img src="../../bootstrap/images/home_ul_left.jpg" alt="">
        
     </div>
     <div class="home-ul-right">

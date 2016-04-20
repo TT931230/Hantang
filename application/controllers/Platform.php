@@ -69,42 +69,42 @@ class Platform extends CI_Controller
             $aboutmap2 = $this->page_data_model->query_sources($source_info);
         }
         
-        $source_info=$source_info_base;
-        $source_info['first_level']='platform';
-        $source_info['second_level']='aboutmap3';
-        $source_info['type']='img';
-        $source_info['deleted'] = '0';
-        $aboutmap3 = $this->page_data_model->query_sources($source_info);
-        if(count($aboutmap3)<=0){
-        	$source_info=$source_info_base;
-        	$source_info['first_level']='platform';
-        	$source_info['second_level']='aboutmap3';
-        	$source_info['third_level']='zn';
-        	$source_info['type']='img';
-        	$source_info['deleted'] = '0';
-        	$aboutmap3 = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='platform';
+//         $source_info['second_level']='aboutmap3';
+//         $source_info['type']='img';
+//         $source_info['deleted'] = '0';
+//         $aboutmap3 = $this->page_data_model->query_sources($source_info);
+//         if(count($aboutmap3)<=0){
+//         	$source_info=$source_info_base;
+//         	$source_info['first_level']='platform';
+//         	$source_info['second_level']='aboutmap3';
+//         	$source_info['third_level']='zn';
+//         	$source_info['type']='img';
+//         	$source_info['deleted'] = '0';
+//         	$aboutmap3 = $this->page_data_model->query_sources($source_info);
+//         }
         
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['type']='img';
-        $logoimage = $this->page_data_model->query_sources($source_info);
-        if(count($logoimage)<=0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='logoimage';
-            $source_info['type']='img';
-            $source_info['third_level']='zn';
-            $logoimage = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['type']='img';
+//         $logoimage = $this->page_data_model->query_sources($source_info);
+//         if(count($logoimage)<=0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='logoimage';
+//             $source_info['type']='img';
+//             $source_info['third_level']='zn';
+//             $logoimage = $this->page_data_model->query_sources($source_info);
+//         }
 
         $tag_data = $this->page_data_model->query_tags();
 
         $tmp_data = array(
-            'logoimage'=>$logoimage,
+//             'logoimage'=>$logoimage,
             'videoarea1'=>$imagearea1,
             'aboutmap1'=>$aboutmap1,
             'aboutmap2'=>$aboutmap2,
-        	'aboutmap3'=>$aboutmap3
+        //	'aboutmap3'=>$aboutmap3
         );
 
         $tmp_data=array_merge($tmp_data,$tag_data);
@@ -117,7 +117,7 @@ class Platform extends CI_Controller
         $this->parser->parse('platform2',$tmp_data);
         $this->parser->parse('platform3',$tmp_data);
         $this->parser->parse('platform4',$tmp_data);
-        $this->parser->parse('platform5',$tmp_data);
+   //     $this->parser->parse('platform5',$tmp_data);
         /*$this->db->from('webcontent');
         $this->db->where('page','platform');
         $this->db->where('status','1');

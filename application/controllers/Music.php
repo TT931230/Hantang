@@ -46,12 +46,12 @@ class Music extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $displaydetails = $this->page_data_model->query_keywords($keyword_info);
 
-        //get logo source
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['type']='img';
-        /*$source_info['third_level']=$this->session->language;*/
-        $logoimage = $this->page_data_model->query_sources($source_info);
+//         //get logo source
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['type']='img';
+//         /*$source_info['third_level']=$this->session->language;*/
+//         $logoimage = $this->page_data_model->query_sources($source_info);
 
         //get music relative radio
         $source_info=$source_info_base;
@@ -73,7 +73,7 @@ class Music extends CI_Controller
 
         $tmp_data = array(
             'relatedvideo'=>$relatedvideo,
-            'logoimage'=>$logoimage,
+     //       'logoimage'=>$logoimage,
             'imagearea1'=>$imagearea1,
             'seasondetails'=>$seasondetails,
             'displaydetails'=>$displaydetails,
@@ -132,18 +132,18 @@ class Music extends CI_Controller
             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language
         );
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='musiclogo';
-        $source_info['third_level']=$this->session->language;
-        $source_info['type']='img';
-        $musiclogo = $this->page_data_model->query_sources($source_info);
-        if(count($musiclogo) <=0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='musiclogo';
-            $source_info['third_level']='zn';
-            $source_info['type']='img';
-            $musiclogo = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='musiclogo';
+//         $source_info['third_level']=$this->session->language;
+//         $source_info['type']='img';
+//         $musiclogo = $this->page_data_model->query_sources($source_info);
+//         if(count($musiclogo) <=0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='musiclogo';
+//             $source_info['third_level']='zn';
+//             $source_info['type']='img';
+//             $musiclogo = $this->page_data_model->query_sources($source_info);
+//         }
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='music';
@@ -157,18 +157,18 @@ class Music extends CI_Controller
         $keyword_info['second_level']='displaydetails';
         $displaydetails = $this->page_data_model->query_keywords($keyword_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='logoimage';
-        $source_info['third_level']=$this->session->language;
-        $source_info['type']='img';
-        $logoimage = $this->page_data_model->query_sources($source_info);
-        if(count($logoimage)<=0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='logoimage';
-            $source_info['third_level']='zn';
-            $source_info['type']='img';
-            $logoimage = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='logoimage';
+//         $source_info['third_level']=$this->session->language;
+//         $source_info['type']='img';
+//         $logoimage = $this->page_data_model->query_sources($source_info);
+//         if(count($logoimage)<=0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='logoimage';
+//             $source_info['third_level']='zn';
+//             $source_info['type']='img';
+//             $logoimage = $this->page_data_model->query_sources($source_info);
+//         }
 
 
         $source_info=$source_info_base;
@@ -269,8 +269,8 @@ class Music extends CI_Controller
         $tmp_data = array(
             'video'=>$video,
             'relatedvideo'=>$relatedvideo,
-            'logoimage'=>$logoimage,
-            'musiclogo'=>$musiclogo,
+     //       'logoimage'=>$logoimage,
+      //      'musiclogo'=>$musiclogo,
             'seasondetails'=>$seasondetails,
             'displaydetails'=>$displaydetails,
         );

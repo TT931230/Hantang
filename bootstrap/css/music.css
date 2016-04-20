@@ -3,67 +3,91 @@
  */
 /* search type area */ 
 .musictype1{
-    margin-top:48px;
-	margin-bottom:48px;
-    width:48%;
+    margin-top:30px;
+	margin-bottom:30px;
     float:left;
     height:58px;
+    width:39.45%;
    
 }
 .musictype2{
-    margin-top:48px;
-	margin-bottom:48px;
-    width:52%;
+    margin-top:30px;
+	margin-bottom:30px;
     float:left;
     height:58px;
+    width:60.55%
    
 }
 .musictypetitle1{
-	width:31.17%;
     float:left;    
-    background-color: #e4e4e4;
-    height:58px;
-    padding:20px;
-    border:1px solid #fff;
-    color:#808080;
+    color:#ffffff;
+    width:100%;
+}
+.musictyle-left1{
+	float:left;
+	width:23.17%;
+	height:22px;
+	background-color:#CFCFCF;
+	padding-top:2px;
+}
+.musictyle-right1{
+	float:left;
+	width:76.83%;
+	height:22px;
+	background-color: #f1f1f1;
 }
 .musictypedetails1{
-    width:68.83%;
-    height:58px;
+    height:67px;
     float:left;
-    
 }
 .musictypedetail1{
-    width:33.3%;
     float:left;
     color:#808080;
-    padding:20px;
     text-align:center;
+    padding-top:20px;
+    padding-left:40px;
+    padding-right:40px;
 }
+
 .musictypetitle2{
-	width:30.68%;
     float:left;    
-    background-color: #e4e4e4;
-    height:58px;
-    padding:20px;
-    border:1px solid #fff;
-    color:#808080;
+    height:22px;
+    color:#FFFFFF;
+    width:100%;
+}
+.musictyle-left2{
+	float:left;
+	width:15.10%;
+	height:22px;
+	background-color:#CFCFCF;
+	padding-top:2px;
+}
+.musictyle-right2{
+	float:left;
+	width:84.90%;
+	height:22px;
+	background-color: #f1f1f1;
 }
 .musictypedetails2{
-    width:69.32%;
-    height:58px;
+    height:67px;
     float:left;
     
 }
 .musictypedetail2{
-    width:20%;
     float:left;
     color:#808080;
-    padding:20px;
+    margin-top:20px;
     text-align:center;
+    padding-left:47px;
+    padding-right:47px;
+}
+.musictypedetail2:first-of-type{
+	border-left:1px solid #CFCFCF;
+    padding-left:28px;
+    padding-right:16px;
+	
 }
 .musictypedetail{
-	 width:25%;
     float:left;
     color:#808080;
     margin-bottom:6px;
@@ -77,7 +101,6 @@
 }
 .music-relatedvideos{
 	float:left;
-	height:380px;
     width:100%;
     display: inline-block;
     background-color: #ffffff;
@@ -85,41 +108,37 @@
 }
 .music-relatedvideos img{
 	margin-top:48px;
-
     float:right;
-    height:284px;
-    width:62.5%;  
+    height:287px;
+    width:60.08%;  
 }
 .music-relavideoinfo{
 	padding-top:48px;
-	width:37.5%;
+	width:39.92%;
 	float:left;
-	padding-right:5%;
+	padding-right:3.75%;
 }
 .music-relavideostitle{
-	height:50px;
 	float:left;
 	font-size:15px;
 	color:#808080;
-	margin-top:10px;
 	width:100%;
 	text-align:left;
+	padding-bottom:22px;
 }
 .music-relavideoremark{
 	font-size:12px;
 	color:#808080;
 	float:left;
-	margin-top:10px;
-	text-align:left;
-	margin-right:10px;
+	text-align:justify;
 	width:100%;
+	margin-bottom:34px;
 }
 .music-relavideotime{
 	font-size:12px;
 	color:#808080;
 	float:left;
 	text-align:left;
-	margin-top:20px;
 	width:100%;
 }
 .music-more{
@@ -127,13 +146,12 @@
 	font-size:12px;
 	color:#808080;
 	text-align:left;
-	padding-top:230px;
+	float:left;
+	margin-top:-20px;
+	margin-bottom:43px;
 }
 .music-more img{
-    width:60px;
-    height:15px;
-    float:left;
-    margin-left:-1px;
+
 }
  /* musicinner */
 .musicinner-subtitle{
@@ -160,7 +178,7 @@
     margin-bottom:30px;
 }
 .musicinnera {
-    margin-top:56px;  
+    margin-top:58px;  
     font-size: 15px;
     overflow: hidden;
     white-space:normal;
@@ -170,18 +188,20 @@
     border-right:1px solid #a0a0a0;
     color:#626262;
     background-color: #e0e0e0;
-    margin-bottom:30px;
+    margin-bottom:64px;
 }
 .music-name{
-	margin-bottom:56px;
+	margin-bottom:43px;
 	font-weight:500;
 }
 .music-brief{
-	margin-bottom:56px;
+	margin-bottom:43px;
 	font-weight:500;
+	line-height:1.8;
+
 }
 .music-time{
-	margin-bottom:56px;
+	margin-bottom:43px;
 	font-weight:500;
 }
 .music-place{
@@ -190,17 +210,18 @@
 .musicinnerc {
     display: inline-block;
     background-color: #e0e0e0;
-    padding-top:56px;
+    padding-top:58px;
     height:100%;
 }
 .musicinnerc img{
     width:364px;
     height:auto;
     display: inline-block;
-    margin:auto;
 }
 .musicinnercimg{
-    height:75%;
+	float:left;
+	margin-left:8.93%;
+	height:73%;
 }
 .musicinnerb {
     width:100%;
@@ -212,7 +233,6 @@
     float:right;
     display: inline-block;
     background-color: #e0e0e0;
-    height:25%;
 }
 .musicinnerbshare{
 	margin-left:23%;

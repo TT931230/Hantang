@@ -24,14 +24,12 @@
                     <div class="music-relavideotime">
                         {update_time}
                     </div>
-                    <div class="music-more">
-                        <a href='{link_url}'>
-                        <img src="/bootstrap/images/more.png" class="moreimg">
-                        </a>
-                    </div>
                 </div>
                 <a href='{link_url}'><img src='{source_location}'></a>
             </div>
+            <div class="music-more">更多详情
+                        <a href='{link_url}'><img src="../../bootstrap/images/more.png" alt=""></a>
+           </div>
             {/relatedvideo}
         </div>
     </div>

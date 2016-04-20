@@ -11,16 +11,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="searchallarea">
     <div class="cover-container showsearcharea">
         <div class="showsearcharea1">
-            <div class="radio-inline language">
-                <a href="#" class="dropdown lan-dropdowncust"  data-toggle="dropdown"  data-hover="dropdown" data-delay="500" data-close-others="false">{language}</a>
-                <ul class="dropdown-menu choseLan">
-                <span class="lan-dropdown-triangle"></span>
-                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','zn')">中文</span></li>
-                    <li class="lan-dropdown-list-line"><span></span></li>
-                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','en')">English</span></li>
-                    <li class="lan-dropdown-list-line"><span></span></li>
-                    <li class="lan-dropdowncustspan"><span onclick="$changelanguage('{url}','fr')">Français</span></li>    
-                </ul>
+            <div class="radio-inline language">                
+            <span id="lan-content" onclick="$changelanguage('{url}','zn')">中文</span>
+            <span id="lan-mid">|</span>
+            <span id="lan-content" onclick="$changelanguage('{url}','en')">English</span>
+            <span id="lan-mid">|</span>
+            <span id="lan-content-fr" onclick="$changelanguage('{url}','fr')">Français</span>               
             </div>
             <div class="searcharea">
                 <span class="sch-dropdowncust" role="button" onclick="$use('class1content','')">
