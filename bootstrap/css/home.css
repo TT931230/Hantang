@@ -2,6 +2,62 @@
  * Home page
  */
  
+/* module 1 : video */
+.home-videoarea{
+    display: block;
+    overflow: hidden;
+    position: relative;	
+}
+.videolist{
+	width:100%;
+	height:610px;
+	margin-left: 10px;
+}
+.home-video{
+	overflow: hidden;
+	left: 9999px;
+	position: absolute;
+}
+.home-video video{
+    width: 100%;
+    height:auto;
+}
+#process1{
+	margin-left:-8px;
+	margin-bottom:18px;
+	border-style:solid; 
+	border-width:0px;
+	height:7px;
+	width:1290px;
+	border-color:#e4e4e4;
+	background-color: #e8e8e8
+}
+#process2{
+	background-color: #A7A8AC;
+	height: 7px;
+	float:left;
+}
+#process3{
+	background-color: #A7A8AC;
+	height: 7px;
+	float:left;
+}
+#process4{
+	background-color: #A7A8AC;
+	height: 7px;
+	float:left;
+}
+.processdev{
+	background-color: #D1D2D4;
+	height: 7px;
+	float:left;
+}
+.processline{
+	height: 7px;
+	width: 3px;
+	background-color: #ffffff;
+	float:left;
+}
 /* module 2 : ul */
 .home-ul-left{
 	margin:0;
@@ -9,9 +65,6 @@
     width:28.44%;
     height:432px;
     margin-bottom:0.46%;
-}
-.home-ul-left:hover{
-    opacity:0.7;
 }
 .home-ul-left img{ 
     height:432px;
@@ -21,7 +74,12 @@
     float:left;
     width:71.56%;
     margin-bottom:0.46%;
+    position:relative;
 }
+.home-ul-right a:hover{
+    alpha:0
+}
+
 
 /* module 3 : awoe */
 .home-awoe-left{
@@ -36,15 +94,15 @@
     height:432px;
     width:auto;
 }
-.home-awoe-left:hover{
-    opacity:0.7;
-}
 .home-awoe-right{
     float:left;
     width:71.56%;
     margin-bottom:0.46%;
 }
-
+.home-awoe-right:hover{
+    background:url("../../bootstrap/images/home-ul-bg.jpg")center center no-repeat ;
+    opacity:0.7;
+}
 
 /* module 4 : music */
 .home-music-left{

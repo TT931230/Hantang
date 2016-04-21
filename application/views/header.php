@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 <!-- header left logo -->
         <div  class="masthead-brand">                       
-               <img src="../../bootstrap/images/logo.png" alt="">                        
+              <a href="home"><img src="../../bootstrap/images/logo.png" alt=""></a>                       
         </div>
         
 <!-- header navigation bar -->
