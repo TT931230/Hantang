@@ -135,15 +135,15 @@ class Page_data_model extends CI_Model{
         //$this->db->where('third_level',$languageType);            //update
         $about03=$this->db->get()->result_array();
 
-        $this->db->from('source');
-        $this->db->where('first_level','about');
-        $this->db->where('second_level','about04');
-        //$this->db->where('third_level',$languageType);           //update
-        $about04=$this->db->get()->result_array();
-        //get language source
-        $this->db->from('language');
-        $this->db->where('lang',$languageType);
-        $languages=$this->db->get()->result_array();
+//         $this->db->from('source');
+//         $this->db->where('first_level','about');
+//         $this->db->where('second_level','about04');
+//         //$this->db->where('third_level',$languageType);           //update
+//         $about04=$this->db->get()->result_array();
+//         //get language source
+//         $this->db->from('language');
+//         $this->db->where('lang',$languageType);
+//         $languages=$this->db->get()->result_array();
 
         $data = array(
             'partnerimgs'=>$partner,
@@ -153,7 +153,7 @@ class Page_data_model extends CI_Model{
             'about01'=>$about01[0]['source_location'],
         	'about02'=>$about02[0]['source_location'],
         	'about03'=>$about03[0]['source_location'],
-        	'about04'=>$about04[0]['source_location'],
+//        	'about04'=>$about04[0]['source_location'],
 //             'wangyi'=>$wangyi,
 //             'jianshu'=>$jianshu,
 //             'tengxun'=>$tengxun,

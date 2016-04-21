@@ -109,27 +109,27 @@ class About extends CI_Controller
             $about3 = $this->page_data_model->query_sources($source_info);
         }
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='about';
-        $source_info['second_level']='about04';
-        $source_info['type']='img';
-        $source_info['deleted']=0;
-        $about4 = $this->page_data_model->query_sources($source_info);
-        if(count($about4) <=0){
-            $source_info=$source_info_base;
-            $source_info['first_level']='about';
-            $source_info['second_level']='about04';
-            $source_info['type']='img';
-            $source_info['deleted']=0;
-            $source_info['third_level']='zn';
-            $about4 = $this->page_data_model->query_sources($source_info);
-        }
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='about';
+//         $source_info['second_level']='about04';
+//         $source_info['type']='img';
+//         $source_info['deleted']=0;
+//         $about4 = $this->page_data_model->query_sources($source_info);
+//         if(count($about4) <=0){
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='about';
+//             $source_info['second_level']='about04';
+//             $source_info['type']='img';
+//             $source_info['deleted']=0;
+//             $source_info['third_level']='zn';
+//             $about4 = $this->page_data_model->query_sources($source_info);
+//         }
 
         $aboutData = array(
             'about1'=>$about1,
             'about2'=>$about2,
             'about3'=>$about3,
-            'about4'=>$about4,
+         //   'about4'=>$about4,
         );
 
 
@@ -193,22 +193,22 @@ class About extends CI_Controller
           
             $video =array_merge($video,$this->page_data_model->query_sources($source_info));*/
 
-            $source_info=$source_info_base;
-            $source_info['first_level']='logoimage';
-            $source_info['type']='img';
+//             $source_info=$source_info_base;
+//             $source_info['first_level']='logoimage';
+//             $source_info['type']='img';
            
-            $logoimage = $this->page_data_model->query_sources($source_info);
-            $source_info=$source_info_base;
-            $source_info['status']='2';
-            $source_info['first_level']='logoimage';
-            $source_info['type']='img';
-            $source_info['third_level']=$this->session->language;
-            $logoimage =array_merge($logoimage,$this->page_data_model->query_sources($source_info));
+//             $logoimage = $this->page_data_model->query_sources($source_info);
+//             $source_info=$source_info_base;
+//             $source_info['status']='2';
+//             $source_info['first_level']='logoimage';
+//             $source_info['type']='img';
+//             $source_info['third_level']=$this->session->language;
+//             $logoimage =array_merge($logoimage,$this->page_data_model->query_sources($source_info));
 
             $tag_data = $this->page_data_model->query_tags();
 
             $tmp_data = array(
-                'logoimage'=>$logoimage,
+        //        'logoimage'=>$logoimage,
                 'video'=>$video,
             );
 

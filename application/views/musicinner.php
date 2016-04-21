@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <table style="width:100%;text-align:left">
                     <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出名称：<td>
-                        <td style="padding-right:50px;padding-left:14px;">{source_name}</td>
+                        <td style="padding-right:50px;padding-left:14px; color:#626262;">{source_name}</td>
                         </tr>
                     </table>
                     </div>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                      <table style="width:100%;text-align:justify;">
                        <tr>
                         <td valign="top" style="text-align:right;width:13%;color:#000;font-weight:600;">简介：</td>
-                        <td style="padding-right:54px;padding-left:14px;">{source_remark}</td>
+                        <td style="padding-right:54px;padding-left:14px;color:#626262;">{source_remark}</td>
                         </tr>
                      </table>
                     </div>
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                      <table style="width:100%;text-align:left;">
                      <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出时间：</td>
-                        <td style="padding-right:50px;padding-left:14px;">{musictime}</td>
+                        <td style="padding-right:50px;padding-left:14px;color:#626262;">{musictime}</td>
                         </tr>
                     </table>
                     </div>
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                        <table style="width:100%;text-align:left;">
                        <tr>
                         <td style="width:13%;text-align:right;color:#000;font-weight:600;">演出地点：</td>
-                        <td style="padding-right:50px;padding-left:14px;">{musiclocation}</td>
+                        <td style="padding-right:50px;padding-left:14px;color:#626262;">{musiclocation}</td>
                         </tr>
                         </table>
                     </div>

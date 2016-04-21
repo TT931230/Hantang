@@ -193,6 +193,7 @@
 .music-name{
 	margin-bottom:43px;
 	font-weight:500;
+	color:#626262;
 }
 .music-brief{
 	margin-bottom:43px;
@@ -235,7 +236,7 @@
     background-color: #e0e0e0;
 }
 .musicinnerbshare{
-	margin-left:23%;
+	margin-left:28%;
 }
 
  /* carousel css */
