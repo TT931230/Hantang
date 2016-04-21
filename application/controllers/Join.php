@@ -46,15 +46,17 @@ class Join extends CI_Controller
             'd_status'=>'1',
             'j_status'=>'1'
         );
+        
         $department = $this->page_data_model->query_departments($d_status);
         
+   
         
         $tag_data = $this->page_data_model->query_tags();
         $tmp_data = array(
-            'first_id'=>$department[0]['job'][0]['id'],
+            'first_id'=>$department[0]['id'],
        //     'logoimage'=>$logoimage,
             'department' => $department,
-            'video' => $video
+            'video' => $video,
         );
 
         $tmp_data=array_merge($tmp_data,$tag_data);
@@ -83,10 +85,7 @@ class Join extends CI_Controller
         $this->session->set_userdata('language',$_POST['language']);
         $this->index();
     }
-    function getJobDetail(){ 
-        $this->db->from('department');
-        $this->db->where('status','1');
-        $this->db->where('id',$_POST['job_id']);
+
 //     	echo('<div class="job-detals">');
 //     	echo('<span class="jds-content1">');
 //     	echo($jobname[$x]);
@@ -110,25 +109,57 @@ class Join extends CI_Controller
     	
 //     	echo('<span id="righToDown1" class="glyphicon glyphicon-chevron-down jds-arrow"></span>');
 //     	echo('</div>');}
-// //    	} else {echo('ajax error');};
-    }
+
+    
     function getJobName(){
-    	$this->db->from('department');
+    	$this->db->from('jobinfo');
     	$this->db->where('status','1');
-    	$this->db->where('id',$_POST['dep_id']);
+    	$this->db->where('department_id',$_POST['dep_id']);
+    	$this->db->order_by("sequence","asc");
     	$query = $this->db->get();
-    	$depinfo = $query->result_array();
-    	
-    	echo($_POST['dep_id']);
-        echo('<div class="job-detals">');
-    	echo('<span class="jds-content1">');    	
-    	echo($jobname);
-    	echo('</a></span>');
-    	echo('<span class="jds-content5">');
-       	echo($jobdate);
-       	echo('</span>');
-       	echo('<span id="righToDown1" class="glyphicon glyphicon-chevron-down jds-arrow"></span>');
-       	echo('</div>');
+    	$jobs = $query->result_array();
+
+    	for($i=0;$i<count($jobs);$i++){
+    		$jobname=$jobs[$i]['jobname'];
+    		$jobdate=$jobs[$i]['update_time'];
+    		$jobinfo=array($jobname,$jobdate);
+    		echo('<div class="job-detals">');
+    		echo('<span class="jds-content1">');
+    		echo($jobname);
+    		echo('</a></span>');
+
+            echo('<span class="jds-content2">');
+            echo('test');
+    		echo('</span>');    		 
+    		echo('<span class="jds-content3">');  
+    		echo('test');
+    		echo('</span>');    		 
+    		echo('<span class="jds-content4">');
+    		echo('test');
+    		echo('</span>');
+    		echo('<span class="jds-content5">');
+    		echo($jobdate);
+    		echo('</span>');
+    		echo('<span id="righToDown1" class="glyphicon glyphicon-chevron-down jds-arrow"></span>');
+    		echo('</div>');
+    	}
+//     	$this->db->where('status','1');
+//     	$this->db->where('department_id',$depin);
+//     	$this->db->from('jobinfo');
+//     	$query2 = $this->db->get();
+//     	$depinfo2 = $query2->result_array();
+//     	$jobname=$depinfo2['jobname'];
+//     	$jobdate=$depinfo2['update_time'];
+//     	echo($_POST['dep_id']);
+//         echo('<div class="job-detals">');
+//     	echo('<span class="jds-content1">');    	
+//     	echo($jobname);
+//     	echo('</a></span>');
+//     	echo('<span class="jds-content5">');
+//        	echo($jobdate);
+//        	echo('</span>');
+//        	echo('<span id="righToDown1" class="glyphicon glyphicon-chevron-down jds-arrow"></span>');
+//        	echo('</div>');
 
     }
     function getJobInfo(){
@@ -137,14 +168,13 @@ class Join extends CI_Controller
     	$this->db->from('jobinfo');
     	$query = $this->db->get();
     	$jobinfo = $query->result_array();
+
+    	
     	$jobname=$jobinfo[0]['jobname'];
     	       $todo=$jobinfo[0]['todo'];
     	       $need=$jobinfo[0]['need'];
     	        echo('<div class="jobname">');
-    	        //test
-    	        echo($_POST['job_id']);
-    	        
-    	        echo($jobname);
+     	        echo($jobname);
     	        echo('</div>');
     	        echo('</hr>');
     	        echo('<div class="gzzz">工作职责:</div>');

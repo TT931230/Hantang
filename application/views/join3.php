@@ -10,20 +10,27 @@
     <div class="joininfo">
         <nav>
             <ul class="nav join-masthead-nav navcust">
-                {department}
+
+           {department} 
                 <li>
-                    <a onclick="$jobajax('{id}')" class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{department}</a> 
-                     <ul class="dropdown-menu dropdownmenucust dropdowndepart"> 
-                         <span class="dropdown-triangle"></span> 
-                         {job}  
-                          <li>
-                          <a class="job-dropdownli">{jobname}</a></li>                 
-<!--                      <a onclick="$departmentajax('{id}')" class="job-dropdownli">{jobname}</a></li>-->  
-                         <li class="dropdown-list-line"><span></span></li> 
-                         {/job}  
-                     </ul>                           
+                
+<!--                    <a onclick="$jobajax('{id}')" class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{department}</a> 
+                     <ul class="dropdown-menu dropdownmenucust dropdowndepart">  
+                         <span class="dropdown-triangle"></span>  
+                          {job} 
+                          <li> 
+                          <a class="job-dropdownli">{jobname}</a></li>                   
+                         <a onclick="$departmentajax('{id}')" class="job-dropdownli">{jobname}</a></li>
+                          <li class="dropdown-list-line"><span></span></li>  
+                           {/job}  
+                      </ul>    -->
+                 
+                <a onclick="$jobajax('{id}')">{department}</a>
+                                            
                 </li>
-                {/department}
+               {/department} 
+
+                
             </ul>
         </nav>
     </div>
