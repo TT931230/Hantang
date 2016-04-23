@@ -31,18 +31,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div id="class1content" style="display:none;" class="cover-container showsearcharea">
         <div class="searchdetailarea">
-            <span id="searchMsg">{seniorsearch}</span>
-            <input type="text" placeholder="{inputtip}" id="searchinput" name="searchcontent">
+            <span id="searchMsg">高级搜索</span>
+            <input type="text" placeholder="请输入关键字" id="searchinput" name="searchcontent">
             <span id="searchTool" class="glyphicon glyphicon-search"></span>
-            <span id="searchcommit" role="button" onclick="$searchresult()">{commit}</span>
-            <span id="searchreset" role="button" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span>
+            <span id="searchcommit" role="button" onclick="$searchresult()">确认</span>
+      <!--     <span id="searchreset" role="button" onclick="$reset()"><i class="glyphicon glyphicon-repeat"></i> <span id="rearch_reset">{reset}</span></span> -->  
  
             <div id="searchdetailarea"></div>
     
         </div>
 
         <div class="searchdetailarea">
-               <span class="searchdetail" role="button" onclick="$use('class2content','righToDown1','searchAToZ')"><i class=""></i> {brandname}
+               <span class="searchdetail" role="button" onclick="$use('class2content','righToDown1','searchAToZ')"><i class=""></i> 品牌名称
                     <span id="righToDown1" class="glyphicon glyphicon-chevron-right"></span>
             </span>
             <div class="searchAZ" id="searchAToZ">
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class2content"  class="searchcontentarea-brand">
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> {type}
+            <span class="searchdetail" role="button" onclick="$use('class3content','righToDown2')"><i class=""></i> 类型分类
             <span id="righToDown2" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>
@@ -89,7 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_type}
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class4content','righToDown3')"><i class=""></i> {keyword}
+            <span class="searchdetail" role="button" onclick="$use('class4content','righToDown3')"><i class=""></i> 关键字
             <span id="righToDown3" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {/search_keyword}
         </div>
         <div class="searchdetailarea" >
-            <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4','searchCountry')"><i class=""></i> {location}
+            <span class="searchdetail" role="button" onclick="$use('class5content','righToDown4','searchCountry')"><i class=""></i> 地点
             <span id="righToDown4" class="glyphicon glyphicon-chevron-right"></span>
             </span>
             <div class="searchLocation" id="searchCountry" >
@@ -113,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="class5content" style="display:none;" class="searchcontentarea">
         </div>
         <div class="searchdetailarea">
-            <span class="searchdetail" role="button" onclick="$use('class6content','righToDown5')"><i class=""></i> {time}
+            <span class="searchdetail" role="button" onclick="$use('class6content','righToDown5')"><i class=""></i> 时间
             <span id="righToDown5" class="glyphicon glyphicon-chevron-right"></span>
             </span>
         </div>

@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
            
                 <div class="videoareainner">
-                    <video controls="controls" autoplay=true>
+                    <video controls="controls" autoplay=true poster="../../bootstrap/images/loading.gif">
                         {video}
                         <source src="{source_location}" type="{type}" />
                        

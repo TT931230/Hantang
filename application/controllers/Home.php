@@ -7,156 +7,156 @@
  */
 class Home extends CI_Controller
 {
-//     public function insertkeywords(){
-//         $this->load->library('session');
-//         $this->load->library('parser');
-//         $this->load->database();
-//         $this->load->model('keyword_model');
-//         $username = $this->session->username;
-//         $country=array('America','Canada','China');
-//         $city=array('NewYork','London','Beijing');
-//         $type=array('fashion','music','film');
-//         $display=array('chorus','Symphony','others');
-//         for($i=0;$i<3;$i++){
-//             $year='201';
-//             //echo $country[$i];
-//             $keyword1=array(
-//                 'keyword' => $country[$i],
-//                 'sequence' => $i,
-//                 'first_level' => 'ul',
-//                 'second_level' => 'locationdetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword1);
+    public function insertkeywords(){
+        $this->load->library('session');
+        $this->load->library('parser');
+        $this->load->database();
+        $this->load->model('keyword_model');
+        $username = $this->session->username;
+        $country=array('America','Canada','China');
+        $city=array('NewYork','London','Beijing');
+        $type=array('fashion','music','film');
+        $display=array('chorus','Symphony','others');
+        for($i=0;$i<3;$i++){
+            $year='201';
+            //echo $country[$i];
+            $keyword1=array(
+                'keyword' => $country[$i],
+                'sequence' => $i,
+                'first_level' => 'ul',
+                'second_level' => 'locationdetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword1);
 
-//             //yeardetails
-//             $keyword2=array(
-//                 'keyword' => $year.$i,
-//                 'sequence' => $i,
-//                 'first_level' => 'ul',
-//                 'second_level' => 'yeardetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword2);
-//             //typedetails
-//             $keyword3=array(
-//                 'keyword' => $type[$i],
-//                 'sequence' => $i,
-//                 'first_level' => 'ul',
-//                 'second_level' => 'typedetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword3);
-
-
-
-//             $a=$i+1;
-//             $keyword4=array(
-//                 'keyword' => '201'.$i.'-'.'201'.$a,
-//                 'sequence' => $i,
-//                 'first_level' => 'music',
-//                 'second_level' => 'seasondetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword4);
-
-//             $keyword4=array(
-//                 'keyword' => $display[$i],
-//                 'sequence' => $i,
-//                 'first_level' => 'music',
-//                 'second_level' => 'displaydetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword4);
+            //yeardetails
+            $keyword2=array(
+                'keyword' => $year.$i,
+                'sequence' => $i,
+                'first_level' => 'ul',
+                'second_level' => 'yeardetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword2);
+            //typedetails
+            $keyword3=array(
+                'keyword' => $type[$i],
+                'sequence' => $i,
+                'first_level' => 'ul',
+                'second_level' => 'typedetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword3);
 
 
 
-//             $keyword1=array(
-//                 'keyword' => $country[$i],
-//                 'sequence' => $i,
-//                 'first_level' => 'awoe',
-//                 'second_level' => 'locationdetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword1);
+            $a=$i+1;
+            $keyword4=array(
+                'keyword' => '201'.$i.'-'.'201'.$a,
+                'sequence' => $i,
+                'first_level' => 'music',
+                'second_level' => 'seasondetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword4);
+
+            $keyword4=array(
+                'keyword' => $display[$i],
+                'sequence' => $i,
+                'first_level' => 'music',
+                'second_level' => 'displaydetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'dd'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword4);
 
 
-//             $keyword2=array(
-//                 'keyword' => $year.$i,
-//                 'sequence' => $i,
-//                 'first_level' => 'awoe',
-//                 'second_level' => 'yeardetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword2);
 
-//             $keyword3=array(
-//                 'keyword' => $type[$i],
-//                 'sequence' => $i,
-//                 'first_level' => 'awoe',
-//                 'second_level' => 'typedetails',
-//                 'third_level' => 'en',
-//                 'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
-//                 'creator' =>$username,
-//                 'updater' => $username,
-//                 'status' => '1',
-//             );
-//             $this->keyword_model->insertKeyword($keyword3);
+            $keyword1=array(
+                'keyword' => $country[$i],
+                'sequence' => $i,
+                'first_level' => 'awoe',
+                'second_level' => 'locationdetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword1);
 
 
-//         }
-//     }
-//     public function querySource($querycontent){
-//         $this->load->library('session');
-//         $this->load->library('parser');
-//         $this->load->database();
-//         $this->db->from('source');
-//         if($querycontent['source_location']){
-//             $this->db->where('source_location',$querycontent['source_location']);
-//         }
-//         if($querycontent['first_level']){
-//             $this->db->where('first_level',$querycontent['first_level']);
-//         }
-//         if($querycontent['second_level']){
-//             $this->db->where('second_level',$querycontent['second_level']);
-//         }
-//         if($querycontent['third_level']){
-//             $this->db->where('third_level',$querycontent['third_level']);
-//         }
-//         if($querycontent['type']){
-//             $this->db->where('type',$querycontent['type']);
-//         }
-//         $query = $this->db->get();
-//         return $query->result_array();
-//     }
+            $keyword2=array(
+                'keyword' => $year.$i,
+                'sequence' => $i,
+                'first_level' => 'awoe',
+                'second_level' => 'yeardetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'ss'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword2);
+
+            $keyword3=array(
+                'keyword' => $type[$i],
+                'sequence' => $i,
+                'first_level' => 'awoe',
+                'second_level' => 'typedetails',
+                'third_level' => 'en',
+                'keyword_remark' => iconv('gb2312', 'utf-8', 'cc'),
+                'creator' =>$username,
+                'updater' => $username,
+                'status' => '1',
+            );
+            $this->keyword_model->insertKeyword($keyword3);
+
+
+        }
+    }
+    public function querySource($querycontent){
+        $this->load->library('session');
+        $this->load->library('parser');
+        $this->load->database();
+        $this->db->from('source');
+        if($querycontent['source_location']){
+            $this->db->where('source_location',$querycontent['source_location']);
+        }
+        if($querycontent['first_level']){
+            $this->db->where('first_level',$querycontent['first_level']);
+        }
+        if($querycontent['second_level']){
+            $this->db->where('second_level',$querycontent['second_level']);
+        }
+        if($querycontent['third_level']){
+            $this->db->where('third_level',$querycontent['third_level']);
+        }
+        if($querycontent['type']){
+            $this->db->where('type',$querycontent['type']);
+        }
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     function updatedb(){
         $this->load->library('session');
         $this->load->library('parser');

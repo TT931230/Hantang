@@ -160,7 +160,7 @@ function $departmentajax(id){
         url:"Join/getJobInfo",
         success: function(result)
         {
-		    var submitbutton='<div class="jobcommit"><button class="btn btn-primary btn-lg jobcommitbtn" data-toggle="modal" data-target="#myModal">点击申请</button></div>';
+			var submitbutton='<div class="jobcommit"><button class="btn btn-primary btn-lg jobcommitbtn" data-toggle="modal" data-target="#myModal">点击申请</button></div>';
             var modal =
             '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
                 '<div class="modal-dialog">'+
@@ -368,3 +368,14 @@ function $partnerrelatedvideo($logoid){
         }
     });
 }
+
+function displayContent() {
+    var myId = document.getElementById();
+    if(myId.style.display == "none"){
+        document.getElementById().style.display = "block"; 
+    }
+    else { 
+        document.getElementById().style.display = "none";
+  }
+}
+

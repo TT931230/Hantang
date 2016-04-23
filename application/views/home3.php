@@ -17,7 +17,15 @@
             <div class="callbacks_container">
                 <ul class="rslides" id="carousel3">
                     {imagearea3}
-                    <li><a href="{link_url}"><img src="{source_location}"></a></li>
+                    <li><a href="{link_url}">
+                            <div class="home-img">
+                                <img src="{source_location}">
+                                <span class="home-img-text1">{brandname}</span>
+                                <span class="home-img-text2">{imagename}</span>
+                                <span class="home-awoe-hover"></span>  
+                            </div>
+                          </a>
+                    </li>
                     {/imagearea3}
                 </ul>
             </div>

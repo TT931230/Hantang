@@ -26,6 +26,16 @@
     margin-top:26px;
     border-bottom:2px dotted #C4C4C4;
 }
+.navcust{
+    width:100%;
+    float:left !important;
+}
+.navcust li{
+    /*width:20%;*/
+    margin-left:0px!important;
+    margin-right:0px!important;
+}
+
 .join-masthead-nav > li {
     display: inline-block;
     float:left;
@@ -47,31 +57,12 @@
     padding-top:8px;
     height:34px;
 }
+
 .join-masthead-nav > li > a:hover{
-	background-color:#b2b2b2!important;
-}
-.join-masthead-nav > li > a:focus{
-	background-color:##b2b2b2 !important;
-}
-.join-dropdownmenucust{	
-    border: #c0c0c0;
-    border-radius: 0px;
-    background-color: transparent;
+	background-color:#b2b2b2 !important;
 }
 
-.join-dropdowncust{
-    text-decoration: none;
-    color:#808080;
-    padding:0; 
-}
-.join-dropdowncust:focus{
-    text-decoration: none;
-    color:#808080;
-}
-.join-dropdowncust:hover{
-    text-decoration: none;
-    color:#808080;
-}
+
 .job-detail-info{
 	font-size:16px;
 	color:#777777;
@@ -239,61 +230,5 @@
     color:#5a5a5a;
     border-bottom:1px solid #c8c8c8;	
 }
- /* dropdown */
-.dropdowndepart{
-    left:4%;
-    width:92%;
-    padding:0;
-    text-align: center;
-    border-bottom: 0px solid #761c19;
-    margin-top:8px;
-    min-width: 40px;
-}
-.dropdowndepart>li>a {
-    display: block;
-    padding-top:5px;
-    padding-bottom:5px;
-    clear: both;
-    font-weight: 400;
-    line-height: 1.42857143;
-    color: #FFF;
-    white-space: nowrap;
-    text-align:center;
-    /*border-top: 1px solid #fff;*/
-}
-.dropdowndepart>li>a:hover{
-    color:#626262;
-    cursor: pointer;
-}
 
-.dropdownmenucust{
-    border-radius: 0px;
-    position:absolute ;
-    z-index:1004;   
-}
-.dropdownmenucust li{
-    width:100%;
-    background-color: #e4e4e4;
-}
-.dropdownmenucust li>a:hover{
-    width:100%;   
-}
-.dropdown-list-line {
-    height: 1px;
-    padding: 0 40%;
-}
-.dropdown-list-line span {
-    display: block;
-    height: inherit;
-    background: #fff;
-     width:30px;
-}
-.navcust{
-    width:100%;
-    float:left !important;
-}
-.navcust li{
-    /*width:20%;*/
-    margin-left:0px!important;
-    margin-right:0px!important;
-}
+

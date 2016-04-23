@@ -76,11 +76,43 @@
     margin-bottom:0.46%;
     position:relative;
 }
-.home-ul-right a:hover{
-    alpha:0
+
+.home-img{
+	position: relative;
+	z-index:100;
 }
 
-
+.home-img-text1{
+	position: absolute; 
+	color:#ffffff; 
+	margin-top:-90px;
+	z-index:110;
+	font-size:20px;
+	width:47%;
+	text-align:right;
+}
+.home-img-text2{
+	position: absolute; 
+	color:#ffffff;   
+	margin-top:-60px;
+	z-index:110;
+	font-size:20px;
+	width:47%;
+	text-align:right;
+}
+.home-ul-hover {
+	position: absolute; 
+	background-color:transparent;
+    position: absolute; 
+    opacity:0.5; 
+    height:432px;
+    width:100%;
+    z-index:105;
+    margin-top:-432px;
+    margin-left:-50%;} 
+.home-ul-hover:hover {
+	background-color:rgb(168, 60, 72);
+	} 
 /* module 3 : awoe */
 .home-awoe-left{
     margin:0;
@@ -99,11 +131,19 @@
     width:71.56%;
     margin-bottom:0.46%;
 }
-.home-awoe-right:hover{
-    background:url("../../bootstrap/images/home-ul-bg.jpg")center center no-repeat ;
-    opacity:0.7;
-}
-
+.home-awoe-hover {
+    position: absolute; 
+	background-color:transparent;
+    position: absolute; 
+    opacity:0.5; 
+    height:432px;
+    width:100%;
+    z-index:105;
+    margin-top:-432px;
+    margin-left:-50%;} 
+.home-awoe-hover:hover {
+	background-color:rgb(0, 51, 102);
+	} 
 /* module 4 : music */
 .home-music-left{
     margin:0;
@@ -116,14 +156,25 @@
     height:432px;
     width:auto;
 }
-.home-music-left:hover{
-    opacity:0.7;
-}
+
 .home-music-right{
     float:right;
     width:71.56%;
     margin-bottom:150px;
 }
+.home-music-hover {
+    position: absolute; 
+	background-color:transparent;
+    position: absolute; 
+    opacity:0.5; 
+    height:432px;
+    width:100%;
+    z-index:105;
+    margin-top:-432px;
+    margin-left:-50%;} 
+.home-music-hover:hover {
+	background-color:rgb(0, 0, 0);
+	} 
  /* carousel css */
  .callbacks_container {
   margin-bottom: 0px;
@@ -204,3 +255,7 @@ border-bottom-color:transparent;
     top: 100%;
     }
   }
+ 
+
+	
+	

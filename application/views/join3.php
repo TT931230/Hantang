@@ -7,11 +7,11 @@
  */defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <div class="dashline" style="display: {joindisarea2}">
+
     <div class="joininfo">
         <nav>
             <ul class="nav join-masthead-nav navcust">
-
-           {department} 
+          {department}
                 <li>
                 
 <!--                    <a onclick="$jobajax('{id}')" class="join-dropdown join-dropdowncust dropdowndeparta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{department}</a> 
@@ -25,15 +25,15 @@
                            {/job}  
                       </ul>    -->
                  
-                <a onclick="$jobajax('{id}')">{department}</a>
+                <a onclick="$jobajax('{id}')" href="javascript:void(0);">{department}</a>
                                             
                 </li>
-               {/department} 
+            {/department}     
 
                 
             </ul>
         </nav>
-    </div>
+    </div> 
     <div class="job-detail-info">
       <div class="job-detail-title">
         <span class="jdt-title1">职位名称</span>
@@ -42,9 +42,14 @@
         <span class="jdt-title4">招聘数</span>
         <span class="jdt-title5">发布时间</span>
       </div>  
-       <div class="jobdetailarea" id="jobdetailarea"></div> 
-    </div>
-   </div>
+         <div class="jobdetailarea" id="jobdetailarea" "></div>
 
-    <div class="departmentdetailarea" id="departmentdetailarea">
-</div>
+    </div> 
+   <div class="departmentdetailarea" id="departmentdetailarea"></div> 
+   </div>
+    
+
+    
+    
+    
+    

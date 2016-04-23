@@ -14,8 +14,7 @@
             <div id="videolist{sequence}" class="home-video">
                 <video src="{source_location}" id="video{sequence}" ></video>
             </div>
-            {/videoarea}
-
+            {/videoarea}            
         </div>
         <div id="process1">
             <div class="processdev">

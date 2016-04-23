@@ -9,9 +9,9 @@
 <div class="newborder" style="display: {awoedisarea1}">
     <div id="left-awoe">
    <?php if($this->session->language == 'zn'){?>
-        <img src="../../bootstrap/images/AWOE_Bnner_logo.jpg" alt="">
+        <img src="../../bootstrap/images/AWOE_Bnner_logo.png" alt="">
    <?php }else{?>
-        <img src="../../bootstrap/images/AWOE_Bnner_logo_ENG.jpg" alt="">
+        <img src="../../bootstrap/images/AWOE_Bnner_logo_ENG.png" alt="">
    <?php }?>
     </div>
     <div id="right-awoe">

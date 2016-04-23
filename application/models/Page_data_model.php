@@ -15,7 +15,7 @@ class Page_data_model extends CI_Model{
         $this->config->load('sourceurl', TRUE);
         $url1  = $this->config->item('url', 'sourceurl');
         //get footer source
-//        $this->db->from('source');
+//       $this->db->from('source');
 //         $this->db->where('first_level','footer');
 //         $this->db->where('third_level',$languageType);
 //         $returnquery=$this->db->get()->result_array();
@@ -264,7 +264,7 @@ class Page_data_model extends CI_Model{
 
     }
 
-//     public function query_departments($status){
+//     public function query_jobdetail($status){
 //         $this->db->from('department');
 //         $this->db->where('status',$status['d_status']);
 //         $this->db->order_by("sequence","asc");
@@ -296,10 +296,10 @@ class Page_data_model extends CI_Model{
     	$this->db->order_by("sequence","asc");
     	$query = $this->db->get();
     	$departments=$query->result_array();       
-    	$return_array=$departments;    	
+    	$return_array=$departments;      	
     	return $return_array;
     }
-    
+
     
     
     function assoc_unique($arr, $key)
