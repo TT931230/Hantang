@@ -281,10 +281,10 @@ class Music extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('musicinner',$data);
-        if($this->session->language == 'en'){
-            return $this->parser->parse('footeren',$data);
-        }else{
+        if($this->session->language == 'zn'){
             return $this->parser->parse('footer',$data);
+        }else{
+            return $this->parser->parse('footeren',$data);
         }
     }
     function preview(){

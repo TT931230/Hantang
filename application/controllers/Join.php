@@ -116,9 +116,9 @@ class Join extends CI_Controller
     		echo('<span class="jds-content5">');
     		echo($jobdate);
     		echo('</span>');
-     		echo('<span class="glyphicon glyphicon-chevron-down jds-arrow"></span>');
+     		echo('<span class="glyphicon glyphicon-chevron-down jds-arrow onclick="displayContent();"></span>');
     		
-     		echo('<div class="job-deepinfo">');
+     		echo('<div class="job-deepinfo"  id=" " >');
      		echo('<div class="gzzz">工作职责:</div>');
      		echo('<pre class="departcontent">');
      		echo($todo);

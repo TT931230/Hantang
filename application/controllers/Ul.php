@@ -31,6 +31,14 @@ class Ul extends CI_Controller
         $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $imagearea1 = $this->page_data_model->query_sources($source_info);
+        if(count($imagearea1)<=0){
+        $source_info=$source_info_base;
+        $source_info['first_level']='ul';
+        $source_info['second_level']='imagearea1';
+        $source_info['third_level']='zn';
+        $source_info['type']='img';
+        $imagearea1 = $this->page_data_model->query_sources($source_info);
+        }
 
 //         $source_info=$source_info_base;
 //         $source_info['first_level']='ul';
@@ -44,24 +52,55 @@ class Ul extends CI_Controller
         $keyword_info['second_level']='yeardetails';
         $keyword_info['third_level']=$this->session->language;
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
+        if(count($yeardetails<=0)){
+        	$keyword_info=$keyword_info_base;
+        	$keyword_info['first_level']='ul';
+        	$keyword_info['second_level']='yeardetails';
+        	$keyword_info['third_level']='zn';
+        	$yeardetails = $this->page_data_model->query_keywords($keyword_info);
+        }
+        
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='ul';
         $keyword_info['second_level']='locationdetails';
         $keyword_info['third_level']=$this->session->language;
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
+        if(count($locationdetails<=0)){
+        	$keyword_info=$keyword_info_base;
+        	$keyword_info['first_level']='ul';
+        	$keyword_info['second_level']='locationdetails';
+        	$keyword_info['third_level']='zn';
+        	$locationdetails = $this->page_data_model->query_keywords($keyword_info);
+        }
+        
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='ul';
         $keyword_info['second_level']='typedetails';
         $keyword_info['third_level']=$this->session->language;
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
+        if(count($typedetails<=0)){
+        	$keyword_info=$keyword_info_base;
+        	$keyword_info['first_level']='ul';
+        	$keyword_info['second_level']='typedetails';
+        	$keyword_info['third_level']='zn';
+        	$typedetails = $this->page_data_model->query_keywords($keyword_info);
+        }
+        
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='ul';
         $keyword_info['third_level']=$this->session->language;
         $keyword_info['second_level']='activedetails';
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
+        if(count($activedetails<=0)){
+        	$keyword_info=$keyword_info_base;
+        	$keyword_info['first_level']='ul';
+        	$keyword_info['second_level']='activedetails';
+        	$keyword_info['third_level']='zn';
+        	$activedetails = $this->page_data_model->query_keywords($keyword_info);
+        }
 
 //         $source_info=$source_info_base;
 //         $source_info['first_level']='logoimage';
@@ -167,29 +206,29 @@ class Ul extends CI_Controller
 //         $source_info['type']='img';
 //         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
-        $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
-        $keyword_info['third_level']=$this->session->language;
-        $keyword_info['second_level']='yeardetails';
-        $yeardetails = $this->page_data_model->query_keywords($keyword_info);
+//         $keyword_info=$keyword_info_base;
+//         $keyword_info['first_level']='ul';
+//         $keyword_info['third_level']=$this->session->language;
+//         $keyword_info['second_level']='yeardetails';
+//         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
 
-        $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
-        $keyword_info['third_level']=$this->session->language;
-        $keyword_info['second_level']='locationdetails';
-        $locationdetails =$this->page_data_model->query_keywords($keyword_info);
+//         $keyword_info=$keyword_info_base;
+//         $keyword_info['first_level']='ul';
+//         $keyword_info['third_level']=$this->session->language;
+//         $keyword_info['second_level']='locationdetails';
+//         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
-        $keyword_info['third_level']=$this->session->language;
-        $keyword_info['second_level']='typedetails';
-        $typedetails =$this->page_data_model->query_keywords($keyword_info);
+//         $keyword_info=$keyword_info_base;
+//         $keyword_info['first_level']='ul';
+//         $keyword_info['third_level']=$this->session->language;
+//         $keyword_info['second_level']='typedetails';
+//         $typedetails =$this->page_data_model->query_keywords($keyword_info);
 
-        $keyword_info=$keyword_info_base;
-        $keyword_info['first_level']='ul';
-        $keyword_info['third_level']=$this->session->language;
-        $keyword_info['second_level']='activedetails';
-        $activedetails =$this->page_data_model->query_keywords($keyword_info);
+//         $keyword_info=$keyword_info_base;
+//         $keyword_info['first_level']='ul';
+//         $keyword_info['third_level']=$this->session->language;
+//         $keyword_info['second_level']='activedetails';
+//         $activedetails =$this->page_data_model->query_keywords($keyword_info);
 
 //         $source_info=$source_info_base;
 //         $source_info['first_level']='logoimage';
@@ -248,10 +287,10 @@ class Ul extends CI_Controller
   //          'logoimage'=>$logoimage,
   //          'ullogo'=>$ullogo,
   //          'imagearea11'=>$imagearea11,
-            'yeardetails'=>$yeardetails,
-            'locationdetails'=>$locationdetails,
-            'typedetails'=>$typedetails,
-            'activedetails'=>$activedetails
+  //          'yeardetails'=>$yeardetails,
+  //          'locationdetails'=>$locationdetails,
+  //          'typedetails'=>$typedetails,
+  //          'activedetails'=>$activedetails
         );
 
         $tmp_data=array_merge($tmp_data,$tag_data);
@@ -260,10 +299,10 @@ class Ul extends CI_Controller
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('ulinner',$data);
-        if($this->session->language == 'en'){
-            return $this->parser->parse('footeren',$data);
-        }else{
+        if($this->session->language == 'zn'){
             return $this->parser->parse('footer',$data);
+        }else{
+            return $this->parser->parse('footeren',$data);
         }
     }
 

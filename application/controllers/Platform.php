@@ -103,7 +103,7 @@ class Platform extends CI_Controller
 //             'logoimage'=>$logoimage,
             'videoarea1'=>$imagearea1,
             'aboutmap1'=>$aboutmap1,
-            'aboutmap2'=>$aboutmap2,
+            'aboutmap2'=>$aboutmap2
         //	'aboutmap3'=>$aboutmap3
         );
 
@@ -113,25 +113,26 @@ class Platform extends CI_Controller
 
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
-        $this->parser->parse('platform1',$tmp_data);
-        $this->parser->parse('platform2',$tmp_data);
-        $this->parser->parse('platform3',$tmp_data);
-        $this->parser->parse('platform4',$tmp_data);
-   //     $this->parser->parse('platform5',$tmp_data);
-        /*$this->db->from('webcontent');
+        $this->parser->parse('platform',$data);
+//         $this->parser->parse('platform1',$tmp_data);
+//         $this->parser->parse('platform2',$tmp_data);
+//         $this->parser->parse('platform3',$tmp_data);
+//         $this->parser->parse('platform4',$tmp_data);
+//         $this->parser->parse('platform5',$tmp_data);
+        $this->db->from('webcontent');
         $this->db->where('page','platform');
         $this->db->where('status','1');
         $this->db->order_by('sequence','asc');
-        $homecontents=$this->db->get()->result_array();
-        for($i=0;$i<count($homecontents);$i++){
-            $this->parser->parse($homecontents[$i]['name'],$data);
-        }*/
+        $platformcontents=$this->db->get()->result_array();
+        for($i=0;$i<count($platformcontents);$i++){
+            $this->parser->parse($platformcontents[$i]['name'],$tmp_data);
+        }
 
         $this->parser->parse('platformend',$data);
-        if($this->session->language == 'en'){
-            return $this->parser->parse('footeren',$data);
-        }else{
+        if($this->session->language == 'zn'){
             return $this->parser->parse('footer',$data);
+        }else{
+            return $this->parser->parse('footeren',$data);
         }
     }
     function Changelanguage(){

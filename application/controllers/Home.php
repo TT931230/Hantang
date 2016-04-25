@@ -7,6 +7,8 @@
  */
 class Home extends CI_Controller
 {
+	
+	// unknown ---------------------------------------------------
     public function insertkeywords(){
         $this->load->library('session');
         $this->load->library('parser');
@@ -134,6 +136,14 @@ class Home extends CI_Controller
 
         }
     }
+    // unknown ---------------------------------------------------
+    
+    
+    
+    
+    
+    
+    
     public function querySource($querycontent){
         $this->load->library('session');
         $this->load->library('parser');
@@ -157,6 +167,8 @@ class Home extends CI_Controller
         $query = $this->db->get();
         return $query->result_array();
     }
+    
+    
     function updatedb(){
         $this->load->library('session');
         $this->load->library('parser');
@@ -169,6 +181,8 @@ class Home extends CI_Controller
                 continue;
             }
             date_default_timezone_set("UTC");
+            
+            // unknown -----------------------------
             $third1='';
             $third2='';
             if($homecontents[$i]['third_level']=='zn'){
@@ -267,23 +281,23 @@ class Home extends CI_Controller
         $source_info['deleted']=0;
         $imagearea4 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea11';
-        $source_info['type']='img';
-        $imagearea11 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea11';
+//         $source_info['type']='img';
+//         $imagearea11 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea12';
-        $source_info['type']='img';
-        $imagearea12 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea12';
+//         $source_info['type']='img';
+//         $imagearea12 = $this->page_data_model->query_sources($source_info);
 
-        $source_info=$source_info_base;
-        $source_info['first_level']='home';
-        $source_info['second_level']='imagearea13';
-        $source_info['type']='img';
-        $imagearea13 = $this->page_data_model->query_sources($source_info);
+//         $source_info=$source_info_base;
+//         $source_info['first_level']='home';
+//         $source_info['second_level']='imagearea13';
+//         $source_info['type']='img';
+//         $imagearea13 = $this->page_data_model->query_sources($source_info);
 
 //         $source_info=$source_info_base;
 //         $source_info['first_level']='logoimage';
@@ -297,9 +311,9 @@ class Home extends CI_Controller
             'imagearea2'=>$imagearea2,
             'imagearea3'=>$imagearea3,
             'imagearea4'=>$imagearea4,
-            'imagearea11'=>$imagearea11,
-            'imagearea12'=>$imagearea12,
-            'imagearea13'=>$imagearea13,
+//             'imagearea11'=>$imagearea11,
+//             'imagearea12'=>$imagearea12,
+//             'imagearea13'=>$imagearea13,
         );
 
         $tmp_data=array_merge($tmp_data,$tag_data);
@@ -317,10 +331,10 @@ class Home extends CI_Controller
             $this->parser->parse($homecontents[$i]['name'],$data);
         }
         $this->parser->parse('homeend',$data);
-        if($this->session->language == 'en'){
-            $this->parser->parse('footeren',$data);
-        }else{
+        if($this->session->language == 'zn'){
             $this->parser->parse('footer',$data);
+        }else{
+            $this->parser->parse('footeren',$data);
         }
 
 
@@ -411,10 +425,10 @@ class Home extends CI_Controller
 //         $tmp_data=array_merge($tmp_data,$tag_data);
 //         $data=array_merge($tmp_data,$page_data);
 //         //var_dump($page_data);
-        if($this->session->language == 'en'){
-            return $this->parser->parse('footeren',$data);
-        }else{
+        if($this->session->language == 'zn'){
             return $this->parser->parse('footer',$data);
+        }else{
+            return $this->parser->parse('footeren',$data);
         }
     }
     

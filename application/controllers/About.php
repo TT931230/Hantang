@@ -57,8 +57,7 @@ class About extends CI_Controller
             'video'=>$video,
         );
 
-        $tmp_data=array_merge($tmp_data,$tag_data);
-        $data=array_merge($tmp_data,$page_data);
+        
 
         $source_info=$source_info_base;
         $source_info['first_level']='about';
@@ -131,23 +130,24 @@ class About extends CI_Controller
             'about3'=>$about3,
          //   'about4'=>$about4,
         );
-
+        $tmp_data=array_merge($tmp_data,$tag_data,$aboutData);
+        $data=array_merge($tmp_data,$page_data);
 
         $this->parser->parse('header',$data);
         $this->parser->parse('search',$data);
         $this->parser->parse('about',$data);
-       /* $this->db->from('webcontent');
+        $this->db->from('webcontent');
         $this->db->where('page','about');
         $this->db->where('status','1');
         $this->db->order_by('sequence','asc');
-        $homecontents=$this->db->get()->result_array();
-        for($i=0;$i<3;$i++){
-            $this->parser->parse($homecontents[$i]['name'],$data);
-        }*/
+        $aboutcontents=$this->db->get()->result_array();
+        for($i=0;$i<count($aboutcontents);$i++){
+            $this->parser->parse($aboutcontents[$i]['name'],$data);
+        }
 
-        $this->parser->parse('about1',$tmp_data);
-        $this->parser->parse('about2',$tmp_data);
-        $this->parser->parse('about3',$aboutData);
+//         $this->parser->parse('about1',$tmp_data);
+//         $this->parser->parse('about2',$tmp_data);
+//         $this->parser->parse('about3',$aboutData);
         $this->parser->parse('aboutend',$data);
         if($this->session->language == 'en'){
             return $this->parser->parse('footeren',$data);

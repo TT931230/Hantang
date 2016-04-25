@@ -370,12 +370,12 @@ function $partnerrelatedvideo($logoid){
 }
 
 function displayContent() {
-    var myId = document.getElementById();
+    var myId = document.getElementById($div);
     if(myId.style.display == "none"){
-        document.getElementById().style.display = "block"; 
+        document.getElementById($div).style.display = "block"; 
     }
     else { 
-        document.getElementById().style.display = "none";
+        document.getElementById($div).style.display = "none";
   }
 }
 

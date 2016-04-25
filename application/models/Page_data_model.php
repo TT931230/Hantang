@@ -92,8 +92,8 @@ class Page_data_model extends CI_Model{
         $this->db->from('source');
         $this->db->where('type','partnerimg');
         $this->db->where('status','1');
-        $this->db->where('third_level','zn');
-       // $this->db->where('third_level',$languageType);            //update
+       // $this->db->where('third_level','zn');
+        $this->db->where('third_level',$languageType);            //update
         $this->db->order_by('sequence','asc');
         $partner=$this->db->get()->result_array();
 
@@ -110,29 +110,29 @@ class Page_data_model extends CI_Model{
         //$this->db->where('third_level',$languageType);             //update
         $aboutmap2=$this->db->get()->result_array();
         
-        $this->db->from('source');
-        $this->db->where('first_level','platform');
-        $this->db->where('second_level','aboutmap3');
-       // $this->db->where('third_level',$languageType);        //update
-        $aboutmap3=$this->db->get()->result_array();
+//         $this->db->from('source');
+//         $this->db->where('first_level','platform');
+//         $this->db->where('second_level','aboutmap3');
+//        // $this->db->where('third_level',$languageType);        //update
+//         $aboutmap3=$this->db->get()->result_array();
 
         //get about source
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about01');
-        //$this->db->where('third_level',$languageType);           //update
+        $this->db->where('third_level',$languageType);           //update
         $about01=$this->db->get()->result_array();
         
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about02');
-        //$this->db->where('third_level',$languageType);               //update
+        $this->db->where('third_level',$languageType);               //update
         $about02=$this->db->get()->result_array();
         
         $this->db->from('source');
         $this->db->where('first_level','about');
         $this->db->where('second_level','about03');
-        //$this->db->where('third_level',$languageType);            //update
+        $this->db->where('third_level',$languageType);            //update
         $about03=$this->db->get()->result_array();
 
 //         $this->db->from('source');
@@ -176,7 +176,7 @@ class Page_data_model extends CI_Model{
             'musicnav' => '',
             'joinnav' => ''
         );
-        // initialize tag name by language
+        // initialize tag name by language 
         for($i=0;$i<count($languages);$i++){
             $temp_array=array(
                 $languages[$i]['tag']=>$languages[$i]['value']
@@ -301,7 +301,7 @@ class Page_data_model extends CI_Model{
     }
 
     
-    
+    // 数组去重
     function assoc_unique($arr, $key)
     {
         $tmp_arr = array();
@@ -322,6 +322,7 @@ class Page_data_model extends CI_Model{
     public function query_tags(){
         //get search tag
         $this->load->library('session');
+        
         $this->db->from('keyword');
         $this->db->where('second_level','typedetails');
         $this->db->where('third_level',$this->session->language);
@@ -329,6 +330,7 @@ class Page_data_model extends CI_Model{
         $query = $this->db->get();
         $search_type=$query->result_array();
         $search_type=$this->assoc_unique($search_type,'keyword');
+        
         $this->db->from('keyword');
         $this->db->where('second_level','keyword');
         $this->db->distinct('keyword');
@@ -337,6 +339,7 @@ class Page_data_model extends CI_Model{
         $query = $this->db->get();
         $search_keyword=$query->result_array();
         $search_keyword=$this->assoc_unique($search_keyword,'keyword');
+        
         $this->db->from('keyword');
         $this->db->where('second_level','yeardetails');
         $this->db->distinct('keyword');
@@ -345,6 +348,7 @@ class Page_data_model extends CI_Model{
         $query = $this->db->get();
         $search_time=$query->result_array();
         $search_time=$this->assoc_unique($search_time,'keyword');
+        
         $this->db->from('keyword');
         $this->db->distinct('keyword');
         $this->db->where('second_level','locationdetails');
