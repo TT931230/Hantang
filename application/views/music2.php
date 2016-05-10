@@ -9,7 +9,7 @@
 <div class="musicsearch" style="display: {musicdisarea2}">
     <div class="musictype1">
         <div class="musictypetitle1">
-        <div class="musictyle-left1">{displayseason}</div>
+        <div class="musictyle-left1">系列</div>
         <div class="musictyle-right1"></div>
         </div>
         <div class="musictypedetails1">
@@ -21,7 +21,7 @@
 
     <div class="musictype2">
         <div class="musictypetitle2">
-        <div class="musictyle-left2">{displaytype}</div>
+        <div class="musictyle-left2">品类</div>
         <div class="musictyle-right2"></div>
         </div>
         <div class="musictypedetails2">

@@ -20,8 +20,8 @@
                     <li><a href="{link_url}">
                             <div class="home-img">
                                 <img src="{source_location}">
-                                <span class="home-img-text1">{brandname}</span>
-                                <span class="home-img-text2">{imagename}</span>
+                                <span class="home-img-text1">{source_remark}</span>
+                                <span class="home-img-text2">{source_name}</span>
                                 <span class="home-music-hover"></span>  
                             </div>
                        </a>

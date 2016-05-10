@@ -52,7 +52,7 @@ class Join extends CI_Controller
         
         $tag_data = $this->page_data_model->query_tags();
         $tmp_data = array(
-            'first_id'=>$department[0]['id'],
+            'first_id'=>$department[0]['job'][0]['id'],
        //     'logoimage'=>$logoimage,
             'department' => $department,
             'video' => $video,
@@ -85,87 +85,107 @@ class Join extends CI_Controller
         $this->index();
     }
 // join page     
-    function getJobName(){
-    	$this->db->from('jobinfo');
-    	$this->db->where('status','1');
-    	$this->db->where('department_id',$_POST['dep_id']);
-    	$this->db->order_by("sequence","asc");
-    	$query = $this->db->get();
-    	$jobs = $query->result_array();
-
-    	for($i=0;$i<count($jobs);$i++){
-    		$jobname=$jobs[$i]['jobname'];
-    		$jobdate=$jobs[$i]['update_time'];
-    		$todo=$jobs[$i]['todo'];
-    		$need=$jobs[$i]['need'];
-    		$div=$jobs[$i]['id'];
-    		echo('<div class="job-detals">');
-    		
-    		echo('<span class="jds-content1">');
-    		echo($jobname);
-    		echo('</span>');
-            echo('<span class="jds-content2">');
-            echo('test');
-    		echo('</span>');    		 
-    		echo('<span class="jds-content3">');  
-    		echo('test');
-    		echo('</span>');    		 
-    		echo('<span class="jds-content4">');
-    		echo('test');
-    		echo('</span>');
-    		echo('<span class="jds-content5">');
-    		echo($jobdate);
-    		echo('</span>');
-     		echo('<span class="glyphicon glyphicon-chevron-down jds-arrow onclick="displayContent();"></span>');
-    		
-     		echo('<div class="job-deepinfo"  id=" " >');
-     		echo('<div class="gzzz">工作职责:</div>');
-     		echo('<pre class="departcontent">');
-     		echo($todo);
-     		echo('</pre>');
-     		echo('<div class="gzzz">岗位要求:</div>');
-     		echo('<pre  class="departcontent">');
-     		echo($need);
-     		echo('</pre>');
-     		echo('</div>');
-
-    		echo('</div>');
-    		
-    	}
-
-    }
-//     function getJobInfo(){
+//     function getJobName(){
 //     	$this->db->from('jobinfo');
 //     	$this->db->where('status','1');
-//     	$this->db->where('id',$_POST['job_id']);
+//     	$this->db->where('department_id',$_POST['dep_id']);
 //     	$this->db->order_by("sequence","asc");
 //     	$query = $this->db->get();
-//     	$jobinfo = $query->result_array();
-    	
-//     	$jobname=$jobinfo[0]['jobname'];
-//     	       $todo=$jobinfo[0]['todo'];
-//     	       $need=$jobinfo[0]['need'];
-//     	        echo('<div class="jobname">');
-//     	        echo($jobname);
-//      	        echo($jobname);
-//     	        echo('</div>');
-//     	        echo('</hr>');
-//     	        echo('<div class="gzzz">工作职责:</div>');
-//     	        echo('<pre class="departcontent">');
-//     	        echo($todo);
-//     	        echo('</pre>');
-//     	        echo('<div class="gzzz">岗位要求:</div>');
-//     	        echo('<pre  class="departcontent">');
-//     	        echo($need);
-//     	        echo('</pre>');
+//     	$jobs = $query->result_array();
+
+//     	for($i=0;$i<count($jobs);$i++){
+//     		$jobname=$jobs[$i]['jobname'];
+//     		$jobdate=$jobs[$i]['update_time'];
+//     		$number=$jobs[$i]['number'];
+//     		$joblocation=$jobs[$i]['joblocation'];
+//     		$jobtype=$jobs[$i]['jobtype'];
+//     		$todo=$jobs[$i]['todo'];
+//     		$need=$jobs[$i]['need'];
+//             $id=$jobs[$i]['id'];
+            
+            
+// //     		echo('<div class="job-detals">');
+    		
+// //     		echo('<span class="jds-content1">');
+// //     		echo($jobname);
+// //     		echo('</span>');
+// //             echo('<span class="jds-content2">');
+// //             echo($jobtype);
+// //     		echo('</span>');    		 
+// //     		echo('<span class="jds-content3">');  
+// //     		echo($joblocation);
+// //     		echo('</span>');    		 
+// //     		echo('<span class="jds-content4">');
+// //     		echo($number);
+// //     		echo('</span>');
+// //     		echo('<span class="jds-content5">');
+// //     		echo($jobdate);
+// //     		echo('</span>');
+// //      		echo('<span class="glyphicon glyphicon-chevron-down jds-arrow">');
+// //      		echo('</span>');
+
+    		
+// //      		echo('<div class="job-deepinfo">');
+// //      		echo('<div class="gzzz">工作职责:</div>');
+// //      		echo('<pre class="departcontent">');
+// //      		echo($todo);
+// //      		echo('</pre>');
+// //      		echo('<div class="gzzz">岗位要求:</div>');
+// //      		echo('<pre  class="departcontent">');
+// //      		echo($need);
+// //      		echo('</pre>');
+// //      		echo('</div>');
+
+// //     		echo('</div>');
+    		
+//     	}
+
 //     }
+    function getJobInfo(){
+    	$this->db->from('jobinfo');
+    	$this->db->where('status','1');
+    	$this->db->where('id',$_POST['job_id']);
+    	$this->db->order_by("sequence","asc");
+    	$query = $this->db->get();
+    	$jobinfo = $query->result_array();
+    	
+    	$jobname=$jobinfo[0]['jobname'];
+    	       $todo=$jobinfo[0]['todo'];
+    	       $need=$jobinfo[0]['need'];
+    	        echo('<div class="jobname">');
+    	        echo($jobname);
+    	        echo('</div>');
+    	        echo('</hr>');
+    	        echo('<div class="gzzz">工作职责:</div>');
+    	        echo('<pre class="departcontent">');
+    	        echo($todo);
+    	        echo('</pre>');
+    	        echo('<div class="gzzz">岗位要求:</div>');
+    	        echo('<pre  class="departcontent">');
+    	        echo($need);
+    	        echo('</pre>');
+    }
     function ask4job(){
-        echo($_POST['job_id']);
-        echo($_POST['remark']);
-        echo($_POST['call']);
-        echo($_POST['name']);
-        echo($_POST['phoneno']);
-        echo($_POST['email']);
+    	$this->db->from('jobinfo');
+    	$this->db->where('status','1');
+    	$this->db->where('id',$_POST['job_id']);
+    	$this->db->order_by("sequence","asc");
+    	$query = $this->db->get();
+    	$jobinfo = $query->result_array();
+    	$jobname=$jobinfo[0]['jobname'];
+    	
+        echo("您已发送成功！");
+
+        $data = array(
+         'jobid'=>$_POST['job_id'],
+         'jobname'=> $jobname,
+         'description' => $_POST['remark'],
+         'firstname'=> $_POST['call'],
+         'lastname'=> $_POST['name'],
+         'email' => $_POST['email'],
+         'phone' => $_POST['phoneno']
+         );  
+         $this->db->insert('application', $data);  
 
     }
     function preview(){

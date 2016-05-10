@@ -263,23 +263,56 @@ class Home extends CI_Controller
         $source_info=$source_info_base;
         $source_info['first_level']='home';
         $source_info['second_level']='imagearea2';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $source_info['deleted']=0;
         $imagearea2 = $this->page_data_model->query_sources($source_info);
+        $imagearea22 =$imagearea2;
+        if(count($imagearea22) <=0){
+        $source_info=$source_info_base;
+        $source_info['first_level']='home';
+        $source_info['second_level']='imagearea2';
+        $source_info['third_level']='en';
+        $source_info['type']='img';
+        $source_info['deleted']=0;
+        $imagearea2 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
         $source_info['second_level']='imagearea3';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $source_info['deleted']=0;
         $imagearea3 = $this->page_data_model->query_sources($source_info);
+        $imagearea32= $imagearea3;
+        if(count($imagearea32) <=0){
+        	$source_info=$source_info_base;
+        	$source_info['first_level']='home';
+        	$source_info['second_level']='imagearea3';
+        	$source_info['third_level']='en';
+        	$source_info['type']='img';
+        	$source_info['deleted']=0;
+        	$imagearea3 = $this->page_data_model->query_sources($source_info);
+        }
 
         $source_info=$source_info_base;
         $source_info['first_level']='home';
         $source_info['second_level']='imagearea4';
+        $source_info['third_level']=$this->session->language;
         $source_info['type']='img';
         $source_info['deleted']=0;
         $imagearea4 = $this->page_data_model->query_sources($source_info);
+        $imagearea42= $imagearea4;
+        if(count($imagearea42) <=0){
+        	$source_info=$source_info_base;
+        	$source_info['first_level']='home';
+        	$source_info['second_level']='imagearea4';
+        	$source_info['third_level']='en';
+        	$source_info['type']='img';
+        	$source_info['deleted']=0;
+        	$imagearea4 = $this->page_data_model->query_sources($source_info);
+        }
 
 //         $source_info=$source_info_base;
 //         $source_info['first_level']='home';
@@ -352,7 +385,7 @@ class Home extends CI_Controller
         if($this->session->language){
             $page_data=$this->page_data_model->get_page_data($this->session->language,'/home');
         }else{
-            $page_data=$this->page_data_model->get_page_data('zn','/home');
+            $page_data=$this->page_data_model->get_page_data('en','/home');
         }
 //         $source_info_base=array(
 //             'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>$this->session->language,'type'=>'',

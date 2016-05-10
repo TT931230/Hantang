@@ -232,3 +232,88 @@
 }
 
 
+
+
+
+
+
+.join-dropdownmenucust{	
+    border: #c0c0c0;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+.join-dropdowncust{
+    text-decoration: none;
+    color:#808080;
+    padding:0; 
+}
+.join-dropdowncust:focus{
+    text-decoration: none;
+    color:#808080;
+}
+.join-dropdowncust:hover{
+    text-decoration: none;
+    color:#808080;
+}
+
+
+
+ /* dropdown */
+.dropdowndepart{
+    left:4%;
+    width:92%;
+    padding:0;
+    text-align: center;
+    border-bottom: 0px solid #761c19;
+    margin-top:8px;
+    min-width: 40px;
+}
+.dropdowndepart>li>a {
+    display: block;
+    padding-top:5px;
+    padding-bottom:5px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #FFF;
+    white-space: nowrap;
+    text-align:center;
+    /*border-top: 1px solid #fff;*/
+}
+.dropdowndepart>li>a:hover{
+    color:#626262;
+    cursor: pointer;
+}
+
+.dropdownmenucust{
+    border-radius: 0px;
+    position:absolute ;
+    z-index:1004;   
+}
+.dropdownmenucust li{
+    width:100%;
+    background-color: #e4e4e4;
+}
+.dropdownmenucust li>a:hover{
+    width:100%;   
+}
+.dropdown-list-line {
+    height: 1px;
+    padding: 0 40%;
+}
+.dropdown-list-line span {
+    display: block;
+    height: inherit;
+    background: #fff;
+     width:30px;
+}
+
+
+
+
+
+
+
+
+

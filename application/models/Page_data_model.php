@@ -264,41 +264,42 @@ class Page_data_model extends CI_Model{
 
     }
 
-//     public function query_jobdetail($status){
-//         $this->db->from('department');
-//         $this->db->where('status',$status['d_status']);
-//         $this->db->order_by("sequence","asc");
-//         $query = $this->db->get();
-//         $departments=$query->result_array();
-//         $return_array=array(
-//         );
-//         for($i=0;$i<count($departments);$i++){
-//             $this->db->from('jobinfo');
-//             $this->db->where('status',$status['j_status']);
-//             $this->db->where('department_id',$departments[$i]['id']);
-//             $this->db->order_by("sequence","asc");
-//             $query = $this->db->get();
+    public function query_departments($status){
+        $this->db->from('department');
+        $this->db->where('status',$status['d_status']);
+        $this->db->order_by("sequence","asc");
+        $query = $this->db->get();
+        $departments=$query->result_array();
+        $return_array=array(
+        );
+        for($i=0;$i<count($departments);$i++){
+            $this->db->from('jobinfo');
+            $this->db->where('status',$status['j_status']);
+            $this->db->where('department_id',$departments[$i]['id']);
+            $this->db->order_by("sequence","asc");
+            $query = $this->db->get();
             
-//             $jobs=$query->result_array();     
-//             $temp_array=array(
-//                 'department'=>$departments[$i]['department'],
-//                 'job'=>$jobs,
-//             );
-//             array_push($return_array,$temp_array);
-//         }
+            $jobs=$query->result_array();     
+            $temp_array=array(
+                'department'=>$departments[$i]['department'],
+                'job'=>$jobs,
+            );
+            array_push($return_array,$temp_array);
+        }
+        return $return_array;
+    }
+
+    
+//     public function query_departments($status){        
+//     	$this->db->from('department');
+//     	$this->db->where('status',$status['d_status']);
+//     	$this->db->order_by("sequence","asc");
+//     	$query = $this->db->get();
+//     	$departments=$query->result_array();       
+//     	$return_array=$departments;      	    		
 //         return $return_array;
 //     }
 
-    
-    public function query_departments($status){        
-    	$this->db->from('department');
-    	$this->db->where('status',$status['d_status']);
-    	$this->db->order_by("sequence","asc");
-    	$query = $this->db->get();
-    	$departments=$query->result_array();       
-    	$return_array=$departments;      	
-    	return $return_array;
-    }
 
     
     // 数组去重
@@ -377,6 +378,9 @@ class Page_data_model extends CI_Model{
         }
         if($keyword_info['third_level']){
             $this->db->where('third_level',$keyword_info['third_level']);
+        }
+        if($keyword_info['keyword_remark']){
+        	$this->db->where('keyword_remark',$keyword_info['keyword_remark']);
         }
         $this->db->order_by("sequence","asc");
         $query = $this->db->get();

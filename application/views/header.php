@@ -147,5 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="/bootstrap/js/main.js"></script>
 <script src="/bootstrap/js/asszy.js" charset="gb2312"></script>
 <script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
+
+
 </body>
 </html>

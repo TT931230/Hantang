@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="bootstrap/jquery/carousel_ul.js"></script>
 <script type="text/javascript" src="bootstrap/js/responsiveslides.min.js"></script>
 
+<script src="http://jq22.qiniudn.com/masonry-docs.min.js"></script>
 
 <div class="cover-container">
     <div class="clearfix">

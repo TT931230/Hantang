@@ -7,8 +7,8 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<!-- <body onload="$departmentajax('{first_id}')"> -->
-<body onload="$jobajax('{first_id}')">
+<body onload="$departmentajax('{first_id}')"> 
+<!--<body onload="$jobajax('{first_id}')">-->
 <div class="cover-container">
     <div class="clearfix">
         <div class="inner">

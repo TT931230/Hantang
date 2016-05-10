@@ -22,7 +22,7 @@ class Awoe extends CI_Controller
             'status'=>'1','first_level'=>'','second_level'=>'','type'=>'',
         );
         $keyword_info_base=array(
-            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>''
+            'status'=>'1','first_level'=>'','second_level'=>'','third_level'=>'','keyword_remark'=>'',
         );
 
         $source_info=$source_info_base;
@@ -54,25 +54,30 @@ class Awoe extends CI_Controller
         $keyword_info['second_level']='yeardetails';
         $keyword_info['third_level']=$this->session->language;
         $yeardetails = $this->page_data_model->query_keywords($keyword_info);
-        if(count($yeardetails<=0)){
+        $typedetails2 = $yeardetails;
+        if(count($typedetails2)<=0){
         	$keyword_info=$keyword_info_base;
         	$keyword_info['first_level']='awoe';
         	$keyword_info['second_level']='yeardetails';
-        	$keyword_info['third_level']='zn';
-        	$yeardetails = $this->page_data_model->query_keywords($keyword_info);
+        	$keyword_info['third_level']='en';
+        	$keyword_info['third_level']=$this->session->language;
         }
+        
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='locationdetails';
         $keyword_info['third_level']=$this->session->language;
+        $keyword_info['keyword_remark']='awoe';
         $locationdetails =$this->page_data_model->query_keywords($keyword_info);
-        if(count($locationdetails<=0)){
+        $locationdetails2=$locationdetails;
+        if(count($locationdetails2)<=0){
         	$keyword_info=$keyword_info_base;
         	$keyword_info['first_level']='awoe';
         	$keyword_info['second_level']='locationdetails';
-        	$keyword_info['third_level']='zn';
-        	$locationdetails = $this->page_data_model->query_keywords($keyword_info);
+        	$keyword_info['third_level']='en';
+        	$keyword_info['keyword_remark']='awoe';
+        	$locationdetails =$this->page_data_model->query_keywords($keyword_info);
         }
 
         $keyword_info=$keyword_info_base;
@@ -80,26 +85,27 @@ class Awoe extends CI_Controller
         $keyword_info['second_level']='typedetails';
         $keyword_info['third_level']=$this->session->language;
         $typedetails =$this->page_data_model->query_keywords($keyword_info);
-        if(count($typedetails<=0)){
+        $typedetails2 = $typedetails;
+        if(count($typedetails2)<=0){
         	$keyword_info=$keyword_info_base;
         	$keyword_info['first_level']='awoe';
         	$keyword_info['second_level']='typedetails';
-        	$keyword_info['third_level']='zn';
-        	$typedetails = $this->page_data_model->query_keywords($keyword_info);
+        	$keyword_info['third_level']='en';
+        	$typedetails =$this->page_data_model->query_keywords($keyword_info);
         }
-        
 
         $keyword_info=$keyword_info_base;
         $keyword_info['first_level']='awoe';
         $keyword_info['second_level']='activedetails';
         $keyword_info['third_level']=$this->session->language;
         $activedetails =$this->page_data_model->query_keywords($keyword_info);
-        if(count($activedetails<=0)){
+        $activedetails2 =$activedetails;
+        if(count($activedetails2)<=0){
         	$keyword_info=$keyword_info_base;
         	$keyword_info['first_level']='awoe';
         	$keyword_info['second_level']='activedetails';
-        	$keyword_info['third_level']='zn';
-        	$activedetails = $this->page_data_model->query_keywords($keyword_info);
+        	$keyword_info['third_level']='en';
+        	$activedetails =$this->page_data_model->query_keywords($keyword_info);
         }
 
 //         $source_info=$source_info_base;

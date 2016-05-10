@@ -84,7 +84,7 @@
 
 .home-img-text1{
 	position: absolute; 
-	color:#ffffff; 
+	color:#a5a5a5; 
 	margin-top:-90px;
 	z-index:110;
 	font-size:20px;
@@ -96,7 +96,7 @@
 	color:#ffffff;   
 	margin-top:-60px;
 	z-index:110;
-	font-size:20px;
+	font-size:22px;
 	width:47%;
 	text-align:right;
 }

@@ -22,10 +22,28 @@
 }
 .uldetails{
     margin-top:20px;
-    height:60px;
+    height:50px;
     border-right:1px solid #c0c0c0;
     color:#808080;
-    padding-right:10px;
+    margin-bottom:13px;
+    padding-left:22px;
+    padding-right:22px;
+}
+.uldetails3{
+    margin-top:20px;
+    height:57px;
+    border-right:1px solid #c0c0c0;
+    color:#808080;
+    margin-bottom:13px;
+    padding-left:46px;
+    padding-right:20px;
+}
+.uldetails4{
+    margin-top:20px;
+    height:60px;
+    border-right:0px;
+    color:#808080;
+    padding-left:47px;
     margin-bottom:50px;
 }
 .diftype1{
@@ -65,7 +83,8 @@
 	height:22px;
 	float:left;
 	width:35.35%;
-    background-color:#CFCFCF;	 
+    background-color:#CFCFCF;	
+    padding-top:3px; 
 }
 .ultype-right1{
 	height:22px;
@@ -79,6 +98,7 @@
 	float:left;
 	width:36.68%;
     background-color:#CFCFCF;	
+     padding-top:3px; 
 }
 .ultype-right2{
 	height:22px;
@@ -90,7 +110,8 @@
 	height:22px;
 	float:left;
 	width:26%;
-    background-color:#CFCFCF;	
+    background-color:#CFCFCF;
+     padding-top:3px; 	
 }
 .ultype-right3{
 	height:22px;
@@ -102,7 +123,8 @@
 	height:22px;
 	float:left;
 	width:65%;
-    background-color:#CFCFCF;	 
+    background-color:#CFCFCF;
+     padding-top:3px; 	 
 }
 .ultype-right4{
 	height:22px;
@@ -110,7 +132,34 @@
 	width:35%;
 	background-color:#f1f1f1;
 }
-
+.ulyeardetail{
+	width:25%;
+	margin-bottom:20px;
+	color:#808080;
+	float:left;
+	text-align:center;
+}
+.ulactivedetail{
+	width:25%;
+	margin-bottom:20px;
+	color:#808080;
+	float:left;
+	text-align:center;
+}
+.ultypedetail{
+	width:16.6%;
+	margin-bottom:20px;
+	color:#808080;
+	float:left;
+	text-align:left;
+}
+.ullocationdetail{
+	width:50%;
+	margin-bottom:20px;
+	color:#808080;
+	float:left;
+	text-align:left;
+}
 /* Awoe page */
 #left-awoe{
    float:left;
@@ -470,3 +519,6 @@ background: transparent url("../images/white.png") no-repeat left top;
     top: 100%;
     }
   }
+ 
+
+

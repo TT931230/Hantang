@@ -143,7 +143,7 @@ function $jobajax(id){
         data: "dep_id=" + id,
         url:"Join/getJobName",
         success: function(result)
-        {         
+        {        
             $("#jobdetailarea").html(result);
         },
         error: function()
@@ -153,6 +153,7 @@ function $jobajax(id){
         }
     });
 }
+
 function $departmentajax(id){
     $.ajax({
         type:"post",
@@ -167,21 +168,20 @@ function $departmentajax(id){
                     '<div class="modal-content">'+
                         '<div class="modal-body">'+
                             '<div class="sendmailtext">发送电子邮件</div>'+
-                   //         '<hr/>'+
                             '<div class="jobinfotext">如有疑问或需要帮助，请填写下面表格</div>'+
                             '<div class="jobinfotext" style="margin-top:30px;margin-bottom:4px">填写信息</div>'+
-                            '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 100%;resize:none; height:100px;margin:auto;" ></textarea></div>'+
+                            '<div class="jobinfoinput"><textarea id="remarkinfo" style=" width: 100%;resize:none; height:100px;margin:auto;color:#000000;" ></textarea></div>'+
                             '<div class="jobinfotext" style="margin-top:44px;margin-bottom:4px">称呼（非必须）选择标题 姓</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 100%;;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfoinput"><input type="text" name="call" id="call"  style=" width: 100%;;height:40px;margin:auto;color:#000000;"></div>'+
                             '<div class="jobinfotext" style="margin-top:12px;margin-bottom:4px">名</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 100%;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfoinput"><input type="text" name="name" id="name"  style=" width: 100%;height:40px;margin:auto;color:#000000;"></div>'+
                             '<div class="jobinfotext" style="margin-top:12px;margin-bottom:4px">联系电话（非必须）</div>'+
-                            '<div class="jobinfoinput"><input type="text" name="phoneno" id="phoneno"  style=" width: 100%;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfoinput"><input type="text" name="phoneno" id="phoneno"  style=" width: 100%;height:40px;margin:auto;color:#000000;"></div>'+
                             '<div class="jobinfotext" style="margin-top:12px;margin-bottom:4px">您的电子邮件地址</div>'+
-                            '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width:100%;height:40px;margin:auto;"></div>'+
+                            '<div class="jobinfoinput"><input type="email" name="email" id="email"  style=" width:100%;height:40px;margin:auto;color:#000000;"></div>'+
                         '</div>'+
                         '<div class="modal-footer">'+'<div class="sendbtn">'+
-                            '<button type="button" class="btn btn-primary sendcommitbtn"onclick="$ask4job(\''+id+'\')">发送</button>'+
+                            '<button type="button" class="btn btn-primary sendcommitbtn" onclick="$ask4job(\''+id+'\')">发送</button>'+
                             '<button type="button" class="btn btn-default sendcanclebtn" data-dismiss="modal" style="border:0;">关闭</button>'+'</div>'+
                         '</div>'+
                     '</div>'+
@@ -369,13 +369,4 @@ function $partnerrelatedvideo($logoid){
     });
 }
 
-function displayContent() {
-    var myId = document.getElementById($div);
-    if(myId.style.display == "none"){
-        document.getElementById($div).style.display = "block"; 
-    }
-    else { 
-        document.getElementById($div).style.display = "none";
-  }
-}
 
